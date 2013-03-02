@@ -433,7 +433,7 @@ public class ModRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(DivineRPG.spawnReyvor, 1), new Object[] {DivineRPG.spawnBase, DivineRPG.denseSoul, DivineRPG.denseSoul, DivineRPG.serenitySoul, DivineRPG.azuriteSoul});
         GameRegistry.addShapelessRecipe(new ItemStack(DivineRPG.spawnDensos, 1), new Object[] {DivineRPG.spawnBase, DivineRPG.energyCrystalSoul, DivineRPG.denseSoul, DivineRPG.azuriteSoul, DivineRPG.mythrilSoul});
         //GameRegistry.addShapelessRecipe(new ItemStack(DivineRPG.spawnDex, 1), new Object[] {spawnBase, mythrilSoul, denseSoul, energyCrystalSoul, denseSoul});
-        GameRegistry.addRecipe(new ItemStack(DivineRPG.spawnMamormeter, 1), new Object[] {"XXX", "XYX", "XXX", 'x', DivineRPG.purpleBlaze, 'y', DivineRPG.infernoSword});
+        GameRegistry.addRecipe(new ItemStack(DivineRPG.spawnMamormeter, 1), new Object[] {"xxx", "xyx", "xxx", 'x', DivineRPG.purpleBlaze, 'y', DivineRPG.infernoSword});
         GameRegistry.addShapelessRecipe(new ItemStack(DivineRPG.spawnZichile, 1), new Object[] {DivineRPG.spawnBase, DivineRPG.serenitySoul, DivineRPG.denseSoul, DivineRPG.serenitySoul, DivineRPG.azuriteSoul});
         GameRegistry.addShapelessRecipe(new ItemStack(DivineRPG.spawnTwilightDemon, 1), new Object[] {DivineRPG.spawnBase, DivineRPG.denseSoul, DivineRPG.denseSoul, DivineRPG.azuriteSoul, DivineRPG.mythrilSoul});
         GameRegistry.addShapelessRecipe(new ItemStack(DivineRPG.spawnSoulFiend, 1), new Object[] {DivineRPG.spawnBase, DivineRPG.energyCrystalSoul, DivineRPG.mythrilSoul, DivineRPG.azuriteSoul, DivineRPG.serenitySoul});

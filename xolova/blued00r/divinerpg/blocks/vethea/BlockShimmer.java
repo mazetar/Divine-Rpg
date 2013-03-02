@@ -66,6 +66,6 @@ public class BlockShimmer extends BlockFlower
      */
     public boolean canBlockStay(World par1World, int par2, int par3, int par4)
     {
-        return par3 >= 0 && par3 < 256 ? par1World.getBlockMaterial(par2, par3 - 1, par4) == Material.water && par1World.getBlockMetadata(par2, par3 - 1, par4) == 0 : false;
+        return !par1World.isAirBlock(par2, par3, par4);
     }
 }

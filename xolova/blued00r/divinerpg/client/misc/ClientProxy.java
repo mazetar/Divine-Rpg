@@ -68,8 +68,7 @@ public class ClientProxy extends CommonProxy
         MinecraftForgeClient.preloadTexture(DivineRPG.textureFile);
         MinecraftForgeClient.preloadTexture(DivineRPG.textureFile1);
         MinecraftForgeClient.preloadTexture(DivineRPG.textureFile2);
-        MinecraftForgeClient.preloadTexture(DivineRPG.textureFile3);
-        MinecraftForgeClient.preloadTexture(DivineRPG.textureFile4);
+        MinecraftForgeClient.preloadTexture("/Xolovon4.png");
         MinecraftForgeClient.preloadTexture("/DivineRPG/augite_portal.png");
         MinecraftForgeClient.preloadTexture("/DivineRPG/azurite_portal.png");
         MinecraftForgeClient.preloadTexture("/DivineRPG/dravite_portal.png");

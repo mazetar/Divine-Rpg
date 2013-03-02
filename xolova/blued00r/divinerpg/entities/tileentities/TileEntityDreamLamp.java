@@ -36,23 +36,22 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 	@Override
 	public ItemStack getStackInSlot(int i) 
 	{
+		if(inventory[0] != null && isEmpty)
+		{
+			if((inventory[0].getItem() instanceof ItemCoal))
+			{
+				inventory[0].stackSize--;
+				this.onInventoryChanged();
+				isEmpty = false;
+				coalDuration = 10000;
+				dreamlamp.setTickRandomly(true);
+			}
+		}
         return inventory[i];
 	}
 	
 	public void updateEntity()
 	{
-		if(coalDuration > 0)
-		{
-			--coalDuration;
-			if(coalDuration == 0)
-			{
-				
-			}
-		}
-		else if(shouldLight())
-		{
-			
-		}
 		if(coalDuration > 1)
 			coalDuration--;
 		else if(coalDuration == 1)
@@ -60,21 +59,6 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 			coalDuration = 0;
 			isEmpty = true;
 		}
-	}
-
-	public boolean shouldLight() 
-	{
-		if(inventory[0] != null && inventory[0].stackSize > 0)
-		{
-			ItemStack i = inventory[0];
-            if (!(Item.itemsList[i.itemID] == Item.coal))
-            {
-            	return false;
-            }else{
-            	return true;
-            }
-		}
-		return false;
 	}
 
 	@Override
@@ -126,7 +110,7 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 	@Override
 	public int getInventoryStackLimit()
 	{
-		return 1;
+		return 64;
 	}
 
 	@Override

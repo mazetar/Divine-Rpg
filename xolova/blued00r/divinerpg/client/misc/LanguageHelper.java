@@ -145,6 +145,11 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.creeperpumpkin, "Creeper Pumpkin");
         LanguageRegistry.addName(DivineRPG.skeletonpumpkin, "Skeleton Pumpkin");
         LanguageRegistry.addName(DivineRPG.blazepumpkin, "Blaze Pumpkin");
+        //LanguageRegistry.addName(DivineRPG.arlemiteEssence, "Arlemite Essence");
+        //LanguageRegistry.addName(DivineRPG.crystal, "Crystal");
+        //LanguageRegistry.addName(DivineRPG.crystallite, "Crystallite");
+        //LanguageRegistry.addName(DivineRPG.crystalliteWood, "Glowing Wood");
+        //LanguageRegistry.addName(DivineRPG.rupeestone, "Rupee Stone");
         LanguageRegistry.addName(DivineRPG.rainbowWool, "Rainbow Wool");
         LanguageRegistry.addName(DivineRPG.lavabricks, "Lava Bricks");
         LanguageRegistry.addName(DivineRPG.waterstone, "Water Stone");
@@ -153,6 +158,8 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.ironstairs, "Iron Stairs");
         LanguageRegistry.addName(DivineRPG.goldstairs, "Gold Stairs");
         LanguageRegistry.addName(DivineRPG.sandstairs, "Sand Stairs");
+        //LanguageRegistry.addName(DivineRPG.neonLight, "neonLight");
+        //LanguageRegistry.addName(DivineRPG.kryptonLight, "Krypton Light");
         LanguageRegistry.addName(DivineRPG.bluecrystalline, "Bluefire Lamp");
         LanguageRegistry.addName(DivineRPG.redcrystalline, "Molten Lamp");
         LanguageRegistry.addName(DivineRPG.aqualamp, "Aqua Lamp");
@@ -180,6 +187,7 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.invplate, "Invisible Plate");
         LanguageRegistry.addName(DivineRPG.purplebrickstairs, "Purple Brick Stairs");
         LanguageRegistry.addName(DivineRPG.arlemitebricks, "Arlemite Bricks");
+        //LanguageRegistry.addName(DivineRPG.glowingleaves, "Glowing Leaves");
         LanguageRegistry.addName(DivineRPG.tarMoving, "Tar");
         LanguageRegistry.addName(DivineRPG.tarStill, "Tar");
         //Costumes
@@ -280,6 +288,8 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.serenadeHealth, "Serenade Health");
         LanguageRegistry.addName(DivineRPG.serenadeStriker, "Serenade Striker");
         LanguageRegistry.addName(DivineRPG.crystalSword, "Bluefire Sword");
+        //LanguageRegistry.addName(DivineRPG.crystalleSpikeball, "Arlemite Spikeball");
+        //LanguageRegistry.addName(DivineRPG.purpleBlazingSpikeball, "Rupee Spikeball");
         LanguageRegistry.addName(DivineRPG.blazingCrystalleSword, "Bloodgem Sword");
         LanguageRegistry.addName(DivineRPG.aquaticTrident, "Aquatic Trident");
         LanguageRegistry.addName(DivineRPG.aquaton, "Aquaton");
@@ -319,6 +329,10 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.aquaticBlazeRod, "Aquatic Blaze Rod");
         LanguageRegistry.addName(DivineRPG.krakenScale, "Kraken Scale");
         LanguageRegistry.addName(DivineRPG.krakenSkin, "Kraken Skin");
+        //LanguageRegistry.addName(DivineRPG.crystalle, "Crystalle");
+        //LanguageRegistry.addName(DivineRPG.crystallon, "Crystallon");
+        //LanguageRegistry.addName(DivineRPG.crystatite, "Crystatite");
+        //LanguageRegistry.addName(DivineRPG.plasmon, "Plasmon");
         LanguageRegistry.addName(DivineRPG.purpleBlaze, "Purple Blaze");
         LanguageRegistry.addName(DivineRPG.glowingGem, "BloodGem");
         LanguageRegistry.addName(DivineRPG.chisel, "Chisel");
@@ -327,6 +341,7 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.arlemite, "Arlemite");
         LanguageRegistry.addName(DivineRPG.rupee, "Rupee");
         LanguageRegistry.addName(DivineRPG.realmiteIngot, "Realmite Ingot");
+        //LanguageRegistry.addName(DivineRPG.realmiteEye, "Realmite Eye");
         LanguageRegistry.addName(DivineRPG.netheriteChunk, "Netherite Chunk");
         LanguageRegistry.addName(DivineRPG.netheriteBar, "Netherite Ingot");
         LanguageRegistry.addName(DivineRPG.shadowBar, "Shadow Bar");
@@ -335,6 +350,7 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.yellowCrystallon, "Yellow Diamond Chunk");
         LanguageRegistry.addName(DivineRPG.greenCrystallon, "Green Diamond Chunk");
         LanguageRegistry.addName(DivineRPG.redCrystallon, "Red Diamond Chunk");
+        //LanguageRegistry.addName(DivineRPG.eliteEmpoweredRealmiteEye, "Elite Empowered Realmite Eye");
         //Food
         LanguageRegistry.addName(DivineRPG.donut, "Donut");
         LanguageRegistry.addName(DivineRPG.pizzaDough, "Pizza Dough");
@@ -384,6 +400,7 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.angelicBoots, "Angelic Feet");
         LanguageRegistry.addName(DivineRPG.angelicHead, "Angelic Helmet");
         LanguageRegistry.addName(DivineRPG.angelicLegs, "Angelic Legs");
+        //LanguageRegistry.addName(DivineRPG.moltenFurnaceIdle, "Molten Hellstone Furnace");
         LanguageRegistry.addName(DivineRPG.divineShovel, "Divine Shovel");
         LanguageRegistry.addName(DivineRPG.divinePickaxe, "Divine Pickaxe");
         LanguageRegistry.addName(DivineRPG.divineAxe, "Divine Axe");
@@ -391,8 +408,12 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.whiteMushroomSeeds, "White Mushroom Seeds");
         LanguageRegistry.addName(DivineRPG.tomatoPlant, "Tomato Plant");
         LanguageRegistry.addName(DivineRPG.mushroomPlant, "White Mushroom Plant");
+        //LanguageRegistry.addName(DivineRPG.wormChunk, "Worm Chunk");
+        //LanguageRegistry.addName(DivineRPG.wormTeeth, "Worm Teeth");
+        //LanguageRegistry.addName(DivineRPG.wormSpawn, "Call Of The Worm");
         LanguageRegistry.addName(DivineRPG.spikes, "Spike Block");
         LanguageRegistry.addName(DivineRPG.elevantium, "Elevantium");
+        //LanguageRegistry.addName(DivineRPG.grappleCannon, "Grappling Cannon");
         LanguageRegistry.addName(DivineRPG.seranadeDeath, "Serenade Of Death");
         LanguageRegistry.addName(DivineRPG.watcherSpawn, "Call Of The Watcher");
         LanguageRegistry.addName(DivineRPG.watcherEye, "Watching Eye");
@@ -460,6 +481,7 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.yellowCrystalline, "Divine Lamp");
         LanguageRegistry.addName(DivineRPG.serenityChest, "Dravite Chest");
         LanguageRegistry.addName(DivineRPG.energyRail, "Uvite Rail");
+        //LanguageRegistry.addName(DivineRPG.energyCrystalRailCurve, "Energy Crystal Rail Curve");
         LanguageRegistry.addName(DivineRPG.yellowWood, "Yellow Logs");
         LanguageRegistry.addName(DivineRPG.redWood, "Red Logs");
         LanguageRegistry.addName(DivineRPG.greenWood, "Green Logs");
@@ -468,6 +490,7 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.pinkGlowBoneTree, "Pink Glowbone Tree");
         LanguageRegistry.addName(DivineRPG.purpleGlowBoneTree, "Purple Glowbone Tree");
         LanguageRegistry.addName(DivineRPG.moonBulb, "Moonbulbs");
+        //LanguageRegistry.addName(DivineRPG.twilightFurnaceOff, "Twilight Furnace");
         LanguageRegistry.addName(DivineRPG.serenityBlock, "Dravite Block");
         LanguageRegistry.addName(DivineRPG.azuriteBlock, "Azurite Block");
         LanguageRegistry.addName(DivineRPG.energyBlock, "Uvite Block");
@@ -495,7 +518,16 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.energyDirt, "Uvite Dirt");
         LanguageRegistry.addName(DivineRPG.azuriteVines, "Azurite Vines");
         LanguageRegistry.addName(DivineRPG.denseDirt, "Augite Dirt");
+//        LanguageRegistry.addName(DivineRPG.denseReed, "Augite Canes");
+//        LanguageRegistry.addName(DivineRPG.mythilReed, "Mythril Canes");
+//        LanguageRegistry.addName(DivineRPG.energyFlower, "Uvite Flower");
+//        LanguageRegistry.addName(DivineRPG.azuriteFlower, "Azurite Flower");
+//        LanguageRegistry.addName(DivineRPG.serenityFlower, "Dravite Flower");
         LanguageRegistry.addName(DivineRPG.greenTorch, "Dravite Torch");
+//        LanguageRegistry.addName(DivineRPG.twilightShicaxe, "Twilight Shicaxe");
+//        LanguageRegistry.addName(DivineRPG.twilightShovel, "Twilight Shovel");
+//        LanguageRegistry.addName(DivineRPG.twilightPickaxe, "Twilight Pickaxe");
+//        LanguageRegistry.addName(DivineRPG.twilightAxe, "Twilight Axe");
         LanguageRegistry.addName(DivineRPG.serenityShovel, "Dravite Shovel");
         LanguageRegistry.addName(DivineRPG.serenityPickaxe, "Dravite Pickaxe");
         LanguageRegistry.addName(DivineRPG.serenityAxe, "Dravite Axe");
@@ -512,6 +544,7 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.densePickaxe, "Augite Pickaxe");
         LanguageRegistry.addName(DivineRPG.denseAxe, "Augite Axe");
         LanguageRegistry.addName(DivineRPG.pumpkinPie, "Hot Pumpkin Pie");
+        //LanguageRegistry.addName(DivineRPG.tarBucket, "Bucket Of Tar");
         LanguageRegistry.addName(DivineRPG.twilightClock, "Twilight Clock");
         LanguageRegistry.addName(DivineRPG.spawnBase, "Base Spawn Crystal");
         LanguageRegistry.addName(DivineRPG.spawnSoulFiend, "Soul Fiend Crystal");
@@ -522,6 +555,19 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.spawnReyvor, "Reyvor Crystal");
         LanguageRegistry.addName(DivineRPG.spawnMamormeter, "Infernal Flame");
         LanguageRegistry.addName(DivineRPG.spawnZichile, "Zichile Crystal");
+        //LanguageRegistry.addName(DivineRPG.spawnDex, "Dex Crystal");
+//        LanguageRegistry.addName(DivineRPG.dropSoulFiend, "Soul Of Soul Fiend");
+//        LanguageRegistry.addName(DivineRPG.dropVamacheron, "Soul Of Vamacheron");
+//        LanguageRegistry.addName(DivineRPG.dropTwilightDemon, "Soul Of TwilightDemon");
+//        LanguageRegistry.addName(DivineRPG.dropKAROT, "Soul Of Kar-OT");
+//        LanguageRegistry.addName(DivineRPG.dropDensos, "Soul Of Densos");
+//        LanguageRegistry.addName(DivineRPG.dropReyvor, "Soul Of Reyvor");
+//        LanguageRegistry.addName(DivineRPG.dropMamormeter, "Soul Of Mamormeter");
+//        LanguageRegistry.addName(DivineRPG.dropZichile, "Soul Of Zichile");
+//        LanguageRegistry.addName(DivineRPG.dropDex, "Soul Of Dex");
+//        LanguageRegistry.addName(DivineRPG.twilightEssence, "Twilight Essence");
+//        LanguageRegistry.addName(DivineRPG.pureTwilightEssence, "Pure Twilight Essence");
+//        LanguageRegistry.addName(DivineRPG.ultimaStonePlus, "Halite Stones Plus");
         LanguageRegistry.addName(DivineRPG.denseSoul, "Augite Soul");
         LanguageRegistry.addName(DivineRPG.mythrilSoul, "Mythril Soul");
         LanguageRegistry.addName(DivineRPG.azuriteSoul, "Azurite Soul");
@@ -536,6 +582,9 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.growthSerenade, "Serenade Of Life");
         LanguageRegistry.addName(DivineRPG.azuriteArrow, "Azurite Arrows");
         LanguageRegistry.addName(DivineRPG.furyArrow, "Fury Arrows");
+//        LanguageRegistry.addName(DivineRPG.orichalcum, "Orichalcum");
+//        LanguageRegistry.addName(DivineRPG.orichalcumPlus, "Orichalcum Plus");
+//        LanguageRegistry.addName(DivineRPG.ultimaStone, "Halite Stones");
         LanguageRegistry.addName(DivineRPG.magicMeat, "Magic Meat");
         LanguageRegistry.addName(DivineRPG.magicMeatPlus, "Enriched Magic Meat");
         LanguageRegistry.addName(DivineRPG.empoweredMeatRaw, "Raw Empowered Meat");
@@ -609,12 +658,22 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.ultimaBoots, "Halite Boots");
         LanguageRegistry.addName(DivineRPG.ultimaLegs, "Halite Legs");
         LanguageRegistry.addName(DivineRPG.ultimaBody, "Halite Body");
+//        LanguageRegistry.addName(DivineRPG.twilightBlade, "Twilight Blade");
+//        LanguageRegistry.addName(DivineRPG.twilightBlitz, "Twilight Blitz");
+//        LanguageRegistry.addName(DivineRPG.twilightPhaser, "Twilight Phaser");
+//        LanguageRegistry.addName(DivineRPG.twilightSlicer, "Twilight Slicer");
+//        LanguageRegistry.addName(DivineRPG.twilightBow, "Twilight Bow");
+//        LanguageRegistry.addName(DivineRPG.twilightHead, "Twilight Helmet");
+//        LanguageRegistry.addName(DivineRPG.twilightBoots, "Twilight Boots");
+//        LanguageRegistry.addName(DivineRPG.twilightLegs, "Twilight Legs");
+//        LanguageRegistry.addName(DivineRPG.twilightBody, "Twilight Body");
         LanguageRegistry.addName(DivineRPG.homeTeleporter, "Teleportation Crystal");
         LanguageRegistry.addName(DivineRPG.serenityDust, "Dravite Dust");
         LanguageRegistry.addName(DivineRPG.azuriteDust, "Azurite Dust");
         LanguageRegistry.addName(DivineRPG.energyDust, "Uvite Dust");
         LanguageRegistry.addName(DivineRPG.mythrilDust, "Mythril Dust");
         LanguageRegistry.addName(DivineRPG.denseDust, "Augite Dust");
+        //LanguageRegistry.addName(DivineRPG.crabClawMaul, "Crabclaw Maul");
         LanguageRegistry.addName(DivineRPG.sharkSword, "Shark Sword");
         LanguageRegistry.addName(DivineRPG.oceanKnife, "Ocean Knife");
         LanguageRegistry.addName(DivineRPG.crabClawCannon, "Crabclaw Cannon");
@@ -999,6 +1058,8 @@ public class LanguageHelper
         LanguageRegistry.addName(DivineRPG.DramixStatue, "Dramix Statue");
         
         LanguageRegistry.addName(DivineRPG.ayeracoSpawner,"Horde Horn");
+        
+        LanguageRegistry.addName(DivineRPG.infusionTable, "Infusion Table");
         
         addAchievementLocalizations();
         

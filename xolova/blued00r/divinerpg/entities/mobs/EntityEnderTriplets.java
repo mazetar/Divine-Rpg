@@ -2,7 +2,6 @@ package xolova.blued00r.divinerpg.entities.mobs;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.ChunkCoordinates;
@@ -15,7 +14,7 @@ import xolova.blued00r.divinerpg.entities.mobs.projectile.EntityTripletProjectil
 import xolova.blued00r.divinerpg.entities.mobs.twilight.EntityAngryBunny;
 import xolova.blued00r.divinerpg.utils.AchievementPageDivineRPG;
 
-public class EntityEnderTriplets extends EntityMob
+public class EntityEnderTriplets extends EntityEnderWatcher
 {
     public int courseChangeCooldown = 0;
     public double waypointX;

@@ -1,6 +1,7 @@
 package xolova.blued00r.divinerpg;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.EnumMobType;
@@ -29,30 +30,17 @@ import xolova.blued00r.divinerpg.blocks.iceika.BlockIceikaGlacideSpawner2;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockAcid;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockBacterialAcid;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockBarredDoor;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockBiphronSpawner;
+import xolova.blued00r.divinerpg.blocks.vethea.BlockDreambricks;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockDreamgrass;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockDreamwood;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockDreamwoodLeaves;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockDreamwreckerSpawner;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockDuoSpawner;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockFirewood;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockGorgosionSpawner;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockHelioticBeam;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockHyrewood;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockInfusionTable;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockKarosAltar;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockKarosHeatTileGreen;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockKarosHeatTileRed;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockLorgaSpawner;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockLunicAltar;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockMintwood;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockRaglokAltar;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockShimmer;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockTwinsSpawner;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockVermenousSpawner;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockVetheaPlant;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockWeedwoodVine;
-import xolova.blued00r.divinerpg.blocks.vethea.BlockWreckAltar;
 import xolova.blued00r.divinerpg.client.misc.ClientPacketHandler;
 import xolova.blued00r.divinerpg.client.misc.LogHelper;
 import xolova.blued00r.divinerpg.client.misc.VersionHelper;
@@ -1381,6 +1369,8 @@ public class DivineRPG
     public static String textureFile = "/Xolovon.png";
     public static String textureFile1 = "/Xolovon1.png";
     public static String textureFile2 = "/Xolovon2.png";
+    public static String textureFile3 = "/Xolovon3.png";
+    public static String textureFile4 = "/Xolovon4.png";
     public static int tarTexture = 255;
     public static int draviteTexture = 136;
     public static int azuriteTexture = 137;
@@ -2168,25 +2158,6 @@ public class DivineRPG
     public static Block karosBricks;
     public static int karosBricks2ID;
     public static Block karosBricks2;
-    public static int hungerstone1ID;
-    public static Block hungerstone1;
-    public static int hungerstone2ID;
-    public static Block hungerstone2;
-
-    public static int biphronSpawnerID;
-    public static Block biphronSpawner;
-    public static int gorgosionSpawnerID;
-    public static Block gorgosionSpawner;
-    public static int duoSpawnerID;
-    public static Block duoSpawner;
-    public static int twinsSpawnerID;
-    public static Block twinsSpawner;
-    public static int vermenousSpawnerID;
-    public static Block vermenousSpawner;
-    public static int dreamwreckerSpawnerID;
-    public static Block dreamwreckerSpawner;
-    public static int lorgaSpawnerID;
-    public static Block lorgaSpawner;
     
     /*
      * 1.3 Items
@@ -2234,7 +2205,6 @@ public class DivineRPG
         dreamstoneID = var2.getTerrainBlock("Vethea Gen", "dreamstone", 220, "").getInt();
         dreamgrassID = var2.getTerrainBlock("Vethea Gen", "dreamgrass", 221, "").getInt();
         dreamdirtID = var2.getTerrainBlock("Vethea Gen", "dreamdirt", 222, "").getInt();
-        firecrystalID = var2.getTerrainBlock("Vethea Gen", "firecrystalID", 223, "").getInt();
         /*
          * Pre-1.3 Blocks
          */
@@ -2611,6 +2581,7 @@ public class DivineRPG
         infusionTableID = var2.getBlock("infusionTable", 789).getInt();
         cellLampID = var2.getBlock("cellLamp", 790).getInt();
         barredDoorID = var2.getBlock("barredDoor", 791).getInt();
+        firecrystalID = var2.getBlock("firecrystal", 792).getInt();
         firelightID = var2.getBlock("firelight", 793).getInt();
         hyrewoodID = var2.getBlock("hyrewood", 794).getInt();
         mintwoodLeavesID = var2.getBlock("mintwoodLeaves", 795).getInt();
@@ -2655,17 +2626,6 @@ public class DivineRPG
         darkEverstoneID = var2.getBlock("darkEverstone", 834).getInt();
         karosBricksID = var2.getBlock("karosBricks", 835).getInt();
         karosBricks2ID = var2.getBlock("karosBricks2", 836).getInt();
-        
-
-        biphronSpawnerID = var2.getBlock("briphronSpawner", 837).getInt();
-        gorgosionSpawnerID = var2.getBlock("gorgosionSpawner", 838).getInt();
-        twinsSpawnerID = var2.getBlock("twinsSpawner", 839).getInt();
-        duoSpawnerID = var2.getBlock("duoSpawner", 840).getInt();
-        vermenousSpawnerID = var2.getBlock("vermenousSpawner", 841).getInt();
-        dreamwreckerSpawnerID = var2.getBlock("dreamwreckerSpawner", 842).getInt();
-        lorgaSpawnerID = var2.getBlock("lorgaSpawner", 843).getInt();
-        hungerstone1ID = var2.getBlock("hungerstone1", 844).getInt();
-        hungerstone2ID = var2.getBlock("hungerstone2", 845).getInt();
         
         /*
          * Pre-1.3 Items
@@ -3274,6 +3234,17 @@ public class DivineRPG
         WatcherStatue = new BlockWatcherStatue(WatcherStatueID).setBlockName("WatcherStatue").setTextureFile("/Xolovon.png").setCreativeTab(tabBlocks);
         ParasectaStatue = new BlockParasectaStatue(ParasectaStatueID).setBlockName("ParasectaStatue").setTextureFile("/Xolovon.png").setCreativeTab(tabBlocks);
         DramixStatue = new BlockDramixStatue(DramixStatueID).setBlockName("DramixStatue").setTextureFile("/Xolovon.png").setCreativeTab(tabBlocks);
+        
+        
+        serenityBiome = new BiomeGenSerenity(draviteBiomeID);
+        energyBiome = new BiomeGenEnergy(uviteBiomeID);
+        azuriteBiome = new BiomeGenAzurite(azuriteBiomeID);
+        mythilBiome = new BiomeGenMythil(mythrilBiomeID);
+        denseBiome = new BiomeGenDense(augiteBiomeID);
+        arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
+        IceikaMountains = new BiomeGenIceikaMountians(iceikaBiomeID);
+        arksianeBiome = new BiomeGenArksiane(arksianeBiomeID);
+        heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);
         
         /*
          * Blocks
@@ -3953,6 +3924,19 @@ public class DivineRPG
         spawnReyvor = new ItemDualSpawner(spawnReyvorID).setIconIndex(230).setItemName("spawnReyvor").setCreativeTab(tabSpawner);
         spawnMamormeter = new ItemSpawners4(spawnMamormeterID).setIconIndex(231).setItemName("spawnMamormeter").setCreativeTab(tabSpawner);
         spawnZichile = new ItemSpawners5(spawnZichileID).setIconIndex(232).setItemName("spawnzichile").setCreativeTab(tabSpawner);
+        //spawnDex = new ItemSpawners6(spawnDexID).setIconIndex(233).setItemName("spawndex").setCreativeTab(tabSpawner);
+//        dropSoulFiend = new ItemXolovon1(dropSoulFiendID).setIconIndex(240).setItemName("dropsoulfiend").setCreativeTab(tabItems);
+//        dropVamacheron = new ItemXolovon1(dropVamacheronID).setIconIndex(241).setItemName("dropvamacheron").setCreativeTab(tabItems);
+//        dropTwilightDemon = new ItemXolovon1(dropTwilightDemonID).setIconIndex(242).setItemName("droptwilightdemon").setCreativeTab(tabItems);
+//        dropKAROT = new ItemXolovon1(dropKAROTID).setIconIndex(243).setItemName("dropkarot").setCreativeTab(tabItems);
+//        dropDensos = new ItemXolovon1(dropDensosID).setIconIndex(244).setItemName("dropdensos").setCreativeTab(tabItems);
+//        dropReyvor = new ItemXolovon1(dropReyvorID).setIconIndex(245).setItemName("dropReyvor").setCreativeTab(tabItems);
+//        dropMamormeter = new ItemXolovon1(dropMamormeterID).setIconIndex(246).setItemName("dropMamormeter").setCreativeTab(tabItems);
+//        dropZichile = new ItemXolovon1(dropZichileID).setIconIndex(247).setItemName("dropzichile").setCreativeTab(tabItems);
+//        dropDex = new ItemXolovon1(dropDexID).setIconIndex(248).setItemName("dropdex").setCreativeTab(tabItems);
+//        twilightEssence = new ItemXolovon1(twilightEssenceID).setIconIndex(250).setItemName("twilightEssence").setCreativeTab(tabItems);
+//        pureTwilightEssence = new ItemXolovon1(pureTwilightEssenceID).setIconIndex(251).setItemName("twilightessence+").setCreativeTab(tabItems);
+//        ultimaStonePlus = new ItemXolovon1(ultimaStonePlusID).setIconIndex(249).setItemName("ultimastone+").setCreativeTab(tabItems);
         serenitySoul = new ItemXolovon1(serenitySoulID).setIconIndex(234).setItemName("serenitySoul").setCreativeTab(tabItems);
         energyCrystalSoul = new ItemXolovon1(energyCrystalSoulID).setIconIndex(235).setItemName("energySoul").setCreativeTab(tabItems);
         azuriteSoul = new ItemXolovon1(azuriteSoulID).setIconIndex(236).setItemName("azuriteSoul").setCreativeTab(tabItems);
@@ -4215,26 +4199,26 @@ public class DivineRPG
         lunastone = new Block(lunastoneID, 27, Material.rock).setBlockName("lunastone").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         lunabricks = new Block(lunabricksID, 28, Material.rock).setBlockName("lunabricks").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         metalCaging = new Block(metalCagingID, 29, Material.rock).setBlockName("metalCaging").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        dreamlampOn = new Block(dreamlampOnID, 30, Material.glass).setLightValue(1F).setBlockName("dreamlampOn").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        dreamlamp = new Block(dreamlampID, 31, Material.glass).setBlockName("dreamlamp").setHardness(1F).setStepSound(Block.soundGlassFootstep).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        dreamlampOn = new BlockDreamLamp(dreamlampOnID, 30, Material.glass, true).setBlockName("dreamlampOn").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        dreamlamp = new BlockDreamLamp(dreamlampID, 31, Material.glass, false).setBlockName("dreamlamp").setHardness(1F).setStepSound(Block.soundGlassFootstep).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         weedwoodVine = new BlockWeedwoodVine(weedwoodVineID, 41).setBlockName("weedwoodVine").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         blossomingWeedwoodVine = new BlockWeedwoodVine(blossomingWeedwoodVineID, 42).setBlockName("blossomingWeedwoodVine").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         cryptWall = new Block(cryptWallID, 43, Material.rock).setBlockName("cryptWall").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        smoothGlass = new BlockGlass(smoothGlassID, 44, Material.glass, true).setStepSound(Block.soundGlassFootstep).setBlockName("smoothGlass").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        smoothGlass = new BlockGlass(smoothGlassID, 44, Material.glass, false).setStepSound(Block.soundGlassFootstep).setBlockName("smoothGlass").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         villageLamp = new Block(villageLampID, 45, Material.glass).setBlockName("villageLamp").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         cellLamp = new Block(cellLampID, 57, Material.glass).setBlockName("cellLamp").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         barredDoor = new BlockBarredDoor(barredDoorID, Material.iron, 58).setBlockName("barredDoor").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         firecrystal = new Block(firecrystalID, 60, Material.glass).setBlockName("firecrystal").setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         firelight = new Block(firelightID, 60, Material.glass).setBlockName("firelight").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        hyrewood = new BlockHyrewood(hyrewoodID).setBlockName("hyrewood").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        hyrewood = new Block(hyrewoodID, 62, Material.wood).setBlockName("hyrewood").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         mintwoodLeaves = new BlockDreamwoodLeaves(mintwoodLeavesID, 63).setBlockName("mintwoodLeaves").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         firewall = new Block(firewallID, 73, Material.rock).setBlockName("firewall").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        karosHeatTileGreen = new BlockKarosHeatTileGreen(karosHeatTileGreenID, false, 75).setBlockName("karosHeatTileGreen").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        karosHeatTileGreen = new BlockKarosHeatTileGreen(karosHeatTileGreenID, false, 73).setBlockName("karosHeatTileGreen").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         karosHeatTileRed = new BlockKarosHeatTileRed(karosHeatTileRedID, true, 74).setBlockName("karosHeatTileRed").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         firewood = new BlockFirewood(firewoodID).setBlockName("firewood").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         bacterialAcid = new BlockBacterialAcid(bacterialAcidID, 105).setBlockName("bacterialAcid").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         blockAcid = new BlockAcid(blockAcidID, 108).setBlockName("blockAcid").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        everstone = new Block(everstoneID, 140, Material.rock).setBlockName("everstone").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        everstone = new BlockDreambricks(everstoneID).setBlockName("everstone").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         lunicAcid = new BlockBacterialAcid(lunicAcidID, 141).setBlockName("lunicAcid").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         firewoodLeaves = new BlockDreamwoodLeaves(firewoodLeavesID, 142).setBlockName("firewoodLeaves").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         hyrewoodLeaves = new BlockDreamwoodLeaves(hyrewoodLeavesID, 143).setBlockName("hyrewoodLeaves").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
@@ -4242,7 +4226,7 @@ public class DivineRPG
         gemtopPurple = new BlockVetheaPlant(gemtopPurpleID, 154).setBlockName("gemtopPurple").setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
         yellowDulah = new BlockVetheaPlant(yellowDulahID, 155).setBlockName("yellowDulah").setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
         greenDulah = new BlockVetheaPlant(greenDulahID, 156).setBlockName("greenDulah").setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
-        mintwood = new BlockMintwood(mintwoodID).setBlockName("mint").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        mintwood = new BlockDreamwood(mintwoodID).setBlockName("mint").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         lightFirewoodLeaves = new BlockDreamwoodLeaves(lightFirewoodLeavesID, 158).setBlockName("lightFirewoodLeaves").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         cracklespike = new BlockVetheaPlant(cracklespikeID, 169).setBlockName("cracklespike").setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
         fernite = new BlockVetheaPlant(ferniteID, 170).setBlockName("fernite").setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
@@ -4257,52 +4241,19 @@ public class DivineRPG
         chamberWall1 = new Block(chamberWall1ID, 92, Material.rock).setBlockName("chamberWall1").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         chamberWall2 = new Block(chamberWall2ID, 93, Material.rock).setBlockName("chamberWall2").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         whiteEverstone = new Block(whiteEverstoneID, 139, Material.rock).setBlockName("whiteEverstone").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        darkEverstone = new Block(darkEverstoneID, 138, Material.rock).setBlockName("darkEverstone").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        wreckAltar = new BlockWreckAltar(wreckAltarID).setBlockName("wreckAltar").setBlockUnbreakable().setResistance(999F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        raglokAltar = new BlockRaglokAltar(raglokAltarID).setBlockName("raglokAltar").setBlockUnbreakable().setResistance(999F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        karosAltar = new BlockKarosAltar(karosAltarID).setBlockName("karosAltar").setBlockUnbreakable().setResistance(999F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        lunicAltar = new BlockLunicAltar(lunicAltarID).setBlockName("lunicAltar").setBlockUnbreakable().setResistance(999F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        quadroticAltar = new Block(quadroticAltarID, 137, Material.rock).setBlockName("quadroticAltar").setBlockUnbreakable().setResistance(999F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        infusionTable = new BlockInfusionTable(infusionTableID).setBlockName("infusionTable").setBlockUnbreakable().setResistance(999F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        hungerstone1 = new Block(hungerstone1ID, 106, Material.rock).setBlockName("hungerstone1").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        hungerstone2 = new Block(hungerstone2ID, 107, Material.rock).setBlockName("hungerstone2").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        cryptFloor = new Block(cryptFloorID, 79, Material.rock).setBlockName("cryptFloor").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        hallWall = new Block(hallWallID, 109, Material.rock).setBlockName("hallWall").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        karosBricks = new Block(karosBricksID, 94, Material.rock).setBlockName("karosBricks").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        karosBricks2 = new Block(karosBricks2ID, 95, Material.rock).setBlockName("karosBricks2").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        helioticBeam = new BlockHelioticBeam(helioticBeamID).setBlockName("helioticBeam").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        karosCannon = new Block(karosCannonID, 95, Material.rock).setBlockName("karosCannon").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        
-        /*
-         * Spawners
-         */
-        biphronSpawner = new BlockBiphronSpawner(biphronSpawnerID, 60).setBlockName("biphronSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        gorgosionSpawner = new BlockGorgosionSpawner(gorgosionSpawnerID, 60).setBlockName("gorgosionSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        duoSpawner = new BlockDuoSpawner(duoSpawnerID, 60).setBlockName("duoSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        twinsSpawner = new BlockTwinsSpawner(twinsSpawnerID, 60).setBlockName("twinsSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        vermenousSpawner = new BlockVermenousSpawner(vermenousSpawnerID, 60).setBlockName("vermenousSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        dreamwreckerSpawner = new BlockDreamwreckerSpawner(dreamwreckerSpawnerID, 60).setBlockName("dreamwreckerSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        lorgaSpawner = new BlockLorgaSpawner(lorgaSpawnerID, 60).setBlockName("lorgaSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        
+        darkEverstone = new Block(darkEverstoneID, 140, Material.rock).setBlockName("darkEverstone").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        infusionTable = new BlockInfusionTable(infusionTableID, 141).setBlockName("infusionTable").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
+        //Need to make class will do
+        wreckAltar = new Block(wreckAltarID, 140, Material.rock).setBlockName("wreckAltar").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        raglokAltar = new Block(raglokAltarID, 140, Material.rock).setBlockName("wreckAltar").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        karosAltar = new Block(karosAltarID, 140, Material.rock).setBlockName("wreckAltar").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        lunicAltar = new Block(lunicAltarID, 140, Material.rock).setBlockName("wreckAltar").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        quadroticAltar = new Block(quadroticAltarID, 137, Material.rock).setBlockName("wreckAltar").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         
         //TODO
         /*
          * 1.3 Item Inits
          */
-        
-        
-        /*
-         * Biomes
-         */
-        serenityBiome = new BiomeGenSerenity(draviteBiomeID);
-        energyBiome = new BiomeGenEnergy(uviteBiomeID);
-        azuriteBiome = new BiomeGenAzurite(azuriteBiomeID);
-        mythilBiome = new BiomeGenMythil(mythrilBiomeID);
-        denseBiome = new BiomeGenDense(augiteBiomeID);
-        arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
-        IceikaMountains = new BiomeGenIceikaMountians(iceikaBiomeID);
-        arksianeBiome = new BiomeGenArksiane(arksianeBiomeID);
-        heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);
         
         proxy.addCraftingMaterials();
         
@@ -4330,7 +4281,87 @@ public class DivineRPG
         DimensionManager.registerProviderType(vetheaID, WorldProviderVethea.class, true);
         DimensionManager.registerDimension(vetheaID, vetheaID);
         NetworkRegistry.instance().registerGuiHandler(this, guiHandler);
-        
+        //TickRegistry.registerTickHandler(new xolova.blued00r.divinerpg.client.misc.ClientTickHandler(EnumSet.of(TickType.CLIENT)), Side.CLIENT);
+        //TickRegistry.registerTickHandler(new xolova.blued00r.divinerpg.misc.ServerTickHandler(EnumSet.of(TickType.SERVER)), Side.SERVER);
+        //TickRegistry.registerTickHandler(new ClientTickHandler(), Side.CLIENT);
+        //Block.blocksList[Block.fire.blockID] = null;
+        //Block.blocksList[Block.fire.blockID] = (new BlockBlueFire(Block.fire.blockID, Block.fire.blockIndexInTexture)).setBlockName("fire");
+        //Tool Manager
+        MinecraftForge.setToolClass(realmitePickaxe, "pickaxe", 3);
+        MinecraftForge.setToolClass(bedrockPickaxe, "pickaxe", 3);
+        MinecraftForge.setToolClass(donatorPickaxe, "pickaxe", 3);
+        MinecraftForge.setToolClass(crystalPickaxe, "pickaxe", 3);
+        MinecraftForge.setToolClass(plasmaPickaxe, "pickaxe", 6);
+        //MinecraftForge.setToolClass(oreHater, "pickaxe", 3);
+        MinecraftForge.setToolClass(divinePickaxe, "pickaxe", 6);
+        MinecraftForge.setToolClass(realmiteAxe, "axe", 3);
+        MinecraftForge.setToolClass(bedrockAxe, "axe", 3);
+        MinecraftForge.setToolClass(donatorAxe, "axe", 3);
+        MinecraftForge.setToolClass(crystalAxe, "axe", 3);
+        MinecraftForge.setToolClass(plasmaAxe, "axe", 6);
+        //MinecraftForge.setToolClass(woodHater, "axe", 3);
+        MinecraftForge.setToolClass(divineAxe, "axe", 6);
+        MinecraftForge.setToolClass(realmiteShovel, "shovel", 3);
+        MinecraftForge.setToolClass(bedrockShovel, "shovel", 3);
+        MinecraftForge.setToolClass(donatorShovel, "shovel", 3);
+        MinecraftForge.setToolClass(crystalShovel, "shovel", 3);
+        MinecraftForge.setToolClass(plasmaShovel, "shovel", 6);
+        //MinecraftForge.setToolClass(dirtHater, "shovel", 3);
+        MinecraftForge.setToolClass(divineShovel, "shovel", 6);
+        //Shicaxes
+        MinecraftForge.setToolClass(crystalShicaxe, "pickaxe", 3);
+        MinecraftForge.setToolClass(crystalShicaxe, "axe", 3);
+        MinecraftForge.setToolClass(crystalShicaxe, "shovel", 3);
+        MinecraftForge.setToolClass(plasmaShicaxe, "shickaxe", 6);
+//        MinecraftForge.setToolClass(twilightShicaxe, "pickaxe", 6);
+//        MinecraftForge.setToolClass(twilightShicaxe, "axe", 6);
+//        MinecraftForge.setToolClass(twilightShicaxe, "shovel", 6);
+//        MinecraftForge.setToolClass(twilightPickaxe, "pickaxe", 6);
+//        MinecraftForge.setToolClass(twilightAxe, "axe", 6);
+//        MinecraftForge.setToolClass(twilightShovel, "shovel", 6);
+        MinecraftForge.setToolClass(serenityPickaxe, "pickaxe", 6);
+        MinecraftForge.setToolClass(serenityAxe, "axe", 6);
+        MinecraftForge.setToolClass(serenityShovel, "shovel", 6);
+        MinecraftForge.setToolClass(azuritePickaxe, "pickaxe", 6);
+        MinecraftForge.setToolClass(azuriteAxe, "axe", 6);
+        MinecraftForge.setToolClass(azuriteShovel, "shovel", 6);
+        MinecraftForge.setToolClass(energyPickaxe, "pickaxe", 6);
+        MinecraftForge.setToolClass(energyAxe, "axe", 6);
+        MinecraftForge.setToolClass(energyShovel, "shovel", 6);
+        MinecraftForge.setToolClass(mythrilPickaxe, "pickaxe", 6);
+        MinecraftForge.setToolClass(mythrilAxe, "axe", 6);
+        MinecraftForge.setToolClass(mythrilShovel, "shovel", 6);
+        MinecraftForge.setToolClass(densePickaxe, "pickaxe", 6);
+        MinecraftForge.setToolClass(denseAxe, "axe", 6);
+        MinecraftForge.setToolClass(denseShovel, "shovel", 6);
+        MinecraftForge.setBlockHarvestLevel(twilightStone, "pickaxe", 6);
+        MinecraftForge.setBlockHarvestLevel(serenityOre, "pickaxe", 6);
+        MinecraftForge.setBlockHarvestLevel(azuriteOre, "pickaxe", 6);
+        MinecraftForge.setBlockHarvestLevel(energyOre, "pickaxe", 6);
+        MinecraftForge.setBlockHarvestLevel(mythilOre, "pickaxe", 6);
+        MinecraftForge.setBlockHarvestLevel(denseOre, "pickaxe", 6);
+        MinecraftForge.setBlockHarvestLevel(serenityGrass, "shovel", 6);
+        MinecraftForge.setBlockHarvestLevel(serenityDirt, "shovel", 6);
+        MinecraftForge.setBlockHarvestLevel(azuriteGrass, "shovel", 6);
+        MinecraftForge.setBlockHarvestLevel(azuriteDirt, "shovel", 6);
+        MinecraftForge.setBlockHarvestLevel(mythilGrass, "shovel", 6);
+        MinecraftForge.setBlockHarvestLevel(mythilDirt, "shovel", 6);
+        MinecraftForge.setBlockHarvestLevel(energyGrass, "shovel", 6);
+        MinecraftForge.setBlockHarvestLevel(energyDirt, "shovel", 6);
+        MinecraftForge.setBlockHarvestLevel(denseGrass, "shovel", 6);
+        MinecraftForge.setBlockHarvestLevel(denseDirt, "shovel", 6);
+        MinecraftForge.setBlockHarvestLevel(yellowWood, "axe", 6);
+        MinecraftForge.setBlockHarvestLevel(serenityLeaves, "axe", 6);
+        MinecraftForge.setBlockHarvestLevel(blueWood, "axe", 6);
+        MinecraftForge.setBlockHarvestLevel(azuriteLeaves, "axe", 6);
+        MinecraftForge.setBlockHarvestLevel(purpleWood, "axe", 6);
+        MinecraftForge.setBlockHarvestLevel(energyLeaves, "axe", 6);
+        MinecraftForge.setBlockHarvestLevel(whiteWood, "axe", 6);
+        MinecraftForge.setBlockHarvestLevel(mythilLeaves, "axe", 6);
+        MinecraftForge.setBlockHarvestLevel(redWood, "axe", 6);
+        MinecraftForge.setBlockHarvestLevel(denseLeaves, "axe", 6);
+        MinecraftForge.removeBlockEffectiveness(twilightStone, "shovel");
+        MinecraftForge.removeBlockEffectiveness(twilightStone, "axe");
         
         GameRegistry.registerWorldGenerator(new WorldGenDivineMinable());
         GameRegistry.registerCraftingHandler(new CraftingHandler());

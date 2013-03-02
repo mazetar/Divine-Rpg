@@ -39,6 +39,14 @@ public class BlockFirewood extends Block
     }
 
     /**
+     * Returns the ID of the items to drop on destruction.
+     */
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
+        return DivineRPG.dreamwood.blockID;
+    }
+
+    /**
      * ejects contained items into the world, and notifies neighbours of an update, as appropriate
      */
     public void breakBlock(World par1World, int par2, int par3, int par4, int par5, int par6)

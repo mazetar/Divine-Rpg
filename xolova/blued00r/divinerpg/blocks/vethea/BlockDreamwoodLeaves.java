@@ -208,6 +208,14 @@ public class BlockDreamwoodLeaves extends BlockLeavesBase implements IShearable
      */
     public int quantityDropped(Random par1Random)
     {
+        return par1Random.nextInt(20) == 0 ? 1 : 0;
+    }
+
+    /**
+     * Returns the ID of the items to drop on destruction.
+     */
+    public int idDropped(int par1, Random par2Random, int par3)
+    {
         return 0;
     }
 
@@ -244,6 +252,7 @@ public class BlockDreamwoodLeaves extends BlockLeavesBase implements IShearable
      */
     public void harvestBlock(World par1World, EntityPlayer par2EntityPlayer, int par3, int par4, int par5, int par6)
     {
+        super.harvestBlock(par1World, par2EntityPlayer, par3, par4, par5, par6);
     }
 
     /**

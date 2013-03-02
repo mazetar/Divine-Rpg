@@ -15,10 +15,12 @@ import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDemonFurnace;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDensosStatue;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDramixAlter;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDramixStatue;
+import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDreamLamp;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityExtractinator;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityGlacideSpawner;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityGreenlightFurnace;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityIceikaChest;
+import xolova.blued00r.divinerpg.entities.tileentities.TileEntityInfusionTable;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityKOSStatue;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityMoltenFurnace;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityMoonlightFurnace;
@@ -423,23 +425,10 @@ public class ModBlocks {
          * 1.3
          */
         GameRegistry.registerBlock(DivineRPG.vetheaPortal, "vetheaPortal");
-        GameRegistry.registerBlock(DivineRPG.everstone, "everstone");
-        GameRegistry.registerBlock(DivineRPG.whiteEverstone, "whiteEverstone");
-        GameRegistry.registerBlock(DivineRPG.darkEverstone, "darkEverstone");
-        GameRegistry.registerBlock(DivineRPG.dreamgrass, "dreamgrass");
-        GameRegistry.registerBlock(DivineRPG.dreamdirt, "dreamdirt");
-        GameRegistry.registerBlock(DivineRPG.dreamlampOn, "dreamlampOn");
-        GameRegistry.registerBlock(DivineRPG.dreamlamp, "dreamlamp");
-        GameRegistry.registerBlock(DivineRPG.firecrystal, "firecrystal");
-        GameRegistry.registerBlock(DivineRPG.hiveWall, "hiveWall");
-        GameRegistry.registerBlock(DivineRPG.hyrewood, "hyrewood");
-        GameRegistry.registerBlock(DivineRPG.firewood, "firewood");
-        GameRegistry.registerBlock(DivineRPG.mintwood, "mintwood");
-        GameRegistry.registerBlock(DivineRPG.dreamwood, "dreamwood");
-        GameRegistry.registerBlock(DivineRPG.hyrewoodLeaves, "hyrewoodLeaves");
-        GameRegistry.registerBlock(DivineRPG.firewoodLeaves, "firewoodLeaves");
-        GameRegistry.registerBlock(DivineRPG.mintwoodLeaves, "mintwoodLeaves");
-        GameRegistry.registerBlock(DivineRPG.dreamwoodLeaves, "dreamwoodLeaves");
+        GameRegistry.registerBlock(DivineRPG.infusionTable, "infusionTable");
+        GameRegistry.registerTileEntity(TileEntityInfusionTable.class, "infusionTable");
+        GameRegistry.registerBlock(DivineRPG.dreamlamp, "DreamLamp");
+        GameRegistry.registerTileEntity(TileEntityDreamLamp.class, "DreamLamp");
 	}
 
 }

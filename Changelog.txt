@@ -1,0 +1,13 @@
+Feb 9, UTC 20:06: Holo - Added Source Files
+Feb 10, UTC 18:09: Holo - Changed bunnies to be tamable, fixed merik's missile and firefly entities to work smp, changed poison saber damage
+Feb 10, UTC 21:14: Holo - Merged sources, fixed achivement graphic glitch, fixed arrow crash, fixed azurite arrow glitch.
+Feb 10, UTC 22:25: Holo - finished 1.2.8.
+
+Feb 12, UTC 20:02: Aginsun - started adding a savehandler
+Feb 12, UTC 22:18: Holo - Begun generation work for Vethea, added World Provider Class, added new package for Vethea gen.
+Feb 13, UTC 21:32: Aginsun - XolovA in a box almost ready for testing, will add source code in the upcoming days
+Feb 19, UTC 14:21: Aginsun - Fixed enderbow bug
+Feb 19, UTC 22:40: Holo- Fixed rupee shicaxe and infinite ore bugs.
+Feb 19, UTC 22:40: Holo- Uploaded achivement fix.
+Feb 19, UTC 22.42: Aginsun - Fixed Twilightarcher dropping wrong shards
+Feb 28, UTC 21.30: Holo - Blocks, gen, mobs, 1.3 progress push.

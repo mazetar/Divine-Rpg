@@ -36,11 +36,12 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 	@Override
 	public ItemStack getStackInSlot(int i) 
 	{
-		if(inventory[0] != null)
+		if(inventory[0] != null && isEmpty)
 		{
 			if((inventory[0].getItem() instanceof ItemCoal))
 			{
-				inventory[0].splitStack(1);
+				inventory[0].stackSize--;
+				this.onInventoryChanged();
 				isEmpty = false;
 				coalDuration = 10000;
 				dreamlamp.setTickRandomly(true);

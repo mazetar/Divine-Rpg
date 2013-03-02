@@ -57,7 +57,7 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 			--coalDuration;
 			if(coalDuration == 0)
 			{
-				
+				inventory[0] = new ItemStack(inventory[0].getItem(), -1);
 			}
 		}
 		else if(shouldLight())
@@ -136,7 +136,7 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 	@Override
 	public int getInventoryStackLimit()
 	{
-		return 1;
+		return 32;
 	}
 
 	@Override

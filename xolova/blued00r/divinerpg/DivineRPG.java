@@ -4199,8 +4199,8 @@ public class DivineRPG
         lunastone = new Block(lunastoneID, 27, Material.rock).setBlockName("lunastone").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         lunabricks = new Block(lunabricksID, 28, Material.rock).setBlockName("lunabricks").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         metalCaging = new Block(metalCagingID, 29, Material.rock).setBlockName("metalCaging").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        dreamlampOn = new Block(dreamlampOnID, 30, Material.glass).setLightValue(1F).setBlockName("dreamlampOn").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        dreamlamp = new Block(dreamlampID, 31, Material.glass).setBlockName("dreamlamp").setHardness(1F).setStepSound(Block.soundGlassFootstep).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        dreamlampOn = new BlockDreamLamp(dreamlampOnID, 30, Material.glass, true).setBlockName("dreamlampOn").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        dreamlamp = new BlockDreamLamp(dreamlampID, 31, Material.glass, false).setBlockName("dreamlamp").setHardness(1F).setStepSound(Block.soundGlassFootstep).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         weedwoodVine = new BlockWeedwoodVine(weedwoodVineID, 41).setBlockName("weedwoodVine").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         blossomingWeedwoodVine = new BlockWeedwoodVine(blossomingWeedwoodVineID, 42).setBlockName("blossomingWeedwoodVine").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         cryptWall = new Block(cryptWallID, 43, Material.rock).setBlockName("cryptWall").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);

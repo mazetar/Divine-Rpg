@@ -329,7 +329,7 @@ public class EntityMamormeterShot extends Entity
                                 }
                             }
 
-                            EnchantmentThorns.func_92044_a(this.shootingEntity, var241, this.rand);
+                            EnchantmentThorns.func_92096_a(this.shootingEntity, var241, this.rand);
 
                             if (this.shootingEntity != null && var4.entityHit != this.shootingEntity && var4.entityHit instanceof EntityPlayer && this.shootingEntity instanceof EntityPlayerMP)
                             {

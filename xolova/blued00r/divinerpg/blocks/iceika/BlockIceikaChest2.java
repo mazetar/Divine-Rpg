@@ -118,7 +118,7 @@ public class BlockIceikaChest2 extends BlockContainer
 
 						if (var9.hasTagCompound())
 						{
-							var12.func_92014_d().setTagCompound((NBTTagCompound)var9.getTagCompound().copy());
+							var12.getEntityItem().setTagCompound((NBTTagCompound)var9.getTagCompound().copy());
 						}
 					}
 				}

@@ -45,11 +45,9 @@ public class BlockDreamLamp extends BlockContainer
     
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
-        if (te.isEmpty)
+        if (te.coalDuration > 0)
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.dreamlamp.blockID);
-        }else{
-        	par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.dreamlampOn.blockID);
+            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.dreamlampOn.blockID);
         }
     }
     

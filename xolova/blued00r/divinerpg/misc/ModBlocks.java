@@ -440,6 +440,7 @@ public class ModBlocks {
         GameRegistry.registerBlock(DivineRPG.firewoodLeaves, "firewoodLeaves");
         GameRegistry.registerBlock(DivineRPG.mintwoodLeaves, "mintwoodLeaves");
         GameRegistry.registerBlock(DivineRPG.dreamwoodLeaves, "dreamwoodLeaves");
+        GameRegistry.registerBlock(DivineRPG.infusionTable, "infusionTable");
 	}
 
 }

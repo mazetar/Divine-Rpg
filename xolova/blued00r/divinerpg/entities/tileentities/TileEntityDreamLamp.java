@@ -18,8 +18,8 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 	private ItemStack[] inventory;
 	private BlockDreamLamp dreamlamp;
 	private GuiDreamLamp gui;
-	public boolean isEmpty;
 	public int coalDuration;
+	private int ingredientID;
 	
 	public TileEntityDreamLamp(BlockDreamLamp block)
 	{
@@ -36,17 +36,6 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 	@Override
 	public ItemStack getStackInSlot(int i) 
 	{
-		if(inventory[0] != null && isEmpty)
-		{
-			if((inventory[0].getItem() instanceof ItemCoal))
-			{
-				inventory[0].stackSize--;
-				this.onInventoryChanged();
-				isEmpty = false;
-				coalDuration = 10000;
-				dreamlamp.setTickRandomly(true);
-			}
-		}
         return inventory[i];
 	}
 	
@@ -58,18 +47,25 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 			if(coalDuration == 0)
 			{
 				inventory[0] = new ItemStack(inventory[0].getItem(), -1);
+				this.onInventoryChanged();
 			}
+			else if (!shouldLight())
+			{
+				coalDuration = 0;
+				this.onInventoryChanged();
+			}
+            else if (this.ingredientID != this.inventory[0].itemID)
+            {
+                this.coalDuration = 0;
+                this.onInventoryChanged();
+            }
 		}
 		else if(shouldLight())
 		{
-			
+			this.coalDuration = 400;
+            this.ingredientID = this.inventory[0].itemID;
 		}
- 		if(coalDuration > 1)
- 			coalDuration--;
- 		else if(coalDuration == 1)
- 		{
- 			
- 		}
+        super.updateEntity();
  	}
  	
  	public boolean shouldLight() 

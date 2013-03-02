@@ -26,7 +26,7 @@ public class BlockInfusionTable extends BlockContainer
 	@Override
 	public TileEntity createNewTileEntity(World world) 
 	{
-		return new TileEntityInfusionTable(world);
+		return new TileEntityInfusionTable();
 	}
 	
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)

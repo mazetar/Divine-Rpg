@@ -1000,6 +1000,9 @@ public class LanguageHelper
         
         LanguageRegistry.addName(DivineRPG.ayeracoSpawner,"Horde Horn");
         
+        LanguageRegistry.addName(DivineRPG.infusionTable, "Infusion Table");
+        LanguageRegistry.addName(DivineRPG.dreamlamp, "Dream Lamp");
+        
         addAchievementLocalizations();
         
     }

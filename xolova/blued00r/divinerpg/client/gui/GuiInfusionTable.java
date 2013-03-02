@@ -1,5 +1,7 @@
 package xolova.blued00r.divinerpg.client.gui;
 
+import java.awt.Color;
+
 import org.lwjgl.opengl.GL11;
 
 import xolova.blued00r.divinerpg.containers.ContainerInfusionTable;
@@ -8,12 +10,17 @@ import xolova.blued00r.divinerpg.entities.tileentities.TileEntityInfusionTable;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class GuiInfusionTable extends GuiContainer
 {
+	private TileEntityInfusionTable TeInfusionTable;
+
 	public GuiInfusionTable(InventoryPlayer inventory, TileEntityInfusionTable var7) 
 	{
 		super(new ContainerInfusionTable(inventory, var7));
+		this.TeInfusionTable = var7;
 	}
 
 	@Override
@@ -26,4 +33,30 @@ public class GuiInfusionTable extends GuiContainer
         int var6 = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);
 	}
+	
+    public void drawScreen(int par1, int par2, float par3)
+	{
+    	super.drawScreen(par1, par2, par3);
+    	ItemStack item = null;
+    	String s = null;
+		item = TeInfusionTable.getStackInSlot(2);
+		if(item != null)
+		{
+			s = item.getDisplayName();
+			this.drawString(fontRenderer, s, width / 2 - 20, 61, Color.blue.getRGB());
+		}		
+	}
+    
+    public boolean doesGuiPauseGame()
+    {
+    	return false;
+    }
+    
+    protected void keyTyped(char par1, int par2)
+    {
+        if (par2 == 1 || par2 == mc.gameSettings.keyBindInventory.keyCode)
+        {
+            mc.thePlayer.closeScreen();
+        }
+    }
 }

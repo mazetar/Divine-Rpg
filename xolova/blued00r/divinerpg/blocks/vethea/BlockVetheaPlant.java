@@ -80,7 +80,7 @@ public class BlockVetheaPlant extends Block implements IPlantable
      */
     public boolean canBlockStay(World par1World, int par2, int par3, int par4)
     {
-    	return true;
+    	return !par1World.isAirBlock(par2, par3, par4);
     }
 
     /**

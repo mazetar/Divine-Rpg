@@ -39,14 +39,6 @@ public class BlockHyrewood extends Block
     }
 
     /**
-     * Returns the ID of the items to drop on destruction.
-     */
-    public int idDropped(int par1, Random par2Random, int par3)
-    {
-        return DivineRPG.dreamwood.blockID;
-    }
-
-    /**
      * ejects contained items into the world, and notifies neighbours of an update, as appropriate
      */
     public void breakBlock(World par1World, int par2, int par3, int par4, int par5, int par6)
@@ -107,7 +99,7 @@ public class BlockHyrewood extends Block
     {
         int var3 = par2 & 12;
         int var4 = par2 & 3;
-        return var3 == 0 && (par1 == 1 || par1 == 0) ? 62 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 62 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 62 : 62));
+        return var3 == 0 && (par1 == 1 || par1 == 0) ? 191 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 191 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 191 : 62));
     }
 
     /**

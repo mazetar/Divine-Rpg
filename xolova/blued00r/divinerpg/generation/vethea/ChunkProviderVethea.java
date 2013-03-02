@@ -6,11 +6,9 @@ import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.RAVI
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.SCATTERED_FEATURE;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.STRONGHOLD;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.VILLAGE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.DUNGEON;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ICE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -20,18 +18,16 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.ChunkPosition;
-import net.minecraft.world.SpawnerAnimals;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.MapGenBase;
-import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.MapGenRavine;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.MapGenScatteredFeature;
-import net.minecraft.world.gen.feature.WorldGenDungeons;
-import net.minecraft.world.gen.feature.WorldGenLakes;
+import net.minecraft.world.gen.feature.WorldGenFlowers;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenStronghold;
 import net.minecraft.world.gen.structure.MapGenVillage;
@@ -40,6 +36,43 @@ import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.blued00r.divinerpg.generation.vethea.All.Bow;
+import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree4;
+import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree5;
+import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree6;
+import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree7;
+import xolova.blued00r.divinerpg.generation.vethea.All.Hook;
+import xolova.blued00r.divinerpg.generation.vethea.All.InfusionOutpost;
+import xolova.blued00r.divinerpg.generation.vethea.All.Lamp1;
+import xolova.blued00r.divinerpg.generation.vethea.All.Lamp2;
+import xolova.blued00r.divinerpg.generation.vethea.All.Mushroom;
+import xolova.blued00r.divinerpg.generation.vethea.All.Pickaxe;
+import xolova.blued00r.divinerpg.generation.vethea.All.Pointedsquare;
+import xolova.blued00r.divinerpg.generation.vethea.All.Ring;
+import xolova.blued00r.divinerpg.generation.vethea.All.Sword;
+import xolova.blued00r.divinerpg.generation.vethea.All.TreeFloating1;
+import xolova.blued00r.divinerpg.generation.vethea.All.TreeFloating2;
+import xolova.blued00r.divinerpg.generation.vethea.All.TreeFloating3;
+import xolova.blued00r.divinerpg.generation.vethea.All.Trident;
+import xolova.blued00r.divinerpg.generation.vethea.layer1.Crypt1;
+import xolova.blued00r.divinerpg.generation.vethea.layer1.Crypt2;
+import xolova.blued00r.divinerpg.generation.vethea.layer1.Tree4;
+import xolova.blued00r.divinerpg.generation.vethea.layer1.Tree5;
+import xolova.blued00r.divinerpg.generation.vethea.layer1.Tree6;
+import xolova.blued00r.divinerpg.generation.vethea.layer2.HiveNest;
+import xolova.blued00r.divinerpg.generation.vethea.layer2.Pyramid1;
+import xolova.blued00r.divinerpg.generation.vethea.layer2.Pyramid2;
+import xolova.blued00r.divinerpg.generation.vethea.layer2.Tree3;
+import xolova.blued00r.divinerpg.generation.vethea.layer3.KarosMadhouse;
+import xolova.blued00r.divinerpg.generation.vethea.layer3.QuadroticPost;
+import xolova.blued00r.divinerpg.generation.vethea.layer3.Tree7;
+import xolova.blued00r.divinerpg.generation.vethea.layer3.Tree8;
+import xolova.blued00r.divinerpg.generation.vethea.layer4.Evergarden;
+import xolova.blued00r.divinerpg.generation.vethea.layer4.RaglokChamber;
+import xolova.blued00r.divinerpg.generation.vethea.layer4.Tree1;
+import xolova.blued00r.divinerpg.generation.vethea.layer4.Tree2;
+import xolova.blued00r.divinerpg.generation.vethea.layer4.WreckHall;
 
 public class ChunkProviderVethea implements IChunkProvider
 {
@@ -91,7 +124,31 @@ public class ChunkProviderVethea implements IChunkProvider
 
     /** The biomes that are used to generate the chunk */
     private BiomeGenBase[] biomesForGeneration;
-
+    private final ArrayList<WorldGenerator> items;
+    private final ArrayList<WorldGenerator> lamps;
+    private final ArrayList<WorldGenerator> floatingTrees;
+    private final ArrayList<WorldGenerator> pyramids;
+    private final ArrayList<WorldGenerator> l1Trees;
+    private final ArrayList<WorldGenerator> l3Trees;
+    private final ArrayList<WorldGenerator> l4Trees;
+    private final ArrayList<WorldGenerator> crypts;
+    private final ArrayList<WorldGenerator> l3Altars;
+    private final ArrayList<WorldGenerator> l4Altars;
+    
+    private final WorldGenerator layer1Gen;
+    
+    //TODO
+    private final WorldGenerator ceilingTexture;
+    private final WorldGenerator pillar;
+    private final WorldGenerator cracklespikes;
+    private final WorldGenerator fernites;
+    private final WorldGenerator bulatobes;
+    private final WorldGenerator shinegrass;
+    private final WorldGenerator shimmers;
+    private final WorldGenerator dreamglows;
+    private final WorldGenerator layer3TreeBig;
+    private final WorldGenerator infusion;
+    
     /** A double array that hold terrain noise from noiseGen3 */
     double[] noise3;
 
@@ -144,6 +201,75 @@ public class ChunkProviderVethea implements IChunkProvider
         this.noiseGen5 = noiseGens[4];
         this.noiseGen6 = noiseGens[5];
         this.mobSpawnerNoise = noiseGens[6];
+        
+        this.items = new ArrayList(7);
+        items.add(new Bow());
+        items.add(new Hook());
+        items.add(new Mushroom());
+        items.add(new Pickaxe());
+        items.add(new Pointedsquare());
+        items.add(new Ring());
+        items.add(new Sword());
+        items.add(new Trident());
+        
+        this.lamps = new ArrayList(1);
+        lamps.add(new Lamp1());
+        lamps.add(new Lamp2());
+        
+        this.floatingTrees = new ArrayList(7);
+        floatingTrees.add(new TreeFloating1());
+        floatingTrees.add(new TreeFloating2());
+        floatingTrees.add(new TreeFloating3());
+        floatingTrees.add(new FloatingTree4());
+        floatingTrees.add(new FloatingTree5());
+        floatingTrees.add(new FloatingTree6());
+        floatingTrees.add(new FloatingTree7());
+        
+        this.pyramids = new ArrayList(3);
+        pyramids.add(new Pyramid1());
+        pyramids.add(new Pyramid2());
+        pyramids.add(new HiveNest());
+        
+        this.l1Trees = new ArrayList(3);
+        l1Trees.add(new Tree4());
+        l1Trees.add(new Tree5());
+        l1Trees.add(new Tree6());
+        
+        this.l3Trees = new ArrayList(3);
+        l3Trees.add(new Tree7());
+        l3Trees.add(new Tree8());
+        l3Trees.add(new WorldGenLayer3SmallTree(false));
+        
+        this.l4Trees = new ArrayList(2);
+        l4Trees.add(new Tree1());
+        l4Trees.add(new Tree2());
+        
+        this.l3Altars = new ArrayList(2);
+        l3Altars.add(new QuadroticPost());
+        l3Altars.add(new KarosMadhouse());
+        
+        this.l4Altars = new ArrayList(3);
+        l4Altars.add(new Evergarden());
+        l4Altars.add(new RaglokChamber());
+        l4Altars.add(new WreckHall());
+        
+        this.crypts = new ArrayList(2);
+        crypts.add(new Crypt1());
+        crypts.add(new Crypt2());
+        
+        layer1Gen = new WorldGenLayer1();
+        
+        ceilingTexture = new WorldGenConeUp(0, 4);
+        pillar = new WorldGenVetheanPillar();
+        layer3TreeBig = new WorldGenLayer3BigTree(false);
+        infusion = new InfusionOutpost();
+        
+        cracklespikes = new WorldGenVetheanFlower(DivineRPG.cracklespike.blockID);
+        fernites = new WorldGenVetheanFlower(DivineRPG.fernite.blockID);
+        bulatobes = new WorldGenVetheanFlower(DivineRPG.bulatobe.blockID);
+        shinegrass = new WorldGenVetheanFlower(DivineRPG.shineGrass.blockID);
+        shimmers = new WorldGenVetheanFlower(DivineRPG.shimmer.blockID);
+        dreamglows = new WorldGenVetheanFlower(DivineRPG.dreamglow.blockID);
     }
 
     /**
@@ -253,9 +379,9 @@ public class ChunkProviderVethea implements IChunkProvider
         			{
         				int var17 = (var9 * 16 + var8) * 256 + var16;
         				
-        				if (var16 <= this.rand.nextInt(5) + var5)
+        				if (var16 <= var5 + 15)
         				{
-        					par3ArrayOfByte[var17] = (byte)Block.stone.blockID;//bedrock
+        					par3ArrayOfByte[var17] = (byte)DivineRPG.dreamstone.blockID;//bedrock
         				}
         				else
         				{
@@ -272,7 +398,7 @@ public class ChunkProviderVethea implements IChunkProvider
         							if (var12 <= 0)
         							{
         								var14 = 0;
-        								var15 = (byte)Block.stone.blockID;
+        								var15 = (byte)DivineRPG.dreamstone.blockID;
         							}
         							else if (var16 >= var5 - 4 && var16 <= var5 + 1)
         							{
@@ -548,78 +674,71 @@ public class ChunkProviderVethea implements IChunkProvider
         int var13;
         int var14;
         
-        /*
-         * Layer 1
-         */
-        if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, var11, LAVA) &&
-                !var11 && this.rand.nextInt(2) == 0)
-        {
-            var12 = var4 + this.rand.nextInt(16) + 8;
-            var13 = 64;
-            var14 = var5 + this.rand.nextInt(16) + 8;
-            (new WorldGenConeUp(0, 4)).generate(this.worldObj, this.rand, var12, var13, var14);
-        }
-        
-        if (TerrainGen.populate(par1IChunkProvider, worldObj, rand, par2, par3, var11, LAVA) &&
-                !var11 && this.rand.nextInt(16) == 0)
-        {
-            var12 = var4 + this.rand.nextInt(16) + 8;
-            var13 = 16;
-            var14 = var5 + this.rand.nextInt(16) + 8;
-
-            while (!worldObj.isAirBlock(var12, var13, var14))
-            {
-            	var13++;
-            }
-            (new WorldGenVetheanPillar()).generate(this.worldObj, this.rand, var12, var13, var14);
-        }
-        
-        if (this.rand.nextInt(4) == 0)
-        {
-            var12 = var4 + this.rand.nextInt(16) + 8;
-            var13 = 17;
-            var14 = var5 + this.rand.nextInt(16) + 8;
-            while(!this.worldObj.isAirBlock(var12, var13, var14))
-            {
-            	var13++;
-            }
-            (new WorldGenLayer1BigTree(false)).generate(this.worldObj, this.rand, var12, var13, var14);
-        }
-        for (int i = 0; i < 10; i++)
-        {
-            var12 = var4 + this.rand.nextInt(16) + 8;
-            var13 = 17;
-            var14 = var5 + this.rand.nextInt(16) + 8;
-            while(!this.worldObj.isAirBlock(var12, var13, var14))
-            {
-            	var13++;
-            }
-            (new WorldGenLayer1Forest(false)).generate(this.worldObj, this.rand, var12, var13, var14);
-        }
-        
-        if (this.rand.nextInt(500) == 0)
-        {
-            var12 = var4 + this.rand.nextInt(16) + 8;
-            var13 = 40;
-            var14 = var5 + this.rand.nextInt(16) + 8;
-            (new WorldGenVillageIsland()).generate(this.worldObj, this.rand, var12, var13, var14);
-        }
-        for (int i = 0; i < 10; i++)
-        {
-            var12 = var4 + this.rand.nextInt(16) + 8;
-            var13 = 64;
-            var14 = var5 + this.rand.nextInt(16) + 8;
-            while(this.worldObj.isAirBlock(var12, var13, var14))
-            {
-            	var13++;
-            }
-            (new WorldGenInverseTree(false)).generate(this.worldObj, this.rand, var12, var13, var14);
-        }
-        
+        layer1Gen.generate(this.worldObj, this.rand, var4, 0, var5);
         /*
          * Layer 2
          */
-        if (this.rand.nextInt(40) == 0)
+        for (int i = 0; i < 3; i++)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 128;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (ceilingTexture).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(16) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 84 - this.rand.nextInt(2);
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            pillar.generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        for (int i = 0; i < 3; i++)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 84;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (new WorldGenLayer2Forest(false)).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(32) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 85;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            while(this.worldObj.isAirBlock(var12, var13, var14))
+            {
+            	var13--;
+            }
+            for (int i = 0; i < this.rand.nextInt(2) + 2; i++)
+            {
+            	var13--;
+            }
+            (this.items.get(this.rand.nextInt(7))).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(32) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 85;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            while(this.worldObj.isAirBlock(var12, var13, var14))
+            {
+            	var13--;
+            }
+            infusion.generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        for (int i = 0; i < 3; ++i)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 90 + this.rand.nextInt(25);
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (this.floatingTrees.get(this.rand.nextInt(7))).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(2) == 0)
         {
             var12 = var4 + this.rand.nextInt(16) + 8;
             var13 = 80;
@@ -628,25 +747,121 @@ public class ChunkProviderVethea implements IChunkProvider
             {
             	var13++;
             }
-            (new WorldGenLayer2BigTree(false)).generate(this.worldObj, this.rand, var12, var13, var14);
+            (this.lamps.get(this.rand.nextInt(2))).generate(this.worldObj, this.rand, var12, var13, var14);
         }
-        /*for (int i = 0; i < 10; i++)
+        
+        if (this.rand.nextInt(250) == 0)
         {
             var12 = var4 + this.rand.nextInt(16) + 8;
             var13 = 80;
             var14 = var5 + this.rand.nextInt(16) + 8;
             while(!this.worldObj.isAirBlock(var12, var13, var14))
             {
-            	++var13;
+            	var13++;
             }
-            (new WorldGenLayer2Forest(false)).generate(this.worldObj, this.rand, var12, var13, var14);
-        }*/
+            (pyramids.get(this.rand.nextInt(3))).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(10) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 20 + 64;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (fernites).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(10) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 20 + 64;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (dreamglows).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(10) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 20 + 64;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (shimmers).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
         
         /*
-         * 
          * layer 3
          */
+        for (int i = 0; i < 3; i++)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 192;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (ceilingTexture).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(16) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 148;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            pillar.generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        for (int i = 0; i < 3; i++)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 148;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (new WorldGenLayer1Forest(false)).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(32) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 148;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            while(this.worldObj.isAirBlock(var12, var13, var14))
+            {
+            	var13--;
+            }
+            for (int i = 0; i < this.rand.nextInt(2) + 2; i++)
+            {
+            	var13--;
+            }
+            (this.items.get(this.rand.nextInt(7))).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(32) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 148;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            while(this.worldObj.isAirBlock(var12, var13, var14))
+            {
+            	var13--;
+            }
+            infusion.generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        for (int i = 0; i < 3; ++i)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 158 + this.rand.nextInt(25);
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (this.floatingTrees.get(this.rand.nextInt(7))).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
         if (this.rand.nextInt(2) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 19 + 128;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            while(!this.worldObj.isAirBlock(var12, var13, var14))
+            {
+            	var13++;
+            }
+            (this.lamps.get(this.rand.nextInt(2))).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(500) == 0)
         {
             var12 = var4 + this.rand.nextInt(16) + 8;
             var13 = 144 ;
@@ -655,12 +870,140 @@ public class ChunkProviderVethea implements IChunkProvider
             {
             	var13++;
             }
-            (new WorldGenLayer3BigTree(false)).generate(this.worldObj, this.rand, var12, var13, var14);
+            (l3Altars.get(this.rand.nextInt(2))).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(10) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 20 + 128;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (shinegrass).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(10) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 20 + 128;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (cracklespikes).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(10) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 20 + 128;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (bulatobes).generate(this.worldObj, this.rand, var12, var13, var14);
         }
         
         /*
          * Layer 4
          */
+        
+        if (this.rand.nextInt(32) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 212;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            while(this.worldObj.isAirBlock(var12, var13, var14))
+            {
+            	var13--;
+            }
+            for (int i = 0; i < this.rand.nextInt(2) + 2; i++)
+            {
+            	var13--;
+            }
+            (this.items.get(this.rand.nextInt(7))).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(32) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 212;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            while(this.worldObj.isAirBlock(var12, var13, var14))
+            {
+            	var13--;
+            }
+            infusion.generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(2) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 210;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            while(!this.worldObj.isAirBlock(var12, var13, var14))
+            {
+            	var13++;
+            }
+            (this.lamps.get(this.rand.nextInt(2))).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        for (int i = 0; i < 5; i++)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 212;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (new WorldGenLayer2Forest(false)).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        for (int i = 0; i < 3; ++i)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 222 + this.rand.nextInt(23);
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (this.floatingTrees.get(this.rand.nextInt(7))).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(150) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 210 ;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            while(!this.worldObj.isAirBlock(var12, var13, var14))
+            {
+            	var13++;
+            }
+            (l4Altars.get(this.rand.nextInt(3))).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+//        if (this.rand.nextInt(150) == 0)
+//        {
+//            var12 = var4 + this.rand.nextInt(16) + 8;
+//            var13 = 19 + 196;
+//            var14 = var5 + this.rand.nextInt(16) + 8;
+//            while(!this.worldObj.isAirBlock(var12, var13, var14))
+//            {
+//            	var13++;
+//            }
+//            (new Layer4MassiveTree(false)).generate(this.worldObj, this.rand, var12, var13, var14);
+//        }
+        
+        if (this.rand.nextInt(10) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 212;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (shimmers).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(10) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 212;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (shinegrass).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
+        
+        if (this.rand.nextInt(10) == 0)
+        {
+            var12 = var4 + this.rand.nextInt(16) + 8;
+            var13 = 212;
+            var14 = var5 + this.rand.nextInt(16) + 8;
+            (dreamglows).generate(this.worldObj, this.rand, var12, var13, var14);
+        }
 
         MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(par1IChunkProvider, worldObj, rand, par2, par3, var11));
 

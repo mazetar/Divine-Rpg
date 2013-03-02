@@ -3,7 +3,7 @@ Blocks
 		Shoot Projectile
 		Hurt Players on contact
 Finish Up AI
-Some GUI stuff - Ask Xolova
+Some GUI stuff - Ask Xolova (done)
 Generation - Trees, small plants, structures.
 Altars
 Weapons

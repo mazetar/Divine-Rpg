@@ -50,16 +50,42 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
         return inventory[i];
 	}
 	
-	public void updateEntity()
-	{
-		if(coalDuration > 1)
-			coalDuration--;
-		else if(coalDuration == 1)
+ 	public void updateEntity()
+ 	{
+		if(coalDuration > 0)
 		{
-			coalDuration = 0;
-			isEmpty = true;
+			--coalDuration;
+			if(coalDuration == 0)
+			{
+				
+			}
 		}
-	}
+		else if(shouldLight())
+		{
+			
+		}
+ 		if(coalDuration > 1)
+ 			coalDuration--;
+ 		else if(coalDuration == 1)
+ 		{
+ 			
+ 		}
+ 	}
+ 	
+ 	public boolean shouldLight() 
+ 	{
+ 		if(inventory[0] != null && inventory[0].stackSize > 0)
+ 		{
+ 			ItemStack i = inventory[0];
+ 			if (!(Item.itemsList[i.itemID] == Item.coal))
+ 			{
+ 				return false;
+ 			}else{
+ 				return true;
+ 	        }
+ 		}
+ 		return false;
+ 	}
 
 	@Override
     public ItemStack decrStackSize(int i, int j)
@@ -110,7 +136,7 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 	@Override
 	public int getInventoryStackLimit()
 	{
-		return 64;
+		return 1;
 	}
 
 	@Override

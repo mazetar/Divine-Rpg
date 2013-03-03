@@ -17,7 +17,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemVetheanCannon extends Item
 {
-    private int damage;
+    protected int damage;
 
     public ItemVetheanCannon(int par1, int par2, String name)
     {

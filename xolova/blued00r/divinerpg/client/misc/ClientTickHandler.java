@@ -112,8 +112,56 @@ public class ClientTickHandler implements ITickHandler
 				{
 					var3.capabilities.allowFlying = false;
 				}
-
-				//minecraftInstance.thePlayer.speedOnGround = 0.1F;
+				
+				var3.capabilities.func_82877_b(0.1F);
+			}
+			else if (boots.itemID == DivineRPG.angelicBoots.itemID
+					&& legs.itemID == DivineRPG.angelicLegs.itemID
+					&& chest.itemID == DivineRPG.angelicBody.itemID
+					&& helm.itemID == DivineRPG.angelicHead.itemID)
+			{
+				var3.capabilities.allowFlying = true;
+				
+				var3.addStat(AchievementPageDivineRPG.whenPigsFly, 1);
+				//minecraftInstance.thePlayer.isImmuneToFire = true; //<--That line will make the player immune to fire.
+				//minecraftInstance.thePlayer.fallDistance = 0;
+				//minecraftInstance.thePlayer.fireResistance(20);
+				//minecraftInstance.thePlayer.capabilities.isFlying = true; //<-- That line may make the player fly, but I'm not entirely sure.
+			}
+			else if (boots.itemID == DivineRPG.shadowBoots.itemID
+					&& legs.itemID == DivineRPG.shadowLegs.itemID
+					&& chest.itemID == DivineRPG.shadowBody.itemID
+					&& helm.itemID == DivineRPG.shadowHead.itemID)
+			{
+				var3.capabilities.func_82877_b(0.2F);
+			}
+			else if (boots.itemID == DivineRPG.santaBoots.itemID
+					&& legs.itemID == DivineRPG.santaLegs.itemID
+					&& chest.itemID == DivineRPG.santaBody.itemID
+					&& helm.itemID == DivineRPG.santaHead.itemID)
+			{
+				var3.capabilities.func_82877_b(0.2F);
+			}
+			else if (boots.itemID == DivineRPG.glisteningBoots.itemID
+					&& legs.itemID == DivineRPG.glisteningLegs.itemID
+					&& chest.itemID == DivineRPG.glisteningChest.itemID
+					&& helm.itemID == DivineRPG.glisteningHelmetRanged.itemID)
+			{
+				var3.capabilities.func_82877_b(0.14F);
+			}
+			else if (boots.itemID == DivineRPG.demonizedBoots.itemID
+					&& legs.itemID == DivineRPG.demonizedLegs.itemID
+					&& chest.itemID == DivineRPG.demonizedChest.itemID
+					&& helm.itemID == DivineRPG.demonizedHelmetRanged.itemID)
+			{
+				var3.capabilities.func_82877_b(0.18F);
+			}
+			else if (boots.itemID == DivineRPG.tormentedBoots.itemID
+					&& legs.itemID == DivineRPG.tormentedLegs.itemID
+					&& chest.itemID == DivineRPG.tormentedChest.itemID
+					&& helm.itemID == DivineRPG.tormentedHelmetRanged.itemID)
+			{
+				var3.capabilities.func_82877_b(0.2F);
 			}
 			else if (boots.itemID == DivineRPG.aquastriveBoots.itemID
 					&& legs.itemID == DivineRPG.aquastriveLegs.itemID
@@ -144,98 +192,10 @@ public class ClientTickHandler implements ITickHandler
 						var3.motionZ = -1.045D;
 					}
 				}
-
-				//minecraftInstance.thePlayer.speedOnGround = 0.4F;
-				//minecraftInstance.thePlayer.isImmuneToFire = true; //<--That line will make the player immune to fire.
-				//minecraftInstance.thePlayer.fallDistance = 0;
-				//minecraftInstance.thePlayer.fireResistance(20);
-				//minecraftInstance.thePlayer.capabilities.isFlying = true; //<-- That line may make the player fly, but I'm not entirely sure.
 			}
-			else if (boots.itemID == DivineRPG.shadowBoots.itemID
-					&& legs.itemID == DivineRPG.shadowLegs.itemID
-					&& chest.itemID == DivineRPG.shadowBody.itemID
-					&& helm.itemID == DivineRPG.shadowHead.itemID)
+			else
 			{
-				int var5 = MathHelper.floor_double(var3.posX);
-				int var6 = MathHelper.floor_double(var3.posY - 2.0D);
-				int var7 = MathHelper.floor_double(var3.posZ);
-
-				if (Keyboard.isKeyDown(mc.gameSettings.keyBindForward.keyCode) || Keyboard.isKeyDown(mc.gameSettings.keyBindBack.keyCode) || Keyboard.isKeyDown(mc.gameSettings.keyBindLeft.keyCode) || Keyboard.isKeyDown(mc.gameSettings.keyBindRight.keyCode))
-				{
-					if (var4.getBlockId(var5, var6, var7) != Block.ice.blockID)
-					{
-						if (var3.onGround)
-						{
-							if (!var3.isInWater())
-							{
-								var3.motionX *= 1.045D;
-								var3.motionZ *= 1.045D;
-							}
-						}
-					}
-
-					if (var3.motionX > 1.045D || var3.motionZ > 1.045D)
-					{
-						var3.motionX = 1.045D;
-						var3.motionZ = 1.045D;
-					}
-
-					if (var3.motionX < -1.045D || var3.motionX < -1.045D)
-					{
-						var3.motionX = -1.045D;
-						var3.motionZ = -1.045D;
-					}
-				}
-			}
-			else if (boots.itemID == DivineRPG.santaBoots.itemID
-					&& legs.itemID == DivineRPG.santaLegs.itemID
-					&& chest.itemID == DivineRPG.santaBody.itemID
-					&& helm.itemID == DivineRPG.santaHead.itemID
-					&& var3.worldObj.provider.dimensionId == DivineRPG.iceikaID)
-			{
-				int var5 = MathHelper.floor_double(var3.posX);
-				int var6 = MathHelper.floor_double(var3.posY - 2.0D);
-				int var7 = MathHelper.floor_double(var3.posZ);
-
-				if (Keyboard.isKeyDown(mc.gameSettings.keyBindForward.keyCode) || Keyboard.isKeyDown(mc.gameSettings.keyBindBack.keyCode) || Keyboard.isKeyDown(mc.gameSettings.keyBindLeft.keyCode) || Keyboard.isKeyDown(mc.gameSettings.keyBindRight.keyCode))
-				{
-					if (var4.getBlockId(var5, var6, var7) != Block.ice.blockID)
-					{
-						if (var3.onGround)
-						{
-							if (!var3.isInWater())
-							{
-								var3.motionX *= 1.045D;
-								var3.motionZ *= 1.045D;
-							}
-						}
-					}
-
-					if (var3.motionX > 1.045D || var3.motionZ > 1.045D)
-					{
-						var3.motionX = 1.045D;
-						var3.motionZ = 1.045D;
-					}
-
-					if (var3.motionX < -1.045D || var3.motionX < -1.045D)
-					{
-						var3.motionX = -1.045D;
-						var3.motionZ = -1.045D;
-					}
-				}
-			}
-			else if (boots.itemID == DivineRPG.angelicBoots.itemID
-					&& legs.itemID == DivineRPG.angelicLegs.itemID
-					&& chest.itemID == DivineRPG.angelicBody.itemID
-					&& helm.itemID == DivineRPG.angelicHead.itemID)
-			{
-				var3.capabilities.allowFlying = true;
-				
-				var3.addStat(AchievementPageDivineRPG.whenPigsFly, 1);
-				//minecraftInstance.thePlayer.isImmuneToFire = true; //<--That line will make the player immune to fire.
-				//minecraftInstance.thePlayer.fallDistance = 0;
-				//minecraftInstance.thePlayer.fireResistance(20);
-				//minecraftInstance.thePlayer.capabilities.isFlying = true; //<-- That line may make the player fly, but I'm not entirely sure.
+				var3.capabilities.func_82877_b(0.1F);
 			}
 		}
 	}

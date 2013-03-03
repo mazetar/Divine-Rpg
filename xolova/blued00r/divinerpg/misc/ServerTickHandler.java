@@ -206,27 +206,6 @@ public class ServerTickHandler implements ITickHandler
 			else if (bootID == DivineRPG.glisteningBoots.itemID
 					&& legID == DivineRPG.glisteningLegs.itemID
 					&& chestID == DivineRPG.glisteningChest.itemID
-					&& helmID == DivineRPG.glisteningHelmetRanged.itemID)
-			{
-				var5.capabilities.func_82877_b(0.1F * 1.4F);
-			}
-			else if (bootID == DivineRPG.demonizedBoots.itemID
-					&& legID == DivineRPG.demonizedLegs.itemID
-					&& chestID == DivineRPG.demonizedChest.itemID
-					&& helmID == DivineRPG.demonizedHelmetRanged.itemID)
-			{
-				var5.capabilities.func_82877_b(0.1F * 1.8F);
-			}
-			else if (bootID == DivineRPG.tormentedBoots.itemID
-					&& legID == DivineRPG.tormentedLegs.itemID
-					&& chestID == DivineRPG.tormentedChest.itemID
-					&& helmID == DivineRPG.tormentedHelmetRanged.itemID)
-			{
-				var5.capabilities.func_82877_b(0.1F * 2.0F);
-			}
-			else if (bootID == DivineRPG.glisteningBoots.itemID
-					&& legID == DivineRPG.glisteningLegs.itemID
-					&& chestID == DivineRPG.glisteningChest.itemID
 					&& helmID == DivineRPG.glisteningHelmetMelee.itemID)
 			{
 				var5.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 0));
@@ -245,10 +224,26 @@ public class ServerTickHandler implements ITickHandler
 			{
 				var5.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 2));
 			}
-			else
+			else if (bootID == DivineRPG.glisteningBoots.itemID
+					&& legID == DivineRPG.glisteningLegs.itemID
+					&& chestID == DivineRPG.glisteningChest.itemID
+					&& helmID == DivineRPG.glisteningHelmetArcana.itemID)
 			{
-				var5.capabilities.allowFlying = false;
-				var5.capabilities.func_82877_b(0.1F);
+				var5.fallDistance = 0;
+			}
+			else if (bootID == DivineRPG.demonizedBoots.itemID
+					&& legID == DivineRPG.demonizedLegs.itemID
+					&& chestID == DivineRPG.demonizedChest.itemID
+					&& helmID == DivineRPG.demonizedHelmetArcana.itemID)
+			{
+				var5.fallDistance = 0;
+			}
+			else if (bootID == DivineRPG.tormentedBoots.itemID
+					&& legID == DivineRPG.tormentedLegs.itemID
+					&& chestID == DivineRPG.tormentedChest.itemID
+					&& helmID == DivineRPG.tormentedHelmetArcana.itemID)
+			{
+				var5.fallDistance = 0;
 			}
 		}
 	}

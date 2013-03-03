@@ -30,9 +30,10 @@ public class EntitySpinebackWorm extends EntityMob
 		this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 32.0F));
 		this.tasks.addTask(9, new EntityAILookIdle(this));
 		this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
-		this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 32.0F, 0, true));
-		this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
+		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 128.0F, 0, false));
+		this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, true));
 		this.flyTimer = 0;
+		this.noClip = true;
 	}
 
 	public int getAttackStrength(Entity var1)
@@ -126,26 +127,66 @@ public class EntitySpinebackWorm extends EntityMob
 			double var1 = this.posX - (double)this.getAttackTarget().posX;
 			double var3 = this.posY - (double)this.getAttackTarget().posY;
 			double var5 = this.posZ - (double)this.getAttackTarget().posZ;
-
-			if (var1 > 0  && var5 > 0)
+			if (Math.sqrt(var1*var1 + var5*var5) > 15)
 			{
-				this.motionX += 0.05D;
-				this.motionZ -= 0.05D;
+				if (var1 > 0  && var5 > 0)
+				{
+					this.motionX = -1.0D;
+					this.motionZ = 1.0D;
+				}
+				else if (var1 < 0  && var5 > 0)
+				{
+					this.motionX = -1.0D;
+					this.motionZ = -1.0D;
+				}
+				else if (var1 < 0  && var5 < 0)
+				{
+					this.motionX = 1.0D;
+					this.motionZ = -1.0D;
+				}
+				else if (var1 > 0  && var5 < 0)
+				{
+					this.motionX = 1.0D;
+					this.motionZ = 1.0D;
+				}
 			}
-			else if (var1 < 0  && var5 > 0)
+			else if (Math.sqrt(var1*var1 + var5*var5) < 13)
 			{
-				this.motionX -= 0.05D;
-				this.motionZ -= 0.05D;
+				if (var1 > 0  && var5 > 0)
+				{
+					this.motionX = 1.0D;
+					this.motionZ = 1.0D;
+				}
+				else if (var1 < 0  && var5 > 0)
+				{
+					this.motionX = -1.0D;
+					this.motionZ = 1.0D;
+				}
+				else if (var1 < 0  && var5 < 0)
+				{
+					this.motionX = -1.0D;
+					this.motionZ = -1.0D;
+				}
+				else if (var1 > 0  && var5 < 0)
+				{
+					this.motionX = 1.0D;
+					this.motionZ = -1.0D;
+				}
 			}
-			else if (var1 < 0  && var5 < 0)
+			if (var3 < 5)
 			{
-				this.motionX -= 0.05D;
-				this.motionZ += 0.05D;
+				this.motionY = 0.3;
 			}
-			else if (var1 > 0  && var5 < 0)
+			else if (var3 > -5)
 			{
-				this.motionX += 0.05D;
-				this.motionZ += 0.05D;
+				this.motionY = -0.3;
+			}
+			else if (var3 > -5 && var3 < 5)
+			{
+				if (this.motionY == 0)
+				{
+					this.motionY = this.rand.nextFloat() * 0.3;
+				}
 			}
 			
 			float var7 = (float)(Math.atan2(this.motionZ, this.motionX) * 180.0D / Math.PI) - 90.0F;

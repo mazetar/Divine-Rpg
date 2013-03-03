@@ -14,7 +14,7 @@ import net.minecraft.item.ItemBucketMilk;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.DimensionManager;
@@ -42,6 +42,7 @@ import xolova.blued00r.divinerpg.blocks.vethea.BlockHelioticBeam;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockHyrewood;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockInfusionTable;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockKarosAltar;
+import xolova.blued00r.divinerpg.blocks.vethea.BlockKarosCannon;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockKarosHeatTileGreen;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockKarosHeatTileRed;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockLorgaSpawner;
@@ -114,13 +115,21 @@ import xolova.blued00r.divinerpg.items.vethea.ItemAmthirmisDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemArksianeDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemCermileDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemDarvenDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemDreamflint;
+import xolova.blued00r.divinerpg.items.vethea.ItemEvernight;
 import xolova.blued00r.divinerpg.items.vethea.ItemHeliosisDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemKarosDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemMoonclock;
 import xolova.blued00r.divinerpg.items.vethea.ItemPardimalDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemQuadroticDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemSpinebackCannon;
+import xolova.blued00r.divinerpg.items.vethea.ItemSpinebackChunk;
+import xolova.blued00r.divinerpg.items.vethea.ItemSpinebackDisc;
+import xolova.blued00r.divinerpg.items.vethea.ItemSpinebackStaff;
 import xolova.blued00r.divinerpg.items.vethea.ItemTeakerDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanArmor;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanBow;
+import xolova.blued00r.divinerpg.items.vethea.ItemVetheanCannon;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanClaw;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanFood;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanHammerSword;
@@ -2464,7 +2473,62 @@ public class DivineRPG
     public static int tormentedBootsID;
     public static Item tormentedBoots;
     
-    //TODO
+
+    public static int dirtyPearlsID;
+    public static Item dirtyPearls;
+    public static int cleanPearlsID;
+    public static Item cleanPearls;
+    public static int polishedPearlsID;
+    public static Item polishedPearls;
+    public static int shinyPearlsID;
+    public static Item shinyPearls;
+    
+    public static int honeychunkID;
+    public static Item honeychunk;
+    public static int rockChunksID;
+    public static Item rockChunks;
+    public static int fyrossomID;
+    public static Item fyrossom;
+    public static int heivaBeltID;
+    public static Item heivaBelt;
+    public static int mooncloudID;
+    public static Item mooncloud;
+    public static int wormChunksID;
+    public static Item wormChunks;
+    public static int vhraakTeethID;
+    public static Item vhraakTeeth;
+    
+    public static int dreamflintID;
+    public static Item dreamflint;
+    public static int moonclockID;
+    public static Item moonclock;
+    public static int spinebackChunkID;
+    public static Item spinebackChunk;
+
+    public static int spinebackCannonID;
+    public static Item spinebackCannon;
+    public static int spinebackDiscID;
+    public static Item spinebackDisc;
+    public static int spinebackHammerID;
+    public static Item spinebackHammer;
+    public static int spinebackStaffID;
+    public static Item spinebackStaff;
+
+    public static int everlightID;
+    public static Item everlight;
+    public static int everbrightID;
+    public static Item everbright;
+    public static int evernightID;
+    public static Item evernight;
+    public static int eversightID;
+    public static Item eversight;
+    public static int everfightID;
+    public static Item everfight;
+
+    public static int everArrowID;
+    public static Item everArrow;
+
+	//TODO
     @Mod.PreInit
     public void preload(FMLPreInitializationEvent var1)
     {
@@ -3551,6 +3615,35 @@ public class DivineRPG
         tormentedChestID = var2.getItem("tormentedChest", id++).getInt();
         tormentedLegsID = var2.getItem("tormentedLegs", id++).getInt();
         tormentedBootsID = var2.getItem("tormentedBoots", id++).getInt();
+
+        dirtyPearlsID = var2.getItem("dirtyPearls", id++).getInt();
+        cleanPearlsID = var2.getItem("cleanPearls", id++).getInt();
+        polishedPearlsID = var2.getItem("polishedPearls", id++).getInt();
+        shinyPearlsID = var2.getItem("shinyPearls", id++).getInt();
+
+        honeychunkID = var2.getItem("honeychunk", id++).getInt();
+        rockChunksID = var2.getItem("rockChunks", id++).getInt();
+        fyrossomID = var2.getItem("fyrossom", id++).getInt();
+        heivaBeltID = var2.getItem("heivaBelt", id++).getInt();
+        mooncloudID = var2.getItem("mooncloud", id++).getInt();
+        wormChunksID = var2.getItem("wormChunks", id++).getInt();
+        vhraakTeethID = var2.getItem("vhraakTeeth", id++).getInt();
+
+        dreamflintID = var2.getItem("dreamflint", id++).getInt();
+        moonclockID = var2.getItem("moonclock", id++).getInt();
+        spinebackChunkID = var2.getItem("spinebackChunk", id++).getInt();
+
+        spinebackCannonID = var2.getItem("spinebackCannon", id++).getInt();
+        spinebackDiscID = var2.getItem("spinebackDisc", id++).getInt();
+        spinebackHammerID = var2.getItem("spinebackHammer", id++).getInt();
+        spinebackStaffID = var2.getItem("spinebackStaff", id++).getInt();
+
+        everlightID = var2.getItem("everlight", id++).getInt();
+        everbrightID = var2.getItem("everbright", id++).getInt();
+        evernightID = var2.getItem("evernight", id++).getInt();
+        eversightID = var2.getItem("eversight", id++).getInt();
+        everfightID = var2.getItem("everfight", id++).getInt();
+        everArrowID = var2.getItem("everArrow", id++).getInt();
         //TODO
         /*
          * Dimension IDs
@@ -4679,7 +4772,7 @@ public class DivineRPG
         karosBricks = new Block(karosBricksID, 94, Material.rock).setBlockName("karosBricks").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         karosBricks2 = new Block(karosBricks2ID, 95, Material.rock).setBlockName("karosBricks2").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         helioticBeam = new BlockHelioticBeam(helioticBeamID).setBlockName("helioticBeam").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        karosCannon = new Block(karosCannonID, 95, Material.rock).setBlockName("karosCannon").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        karosCannon = new BlockKarosCannon(karosCannonID, 76, Material.rock).setBlockName("karosCannon").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabUtility).setRequiresSelfNotify();
         purpleFire = new BlockPurpleFire(purpleFireID, 94).setBlockName("purpleFire").setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         
         /*
@@ -4707,7 +4800,7 @@ public class DivineRPG
         karosDisk = new ItemKarosDisk(karosDiskID, 22).setCreativeTab(tabRanged).setIconCoord(6, 8).setTextureFile("/Xolovon4.png").setItemName("Karos Disk");
         heliosisDisk = new ItemHeliosisDisk(heliosisDiskID, 29).setCreativeTab(tabRanged).setIconCoord(7, 8).setTextureFile("/Xolovon4.png").setItemName("Heliosis Disk");
         arksianeDisk = new ItemArksianeDisk(arksianeDiskID, 37).setCreativeTab(tabRanged).setIconCoord(8, 8).setTextureFile("/Xolovon4.png").setItemName("Arksiane Disk");       
-
+        
         teakerHammer = new ItemVetheanHammerSword(teakerHammerID, 0, "TeakerHammer").setWeaponDamage(6).setCreativeTab(tabSword);
         amthrimisHammer = new ItemVetheanHammerSword(amthirmisHammerID, 1, "amthirmisHammer").setWeaponDamage(8).setCreativeTab(tabSword);
         darvenHammer = new ItemVetheanHammerSword(darvenHammerID, 2, "darvenHammer").setWeaponDamage(12).setCreativeTab(tabSword);
@@ -4743,6 +4836,7 @@ public class DivineRPG
         vetheanArrow2 = new Item(vetheanArrow2ID).setItemName("Darven Arrow").setIconCoord(4, 3).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
         vetheanWarArrow = new Item(vetheanWarArrowID).setItemName("Pardimal Arrow").setIconCoord(4, 4).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
         vetheanWrathArrow = new Item(vetheanWrathArrowID).setItemName("Karos Arrow").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        everArrow = new Item(everArrowID).setItemName("Ever Arrow").setIconCoord(4, 6).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
         
         teakerBow = new ItemVetheanBow(teakerBowID, 0.5D, vetheanArrow).setIconCoord(0, 2).setItemName("teakerBow").setCreativeTab(tabRanged);
         amthrimisBow = new ItemVetheanBow(amthirmisBowID, 0.7D, vetheanArrow).setIconCoord(5, 2).setItemName("amthrimisBow").setCreativeTab(tabRanged);
@@ -4814,6 +4908,47 @@ public class DivineRPG
         tormentedChest = new ItemVetheanArmor(tormentedChestID, tormentedRender, 1, 70, "", "").setIconCoord(11,15).setTextureFile("/Xolovon4.png").setItemName("tormentedChest").setCreativeTab(tabArmor);
         tormentedLegs = new ItemVetheanArmor(tormentedLegsID, tormentedRender, 2, 70, "", "").setIconCoord(12,15).setTextureFile("/Xolovon4.png").setItemName("tormentedLegs").setCreativeTab(tabArmor);
         tormentedBoots = new ItemVetheanArmor(tormentedBootsID, tormentedRender, 3, 70, "", "").setIconCoord(10,15).setTextureFile("/Xolovon4.png").setItemName("tormentedBoots").setCreativeTab(tabArmor);
+
+        dirtyPearls = new Item(dirtyPearlsID).setItemName("dirtyPearls").setIconCoord(1, 13).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        cleanPearls = new Item(cleanPearlsID).setItemName("cleanPearls").setIconCoord(2, 13).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        polishedPearls = new Item(polishedPearlsID).setItemName("polishedPearls").setIconCoord(3, 13).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        shinyPearls = new Item(shinyPearlsID).setItemName("shinyPearls").setIconCoord(4, 13).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        
+        honeychunk = new Item(honeychunkID).setItemName("honeychunk").setIconCoord(1, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        rockChunks = new Item(rockChunksID).setItemName("rockChunks").setIconCoord(2, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        fyrossom = new Item(fyrossomID).setItemName("fyrossom").setIconCoord(3, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        heivaBelt = new Item(heivaBeltID).setItemName("heivaBelt").setIconCoord(4, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        mooncloud = new Item(mooncloudID).setItemName("mooncloud").setIconCoord(5, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        wormChunks = new Item(wormChunksID).setItemName("wormChunk").setIconCoord(0, 5).setTextureFile("/Xolovon2.png").setCreativeTab(tabItems);
+        vhraakTeeth = new Item(vhraakTeethID).setItemName("vhraakTeeth").setIconCoord(1, 5).setTextureFile("/Xolovon2.png").setCreativeTab(tabItems);
+        
+        dreamflint = new ItemDreamflint(dreamflintID).setItemName("dreamflint").setIconCoord(7, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabSpawner);
+        moonclock = new ItemMoonclock(moonclockID).setItemName("moonclock").setIconCoord(7, 15).setTextureFile("/Xolovon4.png").setCreativeTab(tabSpawner);
+        spinebackChunk = new ItemSpinebackChunk(spinebackChunkID).setItemName("spinebackChunk").setIconCoord(2, 5).setTextureFile("/Xolovon2.png").setCreativeTab(tabSpawner);
+        
+        teakerCannon = new ItemVetheanCannon(teakerCannonID, 3, "TeakerCannon").setIconCoord(0, 10).setCreativeTab(tabRanged);
+        amthrimisCannon = new ItemVetheanCannon(amthirmisCannonID, 5, "amthirmisCannon").setIconCoord(1, 10).setCreativeTab(tabRanged);
+        darvenCannon = new ItemVetheanCannon(darvenCannonID, 8, "darvenCannon").setIconCoord(2, 10).setCreativeTab(tabRanged);
+        cermileCannon = new ItemVetheanCannon(cermileCannonID, 12, "cermileCannon").setIconCoord(3, 10).setCreativeTab(tabRanged);
+        pardimalCannon = new ItemVetheanCannon(pardimalCannonID, 15, "pardimalCannon").setIconCoord(4, 10).setCreativeTab(tabRanged);
+        quadroticCannon = new ItemVetheanCannon(quadroticCannonID, 19, "quadroticCannon").setIconCoord(5, 10).setCreativeTab(tabRanged);
+        karosCannonItem = new ItemVetheanCannon(karosCannonItemID, 21, "karosCannonItem").setIconCoord(6, 10).setCreativeTab(tabRanged);
+        heliosisCannon = new ItemVetheanCannon(heliosisCannonID, 28, "heliosisCannon").setIconCoord(7, 10).setCreativeTab(tabRanged);
+        arksianeCannon = new ItemVetheanCannon(arksianeCannonID, 36, "arksianeCannon").setIconCoord(8, 10).setCreativeTab(tabRanged);
+        
+        spinebackCannon = new ItemSpinebackCannon(spinebackCannonID, 55, "spinebackCannon").setIconCoord(8, 13).setCreativeTab(tabRanged);
+        eversight = new ItemVetheanCannon(eversightID, 42, "eversight").setIconCoord(7, 12).setCreativeTab(tabRanged);
+        
+        spinebackDisc = new ItemSpinebackDisc(spinebackDiscID, 41).setCreativeTab(tabRanged).setIconCoord(5, 13).setTextureFile("/Xolovon4.png").setItemName("Spineback Disk");       
+        
+        spinebackHammer = new ItemVetheanHammerSword(spinebackHammerID, 215, "spinebackHammer").setWeaponDamage(46).setCreativeTab(tabSword);
+        everlight = new ItemVetheanHammerSword(everlightID, 197, "everlight").setWeaponDamage(44).setCreativeTab(tabSword);
+        
+        everbright = new ItemVetheanClaw(everbrightID, 198, "everbright").setWeaponDamage(42).setCreativeTab(tabSword);
+        everfight = new ItemVetheanBow(everfightID, 4.6D, everArrow).setIconCoord(5, 6).setItemName("everfight").setCreativeTab(tabRanged);
+        
+        spinebackStaff = new ItemSpinebackStaff(spinebackStaffID, 0, 200).setIconCoord(6, 13).setItemName("spinebackStaff").setCreativeTab(tabRanged);
+        evernight = new ItemEvernight(evernightID, 115, 200).setIconCoord(4, 12).setItemName("evernight").setCreativeTab(tabRanged);
         
         //TODO
         /*

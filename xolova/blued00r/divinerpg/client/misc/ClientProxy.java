@@ -349,6 +349,9 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityVetheanArrow2.class, new RenderBasicArrow("/item/darvenArrow.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityVetheanWarArrow.class, new RenderBasicArrow("/item/pardimalArrow.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityVetheanWrathArrow.class, new RenderBasicArrow("/item/karosArrow.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityKarosCannonShot.class, new RenderBasicArrow("/item/karosCannonArrow.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySpinebackCannonShot.class, new RenderBasicProjectile(DivineRPG.rockChunks.getIconFromDamage(0), "/Xolovon4.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityEvernightProjectile.class, new RenderBasicProjectile(8, "/DivineRPG/Entities.png"));
         
         /*
          * Render Block info

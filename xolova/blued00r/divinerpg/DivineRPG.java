@@ -108,8 +108,8 @@ import xolova.blued00r.divinerpg.items.iceika.ItemSnowSlash;
 import xolova.blued00r.divinerpg.items.iceika.ItemSnowStormBow;
 import xolova.blued00r.divinerpg.items.iceika.ItemSoundOfCarols;
 import xolova.blued00r.divinerpg.items.iceika.ItemSwordIceika;
-import xolova.blued00r.divinerpg.items.vethea.ItemTeakerDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemVetheanHammerSword;
 import xolova.blued00r.divinerpg.misc.ArmorProtectionHandler;
 import xolova.blued00r.divinerpg.misc.CommonProxy;
 import xolova.blued00r.divinerpg.misc.CraftingHandler;
@@ -3265,6 +3265,26 @@ public class DivineRPG
         teakerDiskID = var2.getItem("teakerDisk", 5516).getInt();
         amthirmisDiskID = var2.getItem("AmthirmisDisk", 5517).getInt();
         
+        teakerHammerID = var2.getItem("teakerHammer", 5525).getInt();
+        amthirmisHammerID = var2.getItem("AmthirmisHammer", 5526).getInt();
+        darvenHammerID = var2.getItem("darvenHammer", 5527).getInt();
+        cermileHammerID = var2.getItem("cermileHammer", 5528).getInt();
+        pardimalHammerID = var2.getItem("pardimalHammer", 5529).getInt();
+        quadroticHammerID = var2.getItem("quadroticHammer", 5530).getInt();
+        karosHammerID = var2.getItem("karosHammer", 5531).getInt();
+        heliosisHammerID = var2.getItem("heliosisHammer", 5532).getInt();
+        arksianeHammerID = var2.getItem("arksianeHammer", 5533).getInt();
+        
+        teakerSwordID = var2.getItem("teakerSword", 5534).getInt();
+        amthirmisSwordID = var2.getItem("AmthirmisSword", 5535).getInt();
+        darvenSwordID = var2.getItem("darvenSword", 5536).getInt();
+        cermileSwordID = var2.getItem("cermileSword", 5537).getInt();
+        pardimalSwordID = var2.getItem("pardimalSword", 5538).getInt();
+        quadroticSwordID = var2.getItem("quadroticSword", 5539).getInt();
+        karosSwordID = var2.getItem("karosSword", 5540).getInt();
+        heliosisSwordID = var2.getItem("heliosisSword", 5541).getInt();
+        arksianeSwordID = var2.getItem("arksianeSword", 5542).getInt();
+        
         /*
          * Dimension IDs
          */
@@ -4418,7 +4438,27 @@ public class DivineRPG
         quadroticDisk = new ItemVetheanDisk(quadroticDiskID, 1, quadroticDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Quadrotic Disk");
         karosDisk = new ItemVetheanDisk(karosDiskID, 1, karosDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Karos Disk");
         heliosisDisk = new ItemVetheanDisk(heliosisDiskID, 1, heliosisDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Heliosis Disk");
-        arksianeDisk = new ItemVetheanDisk(arksianeDiskID, 1, arksianeDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Arksiane Disk");       
+        arksianeDisk = new ItemVetheanDisk(arksianeDiskID, 1, arksianeDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Arksiane Disk");
+        
+        teakerHammer = new ItemVetheanHammerSword(teakerHammerID, 0, "TeakerHammer").setWeaponDamage(6).setCreativeTab(tabSword);
+        amthrimisHammer = new ItemVetheanHammerSword(amthirmisHammerID, 1, "amthirmisHammer").setWeaponDamage(8).setCreativeTab(tabSword);
+        darvenHammer = new ItemVetheanHammerSword(darvenHammerID, 2, "darvenHammer").setWeaponDamage(12).setCreativeTab(tabSword);
+        cermileHammer = new ItemVetheanHammerSword(cermileHammerID, 3, "cermileHammer").setWeaponDamage(15).setCreativeTab(tabSword);
+        pardimalHammer = new ItemVetheanHammerSword(pardimalHammerID, 4, "pardimalHammer").setWeaponDamage(19).setCreativeTab(tabSword);
+        quadroticHammer = new ItemVetheanHammerSword(quadroticHammerID, 5, "quadroticHammer").setWeaponDamage(24).setCreativeTab(tabSword);
+        karosHammer = new ItemVetheanHammerSword(karosHammerID, 6, "karosHammer").setWeaponDamage(26).setCreativeTab(tabSword);
+        heliosisHammer = new ItemVetheanHammerSword(heliosisHammerID, 7, "heliosisHammer").setWeaponDamage(33).setCreativeTab(tabSword);
+        arksianeHammer = new ItemVetheanHammerSword(arksianeHammerID, 8, "arksianeHammer").setWeaponDamage(39).setCreativeTab(tabSword);
+
+        teakerSword = new ItemVetheanHammerSword(teakerSwordID, 16, "TeakerSword").setWeaponDamage(4).setCreativeTab(tabSword);
+        amthrimisSword = new ItemVetheanHammerSword(amthirmisSwordID, 17, "amthirmisSword").setWeaponDamage(6).setCreativeTab(tabSword);
+        darvenSword = new ItemVetheanHammerSword(darvenSwordID, 18, "darvenSword").setWeaponDamage(9).setCreativeTab(tabSword);
+        cermileSword = new ItemVetheanHammerSword(cermileSwordID, 19, "cermileSword").setWeaponDamage(13).setCreativeTab(tabSword);
+        pardimalSword = new ItemVetheanHammerSword(pardimalSwordID, 20, "pardimalSword").setWeaponDamage(16).setCreativeTab(tabSword);
+        quadroticSword = new ItemVetheanHammerSword(quadroticSwordID, 21, "quadroticSword").setWeaponDamage(20).setCreativeTab(tabSword);
+        karosSword = new ItemVetheanHammerSword(karosSwordID, 22, "karosSword").setWeaponDamage(22).setCreativeTab(tabSword);
+        heliosisSword = new ItemVetheanHammerSword(heliosisSwordID, 23, "heliosisSword").setWeaponDamage(29).setCreativeTab(tabSword);
+        arksianeSword = new ItemVetheanHammerSword(arksianeSwordID, 24, "arksianeSword").setWeaponDamage(37).setCreativeTab(tabSword);
         
         /*
          * Biomes

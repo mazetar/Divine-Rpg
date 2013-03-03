@@ -40,6 +40,10 @@ public class ItemVetheanSword extends ItemSword
         {
         	par3List.add("Infinite Uses");
         }
+        if (this instanceof ItemVetheanClaw)
+        {
+        	par3List.add("Can not Block");
+        }
         par3List.add("§2Vethean");
     }
 }

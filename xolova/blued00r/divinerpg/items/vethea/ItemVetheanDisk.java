@@ -17,14 +17,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemVetheanDisk extends Item
 {
     protected int damage;
-    private Item item;
 
-	public ItemVetheanDisk(int par1, int par2, Item item)
+	public ItemVetheanDisk(int par1, int par2)
     {
         super(par1);
         this.maxStackSize = 1;
         this.damage = par2;
-        this.item = item;
     }
 
     @Override
@@ -51,9 +49,14 @@ public class ItemVetheanDisk extends Item
 
         if (!par2.isRemote)
         {
-            par2.spawnEntityInWorld(new EntityDisk(par2, par3, this.damage, item));
+            this.shoot(par2, par3);
         }
 
         return par1;
+    }
+    
+    protected void shoot(World par2, EntityPlayer par3)
+    {
+    	par2.spawnEntityInWorld(new EntityDisk(par2, par3, this.damage, this));
     }
 }

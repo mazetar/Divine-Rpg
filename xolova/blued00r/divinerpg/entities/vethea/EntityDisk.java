@@ -3,9 +3,9 @@ package xolova.blued00r.divinerpg.entities.vethea;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import xolova.blued00r.divinerpg.entities.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -13,23 +13,28 @@ import xolova.blued00r.divinerpg.DivineRPG;
 
 public class EntityDisk extends EntityThrowable
 {
-    private int damage;
-	private int counter;
-	private boolean rebound;
-	private Item item;
+	public int damage;
+    public int counter;
+	public boolean rebound;
+	public Item item;
+	public int icon;
+	public int collideCounter;
+	public EntityLiving thrower;
 
 	public EntityDisk(World par1World)
     {
         super(par1World);
     }
 
-    public EntityDisk(World par1World, EntityLiving par2EntityLiving, int par3, Item item)
+    public EntityDisk(World par1World, EntityLiving par2EntityLiving, int par3, Item i)
     {
         super(par1World, par2EntityLiving);
         this.damage = par3;
-        this.counter = 15;
+        this.counter = 30;
+        this.thrower = par2EntityLiving;
+        this.collideCounter = 0;
         this.rebound = false;
-        this.item = item;
+        this.item = i;
     }
 
     public EntityDisk(World par1World, double par2, double par4, double par6)
@@ -43,21 +48,27 @@ public class EntityDisk extends EntityThrowable
     public void onUpdate()
     {
     	super.onUpdate();
-    	if (this.counter == 0 && !this.rebound && this.thrower != null)
+    	this.setVelocity(this.motionX / 0.99D, this.motionY / 0.99D, this.motionZ / 0.99D);
+    	if (this.counter == 0 && !this.rebound && this.thrower != null && this.collideCounter == 0)
     	{
     		this.setVelocity(-this.motionX, -this.motionY, -this.motionZ);
     		this.rebound = true;
+    		this.collideCounter = 5;
     	}
     	else if (this.counter > 0)
     	{
     		this.counter--;
+    	}
+    	else if (this.collideCounter > 0)
+    	{
+    		this.collideCounter--;
     	}
     }
 
     /**
      * Called when this EntityThrowable hits a block or entity.
      */
-    protected void onImpact(MovingObjectPosition par1MovingObjectPosition)
+    public void onImpact(MovingObjectPosition par1MovingObjectPosition)
     {
     	if (this.thrower != null)
     	{
@@ -67,13 +78,21 @@ public class EntityDisk extends EntityThrowable
             }
             else if (par1MovingObjectPosition.entityHit == this.thrower && this.thrower instanceof EntityPlayer && this.rebound)
             {
-            	((EntityPlayer)this.thrower).inventory.addItemStackToInventory(new ItemStack(item));
+            	if (!((EntityPlayer)this.thrower).capabilities.isCreativeMode)
+            	{
+                	((EntityPlayer)this.thrower).inventory.addItemStackToInventory(new ItemStack(this.item));
+            	}
             	if (!this.worldObj.isRemote)
                 {
                     this.setDead();
                 }
             }
-            this.rebound = false;
+            
+            if (this.collideCounter == 0)
+            {
+                this.rebound = false;
+                this.counter = 0;
+            }
     	}
     	else if (!this.worldObj.isRemote)
         {
@@ -84,7 +103,7 @@ public class EntityDisk extends EntityThrowable
     /**
      * Gets the amount of gravity to apply to the thrown entity with each tick.
      */
-    protected float getGravityVelocity()
+    public float getGravityVelocity()
     {
         return 0F;
     }

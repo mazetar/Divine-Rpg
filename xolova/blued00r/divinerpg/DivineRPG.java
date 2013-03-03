@@ -14,6 +14,7 @@ import net.minecraft.item.ItemBucketMilk;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.DimensionManager;
@@ -108,8 +109,20 @@ import xolova.blued00r.divinerpg.items.iceika.ItemSnowSlash;
 import xolova.blued00r.divinerpg.items.iceika.ItemSnowStormBow;
 import xolova.blued00r.divinerpg.items.iceika.ItemSoundOfCarols;
 import xolova.blued00r.divinerpg.items.iceika.ItemSwordIceika;
-import xolova.blued00r.divinerpg.items.vethea.ItemVetheanDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemAmthirmisDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemArksianeDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemCermileDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemDarvenDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemHeliosisDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemKarosDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemPardimalDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemQuadroticDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemTeakerDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemVetheanBow;
+import xolova.blued00r.divinerpg.items.vethea.ItemVetheanClaw;
+import xolova.blued00r.divinerpg.items.vethea.ItemVetheanFood;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanHammerSword;
+import xolova.blued00r.divinerpg.items.vethea.ItemVetheanHealingFood;
 import xolova.blued00r.divinerpg.misc.ArmorProtectionHandler;
 import xolova.blued00r.divinerpg.misc.CommonProxy;
 import xolova.blued00r.divinerpg.misc.CraftingHandler;
@@ -2309,7 +2322,79 @@ public class DivineRPG
     public static Item heliosisDisk;
     public static int arksianeDiskID;
     public static Item arksianeDisk;
+
+    public static int acidfireID;
+    public static Item acidfire;
+    public static int vetheanArrowID;
+    public static Item vetheanArrow;
+    public static int vetheanArrow2ID;
+    public static Item vetheanArrow2;
+    public static int vetheanWarArrowID;
+    public static Item vetheanWarArrow;
+    public static int vetheanWrathArrowID;
+    public static Item vetheanWrathArrow;
     
+
+    public static int vetheanHammerTemplateID;
+    public static Item vetheanHammerTemplate;
+    public static int vetheanBackswordTemplateID;
+    public static Item vetheanBackswordTemplate;
+    public static int vetheanBowTemplateID;
+    public static Item vetheanBowTemplate;
+    public static int vetheanCannonTemplateID;
+    public static Item vetheanCannonTemplate;
+    public static int vetheanClawTemplateID;
+    public static Item vetheanClawTemplate;
+    public static int vetheanDiskTemplateID;
+    public static Item vetheanDiskTemplate;
+
+    public static int vetheanDegradedTemplateID;
+    public static Item vetheanDegradedTemplate;
+    public static int vetheanFinishedTemplateID;
+    public static Item vetheanFinishedTemplate;
+    public static int vetheanGlisteningTemplateID;
+    public static Item vetheanGlisteningTemplate;
+    public static int vetheanDemonizedTemplateID;
+    public static Item vetheanDemonizedTemplate;
+    public static int vetheanTormentedTemplateID;
+    public static Item vetheanTormentedTemplate;
+    
+    public static int honeysuckleID;
+    public static Item honeysuckle;
+    public static int dreamCarrotID;
+    public static Item dreamCarrot;
+    public static int dreamMelonID;
+    public static Item dreamMelon;
+    public static int dreamPieID;
+    public static Item dreamPie;
+    public static int dreamCakeID;
+    public static Item dreamCake;
+    
+    public static int teakerLumpID;
+    public static Item teakerLump;
+    public static int amthirmisLumpID;
+    public static Item amthrimisLump;
+    public static int darvenLumpID;
+    public static Item darvenLump;
+    public static int cermileLumpID;
+    public static Item cermileLump;
+    public static int pardimalLumpID;
+    public static Item pardimalLump;
+    public static int quadroticLumpID;
+    public static Item quadroticLump;
+    public static int karosLumpID;
+    public static Item karosLump;
+    public static int heliosisLumpID;
+    public static Item heliosisLump;
+    public static int arksianeLumpID;
+    public static Item arksianeLump;
+
+    public static int dreamSweetsID;
+    public static Item dreamSweets;
+    public static int dreamSoursID;
+    public static Item dreamSours;
+    
+    //TODO
     @Mod.PreInit
     public void preload(FMLPreInitializationEvent var1)
     {
@@ -3262,29 +3347,105 @@ public class DivineRPG
          * 1.3 Items
          */
 
-        teakerDiskID = var2.getItem("teakerDisk", 5516).getInt();
-        amthirmisDiskID = var2.getItem("AmthirmisDisk", 5517).getInt();
+        teakerDiskID = var2.getItem("TeakerDisk", 5516).getInt();
+        amthirmisDiskID = var2.getItem("amthirmisDisk", 5517).getInt();
+        darvenDiskID = var2.getItem("darvenDisk", 5518).getInt();
+        cermileDiskID = var2.getItem("cermileDisk", 5519).getInt();
+        pardimalDiskID = var2.getItem("pardimalDisk", 5520).getInt();
+        quadroticDiskID = var2.getItem("quadroticDisk", 5521).getInt();
+        karosDiskID = var2.getItem("karosDisk", 5522).getInt();
+        heliosisDiskID = var2.getItem("heliosisDisk", 5523).getInt();
+        arksianeDiskID = var2.getItem("arksianeDisk", 5524).getInt();
         
-        teakerHammerID = var2.getItem("teakerHammer", 5525).getInt();
-        amthirmisHammerID = var2.getItem("AmthirmisHammer", 5526).getInt();
-        darvenHammerID = var2.getItem("darvenHammer", 5527).getInt();
-        cermileHammerID = var2.getItem("cermileHammer", 5528).getInt();
-        pardimalHammerID = var2.getItem("pardimalHammer", 5529).getInt();
-        quadroticHammerID = var2.getItem("quadroticHammer", 5530).getInt();
-        karosHammerID = var2.getItem("karosHammer", 5531).getInt();
-        heliosisHammerID = var2.getItem("heliosisHammer", 5532).getInt();
-        arksianeHammerID = var2.getItem("arksianeHammer", 5533).getInt();
+        teakerHammerID = var2.getItem("teakerHammer", 5526).getInt();
+        amthirmisHammerID = var2.getItem("AmthirmisHammer", 5527).getInt();
+        darvenHammerID = var2.getItem("darvenHammer", 5528).getInt();
+        cermileHammerID = var2.getItem("cermileHammer", 5529).getInt();
+        pardimalHammerID = var2.getItem("pardimalHammer", 5530).getInt();
+        quadroticHammerID = var2.getItem("quadroticHammer", 5531).getInt();
+        karosHammerID = var2.getItem("karosHammer", 5532).getInt();
+        heliosisHammerID = var2.getItem("heliosisHammer", 5533).getInt();
+        arksianeHammerID = var2.getItem("arksianeHammer", 5534).getInt();
         
-        teakerSwordID = var2.getItem("teakerSword", 5534).getInt();
-        amthirmisSwordID = var2.getItem("AmthirmisSword", 5535).getInt();
-        darvenSwordID = var2.getItem("darvenSword", 5536).getInt();
-        cermileSwordID = var2.getItem("cermileSword", 5537).getInt();
-        pardimalSwordID = var2.getItem("pardimalSword", 5538).getInt();
-        quadroticSwordID = var2.getItem("quadroticSword", 5539).getInt();
-        karosSwordID = var2.getItem("karosSword", 5540).getInt();
-        heliosisSwordID = var2.getItem("heliosisSword", 5541).getInt();
-        arksianeSwordID = var2.getItem("arksianeSword", 5542).getInt();
+        teakerSwordID = var2.getItem("teakerSword", 5535).getInt();
+        amthirmisSwordID = var2.getItem("AmthirmisSword", 5536).getInt();
+        darvenSwordID = var2.getItem("darvenSword", 5537).getInt();
+        cermileSwordID = var2.getItem("cermileSword", 5538).getInt();
+        pardimalSwordID = var2.getItem("pardimalSword", 5539).getInt();
+        quadroticSwordID = var2.getItem("quadroticSword", 5540).getInt();
+        karosSwordID = var2.getItem("karosSword", 5541).getInt();
+        heliosisSwordID = var2.getItem("heliosisSword", 5542).getInt();
+        arksianeSwordID = var2.getItem("arksianeSword", 5543).getInt();
         
+        teakerClawID = var2.getItem("teakerClaw", 5544).getInt();
+        amthirmisClawID = var2.getItem("AmthirmisClaw", 5545).getInt();
+        darvenClawID = var2.getItem("darvenClaw", 5546).getInt();
+        cermileClawID = var2.getItem("cermileClaw", 5547).getInt();
+        pardimalClawID = var2.getItem("pardimalClaw", 5548).getInt();
+        quadroticClawID = var2.getItem("quadroticClaw", 5549).getInt();
+        karosClawID = var2.getItem("karosClaw", 5550).getInt();
+        heliosisClawID = var2.getItem("heliosisClaw", 5551).getInt();
+        arksianeClawID = var2.getItem("arksianeClaw", 5552).getInt();
+        
+        teakerCannonID = var2.getItem("teakerCannon", 5553).getInt();
+        amthirmisCannonID = var2.getItem("AmthirmisCannon", 5554).getInt();
+        darvenCannonID = var2.getItem("darvenCannon", 5555).getInt();
+        cermileCannonID = var2.getItem("cermileCannon", 5556).getInt();
+        pardimalCannonID = var2.getItem("pardimalCannon", 5557).getInt();
+        quadroticCannonID = var2.getItem("quadroticCannon", 5558).getInt();
+        karosCannonItemID = var2.getItem("karosCannon", 5559).getInt();
+        heliosisCannonID = var2.getItem("heliosisCannon", 5560).getInt();
+        arksianeCannonID = var2.getItem("arksianeCannon", 5561).getInt();
+        
+        acidfireID = var2.getItem("acidfire", 5562).getInt();
+        
+        teakerBowID = var2.getItem("teakerBow", 5563).getInt();
+        amthirmisBowID = var2.getItem("AmthirmisBow", 5564).getInt();
+        darvenBowID = var2.getItem("darvenBow", 5565).getInt();
+        cermileBowID = var2.getItem("cermileBow", 5566).getInt();
+        pardimalBowID = var2.getItem("pardimalBow", 5567).getInt();
+        quadroticBowID = var2.getItem("quadroticBow", 5568).getInt();
+        karosBowID = var2.getItem("karosBow", 5569).getInt();
+        heliosisBowID = var2.getItem("heliosisBow", 5570).getInt();
+        arksianeBowID = var2.getItem("arksianeBow", 5571).getInt();
+
+        vetheanArrowID = var2.getItem("vetheanArrow", 5572).getInt();
+        vetheanArrow2ID = var2.getItem("vetheanArrow2", 5573).getInt();
+        vetheanWarArrowID = var2.getItem("vetheanWarArrow", 5574).getInt();
+        vetheanWrathArrowID = var2.getItem("vetheanWrathArrow", 5575).getInt();
+
+        vetheanHammerTemplateID = var2.getItem("vetheanHammerTemplate", 5576).getInt();
+        vetheanBackswordTemplateID = var2.getItem("vetheanBackswordTemplate", 5576).getInt();
+        vetheanBowTemplateID = var2.getItem("vetheanBowTemplate", 5577).getInt();
+        vetheanCannonTemplateID = var2.getItem("vetheanCannonTemplate", 5578).getInt();
+        vetheanClawTemplateID = var2.getItem("vetheanClawTemplate", 5579).getInt();
+        vetheanDiskTemplateID = var2.getItem("vetheanDiskTemplate", 5580).getInt();
+        vetheanDegradedTemplateID = var2.getItem("vetheanDegradedTemplate", 5591).getInt();
+        vetheanFinishedTemplateID = var2.getItem("vetheanFinishedTemplate", 5582).getInt();
+        vetheanGlisteningTemplateID = var2.getItem("vetheanGlisteningTemplate", 5583).getInt();
+        vetheanDemonizedTemplateID = var2.getItem("vetheanDemonizedTemplate", 5584).getInt();
+        vetheanTormentedTemplateID = var2.getItem("vetheanTormentedTemplate", 5585).getInt();
+
+        honeysuckleID = var2.getItem("honeysuckle", 5585).getInt();
+        dreamCarrotID = var2.getItem("dreamCarrot", 5586).getInt();
+        dreamMelonID = var2.getItem("dreamMelon", 5587).getInt();
+        dreamPieID = var2.getItem("dreamPie", 5588).getInt();
+        dreamCakeID = var2.getItem("dreamCake", 5589).getInt();
+        
+        teakerBowID = var2.getItem("teakerLump", 5590).getInt();
+        amthirmisLumpID = var2.getItem("AmthirmisLump", 5591).getInt();
+        darvenLumpID = var2.getItem("darvenLump", 5592).getInt();
+        cermileLumpID = var2.getItem("cermileLump", 5593).getInt();
+        pardimalLumpID = var2.getItem("pardimalLump", 5594).getInt();
+        quadroticLumpID = var2.getItem("quadroticLump", 5595).getInt();
+        karosLumpID = var2.getItem("karosLump", 5596).getInt();
+        heliosisLumpID = var2.getItem("heliosisLump", 5597).getInt();
+        arksianeLumpID = var2.getItem("arksianeLump", 5598).getInt();
+
+        dreamSweetsID = var2.getItem("dreamSweets", 5599).getInt();
+        dreamSoursID = var2.getItem("dreamSours", 5600).getInt();
+        
+        //TODO
         /*
          * Dimension IDs
          */
@@ -4430,16 +4591,16 @@ public class DivineRPG
         /*
          * 1.3 Item Inits
          */
-        teakerDisk = new ItemVetheanDisk(teakerDiskID, 1, teakerDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Teaker Disk");
-        amthrimisDisk = new ItemVetheanDisk(amthirmisDiskID, 1, amthrimisDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Amthirmis Disk");
-        darvenDisk = new ItemVetheanDisk(darvenDiskID, 1, darvenDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Darven Disk");
-        cermileDisk = new ItemVetheanDisk(cermileDiskID, 1, cermileDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Cermile Disk");
-        pardimalDisk = new ItemVetheanDisk(pardimalDiskID, 1, pardimalDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Pardimal Disk");
-        quadroticDisk = new ItemVetheanDisk(quadroticDiskID, 1, quadroticDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Quadrotic Disk");
-        karosDisk = new ItemVetheanDisk(karosDiskID, 1, karosDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Karos Disk");
-        heliosisDisk = new ItemVetheanDisk(heliosisDiskID, 1, heliosisDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Heliosis Disk");
-        arksianeDisk = new ItemVetheanDisk(arksianeDiskID, 1, arksianeDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Arksiane Disk");
-        
+        teakerDisk = new ItemTeakerDisk(teakerDiskID, 4).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Teaker Disk");
+        amthrimisDisk = new ItemAmthirmisDisk(amthirmisDiskID, 6).setCreativeTab(tabRanged).setIconCoord(1, 8).setTextureFile("/Xolovon4.png").setItemName("Amthirmis Disk");
+        darvenDisk = new ItemDarvenDisk(darvenDiskID, 9).setCreativeTab(tabRanged).setIconCoord(2, 8).setTextureFile("/Xolovon4.png").setItemName("Darven Disk");
+        cermileDisk = new ItemCermileDisk(cermileDiskID, 13).setCreativeTab(tabRanged).setIconCoord(3, 8).setTextureFile("/Xolovon4.png").setItemName("Cermile Disk");
+        pardimalDisk = new ItemPardimalDisk(pardimalDiskID, 16).setCreativeTab(tabRanged).setIconCoord(4, 8).setTextureFile("/Xolovon4.png").setItemName("Pardimal Disk");
+        quadroticDisk = new ItemQuadroticDisk(quadroticDiskID, 20).setCreativeTab(tabRanged).setIconCoord(5, 8).setTextureFile("/Xolovon4.png").setItemName("Quadrotic Disk");
+        karosDisk = new ItemKarosDisk(karosDiskID, 22).setCreativeTab(tabRanged).setIconCoord(6, 8).setTextureFile("/Xolovon4.png").setItemName("Karos Disk");
+        heliosisDisk = new ItemHeliosisDisk(heliosisDiskID, 29).setCreativeTab(tabRanged).setIconCoord(7, 8).setTextureFile("/Xolovon4.png").setItemName("Heliosis Disk");
+        arksianeDisk = new ItemArksianeDisk(arksianeDiskID, 37).setCreativeTab(tabRanged).setIconCoord(8, 8).setTextureFile("/Xolovon4.png").setItemName("Arksiane Disk");       
+
         teakerHammer = new ItemVetheanHammerSword(teakerHammerID, 0, "TeakerHammer").setWeaponDamage(6).setCreativeTab(tabSword);
         amthrimisHammer = new ItemVetheanHammerSword(amthirmisHammerID, 1, "amthirmisHammer").setWeaponDamage(8).setCreativeTab(tabSword);
         darvenHammer = new ItemVetheanHammerSword(darvenHammerID, 2, "darvenHammer").setWeaponDamage(12).setCreativeTab(tabSword);
@@ -4460,9 +4621,58 @@ public class DivineRPG
         heliosisSword = new ItemVetheanHammerSword(heliosisSwordID, 23, "heliosisSword").setWeaponDamage(29).setCreativeTab(tabSword);
         arksianeSword = new ItemVetheanHammerSword(arksianeSwordID, 24, "arksianeSword").setWeaponDamage(37).setCreativeTab(tabSword);
         
+        teakerClaw = new ItemVetheanClaw(teakerClawID, 144, "TeakerClaw").setWeaponDamage(3).setCreativeTab(tabSword);
+        amthrimisClaw = new ItemVetheanClaw(amthirmisClawID, 145, "amthirmisClaw").setWeaponDamage(5).setCreativeTab(tabSword);
+        darvenClaw = new ItemVetheanClaw(darvenClawID, 146, "darvenClaw").setWeaponDamage(7).setCreativeTab(tabSword);
+        cermileClaw = new ItemVetheanClaw(cermileClawID, 147, "cermileClaw").setWeaponDamage(8).setCreativeTab(tabSword);
+        pardimalClaw = new ItemVetheanClaw(pardimalClawID, 148, "pardimalClaw").setWeaponDamage(12).setCreativeTab(tabSword);
+        quadroticClaw = new ItemVetheanClaw(quadroticClawID, 149, "quadroticClaw").setWeaponDamage(14).setCreativeTab(tabSword);
+        karosClaw = new ItemVetheanClaw(karosClawID, 150, "karosClaw").setWeaponDamage(19).setCreativeTab(tabSword);
+        heliosisClaw = new ItemVetheanClaw(heliosisClawID, 151, "heliosisClaw").setWeaponDamage(26).setCreativeTab(tabSword);
+        arksianeClaw = new ItemVetheanClaw(arksianeClawID, 152, "arksianeClaw").setWeaponDamage(35).setCreativeTab(tabSword);
+        
+        acidfire = new Item(acidfireID).setItemName("Acidfire").setIconCoord(0, 13).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanArrow = new Item(vetheanArrowID).setItemName("Teaker Arrow").setIconCoord(4, 2).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanArrow2 = new Item(vetheanArrow2ID).setItemName("Darven Arrow").setIconCoord(4, 3).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanWarArrow = new Item(vetheanWarArrowID).setItemName("Pardimal Arrow").setIconCoord(4, 4).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanWrathArrow = new Item(vetheanWrathArrowID).setItemName("Karos Arrow").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        
+        teakerBow = new ItemVetheanBow(teakerBowID, 0.5D, vetheanArrow).setIconCoord(0, 2).setItemName("teakerBow").setCreativeTab(tabRanged);
+        amthrimisBow = new ItemVetheanBow(amthirmisBowID, 0.7D, vetheanArrow).setIconCoord(5, 2).setItemName("amthrimisBow").setCreativeTab(tabRanged);
+        darvenBow = new ItemVetheanBow(darvenBowID, 1.1D, vetheanArrow2).setIconCoord(0, 3).setItemName("teakerBow").setCreativeTab(tabRanged);
+        cermileBow = new ItemVetheanBow(cermileBowID, 1.4D, vetheanArrow2).setIconCoord(5, 3).setItemName("darvenBow").setCreativeTab(tabRanged);
+        pardimalBow = new ItemVetheanBow(pardimalBowID, 1.8D, vetheanWarArrow).setIconCoord(0, 4).setItemName("pardimalBow").setCreativeTab(tabRanged);
+        quadroticBow = new ItemVetheanBow(quadroticBowID, 2.1D, vetheanWarArrow).setIconCoord(5, 4).setItemName("quadroticBow").setCreativeTab(tabRanged);
+        karosBow = new ItemVetheanBow(karosBowID, 2.3D, vetheanWrathArrow).setIconCoord(0, 5).setItemName("karosBow").setCreativeTab(tabRanged);
+        heliosisBow = new ItemVetheanBow(heliosisBowID, 2.8D, vetheanWrathArrow).setIconCoord(5, 5).setItemName("heliosisBow").setCreativeTab(tabRanged);
+        arksianeBow = new ItemVetheanBow(arksianeBowID, 3.6D, vetheanWrathArrow).setIconCoord(0, 6).setItemName("arksianeBow").setCreativeTab(tabRanged);
+        
+        vetheanHammerTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanBackswordTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanBowTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanCannonTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanClawTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanDiskTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanDegradedTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanFinishedTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanGlisteningTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanDemonizedTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanTormentedTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        
+        honeysuckle = new ItemVetheanFood(honeysuckleID, 1, 0.2F, true).setItemName("honeysuckle").setIconCoord(0, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
+        dreamCarrot = new ItemVetheanFood(dreamCarrotID, 3, 0.4F, true).setItemName("dreamCarrot").setIconCoord(0, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
+        dreamMelon = new ItemVetheanFood(dreamMelonID, 6, 0.6F, true).setItemName("dreamMelon").setIconCoord(1, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
+        dreamPie = new ItemVetheanFood(dreamPieID, 4, 0.8F, true).setItemName("dreamPie").setIconCoord(2, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
+        dreamCake = new ItemVetheanFood(dreamCakeID, 8, 0.8F, true).setItemName("dreamCake").setIconCoord(3, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
+        
+        dreamSweets = new ItemVetheanHealingFood(dreamSweetsID, 8, 0.8F, true, 2).setItemName("dreamSweets").setIconCoord(8, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
+        dreamSours = new ItemVetheanHealingFood(dreamSoursID, 8, 0.8F, true, 8).setItemName("dreamSours").setIconCoord(7, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
+        
+        //TODO
         /*
          * Biomes
          */
+        
         serenityBiome = new BiomeGenSerenity(draviteBiomeID);
         energyBiome = new BiomeGenEnergy(uviteBiomeID);
         azuriteBiome = new BiomeGenAzurite(azuriteBiomeID);
@@ -4503,7 +4713,6 @@ public class DivineRPG
         
         GameRegistry.registerWorldGenerator(new WorldGenDivineMinable());
         GameRegistry.registerCraftingHandler(new CraftingHandler());
-        
         proxy.defineEntities();
         
         proxy.addEntities();

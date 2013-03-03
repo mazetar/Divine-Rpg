@@ -74,7 +74,22 @@ public class EntityHelper {
         EntityRegistry.registerModEntity(EntityKazroticShot.class, "Kazrotic Shot", 268, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityZoragonBomb.class, "Zoragon Bomb", 269, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityDissimentShot.class, "Dissiment Shot", 270, DivineRPG.instance, 120, 5, true);
-        EntityRegistry.registerModEntity(EntityDisk.class, "Teaker Disk", 271, DivineRPG.instance, 120, 5, true);
+        
+        //Disks
+        EntityRegistry.registerModEntity(EntityTeakerDisk.class, "Teaker Disk", 271, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityAmthirmisDisk.class, "Amthirmis Disk", 272, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityDarvenDisk.class, "Darven Disk", 273, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityCermileDisk.class, "Cermile Disk", 274, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityPardimalDisk.class, "Pardimal Disk", 275, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityQuadroticDisk.class, "Quadrotic Disk", 276, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityKarosDisk.class, "Karos Disk", 277, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityHeliosisDisk.class, "Heliosis Disk", 278, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityArksianeDisk.class, "Arksiane Disk", 279, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityVetheanCannonShot.class, "Vethean Cannon Shot", 280, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityVetheanArrow.class, "Teaker Arrow", 281, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityVetheanArrow2.class, "Darven Arrow", 281, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityVetheanWarArrow.class, "Pardimal Arrow", 281, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityVetheanWrathArrow.class, "Karos Arrow", 281, DivineRPG.instance, 120, 5, true);
         
         /*
          * Mobs

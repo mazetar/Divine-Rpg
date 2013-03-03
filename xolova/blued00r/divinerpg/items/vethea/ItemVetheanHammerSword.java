@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.EnumHelper;
 
-public class ItemVetheanHammerSword extends ItemSword
+public class ItemVetheanHammerSword extends ItemVetheanSword
 {
 	private static int weaponDamage;
 	public static EnumToolMaterial enumz = EnumHelper.addToolMaterial("enumz", 0, -1, 0, weaponDamage, 22);

@@ -336,10 +336,23 @@ public class ClientProxy extends CommonProxy
          * 1.3 Projectiles
          */
         
-        RenderingRegistry.registerEntityRenderingHandler(EntityKazroticShot.class, new RenderBasicProjectile(Item.snowball.getIconFromDamage(0), "/gui/items.png"));
-        RenderingRegistry.registerEntityRenderingHandler(EntityZoragonBomb.class, new RenderBasicProjectile(Item.snowball.getIconFromDamage(0), "/gui/items.png"));
-        RenderingRegistry.registerEntityRenderingHandler(EntityDissimentShot.class, new RenderBasicProjectile(Item.snowball.getIconFromDamage(0), "/gui/items.png"));
-        RenderingRegistry.registerEntityRenderingHandler(EntityDisk.class, new RenderBasicProjectile(Item.snowball.getIconFromDamage(0), "/gui/items.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityKazroticShot.class, new RenderBasicProjectile(5, "/DivineRPG/Entities.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityZoragonBomb.class, new RenderBasicProjectile(6, "/DivineRPG/Entities.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityDissimentShot.class, new RenderBasicProjectile(7, "/DivineRPG/Entities.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityTeakerDisk.class, new RenderBasicProjectile(DivineRPG.teakerDisk.getIconFromDamage(0), "/Xolovon4.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityAmthirmisDisk.class, new RenderBasicProjectile(DivineRPG.amthrimisDisk.getIconFromDamage(0), "/Xolovon4.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityDarvenDisk.class, new RenderBasicProjectile(DivineRPG.darvenDisk.getIconFromDamage(0), "/Xolovon4.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityCermileDisk.class, new RenderBasicProjectile(DivineRPG.cermileDisk.getIconFromDamage(0), "/Xolovon4.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityPardimalDisk.class, new RenderBasicProjectile(DivineRPG.pardimalDisk.getIconFromDamage(0), "/Xolovon4.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityQuadroticDisk.class, new RenderBasicProjectile(DivineRPG.quadroticDisk.getIconFromDamage(0), "/Xolovon4.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityKarosDisk.class, new RenderBasicProjectile(DivineRPG.karosDisk.getIconFromDamage(0), "/Xolovon4.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityHeliosisDisk.class, new RenderBasicProjectile(DivineRPG.heliosisDisk.getIconFromDamage(0), "/Xolovon4.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityArksianeDisk.class, new RenderBasicProjectile(DivineRPG.arksianeDisk.getIconFromDamage(0), "/Xolovon4.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityVetheanCannonShot.class, new RenderBasicProjectile(4, "/DivineRPG/Entities.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityVetheanArrow.class, new RenderBasicArrow("/item/TeakerArrow.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityVetheanArrow2.class, new RenderBasicArrow("/item/darvenArrow.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityVetheanWarArrow.class, new RenderBasicArrow("/item/pardimalArrow.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityVetheanWrathArrow.class, new RenderBasicArrow("/item/karosArrow.png"));
         
         /*
          * Render Block info

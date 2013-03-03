@@ -108,6 +108,7 @@ import xolova.blued00r.divinerpg.items.iceika.ItemSnowSlash;
 import xolova.blued00r.divinerpg.items.iceika.ItemSnowStormBow;
 import xolova.blued00r.divinerpg.items.iceika.ItemSoundOfCarols;
 import xolova.blued00r.divinerpg.items.iceika.ItemSwordIceika;
+import xolova.blued00r.divinerpg.items.vethea.ItemTeakerDisk;
 import xolova.blued00r.divinerpg.misc.ArmorProtectionHandler;
 import xolova.blued00r.divinerpg.misc.CommonProxy;
 import xolova.blued00r.divinerpg.misc.CraftingHandler;
@@ -129,7 +130,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(
         modid = "DivineRPG",
         name = "DivineRPG",
-        version = "1.2.8"
+        version = "1.3.0"
 )
 @NetworkMod(
         clientSideRequired = true,
@@ -2189,9 +2190,124 @@ public class DivineRPG
     public static int lorgaSpawnerID;
     public static Block lorgaSpawner;
     
+    //TODO
     /*
      * 1.3 Items
      */
+    
+    public static int teakerSwordID;
+    public static Item teakerSword;
+    public static int amthirmisSwordID;
+    public static Item amthrimisSword;
+    public static int darvenSwordID;
+    public static Item darvenSword;
+    public static int cermileSwordID;
+    public static Item cermileSword;
+    public static int pardimalSwordID;
+    public static Item pardimalSword;
+    public static int quadroticSwordID;
+    public static Item quadroticSword;
+    public static int karosSwordID;
+    public static Item karosSword;
+    public static int heliosisSwordID;
+    public static Item heliosisSword;
+    public static int arksianeSwordID;
+    public static Item arksianeSword;
+    
+    public static int teakerHammerID;
+    public static Item teakerHammer;
+    public static int amthirmisHammerID;
+    public static Item amthrimisHammer;
+    public static int darvenHammerID;
+    public static Item darvenHammer;
+    public static int cermileHammerID;
+    public static Item cermileHammer;
+    public static int pardimalHammerID;
+    public static Item pardimalHammer;
+    public static int quadroticHammerID;
+    public static Item quadroticHammer;
+    public static int karosHammerID;
+    public static Item karosHammer;
+    public static int heliosisHammerID;
+    public static Item heliosisHammer;
+    public static int arksianeHammerID;
+    public static Item arksianeHammer;
+    
+    public static int teakerBowID;
+    public static Item teakerBow;
+    public static int amthirmisBowID;
+    public static Item amthrimisBow;
+    public static int darvenBowID;
+    public static Item darvenBow;
+    public static int cermileBowID;
+    public static Item cermileBow;
+    public static int pardimalBowID;
+    public static Item pardimalBow;
+    public static int quadroticBowID;
+    public static Item quadroticBow;
+    public static int karosBowID;
+    public static Item karosBow;
+    public static int heliosisBowID;
+    public static Item heliosisBow;
+    public static int arksianeBowID;
+    public static Item arksianeBow;
+    
+    public static int teakerCannonID;
+    public static Item teakerCannon;
+    public static int amthirmisCannonID;
+    public static Item amthrimisCannon;
+    public static int darvenCannonID;
+    public static Item darvenCannon;
+    public static int cermileCannonID;
+    public static Item cermileCannon;
+    public static int pardimalCannonID;
+    public static Item pardimalCannon;
+    public static int quadroticCannonID;
+    public static Item quadroticCannon;
+    public static int karosCannonItemID;
+    public static Item karosCannonItem;
+    public static int heliosisCannonID;
+    public static Item heliosisCannon;
+    public static int arksianeCannonID;
+    public static Item arksianeCannon;
+    
+    public static int teakerClawID;
+    public static Item teakerClaw;
+    public static int amthirmisClawID;
+    public static Item amthrimisClaw;
+    public static int darvenClawID;
+    public static Item darvenClaw;
+    public static int cermileClawID;
+    public static Item cermileClaw;
+    public static int pardimalClawID;
+    public static Item pardimalClaw;
+    public static int quadroticClawID;
+    public static Item quadroticClaw;
+    public static int karosClawID;
+    public static Item karosClaw;
+    public static int heliosisClawID;
+    public static Item heliosisClaw;
+    public static int arksianeClawID;
+    public static Item arksianeClaw;
+    
+    public static int teakerDiskID;
+    public static Item teakerDisk;
+    public static int amthirmisDiskID;
+    public static Item amthrimisDisk;
+    public static int darvenDiskID;
+    public static Item darvenDisk;
+    public static int cermileDiskID;
+    public static Item cermileDisk;
+    public static int pardimalDiskID;
+    public static Item pardimalDisk;
+    public static int quadroticDiskID;
+    public static Item quadroticDisk;
+    public static int karosDiskID;
+    public static Item karosDisk;
+    public static int heliosisDiskID;
+    public static Item heliosisDisk;
+    public static int arksianeDiskID;
+    public static Item arksianeDisk;
     
     @Mod.PreInit
     public void preload(FMLPreInitializationEvent var1)
@@ -3144,6 +3260,8 @@ public class DivineRPG
         /*
          * 1.3 Items
          */
+
+        teakerDiskID = var2.getItem("teakerDisk", 5516).getInt();
         
         /*
          * Dimension IDs
@@ -4290,6 +4408,7 @@ public class DivineRPG
         /*
          * 1.3 Item Inits
          */
+        teakerDisk = new ItemTeakerDisk(teakerDiskID, 1).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Teaker Disk");
         
         
         /*

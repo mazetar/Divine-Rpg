@@ -74,7 +74,7 @@ public class EntityHelper {
         EntityRegistry.registerModEntity(EntityKazroticShot.class, "Kazrotic Shot", 268, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityZoragonBomb.class, "Zoragon Bomb", 269, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityDissimentShot.class, "Dissiment Shot", 270, DivineRPG.instance, 120, 5, true);
-        EntityRegistry.registerModEntity(EntityTeakerDisk.class, "Teaker Disk", 271, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityDisk.class, "Teaker Disk", 271, DivineRPG.instance, 120, 5, true);
         
         /*
          * Mobs

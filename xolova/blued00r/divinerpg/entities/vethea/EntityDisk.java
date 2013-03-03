@@ -3,6 +3,7 @@ package xolova.blued00r.divinerpg.entities.vethea;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import xolova.blued00r.divinerpg.entities.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
@@ -10,26 +11,28 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 import xolova.blued00r.divinerpg.DivineRPG;
 
-public class EntityTeakerDisk extends EntityThrowable
+public class EntityDisk extends EntityThrowable
 {
     private int damage;
 	private int counter;
 	private boolean rebound;
+	private Item item;
 
-	public EntityTeakerDisk(World par1World)
+	public EntityDisk(World par1World)
     {
         super(par1World);
     }
 
-    public EntityTeakerDisk(World par1World, EntityLiving par2EntityLiving, int par3)
+    public EntityDisk(World par1World, EntityLiving par2EntityLiving, int par3, Item item)
     {
         super(par1World, par2EntityLiving);
         this.damage = par3;
         this.counter = 15;
         this.rebound = false;
+        this.item = item;
     }
 
-    public EntityTeakerDisk(World par1World, double par2, double par4, double par6)
+    public EntityDisk(World par1World, double par2, double par4, double par6)
     {
         super(par1World, par2, par4, par6);
     }
@@ -64,7 +67,7 @@ public class EntityTeakerDisk extends EntityThrowable
             }
             else if (par1MovingObjectPosition.entityHit == this.thrower && this.thrower instanceof EntityPlayer && this.rebound)
             {
-            	((EntityPlayer)this.thrower).inventory.addItemStackToInventory(new ItemStack(DivineRPG.teakerDisk));
+            	((EntityPlayer)this.thrower).inventory.addItemStackToInventory(new ItemStack(item));
             	if (!this.worldObj.isRemote)
                 {
                     this.setDead();

@@ -109,6 +109,7 @@ import xolova.blued00r.divinerpg.items.iceika.ItemSnowStormBow;
 import xolova.blued00r.divinerpg.items.iceika.ItemSoundOfCarols;
 import xolova.blued00r.divinerpg.items.iceika.ItemSwordIceika;
 import xolova.blued00r.divinerpg.items.vethea.ItemTeakerDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemVetheanDisk;
 import xolova.blued00r.divinerpg.misc.ArmorProtectionHandler;
 import xolova.blued00r.divinerpg.misc.CommonProxy;
 import xolova.blued00r.divinerpg.misc.CraftingHandler;
@@ -3262,6 +3263,7 @@ public class DivineRPG
          */
 
         teakerDiskID = var2.getItem("teakerDisk", 5516).getInt();
+        amthirmisDiskID = var2.getItem("AmthirmisDisk", 5517).getInt();
         
         /*
          * Dimension IDs
@@ -4408,8 +4410,15 @@ public class DivineRPG
         /*
          * 1.3 Item Inits
          */
-        teakerDisk = new ItemTeakerDisk(teakerDiskID, 1).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Teaker Disk");
-        
+        teakerDisk = new ItemVetheanDisk(teakerDiskID, 1, teakerDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Teaker Disk");
+        amthrimisDisk = new ItemVetheanDisk(amthirmisDiskID, 1, amthrimisDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Amthirmis Disk");
+        darvenDisk = new ItemVetheanDisk(darvenDiskID, 1, darvenDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Darven Disk");
+        cermileDisk = new ItemVetheanDisk(cermileDiskID, 1, cermileDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Cermile Disk");
+        pardimalDisk = new ItemVetheanDisk(pardimalDiskID, 1, pardimalDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Pardimal Disk");
+        quadroticDisk = new ItemVetheanDisk(quadroticDiskID, 1, quadroticDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Quadrotic Disk");
+        karosDisk = new ItemVetheanDisk(karosDiskID, 1, karosDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Karos Disk");
+        heliosisDisk = new ItemVetheanDisk(heliosisDiskID, 1, heliosisDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Heliosis Disk");
+        arksianeDisk = new ItemVetheanDisk(arksianeDiskID, 1, arksianeDisk).setCreativeTab(tabRanged).setIconCoord(0, 8).setTextureFile("/Xolovon4.png").setItemName("Arksiane Disk");       
         
         /*
          * Biomes

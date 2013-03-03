@@ -339,6 +339,7 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityKazroticShot.class, new RenderBasicProjectile(Item.snowball.getIconFromDamage(0), "/gui/items.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityZoragonBomb.class, new RenderBasicProjectile(Item.snowball.getIconFromDamage(0), "/gui/items.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityDissimentShot.class, new RenderBasicProjectile(Item.snowball.getIconFromDamage(0), "/gui/items.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityTeakerDisk.class, new RenderBasicProjectile(Item.snowball.getIconFromDamage(0), "/gui/items.png"));
         
         /*
          * Render Block info

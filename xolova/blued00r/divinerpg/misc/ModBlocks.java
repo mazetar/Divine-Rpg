@@ -20,6 +20,7 @@ import xolova.blued00r.divinerpg.entities.tileentities.TileEntityExtractinator;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityGlacideSpawner;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityGreenlightFurnace;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityIceikaChest;
+import xolova.blued00r.divinerpg.entities.tileentities.TileEntityInfusionTable;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityKOSStatue;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityMoltenFurnace;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityMoonlightFurnace;
@@ -442,6 +443,7 @@ public class ModBlocks {
         GameRegistry.registerBlock(DivineRPG.mintwoodLeaves, "mintwoodLeaves");
         GameRegistry.registerBlock(DivineRPG.dreamwoodLeaves, "dreamwoodLeaves");
         GameRegistry.registerBlock(DivineRPG.infusionTable, "infusionTable");
+        GameRegistry.registerTileEntity(TileEntityInfusionTable.class, "TeInfusionTable");
         GameRegistry.registerTileEntity(TileEntityDreamLamp.class, "TeDreamLamp");
         GameRegistry.registerBlock(DivineRPG.purpleFire, "PurpleFire");
         GameRegistry.registerBlock(DivineRPG.karosCannon, "karosCannon");

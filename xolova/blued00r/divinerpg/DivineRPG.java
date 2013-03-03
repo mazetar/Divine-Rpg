@@ -47,6 +47,7 @@ import xolova.blued00r.divinerpg.blocks.vethea.BlockKarosHeatTileRed;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockLorgaSpawner;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockLunicAltar;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockMintwood;
+import xolova.blued00r.divinerpg.blocks.vethea.BlockPurpleFire;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockRaglokAltar;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockShimmer;
 import xolova.blued00r.divinerpg.blocks.vethea.BlockTwinsSpawner;
@@ -2204,6 +2205,8 @@ public class DivineRPG
     public static Block dreamwreckerSpawner;
     public static int lorgaSpawnerID;
     public static Block lorgaSpawner;
+    public static int purpleFireID;
+    public static Block purpleFire;
     
     //TODO
     /*
@@ -2936,6 +2939,7 @@ public class DivineRPG
         lorgaSpawnerID = var2.getBlock("lorgaSpawner", 843).getInt();
         hungerstone1ID = var2.getBlock("hungerstone1", 844).getInt();
         hungerstone2ID = var2.getBlock("hungerstone2", 845).getInt();
+        purpleFireID = var2.getBlock("PurpleFire", 846).getInt();
         
         /*
          * Pre-1.3 Items
@@ -4676,6 +4680,7 @@ public class DivineRPG
         karosBricks2 = new Block(karosBricks2ID, 95, Material.rock).setBlockName("karosBricks2").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         helioticBeam = new BlockHelioticBeam(helioticBeamID).setBlockName("helioticBeam").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         karosCannon = new Block(karosCannonID, 95, Material.rock).setBlockName("karosCannon").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        purpleFire = new BlockPurpleFire(purpleFireID, 94).setBlockName("purpleFire").setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         
         /*
          * Spawners

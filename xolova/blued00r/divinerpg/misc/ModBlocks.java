@@ -443,6 +443,7 @@ public class ModBlocks {
         GameRegistry.registerBlock(DivineRPG.dreamwoodLeaves, "dreamwoodLeaves");
         GameRegistry.registerBlock(DivineRPG.infusionTable, "infusionTable");
         GameRegistry.registerTileEntity(TileEntityDreamLamp.class, "TeDreamLamp");
+        GameRegistry.registerBlock(DivineRPG.purpleFire, "PurpleFire");
 	}
 
 }

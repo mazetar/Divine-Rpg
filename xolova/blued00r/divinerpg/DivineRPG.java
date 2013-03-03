@@ -118,6 +118,7 @@ import xolova.blued00r.divinerpg.items.vethea.ItemKarosDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemPardimalDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemQuadroticDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemTeakerDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemVetheanArmor;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanBow;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanClaw;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanFood;
@@ -2394,6 +2395,72 @@ public class DivineRPG
     public static int dreamSoursID;
     public static Item dreamSours;
     
+
+    public static int degradedHelmetMeleeID;
+    public static Item degradedHelmetMelee;
+    public static int degradedHelmetRangedID;
+    public static Item degradedHelmetRanged;
+    public static int degradedHelmetArcanaID;
+    public static Item degradedHelmetArcana;
+    public static int degradedChestID;
+    public static Item degradedChest;
+    public static int degradedLegsID;
+    public static Item degradedLegs;
+    public static int degradedBootsID;
+    public static Item degradedBoots;
+
+    public static int finishedHelmetMeleeID;
+    public static Item finishedHelmetMelee;
+    public static int finishedHelmetRangedID;
+    public static Item finishedHelmetRanged;
+    public static int finishedHelmetArcanaID;
+    public static Item finishedHelmetArcana;
+    public static int finishedChestID;
+    public static Item finishedChest;
+    public static int finishedLegsID;
+    public static Item finishedLegs;
+    public static int finishedBootsID;
+    public static Item finishedBoots;
+
+    public static int glisteningHelmetMeleeID;
+    public static Item glisteningHelmetMelee;
+    public static int glisteningHelmetRangedID;
+    public static Item glisteningHelmetRanged;
+    public static int glisteningHelmetArcanaID;
+    public static Item glisteningHelmetArcana;
+    public static int glisteningChestID;
+    public static Item glisteningChest;
+    public static int glisteningLegsID;
+    public static Item glisteningLegs;
+    public static int glisteningBootsID;
+    public static Item glisteningBoots;
+
+    public static int demonizedHelmetMeleeID;
+    public static Item demonizedHelmetMelee;
+    public static int demonizedHelmetRangedID;
+    public static Item demonizedHelmetRanged;
+    public static int demonizedHelmetArcanaID;
+    public static Item demonizedHelmetArcana;
+    public static int demonizedChestID;
+    public static Item demonizedChest;
+    public static int demonizedLegsID;
+    public static Item demonizedLegs;
+    public static int demonizedBootsID;
+    public static Item demonizedBoots;
+
+    public static int tormentedHelmetMeleeID;
+    public static Item tormentedHelmetMelee;
+    public static int tormentedHelmetRangedID;
+    public static Item tormentedHelmetRanged;
+    public static int tormentedHelmetArcanaID;
+    public static Item tormentedHelmetArcana;
+    public static int tormentedChestID;
+    public static Item tormentedChest;
+    public static int tormentedLegsID;
+    public static Item tormentedLegs;
+    public static int tormentedBootsID;
+    public static Item tormentedBoots;
+    
     //TODO
     @Mod.PreInit
     public void preload(FMLPreInitializationEvent var1)
@@ -3347,104 +3414,139 @@ public class DivineRPG
          * 1.3 Items
          */
 
-        teakerDiskID = var2.getItem("TeakerDisk", 5516).getInt();
-        amthirmisDiskID = var2.getItem("amthirmisDisk", 5517).getInt();
-        darvenDiskID = var2.getItem("darvenDisk", 5518).getInt();
-        cermileDiskID = var2.getItem("cermileDisk", 5519).getInt();
-        pardimalDiskID = var2.getItem("pardimalDisk", 5520).getInt();
-        quadroticDiskID = var2.getItem("quadroticDisk", 5521).getInt();
-        karosDiskID = var2.getItem("karosDisk", 5522).getInt();
-        heliosisDiskID = var2.getItem("heliosisDisk", 5523).getInt();
-        arksianeDiskID = var2.getItem("arksianeDisk", 5524).getInt();
+        int id = 5515;
+        teakerDiskID = var2.getItem("TeakerDisk", id++).getInt();
+        amthirmisDiskID = var2.getItem("amthirmisDisk", id++).getInt();
+        darvenDiskID = var2.getItem("darvenDisk", id++).getInt();
+        cermileDiskID = var2.getItem("cermileDisk", id++).getInt();
+        pardimalDiskID = var2.getItem("pardimalDisk", id++).getInt();
+        quadroticDiskID = var2.getItem("quadroticDisk", id++).getInt();
+        karosDiskID = var2.getItem("karosDisk", id++).getInt();
+        heliosisDiskID = var2.getItem("heliosisDisk", id++).getInt();
+        arksianeDiskID = var2.getItem("arksianeDisk", id++).getInt();
         
-        teakerHammerID = var2.getItem("teakerHammer", 5526).getInt();
-        amthirmisHammerID = var2.getItem("AmthirmisHammer", 5527).getInt();
-        darvenHammerID = var2.getItem("darvenHammer", 5528).getInt();
-        cermileHammerID = var2.getItem("cermileHammer", 5529).getInt();
-        pardimalHammerID = var2.getItem("pardimalHammer", 5530).getInt();
-        quadroticHammerID = var2.getItem("quadroticHammer", 5531).getInt();
-        karosHammerID = var2.getItem("karosHammer", 5532).getInt();
-        heliosisHammerID = var2.getItem("heliosisHammer", 5533).getInt();
-        arksianeHammerID = var2.getItem("arksianeHammer", 5534).getInt();
+        teakerHammerID = var2.getItem("teakerHammer", id++).getInt();
+        amthirmisHammerID = var2.getItem("AmthirmisHammer", id++).getInt();
+        darvenHammerID = var2.getItem("darvenHammer", id++).getInt();
+        cermileHammerID = var2.getItem("cermileHammer", id++).getInt();
+        pardimalHammerID = var2.getItem("pardimalHammer", id++).getInt();
+        quadroticHammerID = var2.getItem("quadroticHammer", id++).getInt();
+        karosHammerID = var2.getItem("karosHammer", id++).getInt();
+        heliosisHammerID = var2.getItem("heliosisHammer", id++).getInt();
+        arksianeHammerID = var2.getItem("arksianeHammer", id++).getInt();
         
-        teakerSwordID = var2.getItem("teakerSword", 5535).getInt();
-        amthirmisSwordID = var2.getItem("AmthirmisSword", 5536).getInt();
-        darvenSwordID = var2.getItem("darvenSword", 5537).getInt();
-        cermileSwordID = var2.getItem("cermileSword", 5538).getInt();
-        pardimalSwordID = var2.getItem("pardimalSword", 5539).getInt();
-        quadroticSwordID = var2.getItem("quadroticSword", 5540).getInt();
-        karosSwordID = var2.getItem("karosSword", 5541).getInt();
-        heliosisSwordID = var2.getItem("heliosisSword", 5542).getInt();
-        arksianeSwordID = var2.getItem("arksianeSword", 5543).getInt();
+        teakerSwordID = var2.getItem("teakerSword", id++).getInt();
+        amthirmisSwordID = var2.getItem("AmthirmisSword", id++).getInt();
+        darvenSwordID = var2.getItem("darvenSword", id++).getInt();
+        cermileSwordID = var2.getItem("cermileSword", id++).getInt();
+        pardimalSwordID = var2.getItem("pardimalSword", id++).getInt();
+        quadroticSwordID = var2.getItem("quadroticSword", id++).getInt();
+        karosSwordID = var2.getItem("karosSword", id++).getInt();
+        heliosisSwordID = var2.getItem("heliosisSword", id++).getInt();
+        arksianeSwordID = var2.getItem("arksianeSword", id++).getInt();
         
-        teakerClawID = var2.getItem("teakerClaw", 5544).getInt();
-        amthirmisClawID = var2.getItem("AmthirmisClaw", 5545).getInt();
-        darvenClawID = var2.getItem("darvenClaw", 5546).getInt();
-        cermileClawID = var2.getItem("cermileClaw", 5547).getInt();
-        pardimalClawID = var2.getItem("pardimalClaw", 5548).getInt();
-        quadroticClawID = var2.getItem("quadroticClaw", 5549).getInt();
-        karosClawID = var2.getItem("karosClaw", 5550).getInt();
-        heliosisClawID = var2.getItem("heliosisClaw", 5551).getInt();
-        arksianeClawID = var2.getItem("arksianeClaw", 5552).getInt();
+        teakerClawID = var2.getItem("teakerClaw", id++).getInt();
+        amthirmisClawID = var2.getItem("AmthirmisClaw", id++).getInt();
+        darvenClawID = var2.getItem("darvenClaw", id++).getInt();
+        cermileClawID = var2.getItem("cermileClaw", id++).getInt();
+        pardimalClawID = var2.getItem("pardimalClaw", id++).getInt();
+        quadroticClawID = var2.getItem("quadroticClaw", id++).getInt();
+        karosClawID = var2.getItem("karosClaw", id++).getInt();
+        heliosisClawID = var2.getItem("heliosisClaw", id++).getInt();
+        arksianeClawID = var2.getItem("arksianeClaw", id++).getInt();
         
-        teakerCannonID = var2.getItem("teakerCannon", 5553).getInt();
-        amthirmisCannonID = var2.getItem("AmthirmisCannon", 5554).getInt();
-        darvenCannonID = var2.getItem("darvenCannon", 5555).getInt();
-        cermileCannonID = var2.getItem("cermileCannon", 5556).getInt();
-        pardimalCannonID = var2.getItem("pardimalCannon", 5557).getInt();
-        quadroticCannonID = var2.getItem("quadroticCannon", 5558).getInt();
-        karosCannonItemID = var2.getItem("karosCannon", 5559).getInt();
-        heliosisCannonID = var2.getItem("heliosisCannon", 5560).getInt();
-        arksianeCannonID = var2.getItem("arksianeCannon", 5561).getInt();
+        teakerCannonID = var2.getItem("teakerCannon", id++).getInt();
+        amthirmisCannonID = var2.getItem("AmthirmisCannon", id++).getInt();
+        darvenCannonID = var2.getItem("darvenCannon", id++).getInt();
+        cermileCannonID = var2.getItem("cermileCannon", id++).getInt();
+        pardimalCannonID = var2.getItem("pardimalCannon", id++).getInt();
+        quadroticCannonID = var2.getItem("quadroticCannon", id++).getInt();
+        karosCannonItemID = var2.getItem("karosCannon", id++).getInt();
+        heliosisCannonID = var2.getItem("heliosisCannon", id++).getInt();
+        arksianeCannonID = var2.getItem("arksianeCannon", id++).getInt();
         
-        acidfireID = var2.getItem("acidfire", 5562).getInt();
+        acidfireID = var2.getItem("acidfire", id++).getInt();
         
-        teakerBowID = var2.getItem("teakerBow", 5563).getInt();
-        amthirmisBowID = var2.getItem("AmthirmisBow", 5564).getInt();
-        darvenBowID = var2.getItem("darvenBow", 5565).getInt();
-        cermileBowID = var2.getItem("cermileBow", 5566).getInt();
-        pardimalBowID = var2.getItem("pardimalBow", 5567).getInt();
-        quadroticBowID = var2.getItem("quadroticBow", 5568).getInt();
-        karosBowID = var2.getItem("karosBow", 5569).getInt();
-        heliosisBowID = var2.getItem("heliosisBow", 5570).getInt();
-        arksianeBowID = var2.getItem("arksianeBow", 5571).getInt();
+        teakerBowID = var2.getItem("teakerBow", id++).getInt();
+        amthirmisBowID = var2.getItem("AmthirmisBow", id++).getInt();
+        darvenBowID = var2.getItem("darvenBow", id++).getInt();
+        cermileBowID = var2.getItem("cermileBow", id++).getInt();
+        pardimalBowID = var2.getItem("pardimalBow", id++).getInt();
+        quadroticBowID = var2.getItem("quadroticBow", id++).getInt();
+        karosBowID = var2.getItem("karosBow", id++).getInt();
+        heliosisBowID = var2.getItem("heliosisBow", id++).getInt();
+        arksianeBowID = var2.getItem("arksianeBow", id++).getInt();
 
-        vetheanArrowID = var2.getItem("vetheanArrow", 5572).getInt();
-        vetheanArrow2ID = var2.getItem("vetheanArrow2", 5573).getInt();
-        vetheanWarArrowID = var2.getItem("vetheanWarArrow", 5574).getInt();
-        vetheanWrathArrowID = var2.getItem("vetheanWrathArrow", 5575).getInt();
+        vetheanArrowID = var2.getItem("vetheanArrow", id++).getInt();
+        vetheanArrow2ID = var2.getItem("vetheanArrow2", id++).getInt();
+        vetheanWarArrowID = var2.getItem("vetheanWarArrow", id++).getInt();
+        vetheanWrathArrowID = var2.getItem("vetheanWrathArrow", id++).getInt();
 
-        vetheanHammerTemplateID = var2.getItem("vetheanHammerTemplate", 5576).getInt();
-        vetheanBackswordTemplateID = var2.getItem("vetheanBackswordTemplate", 5576).getInt();
-        vetheanBowTemplateID = var2.getItem("vetheanBowTemplate", 5577).getInt();
-        vetheanCannonTemplateID = var2.getItem("vetheanCannonTemplate", 5578).getInt();
-        vetheanClawTemplateID = var2.getItem("vetheanClawTemplate", 5579).getInt();
-        vetheanDiskTemplateID = var2.getItem("vetheanDiskTemplate", 5580).getInt();
-        vetheanDegradedTemplateID = var2.getItem("vetheanDegradedTemplate", 5591).getInt();
-        vetheanFinishedTemplateID = var2.getItem("vetheanFinishedTemplate", 5582).getInt();
-        vetheanGlisteningTemplateID = var2.getItem("vetheanGlisteningTemplate", 5583).getInt();
-        vetheanDemonizedTemplateID = var2.getItem("vetheanDemonizedTemplate", 5584).getInt();
-        vetheanTormentedTemplateID = var2.getItem("vetheanTormentedTemplate", 5585).getInt();
+        vetheanHammerTemplateID = var2.getItem("vetheanHammerTemplate", id++).getInt();
+        vetheanBackswordTemplateID = var2.getItem("vetheanBackswordTemplate", id++).getInt();
+        vetheanBowTemplateID = var2.getItem("vetheanBowTemplate", id++).getInt();
+        vetheanCannonTemplateID = var2.getItem("vetheanCannonTemplate", id++).getInt();
+        vetheanClawTemplateID = var2.getItem("vetheanClawTemplate", id++).getInt();
+        vetheanDiskTemplateID = var2.getItem("vetheanDiskTemplate", id++).getInt();
+        vetheanDegradedTemplateID = var2.getItem("vetheanDegradedTemplate", id++).getInt();
+        vetheanFinishedTemplateID = var2.getItem("vetheanFinishedTemplate", id++).getInt();
+        vetheanGlisteningTemplateID = var2.getItem("vetheanGlisteningTemplate", id++).getInt();
+        vetheanDemonizedTemplateID = var2.getItem("vetheanDemonizedTemplate", id++).getInt();
+        vetheanTormentedTemplateID = var2.getItem("vetheanTormentedTemplate", id++).getInt();
 
-        honeysuckleID = var2.getItem("honeysuckle", 5585).getInt();
-        dreamCarrotID = var2.getItem("dreamCarrot", 5586).getInt();
-        dreamMelonID = var2.getItem("dreamMelon", 5587).getInt();
-        dreamPieID = var2.getItem("dreamPie", 5588).getInt();
-        dreamCakeID = var2.getItem("dreamCake", 5589).getInt();
+        honeysuckleID = var2.getItem("honeysuckle", id++).getInt();
+        dreamCarrotID = var2.getItem("dreamCarrot", id++).getInt();
+        dreamMelonID = var2.getItem("dreamMelon", id++).getInt();
+        dreamPieID = var2.getItem("dreamPie", id++).getInt();
+        dreamCakeID = var2.getItem("dreamCake", id++).getInt();
         
-        teakerBowID = var2.getItem("teakerLump", 5590).getInt();
-        amthirmisLumpID = var2.getItem("AmthirmisLump", 5591).getInt();
-        darvenLumpID = var2.getItem("darvenLump", 5592).getInt();
-        cermileLumpID = var2.getItem("cermileLump", 5593).getInt();
-        pardimalLumpID = var2.getItem("pardimalLump", 5594).getInt();
-        quadroticLumpID = var2.getItem("quadroticLump", 5595).getInt();
-        karosLumpID = var2.getItem("karosLump", 5596).getInt();
-        heliosisLumpID = var2.getItem("heliosisLump", 5597).getInt();
-        arksianeLumpID = var2.getItem("arksianeLump", 5598).getInt();
+        teakerBowID = var2.getItem("teakerLump", id++).getInt();
+        amthirmisLumpID = var2.getItem("AmthirmisLump", id++).getInt();
+        darvenLumpID = var2.getItem("darvenLump", id++).getInt();
+        cermileLumpID = var2.getItem("cermileLump", id++).getInt();
+        pardimalLumpID = var2.getItem("pardimalLump", id++).getInt();
+        quadroticLumpID = var2.getItem("quadroticLump", id++).getInt();
+        karosLumpID = var2.getItem("karosLump", id++).getInt();
+        heliosisLumpID = var2.getItem("heliosisLump", id++).getInt();
+        arksianeLumpID = var2.getItem("arksianeLump", id++).getInt();
 
-        dreamSweetsID = var2.getItem("dreamSweets", 5599).getInt();
-        dreamSoursID = var2.getItem("dreamSours", 5600).getInt();
+        dreamSweetsID = var2.getItem("dreamSweets", id++).getInt();
+        dreamSoursID = var2.getItem("dreamSours", id++).getInt();
         
+        degradedHelmetMeleeID = var2.getItem("degradedHelmetMelee", id++).getInt();
+        degradedHelmetRangedID = var2.getItem("degradedHelmetRanged", id++).getInt();
+        degradedHelmetArcanaID = var2.getItem("degradedHelmetArcana", id++).getInt();
+        degradedChestID = var2.getItem("degradedChest", id++).getInt();
+        degradedLegsID = var2.getItem("degradedLegs", id++).getInt();
+        degradedBootsID = var2.getItem("degradedBoots", id++).getInt();
+
+        finishedHelmetMeleeID = var2.getItem("finishedHelmetMelee", id++).getInt();
+        finishedHelmetRangedID = var2.getItem("finishedHelmetRanged", id++).getInt();
+        finishedHelmetArcanaID = var2.getItem("finishedHelmetArcana", id++).getInt();
+        finishedChestID = var2.getItem("finishedChest", id++).getInt();
+        finishedLegsID = var2.getItem("finishedLegs", id++).getInt();
+        finishedBootsID = var2.getItem("finishedBoots", id++).getInt();
+
+        glisteningHelmetMeleeID = var2.getItem("glisteningHelmetMelee", id++).getInt();
+        glisteningHelmetRangedID = var2.getItem("glisteningHelmetRanged", id++).getInt();
+        glisteningHelmetArcanaID = var2.getItem("glisteningHelmetArcana", id++).getInt();
+        glisteningChestID = var2.getItem("glisteningChest", id++).getInt();
+        glisteningLegsID = var2.getItem("glisteningLegs", id++).getInt();
+        glisteningBootsID = var2.getItem("glisteningBoots", id++).getInt();
+
+        demonizedHelmetMeleeID = var2.getItem("demonizedHelmetMelee", id++).getInt();
+        demonizedHelmetRangedID = var2.getItem("demonizedHelmetRanged", id++).getInt();
+        demonizedHelmetArcanaID = var2.getItem("demonizedHelmetArcana", id++).getInt();
+        demonizedChestID = var2.getItem("demonizedChest", id++).getInt();
+        demonizedLegsID = var2.getItem("demonizedLegs", id++).getInt();
+        demonizedBootsID = var2.getItem("demonizedBoots", id++).getInt();
+
+        tormentedHelmetMeleeID = var2.getItem("tormentedHelmetMelee", id++).getInt();
+        tormentedHelmetRangedID = var2.getItem("tormentedHelmetRanged", id++).getInt();
+        tormentedHelmetArcanaID = var2.getItem("tormentedHelmetArcana", id++).getInt();
+        tormentedChestID = var2.getItem("tormentedChest", id++).getInt();
+        tormentedLegsID = var2.getItem("tormentedLegs", id++).getInt();
+        tormentedBootsID = var2.getItem("tormentedBoots", id++).getInt();
         //TODO
         /*
          * Dimension IDs
@@ -4647,17 +4749,17 @@ public class DivineRPG
         heliosisBow = new ItemVetheanBow(heliosisBowID, 2.8D, vetheanWrathArrow).setIconCoord(5, 5).setItemName("heliosisBow").setCreativeTab(tabRanged);
         arksianeBow = new ItemVetheanBow(arksianeBowID, 3.6D, vetheanWrathArrow).setIconCoord(0, 6).setItemName("arksianeBow").setCreativeTab(tabRanged);
         
-        vetheanHammerTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        vetheanBackswordTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        vetheanBowTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        vetheanCannonTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        vetheanClawTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        vetheanDiskTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        vetheanDegradedTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        vetheanFinishedTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        vetheanGlisteningTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        vetheanDemonizedTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        vetheanTormentedTemplate = new Item(vetheanWrathArrowID).setItemName("vetheanHammerTemplate").setIconCoord(4, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanHammerTemplate = new Item(vetheanHammerTemplateID).setItemName("vetheanHammerTemplate").setIconCoord(0, 15).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanBackswordTemplate = new Item(vetheanBackswordTemplateID).setItemName("vetheanBackswordTemplate").setIconCoord(1, 15).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanBowTemplate = new Item(vetheanBowTemplateID).setItemName("vetheanBowTemplate").setIconCoord(2, 15).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanCannonTemplate = new Item(vetheanCannonTemplateID).setItemName("vetheanCannonTemplate").setIconCoord(4, 15).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanClawTemplate = new Item(vetheanClawTemplateID).setItemName("vetheanClawTemplate").setIconCoord(5, 15).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanDiskTemplate = new Item(vetheanDiskTemplateID).setItemName("vetheanDiskTemplate").setIconCoord(6, 15).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanDegradedTemplate = new Item(vetheanDegradedTemplateID).setItemName("vetheanDegradedTemplate").setIconCoord(13, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanFinishedTemplate = new Item(vetheanFinishedTemplateID).setItemName("vetheanFinishedTemplate").setIconCoord(13, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanGlisteningTemplate = new Item(vetheanGlisteningTemplateID).setItemName("vetheanGlisteningTemplate").setIconCoord(13, 13).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanDemonizedTemplate = new Item(vetheanDemonizedTemplateID).setItemName("vetheanDemonizedTemplate").setIconCoord(13, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        vetheanTormentedTemplate = new Item(vetheanTormentedTemplateID).setItemName("vetheanTormentedTemplate").setIconCoord(13, 15).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
         
         honeysuckle = new ItemVetheanFood(honeysuckleID, 1, 0.2F, true).setItemName("honeysuckle").setIconCoord(0, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
         dreamCarrot = new ItemVetheanFood(dreamCarrotID, 3, 0.4F, true).setItemName("dreamCarrot").setIconCoord(0, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
@@ -4665,8 +4767,48 @@ public class DivineRPG
         dreamPie = new ItemVetheanFood(dreamPieID, 4, 0.8F, true).setItemName("dreamPie").setIconCoord(2, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
         dreamCake = new ItemVetheanFood(dreamCakeID, 8, 0.8F, true).setItemName("dreamCake").setIconCoord(3, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
         
-        dreamSweets = new ItemVetheanHealingFood(dreamSweetsID, 8, 0.8F, true, 2).setItemName("dreamSweets").setIconCoord(8, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
-        dreamSours = new ItemVetheanHealingFood(dreamSoursID, 8, 0.8F, true, 8).setItemName("dreamSours").setIconCoord(7, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
+        dreamSweets = new ItemVetheanHealingFood(dreamSweetsID, 0, 0F, false, 2).setItemName("dreamSweets").setIconCoord(8, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
+        dreamSours = new ItemVetheanHealingFood(dreamSoursID, 0, 0F, false, 8).setItemName("dreamSours").setIconCoord(7, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
+        
+        int degradedRender = proxy.addArmor("degraded");
+        degradedHelmetMelee = new ItemVetheanArmor(degradedHelmetMeleeID, degradedRender, 0, 15, "Melee", "").setTextureFile("/Xolovon4.png").setIconCoord(9,11).setItemName("degradedHelmetMelee").setCreativeTab(tabArmor);
+        degradedHelmetRanged = new ItemVetheanArmor(degradedHelmetRangedID, degradedRender, 0, 15, "Ranged", "").setTextureFile("/Xolovon4.png").setIconCoord(14,11).setItemName("degradedHelmetRanged").setCreativeTab(tabArmor);
+        degradedHelmetArcana = new ItemVetheanArmor(degradedHelmetArcanaID, degradedRender, 0, 15, "Arcana", "").setTextureFile("/Xolovon4.png").setIconCoord(8,15).setItemName("degradedHelmetArcana").setCreativeTab(tabArmor);
+        degradedChest = new ItemVetheanArmor(degradedChestID, degradedRender, 1, 15, "", "").setTextureFile("/Xolovon4.png").setIconCoord(11,11).setItemName("degradedChest").setCreativeTab(tabArmor);
+        degradedLegs = new ItemVetheanArmor(degradedLegsID, degradedRender, 2, 15, "", "").setTextureFile("/Xolovon4.png").setIconCoord(12,11).setItemName("degradedLegs").setCreativeTab(tabArmor);
+        degradedBoots = new ItemVetheanArmor(degradedBootsID, degradedRender, 3, 15, "", "").setTextureFile("/Xolovon4.png").setIconCoord(10,11).setItemName("degradedBoots").setCreativeTab(tabArmor);
+
+        int finishedRender = proxy.addArmor("finished");
+        finishedHelmetMelee = new ItemVetheanArmor(finishedHelmetMeleeID, finishedRender, 0, 30, "Melee", "").setTextureFile("/Xolovon4.png").setIconCoord(9,12).setItemName("finishedHelmetMelee").setCreativeTab(tabArmor);
+        finishedHelmetRanged = new ItemVetheanArmor(finishedHelmetRangedID, finishedRender, 0, 30, "Ranged", "").setTextureFile("/Xolovon4.png").setIconCoord(14,12).setItemName("finishedHelmetRanged").setCreativeTab(tabArmor);
+        finishedHelmetArcana = new ItemVetheanArmor(finishedHelmetArcanaID, finishedRender, 0, 30, "Arcana", "").setTextureFile("/Xolovon4.png").setIconCoord(15,12).setItemName("finishedHelmetArcana").setCreativeTab(tabArmor);
+        finishedChest = new ItemVetheanArmor(finishedChestID, finishedRender, 1, 30, "", "").setTextureFile("/Xolovon4.png").setIconCoord(11,12).setItemName("finishedChest").setCreativeTab(tabArmor);
+        finishedLegs = new ItemVetheanArmor(finishedLegsID, finishedRender, 2, 30, "", "").setTextureFile("/Xolovon4.png").setIconCoord(12,12).setItemName("finishedLegs").setCreativeTab(tabArmor);
+        finishedBoots = new ItemVetheanArmor(finishedBootsID, finishedRender, 3, 30, "", "").setTextureFile("/Xolovon4.png").setIconCoord(10,12).setItemName("finishedBoots").setCreativeTab(tabArmor);
+
+        int glisteningRender = proxy.addArmor("glistening");
+        glisteningHelmetMelee = new ItemVetheanArmor(glisteningHelmetMeleeID, glisteningRender, 0, 45, "Melee", "+3 Melee Damage3").setTextureFile("/Xolovon4.png").setIconCoord(9,13).setItemName("glisteningHelmetMelee").setCreativeTab(tabArmor);
+        glisteningHelmetRanged = new ItemVetheanArmor(glisteningHelmetRangedID, glisteningRender, 0, 45, "Ranged", "1.4x Movement Speed").setTextureFile("/Xolovon4.png").setIconCoord(14,13).setItemName("glisteningHelmetRanged").setCreativeTab(tabArmor);
+        glisteningHelmetArcana = new ItemVetheanArmor(glisteningHelmetArcanaID, glisteningRender, 0, 45, "Arcana", "2x Jump Height").setTextureFile("/Xolovon4.png").setIconCoord(15,13).setItemName("glisteningHelmetArcana").setCreativeTab(tabArmor);
+        glisteningChest = new ItemVetheanArmor(glisteningChestID, glisteningRender, 1, 45, "", "").setTextureFile("/Xolovon4.png").setIconCoord(11,13).setItemName("glisteningChest").setCreativeTab(tabArmor);
+        glisteningLegs = new ItemVetheanArmor(glisteningLegsID, glisteningRender, 2, 45, "", "").setTextureFile("/Xolovon4.png").setIconCoord(12,13).setItemName("glisteningLegs").setCreativeTab(tabArmor);
+        glisteningBoots = new ItemVetheanArmor(glisteningBootsID, glisteningRender, 3, 45, "", "").setTextureFile("/Xolovon4.png").setIconCoord(10,13).setItemName("glisteningBoots").setCreativeTab(tabArmor);
+
+        int demonizedRender = proxy.addArmor("demonized");
+        demonizedHelmetMelee = new ItemVetheanArmor(demonizedHelmetMeleeID, demonizedRender, 0, 55, "Melee", "+6 Melee Damage").setTextureFile("/Xolovon4.png").setIconCoord(9,14).setItemName("demonizedHelmetMelee").setCreativeTab(tabArmor);
+        demonizedHelmetRanged = new ItemVetheanArmor(demonizedHelmetRangedID, demonizedRender, 0, 55, "Ranged", "1.8X Movement Speed").setTextureFile("/Xolovon4.png").setIconCoord(14,14).setItemName("demonizedHelmetRanged").setCreativeTab(tabArmor);
+        demonizedHelmetArcana = new ItemVetheanArmor(demonizedHelmetArcanaID, demonizedRender, 0, 55, "Arcana", "3x Jump Height").setTextureFile("/Xolovon4.png").setIconCoord(15,14).setItemName("demonizedHelmetArcana").setCreativeTab(tabArmor);
+        demonizedChest = new ItemVetheanArmor(demonizedChestID, demonizedRender, 1, 55, "", "").setTextureFile("/Xolovon4.png").setIconCoord(11,14).setItemName("demonizedChest").setCreativeTab(tabArmor);
+        demonizedLegs = new ItemVetheanArmor(demonizedLegsID, demonizedRender, 2, 55, "", "").setTextureFile("/Xolovon4.png").setIconCoord(12,14).setItemName("demonizedLegs").setCreativeTab(tabArmor);
+        demonizedBoots = new ItemVetheanArmor(demonizedBootsID, demonizedRender, 3, 55, "", "").setTextureFile("/Xolovon4.png").setIconCoord(10,14).setItemName("demonizedBoots").setCreativeTab(tabArmor);
+
+        int tormentedRender = proxy.addArmor("tormented");
+        tormentedHelmetMelee = new ItemVetheanArmor(tormentedHelmetMeleeID, tormentedRender, 0, 70, "Melee", "+9 Melee Damage").setIconCoord(9,15).setTextureFile("/Xolovon4.png").setItemName("tormentedHelmetMelee").setCreativeTab(tabArmor);
+        tormentedHelmetRanged = new ItemVetheanArmor(tormentedHelmetRangedID, tormentedRender, 0, 70, "Ranged", "2x Movement Speed").setIconCoord(14,15).setTextureFile("/Xolovon4.png").setItemName("tormentedHelmetRanged").setCreativeTab(tabArmor);
+        tormentedHelmetArcana = new ItemVetheanArmor(tormentedHelmetArcanaID, tormentedRender, 0, 70, "Arcana", "4x Jump Height").setIconCoord(15,15).setTextureFile("/Xolovon4.png").setItemName("tormentedHelmetArcana").setCreativeTab(tabArmor);
+        tormentedChest = new ItemVetheanArmor(tormentedChestID, tormentedRender, 1, 70, "", "").setIconCoord(11,15).setTextureFile("/Xolovon4.png").setItemName("tormentedChest").setCreativeTab(tabArmor);
+        tormentedLegs = new ItemVetheanArmor(tormentedLegsID, tormentedRender, 2, 70, "", "").setIconCoord(12,15).setTextureFile("/Xolovon4.png").setItemName("tormentedLegs").setCreativeTab(tabArmor);
+        tormentedBoots = new ItemVetheanArmor(tormentedBootsID, tormentedRender, 3, 70, "", "").setIconCoord(10,15).setTextureFile("/Xolovon4.png").setItemName("tormentedBoots").setCreativeTab(tabArmor);
         
         //TODO
         /*

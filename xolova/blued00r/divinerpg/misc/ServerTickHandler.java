@@ -62,43 +62,60 @@ public class ServerTickHandler implements ITickHandler
 			ItemStack chest = var5.inventory.armorInventory[2];
 			ItemStack helm = var5.inventory.armorInventory[3];
 
-			if (boots == null || legs == null || chest == null || helm == null)
+			int bootID = 0;
+			int chestID = 0;
+			int legID = 0;
+			int helmID = 0;
+			if (boots != null)
 			{
-				if (var5.capabilities.isCreativeMode)
-				{
-					var5.capabilities.allowFlying = true;
-				}
-				else
-				{
-					var5.capabilities.allowFlying = false;
-				}
-
+				bootID = boots.itemID;
 			}
-			else if (boots.itemID == DivineRPG.krakenBoots.itemID
-					&& legs.itemID == DivineRPG.krakenLegs.itemID
-					&& chest.itemID == DivineRPG.krakenBody.itemID
-					&& helm.itemID == DivineRPG.krakenHead.itemID)
+			if (chest != null)
+			{
+				chestID = chest.itemID;
+			}
+			if (legs != null)
+			{
+				legID = legs.itemID;
+			}
+			if (helm != null)
+			{
+				helmID = helm.itemID;
+			}
+			if (var5.capabilities.isCreativeMode)
+			{
+				var5.capabilities.allowFlying = true;
+			}
+			else
+			{
+				var5.capabilities.allowFlying = false;
+			}
+
+			if (bootID == DivineRPG.krakenBoots.itemID
+					&& legID == DivineRPG.krakenLegs.itemID
+					&& chestID == DivineRPG.krakenBody.itemID
+					&& helmID == DivineRPG.krakenHead.itemID)
 			{
 				var5.setAir(300);
 			}
-			else if (boots.itemID == DivineRPG.aquastriveBoots.itemID
-					&& legs.itemID == DivineRPG.aquastriveLegs.itemID
-					&& chest.itemID == DivineRPG.aquastriveBody.itemID
-					&& helm.itemID == DivineRPG.aquastriveHead.itemID)
+			else if (bootID == DivineRPG.aquastriveBoots.itemID
+					&& legID == DivineRPG.aquastriveLegs.itemID
+					&& chestID == DivineRPG.aquastriveBody.itemID
+					&& helmID == DivineRPG.aquastriveHead.itemID)
 			{
 				var5.setAir(300);
 			}
-			else if (boots.itemID == DivineRPG.shadowBoots.itemID
-					&& legs.itemID == DivineRPG.shadowLegs.itemID
-					&& chest.itemID == DivineRPG.shadowBody.itemID
-					&& helm.itemID == DivineRPG.shadowHead.itemID)
+			else if (bootID == DivineRPG.shadowBoots.itemID
+					&& legID == DivineRPG.shadowLegs.itemID
+					&& chestID == DivineRPG.shadowBody.itemID
+					&& helmID == DivineRPG.shadowHead.itemID)
 			{
 			}
 
-			else if (boots.itemID == DivineRPG.kormaBoots.itemID
-					&& legs.itemID == DivineRPG.kormaLegs.itemID
-					&& chest.itemID == DivineRPG.kormaBody.itemID
-					&& helm.itemID == DivineRPG.kormaHead.itemID)
+			else if (bootID == DivineRPG.kormaBoots.itemID
+					&& legID == DivineRPG.kormaLegs.itemID
+					&& chestID == DivineRPG.kormaBody.itemID
+					&& helmID == DivineRPG.kormaHead.itemID)
 			{
 				if(ArcanaList.get(var5.username).getBarValue() < 200)
 				{
@@ -106,47 +123,47 @@ public class ServerTickHandler implements ITickHandler
 				}
 			}
 
-			else if (boots.itemID == DivineRPG.vemosBoots.itemID
-					&& legs.itemID == DivineRPG.vemosLegs.itemID
-					&& chest.itemID == DivineRPG.vemosBody.itemID
-					&& helm.itemID == DivineRPG.vemosHead.itemID)
+			else if (bootID == DivineRPG.vemosBoots.itemID
+					&& legID == DivineRPG.vemosLegs.itemID
+					&& chestID == DivineRPG.vemosBody.itemID
+					&& helmID == DivineRPG.vemosHead.itemID)
 			{
-	            if (this.healTimer == 4)
-	            {
-	                var5.heal(1);
-	                this.healTimer = 0;
-	            }
-	            else
-	            {
-	                this.healTimer++;
-	            }
+				if (this.healTimer == 4)
+				{
+					var5.heal(1);
+					this.healTimer = 0;
+				}
+				else
+				{
+					this.healTimer++;
+				}
 			}
-			else if (boots.itemID == DivineRPG.angelicBoots.itemID
-					&& legs.itemID == DivineRPG.angelicLegs.itemID
-					&& chest.itemID == DivineRPG.angelicBody.itemID
-					&& helm.itemID == DivineRPG.angelicHead.itemID)
-			{
-				var5.fallDistance = 0.0F;
-			}
-			else if (boots.itemID == DivineRPG.bedrockBoots.itemID
-					&& legs.itemID == DivineRPG.bedrockLegs.itemID
-					&& chest.itemID == DivineRPG.bedrockBody.itemID
-					&& helm.itemID == DivineRPG.bedrockHead.itemID)
+			else if (bootID == DivineRPG.angelicBoots.itemID
+					&& legID == DivineRPG.angelicLegs.itemID
+					&& chestID == DivineRPG.angelicBody.itemID
+					&& helmID == DivineRPG.angelicHead.itemID)
 			{
 				var5.fallDistance = 0.0F;
 			}
-			else if (boots.itemID == DivineRPG.skeleManBoots.itemID
-					&& legs.itemID == DivineRPG.skeleManLegs.itemID
-					&& chest.itemID == DivineRPG.skeleManBody.itemID
-					&& helm.itemID == DivineRPG.skeleManHead.itemID
+			else if (bootID == DivineRPG.bedrockBoots.itemID
+					&& legID == DivineRPG.bedrockLegs.itemID
+					&& chestID == DivineRPG.bedrockBody.itemID
+					&& helmID == DivineRPG.bedrockHead.itemID)
+			{
+				var5.fallDistance = 0.0F;
+			}
+			else if (bootID == DivineRPG.skeleManBoots.itemID
+					&& legID == DivineRPG.skeleManLegs.itemID
+					&& chestID == DivineRPG.skeleManBody.itemID
+					&& helmID == DivineRPG.skeleManHead.itemID
 					&& var5.getFoodStats().getFoodLevel() < 20)
 			{
 				var5.getFoodStats().addStats(1, 0);
 			}
-			else if (boots.itemID == DivineRPG.santaBoots.itemID
-					&& legs.itemID == DivineRPG.santaLegs.itemID
-					&& chest.itemID == DivineRPG.santaBody.itemID
-					&& helm.itemID == DivineRPG.santaHead.itemID
+			else if (bootID == DivineRPG.santaBoots.itemID
+					&& legID == DivineRPG.santaLegs.itemID
+					&& chestID == DivineRPG.santaBody.itemID
+					&& helmID == DivineRPG.santaHead.itemID
 					&& var5.worldObj.provider.dimensionId == DivineRPG.iceikaID)
 			{
 				var5.fallDistance = 0.0F;
@@ -156,35 +173,82 @@ public class ServerTickHandler implements ITickHandler
 				}
 				var5.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 2));
 			}
-			else if (boots.itemID == DivineRPG.denseBoots.itemID
-					&& legs.itemID == DivineRPG.denseLegs.itemID
-					&& chest.itemID == DivineRPG.denseBody.itemID
-					&& helm.itemID == DivineRPG.denseHead.itemID)
+			else if (bootID == DivineRPG.denseBoots.itemID
+					&& legID == DivineRPG.denseLegs.itemID
+					&& chestID == DivineRPG.denseBody.itemID
+					&& helmID == DivineRPG.denseHead.itemID)
 			{
 				var5.addPotionEffect(new PotionEffect(Potion.nightVision.id, 1, 1));
 			}
-			else if (boots.itemID == DivineRPG.divineBoots.itemID
-					&& legs.itemID == DivineRPG.divineLegs.itemID
-					&& chest.itemID == DivineRPG.divineBody.itemID
-					&& helm.itemID == DivineRPG.divineHead.itemID)
+			else if (bootID == DivineRPG.divineBoots.itemID
+					&& legID == DivineRPG.divineLegs.itemID
+					&& chestID == DivineRPG.divineBody.itemID
+					&& helmID == DivineRPG.divineHead.itemID)
 			{
 				var5.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 2));
 			}
-			else if (boots.itemID == DivineRPG.ultimaBoots.itemID
-					&& legs.itemID == DivineRPG.ultimaLegs.itemID
-					&& chest.itemID == DivineRPG.ultimaBody.itemID
-					&& helm.itemID == DivineRPG.ultimaHead.itemID)
+			else if (bootID == DivineRPG.ultimaBoots.itemID
+					&& legID == DivineRPG.ultimaLegs.itemID
+					&& chestID == DivineRPG.ultimaBody.itemID
+					&& helmID == DivineRPG.ultimaHead.itemID)
 			{
 				var5.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 3));
 			}
-			else if (boots.itemID == DivineRPG.azuriteBoots.itemID
-					&& legs.itemID == DivineRPG.azuriteLegs.itemID
-					&& chest.itemID == DivineRPG.azuriteBody.itemID
-					&& helm.itemID == DivineRPG.azuriteHead.itemID
+			else if (bootID == DivineRPG.azuriteBoots.itemID
+					&& legID == DivineRPG.azuriteLegs.itemID
+					&& chestID == DivineRPG.azuriteBody.itemID
+					&& helmID == DivineRPG.azuriteHead.itemID
 					&& var5.getAir() < 300
 					&& var5.getHealth() < 20)
 			{
 				var5.heal(1);
+			}
+			else if (bootID == DivineRPG.glisteningBoots.itemID
+					&& legID == DivineRPG.glisteningLegs.itemID
+					&& chestID == DivineRPG.glisteningChest.itemID
+					&& helmID == DivineRPG.glisteningHelmetRanged.itemID)
+			{
+				var5.capabilities.func_82877_b(0.1F * 1.4F);
+			}
+			else if (bootID == DivineRPG.demonizedBoots.itemID
+					&& legID == DivineRPG.demonizedLegs.itemID
+					&& chestID == DivineRPG.demonizedChest.itemID
+					&& helmID == DivineRPG.demonizedHelmetRanged.itemID)
+			{
+				var5.capabilities.func_82877_b(0.1F * 1.8F);
+			}
+			else if (bootID == DivineRPG.tormentedBoots.itemID
+					&& legID == DivineRPG.tormentedLegs.itemID
+					&& chestID == DivineRPG.tormentedChest.itemID
+					&& helmID == DivineRPG.tormentedHelmetRanged.itemID)
+			{
+				var5.capabilities.func_82877_b(0.1F * 2.0F);
+			}
+			else if (bootID == DivineRPG.glisteningBoots.itemID
+					&& legID == DivineRPG.glisteningLegs.itemID
+					&& chestID == DivineRPG.glisteningChest.itemID
+					&& helmID == DivineRPG.glisteningHelmetMelee.itemID)
+			{
+				var5.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 0));
+			}
+			else if (bootID == DivineRPG.demonizedBoots.itemID
+					&& legID == DivineRPG.demonizedLegs.itemID
+					&& chestID == DivineRPG.demonizedChest.itemID
+					&& helmID == DivineRPG.demonizedHelmetMelee.itemID)
+			{
+				var5.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 1));
+			}
+			else if (bootID == DivineRPG.tormentedBoots.itemID
+					&& legID == DivineRPG.tormentedLegs.itemID
+					&& chestID == DivineRPG.tormentedChest.itemID
+					&& helmID == DivineRPG.tormentedHelmetMelee.itemID)
+			{
+				var5.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 1, 2));
+			}
+			else
+			{
+				var5.capabilities.allowFlying = false;
+				var5.capabilities.func_82877_b(0.1F);
 			}
 		}
 	}

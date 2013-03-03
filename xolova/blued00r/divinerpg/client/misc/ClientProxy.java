@@ -48,10 +48,6 @@ import cpw.mods.fml.relauncher.Side;
 public class ClientProxy extends CommonProxy
 {
     
-    public void addAchievements()
-    {    	
-    }
-    
     public int addArmor(String var1)
     {
         return RenderingRegistry.addNewArmourRendererPrefix(var1);

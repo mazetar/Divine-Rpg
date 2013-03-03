@@ -16,6 +16,7 @@ public class ItemVetheanHealingFood extends ItemFood
 		super(par1, par2, par3, par4);
 		this.healthGain = par5;
 		this.setAlwaysEdible();
+		this.setPotionEffect(Potion.regeneration.id, (int) Math.round(2 * (2 / par5)), 0, 1.0F);
 	}
 
     /**

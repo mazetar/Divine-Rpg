@@ -15,9 +15,10 @@ import net.minecraft.world.World;
 
 public class BlockDreamLamp extends BlockContainer
 {
-	private boolean powered;
 	private GuiDreamLamp gui;
 	private TileEntityDreamLamp te;
+    private static boolean keepFurnaceInventory = false;
+
 	public BlockDreamLamp(int par1, int i, Material par2Material, boolean k) 
 	{
 		super(par1, par2Material);
@@ -32,6 +33,11 @@ public class BlockDreamLamp extends BlockContainer
 		return new TileEntityDreamLamp(this);
 	}
 	
+    public void onBlockAdded(World par1World, int par2, int par3, int par4)
+    {
+        super.onBlockAdded(par1World, par2, par3, par4);
+    }
+	
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
     {
     	TileEntityDreamLamp tile_entity = (TileEntityDreamLamp)world.getBlockTileEntity(x, y, z);
@@ -43,17 +49,33 @@ public class BlockDreamLamp extends BlockContainer
 		return true;
     }
     
-    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
-    {
-        if (te.coalDuration > 0)
-        {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.dreamlampOn.blockID);
-        }
-    }
-    
     public int idDropped(int par1, Random par2Random, int par3)
     {
         return DivineRPG.dreamlamp.blockID;
     }
+    
+    public static void updateFurnaceBlockState(boolean par0, World par1World, int par2, int par3, int par4)
+    {
+        int var5 = par1World.getBlockMetadata(par2, par3, par4);
+        TileEntity var6 = par1World.getBlockTileEntity(par2, par3, par4);
+        keepFurnaceInventory = true;
 
+        if (par0)
+        {
+            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.dreamlampOn.blockID);
+        }
+        else
+        {
+            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.dreamlamp.blockID);
+        }
+
+        keepFurnaceInventory = false;
+        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5);
+
+        if (var6 != null)
+        {
+            var6.validate();
+            par1World.setBlockTileEntity(par2, par3, par4, var6);
+        }
+    }
 }

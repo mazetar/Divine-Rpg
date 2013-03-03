@@ -43,7 +43,7 @@ public class GuiInfusionTable extends GuiContainer
 		if(item != null)
 		{
 			s = item.getDisplayName();
-			this.drawString(fontRenderer, s, width / 2 - 20, 61, Color.blue.getRGB());
+			this.drawString(fontRenderer, s, width / 2 - 20, 71, Color.blue.getRGB());
 		}		
 	}
     

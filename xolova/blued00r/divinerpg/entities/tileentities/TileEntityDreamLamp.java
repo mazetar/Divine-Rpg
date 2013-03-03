@@ -4,6 +4,7 @@ import xolova.blued00r.divinerpg.blocks.BlockDreamLamp;
 import xolova.blued00r.divinerpg.client.gui.GuiDreamLamp;
 import xolova.blued00r.divinerpg.containers.ContainerInfusionTable;
 import xolova.blued00r.divinerpg.misc.RecipesInfusionTable;
+import net.minecraft.block.BlockFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
@@ -44,10 +45,13 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 		if(coalDuration > 0)
 		{
 			--coalDuration;
+	        dreamlamp.updateFurnaceBlockState(this.coalDuration > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+			System.out.println(coalDuration);
 			if(coalDuration == 0)
 			{
-				inventory[0] = new ItemStack(inventory[0].getItem(), -1);
+				inventory[0] = null;
 				this.onInventoryChanged();
+				dreamlamp.setLightValue(0.0F);
 			}
 			else if (!shouldLight())
 			{
@@ -132,7 +136,7 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 	@Override
 	public int getInventoryStackLimit()
 	{
-		return 32;
+		return 1;
 	}
 
 	@Override

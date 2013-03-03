@@ -15,6 +15,7 @@ import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDemonFurnace;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDensosStatue;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDramixAlter;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDramixStatue;
+import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDreamLamp;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityExtractinator;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityGlacideSpawner;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityGreenlightFurnace;
@@ -441,6 +442,7 @@ public class ModBlocks {
         GameRegistry.registerBlock(DivineRPG.mintwoodLeaves, "mintwoodLeaves");
         GameRegistry.registerBlock(DivineRPG.dreamwoodLeaves, "dreamwoodLeaves");
         GameRegistry.registerBlock(DivineRPG.infusionTable, "infusionTable");
+        GameRegistry.registerTileEntity(TileEntityDreamLamp.class, "TeDreamLamp");
 	}
 
 }

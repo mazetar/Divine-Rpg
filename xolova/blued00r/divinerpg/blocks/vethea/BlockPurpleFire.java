@@ -9,10 +9,6 @@ public class BlockPurpleFire extends BlockFire
 	public BlockPurpleFire(int par1, int par2) 
 	{
 		super(par1, par2);
+		this.setTickRandomly(false);
 	}
-	
-    private boolean canNeighborBurn(World par1World, int par2, int par3, int par4)
-    {
-        return false;
-    }
 }

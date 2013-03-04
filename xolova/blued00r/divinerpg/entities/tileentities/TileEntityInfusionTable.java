@@ -34,14 +34,33 @@ public class TileEntityInfusionTable extends TileEntity implements IInventory
 	@Override
 	public ItemStack getStackInSlot(int i) 
 	{
-        int j = 0, k = 0;
-        if (inventory[i] != null && inventory[2] == null)
-        {
-        	
-        }
         return inventory[i];
 	}
 
+	public void updateEntity()
+	{
+		if(inventory[2] == null)
+		{
+			if(inventory[0] != null && inventory[1] != null)
+			{
+				int item1 = inventory[0].getItem().itemID;
+				int item2 = inventory[1].getItem().itemID;
+				System.out.println(item1 + ":" +item2);
+				if(item1 != 0 && item2 != 0)
+				{
+					ItemStack item = RecipesInfusionTable.instance().getResult(item1, item2);
+					if(item != null)
+					{
+						inventory[2] = item;
+						this.decrStackSize(0, 1);
+						this.decrStackSize(1, 1);
+					}
+				}
+			}
+		}
+		super.updateEntity();
+	}
+	
 	@Override
     public ItemStack decrStackSize(int i, int j)
     {

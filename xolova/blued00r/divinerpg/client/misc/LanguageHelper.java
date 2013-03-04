@@ -8,6 +8,7 @@ public class LanguageHelper
 {
     public static void addNames()
     {
+    	LanguageHelperVethean.addNames();
         LanguageRegistry.addName(DivineRPG.corruptedShards, "Corrupted Shards");
         LanguageRegistry.addName(DivineRPG.corruptedStone, "Corrupted Stone");
         LanguageRegistry.addName(DivineRPG.deathBringer, "Death Bringer");

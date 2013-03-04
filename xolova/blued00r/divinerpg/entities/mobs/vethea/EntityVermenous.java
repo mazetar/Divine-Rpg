@@ -12,6 +12,10 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
 public class EntityVermenous extends EntityMob
@@ -33,23 +37,27 @@ public class EntityVermenous extends EntityMob
         this.ability = 0;
     }
     
-    protected void updateAITasks()
+    public void onLivingUpdate()
     {
-    	if (this.rand.nextInt(25) == 0 || this.ability != 0)
-    	{
-    		this.ability--;
-    		if (this.getAttackTarget() != null && this.getAttackTarget() instanceof EntityPlayer)
-    		{
-    			EntityPlayer var1 = (EntityPlayer) this.getAttackTarget();
-    			var1.rotationYaw += 45;
-    			var1.getLookHelper().setLookPositionWithEntity(this, 45, 45);
-    			System.out.println("a");
-    		}
-    	}
-    	else
-    	{
-        	super.updateAITasks();
-    	}
+    	super.onLivingUpdate();
+        EntityPlayer var1 = this.worldObj.getClosestVulnerablePlayerToEntity(this, 64.0D);
+
+        if (var1 == null)
+        {
+            return;
+        }
+        else
+        {
+            Vec3 var3 = var1.getLook(1.0F).normalize();
+            Vec3 var4 = this.worldObj.getWorldVec3Pool().getVecFromPool(this.posX - var1.posX, this.boundingBox.minY + (double)(this.height / 2.0F) - (var1.posY + (double)var1.getEyeHeight()), this.posZ - var1.posZ);
+            double var5 = var4.lengthVector();
+            var4 = var4.normalize();
+            double var7 = var3.dotProduct(var4);
+            if( var7 > 1.0D - 0.025D / var5 && var1.canEntityBeSeen(this))
+            {
+            	var1.attackEntityFrom(DamageSource.causeMobDamage(this), 4);
+            }
+        }
     }
 
     public int getAttackStrength(Entity var1)

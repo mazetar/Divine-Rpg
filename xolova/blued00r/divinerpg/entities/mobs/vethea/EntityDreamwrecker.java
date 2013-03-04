@@ -36,13 +36,13 @@ public class EntityDreamwrecker extends EntityMob
     	super.onLivingUpdate();
         EntityPlayer var1 = this.worldObj.getClosestVulnerablePlayerToEntity(this, 64.0D);
 
-        if (var1 == null || var1.getDistanceToEntity(this) > 16)
+        if (var1 == null || var1.getDistanceToEntity(this) > 64)
         {
             return;
         }
         else
         {
-            var1.addVelocity(Math.signum(this.posX - var1.posX) * 0.009,0, Math.signum(this.posZ - var1.posZ) * 0.009);
+            var1.addVelocity(Math.signum(this.posX - var1.posX) * 0.029,0, Math.signum(this.posZ - var1.posZ) * 0.029);
         }
     }
 

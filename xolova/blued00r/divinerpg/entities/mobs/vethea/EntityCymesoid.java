@@ -1,5 +1,7 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -12,6 +14,8 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
@@ -20,7 +24,7 @@ public class EntityCymesoid extends EntityMob
     public EntityCymesoid(World var1)
     {
         super(var1);
-        this.texture = "/mob/cymesoid.png";
+        this.texture = "/mob/Dramix.png";
         this.moveSpeed = 0.25F;
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
@@ -31,8 +35,8 @@ public class EntityCymesoid extends EntityMob
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 64.0F, 0, true));
     }
-    
-    public void onLivingUpdate()
+
+	public void onLivingUpdate()
     {
     	super.onLivingUpdate();
         EntityPlayer var1 = this.worldObj.getClosestVulnerablePlayerToEntity(this, 64.0D);
@@ -48,7 +52,10 @@ public class EntityCymesoid extends EntityMob
             double var5 = var4.lengthVector();
             var4 = var4.normalize();
             double var7 = var3.dotProduct(var4);
-            this.texture = "/mob/cymesoidIvisible.png";
+            if( var7 > 1.0D - 0.025D / var5 && var1.canEntityBeSeen(this))
+            {
+            	this.addPotionEffect(new PotionEffect(Potion.invisibility.id, 200, 1));
+            }
         }
     }
 

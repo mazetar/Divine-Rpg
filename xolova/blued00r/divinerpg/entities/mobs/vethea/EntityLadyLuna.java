@@ -46,28 +46,33 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
     
     protected void updateAITasks()
     {
-    	if (this.getAttackTarget() != null && this.waitTick == 0 && (this.getDistanceToEntity(this.getAttackTarget()) <= 0.75 || this.hasAttacked))
-    	{
-    		this.waitTick = 50;
-    	}
-    	else if (this.waitTick == 0)
-    	{
-        	super.updateAITasks();
-    	}
-    	else if (this.waitTick == 20)
-    	{
-    		this.setAIMoveSpeed(0);
-    		--this.waitTick;
-    	}
-    	else if (this.waitTick == 1)
-    	{
-    		this.setAIMoveSpeed(this.moveSpeed);
-    		--this.waitTick;
-    	}
-    	else
-    	{
-    		--this.waitTick;
-    	}
+        	if (this.getAttackTarget() != null && this.waitTick <= 0)
+        	{
+        		System.out.println("charge start");
+        		this.waitTick = 30;
+        	}
+        	else if (this.waitTick <= 1)
+        	{
+        		this.setAIMoveSpeed(this.moveSpeed);
+        		--this.waitTick;
+        	}
+        	else if (this.waitTick == 5)
+        	{
+        		this.setAIMoveSpeed(0);
+        		--this.waitTick;
+        		System.out.println("Stopping");
+        	}
+        	else
+        	{
+        		--this.waitTick;
+        		System.out.println(this.waitTick);
+        		this.moveEntityWithHeading(0F, 0.25F);
+        	}
+        	
+        	if (this.waitTick <= 0)
+        	{
+            	super.updateAITasks();
+        	}
     }
 
 	@SideOnly(Side.CLIENT)
@@ -267,5 +272,13 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
         }
 
         return var4;
+    }
+
+    /**
+     * Called by a player entity when they collide with an entity
+     */
+    public void onCollideWithPlayer(EntityPlayer par1EntityPlayer) 
+    {
+    	this.attackEntityAsMob(par1EntityPlayer);
     }
 }

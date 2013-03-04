@@ -447,6 +447,25 @@ public class ModBlocks {
         GameRegistry.registerTileEntity(TileEntityDreamLamp.class, "TeDreamLamp");
         GameRegistry.registerBlock(DivineRPG.purpleFire, "PurpleFire");
         GameRegistry.registerBlock(DivineRPG.karosCannon, "karosCannon");
+        GameRegistry.registerBlock(DivineRPG.dreambricks, "dreambricks");
+        GameRegistry.registerBlock(DivineRPG.dreambricks2, "dreambricks2");
+        GameRegistry.registerBlock(DivineRPG.lunastone, "lunastone");
+        GameRegistry.registerBlock(DivineRPG.lunabricks, "lunabricks");
+        GameRegistry.registerBlock(DivineRPG.metalCaging, "metalCaging");
+        GameRegistry.registerBlock(DivineRPG.cryptWall, "cryptWall");
+        GameRegistry.registerBlock(DivineRPG.smoothGlass, "smoothGlass");
+        GameRegistry.registerBlock(DivineRPG.villageLamp, "villageLamp");
+        GameRegistry.registerBlock(DivineRPG.cellLamp, "cellLamp");
+        GameRegistry.registerBlock(DivineRPG.barredDoor, "barredDoor");
+        GameRegistry.registerBlock(DivineRPG.firelight, "firelight");
+        GameRegistry.registerBlock(DivineRPG.firewall, "firewall");
+        GameRegistry.registerBlock(DivineRPG.karosHeatTileRed, "karosHeatTileRed");
+        GameRegistry.registerBlock(DivineRPG.karosHeatTileGreen, "karosHeatTileGreen");
+        GameRegistry.registerBlock(DivineRPG.helioticBeam, "helioticBeam");
+        GameRegistry.registerBlock(DivineRPG.cryptFloor, "cryptFloor");
+        GameRegistry.registerBlock(DivineRPG.chamberWall, "chamberWall");
+        GameRegistry.registerBlock(DivineRPG.chamberWall1, "chamberWall1");
+        GameRegistry.registerBlock(DivineRPG.chamberWall2, "chamberWall2");
 	}
 
 }

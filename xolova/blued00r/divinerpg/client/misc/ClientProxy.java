@@ -327,12 +327,13 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityHiveQueen.class, new RenderHiveQueen(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityHiveSoldier.class, new RenderHiveSoldier(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityLheiva.class, new RenderLheiva(new ModelWildFire(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySpinebackWormBody.class, new RenderSpinebackWormBody(new ModelGlacide(), 0.0F));
         
         /*
          * 1.3 Projectiles
          */
         
-        RenderingRegistry.registerEntityRenderingHandler(EntityKazroticShot.class, new RenderBasicProjectile(5, "/DivineRPG/Entities.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntityKazroticShot.class, new RenderBasicProjectile(Item.snowball.getIconFromDamage(0), "/items.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityZoragonBomb.class, new RenderBasicProjectile(6, "/DivineRPG/Entities.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityDissimentShot.class, new RenderBasicProjectile(7, "/DivineRPG/Entities.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityTeakerDisk.class, new RenderBasicProjectile(DivineRPG.teakerDisk.getIconFromDamage(0), "/Xolovon4.png"));
@@ -352,6 +353,9 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityKarosCannonShot.class, new RenderBasicArrow("/item/karosCannonArrow.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntitySpinebackCannonShot.class, new RenderBasicProjectile(DivineRPG.rockChunks.getIconFromDamage(0), "/Xolovon4.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityEvernightProjectile.class, new RenderBasicProjectile(8, "/DivineRPG/Entities.png"));
+//        RenderingRegistry.registerEntityRenderingHandler(EntityBouncingProjectile.class, new RenderBasicProjectile(8, "/DivineRPG/Entities.png"));
+//        RenderingRegistry.registerEntityRenderingHandler(EntityWreckStrengthShot.class, new RenderBasicProjectile(8, "/DivineRPG/Entities.png"));
+//        RenderingRegistry.registerEntityRenderingHandler(EntityWreckExplosiveShot.class, new RenderBasicProjectile(8, "/DivineRPG/Entities.png"));
         
         /*
          * Render Block info

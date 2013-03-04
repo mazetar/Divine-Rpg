@@ -4725,7 +4725,7 @@ public class DivineRPG
         villageLamp = new Block(villageLampID, 45, Material.glass).setBlockName("villageLamp").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         cellLamp = new Block(cellLampID, 57, Material.glass).setBlockName("cellLamp").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         barredDoor = new BlockBarredDoor(barredDoorID, Material.iron, 58).setBlockName("barredDoor").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        firecrystal = new Block(firecrystalID, 60, Material.glass).setBlockName("firecrystal").setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        firecrystal = new Block(firecrystalID, 60, Material.glass).setLightValue(1.0F).setBlockName("firecrystal").setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         firelight = new Block(firelightID, 60, Material.glass).setBlockName("firelight").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         hyrewood = new BlockHyrewood(hyrewoodID).setBlockName("hyrewood").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         mintwoodLeaves = new BlockDreamwoodLeaves(mintwoodLeavesID, 63).setBlockName("mintwoodLeaves").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
@@ -4840,8 +4840,8 @@ public class DivineRPG
         
         teakerBow = new ItemVetheanBow(teakerBowID, 0.5D, vetheanArrow).setIconCoord(0, 2).setItemName("teakerBow").setCreativeTab(tabRanged);
         amthrimisBow = new ItemVetheanBow(amthirmisBowID, 0.7D, vetheanArrow).setIconCoord(5, 2).setItemName("amthrimisBow").setCreativeTab(tabRanged);
-        darvenBow = new ItemVetheanBow(darvenBowID, 1.1D, vetheanArrow2).setIconCoord(0, 3).setItemName("darvenBow").setCreativeTab(tabRanged);
-        cermileBow = new ItemVetheanBow(cermileBowID, 1.4D, vetheanArrow2).setIconCoord(5, 3).setItemName("cermileBow").setCreativeTab(tabRanged);
+        darvenBow = new ItemVetheanBow(darvenBowID, 1.1D, vetheanArrow2).setIconCoord(0, 3).setItemName("teakerBow").setCreativeTab(tabRanged);
+        cermileBow = new ItemVetheanBow(cermileBowID, 1.4D, vetheanArrow2).setIconCoord(5, 3).setItemName("darvenBow").setCreativeTab(tabRanged);
         pardimalBow = new ItemVetheanBow(pardimalBowID, 1.8D, vetheanWarArrow).setIconCoord(0, 4).setItemName("pardimalBow").setCreativeTab(tabRanged);
         quadroticBow = new ItemVetheanBow(quadroticBowID, 2.1D, vetheanWarArrow).setIconCoord(5, 4).setItemName("quadroticBow").setCreativeTab(tabRanged);
         karosBow = new ItemVetheanBow(karosBowID, 2.3D, vetheanWrathArrow).setIconCoord(0, 5).setItemName("karosBow").setCreativeTab(tabRanged);
@@ -4860,17 +4860,16 @@ public class DivineRPG
         vetheanDemonizedTemplate = new Item(vetheanDemonizedTemplateID).setItemName("vetheanDemonizedTemplate").setIconCoord(13, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
         vetheanTormentedTemplate = new Item(vetheanTormentedTemplateID).setItemName("vetheanTormentedTemplate").setIconCoord(13, 15).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
         
-        teakerLump = new Item(teakerLumpID).setItemName("TeakerLump").setIconCoord(0, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        amthrimisLump = new Item(amthirmisLumpID).setItemName("AmthrimisLump").setIconCoord(1, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        darvenLump = new Item(darvenLumpID).setItemName("DarvenLump").setIconCoord(2, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        cermileLump = new Item(cermileLumpID).setItemName("CermileLump").setIconCoord(3, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        pardimalLump = new Item(pardimalLumpID).setItemName("pardimalLump").setIconCoord(4, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        quadroticLump = new Item(quadroticLumpID).setItemName("quadroticLump").setIconCoord(5, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        karosLump = new Item(karosLumpID).setItemName("karosLump").setIconCoord(6, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        heliosisLump = new Item(heliosisLumpID).setItemName("heliosisLump").setIconCoord(7, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        arksianeLump = new Item(arksianeLumpID).setItemName("arksaineLump").setIconCoord(8, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+	teakerLump = new Item(teakerLumpID).setItemName("TeakerLump").setIconCoord(11, 0).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        amthrimisLump = new Item(amthirmisLumpID).setItemName("AmthrimisLump").setIconCoord(11, 1).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        darvenLump = new Item(darvenLumpID).setItemName("DarvenLump").setIconCoord(11, 2).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        cermileLump = new Item(cermileLumpID).setItemName("CermileLump").setIconCoord(11, 3).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        pardimalLump = new Item(pardimalLumpID).setItemName("pardimalLump").setIconCoord(11, 4).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        quadroticLump = new Item(quadroticLumpID).setItemName("quadroticLump").setIconCoord(11, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        karosLump = new Item(karosLumpID).setItemName("karosLump").setIconCoord(11, 6).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        heliosisLump = new Item(heliosisLumpID).setItemName("heliosisLump").setIconCoord(11, 7).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        arksianeLump = new Item(arksianeLumpID).setItemName("arksaineLump").setIconCoord(11, 8).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
 
-        
         honeysuckle = new ItemVetheanFood(honeysuckleID, 1, 0.2F, true).setItemName("honeysuckle").setIconCoord(0, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
         dreamCarrot = new ItemVetheanFood(dreamCarrotID, 3, 0.4F, true).setItemName("dreamCarrot").setIconCoord(0, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
         dreamMelon = new ItemVetheanFood(dreamMelonID, 6, 0.6F, true).setItemName("dreamMelon").setIconCoord(1, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);

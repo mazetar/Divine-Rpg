@@ -16,6 +16,7 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import xolova.blued00r.divinerpg.entities.vethea.EntityKazroticShot;
 
@@ -33,7 +34,7 @@ public class EntityKazrotic extends EntityMob implements IRangedAttackMob
         this.tasks.addTask(2, new EntityAIRestrictSun(this));
         this.tasks.addTask(3, new EntityAIFleeSun(this, this.moveSpeed));
         this.tasks.addTask(5, new EntityAIWander(this, this.moveSpeed));
-        this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 32.0F));
+        this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 64.0F));
         this.tasks.addTask(6, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 64.0F, 0, true));
@@ -97,5 +98,17 @@ public class EntityKazrotic extends EntityMob implements IRangedAttackMob
 
         this.playSound("xolova.kazroticShot", 1.0F, 1.0F);
         this.worldObj.spawnEntityInWorld(var1);
+    }
+    
+    /**
+     * Called when the entity is attacked.
+     */
+    public boolean attackEntityFrom(DamageSource par1DamageSource, int par2)
+    {
+    	if (par1DamageSource == DamageSource.explosion || par1DamageSource == DamageSource.explosion2)
+    	{
+    		return false;
+    	}
+    	return super.attackEntityFrom(par1DamageSource, par2);
     }
 }

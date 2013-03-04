@@ -8,7 +8,6 @@ public class LanguageHelper
 {
     public static void addNames()
     {
-    	LanguageHelperVethean.addNames();
         LanguageRegistry.addName(DivineRPG.corruptedShards, "Corrupted Shards");
         LanguageRegistry.addName(DivineRPG.corruptedStone, "Corrupted Stone");
         LanguageRegistry.addName(DivineRPG.deathBringer, "Death Bringer");
@@ -1003,7 +1002,6 @@ public class LanguageHelper
         
         LanguageRegistry.addName(DivineRPG.infusionTable, "Infusion Table");
         LanguageRegistry.addName(DivineRPG.dreamlamp, "Dream Lamp");
-        LanguageRegistry.addName(DivineRPG.teakerLump, "Teaker Lump");
         
         addAchievementLocalizations();
         

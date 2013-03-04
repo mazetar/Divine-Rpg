@@ -11,6 +11,7 @@ import net.minecraft.world.World;
 import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.entities.projectile.EntityBlitzDense;
 import xolova.blued00r.divinerpg.entities.projectile.EntitySparkler;
+import xolova.blued00r.divinerpg.entities.vethea.EntityBouncingProjectile;
 import xolova.blued00r.divinerpg.misc.ArcanaList;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

@@ -2,6 +2,10 @@ package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
 import java.util.List;
 
+import xolova.blued00r.divinerpg.entities.vethea.EntityBouncingProjectile;
+import xolova.blued00r.divinerpg.entities.vethea.EntityWreckExplosiveShot;
+import xolova.blued00r.divinerpg.entities.vethea.EntityWreckStrengthShot;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -25,6 +29,7 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.boss.IBossDisplayData;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -34,12 +39,12 @@ import net.minecraft.world.World;
 
 public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDisplayData
 {
-	private int stage;
+	private static int stage;
 	private final int MELEE = 0;
 	private final int ARCANA = 1;
 	private final int RANGED = 2;
 	
-	private int ability;
+	private static int ability;
 	private final int DEFAULT = 0;
 	private final int CHARGE = 1;
 	private final int PULL = 2;
@@ -53,56 +58,62 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
 	private int waitTick;
 	private int abilityCoolDown;
 	
-	private EntityAIBase meleeAI = new EntityAIAttackOnCollide(this, EntityPlayer.class, 0.4F, false);
-	private EntityAIBase rangedAISpeed = new EntityAIArrowAttack(this, 0.25F, 10, 10.0F);
-	private EntityAIBase rangedAI = new EntityAIArrowAttack(this, 0.25F, 40, 10.0F);
-	private EntityAIBase rangedAIOnce = new EntityAIArrowAttack(this, 0.25F, 1, 10.0F);
+	private EntityAIBase meleeAI;
+	private EntityAIBase rangedAISpeed = new EntityAIArrowAttack(this, 0.25F, 5, 64.0F);
+	private EntityAIBase rangedAI = new EntityAIArrowAttack(this, 0.25F, 5, 64.0F);
+	private EntityAIBase rangedAIOnce = new EntityAIArrowAttack(this, 0.25F, 1, 64.0F);
 	private int rangedAttackCounter;
 	
     public EntityWreck(World par1)
     {
         super(par1);
         this.texture = "/mob/Wreck.png";
-        this.moveSpeed = 0.4F;
-        this.setEntityHealth(this.getMaxHealth());
+        this.moveSpeed = 0.25F;
+        meleeAI = new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false);
+        this.health = this.getMaxHealth();
         this.tasks.addTask(0, new EntityAISwimming(this));
         //this.tasks.addTask(4, new EntityAIMoveTwardsRestriction(this, this.moveSpeed));
         this.tasks.addTask(5, meleeAI);
         this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 64.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
-        this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 64.0F, 0, true));
+        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 64.0F, 0, true));
         this.isImmuneToFire = true;
         System.out.println("constructor");
+        this.ability = DEFAULT;
+        this.stage = MELEE;
     }
     
     protected void updateAITasks()
     {
-    	if (this.ability == CHARGE)
+    	
+    	if (this.ability == CHARGE || this.waitTick > 0)
     	{
     		System.out.println("charging");
-        	if (this.getAttackTarget() != null && this.waitTick == 0 && (this.getDistanceToEntity(this.getAttackTarget()) <= 1 || this.hasAttacked))
+        	if (this.getAttackTarget() != null && this.waitTick <= 0)
         	{
+        		System.out.println("charge start");
         		this.waitTick = 50;
         	}
-        	else if (this.waitTick == 0)
-        	{
-        	}
-        	else if (this.waitTick == 30)
-        	{
-        		this.setAIMoveSpeed(0);
-        		--this.waitTick;
-        	}
-        	else if (this.waitTick == 1)
+        	else if (this.waitTick <= 1)
         	{
         		this.setAIMoveSpeed(this.moveSpeed);
         		--this.waitTick;
         		this.ability = DEFAULT;
         		System.out.println("Charge Defaulting");
         	}
+        	else if (this.waitTick == 10)
+        	{
+        		this.setAIMoveSpeed(0);
+        		--this.waitTick;
+        		System.out.println("Stopping");
+        	}
         	else
         	{
         		--this.waitTick;
+        		System.out.println(this.waitTick);
+        		this.moveEntityWithHeading(0F, 0.25F);
         	}
         	
         	return;
@@ -110,6 +121,8 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
     	
     	if (this.waitTick <= 0)
     	{
+        	System.out.println("Managing Abilities");
+        	this.manageAbilities();
         	super.updateAITasks();
     	}
     }
@@ -124,18 +137,6 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
 		return this.stage == MELEE ? "/mob/Dramix.png" : (this.stage == ARCANA ? "/mob/vamacheron.png" : (this.stage == RANGED ? "/mob/Alicanto.png" : super.getTexture()));
 	}
     
-    public void onLivingUpdate()
-    {
-    	super.onLivingUpdate();
-    }
-    
-    public void onUpdate()
-    {
-    	super.onUpdate();
-    	System.out.println("Managing Abilities");
-    	this.manageAbilities();
-    }
-    
     public void manageAbilities()
     {
     	System.out.println("1" + "," + this.ability + "," + this.abilityCoolDown + "," + this.entityId);
@@ -146,21 +147,23 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
             this.dataWatcher.updateObject(16, Integer.valueOf(this.health));
         }
         
-        EntityPlayer var1 = this.worldObj.getClosestVulnerablePlayerToEntity(this, 64.0D);
-    	
-    	if (this.health < this.getMaxHealth() * 2 / 3 && this.ability == DEFAULT)
+        EntityPlayerMP var1 = (EntityPlayerMP) this.worldObj.getClosestVulnerablePlayerToEntity(this, 64.0D);
+
+    	if (this.health < this.getMaxHealth() / 3 && this.ability == DEFAULT)
+    	{
+    		this.stage = RANGED;
+    	}
+    	else if (this.health < this.getMaxHealth() * 2 / 3 && this.ability == DEFAULT)
     	{
     		this.stage = ARCANA;
     		this.tasks.func_85156_a(meleeAI);
-    	}
-    	else if (this.health < this.getMaxHealth() / 3 && this.ability == DEFAULT)
-    	{
-    		this.stage = RANGED;
+			this.tasks.addTask(2, rangedAI);
+			this.rangedAttackCounter = 1;
     	}
     	
     	if (this.ability == DEFAULT && this.abilityCoolDown == 0)
     	{
-    		this.abilityCoolDown = 50;
+    		this.abilityCoolDown = 15;
     		switch (this.stage)
     		{
     		case MELEE:
@@ -170,13 +173,13 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
     			case 0:
     				this.ability = PULL;
             		System.out.println("Pull Setting");
-    				this.hasAttacked = false;
-    				this.setAIMoveSpeed(0F);
+                	this.setAIMoveSpeed(0.0F);
+                	this.moveSpeed = 0;
     				break;
     			case 1:
     				this.ability = CHARGE;
             		System.out.println("Charge Setting");
-    				this.setAIMoveSpeed(0.7F);
+    				this.setAIMoveSpeed(1.4F);
     				break;
                 default: break;
     			}
@@ -186,13 +189,16 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
     			{
     			case 0:
     				this.ability = FIRE;
+            		System.out.println("Fire Setting");
     				break;
     			case 1:
     				this.ability = BOUNCE;
-    				this.tasks.addTask(2, rangedAIOnce);
+        			this.rangedAttackCounter = 0;
+            		System.out.println("Bounce Setting");
     				break;
     			case 2:
     				this.ability = FREEZE;
+            		System.out.println("Freeze Setting");
     				break;
                 default: break;
     			}
@@ -203,19 +209,18 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
     			{
     			case 0:
     				this.ability = SPEED;
-    				this.tasks.addTask(2, rangedAISpeed);
+            		System.out.println("Charge Speed");
     				break;
     			case 1:
     				this.ability = EXPLOSIONS;
-    				this.tasks.addTask(2, rangedAI);
+            		System.out.println("Explosions Setting");
     				break;
     			case 2:
     				this.ability = STRENGTH;
-    				this.tasks.addTask(2, rangedAI);
+            		System.out.println("Strength Setting");
     				break;
                 default: break;
     			}
-    			this.setAIMoveSpeed(0F);
     			break;
             default: break;
     		}
@@ -228,40 +233,30 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
     	}
     	else if (this.ability != 0 && this.abilityCoolDown == 0)
     	{
-    		this.abilityCoolDown = 50;
+    		this.abilityCoolDown = 5;
     	}
     	
-    	if (this.ability == PULL)
-    	{
-            if (var1 != null)
-            {
-            	var1.addVelocity(Math.signum(this.posX - var1.posX) * 0.009,0, Math.signum(this.posZ - var1.posZ) * 0.009);
-            	if(this.recentlyHit == 60)
-            	{
-            		this.ability = DEFAULT;
-            	}
-            }
-    	}
-    	else if(this.ability == FIRE)
+    	if(this.ability == FIRE)
     	{
     		if (var1 != null)
     		{
         		for (int i = 0; i < 5; ++i)
         		{
-        			int var2 = (int) Math.signum(this.posX - var1.posX) * i;
-        			int var3 = (int) Math.signum(this.posZ - var1.posZ) * i;
-            		this.worldObj.setBlockWithNotify(this.chunkCoordX + var2, this.chunkCoordY, this.chunkCoordZ + var3, Block.fire.blockID);
+        			int var2 = (int) ((this.posX - var1.posX) / 5) * i;
+        			int var3 = (int) ((this.posZ - var1.posZ) / 5) * i;
+            		this.worldObj.setBlockWithNotify((int)this.posX - var2, (int)this.posY, (int)this.posZ - var3, Block.stone.blockID);
         		}
         		this.ability = DEFAULT;
         		System.out.println("Fire Defaulting");
     		}
     	}
-    	else if(this.ability == FREEZE)
+    	if(this.ability == FREEZE)
     	{
     		if (var1 != null)
     		{
-    			var1.setVelocity(0, 0, 0);
-    			this.rangedAttackCounter++;
+        		System.out.println("Slowing Player");
+        		var1.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 5, 5));
+        		this.rangedAttackCounter++;
     		}
     		
     		if (this.rangedAttackCounter == 100)
@@ -338,6 +333,26 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
     {
         return this.dataWatcher.getWatchableObjectInt(16);
     }
+    
+    public void onLivingUpdate()
+    {
+    	super.onLivingUpdate();
+        
+    	if (this.ability == PULL)
+    	{
+        	
+    		EntityPlayer var1 = this.worldObj.getClosestVulnerablePlayerToEntity(this, 64.0D);
+
+            if (var1 == null || var1.getDistanceToEntity(this) > 64)
+            {
+                return;
+            }
+            else
+            {
+                var1.addVelocity(Math.signum(this.posX - var1.posX) * 0.069,0, Math.signum(this.posZ - var1.posZ) * 0.069);
+            }
+    	}
+    }
 
     protected void entityInit()
     {
@@ -345,11 +360,6 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
         this.dataWatcher.addObject(16, new Integer(this.getMaxHealth()));
         System.out.println("init");
     }
-    
-    /**
-     * Makes the entity despawn if requirements are reached
-     */
-    protected void despawnEntity() {}
 
     /**
      * Returns the current armor value as determined by a call to InventoryPlayer.getTotalArmorValue
@@ -454,7 +464,9 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
         	{
         		this.ability = DEFAULT;
         		System.out.println("Pull Defaulting");
+        		this.moveSpeed = 0.25F;
         		this.setAIMoveSpeed(this.moveSpeed);
+        		var3 = 2;
         	}
             if (var3 > 0)
             {
@@ -480,42 +492,75 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
 		switch(this.ability)
 		{
 		case BOUNCE:
-			EntityArrow var1 = new EntityArrow(this.worldObj, this, par1, 1.6F, 12.0F);
-	        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
-	        this.worldObj.spawnEntityInWorld(var1);
-	        this.tasks.func_85156_a(rangedAIOnce);
-	        this.ability = DEFAULT;
-    		System.out.println("Bounce Defaulting");
+			if (this.rangedAttackCounter == 0)
+			{
+				EntityBouncingProjectile var1 = new EntityBouncingProjectile(this.worldObj, this, 5);
+		        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+		        this.worldObj.spawnEntityInWorld(var1);
+		        this.ability = DEFAULT;
+		        this.rangedAttackCounter++;
+	    		System.out.println("Bounce Defaulting");
+			}
 	        break;
 		case SPEED:
-			EntityArrow var2 = new EntityArrow(this.worldObj, this, par1, 1.6F, 12.0F);
+	        EntityArrow var2 = new EntityArrow(this.worldObj, this, par1, 1.6F, 12.0F);
 	        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 	        this.worldObj.spawnEntityInWorld(var2);
+	        ++this.rangedAttackCounter;
+    		System.out.println("Speed Shot" + this.rangedAttackCounter);
+	        if (this.rangedAttackCounter == 20)
+	        {
+	        	this.ability = DEFAULT;
+        		System.out.println("Speed Defaulting");
+	        }
 	        break;
 		case EXPLOSIONS:
-			EntityArrow var3 = new EntityArrow(this.worldObj, this, par1, 1.6F, 12.0F);
-	        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
-	        this.worldObj.spawnEntityInWorld(var3);
-	        ++this.rangedAttackCounter;
-	        if (this.rangedAttackCounter == 5)
+	        if ((this.rangedAttackCounter % 4) == 0)
+	        {
+		        EntityArrow var3 = new EntityArrow(this.worldObj, this, par1, 1.6F, 12.0F);
+		        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+		        this.worldObj.spawnEntityInWorld(var3);
+		        ++this.rangedAttackCounter;
+        		System.out.println("Explosions Shot" + this.rangedAttackCounter);
+	        }
+	        else if (this.rangedAttackCounter >= 24)
 	        {
 	        	this.ability = DEFAULT;
         		System.out.println("Explosions Defaulting");
 	        }
+	        else
+	        {
+	        	this.rangedAttackCounter++;
+	        }
 	        break;
 		case STRENGTH:
-			EntityArrow var4 = new EntityArrow(this.worldObj, this, par1, 1.6F, 12.0F);
-	        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
-	        this.worldObj.spawnEntityInWorld(var4);
-	        ++this.rangedAttackCounter;
-	        if (this.rangedAttackCounter == 2)
+	        if ((this.rangedAttackCounter & 4) == 0)
+	        {
+		        EntityArrow var4 = new EntityArrow(this.worldObj, this, par1, 1.6F, 12.0F);
+		        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+		        this.worldObj.spawnEntityInWorld(var4);
+		        ++this.rangedAttackCounter;
+        		System.out.println("Strength Shot" + this.rangedAttackCounter);
+	        }
+	        else if (this.rangedAttackCounter >= 12)
 	        {
 	        	this.ability = DEFAULT;
         		System.out.println("Strength Defaulting");
 	        }
+	        else
+	        {
+	        	this.rangedAttackCounter++;
+	        }
 	        break;
         default: break;
 		}
-		this.setAIMoveSpeed(this.moveSpeed);
 	}
+
+    /**
+     * Called by a player entity when they collide with an entity
+     */
+    public void onCollideWithPlayer(EntityPlayer par1EntityPlayer) 
+    {
+    	this.attackEntityAsMob(par1EntityPlayer);
+    }
 }

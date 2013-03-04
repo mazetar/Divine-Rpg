@@ -1,6 +1,9 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.EnchantmentThorns;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -10,7 +13,9 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.potion.Potion;
 import net.minecraft.util.ChunkCoordinates;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
@@ -18,6 +23,8 @@ public class EntitySpinebackWorm extends EntityMob
 {
 	private ChunkCoordinates currentFlightTarget;
 	private int flyTimer;
+	private boolean attack;
+	private int spawnTick;
 
 	public EntitySpinebackWorm(World var1)
 	{
@@ -34,11 +41,21 @@ public class EntitySpinebackWorm extends EntityMob
 		this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, true));
 		this.flyTimer = 0;
 		this.noClip = true;
+		this.attack = false;
+		this.spawnTick = 20;
 	}
+
+    /**
+     * Checks if this entity is inside of an opaque block
+     */
+    public boolean isEntityInsideOpaqueBlock()
+    {
+        return false;
+    }
 
 	public int getAttackStrength(Entity var1)
 	{
-		return 0;
+		return 1;
 	}
 
 	public int getMaxHealth()
@@ -87,24 +104,23 @@ public class EntitySpinebackWorm extends EntityMob
 	}
 
 	/**
-	 * Returns true if this entity should push and be pushed by other entities when colliding.
-	 */
-	public boolean canBePushed()
-	{
-		return false;
-	}
-
-	protected void collideWithEntity(Entity par1Entity) {}
-
-	protected void func_85033_bc() {}
-
-	/**
 	 * Called to update the entity's position/logic.
 	 */
 	public void onUpdate()
 	{
 		super.onUpdate();
-		this.motionY *= 0.6000000238418579D;
+		this.motionY *= 0.2;
+		if (this.spawnTick == 0)
+		{
+			System.out.println(this.entityId);
+			EntitySpinebackWormBody peice = new EntitySpinebackWormBody(this.worldObj, this, 0);
+			peice.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+			this.worldObj.spawnEntityInWorld(peice);
+		}
+		else if (this.spawnTick > 0)
+		{
+			--this.spawnTick;
+		}
 	}
 
 	protected void updateAITasks()
@@ -124,77 +140,189 @@ public class EntitySpinebackWorm extends EntityMob
 		
 		if (this.getAttackTarget() != null)
 		{
-			double var1 = this.posX - (double)this.getAttackTarget().posX;
-			double var3 = this.posY - (double)this.getAttackTarget().posY;
-			double var5 = this.posZ - (double)this.getAttackTarget().posZ;
-			if (Math.sqrt(var1*var1 + var5*var5) > 15)
+			if (!this.attack)
 			{
-				if (var1 > 0  && var5 > 0)
+				this.defaultMovement();
+				if (this.rand.nextInt(250) == 0)
 				{
-					this.motionX = -1.0D;
-					this.motionZ = 1.0D;
-				}
-				else if (var1 < 0  && var5 > 0)
-				{
-					this.motionX = -1.0D;
-					this.motionZ = -1.0D;
-				}
-				else if (var1 < 0  && var5 < 0)
-				{
-					this.motionX = 1.0D;
-					this.motionZ = -1.0D;
-				}
-				else if (var1 > 0  && var5 < 0)
-				{
-					this.motionX = 1.0D;
-					this.motionZ = 1.0D;
+					this.attack = true;
 				}
 			}
-			else if (Math.sqrt(var1*var1 + var5*var5) < 13)
+			else
 			{
-				if (var1 > 0  && var5 > 0)
-				{
-					this.motionX = 1.0D;
-					this.motionZ = 1.0D;
-				}
-				else if (var1 < 0  && var5 > 0)
-				{
-					this.motionX = -1.0D;
-					this.motionZ = 1.0D;
-				}
-				else if (var1 < 0  && var5 < 0)
-				{
-					this.motionX = -1.0D;
-					this.motionZ = -1.0D;
-				}
-				else if (var1 > 0  && var5 < 0)
-				{
-					this.motionX = 1.0D;
-					this.motionZ = -1.0D;
-				}
-			}
-			if (var3 < 5)
-			{
-				this.motionY = 0.3;
-			}
-			else if (var3 > -5)
-			{
-				this.motionY = -0.3;
-			}
-			else if (var3 > -5 && var3 < 5)
-			{
-				if (this.motionY == 0)
-				{
-					this.motionY = this.rand.nextFloat() * 0.3;
-				}
+				this.moveTwrdTarget();
 			}
 			
 			float var7 = (float)(Math.atan2(this.motionZ, this.motionX) * 180.0D / Math.PI) - 90.0F;
 			float var8 = MathHelper.wrapAngleTo180_float(var7 - this.rotationYaw);
+			float var9 = (float)(Math.asin(this.motionY) * 180.0D / Math.PI) - 90.0F;
+			float var10 = MathHelper.wrapAngleTo180_float(var9 - this.rotationPitch);
 			this.moveForward = 0.5F;
 			this.rotationYaw += var8;
+			this.rotationPitch += var10;
 		}
 
+	}
+	
+	private void defaultMovement()
+	{
+		double var1 = this.posX - (double)this.getAttackTarget().posX;
+		double var3 = this.posY - (double)this.getAttackTarget().posY;
+		double var5 = this.posZ - (double)this.getAttackTarget().posZ;
+		if (Math.sqrt(var1*var1 + var5*var5) > 15)
+		{
+			if (var1 > 0  && var5 > 0)
+			{
+				this.motionX = -0.35D;
+				this.motionZ = 0.35D;
+			}
+			else if (var1 < 0  && var5 > 0)
+			{
+				this.motionX = -0.35D;
+				this.motionZ = -0.35D;
+			}
+			else if (var1 < 0  && var5 < 0)
+			{
+				this.motionX = 0.35D;
+				this.motionZ = -0.35D;
+			}
+			else if (var1 > 0  && var5 < 0)
+			{
+				this.motionX = 0.35D;
+				this.motionZ = 0.35D;
+			}
+		}
+		else if (Math.sqrt(var1*var1 + var5*var5) < 13)
+		{
+			if (var1 > 0  && var5 > 0)
+			{
+				this.motionX = 0.35D;
+				this.motionZ = 0.35D;
+			}
+			else if (var1 < 0  && var5 > 0)
+			{
+				this.motionX = -0.35D;
+				this.motionZ = 0.35D;
+			}
+			else if (var1 < 0  && var5 < 0)
+			{
+				this.motionX = -0.35D;
+				this.motionZ = -0.35D;
+			}
+			else if (var1 > 0  && var5 < 0)
+			{
+				this.motionX = 0.35D;
+				this.motionZ = -0.35D;
+			}
+		}
+		if (var3 < 5 && this.motionY > 0)
+		{
+			this.motionY = 0.3;
+		}
+		else if (var3 > -5 && this.motionY < 0)
+		{
+			this.motionY = -0.3;
+		}
+		else if (var3 < -5 && this.motionY < 0)
+		{
+			this.motionY = 0.3;
+		}
+		else if (var3 > 5 && this.motionY > 0)
+		{
+			this.motionY = -0.3;
+		}
+	}
+	
+	private void moveTwrdTarget()
+	{
+		double var1 = this.posX - (double)this.getAttackTarget().posX;
+		double var3 = this.posY - (double)this.getAttackTarget().posY;
+		double var5 = this.posZ - (double)this.getAttackTarget().posZ;
+		
+		if (Math.sqrt(var1*var1 + var5*var5) > 5)
+		{
+			if (var1 > 0  && var5 > 0)
+			{
+				if (this.motionX > -0.25)
+				{
+					this.motionX -= 0.1D;
+				}
+				if (this.motionZ > -0.25)
+				{
+					this.motionZ -= 0.1D;
+				}
+			}
+			else if (var1 < 0  && var5 > 0)
+			{
+				if (this.motionX < 0.25)
+				{
+					this.motionX += 0.1D;
+				}
+				if (this.motionZ > -0.25)
+				{
+					this.motionZ -= 0.1D;
+				}
+			}
+			else if (var1 < 0  && var5 < 0)
+			{
+				if (this.motionX < 0.25)
+				{
+					this.motionX += 0.1D;
+				}
+				if (this.motionZ < 0.25)
+				{
+					this.motionZ += 0.1D;
+				}
+			}
+			else if (var1 > 0  && var5 < 0)
+			{
+				if (this.motionX > -0.25)
+				{
+					this.motionX -= 0.1D;
+				}
+				if (this.motionZ < 0.25)
+				{
+					this.motionZ += 0.1D;
+				}
+			}
+			
+			if (this.motionY < 0 && this.motionY > -0.40)
+			{
+				this.motionY -= 0.1;
+			}
+			else if (this.motionY > 0 && this.motionY < 0.40)
+			{
+				this.motionY += 0.1;
+			}
+		}
+		else
+		{
+			this.motionX = -0.25 * Math.signum(var1);
+			this.motionZ = -0.25 * Math.signum(var5);
+			
+			if (Math.abs(var1) < 0.25)
+			{
+				this.motionX = 0;
+			}
+			if (Math.abs(var5) < 0.25)
+			{
+				this.motionZ = 0;
+			}
+			
+			if (var3 < 0)
+			{
+				this.motionY = 1.25;
+			}
+			else if (var3 > 0)
+			{
+				this.motionY = -1.25;
+			}
+		}
+		
+		if (this.getDistanceToEntity(this.getAttackTarget()) < 1)
+		{
+			this.attackEntityAsMob(this.getAttackTarget());
+		}
 	}
 
 	/**
@@ -223,5 +351,11 @@ public class EntitySpinebackWorm extends EntityMob
 	 public boolean doesEntityNotTriggerPressurePlate()
 	 {
 		 return true;
+	 }
+
+	 public boolean attackEntityAsMob(Entity par1Entity)
+	 {
+		 this.attack = false;
+		 return super.attackEntityAsMob(par1Entity);
 	 }
 }

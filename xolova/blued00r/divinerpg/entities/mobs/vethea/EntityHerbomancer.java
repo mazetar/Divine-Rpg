@@ -1,45 +1,51 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIBreakDoor;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIMoveThroughVillage;
 import net.minecraft.entity.ai.EntityAIMoveTwardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.boss.IBossDisplayData;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityHelio extends EntityMob
+public class EntityHerbomancer extends EntityMob
 {
-    public EntityHelio(World var1)
+    private int spawnTick;
+
+    public EntityHerbomancer(World var1)
     {
         super(var1);
-        this.texture = "/mob/Helio.png";
-        this.moveSpeed = 0.25F;
+        this.texture = "/mob/HiveQueen.png";
+        this.moveSpeed = 0F;
+        this.getNavigator().setBreakDoors(true);
         this.tasks.addTask(0, new EntityAISwimming(this));
+        this.tasks.addTask(1, new EntityAIBreakDoor(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
         this.tasks.addTask(4, new EntityAIMoveTwardsRestriction(this, this.moveSpeed));
+        this.tasks.addTask(5, new EntityAIMoveThroughVillage(this, this.moveSpeed, false));
         this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 32.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 64.0F, 0, true));
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 32.0F, 0, true));
+        this.spawnTick = 40;
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 128.0F, 0, true));
     }
-
+    
     public int getAttackStrength(Entity var1)
     {
-        return 1;
+        return 0;
     }
 
     public int getMaxHealth()
@@ -55,20 +61,33 @@ public class EntityHelio extends EntityMob
         return 0;
     }
 
-	/**
-	 * Returns the volume for the sounds this mob makes.
-	 */
-	protected float getSoundVolume()
-	{
-		return 0.7F;
-	}
+    /**
+     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
+     * use this to react to sunlight and start to burn.
+     */
+    public void onLivingUpdate()
+    {
+        super.onLivingUpdate();
+        
+        if (this.spawnTick == 0 && !this.worldObj.isRemote)
+        {
+        	EntityHerbomancerMinion var2 = new EntityHerbomancerMinion(this.worldObj);
+        	var2.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rand.nextFloat() * 360.0F, 0.0F);
+        	this.worldObj.spawnEntityInWorld(var2);
+        	this.worldObj.spawnParticle("reddust", var2.posX, var2.posY + 0.5D, var2.posZ, this.rand.nextGaussian() * 2.0D - 1.0D, this.rand.nextGaussian() * 2.0D - 1.0D, this.rand.nextGaussian() * 2.0D - 1.0D);
+        	this.worldObj.playSoundAtEntity(var2, "mob.RPG.KarOTsummon", 10.0F, 1.0F);
+        	this.spawnTick = 40;
+        }
+        
+        this.spawnTick--;
+    }
 
     /**
      * Returns the sound this mob makes while it's alive.
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "mob.zombie";
     }
 
     /**
@@ -76,15 +95,7 @@ public class EntityHelio extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.DeathCryxHit";
-    }
-
-    /**
-     * Returns true if the newer Entity AI code should be run
-     */
-    public boolean isAIEnabled()
-    {
-        return true;
+        return "mob.zombiehurt";
     }
 
     /**
@@ -92,7 +103,7 @@ public class EntityHelio extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "mob.zombiedeath";
     }
 
     /**
@@ -109,49 +120,5 @@ public class EntityHelio extends EntityMob
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
-    }
-    
-    public boolean attackEntityAsMob(Entity par1Entity)
-    {
-        int var2 = this.getAttackStrength(par1Entity);
-
-        if (this.isPotionActive(Potion.damageBoost))
-        {
-            var2 += 3 << this.getActivePotionEffect(Potion.damageBoost).getAmplifier();
-        }
-
-        if (this.isPotionActive(Potion.weakness))
-        {
-            var2 -= 2 << this.getActivePotionEffect(Potion.weakness).getAmplifier();
-        }
-
-        int var3 = 7;
-
-        if (par1Entity instanceof EntityLiving)
-        {
-            var2 += EnchantmentHelper.getEnchantmentModifierLiving(this, (EntityLiving)par1Entity);
-            var3 += EnchantmentHelper.getKnockbackModifier(this, (EntityLiving)par1Entity);
-        }
-
-        boolean var4 = par1Entity.attackEntityFrom(DamageSource.causeMobDamage(this), var2);
-
-        if (var4)
-        {
-            if (var3 > 0)
-            {
-                par1Entity.addVelocity((double)(-MathHelper.sin(this.rotationYaw * (float)Math.PI / 180.0F) * (float)var3 * 0.5F), 0.4D, (double)(MathHelper.cos(this.rotationYaw * (float)Math.PI / 180.0F) * (float)var3 * 0.5F));
-                this.motionX *= 0.6D;
-                this.motionZ *= 0.6D;
-            }
-
-            int var5 = EnchantmentHelper.getFireAspectModifier(this);
-
-            if (var5 > 0)
-            {
-                par1Entity.setFire(var5 * 4);
-            }
-        }
-
-        return var4;
     }
 }

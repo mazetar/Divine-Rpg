@@ -37,22 +37,7 @@ public class TileEntityInfusionTable extends TileEntity implements IInventory
         int j = 0, k = 0;
         if (inventory[i] != null && inventory[2] == null)
         {
-        	if(inventory[0] != null && inventory[1] != null)
-        	{
-        		item0 = inventory[0].getItem();
-        		String name = item0.getItemName();
-        		j = x.slotNumber1(name);
-        		item1 = inventory[1].getItem();
-        		String name1 = item1.getItemName();
-        		k = x.slotNumber2(name1);
-        	}
-        	this.item2 = x.setSlot3(j, k);
-        	if(item2 != null)
-        	{
-        		inventory[2] = new ItemStack(item2, 1);
-        		inventory[0] = null;
-        		inventory[1] = null;
-        	}
+        	
         }
         return inventory[i];
 	}

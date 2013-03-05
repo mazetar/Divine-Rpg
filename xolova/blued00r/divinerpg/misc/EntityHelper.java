@@ -75,7 +75,6 @@ public class EntityHelper {
         EntityRegistry.registerModEntity(EntityZoragonBomb.class, "Zoragon Bomb", 269, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityDissimentShot.class, "Dissiment Shot", 270, DivineRPG.instance, 120, 5, true);
         
-        //Disks
         int id = 270;
         EntityRegistry.registerModEntity(EntityTeakerDisk.class, "Teaker Disk", id++, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityAmthirmisDisk.class, "Amthirmis Disk", id++, DivineRPG.instance, 120, 5, true);
@@ -86,6 +85,7 @@ public class EntityHelper {
         EntityRegistry.registerModEntity(EntityKarosDisk.class, "Karos Disk", id++, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityHeliosisDisk.class, "Heliosis Disk", id++, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityArksianeDisk.class, "Arksiane Disk", id++, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntitySpinebackDisc.class, "Spineback Disk", id++, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityVetheanCannonShot.class, "Vethean Cannon Shot", id++, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityVetheanArrow.class, "Teaker Arrow", id++, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityVetheanArrow2.class, "Darven Arrow", id++, DivineRPG.instance, 120, 5, true);
@@ -169,7 +169,7 @@ public class EntityHelper {
         EntityRegistry.registerGlobalEntityID(xolova.blued00r.divinerpg.entities.mobs.traders.EntityDatticon.class, "datticon", 44, 0x000000, 0xffffff);
         EntityRegistry.registerGlobalEntityID(xolova.blued00r.divinerpg.entities.mobs.traders.EntityVatticus.class, "vatticus", 45, 0x000000, 0xffffff);
         EntityRegistry.registerGlobalEntityID(EntityZelus.class, "Zelus", 46, 0x000000, 0xffffff);
-        EntityRegistry.registerGlobalEntityID(EntityVermenous.class, "TestMob", 124, 0x000000, 0xffffff);
+        EntityRegistry.registerGlobalEntityID(EntitySpinebackWorm.class, "TestMob", 124, 0x000000, 0xffffff);
         
         EntityRegistry.registerModEntity(EntityAlicanto.class, "alicanto", 1, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityFractite.class, "fractite", 2, DivineRPG.instance, 120, 5, true);

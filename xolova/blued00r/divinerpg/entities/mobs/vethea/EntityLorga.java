@@ -1,7 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -15,15 +14,17 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.world.World;
 
-public class EntityBohemite extends EntityMob
+public class EntityLorga extends EntityMob
 {
     private ChunkCoordinates chargeTarget;
 	private int waitTick;
+	private int lifeTick;
+	private int spawnTick;
 
-	public EntityBohemite(World var1)
+	public EntityLorga(World var1)
     {
         super(var1);
-        this.texture = "/mob/Bohemite.png";
+        this.texture = "/mob/Lorga.png";
         this.moveSpeed = 0.4F;
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
@@ -32,35 +33,51 @@ public class EntityBohemite extends EntityMob
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 64.0F, 0, true));
+        this.lifeTick = -1;
+    }
+
+	public EntityLorga(World var1, int life)
+    {
+		this(var1);
+		this.lifeTick = life;
     }
     
     protected void updateAITasks()
     {
-    	if (this.getAttackTarget() != null && this.waitTick <= 0)
-    	{
-    		System.out.println("charge start");
-    		this.waitTick = 50;
-    	}
-    	else if (this.waitTick == 1)
-    	{
-    		this.setAIMoveSpeed(this.moveSpeed);
-    		--this.waitTick;
-    		System.out.println("Charge Defaulting");
-    	}
-    	else if (this.waitTick == 10)
-    	{
-    		this.setAIMoveSpeed(0);
-    		--this.waitTick;
-    		System.out.println("Stopping");
-    	}
-    	else
-    	{
-    		--this.waitTick;
-    		System.out.println(this.waitTick);
-    		this.moveEntityWithHeading(0F, this.moveSpeed);
-    	}
+    	super.updateAITasks();
+    }
 
-    	return;
+    /**
+     * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
+     * use this to react to sunlight and start to burn.
+     */
+    public void onLivingUpdate()
+    {
+    	super.onLivingUpdate();
+    	
+    	if (this.lifeTick == -1 && this.spawnTick == 0)
+    	{
+    		this.spawnTick = 120;
+		EntityLorga var2 = new EntityLorga(this.worldObj, 10);
+			var2.setLocationAndAngles(this.posX + 1, this.posY, this.posZ + 1, this.rotationYaw, this.rotationPitch);
+			this.worldObj.spawnEntityInWorld(var2);
+
+			var2 = new EntityLorga(this.worldObj, 10);
+			var2.setLocationAndAngles(this.posX - 1, this.posY, this.posZ + 1, this.rotationYaw, this.rotationPitch);
+			this.worldObj.spawnEntityInWorld(var2);
+
+			var2 = new EntityLorga(this.worldObj, 10);
+			var2.setLocationAndAngles(this.posX + 1, this.posY, this.posZ - 1, this.rotationYaw, this.rotationPitch);
+			this.worldObj.spawnEntityInWorld(var2);
+
+			var2 = new EntityLorga(this.worldObj, 10);
+			var2.setLocationAndAngles(this.posX - 1, this.posY, this.posZ - 1, this.rotationYaw, this.rotationPitch);
+			this.worldObj.spawnEntityInWorld(var2);
+    	}
+    	else if (this.spawnTick > 0)
+    	{
+    		this.spawnTick--;
+    	}
     }
 
     public int getAttackStrength(Entity var1)
@@ -127,13 +144,5 @@ public class EntityBohemite extends EntityMob
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
-    }
-
-    /**
-     * Called by a player entity when they collide with an entity
-     */
-    public void onCollideWithPlayer(EntityPlayer par1EntityPlayer) 
-    {
-    	this.attackEntityAsMob(par1EntityPlayer);
     }
 }

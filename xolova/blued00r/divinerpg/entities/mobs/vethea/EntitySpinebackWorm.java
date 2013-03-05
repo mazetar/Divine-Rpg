@@ -21,10 +21,7 @@ import net.minecraft.world.World;
 
 public class EntitySpinebackWorm extends EntityMob
 {
-	private ChunkCoordinates currentFlightTarget;
-	private int flyTimer;
-	private boolean attack;
-	private int spawnTick;
+	public boolean attack;
 
 	public EntitySpinebackWorm(World var1)
 	{
@@ -39,10 +36,12 @@ public class EntitySpinebackWorm extends EntityMob
 		this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
 		this.targetTasks.addTask(1, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 128.0F, 0, false));
 		this.targetTasks.addTask(2, new EntityAIHurtByTarget(this, true));
-		this.flyTimer = 0;
 		this.noClip = true;
 		this.attack = false;
-		this.spawnTick = 20;
+		System.out.println(this.entityId);
+		EntitySpinebackWormBody peice = new EntitySpinebackWormBody(this.worldObj, this, 0);
+		peice.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+		this.worldObj.spawnEntityInWorld(peice);
 	}
 
     /**
@@ -110,33 +109,11 @@ public class EntitySpinebackWorm extends EntityMob
 	{
 		super.onUpdate();
 		this.motionY *= 0.2;
-		if (this.spawnTick == 0)
-		{
-			System.out.println(this.entityId);
-			EntitySpinebackWormBody peice = new EntitySpinebackWormBody(this.worldObj, this, 0);
-			peice.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
-			this.worldObj.spawnEntityInWorld(peice);
-		}
-		else if (this.spawnTick > 0)
-		{
-			--this.spawnTick;
-		}
 	}
 
 	protected void updateAITasks()
 	{
 		super.updateAITasks();
-
-		if (this.getAttackTarget() != null)
-		{
-			int var1 = (int) this.getAttackTarget().posX;
-			int var2 = (int) this.getAttackTarget().posY;
-			int var3 = (int) this.getAttackTarget().posZ;
-			this.currentFlightTarget = new ChunkCoordinates(var1, var2, var3);
-		}
-		else
-		{
-		}
 		
 		if (this.getAttackTarget() != null)
 		{

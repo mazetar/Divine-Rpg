@@ -44,6 +44,6 @@ public class ItemVetheanSword extends ItemSword
         {
         	par3List.add("Can not Block");
         }
-        par3List.add("§2Vethean");
+        par3List.add("\u00a72Vethean");
     }
 }

@@ -345,7 +345,7 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityKarosDisk.class, new RenderBasicProjectile(DivineRPG.karosDisk.getIconFromDamage(0), "/Xolovon4.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityHeliosisDisk.class, new RenderBasicProjectile(DivineRPG.heliosisDisk.getIconFromDamage(0), "/Xolovon4.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityArksianeDisk.class, new RenderBasicProjectile(DivineRPG.arksianeDisk.getIconFromDamage(0), "/Xolovon4.png"));
-        RenderingRegistry.registerEntityRenderingHandler(EntityVetheanCannonShot.class, new RenderBasicProjectile(4, "/DivineRPG/Entities.png"));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySpinebackDisc.class, new RenderBasicProjectile(DivineRPG.spinebackDisc.getIconFromDamage(0), "/Xolovon4.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityVetheanArrow.class, new RenderBasicArrow("/item/TeakerArrow.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityVetheanArrow2.class, new RenderBasicArrow("/item/darvenArrow.png"));
         RenderingRegistry.registerEntityRenderingHandler(EntityVetheanWarArrow.class, new RenderBasicArrow("/item/pardimalArrow.png"));

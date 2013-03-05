@@ -71,6 +71,6 @@ public class ItemVetheanCannon extends Item
     {
         par3List.add(this.damage + " Ranged Damage");
         par3List.add("Ammo: " + DivineRPG.acidfire.getItemName());
-        par3List.add("§2Vethean");
+        par3List.add("\u00a72Vethean");
     }
 }

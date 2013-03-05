@@ -51,7 +51,7 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
         		System.out.println("charge start");
         		this.waitTick = 30;
         	}
-        	else if (this.waitTick <= 1)
+        	else if (this.waitTick == 1)
         	{
         		this.setAIMoveSpeed(this.moveSpeed);
         		--this.waitTick;
@@ -66,7 +66,7 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
         	{
         		--this.waitTick;
         		System.out.println(this.waitTick);
-        		this.moveEntityWithHeading(0F, 0.25F);
+        		this.moveEntityWithHeading(0F, this.moveSpeed);
         	}
         	
         	if (this.waitTick <= 0)

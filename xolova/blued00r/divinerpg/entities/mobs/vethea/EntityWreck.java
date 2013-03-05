@@ -72,7 +72,6 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
         meleeAI = new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false);
         this.health = this.getMaxHealth();
         this.tasks.addTask(0, new EntityAISwimming(this));
-        //this.tasks.addTask(4, new EntityAIMoveTwardsRestriction(this, this.moveSpeed));
         this.tasks.addTask(5, meleeAI);
         this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 64.0F));

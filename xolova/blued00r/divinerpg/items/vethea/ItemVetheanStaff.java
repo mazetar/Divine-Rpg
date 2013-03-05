@@ -37,7 +37,7 @@ public class ItemVetheanStaff extends Item
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
         par3List.add("Consumes " + this.cost + " Arcana");
-        par3List.add("§2Vethean");
+        par3List.add("\u00a72Vethean");
     }
     
     public ItemStack onItemRightClick(ItemStack par1, World par2, EntityPlayer par3)

@@ -24,8 +24,9 @@ public class EntitySpinebackWormBody extends EntityMob
 {
 
 	public EntityLiving head;
-	private int spawnTick;
-	private int peice;
+	public int spawnTick;
+	public int moveMod;
+	public int peiceNum = 6;
 	public EntitySpinebackWormBody(World var1, EntityLiving par2, int par3)
 	{
 		super(var1);
@@ -41,15 +42,14 @@ public class EntitySpinebackWormBody extends EntityMob
 		System.out.print(this.entityId);
 		System.out.println(par3);
 		this.setAttackTarget(par2);
-		peice = par3++;
-		if (peice <= 5)
+		this.peiceNum = par3;
+		if (this.peiceNum < 2)
 		{
-			this.spawnTick = 20;
+			EntitySpinebackWormBody peice = new EntitySpinebackWormBody(this.worldObj, this, this.peiceNum + 1);
+			peice.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+			this.worldObj.spawnEntityInWorld(peice);
 		}
-		else
-		{
-			this.spawnTick = -1;
-		}
+		this.spawnTick = 20;
 	}
 
 	public int getAttackStrength(Entity var1)
@@ -113,18 +113,17 @@ public class EntitySpinebackWormBody extends EntityMob
 			this.setDead();
 		}
 		this.motionY *= 0.2;
-		this.moveFlying((float)this.motionX, (float)this.motionY, (float)this.motionZ);
 		if (this.spawnTick == 0)
 		{
-			System.out.println(this.entityId);
-			EntitySpinebackWormBody peice = new EntitySpinebackWormBody(this.worldObj, this, this.peice);
-			peice.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
-			this.worldObj.spawnEntityInWorld(peice);
+			this.moveMod = 1;
 		}
 		else if (this.spawnTick > 0)
 		{
 			--this.spawnTick;
+			this.setVelocity(0, 0, 0);
+			this.moveMod = 0;
 		}
+		this.moveFlying((float)this.motionX * this.moveMod, (float)this.motionY * this.moveMod, (float)this.motionZ * this.moveMod);
 	}
 
 	/**

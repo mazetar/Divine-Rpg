@@ -231,6 +231,6 @@ public class ItemVetheanBow extends ItemBow
         {
         	par3List.add("Infinite Uses");
         }
-        par3List.add("§2Vethean");
+        par3List.add("\u00a72Vethean");
     }
 }

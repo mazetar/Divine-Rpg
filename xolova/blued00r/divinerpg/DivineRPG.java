@@ -4725,7 +4725,7 @@ public class DivineRPG
         villageLamp = new Block(villageLampID, 45, Material.glass).setBlockName("villageLamp").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         cellLamp = new Block(cellLampID, 57, Material.glass).setBlockName("cellLamp").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         barredDoor = new BlockBarredDoor(barredDoorID, Material.iron, 58).setBlockName("barredDoor").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        firecrystal = new Block(firecrystalID, 60, Material.glass).setLightValue(1.0F).setBlockName("firecrystal").setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        firecrystal = new Block(firecrystalID, 60, Material.glass).setLightValue(0.5F).setBlockName("firecrystal").setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         firelight = new Block(firelightID, 60, Material.glass).setBlockName("firelight").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         hyrewood = new BlockHyrewood(hyrewoodID).setBlockName("hyrewood").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         mintwoodLeaves = new BlockDreamwoodLeaves(mintwoodLeavesID, 63).setBlockName("mintwoodLeaves").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);

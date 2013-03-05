@@ -32,6 +32,6 @@ public class ItemVetheanHealingFood extends ItemFood
 		par3List.add("Replenishes " + this.healthGain + " Health");
 		par3List.add(((ItemFood) par1ItemStack.getItem()).getSaturationModifier() + " Saturation");
 		par3List.add("Pet Food: " + ((ItemFood) par1ItemStack.getItem()).isWolfsFavoriteMeat());
-        par3List.add("§2Vethean");
+        par3List.add("\u00a72Vethean");
 	}
 }

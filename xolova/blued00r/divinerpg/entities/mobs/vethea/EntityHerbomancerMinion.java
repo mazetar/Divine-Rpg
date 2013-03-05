@@ -24,7 +24,7 @@ public class EntityHerbomancerMinion extends EntityLiving implements IMob
     public EntityHerbomancerMinion(World par1World)
     {
         super(par1World);
-        this.texture = "/mob/slime.png";
+        this.texture = "/mob/HerbomancerMinion.png";
         int var2 = 1 << this.rand.nextInt(3);
         this.yOffset = 0.0F;
         this.slimeJumpDelay = this.rand.nextInt(20) + 10;
@@ -146,11 +146,6 @@ public class EntityHerbomancerMinion extends EntityLiving implements IMob
     protected int getJumpDelay()
     {
         return this.rand.nextInt(20) + 10;
-    }
-
-    protected EntityHerbomancerMinion createInstance()
-    {
-        return new EntityHerbomancerMinion(this.worldObj);
     }
 
     /**

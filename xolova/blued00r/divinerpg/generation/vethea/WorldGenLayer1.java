@@ -137,7 +137,7 @@ public class WorldGenLayer1 extends WorldGenerator
             var12 = par3 + par2.nextInt(16) + 8;
             var13 = 20;
             var14 = par5 + par2.nextInt(16) + 8;
-            (this.lamps.get(par2.nextInt(2))).generate(par1World, par2, var12, var13, var14);
+            (this.lamps.get(par2.nextInt(2))).generate(par1World, par2, var12, var13 - 2, var14);
         }
         
         if (par2.nextInt(500) == 0)

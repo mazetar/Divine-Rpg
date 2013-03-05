@@ -12,11 +12,8 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.boss.IBossDisplayData;
 import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class EntityHerbomancer extends EntityMob
@@ -26,7 +23,7 @@ public class EntityHerbomancer extends EntityMob
     public EntityHerbomancer(World var1)
     {
         super(var1);
-        this.texture = "/mob/HiveQueen.png";
+        this.texture = "/mob/Herbomancer.png";
         this.moveSpeed = 0F;
         this.getNavigator().setBreakDoors(true);
         this.tasks.addTask(0, new EntityAISwimming(this));

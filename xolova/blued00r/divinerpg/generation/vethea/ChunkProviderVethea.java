@@ -747,7 +747,7 @@ public class ChunkProviderVethea implements IChunkProvider
             {
             	var13++;
             }
-            (this.lamps.get(this.rand.nextInt(2))).generate(this.worldObj, this.rand, var12, var13, var14);
+            (this.lamps.get(this.rand.nextInt(2))).generate(this.worldObj, this.rand, var12, var13 - 2, var14);
         }
         
         if (this.rand.nextInt(250) == 0)
@@ -858,7 +858,7 @@ public class ChunkProviderVethea implements IChunkProvider
             {
             	var13++;
             }
-            (this.lamps.get(this.rand.nextInt(2))).generate(this.worldObj, this.rand, var12, var13, var14);
+            (this.lamps.get(this.rand.nextInt(2))).generate(this.worldObj, this.rand, var12, var13 - 2, var14);
         }
         
         if (this.rand.nextInt(500) == 0)
@@ -938,7 +938,7 @@ public class ChunkProviderVethea implements IChunkProvider
             {
             	var13++;
             }
-            (this.lamps.get(this.rand.nextInt(2))).generate(this.worldObj, this.rand, var12, var13, var14);
+            (this.lamps.get(this.rand.nextInt(2))).generate(this.worldObj, this.rand, var12, var13 - 2, var14);
         }
         
         for (int i = 0; i < 5; i++)

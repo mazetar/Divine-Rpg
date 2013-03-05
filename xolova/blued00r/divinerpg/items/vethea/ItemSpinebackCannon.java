@@ -63,6 +63,6 @@ public class ItemSpinebackCannon extends ItemVetheanCannon
     {
         par3List.add(this.damage + " Ranged Damage");
         par3List.add("Ammo: " + DivineRPG.rockChunks.getItemName());
-        par3List.add("§2Vethean");
+        par3List.add("\u00a72Vethean");
     }
 }

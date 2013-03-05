@@ -96,5 +96,6 @@ public class ItemVetheanArmor extends ItemArmor implements ISpecialArmor
             par3List.add(this.reductionAmount * 0.2 + "% Damage Reduction");
     	}
         par3List.add("Infinite Uses");
+        par3List.add("\u00a72Vethean");
     }
 }

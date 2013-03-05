@@ -35,7 +35,7 @@ public class ItemVetheanDisk extends Item
     {
         par3List.add(this.damage + " Ranged Damage");
         par3List.add("Returns to sender");
-        par3List.add("§2Vethean");
+        par3List.add("\u00a72Vethean");
     }
     
     public ItemStack onItemRightClick(ItemStack par1, World par2, EntityPlayer par3)
@@ -57,6 +57,5 @@ public class ItemVetheanDisk extends Item
     
     protected void shoot(World par2, EntityPlayer par3)
     {
-    	par2.spawnEntityInWorld(new EntityDisk(par2, par3, this.damage, this));
     }
 }

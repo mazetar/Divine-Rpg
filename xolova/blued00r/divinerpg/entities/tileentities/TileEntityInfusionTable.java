@@ -13,7 +13,6 @@ import net.minecraft.world.World;
 public class TileEntityInfusionTable extends TileEntity implements IInventory
 {
 	private ItemStack[] inventory;
-	private RecipesInfusionTable x;
 	private boolean decreaseable = false;
 	private Item item0;
 	private Item item1;
@@ -45,14 +44,14 @@ public class TileEntityInfusionTable extends TileEntity implements IInventory
 			{
 				int item1 = inventory[0].getItem().itemID;
 				int item2 = inventory[1].getItem().itemID;
-				System.out.println(item1 + ":" +item2);
 				if(item1 != 0 && item2 != 0)
 				{
-					ItemStack item = RecipesInfusionTable.instance().getResult(item1, item2);
-					if(item != null)
+					RecipesInfusionTable x = new RecipesInfusionTable();
+					ItemStack item = x.getResult(item1, item2);
+					if(item != null && x.getStackSize(item1, item2) <= inventory[0].stackSize)
 					{
 						inventory[2] = item;
-						this.decrStackSize(0, 1);
+						this.decrStackSize(0, x.getStackSize(item1, item2));
 						this.decrStackSize(1, 1);
 					}
 				}

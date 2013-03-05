@@ -46,28 +46,15 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 		{
 			--coalDuration;
 	        dreamlamp.updateFurnaceBlockState(this.coalDuration > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
-			System.out.println(coalDuration);
 			if(coalDuration == 0)
 			{
-				decrStackSize(0, 1);
-				this.onInventoryChanged();
 				dreamlamp.setLightValue(0.0F);
-			}
-			else if (!shouldLight())
-			{
-				coalDuration = 0;
 				this.onInventoryChanged();
 			}
-            else if (this.ingredientID != this.inventory[0].itemID)
-            {
-                this.coalDuration = 0;
-                this.onInventoryChanged();
-            }
 		}
 		else if(shouldLight())
 		{
 			this.coalDuration = 400;
-            this.ingredientID = this.inventory[0].itemID;
 		}
         super.updateEntity();
  	}
@@ -81,6 +68,7 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
  			{
  				return false;
  			}else{
+ 				decrStackSize(0, 1);
  				return true;
  	        }
  		}

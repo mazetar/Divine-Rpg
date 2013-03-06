@@ -140,6 +140,7 @@ import xolova.blued00r.divinerpg.misc.CommonProxy;
 import xolova.blued00r.divinerpg.misc.CraftingHandler;
 import xolova.blued00r.divinerpg.misc.GuiHandler;
 import xolova.blued00r.divinerpg.misc.LivingDeathEventHandler;
+import xolova.blued00r.divinerpg.misc.ModPlayerTracker;
 import xolova.blued00r.divinerpg.misc.ModRecipes;
 import xolova.blued00r.divinerpg.misc.RecipeHelper;
 import xolova.blued00r.divinerpg.misc.ServerPacketHandler;
@@ -149,6 +150,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -5033,6 +5035,12 @@ public class DivineRPG
     public void PostLoad(FMLPostInitializationEvent event)
     {
     	AchievementPageDivineRPG.Init();
+    }
+    
+    @Mod.ServerStarted
+    public void ServerStarted(FMLServerStartedEvent event)
+    {
+    	GameRegistry.registerPlayerTracker(new ModPlayerTracker());
     }
     
     public static void RemoveRecipe(ItemStack itemstack)

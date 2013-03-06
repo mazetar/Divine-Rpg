@@ -8,9 +8,12 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 
 public class GuiDreamLamp extends GuiContainer {
+	
+	TileEntityDreamLamp TeDreamLamp;
 	public GuiDreamLamp(InventoryPlayer inventory, TileEntityDreamLamp var7) 
 	{
 		super(new ContainerDreamLamp(inventory, var7));
+		this.TeDreamLamp = var7;
 	}
 
 	@Override
@@ -22,6 +25,11 @@ public class GuiDreamLamp extends GuiContainer {
         int var5 = (this.width - this.xSize) / 2;
         int var6 = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);
+        if(TeDreamLamp.isBurning())
+        {
+            int var7 = 12;
+            this.drawTexturedModalRect(var5 + 81, var6 + 31 + 12 - var7, 176, 12 - var7, 14, var7 + 2);
+        }
 	}
 	
 	public void updateScreen()

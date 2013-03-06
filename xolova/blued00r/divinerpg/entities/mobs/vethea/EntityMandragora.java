@@ -1,47 +1,59 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.entities.vethea.EntityBouncingProjectile;
+import xolova.blued00r.divinerpg.entities.vethea.EntityMandragoraProjectile;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IRangedAttackMob;
+import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAIMoveTwardsRestriction;
+import net.minecraft.entity.ai.EntityAIMoveTowardsTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
+import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
-public class EntityShadahier extends EntityMob
+public class EntityMandragora extends EntityMob implements IRangedAttackMob
 {
-    public EntityShadahier(World var1)
+    private boolean gravMove;
+
+	public EntityMandragora(World var1)
     {
         super(var1);
-        this.texture = "/mob/shadahier.png";
+        this.texture = "/mob/Biphron.png";
         this.moveSpeed = 0.25F;
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
-        this.tasks.addTask(4, new EntityAIMoveTwardsRestriction(this, this.moveSpeed));
+        this.tasks.addTask(4, new EntityAIArrowAttack(this, this.moveSpeed, 30, 64.0F));
+        this.tasks.addTask(5, new EntityAIMoveTowardsTarget(this, this.moveSpeed, 128.0F));
         this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
-        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 24.0F));
+        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 64.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 64.0F, 0, true));
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 128.0F, 0, true));
+        this.gravMove = true;
+    }
+    
+    /**
+     * Called when the mob is falling. Calculates and applies fall damage.
+     */
+    protected void fall(float par1)
+    {
     }
     
     public void onLivingUpdate()
     {
-    	EntityPlayer var1 = this.worldObj.getClosestVulnerablePlayerToEntity(this, 16.0D);
-    	if (var1 != null)
-    	{
-    		var1.addPotionEffect(new PotionEffect(Potion.blindness.id, 1, 1));
-    	}
+    	super.onLivingUpdate();
+    	this.setVelocity(this.motionX, 0.4, this.motionZ);
     }
-
+    
     public int getAttackStrength(Entity var1)
     {
         return 0;
@@ -107,6 +119,18 @@ public class EntityShadahier extends EntityMob
     {
         return 0;
     }
+    
+    /**
+     * Called when the entity is attacked.
+     */
+    public boolean attackEntityFrom(DamageSource par1DamageSource, int par2)
+    {
+    	if (par1DamageSource == DamageSource.explosion || par1DamageSource == DamageSource.explosion2)
+    	{
+    		return false;
+    	}
+    	return super.attackEntityFrom(par1DamageSource, par2);
+    }
 
     /**
      * Get this Entity's EnumCreatureAttribute
@@ -115,4 +139,14 @@ public class EntityShadahier extends EntityMob
     {
         return EnumCreatureAttribute.UNDEFINED;
     }
+
+	@Override
+	public void attackEntityWithRangedAttack(EntityLiving par1) 
+	{
+			EntityMandragoraProjectile var1 = new EntityMandragoraProjectile(this.worldObj, this);
+			this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+			var1.setVelocity(0, var1.motionY, 0);
+			this.worldObj.spawnEntityInWorld(var1);
+			System.out.println("Bounce Defaulting");
+	}
 }

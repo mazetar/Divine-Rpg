@@ -22,8 +22,8 @@ public class Lamp1 extends WorldGenerator
 
 		world.setBlock(i + 1, j + 0, k + 2, DivineRPG.darkEverstone.blockID);
 		world.setBlock(i + 1, j + 0, k + 3, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 2, k + 0, DivineRPG.dreamlampOn.blockID);
-		world.setBlock(i + 1, j + 2, k + 5, DivineRPG.dreamlampOn.blockID);
+		world.setBlock(i + 1, j + 2, k + 0, DivineRPG.dreamlamp.blockID);
+		world.setBlock(i + 1, j + 2, k + 5, DivineRPG.dreamlamp.blockID);
 		world.setBlock(i + 1, j + 3, k + 0, DivineRPG.darkEverstone.blockID);
 		world.setBlock(i + 1, j + 3, k + 5, DivineRPG.darkEverstone.blockID);
 		world.setBlock(i + 1, j + 4, k + 1, DivineRPG.darkEverstone.blockID);
@@ -90,7 +90,7 @@ public class Lamp1 extends WorldGenerator
 		world.setBlock(i + 5, j + 4, k + 5, DivineRPG.darkEverstone.blockID);
 		world.setBlock(i + 6, j + 0, k + 2, DivineRPG.darkEverstone.blockID);
 		world.setBlock(i + 6, j + 0, k + 3, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 6, j + 2, k + 0, DivineRPG.dreamlampOn.blockID);
+		world.setBlock(i + 6, j + 2, k + 0, DivineRPG.dreamlamp.blockID);
 		world.setBlock(i + 6, j + 3, k + 0, DivineRPG.darkEverstone.blockID);
 		world.setBlock(i + 6, j + 3, k + 5, DivineRPG.darkEverstone.blockID);
 		world.setBlock(i + 6, j + 4, k + 1, DivineRPG.darkEverstone.blockID);

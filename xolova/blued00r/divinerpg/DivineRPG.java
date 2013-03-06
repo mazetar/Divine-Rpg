@@ -119,6 +119,7 @@ import xolova.blued00r.divinerpg.items.vethea.ItemDreamflint;
 import xolova.blued00r.divinerpg.items.vethea.ItemEvernight;
 import xolova.blued00r.divinerpg.items.vethea.ItemHeliosisDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemKarosDisk;
+import xolova.blued00r.divinerpg.items.vethea.ItemMeihurrSpawner;
 import xolova.blued00r.divinerpg.items.vethea.ItemMoonclock;
 import xolova.blued00r.divinerpg.items.vethea.ItemPardimalDisk;
 import xolova.blued00r.divinerpg.items.vethea.ItemQuadroticDisk;
@@ -2527,6 +2528,9 @@ public class DivineRPG
 
     public static int everArrowID;
     public static Item everArrow;
+    
+    public static int meihurrID;
+    public static Item meihurr;
 
 	//TODO
     @Mod.PreInit
@@ -3644,6 +3648,7 @@ public class DivineRPG
         eversightID = var2.getItem("eversight", id++).getInt();
         everfightID = var2.getItem("everfight", id++).getInt();
         everArrowID = var2.getItem("everArrow", id++).getInt();
+        meihurrID = var2.getItem("meihurr", id++).getInt();
         //TODO
         /*
          * Dimension IDs
@@ -4774,17 +4779,18 @@ public class DivineRPG
         helioticBeam = new BlockHelioticBeam(helioticBeamID).setBlockName("helioticBeam").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         karosCannon = new BlockKarosCannon(karosCannonID, 76, Material.rock).setBlockName("karosCannon").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabUtility).setRequiresSelfNotify();
         purpleFire = new BlockPurpleFire(purpleFireID, 94).setBlockName("purpleFire").setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        meihurr = new ItemMeihurrSpawner(purpleFireID).setItemName("meihurr").setTextureFile("/Xolovon4.png").setCreativeTab(CreativeTabs.tabRedstone);
         
         /*
          * Spawners
          */
-        biphronSpawner = new BlockBiphronSpawner(biphronSpawnerID, 60).setBlockName("biphronSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        gorgosionSpawner = new BlockGorgosionSpawner(gorgosionSpawnerID, 60).setBlockName("gorgosionSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        duoSpawner = new BlockDuoSpawner(duoSpawnerID, 60).setBlockName("duoSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        twinsSpawner = new BlockTwinsSpawner(twinsSpawnerID, 60).setBlockName("twinsSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        vermenousSpawner = new BlockVermenousSpawner(vermenousSpawnerID, 60).setBlockName("vermenousSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        dreamwreckerSpawner = new BlockDreamwreckerSpawner(dreamwreckerSpawnerID, 60).setBlockName("dreamwreckerSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        lorgaSpawner = new BlockLorgaSpawner(lorgaSpawnerID, 60).setBlockName("lorgaSpawner").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        biphronSpawner = new BlockBiphronSpawner(biphronSpawnerID, 60).setBlockName("biphronSpawner").setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        gorgosionSpawner = new BlockGorgosionSpawner(gorgosionSpawnerID, 60).setBlockName("gorgosionSpawner").setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        duoSpawner = new BlockDuoSpawner(duoSpawnerID, 60).setBlockName("duoSpawner").setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        twinsSpawner = new BlockTwinsSpawner(twinsSpawnerID, 60).setBlockName("twinsSpawner").setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        vermenousSpawner = new BlockVermenousSpawner(vermenousSpawnerID, 60).setBlockName("vermenousSpawner").setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        dreamwreckerSpawner = new BlockDreamwreckerSpawner(dreamwreckerSpawnerID, 60).setBlockName("dreamwreckerSpawner").setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        lorgaSpawner = new BlockLorgaSpawner(lorgaSpawnerID, 60).setBlockName("lorgaSpawner").setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         
         
         //TODO

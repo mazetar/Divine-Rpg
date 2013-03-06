@@ -26,11 +26,11 @@ public class EntitySpinebackWormBody extends EntityMob
 	public EntityLiving head;
 	public int spawnTick;
 	public int moveMod;
-	public int peiceNum = 6;
-	public EntitySpinebackWormBody(World var1, EntityLiving par2, int par3)
+	public int peiceNum;
+	public EntitySpinebackWormBody(World var1)
 	{
 		super(var1);
-		this.texture = "/mob/Alicanto.png";
+		this.texture = "/mob/vamacheron.png";
 		this.moveSpeed = 0.15F;
 		this.getNavigator().setAvoidsWater(true);
 		this.tasks.addTask(1, new EntityAISwimming(this));
@@ -38,6 +38,11 @@ public class EntitySpinebackWormBody extends EntityMob
 		this.tasks.addTask(9, new EntityAILookIdle(this));
 		this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
 		this.noClip = true;
+	}
+	
+	public EntitySpinebackWormBody(World var1, EntityLiving par2, int par3)
+	{
+		this(var1);
 		this.head = par2;
 		System.out.print(this.entityId);
 		System.out.println(par3);

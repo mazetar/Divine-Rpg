@@ -69,6 +69,8 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
         super(par1);
         this.texture = "/mob/Wreck.png";
         this.moveSpeed = 0.25F;
+        meleeAI.setMutexBits(2);
+        rangedAI.setMutexBits(2);
         meleeAI = new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false);
         this.health = this.getMaxHealth();
         this.tasks.addTask(0, new EntityAISwimming(this));
@@ -151,18 +153,18 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
     	if (this.health < this.getMaxHealth() / 3 && this.ability == DEFAULT)
     	{
     		this.stage = RANGED;
+    		this.tasks.func_85156_a(meleeAI);
     	}
     	else if (this.health < this.getMaxHealth() * 2 / 3 && this.ability == DEFAULT)
     	{
     		this.stage = ARCANA;
-    		this.tasks.func_85156_a(meleeAI);
 			this.tasks.addTask(2, rangedAI);
 			this.rangedAttackCounter = 1;
     	}
     	
     	if (this.ability == DEFAULT && this.abilityCoolDown == 0)
     	{
-    		this.abilityCoolDown = 15;
+    		this.abilityCoolDown = 40;
     		switch (this.stage)
     		{
     		case MELEE:
@@ -232,7 +234,7 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
     	}
     	else if (this.ability != 0 && this.abilityCoolDown == 0)
     	{
-    		this.abilityCoolDown = 5;
+    		this.abilityCoolDown = 40;
     	}
     	
     	if(this.ability == FIRE)
@@ -243,7 +245,7 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
         		{
         			int var2 = (int) ((this.posX - var1.posX) / 5) * i;
         			int var3 = (int) ((this.posZ - var1.posZ) / 5) * i;
-            		this.worldObj.setBlockWithNotify((int)this.posX - var2, (int)this.posY, (int)this.posZ - var3, Block.stone.blockID);
+            		this.worldObj.setBlockWithNotify((int)this.posX - var2, (int)this.posY, (int)this.posZ - var3, Block.fire.blockID);
         		}
         		this.ability = DEFAULT;
         		System.out.println("Fire Defaulting");

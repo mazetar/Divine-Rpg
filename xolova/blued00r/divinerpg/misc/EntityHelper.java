@@ -97,6 +97,7 @@ public class EntityHelper {
         EntityRegistry.registerModEntity(EntityBouncingProjectile.class, "Bouncing Projectile", id++, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityWreckExplosiveShot.class, "Wreck Explosive", id++, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityWreckStrengthShot.class, "Wreck Strength", id++, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityMandragoraProjectile.class, "Mandragora Projectile", id++, DivineRPG.instance, 120, 5, true);
         
         /*
          * Mobs
@@ -238,6 +239,7 @@ public class EntityHelper {
         EntityRegistry.registerModEntity(EntityHiveSoldier.class, "hivesoldier", 51, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityLheiva.class, "lheiva", 52, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntitySpinebackWormBody.class, "spinebackWormBody", 53, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityMandragora.class, "mandragora", 54, DivineRPG.instance, 120, 5, true);
         
 	}
 	public static void addEntities()

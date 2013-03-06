@@ -1,8 +1,24 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import java.util.List;
+
+import xolova.blued00r.divinerpg.entities.vethea.EntityBouncingProjectile;
+import xolova.blued00r.divinerpg.entities.vethea.EntityWreckExplosiveShot;
+import xolova.blued00r.divinerpg.entities.vethea.EntityWreckStrengthShot;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IRangedAttackMob;
+import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMoveTwardsRestriction;
@@ -10,41 +26,85 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.boss.IBossDisplayData;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityShadahier extends EntityMob
+public abstract class EntityDuo extends EntityMob
 {
-    public EntityShadahier(World var1)
+	
+	public static int ability;
+	private final int SLOW = 0;
+	private final int FAST = 1;
+	
+	private int waitTick;
+	private int abilityCoolDown;
+	
+	private EntityAIBase meleeAI;
+	
+    public EntityDuo(World par1)
     {
-        super(var1);
-        this.texture = "/mob/shadahier.png";
+        super(par1);
+        this.texture = "/mob/Wreck.png";
         this.moveSpeed = 0.25F;
+        meleeAI = new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false);
+        this.health = this.getMaxHealth();
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
-        this.tasks.addTask(4, new EntityAIMoveTwardsRestriction(this, this.moveSpeed));
+        this.tasks.addTask(5, meleeAI);
         this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
-        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 24.0F));
+        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 64.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 64.0F, 0, true));
+        this.ability = SLOW;
     }
     
-    public void onLivingUpdate()
+    protected void updateAITasks()
     {
-    	EntityPlayer var1 = this.worldObj.getClosestVulnerablePlayerToEntity(this, 16.0D);
-    	if (var1 != null)
+    	this.manageAbilities();
+    	super.updateAITasks();
+    }
+    
+    public void manageAbilities()
+    {
+        
+        EntityPlayerMP var1 = (EntityPlayerMP) this.worldObj.getClosestVulnerablePlayerToEntity(this, 64.0D);
+
+        if (this.ability == SLOW && this.abilityCoolDown == 0)
+        {
+        	this.ability = FAST;
+    		this.abilityCoolDown = 350;
+        	this.setAIMoveSpeed(this.moveSpeed * 3);
+    	}
+    	else if (this.ability == SLOW && this.abilityCoolDown > 0)
     	{
-    		var1.addPotionEffect(new PotionEffect(Potion.blindness.id, 1, 1));
+    		this.abilityCoolDown--;
+    	}
+    	else if (this.ability != 0 && this.abilityCoolDown == 0)
+    	{
+    		this.abilityCoolDown = 350;
+    	}
+    	else
+    	{
+    		this.ability = SLOW;
     	}
     }
 
-    public int getAttackStrength(Entity var1)
+	public int getAttackStrength(Entity par1)
     {
-        return 0;
+    	int var1 = 1;
+    	if (this.ability == SLOW)
+    	{
+    		var1 = 3;
+    	}
+        return var1;
     }
 
     public int getMaxHealth()
@@ -114,5 +174,13 @@ public class EntityShadahier extends EntityMob
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
+    }
+
+    /**
+     * Called by a player entity when they collide with an entity
+     */
+    public void onCollideWithPlayer(EntityPlayer par1EntityPlayer) 
+    {
+    	this.attackEntityAsMob(par1EntityPlayer);
     }
 }

@@ -1,584 +1,259 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import java.util.List;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
+import xolova.blued00r.divinerpg.DivineRPG;
+import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.ai.EntityAIControlledByPlayer;
+import net.minecraft.entity.ai.EntityAIFollowParent;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIMate;
+import net.minecraft.entity.ai.EntityAIPanic;
+import net.minecraft.entity.ai.EntityAISwimming;
+import net.minecraft.entity.ai.EntityAITempt;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.effect.EntityLightningBolt;
+import net.minecraft.entity.monster.EntityPigZombie;
+import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.MathHelper;
+import net.minecraft.stats.AchievementList;
 import net.minecraft.world.World;
 
-public class EntityMount extends Entity
+public class EntityMount extends EntityAnimal
 {
-    private boolean field_70279_a;
-    private double field_70276_b;
-    private int mountPosRotationIncrements;
-    private double mountX;
-    private double mountY;
-    private double mountZ;
-    private double mountYaw;
-    private double mountPitch;
-    @SideOnly(Side.CLIENT)
-    private double velocityX;
-    @SideOnly(Side.CLIENT)
-    private double velocityY;
-    @SideOnly(Side.CLIENT)
-    private double velocityZ;
+    /** AI task for player control. */
+    private final EntityAIControlledByPlayer aiControlledByPlayer;
 
     public EntityMount(World par1World)
     {
         super(par1World);
-        this.field_70279_a = true;
-        this.field_70276_b = 0.07D;
-        this.preventEntitySpawning = true;
-        this.setSize(1.5F, 0.6F);
-        this.yOffset = this.height / 2.0F;
+        this.texture = "/mob/pig.png";
+        this.setSize(0.9F, 0.9F);
+        this.getNavigator().setAvoidsWater(true);
+        float var2 = 0.25F;
+        this.tasks.addTask(0, new EntityAISwimming(this));
+        this.tasks.addTask(1, new EntityAIPanic(this, 0.38F));
+        this.tasks.addTask(2, this.aiControlledByPlayer = new EntityAIControlledByPlayer(this, 0.34F));
+        this.tasks.addTask(3, new EntityAIMate(this, var2));
+        this.tasks.addTask(4, new EntityAITempt(this, 0.3F, Item.carrotOnAStick.itemID, false));
+        this.tasks.addTask(4, new EntityAITempt(this, 0.3F, Item.carrot.itemID, false));
+        this.tasks.addTask(5, new EntityAIFollowParent(this, 0.28F));
+        this.tasks.addTask(6, new EntityAIWander(this, var2));
+        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
+        this.tasks.addTask(8, new EntityAILookIdle(this));
     }
 
     /**
-     * returns if this entity triggers Block.onEntityWalking on the blocks they walk on. used for spiders and wolves to
-     * prevent them from trampling crops
+     * Returns true if the newer Entity AI code should be run
      */
-    protected boolean canTriggerWalking()
-    {
-        return false;
-    }
-
-    protected void entityInit()
-    {
-        this.dataWatcher.addObject(17, new Integer(0));
-        this.dataWatcher.addObject(18, new Integer(1));
-        this.dataWatcher.addObject(19, new Integer(0));
-    }
-
-    /**
-     * Returns a boundingBox used to collide the entity with other entities and blocks. This enables the entity to be
-     * pushable on contact, like boats or minecarts.
-     */
-    public AxisAlignedBB getCollisionBox(Entity par1Entity)
-    {
-        return par1Entity.boundingBox;
-    }
-
-    /**
-     * returns the bounding box for this entity
-     */
-    public AxisAlignedBB getBoundingBox()
-    {
-        return this.boundingBox;
-    }
-
-    /**
-     * Returns true if this entity should push and be pushed by other entities when colliding.
-     */
-    public boolean canBePushed()
+    public boolean isAIEnabled()
     {
         return true;
     }
 
-    public EntityMount(World par1World, double par2, double par4, double par6)
+    public int getMaxHealth()
     {
-        this(par1World);
-        this.setPosition(par2, par4 + (double)this.yOffset, par6);
-        this.motionX = 0.0D;
-        this.motionY = 0.0D;
-        this.motionZ = 0.0D;
-        this.prevPosX = par2;
-        this.prevPosY = par4;
-        this.prevPosZ = par6;
+        return 10;
+    }
+
+    protected void updateAITasks()
+    {
+        super.updateAITasks();
     }
 
     /**
-     * Returns the Y offset from the entity's position for any entity riding this one.
+     * returns true if all the conditions for steering the entity are met. For pigs, this is true if it is being ridden
+     * by a player and the player is holding a carrot-on-a-stick
      */
-    public double getMountedYOffset()
+    public boolean canBeSteered()
     {
-        return (double)this.height * 0.0D - 0.30000001192092896D;
-    }
-
-    /**
-     * Called when the entity is attacked.
-     */
-    public boolean attackEntityFrom(DamageSource par1DamageSource, int par2)
-    {
-        if (this.isEntityInvulnerable())
-        {
-            return false;
-        }
-        else if (!this.worldObj.isRemote && !this.isDead)
-        {
-            this.setForwardDirection(-this.getForwardDirection());
-            this.setTimeSinceHit(10);
-            this.setDamageTaken(this.getDamageTaken() + par2 * 10);
-            this.setBeenAttacked();
-
-            if (par1DamageSource.getEntity() instanceof EntityPlayer && ((EntityPlayer)par1DamageSource.getEntity()).capabilities.isCreativeMode)
-            {
-                this.setDamageTaken(100);
-            }
-
-            if (this.getDamageTaken() > 40)
-            {
-                if (this.riddenByEntity != null)
-                {
-                    this.riddenByEntity.mountEntity(this);
-                }
-
-                this.dropItemWithOffset(Item.boat.itemID, 1, 0.0F);
-                this.setDead();
-            }
-
-            return true;
-        }
-        else
-        {
-            return true;
-        }
-    }
-
-    @SideOnly(Side.CLIENT)
-
-    /**
-     * Setups the entity to do the hurt animation. Only used by packets in multiplayer.
-     */
-    public void performHurtAnimation()
-    {
-        this.setForwardDirection(-this.getForwardDirection());
-        this.setTimeSinceHit(10);
-        this.setDamageTaken(this.getDamageTaken() * 11);
-    }
-
-    /**
-     * Returns true if other Entities should be prevented from moving through this Entity.
-     */
-    public boolean canBeCollidedWith()
-    {
-        return !this.isDead;
-    }
-
-    @SideOnly(Side.CLIENT)
-
-    /**
-     * Sets the position and rotation. Only difference from the other one is no bounding on the rotation. Args: posX,
-     * posY, posZ, yaw, pitch
-     */
-    public void setPositionAndRotation2(double par1, double par3, double par5, float par7, float par8, int par9)
-    {
-        if (this.field_70279_a)
-        {
-            this.mountPosRotationIncrements = par9 + 5;
-        }
-        else
-        {
-            double var10 = par1 - this.posX;
-            double var12 = par3 - this.posY;
-            double var14 = par5 - this.posZ;
-            double var16 = var10 * var10 + var12 * var12 + var14 * var14;
-
-            if (var16 <= 1.0D)
-            {
-                return;
-            }
-
-            this.mountPosRotationIncrements = 3;
-        }
-
-        this.mountX = par1;
-        this.mountY = par3;
-        this.mountZ = par5;
-        this.mountYaw = (double)par7;
-        this.mountPitch = (double)par8;
-        this.motionX = this.velocityX;
-        this.motionY = this.velocityY;
-        this.motionZ = this.velocityZ;
-    }
-
-    @SideOnly(Side.CLIENT)
-
-    /**
-     * Sets the velocity to the args. Args: x, y, z
-     */
-    public void setVelocity(double par1, double par3, double par5)
-    {
-        this.velocityX = this.motionX = par1;
-        this.velocityY = this.motionY = par3;
-        this.velocityZ = this.motionZ = par5;
-    }
-
-    /**
-     * Called to update the entity's position/logic.
-     */
-    public void onUpdate()
-    {
-        super.onUpdate();
-
-        if (this.getTimeSinceHit() > 0)
-        {
-            this.setTimeSinceHit(this.getTimeSinceHit() - 1);
-        }
-
-        if (this.getDamageTaken() > 0)
-        {
-            this.setDamageTaken(this.getDamageTaken() - 1);
-        }
-
-        this.prevPosX = this.posX;
-        this.prevPosY = this.posY;
-        this.prevPosZ = this.posZ;
-        byte var1 = 5;
-        double var2 = 0.0D;
-
-        for (int var4 = 0; var4 < var1; ++var4)
-        {
-            double var5 = this.boundingBox.minY + (this.boundingBox.maxY - this.boundingBox.minY) * (double)(var4 + 0) / (double)var1 - 0.125D;
-            double var7 = this.boundingBox.minY + (this.boundingBox.maxY - this.boundingBox.minY) * (double)(var4 + 1) / (double)var1 - 0.125D;
-            AxisAlignedBB var9 = AxisAlignedBB.getAABBPool().addOrModifyAABBInPool(this.boundingBox.minX, var5, this.boundingBox.minZ, this.boundingBox.maxX, var7, this.boundingBox.maxZ);
-
-            if (this.worldObj.isAABBInMaterial(var9, Material.water))
-            {
-                var2 += 1.0D / (double)var1;
-            }
-        }
-
-        double var24 = Math.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
-        double var6;
-        double var8;
-
-        if (var24 > 0.26249999999999996D)
-        {
-            var6 = Math.cos((double)this.rotationYaw * Math.PI / 180.0D);
-            var8 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D);
-
-            for (int var10 = 0; (double)var10 < 1.0D + var24 * 60.0D; ++var10)
-            {
-                double var11 = (double)(this.rand.nextFloat() * 2.0F - 1.0F);
-                double var13 = (double)(this.rand.nextInt(2) * 2 - 1) * 0.7D;
-                double var15;
-                double var17;
-
-                if (this.rand.nextBoolean())
-                {
-                    var15 = this.posX - var6 * var11 * 0.8D + var8 * var13;
-                    var17 = this.posZ - var8 * var11 * 0.8D - var6 * var13;
-                    this.worldObj.spawnParticle("splash", var15, this.posY - 0.125D, var17, this.motionX, this.motionY, this.motionZ);
-                }
-                else
-                {
-                    var15 = this.posX + var6 + var8 * var11 * 0.7D;
-                    var17 = this.posZ + var8 - var6 * var11 * 0.7D;
-                    this.worldObj.spawnParticle("splash", var15, this.posY - 0.125D, var17, this.motionX, this.motionY, this.motionZ);
-                }
-            }
-        }
-
-        double var12;
-        double var26;
-
-        if (this.worldObj.isRemote && this.field_70279_a)
-        {
-            if (this.mountPosRotationIncrements > 0)
-            {
-                var6 = this.posX + (this.mountX - this.posX) / (double)this.mountPosRotationIncrements;
-                var8 = this.posY + (this.mountY - this.posY) / (double)this.mountPosRotationIncrements;
-                var26 = this.posZ + (this.mountZ - this.posZ) / (double)this.mountPosRotationIncrements;
-                var12 = MathHelper.wrapAngleTo180_double(this.mountYaw - (double)this.rotationYaw);
-                this.rotationYaw = (float)((double)this.rotationYaw + var12 / (double)this.mountPosRotationIncrements);
-                this.rotationPitch = (float)((double)this.rotationPitch + (this.mountPitch - (double)this.rotationPitch) / (double)this.mountPosRotationIncrements);
-                --this.mountPosRotationIncrements;
-                this.setPosition(var6, var8, var26);
-                this.setRotation(this.rotationYaw, this.rotationPitch);
-            }
-            else
-            {
-                var6 = this.posX + this.motionX;
-                var8 = this.posY + this.motionY;
-                var26 = this.posZ + this.motionZ;
-                this.setPosition(var6, var8, var26);
-
-                if (this.onGround)
-                {
-                    this.motionX *= 0.5D;
-                    this.motionY *= 0.5D;
-                    this.motionZ *= 0.5D;
-                }
-
-                this.motionX *= 0.9900000095367432D;
-                this.motionY *= 0.949999988079071D;
-                this.motionZ *= 0.9900000095367432D;
-            }
-        }
-        else
-        {
-            if (var2 < 1.0D)
-            {
-                var6 = var2 * 2.0D - 1.0D;
-                this.motionY += 0.03999999910593033D * var6;
-            }
-            else
-            {
-                if (this.motionY < 0.0D)
-                {
-                    this.motionY /= 2.0D;
-                }
-
-                this.motionY += 0.007000000216066837D;
-            }
-
-            if (this.riddenByEntity != null)
-            {
-                this.motionX += this.riddenByEntity.motionX * this.field_70276_b;
-                this.motionZ += this.riddenByEntity.motionZ * this.field_70276_b;
-//                if ((this.riddenByEntity instanceof EntityLiving) && ((EntityLiving)this.riddenByEntity).isJumping)
-//                {
-//                	this.motionY = 1.0D;
-//                }
-//                else if ((this.riddenByEntity instanceof EntityLiving) && ((EntityLiving)this.riddenByEntity).isSneaking() && !this.onGround)
-//                {
-//                	this.motionY = -1.0D;
-//                }
-            }
-
-            var6 = Math.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
-
-            if (var6 > 0.35D)
-            {
-                var8 = 0.35D / var6;
-                this.motionX *= var8;
-                this.motionZ *= var8;
-                var6 = 0.35D;
-            }
-
-            if (var6 > var24 && this.field_70276_b < 0.35D)
-            {
-                this.field_70276_b += (0.35D - this.field_70276_b) / 35.0D;
-
-                if (this.field_70276_b > 0.35D)
-                {
-                    this.field_70276_b = 0.35D;
-                }
-            }
-            else
-            {
-                this.field_70276_b -= (this.field_70276_b - 0.07D) / 35.0D;
-
-                if (this.field_70276_b < 0.07D)
-                {
-                    this.field_70276_b = 0.07D;
-                }
-            }
-
-            if (this.onGround)
-            {
-                this.motionX *= 0.5D;
-                this.motionY *= 0.5D;
-                this.motionZ *= 0.5D;
-            }
-
-            this.moveEntity(this.motionX, this.motionY, this.motionZ);
-
-            if (this.isCollidedHorizontally && var24 > 0.2D)
-            {
-                if (!this.worldObj.isRemote)
-                {
-                    this.setDead();
-                    int var25;
-
-                    for (var25 = 0; var25 < 3; ++var25)
-                    {
-                        this.dropItemWithOffset(Block.planks.blockID, 1, 0.0F);
-                    }
-
-                    for (var25 = 0; var25 < 2; ++var25)
-                    {
-                        this.dropItemWithOffset(Item.stick.itemID, 1, 0.0F);
-                    }
-                }
-            }
-            else
-            {
-                this.motionX *= 0.9900000095367432D;
-                this.motionY *= 0.949999988079071D;
-                this.motionZ *= 0.9900000095367432D;
-            }
-
-            this.rotationPitch = 0.0F;
-            var8 = (double)this.rotationYaw;
-            var26 = this.prevPosX - this.posX;
-            var12 = this.prevPosZ - this.posZ;
-
-            if (var26 * var26 + var12 * var12 > 0.001D)
-            {
-                var8 = (double)((float)(Math.atan2(var12, var26) * 180.0D / Math.PI));
-            }
-
-            double var14 = MathHelper.wrapAngleTo180_double(var8 - (double)this.rotationYaw);
-
-            if (var14 > 20.0D)
-            {
-                var14 = 20.0D;
-            }
-
-            if (var14 < -20.0D)
-            {
-                var14 = -20.0D;
-            }
-
-            this.rotationYaw = (float)((double)this.rotationYaw + var14);
-            this.setRotation(this.rotationYaw, this.rotationPitch);
-
-            if (!this.worldObj.isRemote)
-            {
-                List var16 = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.expand(0.20000000298023224D, 0.0D, 0.20000000298023224D));
-                int var27;
-
-                if (var16 != null && !var16.isEmpty())
-                {
-                    for (var27 = 0; var27 < var16.size(); ++var27)
-                    {
-                        Entity var18 = (Entity)var16.get(var27);
-
-                        if (var18 != this.riddenByEntity && var18.canBePushed() && var18 instanceof EntityMount)
-                        {
-                            var18.applyEntityCollision(this);
-                        }
-                    }
-                }
-
-                for (var27 = 0; var27 < 4; ++var27)
-                {
-                    int var28 = MathHelper.floor_double(this.posX + ((double)(var27 % 2) - 0.5D) * 0.8D);
-                    int var19 = MathHelper.floor_double(this.posZ + ((double)(var27 / 2) - 0.5D) * 0.8D);
-
-                    for (int var20 = 0; var20 < 2; ++var20)
-                    {
-                        int var21 = MathHelper.floor_double(this.posY) + var20;
-                        int var22 = this.worldObj.getBlockId(var28, var21, var19);
-                        int var23 = this.worldObj.getBlockMetadata(var28, var21, var19);
-
-                        if (var22 == Block.snow.blockID)
-                        {
-                            this.worldObj.setBlockWithNotify(var28, var21, var19, 0);
-                        }
-                        else if (var22 == Block.waterlily.blockID)
-                        {
-                            Block.waterlily.dropBlockAsItemWithChance(this.worldObj, var28, var21, var19, var23, 0.3F, 0);
-                            this.worldObj.setBlockWithNotify(var28, var21, var19, 0);
-                        }
-                    }
-                }
-
-                if (this.riddenByEntity != null && this.riddenByEntity.isDead)
-                {
-                    this.riddenByEntity = null;
-                }
-            }
-        }
-    }
-
-    public void updateRiderPosition()
-    {
-        if (this.riddenByEntity != null)
-        {
-            double var1 = Math.cos((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-            double var3 = Math.sin((double)this.rotationYaw * Math.PI / 180.0D) * 0.4D;
-            this.riddenByEntity.setPosition(this.posX + var1, this.posY + this.getMountedYOffset() + this.riddenByEntity.getYOffset(), this.posZ + var3);
-        }
+        ItemStack var1 = ((EntityPlayer)this.riddenByEntity).getHeldItem();
+        return var1 != null && var1.itemID == DivineRPG.mooncloud.itemID;
     }
 
     /**
      * (abstract) Protected helper method to write subclass entity data to NBT.
      */
-    protected void writeEntityToNBT(NBTTagCompound par1NBTTagCompound) {}
+    public void writeEntityToNBT(NBTTagCompound par1NBTTagCompound)
+    {
+        super.writeEntityToNBT(par1NBTTagCompound);
+        par1NBTTagCompound.setBoolean("Saddle", this.getSaddled());
+    }
 
     /**
      * (abstract) Protected helper method to read subclass entity data from NBT.
      */
-    protected void readEntityFromNBT(NBTTagCompound par1NBTTagCompound) {}
+    public void readEntityFromNBT(NBTTagCompound par1NBTTagCompound)
+    {
+        super.readEntityFromNBT(par1NBTTagCompound);
+        this.setSaddled(par1NBTTagCompound.getBoolean("Saddle"));
+    }
+
+    /**
+     * Returns the sound this mob makes while it's alive.
+     */
+    protected String getLivingSound()
+    {
+        return "mob.pig.say";
+    }
+
+    /**
+     * Returns the sound this mob makes when it is hurt.
+     */
+    protected String getHurtSound()
+    {
+        return "mob.pig.say";
+    }
+
+    /**
+     * Returns the sound this mob makes on death.
+     */
+    protected String getDeathSound()
+    {
+        return "mob.pig.death";
+    }
+
+    /**
+     * Plays step sound at given x, y, z for the entity
+     */
+    protected void playStepSound(int par1, int par2, int par3, int par4)
+    {
+        this.playSound("mob.pig.step", 0.15F, 1.0F);
+    }
 
     /**
      * Called when a player interacts with a mob. e.g. gets milk from a cow, gets into the saddle on a pig.
      */
     public boolean interact(EntityPlayer par1EntityPlayer)
     {
-        if (this.riddenByEntity != null && this.riddenByEntity instanceof EntityPlayer && this.riddenByEntity != par1EntityPlayer)
+        if (super.interact(par1EntityPlayer))
         {
+            return true;
+        }
+        else if (this.getSaddled() && !this.worldObj.isRemote && (this.riddenByEntity == null || this.riddenByEntity == par1EntityPlayer))
+        {
+            par1EntityPlayer.mountEntity(this);
             return true;
         }
         else
         {
-            if (!this.worldObj.isRemote)
-            {
-                par1EntityPlayer.mountEntity(this);
-            }
-
-            return true;
+            return false;
         }
     }
 
     /**
-     * Sets the damage taken from the last hit.
+     * Returns the item ID for the item the mob drops on death.
      */
-    public void setDamageTaken(int par1)
+    protected int getDropItemId()
     {
-        this.dataWatcher.updateObject(19, Integer.valueOf(par1));
-    }
-
-    @SideOnly(Side.CLIENT)
-    public float getShadowSize()
-    {
-        return 0.0F;
+        return this.isBurning() ? Item.porkCooked.itemID : Item.porkRaw.itemID;
     }
 
     /**
-     * Gets the damage taken from the last hit.
+     * Drop 0-2 items of this living's type. @param par1 - Whether this entity has recently been hit by a player. @param
+     * par2 - Level of Looting used to kill this mob.
      */
-    public int getDamageTaken()
+    protected void dropFewItems(boolean par1, int par2)
     {
-        return this.dataWatcher.getWatchableObjectInt(19);
+        int var3 = this.rand.nextInt(3) + 1 + this.rand.nextInt(1 + par2);
+
+        for (int var4 = 0; var4 < var3; ++var4)
+        {
+            if (this.isBurning())
+            {
+                this.dropItem(Item.porkCooked.itemID, 1);
+            }
+            else
+            {
+                this.dropItem(Item.porkRaw.itemID, 1);
+            }
+        }
+
+        if (this.getSaddled())
+        {
+            this.dropItem(Item.saddle.itemID, 1);
+        }
     }
 
     /**
-     * Sets the time to count down from since the last time entity was hit.
+     * Returns true if the pig is saddled.
      */
-    public void setTimeSinceHit(int par1)
+    public boolean getSaddled()
     {
-        this.dataWatcher.updateObject(17, Integer.valueOf(par1));
+        return (this.dataWatcher.getWatchableObjectByte(16) & 1) != 0;
     }
 
     /**
-     * Gets the time since the last hit.
+     * Set or remove the saddle of the pig.
      */
-    public int getTimeSinceHit()
+    public void setSaddled(boolean par1)
     {
-        return this.dataWatcher.getWatchableObjectInt(17);
+        if (par1)
+        {
+            this.dataWatcher.updateObject(16, Byte.valueOf((byte)1));
+        }
+        else
+        {
+            this.dataWatcher.updateObject(16, Byte.valueOf((byte)0));
+        }
     }
 
     /**
-     * Sets the forward direction of the entity.
+     * Called when a lightning bolt hits the entity.
      */
-    public void setForwardDirection(int par1)
+    public void onStruckByLightning(EntityLightningBolt par1EntityLightningBolt)
     {
-        this.dataWatcher.updateObject(18, Integer.valueOf(par1));
+        if (!this.worldObj.isRemote)
+        {
+            EntityPigZombie var2 = new EntityPigZombie(this.worldObj);
+            var2.setLocationAndAngles(this.posX, this.posY, this.posZ, this.rotationYaw, this.rotationPitch);
+            this.worldObj.spawnEntityInWorld(var2);
+            this.setDead();
+        }
     }
 
     /**
-     * Gets the forward direction of the entity.
+     * Called when the mob is falling. Calculates and applies fall damage.
      */
-    public int getForwardDirection()
+    protected void fall(float par1)
     {
-        return this.dataWatcher.getWatchableObjectInt(18);
+        super.fall(par1);
+
+        if (par1 > 5.0F && this.riddenByEntity instanceof EntityPlayer)
+        {
+            ((EntityPlayer)this.riddenByEntity).triggerAchievement(AchievementList.flyPig);
+        }
     }
 
-    @SideOnly(Side.CLIENT)
-    public void func_70270_d(boolean par1)
+    /**
+     * This function is used when two same-species animals in 'love mode' breed to generate the new baby animal.
+     */
+    public EntityMount spawnBabyAnimal(EntityAgeable par1EntityAgeable)
     {
-        this.field_70279_a = par1;
+        return new EntityMount(this.worldObj);
+    }
+
+    /**
+     * Checks if the parameter is an item which this animal can be fed to breed it (wheat, carrots or seeds depending on
+     * the animal type)
+     */
+    public boolean isBreedingItem(ItemStack par1ItemStack)
+    {
+        return par1ItemStack != null && par1ItemStack.itemID == Item.carrot.itemID;
+    }
+
+    /**
+     * Return the AI task for player control.
+     */
+    public EntityAIControlledByPlayer getAIControlledByPlayer()
+    {
+        return this.aiControlledByPlayer;
+    }
+
+    public EntityAgeable createChild(EntityAgeable par1EntityAgeable)
+    {
+        return this.spawnBabyAnimal(par1EntityAgeable);
     }
 }

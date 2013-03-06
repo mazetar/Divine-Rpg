@@ -318,6 +318,7 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityZoragon.class, new RenderZoragon(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityDissiment.class, new RenderDissiment(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntitySpinebackWorm.class, new RenderSpinebackWorm(new ModelWildFire(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySpinebackWormBody.class, new RenderSpinebackWormBody(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityVhraak.class, new RenderVhraak(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityGalroid.class, new RenderGalroid(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityLadyLuna.class, new RenderLadyLuna(new ModelWildFire(), 0.0F));
@@ -327,7 +328,7 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityHiveQueen.class, new RenderHiveQueen(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityHiveSoldier.class, new RenderHiveSoldier(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityLheiva.class, new RenderLheiva(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntitySpinebackWormBody.class, new RenderSpinebackWormBody(new ModelGlacide(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityMeihurr.class, new RenderMeihurr());
         
         /*
          * 1.3 Projectiles

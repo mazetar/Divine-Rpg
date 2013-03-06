@@ -861,7 +861,7 @@ public class ChunkProviderVethea implements IChunkProvider
             (this.lamps.get(this.rand.nextInt(2))).generate(this.worldObj, this.rand, var12, var13 - 2, var14);
         }
         
-        if (this.rand.nextInt(500) == 0)
+        if (this.rand.nextInt(250) == 0)
         {
             var12 = var4 + this.rand.nextInt(16) + 8;
             var13 = 144 ;

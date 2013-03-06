@@ -117,7 +117,7 @@ public class EntityWildFire extends EntityMob implements IRangedAttackMob
     {
         if (this.rand.nextInt(5) == 0)
         {
-            this.dropItem(DivineRPG.netheriteBar.itemID, 1);
+            this.dropItem(DivineRPG.hellStoneIngot.itemID, 1);
         }
         else
         {
@@ -130,7 +130,7 @@ public class EntityWildFire extends EntityMob implements IRangedAttackMob
     {
         EntityArrow var2 = new EntityArrow(this.worldObj, this, var1, 1.6F, 12.0F);
         
-        var2.setDamage(8);
+        var2.setDamage(14);
         var2.setFire(100);
 
         this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));

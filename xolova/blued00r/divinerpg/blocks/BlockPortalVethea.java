@@ -26,12 +26,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockPortalVethea extends BlockBreakable
 {
     private int firetick;
-    private int firemax = 1000;
+    private int firemax = 200;
 
     public BlockPortalVethea(int var1, int var2)
     {
         super(var1, var2, Material.portal, false);
-        this.firetick = this.firemax;
+        this.firetick = 0;
     }
 
     /**
@@ -90,6 +90,7 @@ public class BlockPortalVethea extends BlockBreakable
         if (var1.getBlockId(var2 - 1, var3, var4) == Block.blockSnow.blockID || var1.getBlockId(var2 + 1, var3, var4) == Block.blockSnow.blockID)
         {
             var5 = 1;
+            
         }
 
         if (var1.getBlockId(var2, var3, var4 - 1) == Block.blockSnow.blockID || var1.getBlockId(var2, var3, var4 + 1) == Block.blockSnow.blockID)

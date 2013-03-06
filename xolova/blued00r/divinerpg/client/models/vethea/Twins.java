@@ -1,8 +1,10 @@
 package xolova.blued00r.divinerpg.client.models.vethea;
 
+import xolova.blued00r.divinerpg.entities.mobs.vethea.EntityTwins;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.MathHelper;
 
 public class Twins extends ModelBase
 {
@@ -326,7 +328,7 @@ public class Twins extends ModelBase
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
   {
     super.render(entity, f, f1, f2, f3, f4, f5);
-    setRotationAngles(f, f1, f2, f3, f4, f5);
+    setRotationAngles((EntityTwins) entity, f, f1, f2, f3, f4, f5);
     rightlegt.render(f5);
     leftlegt.render(f5);
     rotated1.render(f5);
@@ -380,8 +382,96 @@ public class Twins extends ModelBase
     model.rotateAngleZ = z;
   }
   
-  public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5)
+  public void setRotationAngles(EntityTwins entity, float f, float f1, float f2, float f3, float f4, float f5)
   {
+		this.leftleg.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
+		this.leftlegt.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
+		this.lefttoe1.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
+		this.lefttoe2.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
+		
+		this.rightleg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1;
+		this.rightleg.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1;
+		this.righttoe1.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1;
+		this.righttoe2.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1;
+		
+		if (entity.ability == 1 && this.rotated1.rotateAngleY < 2 * Math.PI)
+		{
+			this.rotated1.rotateAngleY += 0.15;
+			this.rotated2.rotateAngleY += 0.15;
+			this.rotated3.rotateAngleY += 0.15;
+			this.rotated4.rotateAngleY += 0.15;
+			this.rotated5.rotateAngleY += 0.15;
+			this.rotated6.rotateAngleY += 0.15;
+			this.rotated7.rotateAngleY += 0.15;
+			this.rotated8.rotateAngleY += 0.15;
+			this.rotated9.rotateAngleY += 0.15;
+			this.rotated10.rotateAngleY += 0.15;
+			this.rotated11.rotateAngleY += 0.15;
+			this.rotated12.rotateAngleY += 0.15;
+			this.rotated13.rotateAngleY += 0.15;
+			this.rotated14.rotateAngleY += 0.15;
+			this.rotated15.rotateAngleY += 0.15;
+			this.rotated16.rotateAngleY += 0.15;
+			this.rotated17.rotateAngleY += 0.15;
+			this.rotated18.rotateAngleY += 0.15;
+			this.rotated19.rotateAngleY += 0.15;
+			this.rotated20.rotateAngleY += 0.15;
+			this.rotated21.rotateAngleY += 0.15;
+			this.rotated22.rotateAngleY += 0.15;
+			this.rotated23.rotateAngleY += 0.15;
+			this.rotated24.rotateAngleY += 0.15;
+			this.rotated25.rotateAngleY += 0.15;
+			this.rotated26.rotateAngleY += 0.15;
+			this.rotated27.rotateAngleY += 0.15;
+			this.rotated28.rotateAngleY += 0.15;
+			this.rotated29.rotateAngleY += 0.15;
+			this.rotated30.rotateAngleY += 0.15;
+			this.rotated31.rotateAngleY += 0.15;
+			this.rotated32.rotateAngleY += 0.15;
+			this.rotated33.rotateAngleY += 0.15;
+			this.rotated34.rotateAngleY += 0.15;
+			this.rotated35.rotateAngleY += 0.15;
+			this.rotated36.rotateAngleY += 0.15;
+		}
+		else if (entity.ability == 0 && this.rotated1.rotateAngleY > 0)
+		{
+			this.rotated1.rotateAngleY -= 0.15;
+			this.rotated2.rotateAngleY -= 0.15;
+			this.rotated3.rotateAngleY -= 0.15;
+			this.rotated4.rotateAngleY -= 0.15;
+			this.rotated5.rotateAngleY -= 0.15;
+			this.rotated6.rotateAngleY -= 0.15;
+			this.rotated7.rotateAngleY -= 0.15;
+			this.rotated8.rotateAngleY -= 0.15;
+			this.rotated9.rotateAngleY -= 0.15;
+			this.rotated10.rotateAngleY -= 0.15;
+			this.rotated11.rotateAngleY -= 0.15;
+			this.rotated12.rotateAngleY -= 0.15;
+			this.rotated13.rotateAngleY -= 0.15;
+			this.rotated14.rotateAngleY -= 0.15;
+			this.rotated15.rotateAngleY -= 0.15;
+			this.rotated16.rotateAngleY -= 0.15;
+			this.rotated17.rotateAngleY -= 0.15;
+			this.rotated18.rotateAngleY -= 0.15;
+			this.rotated19.rotateAngleY -= 0.15;
+			this.rotated20.rotateAngleY -= 0.15;
+			this.rotated21.rotateAngleY -= 0.15;
+			this.rotated22.rotateAngleY -= 0.15;
+			this.rotated23.rotateAngleY -= 0.15;
+			this.rotated24.rotateAngleY -= 0.15;
+			this.rotated25.rotateAngleY -= 0.15;
+			this.rotated26.rotateAngleY -= 0.15;
+			this.rotated27.rotateAngleY -= 0.15;
+			this.rotated28.rotateAngleY -= 0.15;
+			this.rotated29.rotateAngleY -= 0.15;
+			this.rotated30.rotateAngleY -= 0.15;
+			this.rotated31.rotateAngleY -= 0.15;
+			this.rotated32.rotateAngleY -= 0.15;
+			this.rotated33.rotateAngleY -= 0.15;
+			this.rotated34.rotateAngleY -= 0.15;
+			this.rotated35.rotateAngleY -= 0.15;
+			this.rotated36.rotateAngleY -= 0.15;
+		}
   }
 
 }

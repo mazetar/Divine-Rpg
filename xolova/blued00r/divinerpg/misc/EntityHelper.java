@@ -170,7 +170,7 @@ public class EntityHelper {
         EntityRegistry.registerGlobalEntityID(xolova.blued00r.divinerpg.entities.mobs.traders.EntityDatticon.class, "datticon", 44, 0x000000, 0xffffff);
         EntityRegistry.registerGlobalEntityID(xolova.blued00r.divinerpg.entities.mobs.traders.EntityVatticus.class, "vatticus", 45, 0x000000, 0xffffff);
         EntityRegistry.registerGlobalEntityID(EntityZelus.class, "Zelus", 46, 0x000000, 0xffffff);
-        EntityRegistry.registerGlobalEntityID(EntitySpinebackWorm.class, "TestMob", 124, 0x000000, 0xffffff);
+        EntityRegistry.registerGlobalEntityID(EntityTwins.class, "TestMob", 124, 0x000000, 0xffffff);
         
         EntityRegistry.registerModEntity(EntityAlicanto.class, "alicanto", 1, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityFractite.class, "fractite", 2, DivineRPG.instance, 120, 5, true);
@@ -240,6 +240,7 @@ public class EntityHelper {
         EntityRegistry.registerModEntity(EntityLheiva.class, "lheiva", 52, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntitySpinebackWormBody.class, "spinebackWormBody", 53, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityMandragora.class, "mandragora", 54, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityTwins.class, "twins", 55, DivineRPG.instance, 120, 5, true);
         
 	}
 	public static void addEntities()

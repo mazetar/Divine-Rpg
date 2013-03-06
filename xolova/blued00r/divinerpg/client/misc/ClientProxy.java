@@ -12,6 +12,7 @@ import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.client.models.*;
+import xolova.blued00r.divinerpg.client.models.vethea.*;
 import xolova.blued00r.divinerpg.client.models.entites.mobs.boss.ModelParasecta;
 import xolova.blued00r.divinerpg.client.models.entities.community.ModelRainbour;
 import xolova.blued00r.divinerpg.client.models.entities.mobs.iceika.*;
@@ -309,7 +310,7 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityDreamwrecker.class, new RenderDreamwrecker(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityTocaxin.class, new RenderTocaxin(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityShadahier.class, new RenderShadahier(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityAcidHag.class, new RenderAcidHag(new ModelWildFire(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityAcidHag.class, new RenderAcidHag(new Lorga(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityKazrotic.class, new RenderKazrotic(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityHelio.class, new RenderHelio(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityGorgosion.class, new RenderGorgosion(new ModelWildFire(), 0.0F));
@@ -329,6 +330,7 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityHiveSoldier.class, new RenderHiveSoldier(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityLheiva.class, new RenderLheiva(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityMeihurr.class, new RenderMeihurr());
+        RenderingRegistry.registerEntityRenderingHandler(EntityTwins.class, new RenderTwins(new Twins(), 0.0F));
         
         /*
          * 1.3 Projectiles

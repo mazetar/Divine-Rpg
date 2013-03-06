@@ -31,7 +31,7 @@ public class EntityAcidHag extends EntityMob
     {
         super(var1);
         this.texture = "/mob/acidHag.png";
-        this.moveSpeed = 0.25F;
+        this.moveSpeed = 0.30F;
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
         this.tasks.addTask(4, new EntityAIMoveTwardsRestriction(this, this.moveSpeed));

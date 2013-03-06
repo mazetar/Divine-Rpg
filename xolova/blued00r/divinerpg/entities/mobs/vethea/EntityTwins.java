@@ -38,7 +38,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public abstract class EntityTwins extends EntityMob implements IRangedAttackMob
+public class EntityTwins extends EntityMob implements IRangedAttackMob
 {
 	
 	public static int ability;
@@ -48,15 +48,16 @@ public abstract class EntityTwins extends EntityMob implements IRangedAttackMob
 	private int waitTick;
 	private int abilityCoolDown;
 	
-	private EntityAIBase rangedAI = new EntityAIArrowAttack(this, 0.25F, 10, 64.0F);
+	private EntityAIBase rangedAI;
 	private int rangedAttackCounter;
 	
-    public EntityTwins(World par1)
+    public EntityTwins(World par1World)
     {
-        super(par1);
-        this.texture = "/mob/Wreck.png";
+        super(par1World);
+        this.texture = "/mob/Twins.png";
         this.moveSpeed = 0.25F;
         this.health = this.getMaxHealth();
+        rangedAI = new EntityAIArrowAttack(this, 0.25F, 10, 64.0F);
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(5, rangedAI);
         this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
@@ -75,22 +76,26 @@ public abstract class EntityTwins extends EntityMob implements IRangedAttackMob
     
     public void manageAbilities()
     {
-        
-        EntityPlayerMP var1 = (EntityPlayerMP) this.worldObj.getClosestVulnerablePlayerToEntity(this, 64.0D);
 
         if (this.ability == SLOW && this.abilityCoolDown == 0)
         {
         	this.ability = FAST;
-    		this.abilityCoolDown = 0;
-        	this.setAIMoveSpeed(this.moveSpeed * 3);
+    		this.abilityCoolDown = 100;
+    		this.rangedAttackCounter = 0;
     	}
-    	else if (this.ability == SLOW && this.abilityCoolDown > 0)
+        else if (this.ability == FAST && this.abilityCoolDown == 0)
+        {
+        	this.ability = SLOW;
+    		this.abilityCoolDown = 100;
+    		this.rangedAttackCounter = 0;
+    	}
+    	else if (this.abilityCoolDown > 0)
     	{
     		this.abilityCoolDown--;
     	}
     	else if (this.ability != 0 && this.abilityCoolDown == 0)
     	{
-    		this.abilityCoolDown = 0;
+    		this.abilityCoolDown = 100;
     	}
     }
 
@@ -176,27 +181,20 @@ public abstract class EntityTwins extends EntityMob implements IRangedAttackMob
 		{
 		case FAST:
 			EntityVetheanArrow var2 = new EntityVetheanArrow(this.worldObj, this, par1, 1.6F, 12.0F);
-			var2.setDamage(3);
+			var2.setDamage(1);
 	        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 	        this.worldObj.spawnEntityInWorld(var2);
-	        ++this.rangedAttackCounter;
 	        break;
 		case SLOW:
 	        if ((this.rangedAttackCounter & 4) == 0)
 	        {
 	        	EntityVetheanArrow var4 = new EntityVetheanArrow(this.worldObj, this, par1, 1.6F, 12.0F);
 		        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+				var4.setDamage(2);
 		        this.worldObj.spawnEntityInWorld(var4);
-		        ++this.rangedAttackCounter;
 	        }
-	        else if (this.rangedAttackCounter >= 12 + this.rand.nextInt(6))
-	        {
-	        	this.ability = FAST;
-	        }
-	        else
-	        {
-	        	this.rangedAttackCounter++;
-	        }
+	        
+	        this.rangedAttackCounter++;
 	        break;
         default: break;
 		}

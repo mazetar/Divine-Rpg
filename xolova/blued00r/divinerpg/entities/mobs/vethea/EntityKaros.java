@@ -171,7 +171,6 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
     	super.onLivingUpdate();
     	if(this.ability == CEILING)
     	{
-    		this.worldObj.
     		if (this.rangedAttackCounter == 100)
     		{
     			this.ability = DEFAULT;
@@ -259,61 +258,13 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
     	return super.attackEntityFrom(par1DamageSource, par2);
     }
 
-    public boolean attackEntityAsMob(Entity par1Entity)
-    {
-        int var2 = this.getAttackStrength(par1Entity);
-
-        if (this.isPotionActive(Potion.damageBoost))
-        {
-            var2 += 3 << this.getActivePotionEffect(Potion.damageBoost).getAmplifier();
-        }
-
-        if (this.isPotionActive(Potion.weakness))
-        {
-            var2 -= 2 << this.getActivePotionEffect(Potion.weakness).getAmplifier();
-        }
-
-        int var3 = 0;
-
-        if (par1Entity instanceof EntityLiving)
-        {
-            var2 += EnchantmentHelper.getEnchantmentModifierLiving(this, (EntityLiving)par1Entity);
-            var3 += EnchantmentHelper.getKnockbackModifier(this, (EntityLiving)par1Entity);
-            //((EntityLiving) par1Entity).addPotionEffect(new PotionEffect(Potion.poison.id, 16 * 5, 1));
-        }
-
-        boolean var4 = par1Entity.attackEntityFrom(DamageSource.causeMobDamage(this), var2);
-
-        if (var4)
-        {
-        	if (this.ability == SLOW)
-        	{
-        		var3 = 5;
-        	}
-            if (var3 > 0)
-            {
-                par1Entity.addVelocity((double)(-MathHelper.sin(this.rotationYaw * (float)Math.PI / 180.0F) * (float)var3 * 0.5F), 0.1D, (double)(MathHelper.cos(this.rotationYaw * (float)Math.PI / 180.0F) * (float)var3 * 0.5F));
-                this.motionX *= 0.6D;
-                this.motionZ *= 0.6D;
-            }
-
-            int var5 = EnchantmentHelper.getFireAspectModifier(this);
-
-            if (var5 > 0)
-            {
-                par1Entity.setFire(var5 * 4);
-            }
-        }
-
-        return var4;
-    }
 
 	@Override
 	public void attackEntityWithRangedAttack(EntityLiving par1) 
 	{
 		switch(this.ability)
 		{
-		case LIGHTNING:
+		case CANNONS:
 			this.worldObj.spawnEntityInWorld(new EntityLightningBolt(this.worldObj, (double)par1.lastTickPosX, (double)par1.lastTickPosY, (double)par1.lastTickPosZ));
 			this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 			this.rangedAttackCounter++;
@@ -322,7 +273,7 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
 				this.ability = DEFAULT;
 			}
 	        break;
-		case BOMBS:
+		case CEILING:
 	        EntityRaglokBomb var2 = new EntityRaglokBomb(this.worldObj);
 	        var2.setPosition(par1.posX, par1.posY + 5, par1.posZ);
 	        var2.setVelocity(0, -2, 0);

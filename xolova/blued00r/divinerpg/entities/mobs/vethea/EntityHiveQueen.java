@@ -87,6 +87,14 @@ public class EntityHiveQueen extends EntityMob implements IBossDisplayData
     }
 
     /**
+     * Returns true if the newer Entity AI code should be run
+     */
+    public boolean isAIEnabled()
+    {
+        return true;
+    }
+
+    /**
      * Called frequently so the entity can update its state every tick as required. For example, zombies and skeletons
      * use this to react to sunlight and start to burn.
      */

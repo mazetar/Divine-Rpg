@@ -80,13 +80,13 @@ public class EntityTwins extends EntityMob implements IRangedAttackMob
         if (this.ability == SLOW && this.abilityCoolDown == 0)
         {
         	this.ability = FAST;
-    		this.abilityCoolDown = 500;
+    		this.abilityCoolDown = 50;
     		this.rangedAttackCounter = 0;
     	}
         else if (this.ability == FAST && this.abilityCoolDown == 0)
         {
         	this.ability = SLOW;
-    		this.abilityCoolDown = 500;
+    		this.abilityCoolDown = 60;
     		this.rangedAttackCounter = 0;
     	}
     	else if (this.abilityCoolDown > 0)
@@ -182,15 +182,14 @@ public class EntityTwins extends EntityMob implements IRangedAttackMob
 	        this.worldObj.spawnEntityInWorld(var2);
 	        break;
 		case SLOW:
-	        if ((this.rangedAttackCounter & 8) == 0)
+	        this.rangedAttackCounter++;
+	        if ((this.rangedAttackCounter & 4) == 0)
 	        {
 	        	EntityVetheanArrow var4 = new EntityVetheanArrow(this.worldObj, this, par1, 1.6F, 12.0F);
 		        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 				var4.setDamage(2);
 		        this.worldObj.spawnEntityInWorld(var4);
 	        }
-	        
-	        this.rangedAttackCounter++;
 	        break;
         default: break;
 		}

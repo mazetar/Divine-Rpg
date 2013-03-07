@@ -4,13 +4,10 @@ import java.awt.Color;
 
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.client.FMLClientHandler;
-
 import xolova.blued00r.divinerpg.containers.ContainerInfusionTable;
 import xolova.blued00r.divinerpg.entities.tileentities.TileEntityInfusionTable;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.item.Item;

@@ -140,7 +140,6 @@ import xolova.blued00r.divinerpg.misc.CommonProxy;
 import xolova.blued00r.divinerpg.misc.CraftingHandler;
 import xolova.blued00r.divinerpg.misc.GuiHandler;
 import xolova.blued00r.divinerpg.misc.LivingDeathEventHandler;
-import xolova.blued00r.divinerpg.misc.ModPlayerTracker;
 import xolova.blued00r.divinerpg.misc.ModRecipes;
 import xolova.blued00r.divinerpg.misc.RecipeHelper;
 import xolova.blued00r.divinerpg.misc.ServerPacketHandler;
@@ -150,7 +149,6 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -2125,7 +2123,7 @@ public class DivineRPG
     public static int karosHeatTileGreenID;
     public static Block karosHeatTileGreen;
     public static int karosCannonID;
-    public static Block karosCannon;
+    public static BlockKarosCannon karosCannon;
     public static int helioticBeamID;
     public static Block helioticBeam;
     public static int cryptFloorID;
@@ -4779,7 +4777,7 @@ public class DivineRPG
         karosBricks = new Block(karosBricksID, 94, Material.rock).setBlockName("karosBricks").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         karosBricks2 = new Block(karosBricks2ID, 95, Material.rock).setBlockName("karosBricks2").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         helioticBeam = new BlockHelioticBeam(helioticBeamID).setBlockName("helioticBeam").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        karosCannon = new BlockKarosCannon(karosCannonID, 76, Material.rock).setBlockName("karosCannon").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabUtility).setRequiresSelfNotify();
+        karosCannon = (BlockKarosCannon) new BlockKarosCannon(karosCannonID, 76, Material.rock).setBlockName("karosCannon").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabUtility).setRequiresSelfNotify();
         purpleFire = new BlockPurpleFire(purpleFireID, 94).setBlockName("purpleFire").setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         meihurr = new ItemMeihurrSpawner(purpleFireID).setItemName("meihurr").setTextureFile("/Xolovon4.png").setCreativeTab(CreativeTabs.tabRedstone);
         
@@ -5035,12 +5033,6 @@ public class DivineRPG
     public void PostLoad(FMLPostInitializationEvent event)
     {
     	AchievementPageDivineRPG.Init();
-    }
-    
-    @Mod.ServerStarted
-    public void ServerStarted(FMLServerStartedEvent event)
-    {
-    	GameRegistry.registerPlayerTracker(new ModPlayerTracker());
     }
     
     public static void RemoveRecipe(ItemStack itemstack)

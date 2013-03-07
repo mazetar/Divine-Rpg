@@ -27,6 +27,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import xolova.blued00r.divinerpg.DivineRPG;
 
 public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDisplayData
 {
@@ -39,6 +40,8 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
 	
 	private int waitTick;
 	private int abilityCoolDown;
+	private int[][] cannonList = new int[36][3];
+	private int[][] ceilingList = new int[36][3];
 	
 	private EntityAIBase meleeAI;
 	private EntityAIBase rangedAISpeed = new EntityAIArrowAttack(this, 0.25F, 5, 64.0F);
@@ -66,6 +69,47 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
         this.isImmuneToFire = true;
         System.out.println("constructor");
         this.ability = DEFAULT;
+    }
+    
+    public EntityKaros(World par1, int par2, int par3, int par4)
+    {
+    	this(par1);
+    	this.cannonList[0] = new int[]{par2 + 10, par3 + 2, par4 + 3};
+    	this.cannonList[1] = new int[]{par2 + 10, par3 + 2, par4 + 5};
+    	this.cannonList[2] = new int[]{par2 + 10, par3 + 2, par4 + 7};
+    	this.cannonList[3] = new int[]{par2 + 10, par3 + 2, par4 + 12};
+    	this.cannonList[4] = new int[]{par2 + 10, par3 + 2, par4 + 14};
+    	this.cannonList[5] = new int[]{par2 + 10, par3 + 2, par4 + 16};
+    	this.cannonList[6] = new int[]{par2 + 12, par3 + 2, par4 + 1};
+    	this.cannonList[7] = new int[]{par2 + 12, par3 + 2, par4 + 18};
+    	this.cannonList[8] = new int[]{par2 + 14, par3 + 2, par4 + 1};
+    	this.cannonList[9] = new int[]{par2 + 14, par3 + 2, par4 + 18};
+    	this.cannonList[10] = new int[]{par2 + 16, par3 + 2, par4 + 1};
+    	this.cannonList[11] = new int[]{par2 + 16, par3 + 2, par4 + 18};
+    	this.cannonList[12] = new int[]{par2 + 18, par3 + 2, par4 + 1};
+    	this.cannonList[13] = new int[]{par2 + 18, par3 + 2, par4 + 18};
+    	this.cannonList[14] = new int[]{par2 + 20, par3 + 2, par4 + 1};
+    	this.cannonList[15] = new int[]{par2 + 20, par3 + 2, par4 + 18};
+    	this.cannonList[16] = new int[]{par2 + 20, par3 + 2, par4 + 1};
+    	this.cannonList[17] = new int[]{par2 + 20, par3 + 2, par4 + 18};
+    	this.cannonList[18] = new int[]{par2 + 24, par3 + 2, par4 + 1};
+    	this.cannonList[19] = new int[]{par2 + 24, par3 + 2, par4 + 18};
+    	this.cannonList[20] = new int[]{par2 + 26, par3 + 2, par4 + 1};
+    	this.cannonList[21] = new int[]{par2 + 26, par3 + 2, par4 + 18};
+    	this.cannonList[22] = new int[]{par2 + 28, par3 + 2, par4 + 1};
+    	this.cannonList[23] = new int[]{par2 + 28, par3 + 2, par4 + 18};
+    	this.cannonList[24] = new int[]{par2 + 28, par3 + 3, par4 + 9};
+    	this.cannonList[25] = new int[]{par2 + 28, par3 + 3, par4 + 10};
+    	this.cannonList[26] = new int[]{par2 + 29, par3 + 2, par4 + 2};
+    	this.cannonList[27] = new int[]{par2 + 29, par3 + 2, par4 + 4};
+    	this.cannonList[28] = new int[]{par2 + 29, par3 + 2, par4 + 6};
+    	this.cannonList[29] = new int[]{par2 + 29, par3 + 2, par4 + 8};
+    	this.cannonList[30] = new int[]{par2 + 29, par3 + 2, par4 + 9};
+    	this.cannonList[31] = new int[]{par2 + 29, par3 + 2, par4 + 10};
+    	this.cannonList[32] = new int[]{par2 + 29, par3 + 2, par4 + 11};
+    	this.cannonList[33] = new int[]{par2 + 29, par3 + 2, par4 + 13};
+    	this.cannonList[34] = new int[]{par2 + 29, par3 + 2, par4 + 15};
+    	this.cannonList[35] = new int[]{par2 + 29, par3 + 2, par4 + 17};
     }
     
     protected void updateAITasks()
@@ -175,6 +219,13 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
     		{
     			this.ability = DEFAULT;
     			this.rangedAttackCounter = 0;
+    		}
+    	}
+    	else if(this.ability == CANNONS)
+    	{
+    		for (int i = 0; i < cannonList.length; i++)
+    		{
+    			DivineRPG.karosCannon.dispense(this.worldObj, cannonList[i][0], cannonList[i][1], cannonList[i][2]);
     		}
     	}
     }

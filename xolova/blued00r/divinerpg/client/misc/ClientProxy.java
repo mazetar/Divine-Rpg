@@ -304,33 +304,33 @@ public class ClientProxy extends CommonProxy
          * 1.3 Mobs
          */
         
-        RenderingRegistry.registerEntityRenderingHandler(EntityVermenous.class, new RenderVermenous(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityEnt.class, new RenderEnt(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityCymesoid.class, new RenderCymesoid(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityDreamwrecker.class, new RenderDreamwrecker(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityTocaxin.class, new RenderTocaxin(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityShadahier.class, new RenderShadahier(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityAcidHag.class, new RenderAcidHag(new Kazrotic(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityVermenous.class, new RenderVermenous(new Vermenous(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityEnt.class, new RenderEnt(new Ent(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityCymesoid.class, new RenderCymesoid(new Cymesoid(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityDreamwrecker.class, new RenderDreamwrecker(new Dreamwrecker(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityTocaxin.class, new RenderTocaxin(new Tocaxin(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityShadahier.class, new RenderShadahier(new Shadahier(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityAcidHag.class, new RenderAcidHag(new AcidHag(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityKazrotic.class, new RenderKazrotic(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityHelio.class, new RenderHelio(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityGorgosion.class, new RenderGorgosion(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityHoverStinger.class, new RenderHoverStinger(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityZone.class, new RenderZone(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityZoragon.class, new RenderZoragon(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityDissiment.class, new RenderDissiment(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntitySpinebackWorm.class, new RenderSpinebackWorm(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntitySpinebackWormBody.class, new RenderSpinebackWormBody(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityVhraak.class, new RenderVhraak(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityGalroid.class, new RenderGalroid(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityLadyLuna.class, new RenderLadyLuna(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityBohemite.class, new RenderBohemite(new ModelWildFire(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityHelio.class, new RenderHelio(new Kazrotic(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityGorgosion.class, new RenderGorgosion(new Gorgosion(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityHoverStinger.class, new RenderHoverStinger(new HoverStinger(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityZone.class, new RenderZone(new Zone(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityZoragon.class, new RenderZoragon(new Zoragon(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityDissiment.class, new RenderDissiment(new Dissiment(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySpinebackWorm.class, new RenderSpinebackWorm(new SpinebackBody(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySpinebackWormBody.class, new RenderSpinebackWormBody(new SpinebackHead(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityVhraak.class, new RenderVhraak(new Vhraak(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityGalroid.class, new RenderGalroid(new Galroid(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityLadyLuna.class, new RenderLadyLuna(new LadyLuna(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityBohemite.class, new RenderBohemite(new Boheimite(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityWreck.class, new RenderWreck(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityBiphron.class, new RenderBiphron(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityHiveQueen.class, new RenderHiveQueen(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityHiveSoldier.class, new RenderHiveSoldier(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityLheiva.class, new RenderLheiva(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityMeihurr.class, new RenderMeihurr());
+        RenderingRegistry.registerEntityRenderingHandler(EntityHiveQueen.class, new RenderHiveQueen(new HiveQueen(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityHiveSoldier.class, new RenderHiveSoldier(new HiveSoldier(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityLheiva.class, new RenderLheiva(new Lheiva(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityTwins.class, new RenderTwins(new Twins(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityEndiku.class, new RenderBasic(new Endiku(), 0.0F));
         
         /*
          * 1.3 Projectiles

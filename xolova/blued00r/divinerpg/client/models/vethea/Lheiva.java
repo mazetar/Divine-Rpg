@@ -67,7 +67,6 @@ public class Lheiva extends ModelBase
       Shape5.setTextureSize(64, 32);
       Shape5.mirror = true;
       setRotation(Shape5, 0F, 0F, 0F);
-      Shape6.mirror = true;
       Shape6 = new ModelRenderer(this, 50, 0);
       Shape6.addBox(0F, 0F, 0F, 4, 2, 2);
       Shape6.setRotationPoint(-14F, 16F, 1F);
@@ -93,7 +92,6 @@ public class Lheiva extends ModelBase
       Shape9.setTextureSize(64, 32);
       Shape9.mirror = true;
       setRotation(Shape9, 0F, 0F, 0F);
-      Shape10.mirror = true;
       Shape10 = new ModelRenderer(this, 50, 0);
       Shape10.addBox(0F, 0F, 0F, 4, 2, 2);
       Shape10.setRotationPoint(-14F, 12F, 1F);
@@ -101,7 +99,6 @@ public class Lheiva extends ModelBase
       Shape10.mirror = true;
       setRotation(Shape10, 0F, 0F, 0F);
       Shape10.mirror = false;
-      Shape11.mirror = true;
       Shape11 = new ModelRenderer(this, 50, 0);
       Shape11.addBox(0F, 0F, 0F, 4, 2, 2);
       Shape11.setRotationPoint(-14F, 16F, -3F);
@@ -109,7 +106,6 @@ public class Lheiva extends ModelBase
       Shape11.mirror = true;
       setRotation(Shape11, 0F, 0F, 0F);
       Shape11.mirror = false;
-      Shape12.mirror = true;
       Shape12 = new ModelRenderer(this, 50, 0);
       Shape12.addBox(0F, 0F, 0F, 4, 2, 2);
       Shape12.setRotationPoint(-14F, 12F, -3F);
@@ -117,7 +113,6 @@ public class Lheiva extends ModelBase
       Shape12.mirror = true;
       setRotation(Shape12, 0F, 0F, 0F);
       Shape12.mirror = false;
-      Shape13.mirror = true;
       Shape13 = new ModelRenderer(this, 50, 0);
       Shape13.addBox(0F, 0F, 0F, 4, 2, 2);
       Shape13.setRotationPoint(-14F, 4F, 1F);
@@ -125,7 +120,6 @@ public class Lheiva extends ModelBase
       Shape13.mirror = true;
       setRotation(Shape13, 0F, 0F, 0F);
       Shape13.mirror = false;
-      Shape14.mirror = true;
       Shape14 = new ModelRenderer(this, 50, 0);
       Shape14.addBox(0F, 0F, 0F, 4, 2, 2);
       Shape14.setRotationPoint(-14F, 0F, 1F);
@@ -133,7 +127,6 @@ public class Lheiva extends ModelBase
       Shape14.mirror = true;
       setRotation(Shape14, 0F, 0F, 0F);
       Shape14.mirror = false;
-      Shape15.mirror = true;
       Shape15 = new ModelRenderer(this, 50, 0);
       Shape15.addBox(0F, 0F, 0F, 4, 2, 2);
       Shape15.setRotationPoint(-14F, 0F, -3F);
@@ -141,7 +134,6 @@ public class Lheiva extends ModelBase
       Shape15.mirror = true;
       setRotation(Shape15, 0F, 0F, 0F);
       Shape15.mirror = false;
-      Shape16.mirror = true;
       Shape16 = new ModelRenderer(this, 50, 0);
       Shape16.addBox(0F, 0F, 0F, 4, 2, 2);
       Shape16.setRotationPoint(-14F, 4F, -3F);

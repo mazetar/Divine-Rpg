@@ -5,6 +5,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.blued00r.divinerpg.entities.mobs.vethea.EntityKaros;
+import xolova.blued00r.divinerpg.entities.mobs.vethea.EntityQuadro;
+import xolova.blued00r.divinerpg.entities.mobs.vethea.EntityRaglok;
 import xolova.blued00r.divinerpg.entities.mobs.vethea.EntityWreck;
 
 public class ItemDreamflint extends Item
@@ -39,30 +42,30 @@ public class ItemDreamflint extends Item
 					var3.spawnEntityInWorld(wreck);
 					return true;
 				}
-//				else if (var11 == DivineRPG.raglokAltar.blockID && var3.isAirBlock(var4, var5 + 1, var6))
-//				{
-//					var3.playSoundAtEntity(var2, "xolovon.RaglokSpawn", 1.0F, 1.0F);
-//					EntityRaglok raglok = new EntityRaglok(var3);
-//					raglok.setLocationAndAngles((double)var4 + 0.0D, (double)var5 + 1.0D, (double)var6 + 0.0D, 0.0F, 0.0F);
-//					var3.spawnEntityInWorld(raglok);
-//					return true;
-//				}
-//				else if (var11 == DivineRPG.karosAltar.blockID && var3.isAirBlock(var4, var5 + 1, var6))
-//				{
-//					var3.playSoundAtEntity(var2, "xolovon.KarosSpawn", 1.0F, 1.0F);
-//					EntityKaros karos = new EntityKaros(var3, var4, var5, var6);
-//					karos.setLocationAndAngles((double)var4 + 0.0D, (double)var5 + 1.0D, (double)var6 + 0.0D, 0.0F, 0.0F);
-//					var3.spawnEntityInWorld(karos);
-//					return true;
-//				}
-//				else if (var11 == DivineRPG.quadroticAltar.blockID && var3.isAirBlock(var4, var5 + 1, var6))
-//				{
-//					var3.playSoundAtEntity(var2, "xolovon.QuadroSpawn", 1.0F, 1.0F);
-//					EntityQuadro quadro = new EntityQuadro(var3);
-//					quadro.setLocationAndAngles((double)var4 + 0.0D, (double)var5 + 1.0D, (double)var6 + 0.0D, 0.0F, 0.0F);
-//					var3.spawnEntityInWorld(quadro);
-//					return true;
-//				}
+				else if (var11 == DivineRPG.raglokAltar.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+				{
+					var3.playSoundAtEntity(var2, "xolovon.RaglokSpawn", 1.0F, 1.0F);
+					EntityRaglok raglok = new EntityRaglok(var3);
+					raglok.setLocationAndAngles((double)var4 + 0.0D, (double)var5 + 1.0D, (double)var6 + 0.0D, 0.0F, 0.0F);
+					var3.spawnEntityInWorld(raglok);
+					return true;
+				}
+				else if (var11 == DivineRPG.karosAltar.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+				{
+					var3.playSoundAtEntity(var2, "xolovon.KarosSpawn", 1.0F, 1.0F);
+					EntityKaros karos = new EntityKaros(var3, var4 - 27, var5 - 2, var6 - 9);
+					karos.setLocationAndAngles((double)var4 + 0.0D, (double)var5 + 1.0D, (double)var6 + 0.0D, 0.0F, 0.0F);
+					var3.spawnEntityInWorld(karos);
+					return true;
+				}
+				else if (var11 == DivineRPG.quadroticAltar.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+				{
+					var3.playSoundAtEntity(var2, "xolovon.QuadroSpawn", 1.0F, 1.0F);
+					EntityQuadro quadro = new EntityQuadro(var3);
+					quadro.setLocationAndAngles((double)var4 + 0.0D, (double)var5 + 1.0D, (double)var6 + 0.0D, 0.0F, 0.0F);
+					var3.spawnEntityInWorld(quadro);
+					return true;
+				}
 				else
 				{
 					return false;

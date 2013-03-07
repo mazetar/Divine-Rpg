@@ -322,7 +322,7 @@ public class Gorgosion extends ModelBase
 		this.leftleg1.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1 + 1.570796F;
 		this.leftleg2.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1 + -0.3490659F;
 		this.leftleg3.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1 + -1.22173F;
-		this.leftleg4.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1 + -1.22173F;
+		this.leftleg4.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1 + 1.22173F;
 		this.leftleg5.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1 + 1.570796F;
 		this.leftleg6.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1 + 1.570796F;
 		this.leftleg8.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1 + -0.3490659F;
@@ -332,7 +332,7 @@ public class Gorgosion extends ModelBase
 		this.rightleg1.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1 + 1.570796F;
 		this.rightleg2.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1 + -0.3490659F;
 		this.rightleg3.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1 + -1.22173F;
-		this.rightleg4.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1 + -1.22173F;
+		this.rightleg4.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1 + 1.22173F;
 		this.rightleg5.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1 + 1.570796F;
 		this.rightleg7.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1 + 1.570796F;
 		this.rightleg8.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1 + -0.3490659F;

@@ -45,7 +45,7 @@ public class EntityBiphron extends EntityMob
     public void onLivingUpdate()
     {
     	super.onLivingUpdate();
-    	if (this.rand.nextInt(500) == 0)
+    	if (this.rand.nextInt(50) == 0)
     	{
     		if (!this.gravMove)
     		{

@@ -47,6 +47,14 @@ public class EntityHiveSoldier extends EntityMob
         return 0;
     }
 
+    /**
+     * Returns true if the newer Entity AI code should be run
+     */
+    public boolean isAIEnabled()
+    {
+        return true;
+    }
+
     public int getMaxHealth()
     {
         return 1;

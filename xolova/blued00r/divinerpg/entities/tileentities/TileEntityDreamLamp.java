@@ -54,7 +54,7 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
 		}
 		else if(shouldLight())
 		{
-			this.coalDuration = 6000;
+			this.coalDuration = 400;
 		}
         super.updateEntity();
  	}
@@ -98,11 +98,6 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
             return null;
         }
     }
-	
-	public boolean isBurning()
-	{
-		return this.coalDuration > 0;
-	}
 
 	@Override
 	public ItemStack getStackInSlotOnClosing(int var1) 
@@ -141,20 +136,46 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
     public void readFromNBT(NBTTagCompound par1NBTTagCompound)
     {
         super.readFromNBT(par1NBTTagCompound);
-        this.coalDuration = par1NBTTagCompound.getInteger("coalDuration");
+        
+        NBTTagList var2 = par1NBTTagCompound.getTagList("Items");
+        this.inventory = new ItemStack[this.getSizeInventory()];
+
+        for (int var3 = 0; var3 < var2.tagCount(); ++var3)
+        {
+            NBTTagCompound var4 = (NBTTagCompound)var2.tagAt(var3);
+            byte var5 = var4.getByte("Slot");
+
+            if (var5 >= 0 && var5 < this.inventory.length)
+            {
+                this.inventory[var5] = ItemStack.loadItemStackFromNBT(var4);
+            }
+        }
+
+        this.coalDuration = par1NBTTagCompound.getShort("coalDuration");
     }
 
     public void writeToNBT(NBTTagCompound par1NBTTagCompound)
     {
         super.writeToNBT(par1NBTTagCompound);
-        par1NBTTagCompound.setInteger("coalDuration", this.coalDuration);
+        par1NBTTagCompound.setShort("coalDuration", (short)this.coalDuration);
+        NBTTagList var2 = new NBTTagList();
+
+        for (int var3 = 0; var3 < this.inventory.length; ++var3)
+        {
+            if (this.inventory[var3] != null)
+            {
+                NBTTagCompound var4 = new NBTTagCompound();
+                var4.setByte("Slot", (byte)var3);
+                this.inventory[var3].writeToNBT(var4);
+                var2.appendTag(var4);
+            }
+        }
+
+        par1NBTTagCompound.setTag("Items", var2);
     }
 
 	@Override
-	public void openChest() 
-	{
-		
-	}
+	public void openChest() {}
 
 	@Override
 	public void closeChest() {}

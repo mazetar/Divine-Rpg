@@ -34,7 +34,7 @@ public class EntityHoverStinger extends EntityMob
 	public EntityHoverStinger(World var1)
 	{
 		super(var1);
-		this.texture = "/mob/Alicanto.png";
+		this.texture = "/mob/HoverStinger.png";
 		this.moveSpeed = 0.15F;
 		this.getNavigator().setAvoidsWater(true);
 		this.tasks.addTask(1, new EntityAISwimming(this));
@@ -49,7 +49,7 @@ public class EntityHoverStinger extends EntityMob
 
 	public int getAttackStrength(Entity var1)
 	{
-		return 0;
+		return 1;
 	}
 
 	public int getMaxHealth()
@@ -126,7 +126,7 @@ public class EntityHoverStinger extends EntityMob
 		if (this.currentFlightTarget != null)
 		{
 			double var1 = (double)this.currentFlightTarget.posX - this.posX;
-			double var3 = (double)this.currentFlightTarget.posY - this.posY;
+			double var3 = (double)this.currentFlightTarget.posY + this.rand.nextFloat() + 1 - this.posY ;
 			double var5 = (double)this.currentFlightTarget.posZ - this.posZ;
 
 			if (Math.signum(var1) != 0 || Math.signum(var3) != 0 || Math.signum(var5) != 0)
@@ -170,5 +170,13 @@ public class EntityHoverStinger extends EntityMob
 	 public boolean doesEntityNotTriggerPressurePlate()
 	 {
 		 return true;
+	 }
+
+	 /**
+	  * Called by a player entity when they collide with an entity
+	  */
+	 public void onCollideWithPlayer(EntityPlayer par1EntityPlayer) 
+	 {
+		 this.attackEntityAsMob(par1EntityPlayer);
 	 }
 }

@@ -107,6 +107,7 @@ public class EntitySpinebackWorm extends EntityMob
 	 */
 	public void onUpdate()
 	{
+		System.out.println(this.posX + " " + this.posY + " " + this.posZ + " Head");
 		super.onUpdate();
 		this.motionY *= 0.2;
 	}

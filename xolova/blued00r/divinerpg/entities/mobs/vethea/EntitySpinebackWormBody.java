@@ -112,8 +112,9 @@ public class EntitySpinebackWormBody extends EntityMob
 	 */
 	public void onLivingUpdate()
 	{
+		System.out.println(this.posX + " " + this.posY + " " + this.posZ);
 		super.onLivingUpdate();
-		if (this.head.isDead)
+		if (this.head == null || this.head.isDead)
 		{
 			this.setDead();
 		}

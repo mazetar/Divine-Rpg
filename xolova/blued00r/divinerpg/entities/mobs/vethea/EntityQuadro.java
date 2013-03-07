@@ -38,26 +38,32 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class EntityTwins extends EntityMob implements IRangedAttackMob
+public class EntityQuadro extends EntityMob implements IRangedAttackMob
 {
 	
 	public static int ability;
 	private final int SLOW = 0;
 	private final int FAST = 1;
+	private final int MSLOW = 2;
+	private final int MFAST = 3;
 	
 	private int waitTick;
 	private int abilityCoolDown;
 	
 	private EntityAIBase rangedAI;
+	private EntityAIBase meleeAI;
 	private int rangedAttackCounter;
 	
-    public EntityTwins(World par1World)
+    public EntityQuadro(World par1World)
     {
         super(par1World);
         this.texture = "/mob/Twins.png";
         this.moveSpeed = 0.25F;
         this.health = this.getMaxHealth();
         rangedAI = new EntityAIArrowAttack(this, 0.25F, 10, 64.0F);
+        meleeAI = new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false);
+        rangedAI.setMutexBits(2);
+        meleeAI.setMutexBits(2);
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(5, rangedAI);
         this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
@@ -77,15 +83,9 @@ public class EntityTwins extends EntityMob implements IRangedAttackMob
     public void manageAbilities()
     {
 
-        if (this.ability == SLOW && this.abilityCoolDown == 0)
+        if (this.abilityCoolDown == 0)
         {
-        	this.ability = FAST;
-    		this.abilityCoolDown = 500;
-    		this.rangedAttackCounter = 0;
-    	}
-        else if (this.ability == FAST && this.abilityCoolDown == 0)
-        {
-        	this.ability = SLOW;
+        	this.ability = this.rand.nextInt(4);
     		this.abilityCoolDown = 500;
     		this.rangedAttackCounter = 0;
     	}
@@ -93,11 +93,26 @@ public class EntityTwins extends EntityMob implements IRangedAttackMob
     	{
     		this.abilityCoolDown--;
     	}
+        
+        if (this.ability == MSLOW)
+        {
+        	this.moveSpeed = 0.25F;
+        	this.setAIMoveSpeed(0.25F);
+        }
+        else if (this.ability == MFAST)
+        {
+        	this.moveSpeed = 0.5F;
+        	this.setAIMoveSpeed(0.5F);
+        }
     }
 
 	public int getAttackStrength(Entity par1)
     {
     	int var1 = 1;
+    	if (this.ability == MSLOW)
+    	{
+    		var1 = 3;
+    	}
         return var1;
     }
 

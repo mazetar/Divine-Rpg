@@ -310,7 +310,7 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityDreamwrecker.class, new RenderDreamwrecker(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityTocaxin.class, new RenderTocaxin(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityShadahier.class, new RenderShadahier(new ModelWildFire(), 0.0F));
-        RenderingRegistry.registerEntityRenderingHandler(EntityAcidHag.class, new RenderAcidHag(new Lorga(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityAcidHag.class, new RenderAcidHag(new Kazrotic(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityKazrotic.class, new RenderKazrotic(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityHelio.class, new RenderHelio(new ModelWildFire(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityGorgosion.class, new RenderGorgosion(new ModelWildFire(), 0.0F));

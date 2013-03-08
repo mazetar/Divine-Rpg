@@ -535,7 +535,7 @@ public class EntityWreck extends EntityMob implements IRangedAttackMob, IBossDis
 	        }
 	        break;
 		case STRENGTH:
-	        if ((this.rangedAttackCounter & 4) == 0)
+	        if ((this.rangedAttackCounter % 4) == 0)
 	        {
 		        EntityArrow var4 = new EntityArrow(this.worldObj, this, par1, 1.6F, 12.0F);
 		        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));

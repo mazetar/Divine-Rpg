@@ -10,6 +10,7 @@ import net.minecraft.world.World;
 
 public class EntityMandragoraProjectile extends EntityThrowable
 {
+	private EntityLiving thrower;
     public EntityMandragoraProjectile(World par1World)
     {
         super(par1World);
@@ -18,6 +19,7 @@ public class EntityMandragoraProjectile extends EntityThrowable
     public EntityMandragoraProjectile(World par1World, EntityLiving par2EntityLiving)
     {
         super(par1World, par2EntityLiving);
+        this.thrower = par2EntityLiving;
     }
 
     public EntityMandragoraProjectile(World par1World, double par2, double par4, double par6)
@@ -33,6 +35,7 @@ public class EntityMandragoraProjectile extends EntityThrowable
     	if (par1.entityHit != null && par1.entityHit instanceof EntityMandragora){}
     	else if (!this.worldObj.isRemote)
         {
+    		par1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), 8);
             this.setDead();
         }
     }

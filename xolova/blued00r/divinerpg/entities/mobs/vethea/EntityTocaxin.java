@@ -33,8 +33,8 @@ public class EntityTocaxin extends EntityMob
     public EntityTocaxin(World var1)
     {
         super(var1);
-        this.texture = "/mob/tocaxin.png";
-        this.moveSpeed = 0.1F;
+        this.texture = "/mob/Tocaxin.png";
+        this.moveSpeed = 0.25F;
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(4, new EntityAIMoveTwardsRestriction(this, this.moveSpeed));
         this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
@@ -64,12 +64,12 @@ public class EntityTocaxin extends EntityMob
 
     public int getAttackStrength(Entity var1)
     {
-        return 0;
+        return 10;
     }
 
     public int getMaxHealth()
     {
-        return 1;
+        return 65;
     }
 
     /**
@@ -93,7 +93,7 @@ public class EntityTocaxin extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "mob.RPG.Tocaxin";
     }
 
     /**
@@ -101,7 +101,7 @@ public class EntityTocaxin extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.DeathCryxHit";
+        return "mob.RPG.TocaxinHit";
     }
 
     /**
@@ -117,7 +117,7 @@ public class EntityTocaxin extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "";
     }
 
     /**
@@ -134,5 +134,14 @@ public class EntityTocaxin extends EntityMob
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.polishedPearls.itemID, 1);
     }
 }

@@ -591,6 +591,64 @@ public class Quadro extends ModelBase
 		{
 			this.rotateOffset += 0.15F;
 		}
+
+		this.rotated1.rotateAngleX = this.rotateOffset;
+		this.rotated2.rotateAngleX = this.rotateOffset;
+		this.rotated3.rotateAngleX = this.rotateOffset;
+		this.rotated4.rotateAngleX = this.rotateOffset;
+		this.rotated5.rotateAngleX = this.rotateOffset;
+		this.rotated6.rotateAngleX = this.rotateOffset;
+		this.rotated7.rotateAngleX = this.rotateOffset;
+		this.rotated8.rotateAngleX = this.rotateOffset;
+		this.rotated9.rotateAngleX = this.rotateOffset;
+		this.rotated10.rotateAngleX = this.rotateOffset;
+		this.rotated11.rotateAngleX = this.rotateOffset;
+		this.rotated12.rotateAngleX = this.rotateOffset;
+		this.rotated13.rotateAngleX = this.rotateOffset;
+		this.rotated14.rotateAngleX = this.rotateOffset;
+		this.rotated15.rotateAngleX = this.rotateOffset;
+		this.rotated16.rotateAngleX = this.rotateOffset;
+		this.rotated17.rotateAngleX = this.rotateOffset;
+		this.rotated18.rotateAngleX = this.rotateOffset;
+		this.rotated19.rotateAngleX = this.rotateOffset;
+		this.rotated20.rotateAngleX = this.rotateOffset;
+		this.rotated21.rotateAngleX = this.rotateOffset;
+		this.rotated22.rotateAngleX = this.rotateOffset;
+		this.rotated23.rotateAngleX = this.rotateOffset;
+		this.rotated24.rotateAngleX = this.rotateOffset;
+		this.rotated25.rotateAngleX = this.rotateOffset;
+		this.rotated26.rotateAngleX = this.rotateOffset;
+		this.rotated27.rotateAngleX = this.rotateOffset;
+		this.rotated28.rotateAngleX = this.rotateOffset;
+		this.rotated29.rotateAngleX = this.rotateOffset;
+		this.rotated30.rotateAngleX = this.rotateOffset;
+		this.rotated31.rotateAngleX = this.rotateOffset;
+		this.rotated32.rotateAngleX = this.rotateOffset;
+		this.rotated33.rotateAngleX = this.rotateOffset;
+		this.rotated34.rotateAngleX = this.rotateOffset;
+		this.rotated35.rotateAngleX = this.rotateOffset;
+		this.rotated36.rotateAngleX = this.rotateOffset;
+		this.rotated37.rotateAngleX = this.rotateOffset;
+		this.rotated38.rotateAngleX = this.rotateOffset;
+		this.rotated39.rotateAngleX = this.rotateOffset;
+		this.rotated40.rotateAngleX = this.rotateOffset;
+		this.rotated41.rotateAngleX = this.rotateOffset;
+		this.rotated42.rotateAngleX = this.rotateOffset;
+		this.rotated43.rotateAngleX = this.rotateOffset;
+		this.rotated44.rotateAngleX = this.rotateOffset;
+		this.rotated45.rotateAngleX = this.rotateOffset;
+		this.rotated46.rotateAngleX = this.rotateOffset;
+		this.rotated47.rotateAngleX = this.rotateOffset;
+		this.rotated48.rotateAngleX = this.rotateOffset;
+		this.rotated49.rotateAngleX = this.rotateOffset;
+		this.rotated50.rotateAngleX = this.rotateOffset;
+		this.rotated51.rotateAngleX = this.rotateOffset;
+		this.rotated52.rotateAngleX = this.rotateOffset;
+		this.rotated53.rotateAngleX = this.rotateOffset;
+		this.rotated54.rotateAngleX = this.rotateOffset;
+		this.rotated55.rotateAngleX = this.rotateOffset;
+		this.rotated56.rotateAngleX = this.rotateOffset;
+		this.rotated58.rotateAngleX = this.rotateOffset;
   }
 
 }

@@ -331,6 +331,7 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityLheiva.class, new RenderLheiva(new Lheiva(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityTwins.class, new RenderTwins(new Twins(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityEndiku.class, new RenderBasic(new Endiku(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityTempleGuardian.class, new RenderBasic(new ModelBiped(), 0.0F));
         
         /*
          * 1.3 Projectiles

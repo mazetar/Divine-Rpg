@@ -14,6 +14,7 @@ import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAIMoveTwardsRestriction;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
@@ -29,7 +30,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import xolova.blued00r.divinerpg.DivineRPG;
 
-public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDisplayData
+public class EntityKaros extends EntityMob implements IBossDisplayData
 {
 	
 	private static int ability;
@@ -41,33 +42,26 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
 	private int waitTick;
 	private int abilityCoolDown;
 	private int[][] cannonList = new int[36][3];
-	private int[][] ceilingList = new int[36][3];
+	private int[][] ceilingList = new int[47][3];
+	private int targetY;
 	
-	private EntityAIBase meleeAI;
-	private EntityAIBase rangedAISpeed = new EntityAIArrowAttack(this, 0.25F, 5, 64.0F);
-	private EntityAIBase rangedAI = new EntityAIArrowAttack(this, 0.25F, 20, 64.0F);
-	private EntityAIBase rangedAIOnce = new EntityAIArrowAttack(this, 0.25F, 1, 64.0F);
 	private int rangedAttackCounter;
 	
     public EntityKaros(World par1)
     {
         super(par1);
-        this.texture = "/mob/Raglok.png";
+        this.texture = "/mob/Karos.png";
         this.moveSpeed = 0.25F;
-        meleeAI.setMutexBits(2);
-        rangedAI.setMutexBits(2);
-        meleeAI = new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false);
         this.health = this.getMaxHealth();
         this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(2, meleeAI);
-        this.tasks.addTask(2, rangedAI);
+        this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
+        this.tasks.addTask(4, new EntityAIMoveTwardsRestriction(this, this.moveSpeed));
         this.tasks.addTask(6, new EntityAIWander(this, this.moveSpeed));
-        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 64.0F));
+        this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(7, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 64.0F, 0, true));
         this.isImmuneToFire = true;
-        System.out.println("constructor");
         this.ability = DEFAULT;
     }
     
@@ -110,6 +104,56 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
     	this.cannonList[33] = new int[]{par2 + 29, par3 + 2, par4 + 13};
     	this.cannonList[34] = new int[]{par2 + 29, par3 + 2, par4 + 15};
     	this.cannonList[35] = new int[]{par2 + 29, par3 + 2, par4 + 17};
+    	
+    	this.ceilingList[0] = new int[]{par2 + 13, par3 + 4, par4 + 4};
+    	this.ceilingList[1] = new int[]{par2 + 13, par3 + 4, par4 + 5};
+    	this.ceilingList[2] = new int[]{par2 + 13, par3 + 4, par4 + 6};
+    	this.ceilingList[3] = new int[]{par2 + 14, par3 + 4, par4 + 4};
+    	this.ceilingList[4] = new int[]{par2 + 14, par3 + 4, par4 + 5};
+    	this.ceilingList[5] = new int[]{par2 + 14, par3 + 4, par4 + 6};
+    	this.ceilingList[6] = new int[]{par2 + 15, par3 + 4, par4 + 4};
+    	this.ceilingList[7] = new int[]{par2 + 15, par3 + 4, par4 + 5};
+    	this.ceilingList[8] = new int[]{par2 + 15, par3 + 4, par4 + 6};
+    	this.ceilingList[9] = new int[]{par2 + 13, par3 + 4, par4 + 14};
+    	this.ceilingList[10] = new int[]{par2 + 13, par3 + 4, par4 + 15};
+    	this.ceilingList[11] = new int[]{par2 + 13, par3 + 4, par4 + 16};
+    	this.ceilingList[12] = new int[]{par2 + 14, par3 + 4, par4 + 14};
+    	this.ceilingList[13] = new int[]{par2 + 14, par3 + 4, par4 + 15};
+    	this.ceilingList[14] = new int[]{par2 + 14, par3 + 4, par4 + 16};
+    	this.ceilingList[15] = new int[]{par2 + 15, par3 + 4, par4 + 14};
+    	this.ceilingList[16] = new int[]{par2 + 15, par3 + 4, par4 + 15};
+    	this.ceilingList[17] = new int[]{par2 + 15, par3 + 4, par4 + 16};
+    	this.ceilingList[18] = new int[]{par2 + 18, par3 + 4, par4 + 9};
+    	this.ceilingList[19] = new int[]{par2 + 18, par3 + 4, par4 + 10};
+    	this.ceilingList[20] = new int[]{par2 + 18, par3 + 4, par4 + 11};
+    	this.ceilingList[21] = new int[]{par2 + 19, par3 + 4, par4 + 9};
+    	this.ceilingList[22] = new int[]{par2 + 19, par3 + 4, par4 + 10};
+    	this.ceilingList[23] = new int[]{par2 + 19, par3 + 4, par4 + 11};
+    	this.ceilingList[23] = new int[]{par2 + 20, par3 + 4, par4 + 9};
+    	this.ceilingList[24] = new int[]{par2 + 20, par3 + 4, par4 + 10};
+    	this.ceilingList[25] = new int[]{par2 + 20, par3 + 4, par4 + 11};
+    	this.ceilingList[26] = new int[]{par2 + 22, par3 + 4, par4 + 12};
+    	this.ceilingList[27] = new int[]{par2 + 22, par3 + 4, par4 + 13};
+    	this.ceilingList[28] = new int[]{par2 + 22, par3 + 4, par4 + 14};
+    	this.ceilingList[29] = new int[]{par2 + 23, par3 + 4, par4 + 12};
+    	this.ceilingList[30] = new int[]{par2 + 23, par3 + 4, par4 + 13};
+    	this.ceilingList[31] = new int[]{par2 + 23, par3 + 4, par4 + 14};
+    	this.ceilingList[32] = new int[]{par2 + 24, par3 + 4, par4 + 12};
+    	this.ceilingList[33] = new int[]{par2 + 24, par3 + 4, par4 + 13};
+    	this.ceilingList[34] = new int[]{par2 + 24, par3 + 4, par4 + 14};
+    	this.ceilingList[35] = new int[]{par2 + 23, par3 + 4, par4 + 4};
+    	this.ceilingList[36] = new int[]{par2 + 23, par3 + 4, par4 + 5};
+    	this.ceilingList[37] = new int[]{par2 + 23, par3 + 4, par4 + 6};
+    	this.ceilingList[38] = new int[]{par2 + 24, par3 + 4, par4 + 4};
+    	this.ceilingList[39] = new int[]{par2 + 24, par3 + 4, par4 + 5};
+    	this.ceilingList[40] = new int[]{par2 + 24, par3 + 4, par4 + 6};
+    	this.ceilingList[41] = new int[]{par2 + 25, par3 + 4, par4 + 4};
+    	this.ceilingList[42] = new int[]{par2 + 25, par3 + 4, par4 + 5};
+    	this.ceilingList[43] = new int[]{par2 + 25, par3 + 4, par4 + 6};
+    	this.ceilingList[44] = new int[]{par2 + 24, par3 + 4, par4 + 12};
+    	this.ceilingList[45] = new int[]{par2 + 24, par3 + 4, par4 + 13};
+    	this.ceilingList[46] = new int[]{par2 + 24, par3 + 4, par4 + 14};
+    	this.targetY = par3;
     }
     
     protected void updateAITasks()
@@ -120,8 +164,6 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
     
     public void manageAbilities()
     {
-    	System.out.println("1" + "," + this.ability + "," + this.abilityCoolDown + "," + this.entityId);
-
 
         if (!this.worldObj.isRemote)
         {
@@ -132,21 +174,24 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
     	
     	if (this.ability == DEFAULT && this.abilityCoolDown == 0)
     	{
-    		this.abilityCoolDown = 40;
-    		switch(this.rand.nextInt(4))
+    		this.abilityCoolDown = 10;
+    		switch(this.rand.nextInt(3))
     		{
     		case 0:
     			this.ability = CEILING;
-    			this.rangedAttackCounter = 100;
+    			this.rangedAttackCounter = 600;
     			this.moveSpeed = 0;
     			break;
     		case 1:
     			this.ability = CANNONS;
-    			this.rangedAttackCounter = -1;
+    			this.rangedAttackCounter = 600;
     			break;
     		case 2:
-    			this.ability = FLOOR;
-    			this.rangedAttackCounter = 100;
+    			if (this.rand.nextInt(8) == 0)
+    			{
+        			this.ability = FLOOR;
+        			this.rangedAttackCounter = 600;
+    			}
     			break;
     		default: break;
     		}
@@ -158,7 +203,7 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
     	}
     	else if (this.ability != 0 && this.abilityCoolDown == 0)
     	{
-    		this.abilityCoolDown = 40;
+    		this.abilityCoolDown = 10;
     	}
     	
     }
@@ -166,7 +211,6 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
     private void message()
     {
         List list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.expand(64.0D, 64.0D, 64.0D));
-        System.out.println("Messaging");
         for (int var1 = 0; var1 < list.size(); ++var1)
         {
         	if (list.get(var1) instanceof EntityPlayer)
@@ -213,20 +257,46 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
     public void onLivingUpdate()
     {
     	super.onLivingUpdate();
-    	if(this.ability == CEILING)
+    	int var2;
+    	if (this.rangedAttackCounter == 0)
     	{
-    		if (this.rangedAttackCounter == 100)
+    		this.ability = DEFAULT;
+    	}
+    	else if(this.ability == CEILING)
+    	{
+    		var2 = this.rand.nextInt(46);
+    		if ((this.rangedAttackCounter % 4) == 0)
     		{
-    			this.ability = DEFAULT;
-    			this.rangedAttackCounter = 0;
+    			DivineRPG.helioticBeam.dispense(this.worldObj, ceilingList[var2][0], ceilingList[var2][1], ceilingList[var2][2]);
     		}
+    		this.rangedAttackCounter--;
     	}
     	else if(this.ability == CANNONS)
     	{
-    		for (int i = 0; i < cannonList.length; i++)
+    		var2 = this.rand.nextInt(36);
+    		if ((this.rangedAttackCounter % 4) == 0)
     		{
-    			DivineRPG.karosCannon.dispense(this.worldObj, cannonList[i][0], cannonList[i][1], cannonList[i][2]);
+        		DivineRPG.karosCannon.dispense(this.worldObj, cannonList[var2][0], cannonList[var2][1], cannonList[var2][2]);
     		}
+    		this.rangedAttackCounter--;
+    	}
+    	else if(this.ability == FLOOR)
+    	{
+			for (int i = 0; i < 10; i++)
+			{
+				double var4 = 0;
+				while (var4 < 2 * Math.PI)
+				{
+					int var1 = (int) Math.round(Math.sin(var4)*i);
+					int var3 = (int) Math.round(Math.cos(var4)*i);
+					if (this.worldObj.getBlockId((int)this.posX + var1, this.targetY, (int)this.posZ + var3) == DivineRPG.karosHeatTileGreen.blockID)
+					{
+						this.worldObj.setBlock((int)this.posX + var1, this.targetY, (int)this.posZ + var3, DivineRPG.karosHeatTileRed.blockID);
+					}
+					var4 += Math.PI / 8.0D;
+				}
+			}
+			this.ability = DEFAULT;
     	}
     }
 
@@ -304,47 +374,12 @@ public class EntityKaros extends EntityMob implements IRangedAttackMob, IBossDis
     /**
      * Called when the entity is attacked.
      */
-    public boolean attackEntityFrom(DamageSource par1DamageSource, int par2)
+    public boolean attackEntityFrom(DamageSource par1, int par2)
     {
-    	return super.attackEntityFrom(par1DamageSource, par2);
-    }
-
-
-	@Override
-	public void attackEntityWithRangedAttack(EntityLiving par1) 
-	{
-		switch(this.ability)
-		{
-		case CANNONS:
-			this.worldObj.spawnEntityInWorld(new EntityLightningBolt(this.worldObj, (double)par1.lastTickPosX, (double)par1.lastTickPosY, (double)par1.lastTickPosZ));
-			this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
-			this.rangedAttackCounter++;
-			if (this.rangedAttackCounter == 10)
-			{
-				this.ability = DEFAULT;
-			}
-	        break;
-		case CEILING:
-	        EntityRaglokBomb var2 = new EntityRaglokBomb(this.worldObj);
-	        var2.setPosition(par1.posX, par1.posY + 5, par1.posZ);
-	        var2.setVelocity(0, -2, 0);
-	        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
-	        this.worldObj.spawnEntityInWorld(var2);
-	        ++this.rangedAttackCounter;
-	        if (this.rangedAttackCounter == 5)
-	        {
-	        	this.ability = DEFAULT;
-	        }
-	        break;
-        default: break;
-		}
-	}
-
-    /**
-     * Called by a player entity when they collide with an entity
-     */
-    public void onCollideWithPlayer(EntityPlayer par1EntityPlayer) 
-    {
-    	this.attackEntityAsMob(par1EntityPlayer);
+    	if (par1 == DamageSource.explosion || par1 == DamageSource.explosion2)
+    	{
+    		return false;
+    	}
+    	return super.attackEntityFrom(par1, par2);
     }
 }

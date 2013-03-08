@@ -2125,7 +2125,7 @@ public class DivineRPG
     public static int karosCannonID;
     public static BlockKarosCannon karosCannon;
     public static int helioticBeamID;
-    public static Block helioticBeam;
+    public static BlockHelioticBeam helioticBeam;
     public static int cryptFloorID;
     public static Block cryptFloor;
     public static int firewoodID;
@@ -2528,9 +2528,6 @@ public class DivineRPG
 
     public static int everArrowID;
     public static Item everArrow;
-    
-    public static int meihurrID;
-    public static Item meihurr;
 
 	//TODO
     @Mod.PreInit
@@ -3648,7 +3645,6 @@ public class DivineRPG
         eversightID = var2.getItem("eversight", id++).getInt();
         everfightID = var2.getItem("everfight", id++).getInt();
         everArrowID = var2.getItem("everArrow", id++).getInt();
-        meihurrID = var2.getItem("meihurr", id++).getInt();
         //TODO
         /*
          * Dimension IDs
@@ -4730,7 +4726,7 @@ public class DivineRPG
         villageLamp = new Block(villageLampID, 45, Material.glass).setBlockName("villageLamp").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         cellLamp = new Block(cellLampID, 57, Material.glass).setBlockName("cellLamp").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         barredDoor = new BlockBarredDoor(barredDoorID, Material.iron, 58).setBlockName("barredDoor").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        firecrystal = new Block(firecrystalID, 60, Material.glass).setLightValue(0.5F).setBlockName("firecrystal").setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        firecrystal = new Block(firecrystalID, 60, Material.glass).setLightValue(0.7F).setBlockName("firecrystal").setStepSound(Block.soundGlassFootstep).setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         firelight = new Block(firelightID, 60, Material.glass).setBlockName("firelight").setLightValue(1.0F).setStepSound(Block.soundGlassFootstep).setHardness(1F).setResistance(1.0F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         hyrewood = new BlockHyrewood(hyrewoodID).setBlockName("hyrewood").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         mintwoodLeaves = new BlockDreamwoodLeaves(mintwoodLeavesID, 63).setBlockName("mintwoodLeaves").setHardness(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
@@ -4776,10 +4772,9 @@ public class DivineRPG
         hallWall = new Block(hallWallID, 109, Material.rock).setBlockName("hallWall").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         karosBricks = new Block(karosBricksID, 94, Material.rock).setBlockName("karosBricks").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         karosBricks2 = new Block(karosBricks2ID, 95, Material.rock).setBlockName("karosBricks2").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        helioticBeam = new BlockHelioticBeam(helioticBeamID).setBlockName("helioticBeam").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
+        helioticBeam = (BlockHelioticBeam) new BlockHelioticBeam(helioticBeamID).setBlockName("helioticBeam").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
         karosCannon = (BlockKarosCannon) new BlockKarosCannon(karosCannonID, 76, Material.rock).setBlockName("karosCannon").setHardness(1F).setResistance(1F).setTextureFile("/Xolovon4.png").setCreativeTab(tabUtility).setRequiresSelfNotify();
         purpleFire = new BlockPurpleFire(purpleFireID, 94).setBlockName("purpleFire").setTextureFile("/Xolovon4.png").setCreativeTab(tabBlocks);
-        meihurr = new ItemMeihurrSpawner(purpleFireID).setItemName("meihurr").setTextureFile("/Xolovon4.png").setCreativeTab(CreativeTabs.tabRedstone);
         
         /*
          * Spawners
@@ -4866,15 +4861,15 @@ public class DivineRPG
         vetheanDemonizedTemplate = new Item(vetheanDemonizedTemplateID).setItemName("vetheanDemonizedTemplate").setIconCoord(13, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
         vetheanTormentedTemplate = new Item(vetheanTormentedTemplateID).setItemName("vetheanTormentedTemplate").setIconCoord(13, 15).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
         
-	teakerLump = new Item(teakerLumpID).setItemName("TeakerLump").setIconCoord(11, 0).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        amthrimisLump = new Item(amthirmisLumpID).setItemName("AmthrimisLump").setIconCoord(11, 1).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        darvenLump = new Item(darvenLumpID).setItemName("DarvenLump").setIconCoord(11, 2).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        cermileLump = new Item(cermileLumpID).setItemName("CermileLump").setIconCoord(11, 3).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        pardimalLump = new Item(pardimalLumpID).setItemName("pardimalLump").setIconCoord(11, 4).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        quadroticLump = new Item(quadroticLumpID).setItemName("quadroticLump").setIconCoord(11, 5).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        karosLump = new Item(karosLumpID).setItemName("karosLump").setIconCoord(11, 6).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        heliosisLump = new Item(heliosisLumpID).setItemName("heliosisLump").setIconCoord(11, 7).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
-        arksianeLump = new Item(arksianeLumpID).setItemName("arksaineLump").setIconCoord(11, 8).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        teakerLump = new Item(teakerLumpID).setItemName("TeakerLump").setIconCoord(0, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        amthrimisLump = new Item(amthirmisLumpID).setItemName("AmthrimisLump").setIconCoord(1, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        darvenLump = new Item(darvenLumpID).setItemName("DarvenLump").setIconCoord(2, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        cermileLump = new Item(cermileLumpID).setItemName("CermileLump").setIconCoord(3, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        pardimalLump = new Item(pardimalLumpID).setItemName("pardimalLump").setIconCoord(4, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        quadroticLump = new Item(quadroticLumpID).setItemName("quadroticLump").setIconCoord(5, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        karosLump = new Item(karosLumpID).setItemName("karosLump").setIconCoord(6, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        heliosisLump = new Item(heliosisLumpID).setItemName("heliosisLump").setIconCoord(7, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
+        arksianeLump = new Item(arksianeLumpID).setItemName("arksaineLump").setIconCoord(8, 11).setTextureFile("/Xolovon4.png").setCreativeTab(tabItems);
 
         honeysuckle = new ItemVetheanFood(honeysuckleID, 1, 0.2F, true).setItemName("honeysuckle").setIconCoord(0, 14).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);
         dreamCarrot = new ItemVetheanFood(dreamCarrotID, 3, 0.4F, true).setItemName("dreamCarrot").setIconCoord(0, 12).setTextureFile("/Xolovon4.png").setCreativeTab(tabHerb);

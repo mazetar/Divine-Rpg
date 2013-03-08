@@ -2,6 +2,7 @@ package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
 import java.util.List;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.entities.vethea.EntityRaglokBomb;
 
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -65,7 +66,6 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 64.0F, 0, true));
         this.isImmuneToFire = true;
-        System.out.println("constructor");
         this.ability = DEFAULT;
     }
     
@@ -77,9 +77,6 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
     
     public void manageAbilities()
     {
-    	System.out.println("1" + "," + this.ability + "," + this.abilityCoolDown + "," + this.entityId);
-
-
         if (!this.worldObj.isRemote)
         {
             this.dataWatcher.updateObject(16, Integer.valueOf(this.health));
@@ -155,7 +152,6 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
     private void message()
     {
         List list = this.worldObj.getEntitiesWithinAABBExcludingEntity(this, this.boundingBox.expand(64.0D, 64.0D, 64.0D));
-        System.out.println("Messaging");
         for (int var1 = 0; var1 < list.size(); ++var1)
         {
         	if (list.get(var1) instanceof EntityPlayer)
@@ -164,16 +160,20 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
         		switch (this.ability)
         		{
         		case LIGHTNING:
-        			var2.sendChatToPlayer("CHARRGEE!");
+        			this.playSound("mob.RPG.RaglokHelio", 1.0F, 1.0F);
+        	        var2.sendChatToPlayer("Heliosis");
         			break;
         		case BLIND:
-        			var2.sendChatToPlayer("Come Feel the Soul of Arksiane.");
+        			this.playSound("mob.RPG.RaglokDark", 1.0F, 1.0F);
+        	        var2.sendChatToPlayer("Come Feel the Soul of Arksiane.");
         			break;
         		case BOMBS:
-        			var2.sendChatToPlayer("Arksiane, give me fire!");
+        			this.playSound("mob.RPG.RaglokRain", 1.0F, 1.0F);
+        	        var2.sendChatToPlayer("Arksiane, give me fire!");
         			break;
         		case SLOW:
-        			var2.sendChatToPlayer("Stop at once in the name of the great Arksiane!");
+        			this.playSound("mob.RPG.Raglok", 1.0F, 1.0F);
+        	        var2.sendChatToPlayer("Stop at once in the name of the great Arksiane!");
         			break;
         		default:
         			break;
@@ -211,7 +211,6 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
     {
         super.entityInit();
         this.dataWatcher.addObject(16, new Integer(this.getMaxHealth()));
-        System.out.println("init");
     }
 
     /**
@@ -235,7 +234,7 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "";
     }
 
     /**
@@ -243,7 +242,7 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.DeathCryxHit";
+        return "";
     }
 
     /**
@@ -259,7 +258,7 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "mob.RPG.RaglokAvenge";
     }
 
     /**
@@ -342,7 +341,6 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
 		{
 		case LIGHTNING:
 			this.worldObj.spawnEntityInWorld(new EntityLightningBolt(this.worldObj, (double)par1.lastTickPosX, (double)par1.lastTickPosY, (double)par1.lastTickPosZ));
-			this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 			this.rangedAttackCounter++;
 			if (this.rangedAttackCounter == 10)
 			{
@@ -353,7 +351,6 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
 	        EntityRaglokBomb var2 = new EntityRaglokBomb(this.worldObj);
 	        var2.setPosition(par1.posX, par1.posY + 5, par1.posZ);
 	        var2.setVelocity(0, -2, 0);
-	        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 	        this.worldObj.spawnEntityInWorld(var2);
 	        ++this.rangedAttackCounter;
 	        if (this.rangedAttackCounter == 5)
@@ -371,5 +368,14 @@ public class EntityRaglok extends EntityMob implements IRangedAttackMob, IBossDi
     public void onCollideWithPlayer(EntityPlayer par1EntityPlayer) 
     {
     	this.attackEntityAsMob(par1EntityPlayer);
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.heliosisLump.itemID, 25);
     }
 }

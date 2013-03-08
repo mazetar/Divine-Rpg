@@ -1,5 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -24,7 +25,7 @@ public class EntityHerbomancer extends EntityMob
     {
         super(var1);
         this.texture = "/mob/Herbomancer.png";
-        this.moveSpeed = 0F;
+        this.moveSpeed = 0.1F;
         this.getNavigator().setBreakDoors(true);
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAIBreakDoor(this));
@@ -42,12 +43,12 @@ public class EntityHerbomancer extends EntityMob
     
     public int getAttackStrength(Entity var1)
     {
-        return 0;
+        return 5;
     }
 
     public int getMaxHealth()
     {
-        return 1;
+        return 40;
     }
 
     /**
@@ -84,7 +85,7 @@ public class EntityHerbomancer extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.zombie";
+        return "mob.RPG.Herbomancer";
     }
 
     /**
@@ -92,7 +93,7 @@ public class EntityHerbomancer extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.zombiehurt";
+        return "mob.RPG.HerbomancerHit";
     }
 
     /**
@@ -100,7 +101,7 @@ public class EntityHerbomancer extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.zombiedeath";
+        return "";
     }
 
     /**
@@ -117,5 +118,14 @@ public class EntityHerbomancer extends EntityMob
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.cleanPearls.itemID, 1);
     }
 }

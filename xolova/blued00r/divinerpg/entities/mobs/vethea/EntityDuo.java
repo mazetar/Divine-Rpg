@@ -2,6 +2,7 @@ package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
 import java.util.List;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.entities.vethea.EntityBouncingProjectile;
 import xolova.blued00r.divinerpg.entities.vethea.EntityWreckExplosiveShot;
 import xolova.blued00r.divinerpg.entities.vethea.EntityWreckStrengthShot;
@@ -52,7 +53,7 @@ public abstract class EntityDuo extends EntityMob
     public EntityDuo(World par1)
     {
         super(par1);
-        this.texture = "/mob/Wreck.png";
+        this.texture = "/mob/Duo.png";
         this.moveSpeed = 0.25F;
         meleeAI = new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false);
         this.health = this.getMaxHealth();
@@ -99,17 +100,17 @@ public abstract class EntityDuo extends EntityMob
 
 	public int getAttackStrength(Entity par1)
     {
-    	int var1 = 1;
+    	int var1 = 5;
     	if (this.ability == SLOW)
     	{
-    		var1 = 3;
+    		var1 = 7;
     	}
         return var1;
     }
 
     public int getMaxHealth()
     {
-        return 1;
+        return 20;
     }
 
     /**
@@ -133,7 +134,7 @@ public abstract class EntityDuo extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "mob.RPG.Duo";
     }
 
     /**
@@ -141,7 +142,7 @@ public abstract class EntityDuo extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.DeathCryxHit";
+        return "mob.RPG.DuoHit";
     }
 
     /**
@@ -157,7 +158,7 @@ public abstract class EntityDuo extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "";
     }
 
     /**
@@ -182,5 +183,14 @@ public abstract class EntityDuo extends EntityMob
     public void onCollideWithPlayer(EntityPlayer par1EntityPlayer) 
     {
     	this.attackEntityAsMob(par1EntityPlayer);
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.dirtyPearls.itemID, 1);
     }
 }

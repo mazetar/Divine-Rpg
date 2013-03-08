@@ -1,5 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.entities.mobs.twilight.EntityAngryBunny;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -27,7 +28,7 @@ public class EntityVhraak extends EntityMob
 	public EntityVhraak(World var1)
     {
         super(var1);
-        this.texture = "/mob/vamacheron.png";
+        this.texture = "/mob/Vhraak.png";
         this.moveSpeed = 0.4F;
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
@@ -47,56 +48,52 @@ public class EntityVhraak extends EntityMob
     
     protected void updateAITasks()
     {
-    	if (this.getAttackTarget() != null && this.waitTick == 0 && (this.getDistanceToEntity(this.getAttackTarget()) <= 0.75 || this.hasAttacked))
+    	if (this.getAttackTarget() != null && this.waitTick == 0)
     	{
+    		System.out.println("charge start");
     		this.waitTick = 40;
-    		this.spawned = true;
-    	}
-    	else if (this.waitTick == 0)
-    	{
-    		if (!this.spawned)
+    		this.setAIMoveSpeed(0.4F);
+
+    		if (this.lifeTick == -1)
     		{
-    			this.spawned = false;
-    		}
-    		else if (this.spawnTick >= 0)
-    		{
-    			this.spawnTick--;
-    		}
-    		else if (this.lifeTick == -1)
-    		{
-    			this.spawnTick = 40;
-    			EntityVhraak var2 = new EntityVhraak(this.worldObj, 40);
+    			EntityVhraak var2 = new EntityVhraak(this.worldObj, 30);
     			var2.setLocationAndAngles(this.posX + 1, this.posY, this.posZ + 1, this.rotationYaw, this.rotationPitch);
     			this.worldObj.spawnEntityInWorld(var2);
 
-    			var2 = new EntityVhraak(this.worldObj, 40);
+    			var2 = new EntityVhraak(this.worldObj, 30);
     			var2.setLocationAndAngles(this.posX - 1, this.posY, this.posZ + 1, this.rotationYaw, this.rotationPitch);
     			this.worldObj.spawnEntityInWorld(var2);
 
-    			var2 = new EntityVhraak(this.worldObj, 40);
+    			var2 = new EntityVhraak(this.worldObj, 30);
     			var2.setLocationAndAngles(this.posX + 1, this.posY, this.posZ - 1, this.rotationYaw, this.rotationPitch);
     			this.worldObj.spawnEntityInWorld(var2);
 
-    			var2 = new EntityVhraak(this.worldObj, 40);
+    			var2 = new EntityVhraak(this.worldObj, 30);
     			var2.setLocationAndAngles(this.posX - 1, this.posY, this.posZ - 1, this.rotationYaw, this.rotationPitch);
     			this.worldObj.spawnEntityInWorld(var2);
     		}
-
-    		super.updateAITasks();
-    	}
-    	else if (this.waitTick == 5)
-    	{
-    		this.setAIMoveSpeed(0);
-    		--this.waitTick;
     	}
     	else if (this.waitTick == 1)
     	{
     		this.setAIMoveSpeed(this.moveSpeed);
     		--this.waitTick;
     	}
-    	else
+    	else if (this.waitTick == 5)
+    	{
+    		this.setAIMoveSpeed(0);
+    		--this.waitTick;
+    		System.out.println("Stopping");
+    	}
+    	else if (this.waitTick > 0)
     	{
     		--this.waitTick;
+    		System.out.println(this.waitTick);
+    		this.moveEntityWithHeading(0F, this.getAIMoveSpeed());
+    	}
+    	
+    	if (this.waitTick <= 0)
+    	{
+        	super.updateAITasks();
     	}
     }
 
@@ -120,7 +117,7 @@ public class EntityVhraak extends EntityMob
 
     public int getAttackStrength(Entity var1)
     {
-        return 1;
+        return 30;
     }
 
     /**
@@ -132,13 +129,8 @@ public class EntityVhraak extends EntityMob
     }
 
     public int getMaxHealth()
-    {
-    	if (this.lifeTick == -1)
-    	{
-    		return 2;
-    	}
-    	
-    	return 1;
+    {	
+    	return 100;
     }
 
     /**
@@ -154,7 +146,7 @@ public class EntityVhraak extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.zombie";
+        return "mob.RPG.Vhraak";
     }
 
     /**
@@ -162,7 +154,7 @@ public class EntityVhraak extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.zombiehurt";
+        return "mob.RPG.VhraakHit";
     }
 
     /**
@@ -170,7 +162,7 @@ public class EntityVhraak extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.zombiedeath";
+        return "";
     }
 
     /**
@@ -187,5 +179,22 @@ public class EntityVhraak extends EntityMob
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.shinyPearls.itemID, 1);
+    }
+
+    /**
+     * Called by a player entity when they collide with an entity
+     */
+    public void onCollideWithPlayer(EntityPlayer par1EntityPlayer) 
+    {
+    	this.attackEntityAsMob(par1EntityPlayer);
     }
 }

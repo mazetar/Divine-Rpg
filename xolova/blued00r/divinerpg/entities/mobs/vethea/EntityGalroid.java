@@ -1,5 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -85,7 +86,7 @@ public class EntityGalroid extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "mob.RPG.Galroid";
     }
 
     /**
@@ -93,7 +94,7 @@ public class EntityGalroid extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.DeathCryxHit";
+        return "mob.RPG.GalroidHit";
     }
 
 	@SideOnly(Side.CLIENT)
@@ -103,7 +104,7 @@ public class EntityGalroid extends EntityMob
 	 */
 	public String getTexture()
 	{
-		return this.isEntityInvulnerable() ? "/mob/Dramix.png" : "/mob/Galroid.png";
+		return this.isEntityInvulnerable() ? "/mob/GalroidImmune.png" : "/mob/Galroid.png";
 	}
 
     /**
@@ -119,7 +120,7 @@ public class EntityGalroid extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "";
     }
 
     /**
@@ -188,5 +189,14 @@ public class EntityGalroid extends EntityMob
     public boolean isEntityInvulnerable()
     {
         return (this.invulnTicks > 1);
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.polishedPearls.itemID, 1);
     }
 }

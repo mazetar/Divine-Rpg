@@ -32,7 +32,7 @@ public class EntityDissimentShot extends EntityThrowable
     {
         if (var1.entityHit != null)
         {
-            byte var2 = 0;
+            byte var2 = 9;
             var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), var2);
         }
 

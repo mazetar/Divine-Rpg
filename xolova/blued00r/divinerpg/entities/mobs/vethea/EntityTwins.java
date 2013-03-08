@@ -183,7 +183,7 @@ public class EntityTwins extends EntityMob implements IRangedAttackMob
 	        break;
 		case SLOW:
 	        this.rangedAttackCounter++;
-	        if ((this.rangedAttackCounter & 4) == 0)
+	        if ((this.rangedAttackCounter % 4) == 0)
 	        {
 	        	EntityVetheanArrow var4 = new EntityVetheanArrow(this.worldObj, this, par1, 1.6F, 12.0F);
 		        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));

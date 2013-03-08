@@ -1,5 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -46,12 +47,12 @@ public class EntityLorgaFlight extends EntityMob
 
 	public int getAttackStrength(Entity var1)
 	{
-		return 0;
+		return 7;
 	}
 
 	public int getMaxHealth()
 	{
-		return 1;
+		return 40;
 	}
 
 	/**
@@ -67,7 +68,7 @@ public class EntityLorgaFlight extends EntityMob
 	 */
 	protected String getLivingSound()
 	{
-		return "mob.RPG.AlicantoHit";
+		return "mob.RPG.LorgaFlightHit";
 	}
 
 	/**
@@ -75,7 +76,7 @@ public class EntityLorgaFlight extends EntityMob
 	 */
 	protected String getHurtSound()
 	{
-		return "mob.RPG.AlicantoHit";
+		return "mob.RPG.LorgaFlightHit";
 	}
 
 	/**
@@ -83,7 +84,7 @@ public class EntityLorgaFlight extends EntityMob
 	 */
 	protected String getDeathSound()
 	{
-		return "mob.RPG.AlicantoHit";
+		return "";
 	}
 
     /**
@@ -99,18 +100,6 @@ public class EntityLorgaFlight extends EntityMob
     		this.spawnTick = 120;
 		EntityLorga var2 = new EntityLorga(this.worldObj, 10);
 			var2.setLocationAndAngles(this.posX + 1, this.posY, this.posZ + 1, this.rotationYaw, this.rotationPitch);
-			this.worldObj.spawnEntityInWorld(var2);
-
-			var2 = new EntityLorga(this.worldObj, 10);
-			var2.setLocationAndAngles(this.posX - 1, this.posY, this.posZ + 1, this.rotationYaw, this.rotationPitch);
-			this.worldObj.spawnEntityInWorld(var2);
-
-			var2 = new EntityLorga(this.worldObj, 10);
-			var2.setLocationAndAngles(this.posX + 1, this.posY, this.posZ - 1, this.rotationYaw, this.rotationPitch);
-			this.worldObj.spawnEntityInWorld(var2);
-
-			var2 = new EntityLorga(this.worldObj, 10);
-			var2.setLocationAndAngles(this.posX - 1, this.posY, this.posZ - 1, this.rotationYaw, this.rotationPitch);
 			this.worldObj.spawnEntityInWorld(var2);
     	}
     	else if (this.spawnTick > 0)
@@ -192,5 +181,14 @@ public class EntityLorgaFlight extends EntityMob
 	 public boolean doesEntityNotTriggerPressurePlate()
 	 {
 		 return true;
+	 }
+
+
+	 /**
+	  * Drop 0-2 items of this living's type
+	  */
+	 protected void dropFewItems(boolean par1, int par2)
+	 {
+		 this.dropItem(DivineRPG.polishedPearls.itemID, 1);
 	 }
 }

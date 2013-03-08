@@ -18,6 +18,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.entities.vethea.EntityKazroticShot;
 
 public class EntityKazrotic extends EntityMob implements IRangedAttackMob
@@ -27,7 +28,7 @@ public class EntityKazrotic extends EntityMob implements IRangedAttackMob
     public EntityKazrotic(World par1World)
     {
         super(par1World);
-        this.texture = "/mob/aridwarrior.png";
+        this.texture = "/mob/Kazrotic.png";
         this.moveSpeed = 0.25F;
         this.tasks.addTask(7, new EntityAIArrowAttack(this, this.moveSpeed, 60, 64.0F));        
         this.tasks.addTask(1, new EntityAISwimming(this));
@@ -45,7 +46,7 @@ public class EntityKazrotic extends EntityMob implements IRangedAttackMob
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.AridWarrior";
+        return "mob.RPG.Kazrotic";
     }
 
     /**
@@ -53,7 +54,7 @@ public class EntityKazrotic extends EntityMob implements IRangedAttackMob
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.AridWarriorHit";
+        return "mob.RPG.KazroticHit";
     }
 
     /**
@@ -61,7 +62,7 @@ public class EntityKazrotic extends EntityMob implements IRangedAttackMob
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.AridWarriorHit";
+        return "";
     }
 
     public int getAttackStrength(Entity entity)
@@ -71,7 +72,7 @@ public class EntityKazrotic extends EntityMob implements IRangedAttackMob
     
     public int getMaxHealth()
     {
-        return 100;
+        return 65;
     }
 
     /**
@@ -110,5 +111,14 @@ public class EntityKazrotic extends EntityMob implements IRangedAttackMob
     		return false;
     	}
     	return super.attackEntityFrom(par1DamageSource, par2);
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.polishedPearls.itemID, 1);
     }
 }

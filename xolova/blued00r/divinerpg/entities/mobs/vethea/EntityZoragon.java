@@ -12,6 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.entities.vethea.EntityZoragonBomb;
 
 public class EntityZoragon extends EntityMob
@@ -23,7 +24,7 @@ public class EntityZoragon extends EntityMob
 	public EntityZoragon(World var1)
 	{
 		super(var1);
-		this.texture = "/mob/Alicanto.png";
+		this.texture = "/mob/Zoragon.png";
 		this.moveSpeed = 0.15F;
 		this.getNavigator().setAvoidsWater(true);
 		this.tasks.addTask(1, new EntityAISwimming(this));
@@ -42,7 +43,7 @@ public class EntityZoragon extends EntityMob
 
 	public int getMaxHealth()
 	{
-		return 1;
+		return 110;
 	}
 
 	/**
@@ -66,7 +67,7 @@ public class EntityZoragon extends EntityMob
 	 */
 	protected String getLivingSound()
 	{
-		return this.rand.nextInt(4) != 0 ? null : "mob.RPG.AlicantoHit";
+		return "mob.RPG.Zoragon";
 	}
 
 	/**
@@ -74,7 +75,7 @@ public class EntityZoragon extends EntityMob
 	 */
 	protected String getHurtSound()
 	{
-		return "mob.RPG.AlicantoHit";
+		return "mob.RPG.ZoragonHit";
 	}
 
 	/**
@@ -82,7 +83,7 @@ public class EntityZoragon extends EntityMob
 	 */
 	protected String getDeathSound()
 	{
-		return "mob.RPG.AlicantoHit";
+		return "";
 	}
 
 	/**
@@ -183,5 +184,14 @@ public class EntityZoragon extends EntityMob
 	 public boolean doesEntityNotTriggerPressurePlate()
 	 {
 		 return true;
+	 }
+
+
+	 /**
+	  * Drop 0-2 items of this living's type
+	  */
+	 protected void dropFewItems(boolean par1, int par2)
+	 {
+		 this.dropItem(DivineRPG.shinyPearls.itemID, 1);
 	 }
 }

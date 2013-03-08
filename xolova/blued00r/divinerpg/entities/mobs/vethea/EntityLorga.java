@@ -1,5 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -61,18 +62,6 @@ public class EntityLorga extends EntityMob
 		EntityLorga var2 = new EntityLorga(this.worldObj, 10);
 			var2.setLocationAndAngles(this.posX + 1, this.posY, this.posZ + 1, this.rotationYaw, this.rotationPitch);
 			this.worldObj.spawnEntityInWorld(var2);
-
-			var2 = new EntityLorga(this.worldObj, 10);
-			var2.setLocationAndAngles(this.posX - 1, this.posY, this.posZ + 1, this.rotationYaw, this.rotationPitch);
-			this.worldObj.spawnEntityInWorld(var2);
-
-			var2 = new EntityLorga(this.worldObj, 10);
-			var2.setLocationAndAngles(this.posX + 1, this.posY, this.posZ - 1, this.rotationYaw, this.rotationPitch);
-			this.worldObj.spawnEntityInWorld(var2);
-
-			var2 = new EntityLorga(this.worldObj, 10);
-			var2.setLocationAndAngles(this.posX - 1, this.posY, this.posZ - 1, this.rotationYaw, this.rotationPitch);
-			this.worldObj.spawnEntityInWorld(var2);
     	}
     	else if (this.spawnTick > 0)
     	{
@@ -82,7 +71,7 @@ public class EntityLorga extends EntityMob
 
     public int getAttackStrength(Entity var1)
     {
-        return 1;
+        return 4;
     }
 
     /**
@@ -95,7 +84,7 @@ public class EntityLorga extends EntityMob
 
     public int getMaxHealth()
     {
-    	return 1;
+    	return 15;
     }
 
     /**
@@ -111,7 +100,7 @@ public class EntityLorga extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.zombie";
+        return "mob.RPG.Lorga";
     }
 
     /**
@@ -119,7 +108,7 @@ public class EntityLorga extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.zombiehurt";
+        return "mob.RPG.LorgaHit";
     }
 
     /**
@@ -127,7 +116,7 @@ public class EntityLorga extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.zombiedeath";
+        return "";
     }
 
     /**
@@ -144,5 +133,14 @@ public class EntityLorga extends EntityMob
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.dirtyPearls.itemID, 1);
     }
 }

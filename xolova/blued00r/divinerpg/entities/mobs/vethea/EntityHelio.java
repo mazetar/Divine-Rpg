@@ -1,5 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -39,12 +40,12 @@ public class EntityHelio extends EntityMob
 
     public int getAttackStrength(Entity var1)
     {
-        return 1;
+        return 60;
     }
 
     public int getMaxHealth()
     {
-        return 1;
+        return 140;
     }
 
     /**
@@ -68,7 +69,7 @@ public class EntityHelio extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "mob.RPG.Helio";
     }
 
     /**
@@ -76,7 +77,7 @@ public class EntityHelio extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.DeathCryxHit";
+        return "mob.RPG.HelioHit";
     }
 
     /**
@@ -92,7 +93,7 @@ public class EntityHelio extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "";
     }
 
     /**
@@ -153,5 +154,14 @@ public class EntityHelio extends EntityMob
         }
 
         return var4;
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.shinyPearls.itemID, 1);
     }
 }

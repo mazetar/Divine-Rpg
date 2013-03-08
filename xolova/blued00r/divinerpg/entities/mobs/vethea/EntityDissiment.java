@@ -12,6 +12,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
+import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.entities.vethea.EntityDissimentShot;
 
 public class EntityDissiment extends EntityFlying implements IMob
@@ -45,12 +46,6 @@ public class EntityDissiment extends EntityFlying implements IMob
         {
             return false;
         }
-        else if ("fireball".equals(par1DamageSource.getDamageType()) && par1DamageSource.getEntity() instanceof EntityPlayer)
-        {
-            super.attackEntityFrom(par1DamageSource, 1000);
-            ((EntityPlayer)par1DamageSource.getEntity()).triggerAchievement(AchievementList.ghast);
-            return true;
-        }
         else
         {
             return super.attackEntityFrom(par1DamageSource, par2);
@@ -65,7 +60,7 @@ public class EntityDissiment extends EntityFlying implements IMob
 
     public int getMaxHealth()
     {
-        return 10;
+        return 70;
     }
 
     /**
@@ -74,8 +69,6 @@ public class EntityDissiment extends EntityFlying implements IMob
     public void onUpdate()
     {
         super.onUpdate();
-        byte var1 = this.dataWatcher.getWatchableObjectByte(16);
-        this.texture = var1 == 1 ? "/mob/ghast_fire.png" : "/mob/ghast.png";
     }
 
     protected void updateEntityActionState()
@@ -214,7 +207,7 @@ public class EntityDissiment extends EntityFlying implements IMob
      */
     protected String getLivingSound()
     {
-        return "mob.ghast.moan";
+        return "mob.RPG.DissimentHit";
     }
 
     /**
@@ -222,7 +215,7 @@ public class EntityDissiment extends EntityFlying implements IMob
      */
     protected String getHurtSound()
     {
-        return "mob.ghast.scream";
+        return "mob.RPG.DissimentHit";
     }
 
     /**
@@ -230,7 +223,7 @@ public class EntityDissiment extends EntityFlying implements IMob
      */
     protected String getDeathSound()
     {
-        return "mob.ghast.death";
+        return "";
     }
 
     /**
@@ -241,26 +234,13 @@ public class EntityDissiment extends EntityFlying implements IMob
         return Item.gunpowder.itemID;
     }
 
+
     /**
-     * Drop 0-2 items of this living's type. @param par1 - Whether this entity has recently been hit by a player. @param
-     * par2 - Level of Looting used to kill this mob.
+     * Drop 0-2 items of this living's type
      */
     protected void dropFewItems(boolean par1, int par2)
     {
-        int var3 = this.rand.nextInt(2) + this.rand.nextInt(1 + par2);
-        int var4;
-
-        for (var4 = 0; var4 < var3; ++var4)
-        {
-            this.dropItem(Item.ghastTear.itemID, 1);
-        }
-
-        var3 = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
-
-        for (var4 = 0; var4 < var3; ++var4)
-        {
-            this.dropItem(Item.gunpowder.itemID, 1);
-        }
+    	this.dropItem(DivineRPG.shinyPearls.itemID, 1);
     }
 
     /**
@@ -269,13 +249,5 @@ public class EntityDissiment extends EntityFlying implements IMob
     protected float getSoundVolume()
     {
         return 10.0F;
-    }
-
-    /**
-     * Checks if the entity's current position is a valid location to spawn this entity.
-     */
-    public boolean getCanSpawnHere()
-    {
-        return this.rand.nextInt(20) == 0 && super.getCanSpawnHere() && this.worldObj.difficultySetting > 0;
     }
 }

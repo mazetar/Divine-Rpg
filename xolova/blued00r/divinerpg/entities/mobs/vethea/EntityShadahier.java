@@ -1,5 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -21,7 +22,7 @@ public class EntityShadahier extends EntityMob
     public EntityShadahier(World var1)
     {
         super(var1);
-        this.texture = "/mob/shadahier.png";
+        this.texture = "/mob/Shadahier.png";
         this.moveSpeed = 0.25F;
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
@@ -44,12 +45,12 @@ public class EntityShadahier extends EntityMob
 
     public int getAttackStrength(Entity var1)
     {
-        return 0;
+        return 6;
     }
 
     public int getMaxHealth()
     {
-        return 1;
+        return 10;
     }
 
     /**
@@ -73,7 +74,7 @@ public class EntityShadahier extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "mob.RPG.Shadahier";
     }
 
     /**
@@ -81,7 +82,7 @@ public class EntityShadahier extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.DeathCryxHit";
+        return "mob.RPG.ShadahierHit";
     }
 
     /**
@@ -97,7 +98,7 @@ public class EntityShadahier extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "";
     }
 
     /**
@@ -114,5 +115,14 @@ public class EntityShadahier extends EntityMob
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.dirtyPearls.itemID, 1);
     }
 }

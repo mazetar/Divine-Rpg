@@ -13,6 +13,7 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.entities.ai.EntityAIGorgosionLeapAI;
 
 public class EntityGorgosion extends EntityMob
@@ -54,7 +55,7 @@ public class EntityGorgosion extends EntityMob
 
     public int getMaxHealth()
     {
-        return 1;
+        return 30;
     }
 
     /**
@@ -78,7 +79,7 @@ public class EntityGorgosion extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "mob.RPG.Gorgosion";
     }
 
     /**
@@ -86,7 +87,7 @@ public class EntityGorgosion extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.DeathCryxHit";
+        return "mob.RPG.GorgosionHit";
     }
 
     /**
@@ -102,7 +103,7 @@ public class EntityGorgosion extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "";
     }
 
     /**
@@ -131,5 +132,14 @@ public class EntityGorgosion extends EntityMob
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.cleanPearls.itemID, 1);
     }
 }

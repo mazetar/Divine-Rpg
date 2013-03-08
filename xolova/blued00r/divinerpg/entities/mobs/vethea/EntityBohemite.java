@@ -1,5 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -65,7 +66,7 @@ public class EntityBohemite extends EntityMob
 
     public int getAttackStrength(Entity var1)
     {
-        return 1;
+        return 13;
     }
 
     /**
@@ -78,7 +79,7 @@ public class EntityBohemite extends EntityMob
 
     public int getMaxHealth()
     {
-    	return 1;
+    	return 60;
     }
 
     /**
@@ -94,7 +95,7 @@ public class EntityBohemite extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.zombie";
+        return "xolovon.rpg.Bohemite";
     }
 
     /**
@@ -102,7 +103,7 @@ public class EntityBohemite extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.zombiehurt";
+        return "xolovon.rpg.BehemiteHit";
     }
 
     /**
@@ -110,7 +111,7 @@ public class EntityBohemite extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.zombiedeath";
+        return "";
     }
 
     /**
@@ -135,5 +136,14 @@ public class EntityBohemite extends EntityMob
     public void onCollideWithPlayer(EntityPlayer par1EntityPlayer) 
     {
     	this.attackEntityAsMob(par1EntityPlayer);
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.polishedPearls.itemID, 1);
     }
 }

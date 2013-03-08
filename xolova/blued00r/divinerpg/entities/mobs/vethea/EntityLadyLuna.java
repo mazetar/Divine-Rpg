@@ -1,5 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -32,7 +33,7 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
 	public EntityLadyLuna(World var1)
     {
         super(var1);
-        this.texture = "/mob/LadyLuna.png";
+        this.texture = "/mob/LadyLunaMelee.png";
         this.moveSpeed = 0.6F;
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
@@ -48,20 +49,16 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
     {
         	if (this.getAttackTarget() != null && this.waitTick <= 0)
         	{
-        		System.out.println("charge start");
         		this.waitTick = 30;
         	}
         	else if (this.waitTick == 1)
         	{
-        		this.setAIMoveSpeed(this.moveSpeed);
         		--this.waitTick;
         	}
         	else if (this.waitTick == 5)
         	{
         		this.setAIMoveSpeed(0);
-        		--this.waitTick;
-        		System.out.println("Stopping");
-        	}
+        		--this.waitTick;        	}
         	else
         	{
         		--this.waitTick;
@@ -82,8 +79,16 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
 	 */
 	public String getTexture()
 	{
-		return this.getProtectionType() == 1 ? "/mob/Dramix.png" : (this.getProtectionType() == 2 ? "/mob/vamacheron.png" : (this.getProtectionType() == 3 ? "/mob/Alicanto.png" : super.getTexture()));
+		return this.getProtectionType() == 1 ? "/mob/LadyLunaArcana.png" : (this.getProtectionType() == 2 ? "/mob/LadyLunaRanged.png" : (this.getProtectionType() == 3 ? "/mob/LadyLunaMelee.png" : super.getTexture()));
 	}
+
+    /**
+     * Gets the username of the entity.
+     */
+    public String getEntityName()
+    {
+        return "Lady Luna";
+    }
 
     /**
      * Returns the health points of the dragon.
@@ -118,7 +123,7 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
 
             if (this.worldObj.getBlockId(var2, var3, var4) == 0 && Block.snow.canPlaceBlockAt(this.worldObj, var2, var3, var4))
             {
-                this.worldObj.setBlockWithNotify(var2, var3, var4, Block.snow.blockID);
+                this.worldObj.setBlockWithNotify(var2, var3, var4, DivineRPG.lunicAcid.blockID);
             }
         }
 
@@ -140,12 +145,12 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
 
     public int getAttackStrength(Entity var1)
     {
-        return 0;
+        return 20;
     }
 
     public int getMaxHealth()
     {
-        return 1;
+        return 8000;
     }
 
     /**
@@ -169,7 +174,17 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.Deathcryx";
+    	switch(this.rand.nextInt(3))
+    	{
+    	case 0:
+    		return "mob.RPG.LadyLuna1";
+    	case 1:
+    		return "mob.RPG.LadyLuna2";
+    	case 2:
+    		return "mob.RPG.LadyLuna3";
+    	default:
+    		return null;
+    	}
     }
 
     /**
@@ -177,7 +192,7 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.DeathCryxHit";
+        return "mob.RPG.LadyLunaHit";
     }
 
     /**
@@ -185,7 +200,7 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "";
     }
 
     /**
@@ -277,8 +292,37 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
     /**
      * Called by a player entity when they collide with an entity
      */
+    
     public void onCollideWithPlayer(EntityPlayer par1EntityPlayer) 
     {
     	this.attackEntityAsMob(par1EntityPlayer);
+    }
+
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	switch(this.rand.nextInt(5))
+    	{
+    	case 0:
+        	this.dropItem(DivineRPG.everbright.itemID, 1);
+        	this.dropItem(DivineRPG.everArrow.itemID, 128);
+        	break;
+    	case 1:
+        	this.dropItem(DivineRPG.everfight.itemID, 1);
+        	break;
+    	case 2:
+        	this.dropItem(DivineRPG.evernight.itemID, 1);
+        	break;
+    	case 3:
+        	this.dropItem(DivineRPG.everlight.itemID, 1);
+        	break;
+    	case 4:
+        	this.dropItem(DivineRPG.evernight.itemID, 1);
+        	break;
+    	}
     }
 }

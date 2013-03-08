@@ -1,5 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.entities.vethea.EntityBouncingProjectile;
 import xolova.blued00r.divinerpg.entities.vethea.EntityMandragoraProjectile;
 import net.minecraft.entity.Entity;
@@ -28,7 +29,7 @@ public class EntityMandragora extends EntityMob implements IRangedAttackMob
 	public EntityMandragora(World var1)
     {
         super(var1);
-        this.texture = "/mob/Biphron.png";
+        this.texture = "/mob/Mandragora.png";
         this.moveSpeed = 0.25F;
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(4, new EntityAIArrowAttack(this, this.moveSpeed, 30, 64.0F));
@@ -56,12 +57,12 @@ public class EntityMandragora extends EntityMob implements IRangedAttackMob
     
     public int getAttackStrength(Entity var1)
     {
-        return 0;
+        return 8;
     }
 
     public int getMaxHealth()
     {
-        return 1;
+        return 35;
     }
 
     /**
@@ -85,7 +86,7 @@ public class EntityMandragora extends EntityMob implements IRangedAttackMob
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "";
     }
 
     /**
@@ -93,7 +94,7 @@ public class EntityMandragora extends EntityMob implements IRangedAttackMob
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.DeathCryxHit";
+        return "";
     }
 
     /**
@@ -109,7 +110,7 @@ public class EntityMandragora extends EntityMob implements IRangedAttackMob
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "";
     }
 
     /**
@@ -144,9 +145,18 @@ public class EntityMandragora extends EntityMob implements IRangedAttackMob
 	public void attackEntityWithRangedAttack(EntityLiving par1) 
 	{
 			EntityMandragoraProjectile var1 = new EntityMandragoraProjectile(this.worldObj, this);
-			this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+			this.playSound("mob.RPG.Madragora", 1.0F, 2.0F);
 			var1.setVelocity(0, var1.motionY, 0);
 			this.worldObj.spawnEntityInWorld(var1);
 			System.out.println("Bounce Defaulting");
 	}
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.cleanPearls.itemID, 1);
+    }
 }

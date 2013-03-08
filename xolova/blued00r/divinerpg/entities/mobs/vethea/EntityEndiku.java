@@ -104,12 +104,12 @@ public class EntityEndiku extends EntityMob
     
     public int getAttackStrength(Entity var1)
     {
-        return 0;
+        return 17;
     }
 
     public int getMaxHealth()
     {
-        return 10;
+        return 70;
     }
 
     /**
@@ -133,7 +133,7 @@ public class EntityEndiku extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "";
+        return "mob.RPG.Endiku";
     }
 
     /**
@@ -141,7 +141,7 @@ public class EntityEndiku extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "";
+        return "mob.RPG.EndikuHit";
     }
 
     /**
@@ -174,5 +174,14 @@ public class EntityEndiku extends EntityMob
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.polishedPearls.itemID, 1);
     }
 }

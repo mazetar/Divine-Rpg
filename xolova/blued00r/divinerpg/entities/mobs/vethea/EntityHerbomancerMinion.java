@@ -33,7 +33,7 @@ public class EntityHerbomancerMinion extends EntityLiving implements IMob
 
     public int getMaxHealth()
     {
-        return 1;
+        return 10;
     }
 
     /**
@@ -165,7 +165,7 @@ public class EntityHerbomancerMinion extends EntityLiving implements IMob
      */
     protected int getAttackStrength()
     {
-        return 0;
+        return 5;
     }
 
     /**
@@ -173,7 +173,7 @@ public class EntityHerbomancerMinion extends EntityLiving implements IMob
      */
     protected String getHurtSound()
     {
-        return "mob.slime.";
+        return "";
     }
 
     /**
@@ -181,7 +181,7 @@ public class EntityHerbomancerMinion extends EntityLiving implements IMob
      */
     protected String getDeathSound()
     {
-        return "mob.slime.";
+        return "";
     }
 
     /**

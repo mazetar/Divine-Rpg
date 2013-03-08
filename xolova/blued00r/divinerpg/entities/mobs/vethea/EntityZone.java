@@ -1,7 +1,9 @@
 
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.entities.mobs.projectile.EntityMamormeterShot;
+import xolova.blued00r.divinerpg.entities.vethea.EntityVetheanArrow;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -36,7 +38,7 @@ public class EntityZone extends EntityMob implements IRangedAttackMob
     public EntityZone(World par1World)
     {
         super(par1World);
-        this.texture = "/mob/aridwarrior.png";
+        this.texture = "/mob/Zone.png";
         this.moveSpeed = 0.25F;    
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, new EntityAIAttackOnCollide(this, EntityPlayer.class, this.moveSpeed, false));
@@ -70,7 +72,7 @@ public class EntityZone extends EntityMob implements IRangedAttackMob
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.AridWarrior";
+        return "mob.RPG.Zone";
     }
 
     /**
@@ -78,7 +80,7 @@ public class EntityZone extends EntityMob implements IRangedAttackMob
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.AridWarriorHit";
+        return "mob.RPG.ZoneHit";
     }
 
     /**
@@ -86,7 +88,7 @@ public class EntityZone extends EntityMob implements IRangedAttackMob
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.AridWarriorHit";
+        return "";
     }
 
     public int getAttackStrength(Entity entity)
@@ -96,7 +98,7 @@ public class EntityZone extends EntityMob implements IRangedAttackMob
     
     public int getMaxHealth()
     {
-        return 1;
+        return 120;
     }
 
     /**
@@ -118,10 +120,8 @@ public class EntityZone extends EntityMob implements IRangedAttackMob
     @Override
     public void attackEntityWithRangedAttack(EntityLiving par1)
     {
-    	EntityArrow var1 = new EntityArrow(this.worldObj, this, 1.6F);
-    	var1.setDamage(0);
+    	EntityVetheanArrow var1 = new EntityVetheanArrow(this.worldObj, this, 15F);
     	
-        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
         this.worldObj.spawnEntityInWorld(var1);
     }
 
@@ -168,5 +168,14 @@ public class EntityZone extends EntityMob implements IRangedAttackMob
         }
 
         return var4;
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.shinyPearls.itemID, 1);
     }
 }

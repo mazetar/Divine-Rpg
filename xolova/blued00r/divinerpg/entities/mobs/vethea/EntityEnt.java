@@ -1,5 +1,6 @@
 package xolova.blued00r.divinerpg.entities.mobs.vethea;
 
+import xolova.blued00r.divinerpg.DivineRPG;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
@@ -33,12 +34,12 @@ public class EntityEnt extends EntityMob
 
     public int getAttackStrength(Entity var1)
     {
-        return 0;
+        return 20;
     }
 
     public int getMaxHealth()
     {
-        return 1;
+        return 50;
     }
 
     /**
@@ -62,7 +63,7 @@ public class EntityEnt extends EntityMob
      */
     protected String getLivingSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "mob.RPG.Ent";
     }
 
     /**
@@ -70,7 +71,7 @@ public class EntityEnt extends EntityMob
      */
     protected String getHurtSound()
     {
-        return "mob.RPG.DeathCryxHit";
+        return "mob.RPG.EntHit";
     }
 
     /**
@@ -86,7 +87,7 @@ public class EntityEnt extends EntityMob
      */
     protected String getDeathSound()
     {
-        return "mob.RPG.Deathcryx";
+        return "";
     }
 
     /**
@@ -103,5 +104,14 @@ public class EntityEnt extends EntityMob
     public EnumCreatureAttribute getCreatureAttribute()
     {
         return EnumCreatureAttribute.UNDEFINED;
+    }
+
+
+    /**
+     * Drop 0-2 items of this living's type
+     */
+    protected void dropFewItems(boolean par1, int par2)
+    {
+    	this.dropItem(DivineRPG.dirtyPearls.itemID, 1);
     }
 }

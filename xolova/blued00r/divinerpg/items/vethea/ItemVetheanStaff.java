@@ -27,6 +27,12 @@ public class ItemVetheanStaff extends Item
         this.damage = par2;
         this.cost = par3;
     }
+	
+	public ItemVetheanStaff(int par1, int par2, int par3, String par4)
+    {
+		this(par1, par2, par3);
+		this.setItemName("par4");
+    }
 
     @Override
     @SideOnly(Side.CLIENT)

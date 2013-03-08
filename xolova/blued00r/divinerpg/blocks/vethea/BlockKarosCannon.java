@@ -131,6 +131,7 @@ public class BlockKarosCannon extends BlockContainer
 
     public void dispense(World par1World, int par2, int par3, int par4)
     {
+    	this.setDispenserDefaultDirection(par1World, par2, par3, par4);
     	this.func_82486_a(par1World, 0, EnumFacing.getFront(par1World.getBlockMetadata(par2, par3, par4)), par2, par3, par4);
     }
 

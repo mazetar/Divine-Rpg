@@ -6,11 +6,13 @@ import java.util.List;
 import java.util.Random;
 
 import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.blued00r.divinerpg.entities.vethea.EntityKarosCannonShot;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 public class BlockHelioticBeam extends Block
@@ -64,6 +66,18 @@ public class BlockHelioticBeam extends Block
                 }
             }
         }
+    }
+
+    public void dispense(World par0World, int par2, int par3, int par4)
+    {
+        double var5 = par2;
+        double var7 = par3;
+        double var9 = par4;
+        EntityKarosCannonShot var11 = new EntityKarosCannonShot(par0World, var5 + 0.5D, var7 - 0.5D, var9 + 0.5D);
+        var11.motionX = 0D;
+        var11.motionY = -0.1D;
+        var11.motionZ = 0D;
+        par0World.spawnEntityInWorld(var11);
     }
 
     /**

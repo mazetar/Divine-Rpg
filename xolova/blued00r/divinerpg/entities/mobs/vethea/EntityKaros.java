@@ -21,6 +21,7 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.boss.IBossDisplayData;
 import net.minecraft.entity.effect.EntityLightningBolt;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
@@ -46,6 +47,7 @@ public class EntityKaros extends EntityMob implements IBossDisplayData
 	private int targetY;
 	
 	private int rangedAttackCounter;
+	private int deathTicks;
 	
     public EntityKaros(World par1)
     {
@@ -381,5 +383,60 @@ public class EntityKaros extends EntityMob implements IBossDisplayData
     		return false;
     	}
     	return super.attackEntityFrom(par1, par2);
+    }
+
+    /**
+     * handles entity death timer, experience orb and particle creation
+     */
+    protected void onDeathUpdate()
+    {
+        ++this.deathTicks;
+
+        if (this.deathTicks >= 180 && this.deathTicks <= 200)
+        {
+            float var1 = (this.rand.nextFloat() - 0.5F) * 8.0F;
+            float var2 = (this.rand.nextFloat() - 0.5F) * 4.0F;
+            float var3 = (this.rand.nextFloat() - 0.5F) * 8.0F;
+            this.worldObj.spawnParticle("hugeexplosion", this.posX + (double)var1, this.posY + 2.0D + (double)var2, this.posZ + (double)var3, 0.0D, 0.0D, 0.0D);
+        }
+
+        int var4;
+        int var5;
+
+        if (!this.worldObj.isRemote)
+        {
+            if (this.deathTicks > 150 && this.deathTicks % 5 == 0)
+            {
+                var4 = 1000;
+
+                while (var4 > 0)
+                {
+                    var5 = EntityXPOrb.getXPSplit(var4);
+                    var4 -= var5;
+                    this.worldObj.spawnEntityInWorld(new EntityXPOrb(this.worldObj, this.posX, this.posY, this.posZ, var5));
+                }
+            }
+
+            if (this.deathTicks == 1)
+            {
+                this.worldObj.func_82739_e(1018, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
+            }
+        }
+
+        this.moveEntity(0.0D, 0.10000000149011612D, 0.0D);
+        this.renderYawOffset = this.rotationYaw += 20.0F;
+
+        if (this.deathTicks == 200 && !this.worldObj.isRemote)
+        {
+            var4 = 2000;
+
+            while (var4 > 0)
+            {
+                var5 = EntityXPOrb.getXPSplit(var4);
+                var4 -= var5;
+                this.worldObj.spawnEntityInWorld(new EntityXPOrb(this.worldObj, this.posX, this.posY, this.posZ, var5));
+            };
+            this.setDead();
+        }
     }
 }

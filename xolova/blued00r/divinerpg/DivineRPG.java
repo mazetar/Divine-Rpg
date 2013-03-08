@@ -135,6 +135,7 @@ import xolova.blued00r.divinerpg.items.vethea.ItemVetheanClaw;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanFood;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanHammerSword;
 import xolova.blued00r.divinerpg.items.vethea.ItemVetheanHealingFood;
+import xolova.blued00r.divinerpg.items.vethea.ItemVetheanStaff;
 import xolova.blued00r.divinerpg.misc.ArmorProtectionHandler;
 import xolova.blued00r.divinerpg.misc.CommonProxy;
 import xolova.blued00r.divinerpg.misc.CraftingHandler;
@@ -2528,6 +2529,26 @@ public class DivineRPG
 
     public static int everArrowID;
     public static Item everArrow;
+    
+    public static int teakerStaffID;
+    public static Item teakerStaff;
+    public static int amthirmisStaffID;
+    public static Item amthrimisStaff;
+    public static int darvenStaffID;
+    public static Item darvenStaff;
+    public static int cermileStaffID;
+    public static Item cermileStaff;
+    public static int pardimalStaffID;
+    public static Item pardimalStaff;
+    public static int quadroticStaffID;
+    public static Item quadroticStaff;
+    public static int karosStaffID;
+    public static Item karosStaff;
+    public static int heliosisStaffID;
+    public static Item heliosisStaff;
+    public static int arksianeStaffID;
+    public static Item arksianeStaff;
+    
 
 	//TODO
     @Mod.PreInit
@@ -3645,6 +3666,16 @@ public class DivineRPG
         eversightID = var2.getItem("eversight", id++).getInt();
         everfightID = var2.getItem("everfight", id++).getInt();
         everArrowID = var2.getItem("everArrow", id++).getInt();
+
+        teakerStaffID = var2.getItem("teakerStaff", id++).getInt();
+        amthirmisStaffID = var2.getItem("AmthirmisStaff", id++).getInt();
+        darvenStaffID = var2.getItem("darvenStaff", id++).getInt();
+        cermileStaffID = var2.getItem("cermileStaff", id++).getInt();
+        pardimalStaffID = var2.getItem("pardimalStaff", id++).getInt();
+        quadroticStaffID = var2.getItem("quadroticStaff", id++).getInt();
+        karosStaffID = var2.getItem("karosStaff", id++).getInt();
+        heliosisStaffID = var2.getItem("heliosisStaff", id++).getInt();
+        arksianeStaffID = var2.getItem("arksianeStaff", id++).getInt();
         //TODO
         /*
          * Dimension IDs
@@ -4947,19 +4978,29 @@ public class DivineRPG
         heliosisCannon = new ItemVetheanCannon(heliosisCannonID, 28, "heliosisCannon").setIconCoord(7, 10).setCreativeTab(tabRanged);
         arksianeCannon = new ItemVetheanCannon(arksianeCannonID, 36, "arksianeCannon").setIconCoord(8, 10).setCreativeTab(tabRanged);
         
-        spinebackCannon = new ItemSpinebackCannon(spinebackCannonID, 55, "spinebackCannon").setIconCoord(8, 13).setCreativeTab(tabRanged);
+        //spinebackCannon = new ItemSpinebackCannon(spinebackCannonID, 55, "spinebackCannon").setIconCoord(8, 13).setCreativeTab(tabRanged);
         eversight = new ItemVetheanCannon(eversightID, 42, "eversight").setIconCoord(7, 12).setCreativeTab(tabRanged);
         
-        spinebackDisc = new ItemSpinebackDisc(spinebackDiscID, 41).setCreativeTab(tabRanged).setIconCoord(5, 13).setTextureFile("/Xolovon4.png").setItemName("Spineback Disk");       
+        //spinebackDisc = new ItemSpinebackDisc(spinebackDiscID, 41).setCreativeTab(tabRanged).setIconCoord(5, 13).setTextureFile("/Xolovon4.png").setItemName("Spineback Disk");       
         
-        spinebackHammer = new ItemVetheanHammerSword(spinebackHammerID, 215, "spinebackHammer").setWeaponDamage(46).setCreativeTab(tabSword);
+        //spinebackHammer = new ItemVetheanHammerSword(spinebackHammerID, 215, "spinebackHammer").setWeaponDamage(46).setCreativeTab(tabSword);
         everlight = new ItemVetheanHammerSword(everlightID, 197, "everlight").setWeaponDamage(44).setCreativeTab(tabSword);
         
         everbright = new ItemVetheanClaw(everbrightID, 198, "everbright").setWeaponDamage(42).setCreativeTab(tabSword);
         everfight = new ItemVetheanBow(everfightID, 4.6D, everArrow).setIconCoord(5, 6).setItemName("everfight").setCreativeTab(tabRanged);
         
-        spinebackStaff = new ItemSpinebackStaff(spinebackStaffID, 0, 200).setIconCoord(6, 13).setItemName("spinebackStaff").setCreativeTab(tabRanged);
+        //spinebackStaff = new ItemSpinebackStaff(spinebackStaffID, 0, 200).setIconCoord(6, 13).setItemName("spinebackStaff").setCreativeTab(tabRanged);
         evernight = new ItemEvernight(evernightID, 115, 200).setIconCoord(4, 12).setItemName("evernight").setCreativeTab(tabRanged);
+        
+        teakerStaff = new ItemVetheanStaff(teakerStaffID, 3, 10, "TeakerStaff").setIconCoord(0, 7).setCreativeTab(tabRanged);
+        amthrimisStaff = new ItemVetheanStaff(amthirmisStaffID, 5, 10, "amthirmisStaff").setIconCoord(1, 7).setCreativeTab(tabRanged);
+        darvenStaff = new ItemVetheanStaff(darvenStaffID, 8, 10, "darvenStaff").setIconCoord(2, 7).setCreativeTab(tabRanged);
+        cermileStaff = new ItemVetheanStaff(cermileStaffID, 12, 10, "cermileStaff").setIconCoord(3, 7).setCreativeTab(tabRanged);
+        pardimalStaff = new ItemVetheanStaff(pardimalStaffID, 15, 10, "pardimalStaff").setIconCoord(4, 7).setCreativeTab(tabRanged);
+        quadroticStaff = new ItemVetheanStaff(quadroticStaffID, 19, 10, "quadroticStaff").setIconCoord(5, 7).setCreativeTab(tabRanged);
+        karosStaff = new ItemVetheanStaff(karosStaffID, 21, 10, "karosStaffItem").setIconCoord(6, 7).setCreativeTab(tabRanged);
+        heliosisStaff = new ItemVetheanStaff(heliosisStaffID, 28, 10, "heliosisStaff").setIconCoord(7, 7).setCreativeTab(tabRanged);
+        arksianeStaff = new ItemVetheanStaff(arksianeStaffID, 36, 10, "arksianeStaff").setIconCoord(8, 7).setCreativeTab(tabRanged);
         
         //TODO
         /*

@@ -8,6 +8,8 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -27,6 +29,7 @@ public class BlockPortalVethea extends BlockBreakable
 {
     private int firetick;
     private int firemax = 200;
+    private NBTTagCompound data;
 
     public BlockPortalVethea(int var1, int var2)
     {
@@ -263,13 +266,25 @@ public class BlockPortalVethea extends BlockBreakable
 
                     if (var5.ridingEntity == null && var5.riddenByEntity == null && var5 instanceof EntityPlayer)
                     {
+                    	EntityPlayer player = (EntityPlayer)var5;
+                    	data = player.getEntityData().getCompoundTag(player.PERSISTED_NBT_TAG);
                         if (var6.dimension != DivineRPG.vetheaID)
                         {
                             var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DivineRPG.vetheaID, new TeleporterVethea(var6.mcServer.worldServerForDimension(DivineRPG.vetheaID)));
+                            data.setTag("InventoryZero", player.inventory.writeToNBT(new NBTTagList()));
+                            player.getEntityData().setCompoundTag(player.PERSISTED_NBT_TAG, data);
+                            player.inventory.clearInventory(-1, -1);
+                            NBTTagList x = data.getTagList("InventoryVethea");
+                            player.inventory.readFromNBT(x);
                         }
                         else
                         {
                             var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, 0, new TeleporterVethea(var6.mcServer.worldServerForDimension(0)));
+                            data.setTag("InventoryVethea", player.inventory.writeToNBT(new NBTTagList()));
+                            player.getEntityData().setCompoundTag(player.PERSISTED_NBT_TAG, data);
+                            player.inventory.clearInventory(-1, -1);
+                            NBTTagList y = data.getTagList("InventoryZero");
+                            player.inventory.readFromNBT(y);
                         }
                     }
                 }

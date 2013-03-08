@@ -82,39 +82,39 @@ public class RecipesInfusionTable
 		addRecipe(DivineRPG.heliosisLump.itemID, DivineRPG.vetheanCannonTemplate.itemID, 27, new ItemStack(DivineRPG.heliosisCannon));
 		addRecipe(DivineRPG.arksianeLump.itemID, DivineRPG.vetheanCannonTemplate.itemID, 31, new ItemStack(DivineRPG.arksianeCannon));
 
-		addRecipe(DivineRPG.amthrimisLump.itemID, DivineRPG.vetheanDegradedTemplate.itemID, 8, new ItemStack(DivineRPG.degradedHelmetMelee));
-		addRecipe(DivineRPG.amthrimisLump.itemID, DivineRPG.vetheanDegradedTemplate.itemID, 6, new ItemStack(DivineRPG.degradedHelmetArcana));
+		addRecipe(DivineRPG.amthrimisLump.itemID, DivineRPG.vetheanDegradedTemplate.itemID, 7, new ItemStack(DivineRPG.degradedHelmetMelee));
 		addRecipe(DivineRPG.amthrimisLump.itemID, DivineRPG.vetheanDegradedTemplate.itemID, 9, new ItemStack(DivineRPG.degradedHelmetRanged));
+		addRecipe(DivineRPG.amthrimisLump.itemID, DivineRPG.vetheanDegradedTemplate.itemID, 6, new ItemStack(DivineRPG.degradedHelmetArcana));
 		addRecipe(DivineRPG.amthrimisLump.itemID, DivineRPG.vetheanDegradedTemplate.itemID, 5, new ItemStack(DivineRPG.degradedBoots));
 		addRecipe(DivineRPG.amthrimisLump.itemID, DivineRPG.vetheanDegradedTemplate.itemID, 8, new ItemStack(DivineRPG.degradedLegs));
 		addRecipe(DivineRPG.amthrimisLump.itemID, DivineRPG.vetheanDegradedTemplate.itemID, 10, new ItemStack(DivineRPG.degradedChest));
 
-		addRecipe(DivineRPG.cermileLump.itemID, DivineRPG.vetheanFinishedTemplate.itemID, 12, new ItemStack(DivineRPG.finishedHelmetMelee));
-		addRecipe(DivineRPG.cermileLump.itemID, DivineRPG.vetheanFinishedTemplate.itemID, 9, new ItemStack(DivineRPG.finishedHelmetArcana));
-		addRecipe(DivineRPG.cermileLump.itemID, DivineRPG.vetheanFinishedTemplate.itemID, 13, new ItemStack(DivineRPG.finishedHelmetRanged));
+		addRecipe(DivineRPG.cermileLump.itemID, DivineRPG.vetheanFinishedTemplate.itemID, 9, new ItemStack(DivineRPG.finishedHelmetMelee));
+		addRecipe(DivineRPG.cermileLump.itemID, DivineRPG.vetheanFinishedTemplate.itemID, 11, new ItemStack(DivineRPG.finishedHelmetRanged));
+		addRecipe(DivineRPG.cermileLump.itemID, DivineRPG.vetheanFinishedTemplate.itemID, 6, new ItemStack(DivineRPG.finishedHelmetArcana));
 		addRecipe(DivineRPG.cermileLump.itemID, DivineRPG.vetheanFinishedTemplate.itemID, 8, new ItemStack(DivineRPG.finishedBoots));
-		addRecipe(DivineRPG.cermileLump.itemID, DivineRPG.vetheanFinishedTemplate.itemID, 12, new ItemStack(DivineRPG.finishedLegs));
-		addRecipe(DivineRPG.cermileLump.itemID, DivineRPG.vetheanFinishedTemplate.itemID, 14, new ItemStack(DivineRPG.finishedChest));
+		addRecipe(DivineRPG.cermileLump.itemID, DivineRPG.vetheanFinishedTemplate.itemID, 10, new ItemStack(DivineRPG.finishedLegs));
+		addRecipe(DivineRPG.cermileLump.itemID, DivineRPG.vetheanFinishedTemplate.itemID, 12, new ItemStack(DivineRPG.finishedChest));
 
-		addRecipe(DivineRPG.pardimalLump.itemID, DivineRPG.vetheanGlisteningTemplate.itemID, 16, new ItemStack(DivineRPG.glisteningHelmetMelee));
-		addRecipe(DivineRPG.pardimalLump.itemID, DivineRPG.vetheanGlisteningTemplate.itemID, 14, new ItemStack(DivineRPG.glisteningHelmetArcana));
-		addRecipe(DivineRPG.pardimalLump.itemID, DivineRPG.vetheanGlisteningTemplate.itemID, 18, new ItemStack(DivineRPG.glisteningHelmetRanged));
+		addRecipe(DivineRPG.pardimalLump.itemID, DivineRPG.vetheanGlisteningTemplate.itemID, 14, new ItemStack(DivineRPG.glisteningHelmetMelee));
+		addRecipe(DivineRPG.pardimalLump.itemID, DivineRPG.vetheanGlisteningTemplate.itemID, 16, new ItemStack(DivineRPG.glisteningHelmetRanged));
+		addRecipe(DivineRPG.pardimalLump.itemID, DivineRPG.vetheanGlisteningTemplate.itemID, 13, new ItemStack(DivineRPG.glisteningHelmetArcana));
 		addRecipe(DivineRPG.pardimalLump.itemID, DivineRPG.vetheanGlisteningTemplate.itemID, 12, new ItemStack(DivineRPG.glisteningBoots));
-		addRecipe(DivineRPG.pardimalLump.itemID, DivineRPG.vetheanGlisteningTemplate.itemID, 16, new ItemStack(DivineRPG.glisteningLegs));
-		addRecipe(DivineRPG.pardimalLump.itemID, DivineRPG.vetheanGlisteningTemplate.itemID, 20, new ItemStack(DivineRPG.glisteningChest));
+		addRecipe(DivineRPG.pardimalLump.itemID, DivineRPG.vetheanGlisteningTemplate.itemID, 15, new ItemStack(DivineRPG.glisteningLegs));
+		addRecipe(DivineRPG.pardimalLump.itemID, DivineRPG.vetheanGlisteningTemplate.itemID, 17, new ItemStack(DivineRPG.glisteningChest));
 
-		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 20, new ItemStack(DivineRPG.demonizedHelmetMelee));
-		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 16, new ItemStack(DivineRPG.demonizedHelmetArcana));
-		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 22, new ItemStack(DivineRPG.demonizedHelmetRanged));
-		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 14, new ItemStack(DivineRPG.demonizedBoots));
-		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 20, new ItemStack(DivineRPG.demonizedLegs));
-		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 26, new ItemStack(DivineRPG.demonizedChest));
+		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 22, new ItemStack(DivineRPG.demonizedHelmetMelee));
+		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 26, new ItemStack(DivineRPG.demonizedHelmetRanged));
+		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 20, new ItemStack(DivineRPG.demonizedHelmetArcana));
+		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 18, new ItemStack(DivineRPG.demonizedBoots));
+		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 24, new ItemStack(DivineRPG.demonizedLegs));
+		addRecipe(DivineRPG.karosLump.itemID, DivineRPG.vetheanDemonizedTemplate.itemID, 28, new ItemStack(DivineRPG.demonizedChest));
 
-		addRecipe(DivineRPG.arksianeLump.itemID, DivineRPG.vetheanTormentedTemplate.itemID, 24, new ItemStack(DivineRPG.tormentedHelmetMelee));
-		addRecipe(DivineRPG.arksianeLump.itemID, DivineRPG.vetheanTormentedTemplate.itemID, 22, new ItemStack(DivineRPG.tormentedHelmetArcana));
-		addRecipe(DivineRPG.arksianeLump.itemID, DivineRPG.vetheanTormentedTemplate.itemID, 26, new ItemStack(DivineRPG.tormentedHelmetRanged));
+		addRecipe(DivineRPG.arksianeLump.itemID, DivineRPG.vetheanTormentedTemplate.itemID, 26, new ItemStack(DivineRPG.tormentedHelmetMelee));
+		addRecipe(DivineRPG.arksianeLump.itemID, DivineRPG.vetheanTormentedTemplate.itemID, 32, new ItemStack(DivineRPG.tormentedHelmetRanged));
+		addRecipe(DivineRPG.arksianeLump.itemID, DivineRPG.vetheanTormentedTemplate.itemID, 23, new ItemStack(DivineRPG.tormentedHelmetArcana));
 		addRecipe(DivineRPG.arksianeLump.itemID, DivineRPG.vetheanTormentedTemplate.itemID, 20, new ItemStack(DivineRPG.tormentedBoots));
-		addRecipe(DivineRPG.arksianeLump.itemID, DivineRPG.vetheanTormentedTemplate.itemID, 24, new ItemStack(DivineRPG.tormentedLegs));
+		addRecipe(DivineRPG.arksianeLump.itemID, DivineRPG.vetheanTormentedTemplate.itemID, 29, new ItemStack(DivineRPG.tormentedLegs));
 		addRecipe(DivineRPG.arksianeLump.itemID, DivineRPG.vetheanTormentedTemplate.itemID, 35, new ItemStack(DivineRPG.tormentedChest));
 	}
 	

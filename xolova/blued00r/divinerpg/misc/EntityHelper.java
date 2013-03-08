@@ -241,6 +241,9 @@ public class EntityHelper {
         EntityRegistry.registerModEntity(EntitySpinebackWormBody.class, "spinebackWormBody", 53, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityMandragora.class, "mandragora", 54, DivineRPG.instance, 120, 5, true);
         EntityRegistry.registerModEntity(EntityTwins.class, "twins", 55, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerModEntity(EntityHungerHungry.class, "HungerHungry", 56, DivineRPG.instance, 120, 5, true);
+        EntityRegistry.registerGlobalEntityID(EntityHungerHungry.class, "HungerHungry", 56, 0x000000, 0xffffff);
+
         
 	}
 	public static void addEntities()

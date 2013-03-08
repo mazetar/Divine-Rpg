@@ -14,6 +14,7 @@ import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.client.models.*;
 import xolova.blued00r.divinerpg.client.models.vethea.*;
 import xolova.blued00r.divinerpg.client.models.entites.mobs.boss.ModelParasecta;
+import xolova.blued00r.divinerpg.client.models.entities.community.ModelHungerHungry;
 import xolova.blued00r.divinerpg.client.models.entities.community.ModelRainbour;
 import xolova.blued00r.divinerpg.client.models.entities.mobs.iceika.*;
 import xolova.blued00r.divinerpg.client.render.blocks.*;
@@ -332,6 +333,7 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerEntityRenderingHandler(EntityTwins.class, new RenderTwins(new Twins(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityEndiku.class, new RenderBasic(new Endiku(), 0.0F));
         RenderingRegistry.registerEntityRenderingHandler(EntityTempleGuardian.class, new RenderBasic(new ModelBiped(), 0.0F));
+        RenderingRegistry.registerEntityRenderingHandler(EntityHungerHungry.class, new RenderHungerHungry(new ModelHungerHungry(), 0.0F));
         
         /*
          * 1.3 Projectiles

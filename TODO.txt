@@ -1,0 +1,13 @@
+Blocks
+	Redstone Toggled
+		Shoot Projectile
+		Hurt Players on contact
+Finish Up AI
+Some GUI stuff - Ask Xolova (done)
+Generation - Trees, small plants, structures.
+Altars
+Weapons
+	Arcana Weapons (I have a list will type up eventually)
+Misc Items
+Armors
+Spawn Code - Layer based

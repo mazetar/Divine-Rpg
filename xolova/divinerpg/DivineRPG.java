@@ -13,11 +13,12 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import xolova.divinerpg.utils.Utils;
 
+
 @Mod(modid = Utils.MainModId, version = Utils.MainVersion, name = Utils.MainModName)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class DivineRPG
-{
-	@Instance
+{	
+	@Instance("DivineRPG")
 	public static DivineRPG instance;
 	
 	@SidedProxy

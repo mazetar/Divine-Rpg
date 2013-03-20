@@ -1,0 +1,36 @@
+[
+{
+  "modid": "DivineRPG|Core",
+  "name": "DivineRPG",
+  "description": "Your worst nightmare is coming",
+  "version": "1.3.1",
+  "credits": "Created by XolovA",
+  "logoFile": "",
+  "mcversion": "",
+  "url": "http://www.divinerpg.com/",
+  "updateUrl": "",
+  "authors": [ "XolovA", "DivineRPG Team" ],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+},
+{
+  "modid": "DivineRPG|Arcana",
+  "name": "DivineRPG Arcana",
+  "description": "Your worst nightmare is coming (Arcana Edition)",
+  "version": "1.3.1",
+  "credits": "Created by XolovA",
+  "logoFile": "",
+  "mcversion": "",
+  "url": "http://www.divinerpg.com/",
+  "updateUrl": "",
+  "authors": [ "XolovA", "DivineRPG Team" ],
+  "parent":"DivineRPG|Core",
+  "screenshots": [],
+  "dependencies": [
+     "mod_MinecraftForge"
+  ]
+}
+]

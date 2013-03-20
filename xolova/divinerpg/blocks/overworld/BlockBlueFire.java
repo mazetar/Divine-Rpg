@@ -1,4 +1,4 @@
-package xolova.divinerpg.blocks.vanilla;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.Random;
 

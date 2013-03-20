@@ -1,18 +1,31 @@
-package xolova.divinerpg.blocks.vanilla;
+package xolova.divinerpg.blocks.overworld;
 import java.util.Random;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockAEStatue extends BlockContainer
+public class BlockAyeracoBeamPurple extends BlockContainer
 {
-    public BlockAEStatue(int par1)
+	
+    public BlockAyeracoBeamPurple(int par1)
     {
         super(par1, Material.air);
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
+		this.setBlockBounds(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
+    }
+
+    /**
+     * Returns a bounding box from the pool of bounding boxes (this means this box can change after the pool has been
+     * cleared to be reused)
+     */
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World var1, int var2, int var3, int var4)
+    {
+        return null;
     }
 
     /**
@@ -20,7 +33,7 @@ public class BlockAEStatue extends BlockContainer
      */
     public TileEntity createNewTileEntity(World par1World)
     {
-        return new TileEntityAEStatue();
+        return new TileEntityAyeracoBeamPurple();
     }
 
     /**
@@ -48,19 +61,24 @@ public class BlockAEStatue extends BlockContainer
         return false;
     }
 
+    @SideOnly(Side.CLIENT)
+
+    /**
+     * A randomly called display update to be able to add particles or other items for display
+     */
+    public void randomDisplayTick(World var1, int var2, int var3, int var4, Random var5)
+    {
+        if (var5.nextInt(100) == 0)
+        {
+            var1.playSoundEffect((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "mob.RPG.AyeracoPillar", 0.5F, var5.nextFloat() * 0.4F + 0.8F);
+        }
+    }
+
     /**
      * The type of render function that is called for this block
      */
     public int getRenderType()
     {
-        return -1;
-    }
-
-    /**
-     * Returns the ID of the items to drop on destruction.
-     */
-    public int idDropped(int par1, Random par2Random, int par3)
-    {
-        return this.blockID;
+        return 1;
     }
 }

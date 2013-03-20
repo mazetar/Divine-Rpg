@@ -1,4 +1,4 @@
-package xolova.divinerpg.blocks.vanilla;
+package xolova.divinerpg.blocks.overworld;
 import java.util.Random;
 
 import net.minecraft.block.BlockContainer;
@@ -10,10 +10,10 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockAyeracoBeamYellow extends BlockContainer
+public class BlockAyeracoBeamRed extends BlockContainer
 {
 	
-    public BlockAyeracoBeamYellow(int par1)
+    public BlockAyeracoBeamRed(int par1)
     {
         super(par1, Material.air);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
@@ -33,7 +33,7 @@ public class BlockAyeracoBeamYellow extends BlockContainer
      */
     public TileEntity createNewTileEntity(World par1World)
     {
-        return new TileEntityAyeracoBeamYellow();
+        return new TileEntityAyeracoBeamRed();
     }
 
     /**

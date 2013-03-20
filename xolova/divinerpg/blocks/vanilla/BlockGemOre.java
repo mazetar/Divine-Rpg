@@ -1,22 +1,19 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.vanilla;
 
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import xolova.blued00r.divinerpg.DivineRPG;
+import net.minecraft.item.Item;
 
-public class BlockBloodGem extends Block
+public class BlockGemOre extends Block
 {
-    public BlockBloodGem(int var1, int var2)
+	public Item dropItem;
+	
+    public BlockGemOre(int par1, Item par2)
     {
-        super(var1, var2, Material.rock);
-        this.blockIndexInTexture = var2;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
+        super(par1, Material.rock);
+        this.dropItem = par2;
     }
 
     /**
@@ -24,7 +21,7 @@ public class BlockBloodGem extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return this.blockID == DivineRPG.bloodGemOre.blockID ? DivineRPG.glowingGem.itemID : (this.blockID == DivineRPG.azuriteOre.blockID ? DivineRPG.azuriteFragments.itemID : (this.blockID == DivineRPG.energyOre.blockID ? DivineRPG.energyFragments.itemID : (this.blockID == DivineRPG.mythilOre.blockID ? DivineRPG.mythrilFragments.itemID : (this.blockID == DivineRPG.denseOre.blockID ? DivineRPG.denseFragments.itemID : this.blockID))));
+        return this.dropItem.itemID;
     }
 
     /**

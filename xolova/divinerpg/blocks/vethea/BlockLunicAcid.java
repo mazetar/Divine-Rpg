@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
 
 import java.util.Random;
 
@@ -17,7 +17,7 @@ public class BlockLunicAcid extends Block
 {
     public BlockLunicAcid(int par1, int par2)
     {
-        super(par1, par2, Material.snow);
+        super(par1, Material.snow);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.125F, 1.0F);
         this.setTickRandomly(true);
     }
@@ -29,7 +29,7 @@ public class BlockLunicAcid extends Block
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
     {
         int var5 = par1World.getBlockMetadata(par2, par3, par4) & 7;
-        return var5 >= 3 ? AxisAlignedBB.getAABBPool().addOrModifyAABBInPool((double)par2 + this.minX, (double)par3 + this.minY, (double)par4 + this.minZ, (double)par2 + this.maxX, (double)((float)par3 + 0.5F), (double)par4 + this.maxZ) : null;
+        return var5 >= 3 ? AxisAlignedBB.getAABBPool().getAABB((double)par2 + this.minX, (double)par3 + this.minY, (double)par4 + this.minZ, (double)par2 + this.maxX, (double)((float)par3 + 0.5F), (double)par4 + this.maxZ) : null;
     }
 
     /**
@@ -85,7 +85,7 @@ public class BlockLunicAcid extends Block
     {
         if (!this.canPlaceBlockAt(par1World, par2, par3, par4))
         {
-            par1World.setBlockWithNotify(par2, par3, par4, 0);
+            par1World.func_94575_c(par2, par3, par4, 0);
             return false;
         }
         else
@@ -101,14 +101,14 @@ public class BlockLunicAcid extends Block
     public void harvestBlock(World par1World, EntityPlayer par2EntityPlayer, int par3, int par4, int par5, int par6)
     {
         super.harvestBlock(par1World, par2EntityPlayer, par3, par4, par5, par6);
-        par1World.setBlockWithNotify(par3, par4, par5, 0);
+        par1World.func_94575_c(par3, par4, par5, 0);
     }
     
     /**
      * How many world ticks before ticking
      */
     @Override
-    public int tickRate()
+    public int tickRate(World par1World)
     {
         return 160;
     }
@@ -134,7 +134,7 @@ public class BlockLunicAcid extends Block
      */
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
-    	par1World.setBlockWithNotify(par2, par3, par4, 0);
+    	par1World.func_94575_c(par2, par3, par4, 0);
     }
 
     /**

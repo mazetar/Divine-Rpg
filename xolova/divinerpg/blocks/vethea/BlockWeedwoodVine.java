@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,9 +15,9 @@ import net.minecraftforge.common.IShearable;
 
 public class BlockWeedwoodVine extends Block implements IShearable
 {
-    public BlockWeedwoodVine(int par1, int par2)
+    public BlockWeedwoodVine(int par1)
     {
-        super(par1, par2, Material.vine);
+        super(par1, Material.vine);
         this.setTickRandomly(true);
     }
 
@@ -201,7 +201,7 @@ public class BlockWeedwoodVine extends Block implements IShearable
         {
             if (var6 != var5)
             {
-                par1World.setBlockMetadataWithNotify(par2, par3, par4, var6);
+                par1World.setBlockMetadataWithNotify(par2, par3, par4, this.blockID, var6);
             }
 
             return true;
@@ -217,7 +217,7 @@ public class BlockWeedwoodVine extends Block implements IShearable
         if (!par1World.isRemote && !this.canVineStay(par1World, par2, par3, par4))
         {
             this.dropBlockAsItem(par1World, par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4), 0);
-            par1World.setBlockWithNotify(par2, par3, par4, 0);
+            par1World.func_94575_c(par2, par3, par4, 0);
         }
     }
 
@@ -283,7 +283,7 @@ public class BlockWeedwoodVine extends Block implements IShearable
 
                     if (var12 > 0)
                     {
-                        par1World.setBlockAndMetadataWithNotify(par2, par3 + 1, par4, this.blockID, var12);
+                        par1World.setBlockAndMetadataWithNotify(par2, par3 + 1, par4, this.blockID, var12, 3);
                     }
                 }
             }
@@ -304,7 +304,7 @@ public class BlockWeedwoodVine extends Block implements IShearable
                     {
                         if (Block.blocksList[var12].blockMaterial.isOpaque() && Block.blocksList[var12].renderAsNormalBlock())
                         {
-                            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9 | 1 << var11);
+                            par1World.setBlockMetadataWithNotify(par2, par3, par4, this.blockID, var9 | 1 << var11);
                         }
                     }
                     else
@@ -314,23 +314,23 @@ public class BlockWeedwoodVine extends Block implements IShearable
 
                         if ((var9 & 1 << var13) != 0 && this.canBePlacedOn(par1World.getBlockId(par2 + Direction.offsetX[var11] + Direction.offsetX[var13], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var13])))
                         {
-                            par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 1 << var13);
+                            par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 1 << var13, 3);
                         }
                         else if ((var9 & 1 << var14) != 0 && this.canBePlacedOn(par1World.getBlockId(par2 + Direction.offsetX[var11] + Direction.offsetX[var14], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var14])))
                         {
-                            par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 1 << var14);
+                            par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 1 << var14, 3);
                         }
                         else if ((var9 & 1 << var13) != 0 && par1World.isAirBlock(par2 + Direction.offsetX[var11] + Direction.offsetX[var13], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var13]) && this.canBePlacedOn(par1World.getBlockId(par2 + Direction.offsetX[var13], par3, par4 + Direction.offsetZ[var13])))
                         {
-                            par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11] + Direction.offsetX[var13], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var13], this.blockID, 1 << (var11 + 2 & 3));
+                            par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11] + Direction.offsetX[var13], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var13], this.blockID, 1 << (var11 + 2 & 3), 3);
                         }
                         else if ((var9 & 1 << var14) != 0 && par1World.isAirBlock(par2 + Direction.offsetX[var11] + Direction.offsetX[var14], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var14]) && this.canBePlacedOn(par1World.getBlockId(par2 + Direction.offsetX[var14], par3, par4 + Direction.offsetZ[var14])))
                         {
-                            par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11] + Direction.offsetX[var14], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var14], this.blockID, 1 << (var11 + 2 & 3));
+                            par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11] + Direction.offsetX[var14], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var14], this.blockID, 1 << (var11 + 2 & 3), 3);
                         }
                         else if (this.canBePlacedOn(par1World.getBlockId(par2 + Direction.offsetX[var11], par3 + 1, par4 + Direction.offsetZ[var11])))
                         {
-                            par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 0);
+                            par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 0, 3);
                         }
                     }
                 }
@@ -344,7 +344,7 @@ public class BlockWeedwoodVine extends Block implements IShearable
 
                         if (var13 > 0)
                         {
-                            par1World.setBlockAndMetadataWithNotify(par2, par3 - 1, par4, this.blockID, var13);
+                            par1World.setBlockAndMetadataWithNotify(par2, par3 - 1, par4, this.blockID, var13, 3);
                         }
                     }
                     else if (var12 == this.blockID)
@@ -354,7 +354,7 @@ public class BlockWeedwoodVine extends Block implements IShearable
 
                         if (var14 != (var14 | var13))
                         {
-                            par1World.setBlockMetadataWithNotify(par2, par3 - 1, par4, var14 | var13);
+                            par1World.setBlockMetadataWithNotify(par2, par3 - 1, par4, var14 | var13, 3);
                         }
                     }
                 }

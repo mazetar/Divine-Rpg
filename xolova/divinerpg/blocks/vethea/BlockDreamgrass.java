@@ -1,13 +1,11 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
 
 import java.util.Random;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.world.ColorizerGrass;
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
@@ -15,19 +13,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockDreamgrass extends Block
 {
-    public BlockDreamgrass(int par1)
+    private Icon[] texture;
+
+	public BlockDreamgrass(int par1)
     {
         super(par1, Material.grass);
-        this.blockIndexInTexture = 10;
         this.setTickRandomly(true);
-    }
-
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
-    {
-        return par1 == 1 ? 12 : (par1 == 0 ? 11 : 10);
     }
 
     @SideOnly(Side.CLIENT)
@@ -35,18 +26,18 @@ public class BlockDreamgrass extends Block
     /**
      * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
      */
-    public int getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
+    public Icon getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
     {
         if (par5 == 1)
         {
-            return 12;
+            return this.texture[2];
         }
         else if (par5 == 0)
         {
-            return 11;
+            return this.texture[1];
         }
         
-        return 10;
+        return this.texture[0];
     }
 
     /**
@@ -58,7 +49,7 @@ public class BlockDreamgrass extends Block
         {
             if (par1World.getBlockLightValue(par2, par3 + 1, par4) < 4 && par1World.getBlockLightOpacity(par2, par3 + 1, par4) > 2)
             {
-                par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.dreamdirt.blockID);
+                par1World.setBlockWithNotify(par2, par3, par4, VetheaBlockHelper.dreamdirt.blockID);
             }
             else if (par1World.getBlockLightValue(par2, par3 + 1, par4) >= 9)
             {
@@ -69,9 +60,9 @@ public class BlockDreamgrass extends Block
                     int var9 = par4 + par5Random.nextInt(3) - 1;
                     int var10 = par1World.getBlockId(var7, var8 + 1, var9);
 
-                    if (par1World.getBlockId(var7, var8, var9) == DivineRPG.dreamdirt.blockID && par1World.getBlockLightValue(var7, var8 + 1, var9) >= 4 && par1World.getBlockLightOpacity(var7, var8 + 1, var9) <= 2)
+                    if (par1World.getBlockId(var7, var8, var9) == VetheaBlockHelper.dreamdirt.blockID && par1World.getBlockLightValue(var7, var8 + 1, var9) >= 4 && par1World.getBlockLightOpacity(var7, var8 + 1, var9) <= 2)
                     {
-                        par1World.setBlockWithNotify(var7, var8, var9, DivineRPG.dreamgrass.blockID);
+                        par1World.setBlockWithNotify(var7, var8, var9, VetheaBlockHelper.dreamgrass.blockID);
                     }
                 }
             }
@@ -83,6 +74,17 @@ public class BlockDreamgrass extends Block
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return DivineRPG.dreamdirt.idDropped(0, par2Random, par3);
+        return VetheaBlockHelper.dreamdirt.idDropped(0, par2Random, par3);
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void func_94332_a(IconRegister par1IconRegister)
+    {
+        this.texture = new Icon[3];
+
+        for (int i = 0; i < this.texture.length; ++i)
+        {
+            this.texture[i] = par1IconRegister.func_94245_a(this.getLocalizedName() + "_" + i);
+        }
     }
 }

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -9,19 +9,16 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.mobs.vethea.EntityKaros;
 
 public class BlockKarosHeatTileRed extends Block
 {
     private final boolean powered;
     public boolean override;
 
-    public BlockKarosHeatTileRed(int var1, boolean var2, int var3)
+    public BlockKarosHeatTileRed(int var1, boolean var2)
     {
         super(var1, Material.glass);
         this.powered = var2;
-        this.blockIndexInTexture = var3;
         this.override = false;
         this.setTickRandomly(true);
     }
@@ -33,7 +30,7 @@ public class BlockKarosHeatTileRed extends Block
     {
         if (!var1.isRemote)
         {
-           var1.setBlockWithNotify(var2, var3, var4, DivineRPG.karosHeatTileRed.blockID);
+           var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
         }
     }
 
@@ -52,7 +49,7 @@ public class BlockKarosHeatTileRed extends Block
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4) && !this.override)
         {
-            var1.setBlockWithNotify(var2, var3, var4, DivineRPG.karosHeatTileGreen.blockID);
+            var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileGreen.blockID);
         }
     }
 
@@ -76,7 +73,7 @@ public class BlockKarosHeatTileRed extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.karosHeatTileGreen.blockID;
+        return VetheaBlockHelper.karosHeatTileGreen.blockID;
     }
 
     public void addCreativeItems(ArrayList var1)

@@ -1,55 +1,32 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.world.IBlockAccess;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.IPlantable;
-import xolova.blued00r.divinerpg.DivineRPG;
 
 public class BlockArcaniteGrass extends Block
 {
     public BlockArcaniteGrass(int par1)
     {
         super(par1, Material.grass);
-        this.blockIndexInTexture = 54;
     }
 
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return DivineRPG.arcaniteDirt.blockID;
+        return ArcanaBlockHelper.arcaniteDirt.blockID;
     }
     
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
+    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
-        return par1 == 1 ? 53 : (par1 == 0 ? 54 : 55);
-    }
-
-    /**
-     * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
-     */
-    public int getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
-    {
-        switch(par5)
-        {
-        	case 1:
-        		return 53;
-        	case 0:
-        		return 54;
-        	default:
-        		return 55;
-        }
-    }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
+        return par1 == 1 ? ArcanaBlockHelper.arcaniteDirt.getBlockTextureFromSide(0) : (par1 == 0 ? this.texture[0] : this.texture[1]);
     }
 
     /**
@@ -87,7 +64,7 @@ public class BlockArcaniteGrass extends Block
             {
                 for (int var7 = par4 - 4; var7 <= par4 + 4; ++var7)
                 {
-                    if (par1World.getBlockId(var5, var6, var7) == DivineRPG.tarStill.blockID)
+                    if (par1World.getBlockId(var5, var6, var7) == VanillaBlockHelper.tarStill.blockID)
                     {
                         return true;
                     }

@@ -1,25 +1,21 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.vanilla;
 import java.util.Random;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityAyeracoBeamRed;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockAyeracoBeamRed extends BlockContainer
 {
 	
     public BlockAyeracoBeamRed(int par1)
     {
-        super(par1, 23, Material.air);
+        super(par1, Material.air);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
     }
 

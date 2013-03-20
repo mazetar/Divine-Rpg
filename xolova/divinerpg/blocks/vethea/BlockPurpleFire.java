@@ -1,14 +1,12 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockFire;
-import net.minecraft.world.World;
 
 public class BlockPurpleFire extends BlockFire
 {
-	public BlockPurpleFire(int par1, int par2) 
+	public BlockPurpleFire(int par1) 
 	{
-		super(par1, par2);
+		super(par1);
 		this.setTickRandomly(false);
 	}
 }

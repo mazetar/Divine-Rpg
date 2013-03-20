@@ -1,39 +1,29 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+package xolova.divinerpg.blocks.vethea;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeavesBase;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.StatList;
-import net.minecraft.world.ColorizerFoliage;
-import net.minecraft.world.IBlockAccess;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-
 import net.minecraftforge.common.IShearable;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockDreamwoodLeaves extends BlockLeavesBase implements IShearable
 {
-    /**
-     * The base index in terrain.png corresponding to the fancy version of the leaf texture. This is stored so we can
-     * switch the displayed version between fancy and fast graphics (fast is this index + 1).
-     */
-    private int baseIndexInPNG;
     int[] adjacentTreeBlocks;
+	private Icon[] texture;
 
-    public BlockDreamwoodLeaves(int par1, int par2)
+    public BlockDreamwoodLeaves(int par1)
     {
-        super(par1, par2, Material.leaves, false);
-        this.baseIndexInPNG = par2;
+        super(par1, Material.leaves, false);
         this.setTickRandomly(true);
     }
 
@@ -171,7 +161,7 @@ public class BlockDreamwoodLeaves extends BlockLeavesBase implements IShearable
 
                 if (var12 >= 0)
                 {
-                    par1World.setBlockMetadata(par2, par3, par4, var6 & -9);
+                    par1World.func_94575_c(par2, par3, par4, var6 & -9);
                 }
                 else
                 {
@@ -200,7 +190,7 @@ public class BlockDreamwoodLeaves extends BlockLeavesBase implements IShearable
     private void removeLeaves(World par1World, int par2, int par3, int par4)
     {
         this.dropBlockAsItem(par1World, par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4), 0);
-        par1World.setBlockWithNotify(par2, par3, par4, 0);
+        par1World.func_94571_i(par2, par3, par4);
     }
 
     /**
@@ -280,12 +270,23 @@ public class BlockDreamwoodLeaves extends BlockLeavesBase implements IShearable
     @Override
     public void beginLeavesDecay(World world, int x, int y, int z)
     {
-        world.setBlockMetadata(x, y, z, world.getBlockMetadata(x, y, z) | 8);
+        world.setBlockMetadataWithNotify(x, y, z, world.getBlockMetadata(x, y, z) | 8, 3);
     }
 
     @Override
     public boolean isLeaves(World world, int x, int y, int z)
     {
         return true;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void func_94332_a(IconRegister par1IconRegister)
+    {
+        this.texture = new Icon[2];
+
+        for (int i = 0; i < this.texture.length; ++i)
+        {
+            this.texture[i] = par1IconRegister.func_94245_a(this.getLocalizedName() + "_" + i);
+        }
     }
 }

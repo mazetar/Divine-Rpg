@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.vanilla;
 import java.util.Random;
 
 import net.minecraft.block.BlockContainer;
@@ -6,14 +6,12 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityAyeracoStatue;
 
 public class BlockAyeracoStatue extends BlockContainer
 {
     public BlockAyeracoStatue(int par1)
     {
-        super(par1, 23, Material.air);
+        super(par1, Material.air);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
     }
 

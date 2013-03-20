@@ -1,26 +1,22 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
 
 public class BlockKarosHeatTileGreen extends Block
 {
     private final boolean powered;
     public boolean override;
 
-    public BlockKarosHeatTileGreen(int var1, boolean var2, int var3)
+    public BlockKarosHeatTileGreen(int var1, boolean var2)
     {
         super(var1, Material.glass);
         this.powered = var2;
-        this.blockIndexInTexture = var3;
         this.override = false;
     }
 
@@ -37,7 +33,7 @@ public class BlockKarosHeatTileGreen extends Block
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.karosHeatTileRed.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
             }
         }
     }
@@ -56,7 +52,7 @@ public class BlockKarosHeatTileGreen extends Block
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.karosHeatTileRed.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
             }
         }
     }
@@ -68,7 +64,7 @@ public class BlockKarosHeatTileGreen extends Block
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4) && !this.override)
         {
-            var1.setBlockWithNotify(var2, var3, var4, DivineRPG.karosHeatTileGreen.blockID);
+            var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileGreen.blockID);
         }
     }
 
@@ -77,11 +73,11 @@ public class BlockKarosHeatTileGreen extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.karosHeatTileGreen.blockID;
+        return VetheaBlockHelper.karosHeatTileGreen.blockID;
     }
 
-    public void addCreativeItems(ArrayList var1)
+    public void addCreativeItems(ArrayList par1)
     {
-        var1.add(new ItemStack(this, 1));
+        par1.add(new ItemStack(this, 1));
     }
 }

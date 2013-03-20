@@ -1,28 +1,23 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import java.util.List;
 import java.util.Random;
-
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.vethea.EntityKarosCannonShot;
-import xolova.blued00r.divinerpg.entities.vethea.EntityZoragonBomb;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockHelioticBeam extends Block
 {
 
-    public BlockHelioticBeam(int par1)
+    private Icon[] texture;
+
+	public BlockHelioticBeam(int par1)
     {
         super(par1, Material.rock);
-        this.blockIndexInTexture = 77;
     }
 
     /**
@@ -110,11 +105,10 @@ public class BlockHelioticBeam extends Block
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
+    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
         int var3 = par2 & 12;
-        int var4 = par2 & 3;
-        return var3 == 0 && (par1 == 1 || par1 == 0) ? 78 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 78 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 78 : 77));
+        return var3 == 0 && (par1 == 1 || par1 == 0) ? this.texture[1] : (var3 == 4 && (par1 == 5 || par1 == 4) ? this.texture[1] : (var3 == 8 && (par1 == 2 || par1 == 3) ? this.texture[1] : this.texture[0]));
     }
 
     /**
@@ -135,5 +129,16 @@ public class BlockHelioticBeam extends Block
     public boolean isWood(World world, int x, int y, int z)
     {
         return true;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void func_94332_a(IconRegister par1IconRegister)
+    {
+        this.texture = new Icon[2];
+
+        for (int i = 0; i < this.texture.length; ++i)
+        {
+            this.texture[i] = par1IconRegister.func_94245_a("helioticBeam_" + i);
+        }
     }
 }

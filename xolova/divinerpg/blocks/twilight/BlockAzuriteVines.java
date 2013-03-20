@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -12,15 +12,13 @@ import net.minecraft.util.Direction;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
-import xolova.blued00r.divinerpg.DivineRPG;
 
 public class BlockAzuriteVines extends Block implements IShearable
 {
-    public BlockAzuriteVines(int var1, int var2)
+    public BlockAzuriteVines(int var1)
     {
-        super(var1, var2, Material.vine);
+        super(var1, Material.vine);
         this.setTickRandomly(true);
-        this.blockIndexInTexture = var2;
     }
 
     /**
@@ -202,7 +200,7 @@ public class BlockAzuriteVines extends Block implements IShearable
         {
             if (var6 != var5)
             {
-                var1.setBlockMetadataWithNotify(var2, var3, var4, var6);
+                var1.func_94575_c(var2, var3, var4, var6);
             }
 
             return true;
@@ -218,7 +216,7 @@ public class BlockAzuriteVines extends Block implements IShearable
         if (!var1.isRemote && !this.canVineStay(var1, var2, var3, var4))
         {
             this.dropBlockAsItem(var1, var2, var3, var4, var1.getBlockMetadata(var2, var3, var4), 0);
-            var1.setBlockWithNotify(var2, var3, var4, 0);
+            var1.func_94575_c(var2, var3, var4, 0);
         }
     }
 
@@ -284,7 +282,7 @@ public class BlockAzuriteVines extends Block implements IShearable
 
                     if (var12 > 0)
                     {
-                        var1.setBlockAndMetadataWithNotify(var2, var3 + 1, var4, this.blockID, var12);
+                        var1.setBlockAndMetadataWithNotify(var2, var3 + 1, var4, this.blockID, var12, 3);
                     }
                 }
             }
@@ -305,7 +303,7 @@ public class BlockAzuriteVines extends Block implements IShearable
                     {
                         if (Block.blocksList[var12].blockMaterial.isOpaque() && Block.blocksList[var12].renderAsNormalBlock())
                         {
-                            var1.setBlockMetadataWithNotify(var2, var3, var4, var9 | 1 << var11);
+                            var1.setBlockMetadataWithNotify(var2, var3, var4, this.blockID, var9 | 1 << var11);
                         }
                     }
                     else
@@ -315,23 +313,23 @@ public class BlockAzuriteVines extends Block implements IShearable
 
                         if ((var9 & 1 << var13) != 0 && this.canBePlacedOn(var1.getBlockId(var2 + Direction.offsetX[var11] + Direction.offsetX[var13], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var13])))
                         {
-                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 1 << var13);
+                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 1 << var13, 3);
                         }
                         else if ((var9 & 1 << var14) != 0 && this.canBePlacedOn(var1.getBlockId(var2 + Direction.offsetX[var11] + Direction.offsetX[var14], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var14])))
                         {
-                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 1 << var14);
+                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 1 << var14, 3);
                         }
                         else if ((var9 & 1 << var13) != 0 && var1.isAirBlock(var2 + Direction.offsetX[var11] + Direction.offsetX[var13], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var13]) && this.canBePlacedOn(var1.getBlockId(var2 + Direction.offsetX[var13], var3, var4 + Direction.offsetZ[var13])))
                         {
-                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11] + Direction.offsetX[var13], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var13], this.blockID, 1 << (var11 + 2 & 3));
+                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11] + Direction.offsetX[var13], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var13], this.blockID, 1 << (var11 + 2 & 3), 3);
                         }
                         else if ((var9 & 1 << var14) != 0 && var1.isAirBlock(var2 + Direction.offsetX[var11] + Direction.offsetX[var14], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var14]) && this.canBePlacedOn(var1.getBlockId(var2 + Direction.offsetX[var14], var3, var4 + Direction.offsetZ[var14])))
                         {
-                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11] + Direction.offsetX[var14], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var14], this.blockID, 1 << (var11 + 2 & 3));
+                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11] + Direction.offsetX[var14], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var14], this.blockID, 1 << (var11 + 2 & 3), 3);
                         }
                         else if (this.canBePlacedOn(var1.getBlockId(var2 + Direction.offsetX[var11], var3 + 1, var4 + Direction.offsetZ[var11])))
                         {
-                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 0);
+                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 0, 3);
                         }
                     }
                 }
@@ -345,7 +343,7 @@ public class BlockAzuriteVines extends Block implements IShearable
 
                         if (var13 > 0)
                         {
-                            var1.setBlockAndMetadataWithNotify(var2, var3 - 1, var4, this.blockID, var13);
+                            var1.setBlockAndMetadataWithNotify(var2, var3 - 1, var4, this.blockID, var13, 3);
                         }
                     }
                     else if (var12 == this.blockID)
@@ -355,7 +353,7 @@ public class BlockAzuriteVines extends Block implements IShearable
 
                         if (var14 != (var14 | var13))
                         {
-                            var1.setBlockMetadataWithNotify(var2, var3 - 1, var4, var14 | var13);
+                            var1.setBlockMetadataWithNotify(var2, var3 - 1, var4, var14 | var13, 3);
                         }
                     }
                 }
@@ -390,7 +388,7 @@ public class BlockAzuriteVines extends Block implements IShearable
 
         if (var9 != 0)
         {
-            var1.setBlockMetadataWithNotify(var2, var3, var4, var9);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, this.blockID, var9);
         }
     }
 
@@ -424,9 +422,9 @@ public class BlockAzuriteVines extends Block implements IShearable
         return true;
     }
 
-    public ArrayList onSheared(ItemStack var1, World var2, int var3, int var4, int var5, int var6)
+    public ArrayList<ItemStack> onSheared(ItemStack var1, World var2, int var3, int var4, int var5, int var6)
     {
-        ArrayList var7 = new ArrayList();
+        ArrayList<ItemStack> var7 = new ArrayList<ItemStack>();
         var7.add(new ItemStack(this, 1, 0));
         return var7;
     }
@@ -434,10 +432,5 @@ public class BlockAzuriteVines extends Block implements IShearable
     public boolean isLadder(World var1, int var2, int var3, int var4)
     {
         return true;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile1;
     }
 }

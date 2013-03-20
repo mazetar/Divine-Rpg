@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
@@ -11,9 +11,8 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.client.particles.EntityAzuritePortalFX;
-import xolova.blued00r.divinerpg.teleporter.TeleporterAzurite;
+import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.Utils;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -21,12 +20,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockAzuritePortal extends BlockBreakable
 {
     private int firetick;
-    private int firemax = 1000;
+    private int firemax = 100;
 
-    public BlockAzuritePortal(int var1, int var2)
+    public BlockAzuritePortal(int var1)
     {
-        super(var1, var2, Material.portal, false);
-        this.firetick = this.firemax;
+        super(var1, "azuritePortal", Material.portal, false);
+        this.firetick = 0;
     }
 
     /**
@@ -82,12 +81,12 @@ public class BlockAzuritePortal extends BlockBreakable
         byte var5 = 0;
         byte var6 = 0;
 
-        if (var1.getBlockId(var2 - 1, var3, var4) == DivineRPG.serenityBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == DivineRPG.serenityBlock.blockID)
+        if (var1.getBlockId(var2 - 1, var3, var4) == TwilightBlockHelper.serenityBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == DivineRPG.serenityBlock.blockID)
         {
             var5 = 1;
         }
 
-        if (var1.getBlockId(var2, var3, var4 - 1) == DivineRPG.serenityBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == DivineRPG.serenityBlock.blockID)
+        if (var1.getBlockId(var2, var3, var4 - 1) == TwilightBlockHelper.serenityBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == DivineRPG.serenityBlock.blockID)
         {
             var6 = 1;
         }
@@ -119,12 +118,12 @@ public class BlockAzuritePortal extends BlockBreakable
 
                         if (var9)
                         {
-                            if (var10 != DivineRPG.serenityBlock.blockID)
+                            if (var10 != TwilightBlockHelper.serenityBlock.blockID)
                             {
                                 return false;
                             }
                         }
-                        else if (var10 != 0 && var10 != DivineRPG.blueFire.blockID)
+                        else if (var10 != 0 && var10 != TwilightBlockHelper.blueFire.blockID)
                         {
                             return false;
                         }
@@ -132,17 +131,17 @@ public class BlockAzuritePortal extends BlockBreakable
                 }
             }
 
-            var1.editingBlocks = true;
+            var1.scheduledUpdatesAreImmediate = true;
 
             for (var7 = 0; var7 < 2; ++var7)
             {
                 for (var8 = 0; var8 < 3; ++var8)
                 {
-                    var1.setBlockWithNotify(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, DivineRPG.azuritePortal.blockID);
+                    var1.setBlockWithNotify(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.azuritePortal.blockID);
                 }
             }
 
-            var1.editingBlocks = false;
+            var1.scheduledUpdatesAreImmediate = false;
             return true;
         }
     }
@@ -169,9 +168,9 @@ public class BlockAzuritePortal extends BlockBreakable
             ;
         }
 
-        if (var1.getBlockId(var2, var8 - 1, var4) != DivineRPG.serenityBlock.blockID)
+        if (var1.getBlockId(var2, var8 - 1, var4) != TwilightBlockHelper.serenityBlock.blockID)
         {
-            var1.setBlockWithNotify(var2, var3, var4, 0);
+            var1.func_94571_i(var2, var3, var4);
         }
         else
         {
@@ -182,23 +181,23 @@ public class BlockAzuritePortal extends BlockBreakable
                 ;
             }
 
-            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == DivineRPG.serenityBlock.blockID)
+            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == TwilightBlockHelper.serenityBlock.blockID)
             {
                 boolean var10 = var1.getBlockId(var2 - 1, var3, var4) == this.blockID || var1.getBlockId(var2 + 1, var3, var4) == this.blockID;
                 boolean var11 = var1.getBlockId(var2, var3, var4 - 1) == this.blockID || var1.getBlockId(var2, var3, var4 + 1) == this.blockID;
 
                 if (var10 && var11)
                 {
-                    var1.setBlockWithNotify(var2, var3, var4, 0);
+                    var1.func_94571_i(var2, var3, var4);
                 }
-                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != DivineRPG.serenityBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != DivineRPG.serenityBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
+                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.serenityBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != DivineRPG.serenityBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
-                    var1.setBlockWithNotify(var2, var3, var4, 0);
+                    var1.func_94571_i(var2, var3, var4);
                 }
             }
             else
             {
-                var1.setBlockWithNotify(var2, var3, var4, 0);
+                var1.func_94571_i(var2, var3, var4);
             }
         }
     }
@@ -258,7 +257,7 @@ public class BlockAzuritePortal extends BlockBreakable
                     if (var5.ridingEntity == null && var5.riddenByEntity == null && var5 instanceof EntityPlayer)
                     {
                         var1.playSound((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "xolovon.AzuritePortal", 0.5F, ((EntityPlayerMP) var5).getRNG().nextFloat() * 0.4F + 0.8F, false);
-                        if (var6.dimension != DivineRPG.azuriteID)
+                        if (var6.dimension != Utils.azuriteID)
                         {
                             var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DivineRPG.azuriteID, new TeleporterAzurite(var6.mcServer.worldServerForDimension(DivineRPG.azuriteID)));
                         }

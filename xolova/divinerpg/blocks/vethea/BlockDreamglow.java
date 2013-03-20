@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
 
 import java.util.Random;
 
@@ -6,9 +6,9 @@ import net.minecraft.world.World;
 
 public class BlockDreamglow extends BlockVetheaPlant
 {
-    public BlockDreamglow(int par1, int par2)
+    public BlockDreamglow(int par1)
     {
-        super(par1, par2);
+        super(par1);
         float var3 = 0.2F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, var3 * 2.0F, 0.5F + var3);
         this.setTickRandomly(true);
@@ -66,7 +66,7 @@ public class BlockDreamglow extends BlockVetheaPlant
 
             if (par1World.isAirBlock(var8, var9, var10) && this.canBlockStay(par1World, var8, var9, var10))
             {
-                par1World.setBlockWithNotify(var8, var9, var10, this.blockID);
+                par1World.func_94575_c(par2, par3, par4, this.blockID);
             }
         }
     }

@@ -1,21 +1,19 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
 
 import java.util.Random;
 
 import net.minecraft.block.BlockMobSpawner;
-import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityArcanaPower;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockVermenousSpawner extends BlockMobSpawner
 {
-    public BlockVermenousSpawner(int par1, int par2)
+    public BlockVermenousSpawner(int par1)
     {
-        super(par1, par2);
+        super(par1);
     }
 
     /**
@@ -24,7 +22,7 @@ public class BlockVermenousSpawner extends BlockMobSpawner
     public TileEntity createNewTileEntity(World par1World)
     {
     	TileEntityMobSpawner var1 = new TileEntityMobSpawner();
-    	var1.setMobID("DivineRPG.vermenous");
+    	var1.func_98049_a().func_98272_a("DivineRPG.vermenous");
         return var1;
     }
 

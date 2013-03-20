@@ -1,25 +1,25 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
+
+import java.util.Random;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import java.util.List;
-import java.util.Random;
-
-import xolova.blued00r.divinerpg.DivineRPG;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
 public class BlockDreamwood extends Block
 {
 
-    public BlockDreamwood(int par1)
+    private Icon[] texture;
+	private String name;
+
+	public BlockDreamwood(int par1)
     {
         super(par1, Material.wood);
-        this.blockIndexInTexture = 13;
     }
 
     /**
@@ -95,11 +95,10 @@ public class BlockDreamwood extends Block
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
+    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
         int var3 = par2 & 12;
-        int var4 = par2 & 3;
-        return var3 == 0 && (par1 == 1 || par1 == 0) ? 15 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 15 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 15 : 13));
+        return var3 == 0 && (par1 == 1 || par1 == 0) ? this.texture[1] : (var3 == 4 && (par1 == 5 || par1 == 4) ? this.texture[1]  : (var3 == 8 && (par1 == 2 || par1 == 3) ? this.texture[1]  : this.texture[0] ));
     }
 
     /**
@@ -108,6 +107,15 @@ public class BlockDreamwood extends Block
     public int damageDropped(int par1)
     {
         return par1 & 3;
+    }
+
+    /**
+     * Sets the unlocalized name of the block to the string passed as a parameter, prefixed by "tile."
+     */
+    public Block setUnlocalizedName(String par1Str)
+    {
+        this.name = par1Str;
+        return super.setUnlocalizedName(par1Str);
     }
 
     @Override
@@ -120,5 +128,16 @@ public class BlockDreamwood extends Block
     public boolean isWood(World world, int x, int y, int z)
     {
         return true;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void func_94332_a(IconRegister par1IconRegister)
+    {
+        this.texture = new Icon[2];
+
+        for (int i = 0; i < this.texture.length; ++i)
+        {
+            this.texture[i] = par1IconRegister.func_94245_a(this.name + "_" + i);
+        }
     }
 }

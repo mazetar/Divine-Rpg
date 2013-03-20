@@ -1,34 +1,29 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
+
+import static net.minecraftforge.common.EnumPlantType.Plains;
 
 import java.util.Random;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-
 import net.minecraftforge.common.EnumPlantType;
-import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.IPlantable;
-import static net.minecraftforge.common.EnumPlantType.*;
 
 public class BlockVetheaPlant extends Block implements IPlantable
 {
-    protected BlockVetheaPlant(int par1, int par2, Material par3Material)
+    protected BlockVetheaPlant(int par1, Material par3Material)
     {
         super(par1, par3Material);
-        this.blockIndexInTexture = par2;
         this.setTickRandomly(true);
         float var4 = 0.2F;
         this.setBlockBounds(0.5F - var4, 0.0F, 0.5F - var4, 0.5F + var4, var4 * 3.0F, 0.5F + var4);
     }
 
-    public BlockVetheaPlant(int par1, int par2)
+    public BlockVetheaPlant(int par1)
     {
-        this(par1, par2, Material.plants);
+        this(par1, Material.plants);
     }
 
     /**
@@ -45,7 +40,7 @@ public class BlockVetheaPlant extends Block implements IPlantable
      */
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
-        return par1 == DivineRPG.dreamgrass.blockID || par1 == DivineRPG.dreamdirt.blockID;
+        return par1 == VetheaBlockHelper.dreamgrass.blockID || par1 == VetheaBlockHelper.dreamdirt.blockID;
     }
 
     /**
@@ -71,7 +66,7 @@ public class BlockVetheaPlant extends Block implements IPlantable
         if (!this.canBlockStay(par1World, par2, par3, par4))
         {
             this.dropBlockAsItem(par1World, par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4), 0);
-            par1World.setBlockWithNotify(par2, par3, par4, 0);
+            par1World.func_94571_i(par2, par3, par4);
         }
     }
 

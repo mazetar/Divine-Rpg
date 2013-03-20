@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.vanilla;
 
 import java.util.Random;
 
@@ -6,15 +6,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockBlueFire extends Block
 {
-    public BlockBlueFire(int var1, int var2)
+    public BlockBlueFire(int var1)
     {
-        super(var1, var2, Material.fire);
+        super(var1, Material.fire);
         this.setTickRandomly(true);
     }
 
@@ -84,7 +83,7 @@ public class BlockBlueFire extends Block
     {
         if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
         {
-            var1.setBlockWithNotify(var2, var3, var4, 0);
+            var1.func_94575_c(var2, var3, var4, 0);
         }
     }
 
@@ -93,75 +92,75 @@ public class BlockBlueFire extends Block
      */
     public void onBlockAdded(World var1, int var2, int var3, int var4)
     {
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != DivineRPG.divineRock.blockID || !DivineRPG.twilightPortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != VanillaBlockHelper.divineRock.blockID || !VanillaBlockHelper.twilightPortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, 0);
+                var1.func_94575_c(var2, var3, var4, 0);
             }
             else
             {
-                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate() + var1.rand.nextInt(10));
+                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate(var1) + var1.rand.nextInt(10));
             }
         }
 
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != DivineRPG.serenityBlock.blockID || !DivineRPG.azuritePortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != VanillaBlockHelper.serenityBlock.blockID || !VanillaBlockHelper.azuritePortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, 0);
+                var1.func_94575_c(var2, var3, var4, 0);
             }
             else
             {
-                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate() + var1.rand.nextInt(10));
+                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate(var1) + var1.rand.nextInt(10));
             }
         }
 
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != DivineRPG.azuriteBlock.blockID || !DivineRPG.energyPortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != VanillaBlockHelper.azuriteBlock.blockID || !VanillaBlockHelper.energyPortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, 0);
+                var1.func_94575_c(var2, var3, var4, 0);
             }
             else
             {
-                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate() + var1.rand.nextInt(10));
+                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate(var1) + var1.rand.nextInt(10));
             }
         }
 
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != DivineRPG.energyBlock.blockID || !DivineRPG.mythrilPortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != VanillaBlockHelper.energyBlock.blockID || !VanillaBlockHelper.mythrilPortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, 0);
+                var1.func_94575_c(var2, var3, var4, 0);
             }
             else
             {
-                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate() + var1.rand.nextInt(10));
+                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate(var1) + var1.rand.nextInt(10));
             }
         }
 
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != DivineRPG.mythilBlock.blockID || !DivineRPG.densePortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != VanillaBlockHelper.mythilBlock.blockID || !VanillaBlockHelper.densePortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, 0);
+                var1.func_94575_c(var2, var3, var4, 0);
             }
             else
             {
-                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate() + var1.rand.nextInt(10));
+                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate(var1) + var1.rand.nextInt(10));
             }
         }
         
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != Block.blockSnow.blockID || !DivineRPG.iceikaPortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != Block.blockSnow.blockID || !VanillaBlockHelper.iceikaPortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, 0);
+                var1.func_94575_c(var2, var3, var4, 0);
             }
             else
             {
-                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate() + var1.rand.nextInt(10));
+                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate(var1) + var1.rand.nextInt(10));
             }
         }
     }

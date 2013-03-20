@@ -1,36 +1,40 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockAzuriteGrass extends Block
 {
-    public BlockAzuriteGrass(int var1)
+    private Icon[] texture;
+
+	public BlockAzuriteGrass(int var1)
     {
         super(var1, Material.grass);
-        this.blockIndexInTexture = 138;
         this.setTickRandomly(true);
     }
 
     /**
      * Returns the block texture based on the side being looked at.  Args: side
      */
-    public int getBlockTextureFromSide(int var1)
+    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
-        switch (var1)
+        switch (par1)
         {
             case 0:
-                return 136;
+                return TwilightBlockHelper.azuriteDirt.getBlockTextureFromSide(0);
 
             case 1:
-                return 119;
+                return this.texture[0];
 
             default:
-                return 137;
+                return this.texture[1];
         }
     }
 
@@ -43,7 +47,7 @@ public class BlockAzuriteGrass extends Block
         {
             if (var1.getBlockLightValue(var2, var3 + 1, var4) < 4 && Block.lightOpacity[var1.getBlockId(var2, var3 + 1, var4)] > 2)
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.azuriteDirt.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, TwilightBlockHelper.azuriteDirt.blockID);
             }
             else if (var1.getBlockLightValue(var2, var3 + 1, var4) >= 9)
             {
@@ -54,9 +58,9 @@ public class BlockAzuriteGrass extends Block
                     int var9 = var4 + var5.nextInt(3) - 1;
                     int var10 = var1.getBlockId(var7, var8 + 1, var9);
 
-                    if (var1.getBlockId(var7, var8, var9) == DivineRPG.azuriteDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
+                    if (var1.getBlockId(var7, var8, var9) == TwilightBlockHelper.azuriteDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
                     {
-                        var1.setBlockWithNotify(var7, var8, var9, DivineRPG.azuriteGrass.blockID);
+                        var1.setBlockWithNotify(var7, var8, var9, TwilightBlockHelper.azuriteGrass.blockID);
                     }
                 }
             }
@@ -69,16 +73,17 @@ public class BlockAzuriteGrass extends Block
     @Override
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.azuriteDirt.blockID;
+        return TwilightBlockHelper.azuriteDirt.blockID;
     }
 
-    public String getTextureFile()
+    @SideOnly(Side.CLIENT)
+    public void func_94332_a(IconRegister par1IconRegister)
     {
-        return DivineRPG.textureFile2;
-    }
+        this.texture = new Icon[2];
 
-    public int idDropped(int var1)
-    {
-        return DivineRPG.azuriteDirt.blockID;
+        for (int i = 0; i < this.texture.length; ++i)
+        {
+            this.texture[i] = par1IconRegister.func_94245_a("azuriteGrass_" + i);
+        }
     }
 }

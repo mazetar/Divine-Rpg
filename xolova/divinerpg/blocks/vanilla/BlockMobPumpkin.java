@@ -1,25 +1,26 @@
-package xolova.blued00r.divinerpg.blocks;
-
-import java.util.ArrayList;
+package xolova.divinerpg.blocks.vanilla;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.item.ItemStack;
+import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBlazePumpkin extends Block
+public class BlockMobPumpkin extends Block
 {
-    public BlockBlazePumpkin(int var1, int var2)
+    private Icon[] texture;
+	private String name;
+
+	public BlockMobPumpkin(int var1, int var2, String par3Name)
     {
         super(var1, Material.pumpkin);
-        this.blockIndexInTexture = var2;
         this.setTickRandomly(true);
+        this.name = par3Name;
     }
 
     /**
@@ -36,29 +37,29 @@ public class BlockBlazePumpkin extends Block
     /**
      * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
      */
-    public int getBlockTexture(IBlockAccess var1, int var2, int var3, int var4, int var5)
+    public Icon getBlockTexture(IBlockAccess var1, int var2, int var3, int var4, int var5)
     {
         if (var5 == 1)
         {
-            return 146;
+            return this.texture[0];
         }
         else if (var5 == 0)
         {
-            return 146;
+            return this.texture[0];
         }
         else
         {
             int var6 = var1.getBlockMetadata(var2, var3, var4);
-            return var5 != var6 ? this.blockIndexInTexture : this.blockIndexInTexture + 2;
+            return var5 != var6 ? this.texture[1] : this.texture[2];
         }
     }
 
     /**
      * Returns the block texture based on the side being looked at.  Args: side
      */
-    public int getBlockTextureFromSide(int var1)
+    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
-        return var1 == 1 ? 146 : (var1 == 0 ? 146 : (var1 == 3 ? this.blockIndexInTexture + 2 : this.blockIndexInTexture));
+        return par1 == 1 ? texture[0] : (par1 == 0 ? texture[0] : (par1 == 3 ? this.texture[2] : this.texture[1]));
     }
 
     private void setDefaultDirection(World var1, int var2, int var3, int var4)
@@ -91,17 +92,17 @@ public class BlockBlazePumpkin extends Block
                 var9 = 4;
             }
 
-            var1.setBlockMetadataWithNotify(var2, var3, var4, var9);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, this.blockID, var9);
         }
     }
 
     /**
      * Called when the block is placed in the world.
      */
-    public void onBlockPlacedBy(World var1, int var2, int var3, int var4, EntityLiving var5)
+    public void onBlockPlacedBy(World par1, int par2, int par3, int par4, EntityLiving par5)
     {
         byte var6 = 0;
-        int var7 = MathHelper.floor_double((double)(var5.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+        int var7 = MathHelper.floor_double((double)(par5.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
 
         if (var7 == 0)
         {
@@ -123,16 +124,17 @@ public class BlockBlazePumpkin extends Block
             var6 = 4;
         }
 
-        var1.setBlockMetadataWithNotify(var2, var3, var4, var6);
+        par1.setBlockMetadataWithNotify(par2, par3, par4, this.blockID, var6);
     }
 
-    public String getTextureFile()
+    @SideOnly(Side.CLIENT)
+    public void func_94332_a(IconRegister par1IconRegister)
     {
-        return DivineRPG.textureFile;
-    }
+        this.texture = new Icon[2];
 
-    public void addCreativeItems(ArrayList var1)
-    {
-        var1.add(new ItemStack(this, 1));
+        for (int i = 0; i < this.texture.length; ++i)
+        {
+            this.texture[i] = par1IconRegister.func_94245_a(this.name + "_" + i);
+        }
     }
 }

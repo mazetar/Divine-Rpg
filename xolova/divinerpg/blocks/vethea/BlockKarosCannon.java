@@ -1,19 +1,11 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;
-
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.vethea.EntityKarosCannonShot;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
-import net.minecraft.block.BlockSourceImpl;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.dispenser.BehaviorDefaultDispenseItem;
-import net.minecraft.dispenser.IBehaviorDispenseItem;
 import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.dispenser.IPosition;
 import net.minecraft.dispenser.IRegistry;
@@ -22,15 +14,12 @@ import net.minecraft.dispenser.RegistryDefaulted;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityDispenser;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockKarosCannon extends BlockContainer
@@ -39,9 +28,9 @@ public class BlockKarosCannon extends BlockContainer
     public static final IRegistry dispenseBehaviorRegistry = new RegistryDefaulted(new BehaviorDefaultDispenseItem());
     private Random random = new Random();
 
-    public BlockKarosCannon(int par1, int par2, Material par3)
+    public BlockKarosCannon(int par1, Material par3)
     {
-        super(par1, par2, par3);
+        super(par1, par3);
     }
 
     /**
@@ -57,7 +46,7 @@ public class BlockKarosCannon extends BlockContainer
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return DivineRPG.karosCannon.blockID;
+        return VetheaBlockHelper.karosCannon.blockID;
     }
 
     /**
@@ -103,7 +92,7 @@ public class BlockKarosCannon extends BlockContainer
                 var9 = 4;
             }
 
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9, 3);
         }
     }
 
@@ -196,22 +185,22 @@ public class BlockKarosCannon extends BlockContainer
 
         if (var6 == 0)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 2);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, this.blockID, 2);
         }
 
         if (var6 == 1)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 5);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, this.blockID, 5);
         }
 
         if (var6 == 2)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 3);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, this.blockID, 3);
         }
 
         if (var6 == 3)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 4);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, this.blockID, 4);
         }
     }
 

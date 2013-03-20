@@ -1,15 +1,20 @@
-package xolova.blued00r.divinerpg.blocks.vethea;
+package xolova.divinerpg.blocks.vethea;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityInfusionTable;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import xolova.divinerpg.DivineRPG;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockInfusionTable extends BlockContainer
 {
+	private Icon[] texture;
+
 	public BlockInfusionTable(int par1) 
 	{
 		super(par1, Material.rock);		
@@ -18,9 +23,9 @@ public class BlockInfusionTable extends BlockContainer
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
+    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
-        return (par1 == 1 || par1 == 0) ? 46 : 47;
+        return (par1 == 1 || par1 == 0) ? this.texture[0] : this.texture[1];
     }
 
 	@Override
@@ -39,5 +44,16 @@ public class BlockInfusionTable extends BlockContainer
 		par5EntityPlayer.openGui(DivineRPG.instance, 18, world, x, y, z);
 		return true;
     	
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void func_94332_a(IconRegister par1IconRegister)
+    {
+        this.texture = new Icon[2];
+
+        for (int i = 0; i < this.texture.length; ++i)
+        {
+            this.texture[i] = par1IconRegister.func_94245_a("infusionTable_" + i);
+        }
     }
 }

@@ -30,7 +30,7 @@ public class BlockDreamgrass extends Block
     {
         if (par5 == 1)
         {
-            return this.texture[2];
+            return VetheaBlockHelper.dreamdirt.getBlockTextureFromSide(0);
         }
         else if (par5 == 0)
         {
@@ -80,11 +80,11 @@ public class BlockDreamgrass extends Block
     @SideOnly(Side.CLIENT)
     public void func_94332_a(IconRegister par1IconRegister)
     {
-        this.texture = new Icon[3];
+        this.texture = new Icon[2];
 
         for (int i = 0; i < this.texture.length; ++i)
         {
-            this.texture[i] = par1IconRegister.func_94245_a(this.getLocalizedName() + "_" + i);
+            this.texture[i] = par1IconRegister.func_94245_a("dreamgrass_" + i);
         }
     }
 }

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
@@ -6,14 +6,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
-public class BlockGlowBone extends Block
+public class BlockGlowBone extends BlockDivineRPG
 {
-    public BlockGlowBone(int var1, int var2)
+    public BlockGlowBone(int var1)
     {
-        super(var1, Material.plants);
-        this.blockIndexInTexture = var2;
+        super(var1, 1, Material.plants);
         this.setTickRandomly(true);
     }
 
@@ -31,7 +31,7 @@ public class BlockGlowBone extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.pinkSeeds.itemID;
+        return TwilightBlockHelper.pinkSeeds.itemID;
     }
 
     /**
@@ -39,36 +39,21 @@ public class BlockGlowBone extends Block
      */
     public int quantityDropped(Random var1)
     {
-        return this.blockID == DivineRPG.pinkGlowBoneTreeBase.blockID ? 1 : 0;
+        return this.blockID == TwilightBlockHelper.pinkGlowBoneTreeBase.blockID ? 1 : 0;
     }
-
-    /**
-     * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
-     * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.
-     */
+    
     public boolean isOpaqueCube()
     {
         return false;
     }
 
-    /**
-     * If this block doesn't render as an ordinary block it will return False (examples: signs, buttons, stairs, etc)
-     */
     public boolean renderAsNormalBlock()
     {
         return false;
     }
 
-    /**
-     * The type of render function that is called for this block
-     */
     public int getRenderType()
     {
         return 1;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile1;
     }
 }

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
@@ -14,6 +14,7 @@ import net.minecraft.inventory.InventoryLargeChest;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -23,14 +24,14 @@ import xolova.blued00r.divinerpg.entities.tileentities.TileEntitySerenityChest;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockSerenityChest extends BlockContainer
+public class BlockDraviteChest extends BlockContainer
 {
     private Random random = new Random();
+    public Icon texture[];
 
-    public BlockSerenityChest(int var1)
+    public BlockDraviteChest(int var1)
     {
         super(var1, Material.wood);
-        this.blockIndexInTexture = 147;
         this.setCreativeTab(CreativeTabs.tabDecorations);
     }
 
@@ -45,32 +46,29 @@ public class BlockSerenityChest extends BlockContainer
 
     @SideOnly(Side.CLIENT)
 
-    /**
-     * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
-     */
-    public int getBlockTexture(IBlockAccess var1, int var2, int var3, int var4, int var5)
+    public Icon getBlockTexture(IBlockAccess var1, int var2, int var3, int var4, int var5)
     {
         if (var5 == 1)
         {
-            return 146;
+            return texture[0];
         }
         else if (var5 == 0)
         {
-            return 146;
+            return texture[0];
         }
         else
         {
             int var6 = var1.getBlockMetadata(var2, var3, var4);
-            return var5 != var6 ? this.blockIndexInTexture : this.blockIndexInTexture + 1;
+            //return var5 != var6 ? this.blockIndexInTexture : this.blockIndexInTexture + 1; TODO
         }
     }
 
     /**
      * Returns the block texture based on the side being looked at.  Args: side
      */
-    public int getBlockTextureFromSide(int var1)
+    public Icon getBlockTextureFromSideAndMetaData(int var1)
     {
-        return var1 == 1 ? 146 : (var1 == 0 ? 146 : (var1 == 3 ? this.blockIndexInTexture + 1 : this.blockIndexInTexture));
+        return var1 == 1 ? texture[0] : (var1 == 0 ? 146 : (var1 == 3 ? texture[1] : texture[0]));
     }
 
     private void setDefaultDirection(World var1, int var2, int var3, int var4)
@@ -256,10 +254,5 @@ public class BlockSerenityChest extends BlockContainer
     public TileEntity createNewTileEntity(World var1)
     {
         return new TileEntitySerenityChest();
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile1;
     }
 }

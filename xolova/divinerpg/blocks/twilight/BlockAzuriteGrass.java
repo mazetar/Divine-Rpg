@@ -2,6 +2,9 @@ package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
+import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -10,13 +13,13 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockAzuriteGrass extends Block
+public class BlockAzuriteGrass extends BlockDivineRPG
 {
-    private Icon[] texture;
 
 	public BlockAzuriteGrass(int var1)
     {
-        super(var1, Material.grass);
+        super(var1, 2, Material.grass);
+        this.setUnlocalizedName("AzuriteGrass");
         this.setTickRandomly(true);
     }
 
@@ -38,9 +41,6 @@ public class BlockAzuriteGrass extends Block
         }
     }
 
-    /**
-     * Ticks the block if it's been scheduled
-     */
     public void updateTick(World var1, int var2, int var3, int var4, Random var5)
     {
         if (!var1.isRemote)
@@ -66,24 +66,10 @@ public class BlockAzuriteGrass extends Block
             }
         }
     }
-
-    /**
-     * Returns the ID of the items to drop on destruction.
-     */
+    
     @Override
     public int idDropped(int var1, Random var2, int var3)
     {
         return TwilightBlockHelper.azuriteDirt.blockID;
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void func_94332_a(IconRegister par1IconRegister)
-    {
-        this.texture = new Icon[2];
-
-        for (int i = 0; i < this.texture.length; ++i)
-        {
-            this.texture[i] = par1IconRegister.func_94245_a("azuriteGrass_" + i);
-        }
     }
 }

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
@@ -15,6 +15,7 @@ import net.minecraft.world.WorldServer;
 import xolova.blued00r.divinerpg.DivineRPG;
 import xolova.blued00r.divinerpg.client.particles.EntityMythrilPortalFX;
 import xolova.blued00r.divinerpg.teleporter.TeleporterMythril;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -24,7 +25,7 @@ public class BlockMythrilPortal extends BlockBreakable
     private int firetick;
     private int firemax = 1000;
 
-    public BlockMythrilPortal(int var1, int var2)
+    public BlockMythrilPortal(int var1, String var2)
     {
         super(var1, var2, Material.portal, false);
         this.firetick = 0;
@@ -83,12 +84,12 @@ public class BlockMythrilPortal extends BlockBreakable
         byte var5 = 0;
         byte var6 = 0;
 
-        if (var1.getBlockId(var2 - 1, var3, var4) == DivineRPG.energyBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == DivineRPG.energyBlock.blockID)
+        if (var1.getBlockId(var2 - 1, var3, var4) == TwilightBlockHelper.energyBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == TwilightBlockHelper.energyBlock.blockID)
         {
             var5 = 1;
         }
 
-        if (var1.getBlockId(var2, var3, var4 - 1) == DivineRPG.energyBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == DivineRPG.energyBlock.blockID)
+        if (var1.getBlockId(var2, var3, var4 - 1) == TwilightBlockHelper.energyBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == TwilightBlockHelper.energyBlock.blockID)
         {
             var6 = 1;
         }
@@ -120,12 +121,12 @@ public class BlockMythrilPortal extends BlockBreakable
 
                         if (var9)
                         {
-                            if (var10 != DivineRPG.energyBlock.blockID)
+                            if (var10 != TwilightBlockHelper.energyBlock.blockID)
                             {
                                 return false;
                             }
                         }
-                        else if (var10 != 0 && var10 != DivineRPG.blueFire.blockID)
+                        else if (var10 != 0 && var10 != TwilightBlockHelper.blueFire.blockID)
                         {
                             return false;
                         }
@@ -139,7 +140,7 @@ public class BlockMythrilPortal extends BlockBreakable
             {
                 for (var8 = 0; var8 < 3; ++var8)
                 {
-                    var1.setBlockWithNotify(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, DivineRPG.mythrilPortal.blockID);
+                    var1.setBlockWithNotify(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.mythrilPortal.blockID);
                 }
             }
 
@@ -170,7 +171,7 @@ public class BlockMythrilPortal extends BlockBreakable
             ;
         }
 
-        if (var1.getBlockId(var2, var8 - 1, var4) != DivineRPG.energyBlock.blockID)
+        if (var1.getBlockId(var2, var8 - 1, var4) != TwilightBlockHelper.energyBlock.blockID)
         {
             var1.setBlockWithNotify(var2, var3, var4, 0);
         }
@@ -183,7 +184,7 @@ public class BlockMythrilPortal extends BlockBreakable
                 ;
             }
 
-            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == DivineRPG.energyBlock.blockID)
+            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == TwilightBlockHelper.energyBlock.blockID)
             {
                 boolean var10 = var1.getBlockId(var2 - 1, var3, var4) == this.blockID || var1.getBlockId(var2 + 1, var3, var4) == this.blockID;
                 boolean var11 = var1.getBlockId(var2, var3, var4 - 1) == this.blockID || var1.getBlockId(var2, var3, var4 + 1) == this.blockID;
@@ -192,7 +193,7 @@ public class BlockMythrilPortal extends BlockBreakable
                 {
                     var1.setBlockWithNotify(var2, var3, var4, 0);
                 }
-                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != DivineRPG.energyBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != DivineRPG.energyBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
+                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.energyBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != TwilightBlockHelper.energyBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
                     var1.setBlockWithNotify(var2, var3, var4, 0);
                 }
@@ -258,9 +259,9 @@ public class BlockMythrilPortal extends BlockBreakable
 
                     if (var5.ridingEntity == null && var5.riddenByEntity == null && var5 instanceof EntityPlayer)
                     {
-                        if (var6.dimension != DivineRPG.mythrilID)
+                        if (var6.dimension != TwilightBlockHelper.mythrilID)
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DivineRPG.mythrilID, new TeleporterMythril(var6.mcServer.worldServerForDimension(DivineRPG.mythrilID)));
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, TwilightBlockHelper.mythrilID, new TeleporterMythril(var6.mcServer.worldServerForDimension(DivineRPG.mythrilID)));
                         }
                         else
                         {
@@ -313,10 +314,5 @@ public class BlockMythrilPortal extends BlockBreakable
             EntityMythrilPortalFX var20 = new EntityMythrilPortalFX(var1, var7, var9, var11, var13, var15, var17);
             FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20, var20);
         }
-    }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
     }
 }

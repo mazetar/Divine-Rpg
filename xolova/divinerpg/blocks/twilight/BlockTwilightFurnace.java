@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
@@ -29,7 +29,6 @@ public class BlockTwilightFurnace extends BlockContainer
     {
         super(var1, Material.rock);
         this.isActive = var2;
-        this.blockIndexInTexture = 58;
     }
 
     /**
@@ -88,7 +87,7 @@ public class BlockTwilightFurnace extends BlockContainer
     /**
      * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
      */
-    public int getBlockTexture(IBlockAccess var1, int var2, int var3, int var4, int var5)
+    public Icon getBlockTexture(IBlockAccess var1, int var2, int var3, int var4, int var5)
     {
         if (var5 == 1)
         {
@@ -284,10 +283,5 @@ public class BlockTwilightFurnace extends BlockContainer
         }
 
         super.breakBlock(var1, var2, var3, var4, var5, var6);
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
     }
 }

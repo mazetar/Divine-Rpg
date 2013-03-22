@@ -1,6 +1,8 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
+
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
@@ -11,10 +13,6 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.client.particles.EntityDravitePortalFX;
-import xolova.blued00r.divinerpg.teleporter.TeleporterTwilight;
-import xolova.blued00r.divinerpg.utils.AchievementPageDivineRPG;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -24,7 +22,7 @@ public class BlockTwilightPortal extends BlockBreakable
     private int firetick;
     private int firemax = 1000;
 
-    public BlockTwilightPortal(int var1, int var2)
+    public BlockTwilightPortal(int var1, String var2)
     {
         super(var1, var2, Material.portal, false);
         this.firetick = this.firemax;
@@ -83,12 +81,11 @@ public class BlockTwilightPortal extends BlockBreakable
         byte var5 = 0;
         byte var6 = 0;
 
-        if (var1.getBlockId(var2 - 1, var3, var4) == DivineRPG.divineRock.blockID || var1.getBlockId(var2 + 1, var3, var4) == DivineRPG.divineRock.blockID)
+        if (var1.getBlockId(var2 - 1, var3, var4) == TwilightBlockHelper.divineRock.blockID || var1.getBlockId(var2 + 1, var3, var4) == TwilightBlockHelper.divineRock.blockID)
         {
             var5 = 1;
         }
-
-        if (var1.getBlockId(var2, var3, var4 - 1) == DivineRPG.divineRock.blockID || var1.getBlockId(var2, var3, var4 + 1) == DivineRPG.divineRock.blockID)
+        TwilightBlockHelper (var1.getBlockId(var2, var3, var4 - 1) == TwilightBlockHelper.divineRock.blockID || var1.getBlockId(var2, var3, var4 + 1) == TwilightBlockHelper.divineRock.blockID)
         {
             var6 = 1;
         }
@@ -120,12 +117,12 @@ public class BlockTwilightPortal extends BlockBreakable
 
                         if (var9)
                         {
-                            if (var10 != DivineRPG.divineRock.blockID)
+                            if (var10 != TwilightBlockHelper.divineRock.blockID)
                             {
                                 return false;
                             }
                         }
-                        else if (var10 != 0 && var10 != DivineRPG.blueFire.blockID)
+                        else if (var10 != 0 && var10 != TwilightBlockHelper.blueFire.blockID)
                         {
                             return false;
                         }
@@ -170,7 +167,7 @@ public class BlockTwilightPortal extends BlockBreakable
             ;
         }
 
-        if (var1.getBlockId(var2, var8 - 1, var4) != DivineRPG.divineRock.blockID)
+        if (var1.getBlockId(var2, var8 - 1, var4) != TwilightBlockHelper.divineRock.blockID)
         {
             var1.setBlockWithNotify(var2, var3, var4, 0);
         }
@@ -183,7 +180,7 @@ public class BlockTwilightPortal extends BlockBreakable
                 ;
             }
 
-            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == DivineRPG.divineRock.blockID)
+            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == TwilightBlockHelper.divineRock.blockID)
             {
                 boolean var10 = var1.getBlockId(var2 - 1, var3, var4) == this.blockID || var1.getBlockId(var2 + 1, var3, var4) == this.blockID;
                 boolean var11 = var1.getBlockId(var2, var3, var4 - 1) == this.blockID || var1.getBlockId(var2, var3, var4 + 1) == this.blockID;
@@ -192,7 +189,7 @@ public class BlockTwilightPortal extends BlockBreakable
                 {
                     var1.setBlockWithNotify(var2, var3, var4, 0);
                 }
-                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != DivineRPG.divineRock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != DivineRPG.divineRock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
+                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.divineRock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != TwilightBlockHelper.divineRock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
                     var1.setBlockWithNotify(var2, var3, var4, 0);
                 }
@@ -260,7 +257,7 @@ public class BlockTwilightPortal extends BlockBreakable
                     {
                     	var6.addStat(AchievementPageDivineRPG.possibilities, 1);
                         var1.playSound((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "xolovon.DravitePortal", 0.5F, ((EntityPlayerMP) var5).getRNG().nextFloat() * 0.4F + 0.8F, false);
-                        if (var6.dimension != DivineRPG.draviteID)
+                        if (var6.dimension != TwilightBlockHelper.draviteID)
                         {
                             var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DivineRPG.draviteID, new TeleporterTwilight(var6.mcServer.worldServerForDimension(DivineRPG.draviteID)));
                         }
@@ -315,10 +312,5 @@ public class BlockTwilightPortal extends BlockBreakable
             EntityDravitePortalFX var20 = new EntityDravitePortalFX(var1, var7, var9, var11, var13, var15, var17);
             FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20, var20);
         }
-    }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
     }
 }

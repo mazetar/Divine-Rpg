@@ -1,19 +1,19 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
+
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
 
 public class BlockPurpleGlowBone extends Block
 {
     public BlockPurpleGlowBone(int var1, int var2)
     {
         super(var1, Material.plants);
-        this.blockIndexInTexture = var2;
         this.setTickRandomly(true);
     }
 
@@ -31,7 +31,7 @@ public class BlockPurpleGlowBone extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.purpleSeeds.itemID;
+        return TwilightBlockHelper.purpleSeeds.itemID;
     }
 
     /**
@@ -39,7 +39,7 @@ public class BlockPurpleGlowBone extends Block
      */
     public int quantityDropped(Random var1)
     {
-        return this.blockID == DivineRPG.purpleGlowBoneTreeBase.blockID ? 1 : 0;
+        return this.blockID == TwilightBlockHelper.purpleGlowBoneTreeBase.blockID ? 1 : 0;
     }
 
     /**
@@ -65,10 +65,5 @@ public class BlockPurpleGlowBone extends Block
     public int getRenderType()
     {
         return 1;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile1;
     }
 }

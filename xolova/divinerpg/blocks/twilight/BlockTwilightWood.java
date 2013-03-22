@@ -1,16 +1,15 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
 
 public class BlockTwilightWood extends Block
 {
     public BlockTwilightWood(int var1)
     {
-        super(var1, 4, Material.wood);
-        this.setCreativeTab(DivineRPG.tabBlocks);
+        super(var1, Material.wood);
     }
 
     /**
@@ -61,7 +60,7 @@ public class BlockTwilightWood extends Block
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
+    /*public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
         int var3 = par2 & 12;
         int var4 = par2 & 3;
@@ -97,18 +96,10 @@ public class BlockTwilightWood extends Block
         }
 
         return var3 == 0 && (par1 == 1 || par1 == 0) ? 21 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 21 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 21 : (var4 == 1 ? 116 : (var4 == 2 ? 117 : (var4 == 3 ? 153 : 20)))));
-    }
+    }*/
 
-    /**
-     * Determines the damage on the item the block drops. Used in cloth and wood.
-     */
     public int damageDropped(int var1)
     {
         return var1;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile1;
     }
 }

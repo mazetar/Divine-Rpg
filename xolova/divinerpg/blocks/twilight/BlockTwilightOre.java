@@ -1,8 +1,8 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -14,15 +14,14 @@ import net.minecraft.world.World;
 
 public class BlockTwilightOre extends Block
 {
-	public BlockTwilightOre(int var1, int var2)
+	public BlockTwilightOre(int var1)
     {
-        super(var1, var2, Material.rock);
-        this.blockIndexInTexture = var2;
+        super(var1, Material.rock);
     }
-
+	
     public boolean isGenMineableReplaceable(World var1, int var2, int var3, int var4)
     {
-        return this.blockID == DivineRPG.twilightStone.blockID;
+        return this.blockID == TwilightBlockHelper.DraviteStone.blockID;
     }
 
     /**
@@ -30,14 +29,10 @@ public class BlockTwilightOre extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return this.blockID == DivineRPG.serenityOre.blockID ? DivineRPG.serenityFragments.itemID : (this.blockID == DivineRPG.azuriteOre.blockID ? DivineRPG.azuriteFragments.itemID : (this.blockID == DivineRPG.energyOre.blockID ? DivineRPG.energyFragments.itemID : (this.blockID == DivineRPG.mythilOre.blockID ? DivineRPG.mythrilFragments.itemID : (this.blockID == DivineRPG.denseOre.blockID ? DivineRPG.denseFragments.itemID : this.blockID))));
+    	return TwilightBlockHelper.DraviteOre.blockID;
+        //return this.blockID == TwilightBlockHelper.serenityOre.blockID ? TwilightBlockHelper.serenityFragments.itemID : (this.blockID == TwilightBlockHelper.azuriteOre.blockID ? TwilightBlockHelper.azuriteFragments.itemID : (this.blockID == TwilightBlockHelper.energyOre.blockID ? TwilightBlockHelper.energyFragments.itemID : (this.blockID == TwilightBlockHelper.mythilOre.blockID ? TwilightBlockHelper.mythrilFragments.itemID : (this.blockID == TwilightBlockHelper.denseOre.blockID ? TwilightBlockHelper.denseFragments.itemID : this.blockID))));
     }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
-    }
-
+    
     /**
      * Determines the damage on the item the block drops. Used in cloth and wood.
      */
@@ -68,7 +63,7 @@ public class BlockTwilightOre extends Block
         }
     }
     
-    public boolean removeBlockByPlayer(World world, EntityPlayer player, int x, int y, int z)
+    /*public boolean removeBlockByPlayer(World world, EntityPlayer player, int x, int y, int z)
     {
     	if (player.inventory.armorInventory[0] != null
     			&& player.inventory.armorInventory[1] != null
@@ -86,5 +81,5 @@ public class BlockTwilightOre extends Block
     		}
     	}
         return world.setBlockWithNotify(x, y, z, 0);
-    }
+    }*/
 }

@@ -4,36 +4,16 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
-public class BlockMythilGrass extends BlockDivineRPG
+public class BlockDraviteGrass extends BlockDivineRPG
 {
-    public BlockMythilGrass(int var1)
+    public BlockDraviteGrass(int var1)
     {
-        super(var1, 1, Material.grass);
+        super(var1, 2, Material.grass);
         this.setTickRandomly(true);
-    }
-
-    /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     */
-    public Icon getBlockTextureFromSideAndMetaData(int var1)
-    {
-        switch (var1)
-        {
-            case 0:
-                return texture[0];
-
-            case 1:
-                return texture[1];
-
-            default:
-                return texture[0];
-        }
     }
 
     /**
@@ -45,7 +25,7 @@ public class BlockMythilGrass extends BlockDivineRPG
         {
             if (var1.getBlockLightValue(var2, var3 + 1, var4) < 4 && Block.lightOpacity[var1.getBlockId(var2, var3 + 1, var4)] > 2)
             {
-                var1.setBlockWithNotify(var2, var3, var4, TwilightBlockHelper.mythilDirt.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, TwilightBlockHelper.DraviteDirt.blockID);
             }
             else if (var1.getBlockLightValue(var2, var3 + 1, var4) >= 9)
             {
@@ -56,21 +36,18 @@ public class BlockMythilGrass extends BlockDivineRPG
                     int var9 = var4 + var5.nextInt(3) - 1;
                     int var10 = var1.getBlockId(var7, var8 + 1, var9);
 
-                    if (var1.getBlockId(var7, var8, var9) == TwilightBlockHelper.mythilDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
+                    if (var1.getBlockId(var7, var8, var9) == TwilightBlockHelper.DraviteDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
                     {
-                        var1.setBlockWithNotify(var7, var8, var9, TwilightBlockHelper.mythilGrass.blockID);
+                        var1.setBlockWithNotify(var7, var8, var9, TwilightBlockHelper.DraviteGrass.blockID);
                     }
                 }
             }
         }
     }
-
-    /**
-     * Returns the ID of the items to drop on destruction.
-     */
+    
     @Override
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.mythilDirt.blockID;
+        return TwilightBlockHelper.DraviteDirt.blockID;
     }
 }

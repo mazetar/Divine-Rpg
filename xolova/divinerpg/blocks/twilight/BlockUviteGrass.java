@@ -1,36 +1,37 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
-public class BlockDenseGrass extends Block
+public class BlockUviteGrass extends BlockDivineRPG
 {
-    public BlockDenseGrass(int var1)
+    public BlockUviteGrass(int var1)
     {
-        super(var1, Material.grass);
-        this.blockIndexInTexture = 142;
+        super(var1, 2, Material.grass);
         this.setTickRandomly(true);
     }
 
     /**
      * Returns the block texture based on the side being looked at.  Args: side
      */
-    public int getBlockTextureFromSide(int var1)
+    public Icon getBlockTextureFromSideAndMetaData(int var1)
     {
         switch (var1)
         {
             case 0:
-                return 142;
+                return texture[0];
 
             case 1:
-                return 122;
+                return texture[1];
 
             default:
-                return 143;
+                return texture[0];
         }
     }
 
@@ -43,7 +44,7 @@ public class BlockDenseGrass extends Block
         {
             if (var1.getBlockLightValue(var2, var3 + 1, var4) < 4 && Block.lightOpacity[var1.getBlockId(var2, var3 + 1, var4)] > 2)
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.denseDirt.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, TwilightBlockHelper.UviteDirt.blockID);
             }
             else if (var1.getBlockLightValue(var2, var3 + 1, var4) >= 9)
             {
@@ -54,9 +55,9 @@ public class BlockDenseGrass extends Block
                     int var9 = var4 + var5.nextInt(3) - 1;
                     int var10 = var1.getBlockId(var7, var8 + 1, var9);
 
-                    if (var1.getBlockId(var7, var8, var9) == DivineRPG.denseDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
+                    if (var1.getBlockId(var7, var8, var9) == TwilightBlockHelper.UviteDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
                     {
-                        var1.setBlockWithNotify(var7, var8, var9, DivineRPG.denseGrass.blockID);
+                        var1.setBlockWithNotify(var7, var8, var9, TwilightBlockHelper.UviteGrass.blockID);
                     }
                 }
             }
@@ -69,16 +70,6 @@ public class BlockDenseGrass extends Block
     @Override
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.denseDirt.blockID;
-    }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon2.png";
-    }
-
-    public int idDropped(int var1)
-    {
-        return DivineRPG.denseDirt.blockID;
+        return TwilightBlockHelper.UviteDirt.blockID;
     }
 }

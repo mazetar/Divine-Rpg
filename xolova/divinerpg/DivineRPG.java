@@ -1,6 +1,8 @@
 package xolova.divinerpg;
 
 import xolova.divinerpg.utils.Utils;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
+import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import xolova.divinerpg.utils.proxies.TwilightProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -23,19 +25,19 @@ public class DivineRPG
 	public static DivineRPG instance;
 	
 	@SidedProxy
-	(clientSide = "xolova.divinerpg.dimensions.twilight.TwilightProxyClient", serverSide = "xolova.divinerpg.dimensions.twilight.TwilightProxy")
+	(clientSide = "xolova.divinerpg.utils.proxies.TwilightProxyClient", serverSide = "xolova.divinerpg.utils.proxies.TwilightProxy")
 	public static TwilightProxy proxy;
 	
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		
+		TwilightConfigHelper.initConfig(event);
 	}
 	
 	@Init
 	public void Init(FMLInitializationEvent event)
 	{
-		
+		TwilightBlockHelper.initBlocks();
 	}
 	
 	@PostInit

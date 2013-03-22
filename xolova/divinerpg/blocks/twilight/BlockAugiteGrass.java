@@ -1,36 +1,34 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
-public class BlockEnergyGrass extends Block
+public class BlockAugiteGrass extends BlockDivineRPG
 {
-    public BlockEnergyGrass(int var1)
+    public BlockAugiteGrass(int var1)
     {
-        super(var1, Material.grass);
-        this.blockIndexInTexture = 135;
+        super(var1, 2, Material.grass);
         this.setTickRandomly(true);
     }
 
-    /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     */
-    public int getBlockTextureFromSide(int var1)
+    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
-        switch (var1)
+        switch (par1)
         {
             case 0:
-                return 134;
+                return TwilightBlockHelper.AugiteDirt.getBlockTextureFromSide(0);
 
             case 1:
-                return 118;
+                return texture[1];
 
             default:
-                return 135;
+                return texture[0];
         }
     }
 
@@ -43,7 +41,7 @@ public class BlockEnergyGrass extends Block
         {
             if (var1.getBlockLightValue(var2, var3 + 1, var4) < 4 && Block.lightOpacity[var1.getBlockId(var2, var3 + 1, var4)] > 2)
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.energyDirt.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.AugiteDirt.blockID);
             }
             else if (var1.getBlockLightValue(var2, var3 + 1, var4) >= 9)
             {
@@ -54,31 +52,18 @@ public class BlockEnergyGrass extends Block
                     int var9 = var4 + var5.nextInt(3) - 1;
                     int var10 = var1.getBlockId(var7, var8 + 1, var9);
 
-                    if (var1.getBlockId(var7, var8, var9) == DivineRPG.energyDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
+                    if (var1.getBlockId(var7, var8, var9) == DivineRPG.AugiteDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
                     {
-                        var1.setBlockWithNotify(var7, var8, var9, DivineRPG.energyGrass.blockID);
+                        var1.setBlockWithNotify(var7, var8, var9, DivineRPG.AugiteGrass.blockID);
                     }
                 }
             }
         }
     }
 
-    /**
-     * Returns the ID of the items to drop on destruction.
-     */
     @Override
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.energyDirt.blockID;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
-    }
-
-    public int idDropped(int var1)
-    {
-        return DivineRPG.energyDirt.blockID;
+        return TwilightBlockHelper.AugiteDirt.blockID;
     }
 }

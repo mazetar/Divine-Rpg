@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -8,7 +8,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
-import xolova.blued00r.divinerpg.DivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -16,16 +15,9 @@ public class BlockTwilightLeaves extends Block implements IShearable
 {
     int[] adjacentTreeBlocks;
 
-    public BlockTwilightLeaves(int var1, int var2)
+    public BlockTwilightLeaves(int var1)
     {
-        super(var1, var2, Material.leaves);
-        this.blockIndexInTexture = var2;
-    }
-
-    @Override
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
+        super(var1, Material.leaves);
     }
 
     /**

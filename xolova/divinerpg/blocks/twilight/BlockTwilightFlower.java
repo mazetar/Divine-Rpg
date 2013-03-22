@@ -1,17 +1,15 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
 
 public class BlockTwilightFlower extends Block
 {
     protected BlockTwilightFlower(int var1, int var2, Material var3)
     {
         super(var1, var3);
-        this.blockIndexInTexture = var2;
         this.setTickRandomly(true);
         float var4 = 0.2F;
         this.setBlockBounds(0.5F - var4, 0.0F, 0.5F - var4, 0.5F + var4, var4 * 3.0F, 0.5F + var4);
@@ -54,10 +52,5 @@ public class BlockTwilightFlower extends Block
     public int getRenderType()
     {
         return 1;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
     }
 }

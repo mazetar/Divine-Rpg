@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.twilight;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -12,16 +12,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
-import xolova.blued00r.divinerpg.DivineRPG;
 
 public class BlockGlowingLeaves extends BlockLeavesBase implements IShearable
 {
     int[] adjacentTreeBlocks;
 
-    public BlockGlowingLeaves(int var1, int var2)
+    public BlockGlowingLeaves(int var1)
     {
-        super(var1, var2, Material.leaves, false);
-        this.blockIndexInTexture = var2;
+        super(var1, Material.leaves, false);
         this.setTickRandomly(true);
     }
 
@@ -245,9 +243,9 @@ public class BlockGlowingLeaves extends BlockLeavesBase implements IShearable
         return false;
     }
 
-    public ArrayList onSheared(ItemStack var1, World var2, int var3, int var4, int var5, int var6)
+    public ArrayList<ItemStack> onSheared(ItemStack var1, World var2, int var3, int var4, int var5, int var6)
     {
-        ArrayList var7 = new ArrayList();
+    	ArrayList<ItemStack> var7 = new ArrayList<ItemStack>();
         var7.add(new ItemStack(this, 1, var2.getBlockMetadata(var3, var4, var5) & 3));
         return var7;
     }
@@ -260,11 +258,6 @@ public class BlockGlowingLeaves extends BlockLeavesBase implements IShearable
     public boolean isLeaves(World var1, int var2, int var3, int var4)
     {
         return true;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile;
     }
 
     public void addCreativeItems(ArrayList var1)

@@ -4,15 +4,18 @@ import java.util.Random;
 
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.utils.Utils;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -24,8 +27,9 @@ public class BlockAzuritePortal extends BlockBreakable
 
     public BlockAzuritePortal(int var1)
     {
-        super(var1, "azuritePortal", Material.portal, false);
+    	super(var1, "DivineRPG:azuritePortal", Material.portal, false);
         this.firetick = 0;
+        this.setUnlocalizedName("AzuritePortal");
     }
 
     /**
@@ -313,9 +317,18 @@ public class BlockAzuritePortal extends BlockBreakable
             FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20, var20);
         }
     }
-
-    public String getTextureFile()
+    
+    public Icon[] texture;
+    public String name = this.getUnlocalizedName();
+    
+    @SideOnly(Side.CLIENT)
+    public void func_94332_a(IconRegister par1IconRegister)
     {
-        return "/Xolovon3.png";
+        this.texture = new Icon[2];
+
+        for (int i = 0; i < this.texture.length; ++i)
+        {
+            this.texture[i] = par1IconRegister.func_94245_a(this.name + "_" + i);
+        }
     }
 }

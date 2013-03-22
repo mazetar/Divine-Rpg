@@ -56,4 +56,21 @@ public class ArcanaHelper {
 		else
 			return false;
 	}
+	
+	public static void regen(String par1, int par2)
+	{
+		if (bars.containsKey(par1))
+		{
+			int var1 = bars.get(par1) + par2;
+			if (var1 > 200)
+			{
+				var1 = 200;
+			}
+			bars.put(par1, var1);
+		}
+		else
+		{
+			add(par1);
+		}
+	}
 }

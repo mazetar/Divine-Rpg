@@ -1,13 +1,7 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import java.util.List;
 import java.util.Random;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
-import xolova.blued00r.divinerpg.entities.projectile.EntityStarfall;
-import xolova.blued00r.divinerpg.misc.ArcanaList;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -17,6 +11,9 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
+import xolova.divinerpg.utils.helpers.ArcanaHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemEnderScepter extends Item
 {
@@ -91,7 +88,7 @@ public class ItemEnderScepter extends Item
                 }
 
 
-                if (ArcanaList.get(par3.username).arcanaUse(75))
+                if (ArcanaHelper.useBar(par3, 75))
                 {
                     par3.getLook(1);
                     this.teleportTo(par3 ,par2 ,(double)var23, (double)var24, (double)var25);

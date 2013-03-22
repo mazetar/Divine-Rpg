@@ -1,14 +1,10 @@
-package xolova.blued00r.divinerpg.items.arcana;
+package xolova.divinerpg.items.arcana;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.projectile.EntityBlitzAzurite;
-import xolova.blued00r.divinerpg.misc.ArcanaBar;
-import xolova.blued00r.divinerpg.misc.ArcanaList;
-import xolova.blued00r.divinerpg.utils.AchievementPageDivineRPG;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.utils.helpers.ArcanaHelper;
 
 public class ItemArcanaPotion extends Item
 {
@@ -25,16 +21,16 @@ public class ItemArcanaPotion extends Item
      */
     public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3)
     {
-    	if(ArcanaList.get(var3.username).getBarValue() < 200 && var1.itemID == DivineRPG.weakArcanaPotion.itemID)
+    	if(var1.itemID == ArcanaItemHelper.weakArcanaPotion.itemID)
     	{
-    		ArcanaList.get(var3.username).arcanaAdd(100);
+    		ArcanaHelper.regen(var3.username, 100);
     		var3.addStat(AchievementPageDivineRPG.yuk, 1);
     		--var1.stackSize;
     	}
     	
-    	if(ArcanaList.get(var3.username).getBarValue() < 200 && var1.itemID == DivineRPG.strongArcanaPotion.itemID)
+    	if(var1.itemID == ArcanaItemHelper.strongArcanaPotion.itemID)
     	{
-    		ArcanaList.get(var3.username).arcanaAdd(200);
+    		ArcanaHelper.regen(var3.username, 200);
     		var3.addStat(AchievementPageDivineRPG.yuk, 1);
     		--var1.stackSize;
     	}

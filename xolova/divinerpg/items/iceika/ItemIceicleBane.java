@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items.iceika;
+package xolova.divinerpg.items.iceika;
 
 import java.util.List;
 

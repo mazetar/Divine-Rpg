@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPG;
 
 public class ItemOreDoor3 extends Item
 {
@@ -39,7 +39,7 @@ public class ItemOreDoor3 extends Item
 
             if (this.doorMaterial == Material.wood)
             {
-                var11 = DivineRPG.oreDoor3;
+                var11 = ArcanaBlockHelper.oreDoor3;
             }
             else
             {
@@ -107,10 +107,10 @@ public class ItemOreDoor3 extends Item
             var12 = true;
         }
 
-        par0World.editingBlocks = true;
-        par0World.setBlockAndMetadataWithNotify(par1, par2, par3, par5Block.blockID, par4);
-        par0World.setBlockAndMetadataWithNotify(par1, par2 + 1, par3, par5Block.blockID, 8 | (var12 ? 1 : 0));
-        par0World.editingBlocks = false;
+        par0World.scheduledUpdatesAreImmediate = true;
+        par0World.setBlockAndMetadataWithNotify(par1, par2, par3, par5Block.blockID, par4, 3);
+        par0World.setBlockAndMetadataWithNotify(par1, par2 + 1, par3, par5Block.blockID, 8 | (var12 ? 1 : 0), 3);
+        par0World.scheduledUpdatesAreImmediate = false;
         par0World.notifyBlocksOfNeighborChange(par1, par2, par3, par5Block.blockID);
         par0World.notifyBlocksOfNeighborChange(par1, par2 + 1, par3, par5Block.blockID);
     }

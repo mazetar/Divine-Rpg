@@ -1,29 +1,39 @@
-package xolova.blued00r.divinerpg.items.iceika;
+package xolova.divinerpg.items.iceika;
 
 import java.util.List;
-import java.util.Random;
 
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
-import net.minecraft.src.ModLoader;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.projectile.icieka.EntityExplosiveArrow;
+import xolova.divinerpg.DivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemSnowStormBow extends ItemBow 
 {
     private int lastDamage = -1;
-
+    private String[] texture = new String[] {"snowstormBow_0", "snowstormBow_1", "snowstormBow_2"};
+    private Icon[] field_94600_b;
+    
     public ItemSnowStormBow(int var1)
     {
         super(var1);
         this.maxStackSize = 1;
         this.setMaxDamage(-1);
+    }
+	
+    /**
+     * How long it takes to use or consume an item
+     */
+	@Override
+    public int getMaxItemUseDuration(ItemStack par1ItemStack)
+    {
+        return 144000;
     }
 
     /**
@@ -40,10 +50,7 @@ public class ItemSnowStormBow extends ItemBow
         }
         else
         {
-            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(DivineRPG.bluefirebow.itemID))
-            {
-                var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
-            }
+        	var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
 
             return var1;
         }
@@ -56,11 +63,11 @@ public class ItemSnowStormBow extends ItemBow
     {
         this.lastDamage = -1;
         int var5 = this.getMaxItemUseDuration(var1) - var4;
-        var5 = (int)((float)var5 / DivineRPG.increaseBowTime);
+        var5 = (int)((float)var5 / 0.5);
         float var6 = (float)var5 / 20.0F;
         var6 = (var6 * var6 + var6 * 2.0F) / 3.0F;
 
-        if ((double)var6 >= 0.1D * (double)DivineRPG.increaseBowTime)
+        if ((double)var6 >= 0.1D * (double)0.5)
         {
             boolean var7 = false;
 
@@ -84,57 +91,22 @@ public class ItemSnowStormBow extends ItemBow
         }
     }
 
-    public int getIconIndex(ItemStack var1, int var2, EntityPlayer var3, ItemStack var4, int var5)
+    @SideOnly(Side.CLIENT)
+    public void func_94581_a(IconRegister par1IconRegister)
     {
-        if (var4 != null)
+        super.func_94581_a(par1IconRegister);
+        this.field_94600_b = new Icon[texture.length];
+
+        for (int i = 0; i < this.field_94600_b.length; ++i)
         {
-            int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
-
-            if ((float)var6 >= 40.0F * DivineRPG.increaseBowTime)
-            {
-                return this.iconIndex + 4;
-            }
-
-            if ((float)var6 >= 18.0F * DivineRPG.increaseBowTime)
-            {
-                return this.iconIndex + 3;
-            }
-
-            if ((float)var6 > 13.0F * DivineRPG.increaseBowTime)
-            {
-                return this.iconIndex + 2;
-            }
-
-            if (var6 > 0)
-            {
-                return this.iconIndex + 1;
-            }
+            this.field_94600_b[i] = par1IconRegister.func_94245_a(texture[i]);
         }
-
-        return this.iconIndex;
     }
 
     @SideOnly(Side.CLIENT)
-    public void onUsingItemTick(ItemStack var1, EntityPlayer var2, int var3)
+    public Icon func_94599_c(int par1)
     {
-        super.onUsingItemTick(var1, var2, var3);
-        int var4 = var1.getMaxItemUseDuration() - var2.getItemInUseCount();
-
-        if (var4 > 100 && (new Random()).nextInt(100) == 0)
-        {
-            var1.damageItem(var4 / 100, var2);
-        }
-
-        if (var1.getItemDamage() < this.lastDamage)
-        {
-            this.onPlayerStoppedUsing(var1, ModLoader.getMinecraftInstance().theWorld, var2, var2.getItemInUseCount());
-            var2.setItemInUse((ItemStack)null, 0);
-            var2.inventory.setInventorySlotContents(var2.inventory.currentItem, (ItemStack)null);
-        }
-        else
-        {
-            this.lastDamage = var1.getItemDamage();
-        }
+        return this.field_94600_b[par1];
     }
 
     @SideOnly(Side.CLIENT)

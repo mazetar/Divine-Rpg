@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import java.util.List;
 
@@ -8,11 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.projectile.EntityBlitzDense;
-import xolova.blued00r.divinerpg.entities.projectile.EntitySparkler;
-import xolova.blued00r.divinerpg.entities.vethea.EntityBouncingProjectile;
-import xolova.blued00r.divinerpg.misc.ArcanaList;
+import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -34,7 +30,7 @@ public class ItemCaptiansSparkeler extends Item
      */
     public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3)
     {
-    	if (!var2.isRemote && ArcanaList.get(var3.username).arcanaUse(15))
+    	if (!var2.isRemote && ArcanaHelper.useBar(var3, 15))
     	{
     		var2.playSoundAtEntity(var3, "xolovon.Sparkler", 1.0F, 1.0F);
     		var2.spawnEntityInWorld(new EntitySparkler(var2, var3));

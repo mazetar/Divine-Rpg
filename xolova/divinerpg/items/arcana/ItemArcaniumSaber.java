@@ -1,10 +1,7 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import java.util.List;
 
-import xolova.blued00r.divinerpg.misc.ArcanaList;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,9 +9,10 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
+import xolova.divinerpg.utils.helpers.ArcanaHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemArcaniumSaber extends ItemSword
 {
@@ -30,7 +28,7 @@ public class ItemArcaniumSaber extends ItemSword
 
     public boolean onBlockDestroyed(ItemStack var1, int var2, int var3, int var4, int var5, EntityLiving var6)
     {
-        if (ArcanaList.get(((EntityPlayer)var6).username).arcanaUse(12))
+        if (ArcanaHelper.useBar((EntityPlayer)var6, 12))
         {
     		var6.worldObj.playSoundAtEntity(var6, "xolovon.ArcaniumSaber", 1.0F, 1.0F);
         	return true;
@@ -58,7 +56,7 @@ public class ItemArcaniumSaber extends ItemSword
      */
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity)
     {
-        if (ArcanaList.get(player.username).arcanaUse(12))
+        if (ArcanaHelper.useBar(player, 12))
         {
     		player.worldObj.playSoundAtEntity(player, "xolovon.ArcaniumSaber", 1.0F, 1.0F);
         	return false;
@@ -87,7 +85,7 @@ public class ItemArcaniumSaber extends ItemSword
      */
     public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3)
     {
-        if (ArcanaList.get(var3.username).arcanaUse(12))
+        if (ArcanaHelper.useBar((EntityPlayer)var3, 12))
         {
     		var3.worldObj.playSoundAtEntity(var3, "xolovon.ArcaniumSaber", 1.0F, 1.0F);
         	var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));

@@ -1,55 +1,25 @@
-package xolova.blued00r.divinerpg.items.iceika;
+package xolova.divinerpg.items.iceika;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import xolova.blued00r.divinerpg.DivineRPG;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Icon;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemIcicleBow extends ItemBow
 {
-
+	private String[] texture = new String[] {"icicleBow_0", "icicleBow_1", "icicleBow_2"};
+    private Icon[] field_94600_b;
+    
 	public ItemIcicleBow(int par1)
 	{
 		super(par1);
 		this.setMaxDamage(10000);
-		this.setCreativeTab(DivineRPG.tabRanged);
 	}
-	
-	@Override
-    public int getIconIndex(ItemStack var1, int var2, EntityPlayer var3, ItemStack var4, int var5)
-    {
-        if (var4 != null)
-        {
-            int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
-
-            if ((float)var6 >= 20.0F)
-            {
-                return this.iconIndex + 3;
-            }
-
-            if ((float)var6 >= 15.0F)
-            {
-                return this.iconIndex + 2;
-            }
-
-            if ((float)var6 > 10.0F)
-            {
-                return this.iconIndex + 1;
-            }
-
-            if (var6 > 0)
-            {
-                return this.iconIndex;
-            }
-        }
-
-        return this.iconIndex;
-    }
 	
     /**
      * How long it takes to use or consume an item
@@ -92,4 +62,21 @@ public class ItemIcicleBow extends ItemBow
         }
     }
 
+    @SideOnly(Side.CLIENT)
+    public void func_94581_a(IconRegister par1IconRegister)
+    {
+        super.func_94581_a(par1IconRegister);
+        this.field_94600_b = new Icon[texture.length];
+
+        for (int i = 0; i < this.field_94600_b.length; ++i)
+        {
+            this.field_94600_b[i] = par1IconRegister.func_94245_a(texture[i]);
+        }
+    }
+
+    @SideOnly(Side.CLIENT)
+    public Icon func_94599_c(int par1)
+    {
+        return this.field_94600_b[par1];
+    }
 }

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items.arcana;
+package xolova.divinerpg.items.arcana;
 
 import net.minecraft.item.ItemFood;
 import net.minecraft.potion.Potion;

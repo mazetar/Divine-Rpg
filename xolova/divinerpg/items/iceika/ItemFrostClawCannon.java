@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items.iceika;
+package xolova.divinerpg.items.iceika;
 
 import java.util.List;
 
@@ -7,8 +7,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.projectile.icieka.EntityFrostClaw;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -18,7 +16,6 @@ public class ItemFrostClawCannon extends Item
 	public ItemFrostClawCannon(int par1) {
 		super(par1);
 		this.setMaxDamage(10000);
-        this.setCreativeTab(DivineRPG.tabRanged);
     }
 
     /**

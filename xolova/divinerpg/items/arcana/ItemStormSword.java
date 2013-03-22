@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.EntityLightningBolt;
@@ -7,10 +7,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.misc.ArcanaBar;
-import xolova.blued00r.divinerpg.misc.ArcanaList;
-import xolova.blued00r.divinerpg.utils.AchievementPageDivineRPG;
+import xolova.divinerpg.utils.helpers.ArcanaHelper;
 
 public class ItemStormSword extends ItemSword
 {
@@ -24,7 +21,7 @@ public class ItemStormSword extends ItemSword
      */
     public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
     {
-    	if (ArcanaList.get(par3EntityPlayer.username).arcanaUse(20))
+    	if (ArcanaHelper.useBar(par3EntityPlayer, 20))
     	{
     		this.createLightning(par2World, par3EntityPlayer);
     	}
@@ -55,7 +52,7 @@ public class ItemStormSword extends ItemSword
      */
     public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity)
     {
-    	if (ArcanaList.get(player.username).arcanaUse(20))
+    	if (ArcanaHelper.useBar(player, 20))
     	{
         	this.createLightning(player.worldObj, player);
     	}

@@ -1,7 +1,6 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import net.minecraft.block.Block;
-import xolova.blued00r.divinerpg.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -9,9 +8,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Facing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.entities.mobs.arcana.EntityGolemOfRejuv;
-import xolova.blued00r.divinerpg.misc.ArcanaList;
-import xolova.blued00r.divinerpg.utils.AchievementPageDivineRPG;
 
 public class ItemGolemOfRejuvSpawner extends Item
 {

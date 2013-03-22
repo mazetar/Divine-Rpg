@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import java.util.List;
 
@@ -7,9 +7,7 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.projectile.EntityCorruptShot;
-import xolova.blued00r.divinerpg.entities.projectile.EntityGrenade;
+import xolova.divinerpg.DivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -42,7 +40,7 @@ public class ItemGrenade extends Item
 
 		if (!var2.isRemote)
 		{
-			if (var5 || var3.inventory.hasItem(DivineRPG.grenade.itemID))
+			if (var5 || var3.inventory.hasItem(ArcanaItemHelper.grenade.itemID))
 			{
 				if (this.firetick == 0)
 				{
@@ -50,7 +48,7 @@ public class ItemGrenade extends Item
 					var2.spawnEntityInWorld(new EntityGrenade(var2, var3));
 					if (!var5)
 					{
-						var3.inventory.consumeInventoryItem(DivineRPG.grenade.itemID);
+						var3.inventory.consumeInventoryItem(ArcanaItemHelper.grenade.itemID);
 					}
 					this.firetick = this.firemax;
 				}

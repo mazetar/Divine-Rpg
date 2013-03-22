@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import java.util.List;
 
@@ -8,9 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.entities.projectile.EntityReflector;
-import xolova.blued00r.divinerpg.misc.ArcanaBar;
-import xolova.blued00r.divinerpg.misc.ArcanaList;
+import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -33,7 +31,7 @@ public class ItemReflector extends Item
     public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3)
     {
     	boolean var4 = var3.capabilities.isCreativeMode;
-    	if (!var2.isRemote && ArcanaList.get(var3.username).arcanaUse(20))
+    	if (!var2.isRemote && ArcanaHelper.useBar(var3, 20))
     	{
         	var2.playSoundAtEntity(var3, "xolovon.Reflector", 1.0F, 1.0F);
     		var2.spawnEntityInWorld(new EntityReflector(var2, var3));

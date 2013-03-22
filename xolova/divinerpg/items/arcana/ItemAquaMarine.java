@@ -1,6 +1,5 @@
-package xolova.blued00r.divinerpg.items.arcana;
+package xolova.divinerpg.items.arcana;
 
-import xolova.blued00r.divinerpg.entities.projectile.icieka.EntityFractite;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -24,7 +23,7 @@ public class ItemAquaMarine extends Item
     {
     	if(!par3World.isRemote && par3World.isAirBlock(par4, par5 + 1, par6))
     	{
-    		par3World.setBlockWithNotify(par4, par5 + 1, par6, Block.waterStill.blockID);
+    		par3World.func_94575_c(par4, par5 + 1, par6, Block.waterStill.blockID);
     		par1ItemStack.damageItem(1, par2EntityPlayer);
     		return true;
     	}

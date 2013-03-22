@@ -50,7 +50,7 @@ public class ItemVetheanArmor extends ItemArmor implements ISpecialArmor
     	default:
     		typeMod = 0;
     	}
-        return new ISpecialArmor.ArmorProperties(0, this.reductionAmount / 100 * typeMod, 50000);
+        return new ISpecialArmor.ArmorProperties(0, this.reductionAmount * typeMod, 50000);
     }
 
     public int getArmorDisplay(EntityPlayer var1, ItemStack var2, int var3)

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.overworld;
 
 import java.util.List;
 
@@ -14,16 +14,11 @@ import net.minecraftforge.common.IArmorTextureProvider;
 import net.minecraftforge.common.ISpecialArmor;
 import xolova.blued00r.divinerpg.DivineRPG;
 
-public class ItemAngelArmor extends ItemArmor implements IArmorTextureProvider, ISpecialArmor
+public class ItemBasicArmor extends ItemArmor implements IArmorTextureProvider, ISpecialArmor
 {
-    public ItemAngelArmor(int var1, EnumArmorMaterial var2, int var3, int var4)
+    public ItemBasicArmor(int var1, EnumArmorMaterial var2, int var3, int var4)
     {
         super(var1, var2, var3, var4);
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
     }
 
     public ArmorProperties getProperties(EntityLiving var1, ItemStack var2, DamageSource var3, double var4, int var6)
@@ -36,11 +31,12 @@ public class ItemAngelArmor extends ItemArmor implements IArmorTextureProvider, 
         return var3 != 0 && var3 != 2 ? (var3 == 1 ? 4 : 2) : 3;
     }
 
-    public void damageArmor(EntityLiving var1, ItemStack var2, DamageSource var3, int var4, int var5) {}
-
-    public String getArmorTextureFile(ItemStack var1)
+    public void damageArmor(EntityLiving var1, ItemStack var2, DamageSource var3, int var4, int var5) 
     {
-        return var1.itemID != DivineRPG.angelicHead.itemID && var1.itemID != DivineRPG.angelicBody.itemID && var1.itemID != DivineRPG.angelicBoots.itemID ? (var1.itemID == DivineRPG.angelicLegs.itemID ? "/armor/angelic_2.png" : "/armor/angelic_1.png") : "/armor/angelic_1.png";
+    	if (this.durability == -1)
+    		return;
+    	else
+    		super.damageArmor();
     }
 
     @Override
@@ -56,4 +52,10 @@ public class ItemAngelArmor extends ItemArmor implements IArmorTextureProvider, 
         par3List.add("Full Set: Allows Flight");
         par3List.add("Full set: Fall Damage Protection");
     }
+
+	@Override
+	public String getArmorTextureFile(ItemStack itemstack) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

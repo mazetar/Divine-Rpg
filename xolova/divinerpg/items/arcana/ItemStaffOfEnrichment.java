@@ -1,16 +1,11 @@
-package xolova.blued00r.divinerpg.items.arcana;
+package xolova.divinerpg.items.arcana;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.utils.AchievementPageDivineRPG;
 import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.Event.Result;
-import net.minecraftforge.event.entity.player.UseHoeEvent;
+import xolova.divinerpg.DivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -39,9 +34,9 @@ public class ItemStaffOfEnrichment extends Item
 			int var11 = par3World.getBlockId(par4, par5, par6);
 			int var12 = par3World.getBlockId(par4, par5 + 1, par6);
 
-			if(var11 == DivineRPG.arcaniteDirt.blockID)
+			if(var11 == ArcanaBlockHelper.arcaniteDirt.blockID)
 			{
-				Block var13 = DivineRPG.arcaniteGrass;
+				Block var13 = ArcanaBlockHelper.arcaniteGrass;
 				par3World.playSoundEffect((double)((float)par4 + 0.5F), (double)((float)par5 + 0.5F), (double)((float)par6 + 0.5F), var13.stepSound.getStepSound(), (var13.stepSound.getVolume() + 1.0F) / 2.0F, var13.stepSound.getPitch() * 0.8F);
 
 				if (par3World.isRemote)
@@ -50,7 +45,7 @@ public class ItemStaffOfEnrichment extends Item
 				}
 				else
 				{
-					par3World.setBlockWithNotify(par4, par5, par6, var13.blockID);
+					par3World.func_94575_c(par4, par5, par6, var13.blockID);
 					par1ItemStack.damageItem(1, par2EntityPlayer);
 					par2EntityPlayer.addStat(AchievementPageDivineRPG.enrichment, 1);
 					return true;

@@ -1,6 +1,8 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import java.util.List;
+
+import xolova.divinerpg.utils.helpers.ArcanaHelper;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,9 +13,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.entities.projectile.EntityStarfall;
-import xolova.blued00r.divinerpg.misc.ArcanaBar;
-import xolova.blued00r.divinerpg.misc.ArcanaList;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -91,7 +90,7 @@ public class ItemStarfall  extends Item
                 }
 
 
-                if (!par2World.isRemote && ArcanaList.get(par3EntityPlayer.username).arcanaUse(5))
+                if (!par2World.isRemote && ArcanaHelper.useBar(par3EntityPlayer, 5))
                 {
                     par2World.playSoundAtEntity(par3EntityPlayer, "xolovon.Starlight", 1.0F, 1.0F);
                     par3EntityPlayer.getLook(1);

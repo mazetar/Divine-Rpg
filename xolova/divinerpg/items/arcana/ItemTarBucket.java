@@ -1,7 +1,6 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBucket;
@@ -12,7 +11,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPG;
 
 public class ItemTarBucket extends ItemBucket
 {
@@ -90,7 +89,7 @@ public class ItemTarBucket extends ItemBucket
 
                     if (par2World.getBlockMaterial(var13, var14, var15) == Material.water && par2World.getBlockMetadata(var13, var14, var15) == 0)
                     {
-                        par2World.setBlockWithNotify(var13, var14, var15, 0);
+                        par2World.func_94575_c(var13, var14, var15, 0);
 
                         if (par3EntityPlayer.capabilities.isCreativeMode)
                         {
@@ -112,7 +111,7 @@ public class ItemTarBucket extends ItemBucket
 
                     if (par2World.getBlockMaterial(var13, var14, var15) == Material.lava && par2World.getBlockMetadata(var13, var14, var15) == 0 && par2World.getBlockId(var13, var14, var15) == DivineRPG.tarStill.blockID)
                     {
-                        par2World.setBlockWithNotify(var13, var14, var15, 0);
+                        par2World.func_94575_c(var13, var14, var15, 0);
 
                         if (par3EntityPlayer.capabilities.isCreativeMode)
                         {
@@ -121,12 +120,12 @@ public class ItemTarBucket extends ItemBucket
 
                         if (--par1ItemStack.stackSize <= 0)
                         {
-                            return new ItemStack(DivineRPG.tarBucket);
+                            return new ItemStack(ArcanaItemHelper.tarBucket);
                         }
 
-                        if (!par3EntityPlayer.inventory.addItemStackToInventory(new ItemStack(DivineRPG.tarBucket)))
+                        if (!par3EntityPlayer.inventory.addItemStackToInventory(new ItemStack(ArcanaItemHelper.tarBucket)))
                         {
-                            par3EntityPlayer.dropPlayerItem(new ItemStack(DivineRPG.tarBucket.itemID, 1, 0));
+                            par3EntityPlayer.dropPlayerItem(new ItemStack(ArcanaItemHelper.tarBucket.itemID, 1, 0));
                         }
 
                         return par1ItemStack;
@@ -136,7 +135,7 @@ public class ItemTarBucket extends ItemBucket
                 {
                     if (this.isFull < 0)
                     {
-                        return new ItemStack(DivineRPG.arcaniumBucket);
+                        return new ItemStack(ArcanaItemHelper.arcaniumBucket);
                     }
 
                     if (var12.sideHit == 0)
@@ -176,7 +175,7 @@ public class ItemTarBucket extends ItemBucket
 
                     if (this.tryPlaceContainedLiquid(par2World, var5, var7, var9, var13, var14, var15) && !par3EntityPlayer.capabilities.isCreativeMode)
                     {
-                        return new ItemStack(DivineRPG.arcaniumBucket);
+                        return new ItemStack(ArcanaItemHelper.arcaniumBucket);
                     }
                 }
             }

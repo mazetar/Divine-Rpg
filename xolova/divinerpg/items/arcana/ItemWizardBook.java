@@ -1,14 +1,10 @@
-package xolova.blued00r.divinerpg.items.arcana;
+package xolova.divinerpg.items.arcana;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.mobs.bosses.EntityDramix;
-import xolova.blued00r.divinerpg.entities.mobs.bosses.EntityParasecta;
-import xolova.blued00r.divinerpg.entities.projectile.icieka.EntityFractite;
-import xolova.blued00r.divinerpg.utils.AchievementPageDivineRPG;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class ItemWizardBook extends Item
 {
@@ -34,7 +30,7 @@ public class ItemWizardBook extends Item
 			{
 				int var11 = var3.getBlockId(var4, var5, var6);
 
-				if (var11 == DivineRPG.dramixAlter.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+				if (var11 == ArcanaBlockHelper.dramixAlter.blockID && var3.isAirBlock(var4, var5 + 1, var6))
 				{
 					var3.playSoundAtEntity(var2, "xolovon.DramixSpawn", 1.0F, 1.0F);
 					EntityDramix tinkerer = new EntityDramix(var3);
@@ -43,7 +39,7 @@ public class ItemWizardBook extends Item
 					var2.addStat(AchievementPageDivineRPG.dungeonMaster, 1);
 					return true;
 				}
-				else if (var11 == DivineRPG.pheonixAlter.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+				else if (var11 == ArcanaBlockHelper.pheonixAlter.blockID && var3.isAirBlock(var4, var5 + 1, var6))
 				{
 					var3.playSoundAtEntity(var2, "xolovon.ParasectaSpawn", 1.0F, 1.0F);
 					EntityParasecta tinkerer = new EntityParasecta(var3);

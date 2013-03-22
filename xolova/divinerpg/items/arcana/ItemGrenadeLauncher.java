@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import java.util.List;
 
@@ -7,10 +7,6 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.projectile.EntityBlitzSerenity;
-import xolova.blued00r.divinerpg.entities.projectile.EntityCorruptShot;
-import xolova.blued00r.divinerpg.entities.projectile.EntityGrenade;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -38,13 +34,13 @@ public class ItemGrenadeLauncher extends Item
 	{ 
         boolean var4 = var3.capabilities.isCreativeMode;
 
-        if (!var4 && !var3.inventory.hasItem(DivineRPG.grenade.itemID))
+        if (!var4 && !var3.inventory.hasItem(ArcanaItemHelper.grenade.itemID))
         {
             return var1;
         }
         else
         {
-        	var3.inventory.consumeInventoryItem(DivineRPG.grenade.itemID);
+        	var3.inventory.consumeInventoryItem(ArcanaItemHelper.grenade.itemID);
         	var2.playSoundAtEntity(var3, "xolovon.LaVekor", 2.0F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 			var2.spawnEntityInWorld(new EntityGrenade(var2, var3));
 			return var1;

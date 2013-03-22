@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items.iceika;
+package xolova.divinerpg.items.iceika;
 
 import java.util.List;
 
@@ -20,7 +20,6 @@ public class ItemSoundOfCarols extends Item
 		super(par1);
 		this.setMaxDamage(4000);
         this.maxStackSize = 1;
-        this.setCreativeTab(DivineRPG.tabRanged);
     }
 
     /**

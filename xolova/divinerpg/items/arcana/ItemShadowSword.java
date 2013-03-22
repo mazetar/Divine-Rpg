@@ -1,8 +1,7 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import java.util.List;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,8 +12,7 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.misc.ArcanaList;
+import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -36,7 +34,7 @@ public class ItemShadowSword extends ItemSword
      */
     public boolean hitEntity(ItemStack var1, EntityLiving var2, EntityLiving var3)
     {
-        if (ArcanaList.get(((EntityPlayer)var3).username).arcanaUse(12))
+        if (ArcanaHelper.useBar((EntityPlayer)var3, 12))
         {
     		var3.worldObj.playSoundAtEntity(var3, "xolovon.ShadowSaber", 1.0F, 1.0F);
         	var3.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 5 * 20, 1));
@@ -46,7 +44,7 @@ public class ItemShadowSword extends ItemSword
 
     public boolean onBlockDestroyed(ItemStack var1, int var2, int var3, int var4, int var5, EntityLiving var6)
     {
-        if (ArcanaList.get(((EntityPlayer)var6).username).arcanaUse(12))
+        if (ArcanaHelper.useBar((EntityPlayer)var6, 12))
         {
         	return true;
         }

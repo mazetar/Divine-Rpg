@@ -26,6 +26,7 @@ import xolova.divinerpg.items.vethea.ItemVetheanHealingFood;
 import xolova.divinerpg.items.vethea.ItemVetheanStaff;
 import xolova.divinerpg.utils.helpers.config.VetheaConfigHelper;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class VetheaItemHelper 
 {

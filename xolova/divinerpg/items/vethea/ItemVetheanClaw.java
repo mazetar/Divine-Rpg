@@ -8,8 +8,8 @@ import net.minecraft.world.World;
 public class ItemVetheanClaw extends ItemVetheanHammerSword
 {
 
-	public ItemVetheanClaw(int i, int k) {
-		super(i, k);
+	public ItemVetheanClaw(int i, String j, int k) {
+		super(i, j, k);
 	}
 
     /**

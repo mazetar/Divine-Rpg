@@ -9,9 +9,10 @@ public class ItemVetheanHammerSword extends ItemVetheanSword
 	private int weaponDamage;
 	public static EnumToolMaterial enumz = EnumHelper.addToolMaterial("enumz", 0, -1, 0, 1, 22);
 	
-	public ItemVetheanHammerSword(int i, int damage)
+	public ItemVetheanHammerSword(int i, String name, int damage)
 	{
 		super(i, enumz);
+		this.setUnlocalizedName(name);
 		this.weaponDamage = damage;
 	}
 

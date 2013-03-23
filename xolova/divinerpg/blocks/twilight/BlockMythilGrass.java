@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
@@ -71,6 +70,6 @@ public class BlockMythilGrass extends BlockDivineRPG
     @Override
     public int idDropped(int var1, Random var2, int var3)
     {
-        return TwilightBlockHelper.MythrilDirt.blockID;
+        return TwilightBlockHelper.MythrilDirt.blockID; //TODO: asdf
     }
 }

@@ -4,37 +4,48 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
-import xolova.divinerpg.api.IBlockDivineRPG;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
-public class BlockDivineRPG extends Block implements IBlockDivineRPG
+import xolova.divinerpg.utils.helpers.IconHelper;
+ 
+public class BlockDivineRPG extends Block 
 {
-    public Icon[] texture;
-	private String name;
+	int index;
+	int sheet;
 	
-	public int IconNumber;
-	
-	public BlockDivineRPG(int id, int IconNumber, Material par2Material) 
+	public BlockDivineRPG(int id, int sprite, Material mat) 
 	{
-		super(id, par2Material);
-		this.IconNumber = IconNumber;
+		super(id, mat);
+		this.index = sprite;
+	}
+ 
+	public BlockDivineRPG setIconIndex(int x, int y) 
+	{
+		index = (y * 16) + x;
+		return this;
 	}
 	
-    public Block setUnlocalizedName(String par1Str)
-    {
-        this.name = par1Str;
-        return super.setUnlocalizedName(par1Str);
-    }
+	public BlockDivineRPG setTextureFile(String file) 
+	{
+		if(file.equals("/Xolovon.png"))
+			file = "/Xolovon0.png"; //TODO Remove bandaid
+		
+		sheet = Integer.parseInt(file.replaceAll("/Xolovon", "").replaceAll(".png", ""));
+		return this;
+	}
 	
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister)
-    {
-        this.texture = new Icon[IconNumber];
-
-        for (int i = 0; i < this.texture.length; ++i)
-        {
-            this.texture[i] = par1IconRegister.registerIcon(this.name + "_" + i);
-        }
-    }
+	@Override
+	public void registerIcons(IconRegister par1IconRegister) 
+	{
+		IconHelper.massLoadBlockSprites(par1IconRegister);
+	}
+	
+	@Override
+	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) 
+	{
+		return IconHelper.icons[sheet][index];
+	}
+	
+	public int getTextureIndexFromSideAndMetadata(int par1, int par2)
+	{
+		return index;
+	}	
 }

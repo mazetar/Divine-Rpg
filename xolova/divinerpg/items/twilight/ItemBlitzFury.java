@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.twilight;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.entities.twilight.projectile.EntityBlitzFury;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -63,12 +63,7 @@ public class ItemBlitzFury extends Item
     {
         return this.weaponDamage;
     }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile1;
-    }
-
+    
     @Override
     @SideOnly(Side.CLIENT)
 
@@ -79,6 +74,6 @@ public class ItemBlitzFury extends Item
     {
         par3List.add("32 Ranged Damage");
         par3List.add("Ammo: Golden Nugget");
-        //par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
+        par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
     }
 }

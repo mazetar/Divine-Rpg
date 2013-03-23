@@ -1,11 +1,10 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.twilight;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
 
 public class ItemBlueSeeds extends Item
 {
@@ -36,8 +35,8 @@ public class ItemBlueSeeds extends Item
 
             if (var11 == this.soilBlockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, this.blockType);
-                var3.setBlockWithNotify(var4, var5 + 2, var6, DivineRPG.moonBulb.blockID);
+                var3.setBlock(var4, var5 + 1, var6, this.blockType);
+                //var3.setBlock(var4, var5 + 2, var6, TwilightItemHelper.moonBulb.blockID); TODO
                 --var1.stackSize;
                 return true;
             }
@@ -50,10 +49,5 @@ public class ItemBlueSeeds extends Item
         {
             return false;
         }
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile1;
     }
 }

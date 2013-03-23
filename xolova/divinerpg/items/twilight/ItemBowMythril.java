@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.twilight;
 
 import java.util.List;
 import java.util.Random;
@@ -13,7 +13,8 @@ import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.entities.twilight.projectile.EntityEnergyArrow;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -42,7 +43,7 @@ public class ItemBowMythril extends ItemBow
         }
         else
         {
-            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(DivineRPG.azuriteArrow.itemID))
+            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(TwilightItemHelper.AzuriteArrow.itemID))
             {
                 var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
             }
@@ -59,7 +60,7 @@ public class ItemBowMythril extends ItemBow
         this.lastDamage = -1;
         boolean var5 = var3.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, var1) > 0;
 
-        if (var5 || var3.inventory.hasItem(DivineRPG.azuriteArrow.itemID))
+        if (var5 || var3.inventory.hasItem(TwilightItemHelper.AzuriteArrow.itemID))
         {
             int var6 = this.getMaxItemUseDuration(var1) - var4;
             float var7 = (float)var6 / 20.0F;
@@ -113,7 +114,7 @@ public class ItemBowMythril extends ItemBow
 
             if (!var5)
             {
-                var3.inventory.consumeInventoryItem(DivineRPG.azuriteArrow.itemID);
+                var3.inventory.consumeInventoryItem(TwilightItemHelper.AzuriteArrow.itemID);
             }
             else
             {
@@ -125,36 +126,6 @@ public class ItemBowMythril extends ItemBow
                 var2.spawnEntityInWorld(var9);
             }
         }
-    }
-
-    public int getIconIndex(ItemStack var1, int var2, EntityPlayer var3, ItemStack var4, int var5)
-    {
-        if (var4 != null)
-        {
-            int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
-
-            if ((float)var6 >= 20.0F)
-            {
-                return this.iconIndex + 2;
-            }
-
-            if ((float)var6 >= 9.0F)
-            {
-                return this.iconIndex - 1;
-            }
-
-            if ((float)var6 > 6.5F)
-            {
-                return this.iconIndex + 1;
-            }
-
-            if (var6 > 0)
-            {
-                return this.iconIndex;
-            }
-        }
-
-        return this.iconIndex;
     }
 
     @SideOnly(Side.CLIENT)
@@ -188,11 +159,6 @@ public class ItemBowMythril extends ItemBow
         {
             this.lastDamage = var1.getItemDamage();
         }
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
     }
 
     @Override

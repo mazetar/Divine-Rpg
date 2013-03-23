@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.twilight;
 
 import java.util.List;
 
@@ -8,20 +8,21 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.entities.twilight.projectile.EntityBlitzEnergy;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBlizSerenity extends Item
+public class ItemBlitzUvite extends Item
 {
     private int weaponDamage;
 
-    public ItemBlizSerenity(int var1)
+    public ItemBlitzUvite(int var1)
     {
         super(var1);
         this.maxStackSize = 1;
         this.setMaxDamage(-1);
-        this.weaponDamage = 14;
+        this.weaponDamage = 22;
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
 
@@ -32,15 +33,15 @@ public class ItemBlizSerenity extends Item
     {
         boolean var4 = var3.capabilities.isCreativeMode;
 
-        if (!var4 && !var3.inventory.hasItem(DivineRPG.serenityDust.itemID))
+        if (!var4 && !var3.inventory.hasItem(TwilightItemHelper.UviteDust.itemID))
         {
             return var1;
         }
         else
         {
             var2.playSoundAtEntity(var3, "xolovon.blitz", 1.0F, 1.0F);
-            var3.inventory.consumeInventoryItem(DivineRPG.serenityDust.itemID);
-            var2.spawnEntityInWorld(new EntityBlitzSerenity(var2, var3));
+            var3.inventory.consumeInventoryItem(TwilightItemHelper.UviteDust.itemID);
+            var2.spawnEntityInWorld(new EntityBlitzEnergy(var2, var3));
             var1.damageItem(1, var3);
             return var1;
         }
@@ -64,11 +65,6 @@ public class ItemBlizSerenity extends Item
         return this.weaponDamage;
     }
 
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
-    }
-
     @Override
     @SideOnly(Side.CLIENT)
 
@@ -77,8 +73,8 @@ public class ItemBlizSerenity extends Item
      */
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
-        par3List.add("14 Ranged Damage");
-        par3List.add("Ammo: Dravite Dust");
-        //par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
+        par3List.add("22 Ranged Damage");
+        par3List.add("Ammo: Uvite Dust");
+        par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
     }
 }

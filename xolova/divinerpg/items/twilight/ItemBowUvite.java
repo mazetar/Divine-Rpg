@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.twilight;
 
 import java.util.List;
 import java.util.Random;
@@ -13,15 +13,16 @@ import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.entities.twilight.projectile.EntityEnergyArrow;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBowEnergy extends ItemBow
+public class ItemBowUvite extends ItemBow
 {
     private int lastDamage = -1;
 
-    public ItemBowEnergy(int var1)
+    public ItemBowUvite(int var1)
     {
         super(var1);
         this.setMaxDamage(-1);
@@ -42,7 +43,7 @@ public class ItemBowEnergy extends ItemBow
         }
         else
         {
-            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(DivineRPG.azuriteArrow.itemID))
+            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(TwilightItemHelper.AzuriteArrow.itemID))
             {
                 var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
             }
@@ -59,7 +60,7 @@ public class ItemBowEnergy extends ItemBow
         this.lastDamage = -1;
         boolean var5 = var3.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, var1) > 0;
 
-        if (var5 || var3.inventory.hasItem(DivineRPG.azuriteArrow.itemID))
+        if (var5 || var3.inventory.hasItem(TwilightItemHelper.AzuriteArrow.itemID))
         {
             int var6 = this.getMaxItemUseDuration(var1) - var4;
             float var7 = (float)var6 / 20.0F;
@@ -113,7 +114,7 @@ public class ItemBowEnergy extends ItemBow
 
             if (!var5)
             {
-                var3.inventory.consumeInventoryItem(DivineRPG.azuriteArrow.itemID);
+                var3.inventory.consumeInventoryItem(TwilightItemHelper.AzuriteArrow.itemID);
             }
             else
             {
@@ -127,41 +128,7 @@ public class ItemBowEnergy extends ItemBow
         }
     }
 
-    public int getIconIndex(ItemStack var1, int var2, EntityPlayer var3, ItemStack var4, int var5)
-    {
-        if (var4 != null)
-        {
-            int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
-
-            if (var6 >= 40)
-            {
-                return this.iconIndex + 2;
-            }
-
-            if (var6 >= 18)
-            {
-                return this.iconIndex - 1;
-            }
-
-            if (var6 > 13)
-            {
-                return this.iconIndex + 1;
-            }
-
-            if (var6 > 0)
-            {
-                return this.iconIndex;
-            }
-        }
-
-        return this.iconIndex;
-    }
-
     @SideOnly(Side.CLIENT)
-
-    /**
-     * Returns True is the item is renderer in full 3D when hold.
-     */
     public boolean isFull3D()
     {
         return true;
@@ -190,21 +157,12 @@ public class ItemBowEnergy extends ItemBow
         }
     }
 
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
-    }
-
     @Override
     @SideOnly(Side.CLIENT)
-
-    /**
-     * allows items to add custom lines of information to the mouseover description
-     */
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
         par3List.add("15 Ranged Damage");
         par3List.add("Ammo: Azurite Arrow");
-        //par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
+        par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
     }
 }

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.twilight;
 
 import java.util.List;
 
@@ -8,15 +8,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.entities.twilight.projectile.EntityBlitzDense;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBlitzDense extends Item
+public class ItemBlitzAugite extends Item
 {
     private int weaponDamage;
 
-    public ItemBlitzDense(int var1)
+    public ItemBlitzAugite(int var1)
     {
         super(var1);
         this.maxStackSize = 1;
@@ -32,14 +33,14 @@ public class ItemBlitzDense extends Item
     {
         boolean var4 = var3.capabilities.isCreativeMode;
 
-        if (!var4 && !var3.inventory.hasItem(DivineRPG.denseDust.itemID))
+        if (!var4 && !var3.inventory.hasItem(TwilightItemHelper.AugiteDust.itemID))
         {
             return var1;
         }
         else
         {
             var2.playSoundAtEntity(var3, "xolovon.blitz", 1.0F, 1.0F);
-            var3.inventory.consumeInventoryItem(DivineRPG.denseDust.itemID);
+            var3.inventory.consumeInventoryItem(TwilightItemHelper.AugiteDust.itemID);
             var2.spawnEntityInWorld(new EntityBlitzDense(var2, var3));
             var1.damageItem(1, var3);
             return var1;
@@ -64,11 +65,6 @@ public class ItemBlitzDense extends Item
         return this.weaponDamage;
     }
 
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
-    }
-
     @Override
     @SideOnly(Side.CLIENT)
 
@@ -79,6 +75,6 @@ public class ItemBlitzDense extends Item
     {
         par3List.add("31 Ranged Damage");
         par3List.add("Ammo: Augite Dust");
-        //par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
+        par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
     }
 }

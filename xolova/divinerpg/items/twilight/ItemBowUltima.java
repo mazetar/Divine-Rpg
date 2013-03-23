@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.twilight;
 
 import java.util.List;
 import java.util.Random;
@@ -13,7 +13,8 @@ import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.entities.twilight.projectile.EntityFuryArrow;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -42,7 +43,7 @@ public class ItemBowUltima extends ItemBow
         }
         else
         {
-            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(DivineRPG.furyArrow.itemID))
+            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(TwilightItemHelper.FuryArrow.itemID))
             {
                 var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
             }
@@ -59,7 +60,7 @@ public class ItemBowUltima extends ItemBow
         this.lastDamage = -1;
         boolean var5 = var3.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, var1) > 0;
 
-        if (var5 || var3.inventory.hasItem(DivineRPG.furyArrow.itemID))
+        if (var5 || var3.inventory.hasItem(TwilightItemHelper.FuryArrow.itemID))
         {
             int var6 = this.getMaxItemUseDuration(var1) - var4;
             float var7 = (float)var6 / 20.0F;
@@ -113,7 +114,7 @@ public class ItemBowUltima extends ItemBow
 
             if (!var5)
             {
-                var3.inventory.consumeInventoryItem(DivineRPG.furyArrow.itemID);
+                var3.inventory.consumeInventoryItem(TwilightItemHelper.FuryArrow.itemID);
             }
             else
             {
@@ -127,41 +128,7 @@ public class ItemBowUltima extends ItemBow
         }
     }
 
-    public int getIconIndex(ItemStack var1, int var2, EntityPlayer var3, ItemStack var4, int var5)
-    {
-        if (var4 != null)
-        {
-            int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
-
-            if ((float)var6 >= 50.0F)
-            {
-                return this.iconIndex + 2;
-            }
-
-            if ((float)var6 >= 25.0F)
-            {
-                return this.iconIndex - 1;
-            }
-
-            if ((float)var6 > 15.0F)
-            {
-                return this.iconIndex + 1;
-            }
-
-            if (var6 > 0)
-            {
-                return this.iconIndex;
-            }
-        }
-
-        return this.iconIndex;
-    }
-
     @SideOnly(Side.CLIENT)
-
-    /**
-     * Returns True is the item is renderer in full 3D when hold.
-     */
     public boolean isFull3D()
     {
         return true;
@@ -189,23 +156,14 @@ public class ItemBowUltima extends ItemBow
             this.lastDamage = var1.getItemDamage();
         }
     }
-
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
-    }
-
+    
     @Override
     @SideOnly(Side.CLIENT)
-
-    /**
-     * allows items to add custom lines of information to the mouseover description
-     */
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
         par3List.add("20 Ranged Damage");
         par3List.add("Ammo: Fury Arrow");
         par3List.add("2 Times Faster");
-        //par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
+        par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
     }
 }

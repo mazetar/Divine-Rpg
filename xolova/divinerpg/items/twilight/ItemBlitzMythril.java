@@ -1,5 +1,4 @@
-
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.twilight;
 
 import java.util.List;
 
@@ -9,7 +8,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.entities.twilight.projectile.EntityBlitzMythril;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -33,14 +33,14 @@ public class ItemBlitzMythril extends Item
     {
         boolean var4 = var3.capabilities.isCreativeMode;
 
-        if (!var4 && !var3.inventory.hasItem(DivineRPG.mythrilDust.itemID))
+        if (!var4 && !var3.inventory.hasItem(TwilightItemHelper.MythrilDust.itemID))
         {
             return var1;
         }
         else
         {
             var2.playSoundAtEntity(var3, "xolovon.blitz", 1.0F, 1.0F);
-            var3.inventory.consumeInventoryItem(DivineRPG.mythrilDust.itemID);
+            var3.inventory.consumeInventoryItem(TwilightItemHelper.MythrilDust.itemID);
             var2.spawnEntityInWorld(new EntityBlitzMythril(var2, var3));
             var1.damageItem(1, var3);
             return var1;
@@ -65,21 +65,12 @@ public class ItemBlitzMythril extends Item
         return this.weaponDamage;
     }
 
-    public String getTextureFile()
-    {
-        return DivineRPG.textureFile2;
-    }
-
     @Override
     @SideOnly(Side.CLIENT)
-
-    /**
-     * allows items to add custom lines of information to the mouseover description
-     */
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
         par3List.add("27 Ranged Damage");
         par3List.add("Ammo: Mythril Dust");
-        //par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
+        par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
     }
 }

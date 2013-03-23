@@ -1,6 +1,9 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.iceika;
 
 import java.util.Random;
+
+import xolova.blued00r.divinerpg.entities.tileentities.TileEntitySkeletonChest;
+import xolova.divinerpg.blocks.BlockDivineRPGContainer;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -18,20 +21,15 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockGiftBox extends BlockContainer
+public class BlockGiftBox extends BlockDivineRPGContainer
 {
-	private Random random = new Random();
 
 	public BlockGiftBox(int var1)
 	{
-		super(var1, Material.wood);
-		this.blockIndexInTexture = 198;
-		this.setCreativeTab(CreativeTabs.tabDecorations);
+		super(var1, 198, Material.wood);
+		setCreativeTab(CreativeTabs.tabDecorations);
 	}
 
-	/**
-	 * Called whenever the block is added into the world. Args: world, x, y, z
-	 */
 	public void onBlockAdded(World var1, int var2, int var3, int var4)
 	{
 		super.onBlockAdded(var1, var2, var3, var4);
@@ -39,33 +37,9 @@ public class BlockGiftBox extends BlockContainer
 	}
 
 	@SideOnly(Side.CLIENT)
-
-	/**
-	 * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
-	 */
-	public int getBlockTexture(IBlockAccess var1, int var2, int var3, int var4, int var5)
+	public int getIndex(int side, int metadata)
 	{
-		if (var5 == 1)
-		{
-			return 197;
-		}
-		else if (var5 == 0)
-		{
-			return 197;
-		}
-		else
-		{
-			int var6 = var1.getBlockMetadata(var2, var3, var4);
-			return var5 != var6 ? this.blockIndexInTexture : this.blockIndexInTexture;
-		}
-	}
-
-	/**
-	 * Returns the block texture based on the side being looked at.  Args: side
-	 */
-	public int getBlockTextureFromSide(int var1)
-	{
-		return var1 == 1 ? 197 : (var1 == 0 ? 197 : (var1 == 3 ? this.blockIndexInTexture : this.blockIndexInTexture));
+		return side == 1 || side == 0 ? 197 : 198;
 	}
 
 	private void setDefaultDirection(World var1, int var2, int var3, int var4)
@@ -98,7 +72,7 @@ public class BlockGiftBox extends BlockContainer
 				var9 = 4;
 			}
 
-			var1.setBlockMetadataWithNotify(var2, var3, var4, var9);
+			var1.setBlockMetadataWithNotify(var2, var3, var4, var9, 2);
 		}
 	}
 
@@ -130,7 +104,7 @@ public class BlockGiftBox extends BlockContainer
 			var6 = 4;
 		}
 
-		var1.setBlockMetadataWithNotify(var2, var3, var4, var6);
+		var1.setBlockMetadataWithNotify(var2, var3, var4, var6, 2);
 	}
 
 	 /**
@@ -138,6 +112,7 @@ public class BlockGiftBox extends BlockContainer
 	  */
 	 public void breakBlock(World var1, int var2, int var3, int var4, int var5, int var6)
 	 {
+		 Random random = var1.rand;
 		 TileEntitySkeletonChest var7 = (TileEntitySkeletonChest)var1.getBlockTileEntity(var2, var3, var4);
 
 		 if (var7 != null)
@@ -148,13 +123,13 @@ public class BlockGiftBox extends BlockContainer
 
 				 if (var9 != null)
 				 {
-					 float var10 = this.random.nextFloat() * 0.8F + 0.1F;
-					 float var11 = this.random.nextFloat() * 0.8F + 0.1F;
+					 float var10 = random.nextFloat() * 0.8F + 0.1F;
+					 float var11 = random.nextFloat() * 0.8F + 0.1F;
 					 EntityItem var12;
 
-					 for (float var13 = this.random.nextFloat() * 0.8F + 0.1F; var9.stackSize > 0; var1.spawnEntityInWorld(var12))
+					 for (float var13 = random.nextFloat() * 0.8F + 0.1F; var9.stackSize > 0; var1.spawnEntityInWorld(var12))
 					 {
-						 int var14 = this.random.nextInt(21) + 10;
+						 int var14 = random.nextInt(21) + 10;
 
 						 if (var14 > var9.stackSize)
 						 {
@@ -164,9 +139,9 @@ public class BlockGiftBox extends BlockContainer
 						 var9.stackSize -= var14;
 						 var12 = new EntityItem(var1, (double)((float)var2 + var10), (double)((float)var3 + var11), (double)((float)var4 + var13), new ItemStack(var9.itemID, var14, var9.getItemDamage()));
 						 float var15 = 0.05F;
-						 var12.motionX = (double)((float)this.random.nextGaussian() * var15);
-						 var12.motionY = (double)((float)this.random.nextGaussian() * var15 + 0.2F);
-						 var12.motionZ = (double)((float)this.random.nextGaussian() * var15);
+						 var12.motionX = (double)((float)random.nextGaussian() * var15);
+						 var12.motionY = (double)((float)random.nextGaussian() * var15 + 0.2F);
+						 var12.motionZ = (double)((float)random.nextGaussian() * var15);
 
 						 if (var9.hasTagCompound())
 						 {

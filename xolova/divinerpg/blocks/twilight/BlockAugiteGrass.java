@@ -16,20 +16,10 @@ public class BlockAugiteGrass extends BlockDivineRPG
         super(var1, 2, Material.grass);
         this.setTickRandomly(true);
     }
-
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
-    {
-        switch (par1)
-        {
-            case 0:
-                return TwilightBlockHelper.AugiteDirt.getBlockTextureFromSide(0);
-
-            case 1:
-                return texture[1];
-
-            default:
-                return texture[0];
-        }
+    
+    @Override
+    public int getIndex(int side, int metadata) {
+    	return side == 0 ? 142 : side == 1 ? 121 : 143;
     }
 
     /**

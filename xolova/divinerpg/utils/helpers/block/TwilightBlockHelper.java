@@ -2,7 +2,9 @@ package xolova.divinerpg.utils.helpers.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import xolova.divinerpg.blocks.twilight.BlockAugiteDirt;
 import xolova.divinerpg.blocks.twilight.BlockAugiteGrass;
+import xolova.divinerpg.blocks.twilight.BlockAzuriteDirt;
 import xolova.divinerpg.blocks.twilight.BlockAzuriteGrass;
 import xolova.divinerpg.blocks.twilight.BlockDraviteDirt;
 import xolova.divinerpg.blocks.twilight.BlockDraviteGrass;
@@ -62,7 +64,7 @@ public class TwilightBlockHelper
 		DraviteOre = new BlockTwilightOre(TwilightConfigHelper.DraviteOreID).setUnlocalizedName("DraviteOre").setCreativeTab(CreativeTabs.tabBlock);
 		
 		AzuriteGrass = new BlockAzuriteGrass(TwilightConfigHelper.AzuriteGrassID).setUnlocalizedName("AzuriteGrass");
-		//AzuriteDirt = new BlockAzuriteDirt(TwilightConfigHelper.AzuriteDirtID).setUnlocalizedName("AzuriteDirt");
+		AzuriteDirt = new BlockAzuriteDirt(TwilightConfigHelper.AzuriteDirtID).setUnlocalizedName("AzuriteDirt");
 		AzuriteLogs = new BlockTwilightWood(TwilightConfigHelper.AzuriteLogsID).setUnlocalizedName("AzuriteLogs").setCreativeTab(CreativeTabs.tabBlock);
 		AzuriteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.AzuriteLeavesID).setUnlocalizedName("AzuriteLeaves");
 		AzuriteOre = new BlockTwilightOre(TwilightConfigHelper.AzuriteOreID).setUnlocalizedName("AzuriteOre").setCreativeTab(CreativeTabs.tabBlock);
@@ -80,7 +82,7 @@ public class TwilightBlockHelper
 		MythrilOre = new BlockTwilightOre(TwilightConfigHelper.MythrilOreID).setUnlocalizedName("MythrilOre").setCreativeTab(CreativeTabs.tabBlock);
 		
 		AugiteGrass = new BlockAugiteGrass(TwilightConfigHelper.AugiteGrassID).setUnlocalizedName("AugiteGrass");
-		//AugiteDirt = new BlockAugiteDirt(TwilightConfigHelper.AugiteDirtID).setUnlocalizedName("AugiteDirt").setCreativeTab(CreativeTabs.tabBlock);
+		AugiteDirt = new BlockAugiteDirt(TwilightConfigHelper.AugiteDirtID).setUnlocalizedName("AugiteDirt").setCreativeTab(CreativeTabs.tabBlock);
 		AugiteLogs = new BlockTwilightWood(TwilightConfigHelper.AugiteLogsID).setUnlocalizedName("AugiteLogs").setCreativeTab(CreativeTabs.tabBlock);
 		AugiteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.AugiteLeavesID).setUnlocalizedName("AugiteLeaves");
 		AugiteOre = new BlockTwilightOre(TwilightConfigHelper.AugiteOreID).setUnlocalizedName("AugiteOre").setCreativeTab(CreativeTabs.tabBlock);

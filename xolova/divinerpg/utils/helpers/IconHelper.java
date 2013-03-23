@@ -1,22 +1,22 @@
 package xolova.divinerpg.utils.helpers;
- 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import xolova.divinerpg.DivineRPG;
- 
+
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
- 
+
 public final class IconHelper {
 	
-	private static final String PREFIX = "Xolovon";
-	private static final String PREFIX1 = "Xolovon0-d-";
- 
+	private static final String PREFIX = "sprite-";
+	private static final String PREFIX1 = "sprite-0-";
+
 	public static Icon[][] icons = new Icon[5][256];
- 
+
 	public static boolean loadedItemSprites = false;
 	public static boolean loadedBlockSprites = false;
 	
@@ -44,7 +44,7 @@ public final class IconHelper {
 				}
 			}
 			bufferedReader.close();
- 
+
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -74,7 +74,7 @@ public final class IconHelper {
 				}
 			}
 			bufferedReader.close();
- 
+
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}

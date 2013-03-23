@@ -1,51 +1,53 @@
 package xolova.divinerpg.blocks;
 
+import xolova.divinerpg.utils.helpers.IconHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
-import xolova.divinerpg.utils.helpers.IconHelper;
- 
-public class BlockDivineRPG extends Block 
-{
+
+public class BlockDivineRPG extends Block {
+	
 	int index;
 	int sheet;
 	
-	public BlockDivineRPG(int id, int sprite, Material mat) 
-	{
+	public BlockDivineRPG(int id, int sprite, Material mat) {
 		super(id, mat);
 		this.index = sprite;
 	}
- 
-	public BlockDivineRPG setIconIndex(int x, int y) 
-	{
-		index = (y * 16) + x;
+	
+	public BlockDivineRPG setIconIndex(int sheet, int index) {
+		this.sheet = sheet;
+		this.index = index;
 		return this;
 	}
-	
-	public BlockDivineRPG setTextureFile(String file) 
-	{
-		if(file.equals("/Xolovon.png"))
-			file = "/Xolovon0.png"; //TODO Remove bandaid
-		
-		sheet = Integer.parseInt(file.replaceAll("/Xolovon", "").replaceAll(".png", ""));
-		return this;
+
+	public BlockDivineRPG setIconIndex(int sheet, int x, int y) {
+		return setIconIndex(sheet, (x + y * 16));
 	}
 	
 	@Override
-	public void registerIcons(IconRegister par1IconRegister) 
-	{
+	public void registerIcons(IconRegister par1IconRegister) {
 		IconHelper.massLoadBlockSprites(par1IconRegister);
 	}
 	
-	@Override
-	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) 
-	{
-		return IconHelper.icons[sheet][index];
+	// Meant to be overrided
+	public int getIndex(int side, int metadata) {
+		return index;
 	}
 	
-	public int getTextureIndexFromSideAndMetadata(int par1, int par2)
-	{
+	// Meant to be overrided
+	public int getSheet(int side, int metadata) {
+		return sheet;
+	}
+	
+	@Override
+	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
+		return IconHelper.icons[getSheet(par1, par2)][getIndex(par1, par2)];
+	}
+	
+	public int getTextureIndexFromSideAndMetadata(int par1, int par2) {
 		return index;
-	}	
+	}
+	
 }

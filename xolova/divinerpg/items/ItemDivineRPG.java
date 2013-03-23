@@ -1,33 +1,49 @@
 package xolova.divinerpg.items;
 
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.IconHelper;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
+import net.minecraft.util.Icon;
 
 public class ItemDivineRPG extends Item
 {
 	int index;
 	int sheet;
 	
-	public ItemDivineRPG(int par1)
-	{
-		super(par1);
-		this.index = 0;
+	public ItemDivineRPG(int id, int sprite) {
+		super(id);
+		this.index = sprite;
 	}
 	
-	public ItemDivineRPG setIconIndex(int x, int y) 
-	{
-		index = (y * 16) + x;
+	public ItemDivineRPG setIconIndex(int sheet, int index) {
+		this.sheet = sheet;
+		this.index = index;
 		return this;
 	}
+
+	public ItemDivineRPG setIconIndex(int sheet, int x, int y) {
+		return setIconIndex(sheet, (x + y * 16));
+	}
 	
-    public void updateIcons(IconRegister par1IconRegister)
-    {
-        IconHelper.massLoadItemSprites(par1IconRegister);
-    }
+	@Override
+	public void updateIcons(IconRegister par1IconRegister) {
+		IconHelper.massLoadItemSprites(par1IconRegister);
+	}
 	
-	public int getTextureIndexFromSideAndMetadata(int par1, int par2)
-	{
+	// Meant to be overrided
+	public int getIndex(int side, int metadata) {
 		return index;
+	}
+	
+	// Meant to be overrided
+	public int getSheet(int side, int metadata) {
+		return sheet;
+	}
+	
+	@Override
+	public Icon getIconFromDamageForRenderPass(int par1, int par2) {
+		return IconHelper.icons[getSheet(par1, par2)][getIndex(par1, par2)];
 	}
 }

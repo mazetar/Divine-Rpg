@@ -1,8 +1,9 @@
 package xolova.divinerpg.utils.helpers.item;
 
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
-import net.minecraft.item.Item;
 
 public class TwilightItemHelper 
 {
@@ -89,19 +90,19 @@ public class TwilightItemHelper
 
 	public static void init()
 	{
-		DraviteGem = new ItemDivineRPG(x.DraviteGemID);
-		DraviteChunk = new ItemDivineRPG(x.DraviteChunkID);
-		DraviteFragments = new ItemDivineRPG(x.DraviteFragmentsID);
-		DraviteDust = new ItemDivineRPG(x.DraviteDustID);
-		DraviteBlade = new ItemDivineRPG(x.DraviteBladeID);
-		DravitePhaser = new ItemDivineRPG(x.DravitePhaserID);
-		DraviteBlitz = new ItemDivineRPG(x.DraviteBlitzID);
-		DraviteBow = new ItemDivineRPG(x.DraviteBowID);
-		DraviteHelmet = new ItemDivineRPG(x.DraviteHelmetID);
-		DraviteBoots = new ItemDivineRPG(x.DraviteBootsID);
-		Dravitelegs = new ItemDivineRPG(x.DravitelegsID);
-		DraviteChest = new ItemDivineRPG(x.DraviteChestID);
-		DraviteSlicer = new ItemDivineRPG(x.DraviteSlicerID);
-		DraviteSoul = new ItemDivineRPG(x.DraviteSoulID);
+		DraviteGem = new ItemDivineRPG(x.DraviteGemID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteChunk = new ItemDivineRPG(x.DraviteChunkID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteFragments = new ItemDivineRPG(x.DraviteFragmentsID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteDust = new ItemDivineRPG(x.DraviteDustID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteBlade = new ItemDivineRPG(x.DraviteBladeID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DravitePhaser = new ItemDivineRPG(x.DravitePhaserID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteBlitz = new ItemDivineRPG(x.DraviteBlitzID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteBow = new ItemDivineRPG(x.DraviteBowID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteHelmet = new ItemDivineRPG(x.DraviteHelmetID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteBoots = new ItemDivineRPG(x.DraviteBootsID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		Dravitelegs = new ItemDivineRPG(x.DravitelegsID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteChest = new ItemDivineRPG(x.DraviteChestID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteSlicer = new ItemDivineRPG(x.DraviteSlicerID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteSoul = new ItemDivineRPG(x.DraviteSoulID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
 	}
 }

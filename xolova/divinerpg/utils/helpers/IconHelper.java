@@ -5,10 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import xolova.divinerpg.DivineRPG;
-
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import xolova.divinerpg.DivineRPG;
 
 public final class IconHelper {
 	

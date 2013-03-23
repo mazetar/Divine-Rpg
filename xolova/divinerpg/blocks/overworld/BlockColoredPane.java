@@ -2,7 +2,7 @@ package xolova.blued00r.divinerpg.blocks;
 
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

@@ -8,7 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPG;
 
 public class BlockDarkBridge extends Block
 {

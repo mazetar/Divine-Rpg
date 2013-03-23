@@ -2,12 +2,11 @@ package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
-import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class BlockPurpleGlowBone extends Block
 {

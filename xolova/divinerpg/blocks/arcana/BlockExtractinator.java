@@ -10,8 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityExtractinator;
+import xolova.divinerpg.DivineRPG;
 
 public class BlockExtractinator extends BlockContainer
 {	

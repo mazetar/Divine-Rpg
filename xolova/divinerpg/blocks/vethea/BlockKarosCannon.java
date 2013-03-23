@@ -21,6 +21,7 @@ import net.minecraft.tileentity.TileEntityDispenser;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
 public class BlockKarosCannon extends BlockContainer
 {

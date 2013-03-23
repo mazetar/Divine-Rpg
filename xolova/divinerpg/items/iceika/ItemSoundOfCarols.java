@@ -2,15 +2,12 @@ package xolova.divinerpg.items.iceika;
 
 import java.util.List;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.projectile.EntityShuriken;
-import xolova.blued00r.divinerpg.entities.projectile.icieka.EntityFrostyMusic;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemSoundOfCarols extends Item
 {

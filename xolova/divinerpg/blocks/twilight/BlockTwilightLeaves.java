@@ -155,7 +155,7 @@ public class BlockTwilightLeaves extends Block implements IShearable
 
                 if (var12 >= 0)
                 {
-                    par1World.setBlockMetadata(par2, par3, par4, var6 & -9);
+                    par1World.setBlock(par2, par3, par4, var6 & -9);
                 }
                 else
                 {
@@ -185,7 +185,7 @@ public class BlockTwilightLeaves extends Block implements IShearable
     private void removeLeaves(World par1World, int par2, int par3, int par4)
     {
         this.dropBlockAsItem(par1World, par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4), 0);
-        par1World.setBlockWithNotify(par2, par3, par4, 0);
+        par1World.setBlock(par2, par3, par4, 0);
     }
 
     /**
@@ -223,7 +223,7 @@ public class BlockTwilightLeaves extends Block implements IShearable
     @Override
     public void beginLeavesDecay(World world, int x, int y, int z)
     {
-        world.setBlockMetadata(x, y, z, world.getBlockMetadata(x, y, z) | 8);
+        world.setBlock(x, y, z, world.getBlockMetadata(x, y, z) | 8);
     }
 
     @Override

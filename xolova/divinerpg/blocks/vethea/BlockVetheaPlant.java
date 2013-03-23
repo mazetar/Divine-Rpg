@@ -10,6 +10,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
 public class BlockVetheaPlant extends Block implements IPlantable
 {

@@ -5,7 +5,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPG;
 
 public class BlockSlimeLight extends Block
 {

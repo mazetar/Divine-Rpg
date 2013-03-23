@@ -11,6 +11,8 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -79,12 +81,12 @@ public class BlockAugitePortal extends BlockBreakable
         byte var5 = 0;
         byte var6 = 0;
 
-        if (var1.getBlockId(var2 - 1, var3, var4) == DivineRPG.mythilBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == DivineRPG.mythilBlock.blockID)
+        if (var1.getBlockId(var2 - 1, var3, var4) == TwilightBlockHelper.mythilBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == TwilightBlockHelper.mythilBlock.blockID)
         {
             var5 = 1;
         }
 
-        if (var1.getBlockId(var2, var3, var4 - 1) == DivineRPG.mythilBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == DivineRPG.mythilBlock.blockID)
+        if (var1.getBlockId(var2, var3, var4 - 1) == TwilightBlockHelper.mythilBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == TwilightBlockHelper.mythilBlock.blockID)
         {
             var6 = 1;
         }
@@ -116,12 +118,12 @@ public class BlockAugitePortal extends BlockBreakable
 
                         if (var9)
                         {
-                            if (var10 != DivineRPG.mythilBlock.blockID)
+                            if (var10 != TwilightBlockHelper.mythilBlock.blockID)
                             {
                                 return false;
                             }
                         }
-                        else if (var10 != 0 && var10 != DivineRPG.blueFire.blockID)
+                        else if (var10 != 0 && var10 != TwilightBlockHelper.blueFire.blockID)
                         {
                             return false;
                         }
@@ -129,17 +131,13 @@ public class BlockAugitePortal extends BlockBreakable
                 }
             }
 
-            var1.editingBlocks = true;
-
             for (var7 = 0; var7 < 2; ++var7)
             {
                 for (var8 = 0; var8 < 3; ++var8)
                 {
-                    var1.setBlockWithNotify(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, DivineRPG.AugitePortal.blockID);
+                    var1.setBlockWithNotify(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.AugitePortal.blockID);
                 }
             }
-
-            var1.editingBlocks = false;
             return true;
         }
     }
@@ -166,9 +164,9 @@ public class BlockAugitePortal extends BlockBreakable
             ;
         }
 
-        if (var1.getBlockId(var2, var8 - 1, var4) != DivineRPG.mythilBlock.blockID)
+        if (var1.getBlockId(var2, var8 - 1, var4) != TwilightBlockHelper.mythilBlock.blockID)
         {
-            var1.setBlockWithNotify(var2, var3, var4, 0);
+            var1.setAir(var2, var3, var4);
         }
         else
         {
@@ -186,16 +184,16 @@ public class BlockAugitePortal extends BlockBreakable
 
                 if (var10 && var11)
                 {
-                    var1.setBlockWithNotify(var2, var3, var4, 0);
+                    var1.setBlock(var2, var3, var4, 0);
                 }
-                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != DivineRPG.mythilBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != DivineRPG.mythilBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
+                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.mythilBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != TwilightBlockHelper.mythilBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
-                    var1.setBlockWithNotify(var2, var3, var4, 0);
+                    var1.setBlock(var2, var3, var4, 0);
                 }
             }
             else
             {
-                var1.setBlockWithNotify(var2, var3, var4, 0);
+                var1.setBlock(var2, var3, var4, 0);
             }
         }
     }
@@ -255,11 +253,11 @@ public class BlockAugitePortal extends BlockBreakable
                     if (var5.ridingEntity == null && var5.riddenByEntity == null && var5 instanceof EntityPlayer)
                     {
                     	
-                    	var6.addStat(AchievementPageDivineRPG.possibilities, 1);
+                    	//var6.addStat(AchievementPageDivineRPG.possibilities, 1); TODO
                         var1.playSound((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "xolovon.AugitePortal", 0.5F, ((EntityPlayerMP) var5).getRNG().nextFloat() * 0.4F + 0.8F, false);
                         if (var6.dimension != DivineRPG.augiteID)
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DivineRPG.augiteID, new TeleporterAugite(var6.mcServer.worldServerForDimension(DivineRPG.augiteID)));
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, TwilightBlockHelper.augiteID, new TeleporterAugite(var6.mcServer.worldServerForDimension(DivineRPG.augiteID)));
                         }
                         else
                         {
@@ -312,10 +310,5 @@ public class BlockAugitePortal extends BlockBreakable
             EntityAugitePortalFX var20 = new EntityAugitePortalFX(var1, var7, var9, var11, var13, var15, var17);
             FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20, var20);
         }
-    }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
     }
 }

@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class ItemOreDoor2 extends Item
 {

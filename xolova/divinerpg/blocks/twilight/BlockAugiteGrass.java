@@ -41,7 +41,7 @@ public class BlockAugiteGrass extends BlockDivineRPG
         {
             if (var1.getBlockLightValue(var2, var3 + 1, var4) < 4 && Block.lightOpacity[var1.getBlockId(var2, var3 + 1, var4)] > 2)
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.AugiteDirt.blockID);
+                var1.setBlock(var2, var3, var4, TwilightBlockHelper.AugiteDirt.blockID);
             }
             else if (var1.getBlockLightValue(var2, var3 + 1, var4) >= 9)
             {
@@ -52,9 +52,9 @@ public class BlockAugiteGrass extends BlockDivineRPG
                     int var9 = var4 + var5.nextInt(3) - 1;
                     int var10 = var1.getBlockId(var7, var8 + 1, var9);
 
-                    if (var1.getBlockId(var7, var8, var9) == DivineRPG.AugiteDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
+                    if (var1.getBlockId(var7, var8, var9) == TwilightBlockHelper.AugiteDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
                     {
-                        var1.setBlockWithNotify(var7, var8, var9, DivineRPG.AugiteGrass.blockID);
+                        var1.setBlock(var7, var8, var9, TwilightBlockHelper.AugiteGrass.blockID);
                     }
                 }
             }

@@ -7,13 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Facing;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.mobs.bosses.EntityAyeracoBlue;
-import xolova.blued00r.divinerpg.entities.mobs.bosses.EntityAyeracoGreen;
-import xolova.blued00r.divinerpg.entities.mobs.bosses.EntityAyeracoPurple;
-import xolova.blued00r.divinerpg.entities.mobs.bosses.EntityAyeracoRed;
-import xolova.blued00r.divinerpg.entities.mobs.bosses.EntityAyeracoYellow;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityAyeracoBeamBlue;
+import xolova.divinerpg.DivineRPG;
 
 public class ItemAyeracoSpawner extends Item
 {

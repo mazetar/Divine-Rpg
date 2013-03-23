@@ -9,6 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
 public class BlockKarosHeatTileRed extends Block
 {

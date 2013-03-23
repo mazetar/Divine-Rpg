@@ -1,6 +1,5 @@
 package xolova.divinerpg.blocks.twilight;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;

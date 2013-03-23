@@ -1,12 +1,12 @@
 package xolova.divinerpg.blocks;
 
-import xolova.divinerpg.api.IBlockDivineRPG;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import xolova.divinerpg.api.IBlockDivineRPG;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockDivineRPG extends Block implements IBlockDivineRPG
 {
@@ -28,13 +28,13 @@ public class BlockDivineRPG extends Block implements IBlockDivineRPG
     }
 	
     @SideOnly(Side.CLIENT)
-    public void func_94332_a(IconRegister par1IconRegister)
+    public void registerIcons(IconRegister par1IconRegister)
     {
         this.texture = new Icon[IconNumber];
 
         for (int i = 0; i < this.texture.length; ++i)
         {
-            this.texture[i] = par1IconRegister.func_94245_a(this.name + "_" + i);
+            this.texture[i] = par1IconRegister.registerIcon(this.name + "_" + i);
         }
     }
 }

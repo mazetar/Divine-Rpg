@@ -4,14 +4,10 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.teleporter.TeleporterIceika;
-import xolova.blued00r.divinerpg.teleporter.TeleporterTwilightClock;
+import xolova.divinerpg.DivineRPG;
 
 public class ItemTwilightClock extends Item
 {

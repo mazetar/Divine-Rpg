@@ -3,11 +3,9 @@ package xolova.blued00r.divinerpg.blocks;
 import java.util.Random;
 
 import net.minecraft.block.BlockMobSpawner;
-import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityArcanaPower;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

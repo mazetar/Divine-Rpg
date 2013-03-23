@@ -2,15 +2,10 @@ package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
-import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class BlockTwilightOre extends Block
 {
@@ -21,7 +16,7 @@ public class BlockTwilightOre extends Block
 	
     public boolean isGenMineableReplaceable(World var1, int var2, int var3, int var4)
     {
-        return this.blockID == TwilightBlockHelper.DraviteStone.blockID;
+        return this.blockID == TwilightBlockHelper.TwilightStone.blockID;
     }
 
     /**
@@ -63,7 +58,7 @@ public class BlockTwilightOre extends Block
         }
     }
     
-    /*public boolean removeBlockByPlayer(World world, EntityPlayer player, int x, int y, int z)
+    /*public boolean removeBlockByPlayer(World world, EntityPlayer player, int x, int y, int z) TODO
     {
     	if (player.inventory.armorInventory[0] != null
     			&& player.inventory.armorInventory[1] != null

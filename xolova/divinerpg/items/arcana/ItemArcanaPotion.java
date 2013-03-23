@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
 public class ItemArcanaPotion extends Item
 {

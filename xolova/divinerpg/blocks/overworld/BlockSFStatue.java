@@ -6,7 +6,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntitySFStatue;
 
 public class BlockSFStatue extends BlockContainer
 {

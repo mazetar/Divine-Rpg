@@ -8,8 +8,7 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.items.iceika.ItemSwordIceika;
+import xolova.divinerpg.items.iceika.ItemSwordIceika;
 
 public class ItemNamkormira extends ItemSwordIceika
 {

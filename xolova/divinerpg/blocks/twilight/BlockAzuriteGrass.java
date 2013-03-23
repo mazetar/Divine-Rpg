@@ -2,16 +2,12 @@ package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
-import xolova.divinerpg.blocks.BlockDivineRPG;
-import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class BlockAzuriteGrass extends BlockDivineRPG
 {
@@ -31,7 +27,7 @@ public class BlockAzuriteGrass extends BlockDivineRPG
         switch (par1)
         {
             case 0:
-                return TwilightBlockHelper.azuriteDirt.getBlockTextureFromSide(0);
+                return TwilightBlockHelper.AzuriteDirt.getBlockTextureFromSide(0);
 
             case 1:
                 return this.texture[0];
@@ -47,7 +43,7 @@ public class BlockAzuriteGrass extends BlockDivineRPG
         {
             if (var1.getBlockLightValue(var2, var3 + 1, var4) < 4 && Block.lightOpacity[var1.getBlockId(var2, var3 + 1, var4)] > 2)
             {
-                var1.setBlockWithNotify(var2, var3, var4, TwilightBlockHelper.azuriteDirt.blockID);
+                var1.setBlock(var2, var3, var4, TwilightBlockHelper.AzuriteDirt.blockID);
             }
             else if (var1.getBlockLightValue(var2, var3 + 1, var4) >= 9)
             {
@@ -58,9 +54,9 @@ public class BlockAzuriteGrass extends BlockDivineRPG
                     int var9 = var4 + var5.nextInt(3) - 1;
                     int var10 = var1.getBlockId(var7, var8 + 1, var9);
 
-                    if (var1.getBlockId(var7, var8, var9) == TwilightBlockHelper.azuriteDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
+                    if (var1.getBlockId(var7, var8, var9) == TwilightBlockHelper.AzuriteDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
                     {
-                        var1.setBlockWithNotify(var7, var8, var9, TwilightBlockHelper.azuriteGrass.blockID);
+                        var1.setBlock(var7, var8, var9, TwilightBlockHelper.AzuriteGrass.blockID);
                     }
                 }
             }
@@ -70,6 +66,6 @@ public class BlockAzuriteGrass extends BlockDivineRPG
     @Override
     public int idDropped(int var1, Random var2, int var3)
     {
-        return TwilightBlockHelper.azuriteDirt.blockID;
+        return TwilightBlockHelper.AzuriteDirt.blockID;
     }
 }

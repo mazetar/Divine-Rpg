@@ -2,16 +2,12 @@ package xolova.blued00r.divinerpg.blocks;
 
 import java.util.Random;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.client.gui.GuiDreamLamp;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDreamLamp;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityInfusionTable;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import xolova.divinerpg.DivineRPG;
 
 public class BlockDreamLamp extends BlockContainer
 {

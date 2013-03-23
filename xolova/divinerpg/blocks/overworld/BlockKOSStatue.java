@@ -6,9 +6,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityAEStatue;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityKOSStatue;
 
 public class BlockKOSStatue extends BlockContainer
 {

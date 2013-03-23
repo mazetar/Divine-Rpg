@@ -11,11 +11,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityTwilightFurance;
+import xolova.divinerpg.DivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -78,7 +78,7 @@ public class BlockTwilightFurnace extends BlockContainer
                 var9 = 4;
             }
 
-            var1.setBlockMetadataWithNotify(var2, var3, var4, var9);
+            var1.setBlock(var2, var3, var4, var9);
         }
     }
 
@@ -91,17 +91,18 @@ public class BlockTwilightFurnace extends BlockContainer
     {
         if (var5 == 1)
         {
-            return 59;
+            //return Icon[0];
         }
         else if (var5 == 0)
         {
-            return 59;
+            //return 59;
         }
         else
         {
             int var6 = var1.getBlockMetadata(var2, var3, var4);
-            return var5 != var6 ? this.blockIndexInTexture : (this.isActive ? this.blockIndexInTexture + 2 : this.blockIndexInTexture - 2);
+            //return var5 != var6 ? this.blockIndexInTexture : (this.isActive ? this.blockIndexInTexture + 2 : this.blockIndexInTexture - 2);
         }
+        return null; //TODO
     }
 
     @SideOnly(Side.CLIENT)

@@ -1,14 +1,12 @@
 package xolova.blued00r.divinerpg.items.arcana;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
+import xolova.divinerpg.DivineRPG;
 
 public class ItemOrbOfLight extends Item
 {

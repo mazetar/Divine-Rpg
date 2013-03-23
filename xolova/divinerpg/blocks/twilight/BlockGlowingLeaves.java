@@ -153,7 +153,7 @@ public class BlockGlowingLeaves extends BlockLeavesBase implements IShearable
 
                 if (var12 >= 0)
                 {
-                    var1.setBlockMetadata(var2, var3, var4, var6 & -9);
+                    var1.setBlock(var2, var3, var4, var6 & -9);
                 }
                 else
                 {
@@ -166,7 +166,7 @@ public class BlockGlowingLeaves extends BlockLeavesBase implements IShearable
     private void removeLeaves(World var1, int var2, int var3, int var4)
     {
         this.dropBlockAsItem(var1, var2, var3, var4, var1.getBlockMetadata(var2, var3, var4), 0);
-        var1.setBlockWithNotify(var2, var3, var4, 0);
+        var1.setBlock(var2, var3, var4, 0);
     }
 
     /**
@@ -252,7 +252,7 @@ public class BlockGlowingLeaves extends BlockLeavesBase implements IShearable
 
     public void beginLeavesDecay(World var1, int var2, int var3, int var4)
     {
-        var1.setBlockMetadata(var2, var3, var4, var1.getBlockMetadata(var2, var3, var4) | 8);
+        var1.setBlock(var2, var3, var4, var1.getBlockMetadata(var2, var3, var4) | 8);
     }
 
     public boolean isLeaves(World var1, int var2, int var3, int var4)

@@ -18,7 +18,6 @@ import xolova.divinerpg.items.iceika.ItemSnowStormBow;
 import xolova.divinerpg.items.iceika.ItemSoundOfCarols;
 import xolova.divinerpg.items.iceika.ItemSwordIceika;
 import xolova.divinerpg.items.overworld.ItemNamkormira;
-import xolova.divinerpg.utils.ItemDivinerpgArmor;
 import xolova.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
 import cpw.mods.fml.client.registry.RenderingRegistry;

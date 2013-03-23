@@ -6,7 +6,7 @@ import net.minecraft.block.BlockPressurePlate;
 import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPG;
 
 public class BlockPlate extends BlockPressurePlate
 {

@@ -1,7 +1,7 @@
 package xolova.blued00r.divinerpg.items;
 
 import net.minecraft.item.Item;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPG;
 
 public class ItemShard extends Item
 {

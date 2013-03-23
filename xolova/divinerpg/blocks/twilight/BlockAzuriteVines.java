@@ -200,7 +200,7 @@ public class BlockAzuriteVines extends Block implements IShearable
         {
             if (var6 != var5)
             {
-                var1.func_94575_c(var2, var3, var4, var6);
+                var1.setBlock(var2, var3, var4, var6);
             }
 
             return true;
@@ -216,7 +216,7 @@ public class BlockAzuriteVines extends Block implements IShearable
         if (!var1.isRemote && !this.canVineStay(var1, var2, var3, var4))
         {
             this.dropBlockAsItem(var1, var2, var3, var4, var1.getBlockMetadata(var2, var3, var4), 0);
-            var1.func_94575_c(var2, var3, var4, 0);
+            var1.setBlock(var2, var3, var4, 0);
         }
     }
 
@@ -282,7 +282,7 @@ public class BlockAzuriteVines extends Block implements IShearable
 
                     if (var12 > 0)
                     {
-                        var1.setBlockAndMetadataWithNotify(var2, var3 + 1, var4, this.blockID, var12, 3);
+                        var1.setBlockMetadataWithNotify(var2, var3 + 1, var4, this.blockID, var12);
                     }
                 }
             }
@@ -313,23 +313,23 @@ public class BlockAzuriteVines extends Block implements IShearable
 
                         if ((var9 & 1 << var13) != 0 && this.canBePlacedOn(var1.getBlockId(var2 + Direction.offsetX[var11] + Direction.offsetX[var13], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var13])))
                         {
-                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 1 << var13, 3);
+                            var1.setBlockMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 1 << var13);
                         }
                         else if ((var9 & 1 << var14) != 0 && this.canBePlacedOn(var1.getBlockId(var2 + Direction.offsetX[var11] + Direction.offsetX[var14], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var14])))
                         {
-                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 1 << var14, 3);
+                            var1.setBlockMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 1 << var14);
                         }
                         else if ((var9 & 1 << var13) != 0 && var1.isAirBlock(var2 + Direction.offsetX[var11] + Direction.offsetX[var13], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var13]) && this.canBePlacedOn(var1.getBlockId(var2 + Direction.offsetX[var13], var3, var4 + Direction.offsetZ[var13])))
                         {
-                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11] + Direction.offsetX[var13], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var13], this.blockID, 1 << (var11 + 2 & 3), 3);
+                            var1.setBlockMetadataWithNotify(var2 + Direction.offsetX[var11] + Direction.offsetX[var13], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var13], this.blockID, 1 << (var11 + 2 & 3));
                         }
                         else if ((var9 & 1 << var14) != 0 && var1.isAirBlock(var2 + Direction.offsetX[var11] + Direction.offsetX[var14], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var14]) && this.canBePlacedOn(var1.getBlockId(var2 + Direction.offsetX[var14], var3, var4 + Direction.offsetZ[var14])))
                         {
-                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11] + Direction.offsetX[var14], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var14], this.blockID, 1 << (var11 + 2 & 3), 3);
+                            var1.setBlockMetadataWithNotify(var2 + Direction.offsetX[var11] + Direction.offsetX[var14], var3, var4 + Direction.offsetZ[var11] + Direction.offsetZ[var14], this.blockID, 1 << (var11 + 2 & 3));
                         }
                         else if (this.canBePlacedOn(var1.getBlockId(var2 + Direction.offsetX[var11], var3 + 1, var4 + Direction.offsetZ[var11])))
                         {
-                            var1.setBlockAndMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 0, 3);
+                            var1.setBlockMetadataWithNotify(var2 + Direction.offsetX[var11], var3, var4 + Direction.offsetZ[var11], this.blockID, 0);
                         }
                     }
                 }
@@ -343,7 +343,7 @@ public class BlockAzuriteVines extends Block implements IShearable
 
                         if (var13 > 0)
                         {
-                            var1.setBlockAndMetadataWithNotify(var2, var3 - 1, var4, this.blockID, var13, 3);
+                            var1.setBlockMetadataWithNotify(var2, var3 - 1, var4, this.blockID, var13);
                         }
                     }
                     else if (var12 == this.blockID)

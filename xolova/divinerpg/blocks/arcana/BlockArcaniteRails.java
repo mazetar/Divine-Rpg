@@ -2,11 +2,10 @@ package xolova.blued00r.divinerpg.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRail;
-import net.minecraft.block.RailLogic;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPG;
 
 public class BlockArcaniteRails extends BlockRail
 {

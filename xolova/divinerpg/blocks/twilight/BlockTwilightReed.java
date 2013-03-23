@@ -37,12 +37,12 @@ public class BlockTwilightReed extends Block
 
                 if (var7 == 15)
                 {
-                    var1.setBlockWithNotify(var2, var3 + 1, var4, this.blockID);
-                    var1.setBlockMetadataWithNotify(var2, var3, var4, 0);
+                    var1.setBlock(var2, var3 + 1, var4, this.blockID);
+                    var1.setBlock(var2, var3, var4, 0);
                 }
                 else
                 {
-                    var1.setBlockMetadataWithNotify(var2, var3, var4, var7 + 1);
+                    var1.setBlock(var2, var3, var4, var7 + 1);
                 }
             }
         }
@@ -71,7 +71,7 @@ public class BlockTwilightReed extends Block
         if (!this.canBlockStay(var1, var2, var3, var4))
         {
             this.dropBlockAsItem(var1, var2, var3, var4, var1.getBlockMetadata(var2, var3, var4), 0);
-            var1.setBlockWithNotify(var2, var3, var4, 0);
+            var1.setBlock(var2, var3, var4, 0);
         }
     }
 

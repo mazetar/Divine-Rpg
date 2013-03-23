@@ -25,7 +25,7 @@ public class BlockDraviteGrass extends BlockDivineRPG
         {
             if (var1.getBlockLightValue(var2, var3 + 1, var4) < 4 && Block.lightOpacity[var1.getBlockId(var2, var3 + 1, var4)] > 2)
             {
-                var1.setBlockWithNotify(var2, var3, var4, TwilightBlockHelper.DraviteDirt.blockID);
+                var1.setBlock(var2, var3, var4, TwilightBlockHelper.DraviteDirt.blockID);
             }
             else if (var1.getBlockLightValue(var2, var3 + 1, var4) >= 9)
             {
@@ -38,7 +38,7 @@ public class BlockDraviteGrass extends BlockDivineRPG
 
                     if (var1.getBlockId(var7, var8, var9) == TwilightBlockHelper.DraviteDirt.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
                     {
-                        var1.setBlockWithNotify(var7, var8, var9, TwilightBlockHelper.DraviteGrass.blockID);
+                        var1.setBlock(var7, var8, var9, TwilightBlockHelper.DraviteGrass.blockID);
                     }
                 }
             }

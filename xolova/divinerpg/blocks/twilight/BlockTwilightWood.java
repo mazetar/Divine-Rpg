@@ -2,7 +2,6 @@ package xolova.divinerpg.blocks.twilight;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
 public class BlockTwilightWood extends Block

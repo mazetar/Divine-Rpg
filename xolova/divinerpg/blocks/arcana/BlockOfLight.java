@@ -2,15 +2,10 @@ package xolova.blued00r.divinerpg.blocks;
 
 import java.util.Random;
 
-import xolova.blued00r.divinerpg.DivineRPG;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import net.minecraftforge.common.ForgeDirection;
 
 public class BlockOfLight extends Block
 {

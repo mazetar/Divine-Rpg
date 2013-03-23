@@ -19,8 +19,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntitySerenityChest;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -59,7 +57,8 @@ public class BlockDraviteChest extends BlockContainer
         else
         {
             int var6 = var1.getBlockMetadata(var2, var3, var4);
-            //return var5 != var6 ? this.blockIndexInTexture : this.blockIndexInTexture + 1; TODO
+            return texture[0];
+            //return var5 != var6 ? this.blockIndexInTexture : this.blockIndexInTexture + 1; //TODO
         }
     }
 
@@ -68,7 +67,7 @@ public class BlockDraviteChest extends BlockContainer
      */
     public Icon getBlockTextureFromSideAndMetaData(int var1)
     {
-        return var1 == 1 ? texture[0] : (var1 == 0 ? 146 : (var1 == 3 ? texture[1] : texture[0]));
+        return (Icon) (var1 == 1 ? texture[0] : (var1 == 0 ? 146 : (var1 == 3 ? texture[1] : texture[0])));
     }
 
     private void setDefaultDirection(World var1, int var2, int var3, int var4)
@@ -101,7 +100,7 @@ public class BlockDraviteChest extends BlockContainer
                 var9 = 4;
             }
 
-            var1.setBlockMetadataWithNotify(var2, var3, var4, var9);
+            var1.setBlock(var2, var3, var4, var9);
         }
     }
 
@@ -133,7 +132,7 @@ public class BlockDraviteChest extends BlockContainer
             var6 = 4;
         }
 
-        var1.setBlockMetadataWithNotify(var2, var3, var4, var6);
+        var1.setBlock(var2, var3, var4, var6);
     }
 
     /**

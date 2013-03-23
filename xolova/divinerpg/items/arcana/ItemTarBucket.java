@@ -12,6 +12,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
 public class ItemTarBucket extends ItemBucket
 {

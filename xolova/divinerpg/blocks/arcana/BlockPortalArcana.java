@@ -10,10 +10,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.teleporter.TeleporterArcana;
-import xolova.blued00r.divinerpg.utils.AchievementPageDivineRPG;
+import xolova.divinerpg.DivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

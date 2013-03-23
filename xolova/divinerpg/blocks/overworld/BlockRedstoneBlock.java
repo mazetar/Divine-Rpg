@@ -8,8 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.misc.RedstoneUpdateInfo;
+import xolova.divinerpg.DivineRPG;
 
 public class BlockRedstoneBlock extends Block
 {

@@ -2,11 +2,10 @@ package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
-import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class BlockTwilightStone extends Block
 {
@@ -17,7 +16,7 @@ public class BlockTwilightStone extends Block
 
     public boolean isGenMineableReplaceable(World var1, int var2, int var3, int var4)
     {
-        return this.blockID == TwilightBlockHelper.DraviteStone.blockID;
+        return this.blockID == TwilightBlockHelper.TwilightStone.blockID;
     }
 
     public int idDropped(int var1, Random var2, int var3)

@@ -3,7 +3,7 @@ package xolova.blued00r.divinerpg.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPG;
 
 public class BlockIceikaLog extends Block
 {

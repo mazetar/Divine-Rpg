@@ -109,18 +109,18 @@ public class ArcanaItemHelper
     
 	public static void init()
 	{
-		oreDoorItem1 = (new ItemOreDoor(ArcanaConfigHelper.oreDoorItem1ID, Material.wood)).(11, 2).setUnlocalizedName("doorWood").setCreativeTab(CreativeTabHelper.tabItems);
-		oreDoor2Item = (new ItemOreDoor2(ArcanaConfigHelper.oreDoor2ItemID, Material.wood)).(11, 2).setUnlocalizedName("doorWood").setCreativeTab(CreativeTabHelper.tabItems);
-		oreDoor3Item = (new ItemOreDoor3(ArcanaConfigHelper.oreDoor3ItemID, Material.wood)).(11, 2).setUnlocalizedName("doorWood").setCreativeTab(CreativeTabHelper.tabItems);
-		oreDoor4Item = (new ItemOreDoor4(ArcanaConfigHelper.oreDoor4ItemID, Material.wood)).(11, 2).setUnlocalizedName("doorWood").setCreativeTab(CreativeTabHelper.tabItems);
+		oreDoorItem1 = (new ItemOreDoor(ArcanaConfigHelper.oreDoorItem1ID, Material.wood)).setUnlocalizedName("doorWood1").setCreativeTab(CreativeTabHelper.tabItems);
+		oreDoor2Item = (new ItemOreDoor2(ArcanaConfigHelper.oreDoor2ItemID, Material.wood)).setUnlocalizedName("doorWood2").setCreativeTab(CreativeTabHelper.tabItems);
+		oreDoor3Item = (new ItemOreDoor3(ArcanaConfigHelper.oreDoor3ItemID, Material.wood)).setUnlocalizedName("doorWood3").setCreativeTab(CreativeTabHelper.tabItems);
+		oreDoor4Item = (new ItemOreDoor4(ArcanaConfigHelper.oreDoor4ItemID, Material.wood)).setUnlocalizedName("doorWood4").setCreativeTab(CreativeTabHelper.tabItems);
 		key1 = new ItemKey(ArcanaConfigHelper.key1ID).setUnlocalizedName("key1").setCreativeTab(CreativeTabHelper.tabItems);
 	    key2 = new ItemKey(ArcanaConfigHelper.key2ID).setUnlocalizedName("key2").setCreativeTab(CreativeTabHelper.tabItems);
 	    key3 = new ItemKey(ArcanaConfigHelper.key3ID).setUnlocalizedName("key3").setCreativeTab(CreativeTabHelper.tabItems);
 	    key4 = new ItemKey(ArcanaConfigHelper.key4ID).setUnlocalizedName("key4").setCreativeTab(CreativeTabHelper.tabItems);
 	    fireStockItem = new Item(ArcanaConfigHelper.fireStockItemID).setUnlocalizedName("fireStockItem").setCreativeTab(CreativeTabHelper.tabHerb);
-        fireStockSeeds = new ItemSeeds(ArcanaConfigHelper.fireStockSeedsID, ArcanaBlockHelper.fireStock.blockID, ArcanaBlockHelper..arcaniteGrass.blockID).setUnlocalizedName("fireStockSeeds").setCreativeTab(CreativeTabHelper.tabHerb);
+        fireStockSeeds = new ItemSeeds(ArcanaConfigHelper.fireStockSeedsID, ArcanaBlockHelper.fireStock.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setUnlocalizedName("fireStockSeeds").setCreativeTab(CreativeTabHelper.tabHerb);
         pinFlyItem = new ItemPinFly(ArcanaConfigHelper.pinFlyItemID, 2, 0.3F, false).setUnlocalizedName("pinflyItem").setCreativeTab(CreativeTabHelper.tabHerb);
-        pinFlySeeds = new ItemSeeds(ArcanaConfigHelper.pinFlySeedsID, ArcanaBlockHelper.pinFly.blockID, aArcanaBlockHelper.rcaniteGrass.blockID).setUnlocalizedName("pinFlySeeds").setCreativeTab(CreativeTabHelper.tabHerb);
+        pinFlySeeds = new ItemSeeds(ArcanaConfigHelper.pinFlySeedsID, ArcanaBlockHelper.pinFly.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setUnlocalizedName("pinFlySeeds").setCreativeTab(CreativeTabHelper.tabHerb);
         hitchakItem = new ItemFood(ArcanaConfigHelper.hitchakItemID, 2, 3.0F, false).setUnlocalizedName("hitchakItem").setCreativeTab(CreativeTabHelper.tabHerb);
         hitchakSeeds = new ItemSeeds(ArcanaConfigHelper.hitchakSeedsID, ArcanaBlockHelper.hitchak.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setUnlocalizedName("hitchakSeeds").setCreativeTab(CreativeTabHelper.tabHerb);
         eucalyptusRootSeeds = new ItemSeeds(ArcanaConfigHelper.eucalyptusRootSeedsID, ArcanaBlockHelper.eucalyptusRootID, ArcanaBlockHelper.arcaniteGrassID).setUnlocalizedName("eucalyptusRootSeeds").setCreativeTab(CreativeTabHelper.tabHerb);

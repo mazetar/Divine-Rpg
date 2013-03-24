@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 
-public class ItemDivineRPG extends Item
+public class ItemDivineRPG extends Item implements IItemDivineRPG
 {
 	int index;
 	int sheet;

@@ -1,5 +1,6 @@
 package xolova.divinerpg.items;
 
+import xolova.divinerpg.api.IItemDivineRPG;
 import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.IconHelper;
 import net.minecraft.block.material.Material;
@@ -11,6 +12,10 @@ public class ItemDivineRPG extends Item implements IItemDivineRPG
 {
 	int index;
 	int sheet;
+	
+	public ItemDivineRPG(int id) {
+		this(id, 0);
+	}
 	
 	public ItemDivineRPG(int id, int sprite) {
 		super(id);

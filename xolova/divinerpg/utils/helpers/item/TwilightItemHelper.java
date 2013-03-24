@@ -86,6 +86,8 @@ public class TwilightItemHelper
 	public static Item FuryArrow;
 	public static Item TwilightBow;
 	
+	public static Item TwilightClock;
+	
 	public static TwilightConfigHelper x;
 
 	public static void init()

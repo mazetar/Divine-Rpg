@@ -1,6 +1,7 @@
 package xolova.divinerpg.utils.helpers.gui;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 
@@ -13,6 +14,6 @@ public class CreativeTabRangedWeapons extends CreativeTabs
 
     public ItemStack getIconItemStack()
     {
-        return new ItemStack(TwilightItemHelper.azuriteBlitz, 1, 0);
+        return new ItemStack(Item.bow/*TwilightItemHelper.azuriteBlitz*/, 1, 0);
     }
 }

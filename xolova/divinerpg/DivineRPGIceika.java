@@ -1,6 +1,9 @@
 package xolova.divinerpg;
 
 import xolova.divinerpg.utils.Utils;
+import xolova.divinerpg.utils.helpers.block.IceikaBlockHelper;
+import xolova.divinerpg.utils.helpers.config.IceikaConfigHelper;
+import xolova.divinerpg.utils.helpers.item.IceikaItemHelper;
 import xolova.divinerpg.utils.proxies.IceikaProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -29,12 +32,14 @@ public class DivineRPGIceika
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		instance = this;
+		IceikaConfigHelper.initConfig(event);
 	}
 	
 	@Init
 	public void Init(FMLInitializationEvent event)
 	{
-		
+		IceikaBlockHelper.init();
+		IceikaItemHelper.init();
 	}
 	
 	@PostInit

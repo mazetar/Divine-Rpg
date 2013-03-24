@@ -35,12 +35,16 @@ public class DivineRPG
 	{
 		instance = this;
 		
+		proxy.preInit(event);
+		
 		TwilightConfigHelper.initConfig(event);
 	}
 	
 	@Init
 	public void Init(FMLInitializationEvent event)
 	{
+		proxy.init(event);
+		
 		TwilightBlockHelper.initBlocks();
 		
 		TwilightItemHelper.init();

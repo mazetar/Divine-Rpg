@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
@@ -17,6 +18,7 @@ import xolova.divinerpg.utils.helpers.IconHelper;
 public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
 
 	boolean unbreakable;
+	int dmg;
 	
 	public ItemDivineRPGSword(int par1, EnumToolMaterial par2EnumToolMaterial) {
 		this(par1, par2EnumToolMaterial, false);
@@ -25,6 +27,7 @@ public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
 	public ItemDivineRPGSword(int par1, EnumToolMaterial par2EnumToolMaterial, boolean unbreakable) {
 		super(par1, par2EnumToolMaterial);
 		this.unbreakable = unbreakable;
+		dmg = par2EnumToolMaterial.getDamageVsEntity();
 	}
 	
 	int index;
@@ -34,6 +37,11 @@ public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
 		this.sheet = sheet;
 		this.index = index;
 		return this;
+	}
+	
+	@Override
+	public int getDamageVsEntity(Entity par1Entity) {
+		return dmg;
 	}
 
 	public ItemDivineRPGSword setIconIndex(int sheet, int x, int y) {
@@ -72,11 +80,17 @@ public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
         return true;
     }
 	
+	@Override
     public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLiving par7EntityLiving) {
         if (!unbreakable && (double)Block.blocksList[par3].getBlockHardness(par2World, par4, par5, par6) != 0.0D)
             par1ItemStack.damageItem(2, par7EntityLiving);
 
         return true;
+    }
+    
+    @Override
+    public boolean isItemTool(ItemStack par1ItemStack) {
+    	return true;
     }
 	
 	@Override

@@ -21,6 +21,7 @@ import xolova.divinerpg.items.overworld.ItemNamkormira;
 import xolova.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class IceikaItemHelper 
 {
@@ -51,12 +52,14 @@ public class IceikaItemHelper
     public static Item santaLegs;
     public static Item santaBoots;
     
+    public static IceikaConfigHelper x;
+    
     public static void init()
     {
-    	snowFlake = new Item(IceikaConfigHelper.snowFlakeID).setUnlocalizedName("snowFlake").setCreativeTab(CreativeTabHelper.tabItems);
-        icicleBane = new ItemIceicleBane(IceikaConfigHelper.icicleBaneID).setUnlocalizedName("icicleBane").setCreativeTab(CreativeTabHelper.tabSword);
-        soundOfCarols = new ItemSoundOfCarols(IceikaConfigHelper.soundOfCarolsID).setUnlocalizedName("soundofCarols").setCreativeTab(CreativeTabHelper.tabRanged);
-        icineSword = new ItemIceineSword(IceikaConfigHelper.icineSwordID).setUnlocalizedName("icineSword").setCreativeTab(CreativeTabHelper.tabSword);
+    	snowFlake = new Item(x.SnowflakeID).setUnlocalizedName("snowFlake").setCreativeTab(CreativeTabHelper.tabItems);
+        icicleBane = new ItemIceicleBane(x.IcicleBaneID).setUnlocalizedName("icicleBane").setCreativeTab(CreativeTabHelper.tabSword);
+        /*soundOfCarols = new ItemSoundOfCarols(x.SoundOfCarolsID).setUnlocalizedName("soundofCarols").setCreativeTab(CreativeTabHelper.tabRanged);
+        icineSword = new ItemIceineSword(x.IcineSwordID).setUnlocalizedName("icineSword").setCreativeTab(CreativeTabHelper.tabSword);
         frossivence = new ItemNamkormira(IceikaConfigHelper.frossivenceID).setUnlocalizedName("frossivence").setCreativeTab(CreativeTabHelper.tabSword);
         enderice = new ItemEnderice(IceikaConfigHelper.endericeID).setUnlocalizedName("enderice").setCreativeTab(CreativeTabHelper.tabSword);
         snowSlash = new ItemSnowSlash(IceikaConfigHelper.snowSlashID).setUnlocalizedName("snowSlash").setCreativeTab(CreativeTabHelper.tabSword);
@@ -82,6 +85,9 @@ public class IceikaItemHelper
         santaBody = new ItemDivinerpgArmor(IceikaConfigHelper.santaBodyID, santaRender, 1, -1, 0.0D).setUnlocalizedName("santaChest").setCreativeTab(CreativeTabHelper.tabArmor);
         santaLegs = new ItemDivinerpgArmor(IceikaConfigHelper.santaLegsID, santaRender, 2, -1, 0.0D).setUnlocalizedName("santaLegs").setCreativeTab(CreativeTabHelper.tabArmor);
         santaBoots = new ItemDivinerpgArmor(IceikaConfigHelper.santaBootsID, santaRender, 3, -1, 0.0D).setUnlocalizedName("santaBoots").setCreativeTab(CreativeTabHelper.tabArmor);
-
+         */	
+    
+        LanguageRegistry.addName(snowFlake, "Snowflake");
+        LanguageRegistry.addName(icicleBane, "Icicle Bane");
     }
 }

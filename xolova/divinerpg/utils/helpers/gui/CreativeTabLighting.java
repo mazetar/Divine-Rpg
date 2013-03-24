@@ -1,5 +1,6 @@
 package xolova.divinerpg.utils.helpers.gui;
 
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
@@ -13,6 +14,6 @@ public class CreativeTabLighting extends CreativeTabs
 
     public ItemStack getIconItemStack()
     {
-        return new ItemStack(OverworldBlockHelper.lavalamp, 1, 0);
+        return new ItemStack(Block.glowStone/*OverworldBlockHelper.lavalamp*/, 1, 0);
     }
 }

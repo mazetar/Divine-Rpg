@@ -66,7 +66,7 @@ public class BlockDreamglow extends BlockVetheaPlant
 
             if (par1World.isAirBlock(var8, var9, var10) && this.canBlockStay(par1World, var8, var9, var10))
             {
-                par1World.func_94575_c(par2, par3, par4, this.blockID);
+                par1World.setBlock(par2, par3, par4, this.blockID);
             }
         }
     }

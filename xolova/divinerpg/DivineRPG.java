@@ -18,20 +18,23 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 
 
-@Mod(modid = Utils.MainModId, version = Utils.MainVersion, name = Utils.MainModName)
+@Mod(modid = Utils.MAIN_MOD_ID, version = Utils.VERSION, name = Utils.MAIN_MOD_NAME)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class DivineRPG
 {	
-	@Instance("DivineRPG")
+	@Instance(Utils.MAIN_MOD_ID)
 	public static DivineRPG instance;
 	
 	@SidedProxy
-	(clientSide = "xolova.divinerpg.utils.proxies.TwilightProxyClient", serverSide = "xolova.divinerpg.utils.proxies.TwilightProxy")
+	(clientSide = "xolova.divinerpg.utils.proxies.TwilightProxyClient", 
+		serverSide = "xolova.divinerpg.utils.proxies.TwilightProxy")
 	public static TwilightProxy proxy;
-	
+
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		instance = this;
+		
 		TwilightConfigHelper.initConfig(event);
 	}
 	

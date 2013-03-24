@@ -1,6 +1,7 @@
 package xolova.divinerpg;
 
 import xolova.divinerpg.utils.Utils;
+import xolova.divinerpg.utils.proxies.VetheaProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -20,8 +21,8 @@ public class DivineRPGVethea
 	public static DivineRPGVethea instance;
 	
 	@SidedProxy
-	(clientSide = "xolova.divinerpg.utils.proxies.IceikaProxyClient", 
-		serverSide = "xolova.divinerpg.utils.proxies.IceikaProxy")
+	(clientSide = "xolova.divinerpg.utils.proxies.VetheaProxyClient", 
+		serverSide = "xolova.divinerpg.utils.proxies.VetheaProxy")
 	public static VetheaProxy proxy;
 	
 	@PreInit

@@ -1,26 +1,12 @@
 package xolova.divinerpg.utils.helpers.item;
 
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBucketMilk;
-import net.minecraft.item.ItemFood;
-import xolova.divinerpg.items.iceika.ItemEnderice;
-import xolova.divinerpg.items.iceika.ItemFractiteCannon;
-import xolova.divinerpg.items.iceika.ItemFrostClawCannon;
-import xolova.divinerpg.items.iceika.ItemFrozenMaul;
-import xolova.divinerpg.items.iceika.ItemGlacierSword;
+import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.items.iceika.ItemIceicleBane;
 import xolova.divinerpg.items.iceika.ItemIceineSword;
-import xolova.divinerpg.items.iceika.ItemIcicleBow;
-import xolova.divinerpg.items.iceika.ItemSerenadeOfIce;
-import xolova.divinerpg.items.iceika.ItemSnowFlakeShuriken;
-import xolova.divinerpg.items.iceika.ItemSnowSlash;
-import xolova.divinerpg.items.iceika.ItemSnowStormBow;
 import xolova.divinerpg.items.iceika.ItemSoundOfCarols;
-import xolova.divinerpg.items.iceika.ItemSwordIceika;
-import xolova.divinerpg.items.overworld.ItemNamkormira;
 import xolova.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
-import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class IceikaItemHelper 
@@ -56,11 +42,11 @@ public class IceikaItemHelper
     
     public static void init()
     {
-    	snowFlake = new Item(x.SnowflakeID).setUnlocalizedName("snowFlake").setCreativeTab(CreativeTabHelper.tabItems);
+    	snowFlake = new ItemDivineRPG(x.SnowflakeID).setIconIndex(3, 15, 10).setUnlocalizedName("snowFlake").setCreativeTab(CreativeTabHelper.tabItems);
         icicleBane = new ItemIceicleBane(x.IcicleBaneID).setUnlocalizedName("icicleBane").setCreativeTab(CreativeTabHelper.tabSword);
-        /*soundOfCarols = new ItemSoundOfCarols(x.SoundOfCarolsID).setUnlocalizedName("soundofCarols").setCreativeTab(CreativeTabHelper.tabRanged);
+        soundOfCarols = new ItemSoundOfCarols(x.SoundOfCarolsID).setUnlocalizedName("soundofCarols").setCreativeTab(CreativeTabHelper.tabRanged);
         icineSword = new ItemIceineSword(x.IcineSwordID).setUnlocalizedName("icineSword").setCreativeTab(CreativeTabHelper.tabSword);
-        frossivence = new ItemNamkormira(IceikaConfigHelper.frossivenceID).setUnlocalizedName("frossivence").setCreativeTab(CreativeTabHelper.tabSword);
+        /*frossivence = new ItemNamkormira(IceikaConfigHelper.frossivenceID).setUnlocalizedName("frossivence").setCreativeTab(CreativeTabHelper.tabSword);
         enderice = new ItemEnderice(IceikaConfigHelper.endericeID).setUnlocalizedName("enderice").setCreativeTab(CreativeTabHelper.tabSword);
         snowSlash = new ItemSnowSlash(IceikaConfigHelper.snowSlashID).setUnlocalizedName("snowSlash").setCreativeTab(CreativeTabHelper.tabSword);
         serenadeOfIce = new ItemSerenadeOfIce(IceikaConfigHelper.serenadeOfIceID).setUnlocalizedName("serenadeofIce").setCreativeTab(CreativeTabHelper.tabRanged);
@@ -89,5 +75,6 @@ public class IceikaItemHelper
     
         LanguageRegistry.addName(snowFlake, "Snowflake");
         LanguageRegistry.addName(icicleBane, "Icicle Bane");
+        LanguageRegistry.addName(soundOfCarols, "Sound of Carols");
     }
 }

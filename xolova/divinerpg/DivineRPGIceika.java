@@ -31,13 +31,15 @@ public class DivineRPGIceika
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		instance = this;
+		instance = this;		
 		IceikaConfigHelper.initConfig(event);
 	}
 	
 	@Init
 	public void Init(FMLInitializationEvent event)
 	{
+		proxy.init(event);
+		
 		IceikaBlockHelper.init();
 		IceikaItemHelper.init();
 	}

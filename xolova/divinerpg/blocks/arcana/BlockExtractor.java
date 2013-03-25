@@ -1,8 +1,7 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,8 +10,11 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.blocks.BlockDivineRPGContainer;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
-public class BlockExtractinator extends BlockContainer
+public class BlockExtractor extends BlockDivineRPGContainer
 {	
     /**
      * Is the random generator used by furnace to drop the inventory contents in random directions.
@@ -25,15 +27,15 @@ public class BlockExtractinator extends BlockContainer
      */
     private static boolean keepFurnaceInventory = false;
     
-    public BlockExtractinator(int id)
+    public BlockExtractor(int id)
     {
-        super(id, Material.rock);
+        super(id, 0, Material.rock);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.5F, 1.0F);
     }
 
     public TileEntity createNewTileEntity(World var1)
     {
-        return new TileEntityExtractinator();
+        return new TileEntityExtractor();
     }
 
     @Override
@@ -64,7 +66,7 @@ public class BlockExtractinator extends BlockContainer
         }
         else
         {
-        	TileEntityExtractinator var10 = (TileEntityExtractinator)par1World.getBlockTileEntity(par2, par3, par4);
+        	TileEntityExtractor var10 = (TileEntityExtractor)par1World.getBlockTileEntity(par2, par3, par4);
 
             if (var10 != null)
             {
@@ -86,15 +88,15 @@ public class BlockExtractinator extends BlockContainer
 
         if (par0)
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.extractinator.blockID);
+            par1World.setBlock(par2, par3, par4, ArcanaBlockHelper.extractor.blockID);
         }
         else
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.extractinator.blockID);
+            par1World.setBlock(par2, par3, par4, ArcanaBlockHelper.extractor.blockID);
         }
 
         keepFurnaceInventory = false;
-        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5);
+        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5, 2);
 
         if (var6 != null)
         {
@@ -110,7 +112,7 @@ public class BlockExtractinator extends BlockContainer
     {
         if (!keepFurnaceInventory)
         {
-        	TileEntityExtractinator var7 = (TileEntityExtractinator)par1World.getBlockTileEntity(par2, par3, par4);
+        	TileEntityExtractor var7 = (TileEntityExtractor)par1World.getBlockTileEntity(par2, par3, par4);
 
             if (var7 != null)
             {

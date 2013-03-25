@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
@@ -12,9 +12,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockOreDoor extends BlockDoor
 {
-    public BlockOreDoor(int par1, Material par2Material)
+    public BlockOreDoor(int par1)
     {
-        super(par1, par2Material);
+        super(par1, Material.wood);
         this.blockIndexInTexture = 145;
     }
 

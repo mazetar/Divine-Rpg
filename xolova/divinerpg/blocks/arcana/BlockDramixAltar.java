@@ -1,20 +1,20 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPGContainer;
 
-public class BlockDramixAltar extends BlockContainer
+public class BlockDramixAltar extends BlockDivineRPGContainer
 {
     public BlockDramixAltar(int id)
     {
-        super(id, Material.rock);
+        super(id, 4, Material.rock);
     }
 
     public TileEntity createNewTileEntity(World var1)
     {
-        return new TileEntityDramixAlter();
+        return new TileEntityDramixAltar();
     }
 
     @Override

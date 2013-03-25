@@ -12,9 +12,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockOreDoor4 extends BlockDoor
 {
-    public BlockOreDoor4(int par1, Material par2Material)
+    public BlockOreDoor4(int par1)
     {
-        super(par1, par2Material);
+        super(par1, Material.wood);
         this.blockIndexInTexture = 151;
     }
 

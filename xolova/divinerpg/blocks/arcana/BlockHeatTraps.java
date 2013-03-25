@@ -1,31 +1,29 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockHeatTraps extends Block
+public class BlockHeatTraps extends BlockDivineRPG
 {
     public BlockHeatTraps(int var1, int var2)
     {
         super(var1, var2, Material.sand);
-        this.blockIndexInTexture = var2;
-        this.setTickRandomly(true);
     }
 
     /**
      * How many world ticks before ticking
      */
-    public int tickRate()
+    public int tickRate(World par1)
     {
         return 30;
     }
@@ -37,7 +35,7 @@ public class BlockHeatTraps extends Block
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World var1, int var2, int var3, int var4)
     {
         float var5 = 0.0625F;
-        return AxisAlignedBB.getAABBPool().addOrModifyAABBInPool((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)((float)(var3 + 1) - var5), (double)((float)(var4 + 1) - var5));
+        return AxisAlignedBB.getAABBPool().getAABB((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)((float)(var3 + 1) - var5), (double)((float)(var4 + 1) - var5));
     }
 
     @SideOnly(Side.CLIENT)
@@ -48,7 +46,7 @@ public class BlockHeatTraps extends Block
     public AxisAlignedBB getSelectedBoundingBoxFromPool(World var1, int var2, int var3, int var4)
     {
         float var5 = 0.0625F;
-        return AxisAlignedBB.getAABBPool().addOrModifyAABBInPool((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)(var3 + 1), (double)((float)(var4 + 1) - var5));
+        return AxisAlignedBB.getAABBPool().getAABB((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)(var3 + 1), (double)((float)(var4 + 1) - var5));
     }
 
     /**
@@ -56,9 +54,9 @@ public class BlockHeatTraps extends Block
      */
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
-        if (this.blockID == DivineRPG.heatTrapsOn.blockID)
+        if (this.blockID == ArcanaBlockHelper.heatTrapsOn.blockID)
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.heatTraps.blockID);
+            par1World.setBlock(par2, par3, par4, ArcanaBlockHelper.heatTraps.blockID);
         }
     }
 
@@ -67,12 +65,12 @@ public class BlockHeatTraps extends Block
      */
     public void onEntityCollidedWithBlock(World var1, int var2, int var3, int var4, Entity var5)
     {
-        if (this.blockID == DivineRPG.heatTraps.blockID)
+        if (this.blockID == ArcanaBlockHelper.heatTraps.blockID)
         {
-            var1.setBlockWithNotify(var2, var3, var4, DivineRPG.heatTrapsOn.blockID);
+            var1.setBlock(var2, var3, var4, ArcanaBlockHelper.heatTrapsOn.blockID);
         }
 
-        if (this.blockID == DivineRPG.heatTrapsOn.blockID && var5 instanceof EntityPlayerMP)
+        if (this.blockID == ArcanaBlockHelper.heatTrapsOn.blockID && var5 instanceof EntityPlayerMP)
         {
             var5.attackEntityFrom(DamageSource.cactus, 16);
             var5.setFire(20);
@@ -81,8 +79,8 @@ public class BlockHeatTraps extends Block
         }
     }
 
-    public String getTextureFile()
+    public int getSheet()
     {
-        return "/Xolovon3.png";
+        return 4;
     }
 }

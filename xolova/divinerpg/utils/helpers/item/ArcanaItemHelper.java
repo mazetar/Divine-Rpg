@@ -1,13 +1,16 @@
 package xolova.divinerpg.utils.helpers.item;
 
 import net.minecraft.block.material.Material;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
+import net.minecraftforge.common.EnumHelper;
 import xolova.divinerpg.items.arcana.ItemAquaMarine;
 import xolova.divinerpg.items.arcana.ItemArcaniumSaber;
 import xolova.divinerpg.items.arcana.ItemArmorKorma;
 import xolova.divinerpg.items.arcana.ItemArmorVemos;
+import xolova.divinerpg.items.arcana.ItemCaptiansSparkeler;
 import xolova.divinerpg.items.arcana.ItemEnderScepter;
 import xolova.divinerpg.items.arcana.ItemFirefly;
 import xolova.divinerpg.items.arcana.ItemFyracryxSpawner;
@@ -33,6 +36,7 @@ import xolova.divinerpg.items.arcana.ItemStormSword;
 import xolova.divinerpg.items.arcana.ItemTarBucket;
 import xolova.divinerpg.items.arcana.ItemWraithbane;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import xolova.divinerpg.utils.helpers.config.ArcanaConfigHelper;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -121,7 +125,7 @@ public class ArcanaItemHelper
         pinFlySeeds = new ItemSeeds(ArcanaConfigHelper.pinFlySeedsID, ArcanaBlockHelper.pinFly.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setUnlocalizedName("pinFlySeeds").setCreativeTab(CreativeTabHelper.tabHerb);
         hitchakItem = new ItemFood(ArcanaConfigHelper.hitchakItemID, 2, 3.0F, false).setUnlocalizedName("hitchakItem").setCreativeTab(CreativeTabHelper.tabHerb);
         hitchakSeeds = new ItemSeeds(ArcanaConfigHelper.hitchakSeedsID, ArcanaBlockHelper.hitchak.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setUnlocalizedName("hitchakSeeds").setCreativeTab(CreativeTabHelper.tabHerb);
-        eucalyptusRootSeeds = new ItemSeeds(ArcanaConfigHelper.eucalyptusRootSeedsID, ArcanaBlockHelper.eucalyptusRootID, ArcanaBlockHelper.arcaniteGrassID).setUnlocalizedName("eucalyptusRootSeeds").setCreativeTab(CreativeTabHelper.tabHerb);
+        eucalyptusRootSeeds = new ItemSeeds(ArcanaConfigHelper.eucalyptusRootSeedsID, ArcanaBlockHelper.eucalyptusRoot.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setUnlocalizedName("eucalyptusRootSeeds").setCreativeTab(CreativeTabHelper.tabHerb);
         veiloItem = new Item(ArcanaConfigHelper.veiloItemID).setUnlocalizedName("veiloItem").setCreativeTab(CreativeTabHelper.tabHerb);
         veiloSeeds = new ItemSeeds(ArcanaConfigHelper.veiloSeedsID, ArcanaBlockHelper.veilo.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setUnlocalizedName("veiloSeeds").setCreativeTab(CreativeTabHelper.tabHerb);
         lamonaItem = new ItemLamona(ArcanaConfigHelper.lamonaItemID).setUnlocalizedName("lamonaItem").setCreativeTab(CreativeTabHelper.tabHerb);
@@ -135,23 +139,26 @@ public class ArcanaItemHelper
         seimerSpawner = new ItemSeimerSpawner(ArcanaConfigHelper.seimerSpawnerID).setUnlocalizedName("seimerSpawner").setCreativeTab(CreativeTabHelper.tabSpawner);
         golemOfRejuvSpawner = new ItemGolemOfRejuvSpawner(ArcanaConfigHelper.golemOfRejuvSpawnerID).setUnlocalizedName("golemOfRejuvSpawner").setCreativeTab(CreativeTabHelper.tabSpawner);
         reflector = new ItemReflector(ArcanaConfigHelper.reflectorID).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("reflector");
-        stormSword = new ItemStormSword(ArcanaConfigHelper.stormSwordID).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("stormSword");
+        
+        EnumToolMaterial arcanaSword = EnumHelper.addToolMaterial("arcanic", 1, -1, 1, 1, 22);
+        stormSword = new ItemStormSword(ArcanaConfigHelper.stormSwordID, arcanaSword).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("stormSword");
+        shadowSword = new ItemShadowSword(ArcanaConfigHelper.shadowSwordID, arcanaSword).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("shadowSword");
+        arcaniumSaber = new ItemArcaniumSaber(ArcanaConfigHelper.arcaniumSaberID, arcanaSword).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("arcaniumSaber");
+        liviciaSword = new ItemLiviciaSword(ArcanaConfigHelper.liviciaSwordID, arcanaSword).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("liviciaSword");
+        
         staffOfStarlight = new ItemStaffOfStarlight(ArcanaConfigHelper.staffOfStarlightID).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("staffOfStarlight");
         wraithbane = new ItemWraithbane(ArcanaConfigHelper.wraithbaneID).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("wraithbane");
-        captiansSparkler = new ItemCaptainsSparkeler(ArcanaConfigHelper.captiansSparklerID).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("captiansSparkler");
-        shadowSword = new ItemShadowSword(ArcanaConfigHelper.shadowSwordID).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("shadowSword");
+        captiansSparkler = new ItemCaptiansSparkeler(ArcanaConfigHelper.captiansSparklerID).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("captiansSparkler");
         enderScepter = new ItemEnderScepter(ArcanaConfigHelper.enderScepterID).setUnlocalizedName("enderScepter").setCreativeTab(CreativeTabHelper.tabSword);
         grenadeLauncher = new ItemGrenadeLauncher(ArcanaConfigHelper.grenadeLauncherID, 3).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("grenadeLauncher");
         grenade = new ItemGrenade(ArcanaConfigHelper.grenadeID, 3).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("grenade");
         meriksMissile = new ItemMeriksMissile(ArcanaConfigHelper.meriksMissileID).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("meriksMissile");
-        arcaniumSaber = new ItemArcaniumSaber(ArcanaConfigHelper.arcaniumSaberID).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("arcaniumSaber");
-        liviciaSword = new ItemLiviciaSword(ArcanaConfigHelper.liviciaSwordID).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("liviciaSword");
         firefly = new ItemFirefly(ArcanaConfigHelper.fireflyID).setUnlocalizedName("firefly").setCreativeTab(CreativeTabHelper.tabRanged);
         starfall = new ItemStarfall(ArcanaConfigHelper.starfallID).setUnlocalizedName("starfall").setCreativeTab(CreativeTabHelper.tabRanged);
         dungeonToken = new Item(ArcanaConfigHelper.dungeonTokenID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("dungeonToken");
         collector = new Item(ArcanaConfigHelper.collectorID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("collector");
         collectorFragments = new Item (ArcanaConfigHelper.collectorFragmentsID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("collectorFragment");
-        tarBucket = new ItemTarBucket(ArcanaConfigHelper.tarBucketID, ArcanaBlockHelper.tarStill.blockID).setUnlocalizedName("tarBucket").setCreativeTab(CreativeTabHelper.tabItems);
+        tarBucket = new ItemTarBucket(ArcanaConfigHelper.tarBucketID, OverworldBlockHelper.tarStill.blockID).setUnlocalizedName("tarBucket").setCreativeTab(CreativeTabHelper.tabItems);
         arcaniumBucket = new ItemTarBucket(ArcanaConfigHelper.arcaniumBucketID, 0).setUnlocalizedName("arcaniumBucket").setCreativeTab(CreativeTabHelper.tabItems);
         staffOfEnrichment = new ItemStaffOfEnrichment(ArcanaConfigHelper.staffOfEnrichmentID).setUnlocalizedName("staffOfEnrichment").setCreativeTab(CreativeTabHelper.tabTool);
         

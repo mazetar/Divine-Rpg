@@ -7,13 +7,14 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
 
-public class ItemStormSword extends ItemSword
+public class ItemStormSword extends ItemDivineRPGSword
 {
-	public ItemStormSword(int par1, EnumToolMaterial par2EnumToolMaterial)
+	public ItemStormSword(int par1, EnumToolMaterial par2)
 	{
-		super(par1, par2EnumToolMaterial);
+		super(par1, par2 ,true);
 	}
 	
 	/**

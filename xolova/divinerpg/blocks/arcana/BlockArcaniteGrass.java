@@ -8,13 +8,15 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import net.minecraftforge.common.IPlantable;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 
-public class BlockArcaniteGrass extends Block
+public class BlockArcaniteGrass extends BlockDivineRPG
 {
     public BlockArcaniteGrass(int par1)
     {
-        super(par1, Material.grass);
+        super(par1, 4, Material.grass);
     }
 
     public int idDropped(int par1, Random par2Random, int par3)
@@ -22,12 +24,9 @@ public class BlockArcaniteGrass extends Block
         return ArcanaBlockHelper.arcaniteDirt.blockID;
     }
     
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
+    public int getIndex(int side, int par2)
     {
-        return par1 == 1 ? ArcanaBlockHelper.arcaniteDirt.getBlockTextureFromSide(0) : (par1 == 0 ? this.texture[0] : this.texture[1]);
+    	return side == 0 ? 53 : side == 1 ? 54 : 55;
     }
 
     /**
@@ -65,7 +64,7 @@ public class BlockArcaniteGrass extends Block
             {
                 for (int var7 = par4 - 4; var7 <= par4 + 4; ++var7)
                 {
-                    if (par1World.getBlockId(var5, var6, var7) == VanillaBlockHelper.tarStill.blockID)
+                    if (par1World.getBlockId(var5, var6, var7) == OverworldBlockHelper.tarStill.blockID)
                     {
                         return true;
                     }

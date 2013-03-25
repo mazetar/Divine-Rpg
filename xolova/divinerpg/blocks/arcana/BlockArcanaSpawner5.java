@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
@@ -11,9 +11,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockArcanaSpawner5 extends BlockMobSpawner
 {
-    public BlockArcanaSpawner5(int par1, int par2)
+    public BlockArcanaSpawner5(int par1)
     {
-        super(par1, par2);
+        super(par1);
+        this.setBlockUnbreakable();
+        this.setResistance(600000F);
     }
 
     /**
@@ -22,7 +24,7 @@ public class BlockArcanaSpawner5 extends BlockMobSpawner
     public TileEntity createNewTileEntity(World par1World)
     {
     	TileEntityMobSpawner var1 = new TileEntityMobSpawner();
-    	var1.setMobID("DivineRPG.dungeonprisoner");
+    	var1.func_98049_a().setMobID("DivineRPG.dungeonprisoner");
         return var1;
     }
 

@@ -1,23 +1,26 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.minecraft.block.BlockFlower;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.ForgeDirection;
-import xolova.divinerpg.DivineRPG;
+import net.minecraftforge.common.IPlantable;
+import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockHitchak extends BlockFlower
+public class BlockHitchak extends BlockDivineRPG implements IPlantable
 {
     public BlockHitchak(int par1)
     {
-        super(par1, 64);
-        this.blockIndexInTexture = 64;
+        super(par1, 4, Material.plants);
         this.setTickRandomly(true);
         float var3 = 0.5F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 0.25F, 0.5F + var3);
@@ -25,8 +28,6 @@ public class BlockHitchak extends BlockFlower
         this.setHardness(0.0F);
         this.setStepSound(soundGrassFootstep);
         this.disableStats();
-        this.setRequiresSelfNotify();
-        this.setTextureFile("/Xolovon3.png");
     }
 
     /**
@@ -35,7 +36,7 @@ public class BlockHitchak extends BlockFlower
      */
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
-        return par1 == DivineRPG.arcaniteGrass.blockID;
+        return par1 == ArcanaBlockHelper.arcaniteGrass.blockID;
     }
 
     /**
@@ -56,7 +57,7 @@ public class BlockHitchak extends BlockFlower
                 if (par5Random.nextInt((int)(25.0F / var7) + 1) == 0)
                 {
                     ++var6;
-                    par1World.setBlockMetadataWithNotify(par2, par3, par4, var6);
+                    par1World.setBlockMetadataWithNotify(par2, par3, par4, var6, 2);
                 }
             }
         }
@@ -126,7 +127,7 @@ public class BlockHitchak extends BlockFlower
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
+    public int getIndex(int par1, int par2)
     {
         switch (par2)
         {
@@ -143,7 +144,7 @@ public class BlockHitchak extends BlockFlower
                 return 67;
 
             default:
-                return par2;
+                return 64;
         }
     }
 
@@ -160,7 +161,7 @@ public class BlockHitchak extends BlockFlower
      */
     protected int getSeedItem()
     {
-        return DivineRPG.hitchakSeeds.itemID;
+        return ArcanaItemHelper.hitchakSeeds.itemID;
     }
 
     /**
@@ -168,7 +169,7 @@ public class BlockHitchak extends BlockFlower
      */
     protected int getCropItem()
     {
-        return DivineRPG.hitchakItem.itemID;
+        return ArcanaItemHelper.hitchakItem.itemID;
     }
 
     /**
@@ -217,4 +218,26 @@ public class BlockHitchak extends BlockFlower
     {
         return this.getSeedItem();
     }
+
+	@Override
+	public EnumPlantType getPlantType(World world, int x, int y, int z) 
+	{
+		return EnumPlantType.Crop;
+	}
+
+	@Override
+	public int getPlantID(World world, int x, int y, int z) 
+	{
+		return blockID;
+	}
+
+	@Override
+	public int getPlantMetadata(World world, int x, int y, int z) 
+	{
+		return world.getBlockMetadata(x, y, z);
+	}
+	
+	public int getSheet(int side, int metadata) {
+		return 4;
+	}
 }

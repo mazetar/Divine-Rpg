@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
@@ -15,6 +15,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -231,22 +232,22 @@ public class BlockMoltenFurnace extends BlockContainer
 
         if (var6 == 0)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 2);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 2, 2);
         }
 
         if (var6 == 1)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 5);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 5, 2);
         }
 
         if (var6 == 2)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 3);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 3, 2);
         }
 
         if (var6 == 3)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 4);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 4, 2);
         }
     }
 

@@ -1,9 +1,10 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumToolMaterial;
 
-public class ItemLiviciaSword extends ItemSwordXolovon
+public class ItemLiviciaSword extends ItemDivineRPGSword
 {
     public int weaponDamage;
 
@@ -12,11 +13,6 @@ public class ItemLiviciaSword extends ItemSwordXolovon
         super(par1, par2EnumToolMaterial);
         this.weaponDamage = 45;
         this.setMaxDamage(10000);
-    }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
     }
 
     /**

@@ -1,10 +1,10 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.azurite;
 
 import java.util.Random;
 
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class BiomeGenAzurite extends BiomeGenBase
 {
@@ -14,8 +14,8 @@ public class BiomeGenAzurite extends BiomeGenBase
         this.setBiomeName("Azurite");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        this.topBlock = (byte)DivineRPG.azuriteGrass.blockID;
-        this.fillerBlock = (byte)DivineRPG.azuriteDirt.blockID;
+        this.topBlock = (byte)TwilightBlockHelper.AzuriteGrass.blockID;
+        this.fillerBlock = (byte)TwilightBlockHelper.AzuriteDirt.blockID;
 //        this.waterColorMultiplier = 2368548;
     }
 

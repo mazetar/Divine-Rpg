@@ -10,6 +10,7 @@ public class EntityBouncingProjectile extends EntityThrowable
 {
 	public int damage;
 	public EntityLiving thrower;
+	private int bounces;
     public EntityBouncingProjectile(World par1)
     {
         super(par1);
@@ -55,6 +56,12 @@ public class EntityBouncingProjectile extends EntityThrowable
         else if (par1.sideHit == 4 || par1.sideHit == 5)
         {
         	this.motionX *= -1.0D;
+        }
+        this.bounces++;
+        
+        if (this.bounces == 7)
+        {
+        	this.setDead();
         }
     }
 }

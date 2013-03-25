@@ -1,11 +1,7 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.augite;
 
-import static net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.SHROOM;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.NETHER_BRIDGE;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.NETHER_CAVE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.FIRE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.GLOWSTONE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.NETHER_LAVA;
 
 import java.util.List;
 import java.util.Random;
@@ -20,15 +16,8 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.MapGenBase;
-import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.MapGenCavesHell;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
-import net.minecraft.world.gen.feature.WorldGenFire;
-import net.minecraft.world.gen.feature.WorldGenFlowers;
-import net.minecraft.world.gen.feature.WorldGenGlowStone1;
-import net.minecraft.world.gen.feature.WorldGenGlowStone2;
-import net.minecraft.world.gen.feature.WorldGenHellLava;
-import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.structure.MapGenNetherBridge;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event.Result;
@@ -36,9 +25,10 @@ import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
+import xolova.divinerpg.worldgen.dravite.WorldGenTwilightMineable;
 
-public class ChunkProviderDense implements IChunkProvider
+public class ChunkProviderAugite implements IChunkProvider
 {
 	private Random hellRNG;
 
@@ -84,7 +74,7 @@ public class ChunkProviderDense implements IChunkProvider
         netherCaveGenerator = TerrainGen.getModdedMapGen(netherCaveGenerator, NETHER_CAVE);
     }
 
-    public ChunkProviderDense(World par1World, long par2)
+    public ChunkProviderAugite(World par1World, long par2)
     {
         this.worldObj = par1World;
         this.hellRNG = new Random(par2);
@@ -162,7 +152,7 @@ public class ChunkProviderDense implements IChunkProvider
 
                                 if (var46 > 0.0D)
                                 {
-                                    var51 = DivineRPG.denseGrass.blockID;
+                                    var51 = TwilightBlockHelper.AugiteGrass.blockID;
                                 }
 
                                 par3ArrayOfByte[var42] = (byte)var51;
@@ -207,8 +197,8 @@ public class ChunkProviderDense implements IChunkProvider
                 boolean var10 = this.gravelNoise[var7 + var8 * 16] + this.hellRNG.nextDouble() * 0.2D > 0.0D;
                 int var11 = (int)(this.netherrackExclusivityNoise[var7 + var8 * 16] / 3.0D + 3.0D + this.hellRNG.nextDouble() * 0.25D);
                 int var12 = -1;
-                byte var13 = (byte)DivineRPG.denseGrass.blockID;
-                byte var14 = (byte)DivineRPG.denseGrass.blockID;
+                byte var13 = (byte)TwilightBlockHelper.AugiteGrass.blockID;
+                byte var14 = (byte)TwilightBlockHelper.AugiteGrass.blockID;
 
                 for (int var15 = 127; var15 >= 0; --var15)
                 {
@@ -222,38 +212,38 @@ public class ChunkProviderDense implements IChunkProvider
                         {
                             var12 = -1;
                         }
-                        else if (var17 == DivineRPG.denseGrass.blockID)
+                        else if (var17 == TwilightBlockHelper.AugiteGrass.blockID)
                         {
                             if (var12 == -1)
                             {
                                 if (var11 <= 0)
                                 {
                                     var13 = 0;
-                                    var14 = (byte)DivineRPG.denseGrass.blockID;
+                                    var14 = (byte)TwilightBlockHelper.AugiteGrass.blockID;
                                 }
                                 else if (var15 >= var4 - 4 && var15 <= var4 + 1)
                                 {
-                                    var13 = (byte)DivineRPG.denseGrass.blockID;
-                                    var14 = (byte)DivineRPG.denseGrass.blockID;
+                                    var13 = (byte)TwilightBlockHelper.AugiteGrass.blockID;
+                                    var14 = (byte)TwilightBlockHelper.AugiteGrass.blockID;
 
                                     if (var10)
                                     {
-                                        var13 = (byte)DivineRPG.twilightStone.blockID;
+                                        var13 = (byte)TwilightBlockHelper.TwilightStone.blockID;
                                     }
 
                                     if (var10)
                                     {
-                                        var14 = (byte)DivineRPG.twilightStone.blockID;
+                                        var14 = (byte)TwilightBlockHelper.TwilightStone.blockID;
                                     }
 
                                     if (var9)
                                     {
-                                        var13 = (byte)DivineRPG.twilightStone.blockID;
+                                        var13 = (byte)TwilightBlockHelper.TwilightStone.blockID;
                                     }
 
                                     if (var9)
                                     {
-                                        var14 = (byte)DivineRPG.twilightStone.blockID;
+                                        var14 = (byte)TwilightBlockHelper.TwilightStone.blockID;
                                     }
                                 }
 
@@ -498,10 +488,10 @@ public class ChunkProviderDense implements IChunkProvider
             var15 = this.hellRNG.nextInt(128);
             var16 = var5 + this.hellRNG.nextInt(16);
             (new WorldGenAugiteStone(50)).generate(this.worldObj, this.hellRNG, var14, var15, var16);
-            (new WorldGenTwilightMineable(DivineRPG.denseOre.blockID, 8)).generate(this.worldObj, this.hellRNG, var14, var15, var16);
+            (new WorldGenTwilightMineable(TwilightBlockHelper.AugiteOre.blockID, 8)).generate(this.worldObj, this.hellRNG, var14, var15, var16);
         }
         
-        WorldGenDenseTrees var17 = new WorldGenDenseTrees(false);
+        WorldGenAugiteTrees var17 = new WorldGenAugiteTrees(false);
         int var19;
         int var18;
         int var21;
@@ -588,4 +578,10 @@ public class ChunkProviderDense implements IChunkProvider
     {
         this.genNetherBridge.generate(this, this.worldObj, par1, par2, (byte[])null);
     }
+
+	@Override
+	public boolean unloadQueuedChunks() 
+	{
+		return false;
+	}
 }

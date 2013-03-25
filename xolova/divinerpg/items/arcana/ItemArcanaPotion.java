@@ -4,15 +4,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
-public class ItemArcanaPotion extends Item
+public class ItemArcanaPotion extends ItemDivineRPG
 {
 
-	public ItemArcanaPotion(int par1)
+	public ItemArcanaPotion(int par1, int par2)
 	{
-		super(par1);
+		super(par1, par2);
 	}
 	
 	
@@ -39,5 +40,8 @@ public class ItemArcanaPotion extends Item
     	
 		return var1;
     }
-
+	
+	public int getSheet(int meta, int pass) {
+		return 4;
+	}
 }

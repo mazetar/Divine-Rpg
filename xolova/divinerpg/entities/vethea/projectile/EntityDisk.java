@@ -17,6 +17,7 @@ public class EntityDisk extends EntityThrowable
 	public Item item;
 	public int icon;
 	public int collideCounter;
+	private int bounces;
 
 	public EntityDisk(World par1World)
     {
@@ -90,6 +91,20 @@ public class EntityDisk extends EntityThrowable
             {
                 this.rebound = false;
                 this.counter = 0;
+
+                this.bounces++;
+                
+                if (this.bounces == 2)
+                {
+                	if (!((EntityPlayer)this.getThrower()).capabilities.isCreativeMode)
+                	{
+                    	((EntityPlayer)this.getThrower()).inventory.addItemStackToInventory(new ItemStack(this.item));
+                	}
+                	if (!this.worldObj.isRemote)
+                    {
+                        this.setDead();
+                    }
+                }
             }
     	}
     	else if (!this.worldObj.isRemote)

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.augite;
 
 import java.util.Random;
 
@@ -6,21 +6,21 @@ import net.minecraft.block.Block;
 import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
-public class WorldGenDenseTrees extends WorldGenerator
+public class WorldGenAugiteTrees extends WorldGenerator
 {
     private final int minTreeHeight;
     private final boolean vinesGrow;
     private final int metaWood;
     private final int metaLeaves;
 
-    public WorldGenDenseTrees(boolean var1)
+    public WorldGenAugiteTrees(boolean var1)
     {
         this(var1, 4, 0, 0, false);
     }
 
-    public WorldGenDenseTrees(boolean var1, int var2, int var3, int var4, boolean var5)
+    public WorldGenAugiteTrees(boolean var1, int var2, int var3, int var4, boolean var5)
     {
         super(var1);
         this.minTreeHeight = var2;
@@ -64,7 +64,7 @@ public class WorldGenDenseTrees extends WorldGenerator
                             var11 = var1.getBlockId(var12, var8, var10);
                             Block var13 = Block.blocksList[var11];
 
-                            if (var11 != 0 && !var13.isLeaves(var1, var12, var8, var10) && var11 != DivineRPG.denseGrass.blockID && var11 != DivineRPG.denseDirt.blockID && !var13.isWood(var1, var12, var8, var10))
+                            if (var11 != 0 && !var13.isLeaves(var1, var12, var8, var10) && var11 != TwilightBlockHelper.AugiteGrass.blockID && var11 != TwilightBlockHelper.AugiteGrass.blockID && !var13.isWood(var1, var12, var8, var10))
                             {
                                 var7 = false;
                             }
@@ -85,9 +85,9 @@ public class WorldGenDenseTrees extends WorldGenerator
             {
                 var8 = var1.getBlockId(var3, var4 - 1, var5);
 
-                if ((var8 == DivineRPG.denseGrass.blockID || var8 == DivineRPG.denseDirt.blockID) && var4 < 256 - var6 - 1)
+                if ((var8 == TwilightBlockHelper.AugiteGrass.blockID || var8 == TwilightBlockHelper.AugiteGrass.blockID) && var4 < 256 - var6 - 1)
                 {
-                    this.setBlock(var1, var3, var4 - 1, var5, DivineRPG.denseDirt.blockID);
+                    this.setBlock(var1, var3, var4 - 1, var5, TwilightBlockHelper.AugiteGrass.blockID);
                     var9 = 3;
                     byte var19 = 0;
                     int var14;
@@ -110,7 +110,7 @@ public class WorldGenDenseTrees extends WorldGenerator
 
                                 if ((Math.abs(var15) != var20 || Math.abs(var17) != var20 || var2.nextInt(2) != 0 && var11 != 0) && (var18 == null || var18.canBeReplacedByLeaves(var1, var14, var10, var16)))
                                 {
-                                    this.setBlockAndMetadata(var1, var14, var10, var16, DivineRPG.denseLeaves.blockID, this.metaLeaves);
+                                    this.setBlockAndMetadata(var1, var14, var10, var16, TwilightBlockHelper.AugiteLeaves.blockID, this.metaLeaves);
                                 }
                             }
                         }
@@ -125,7 +125,7 @@ public class WorldGenDenseTrees extends WorldGenerator
 
                         if (var11 == 0 || var21 == null || var21.isLeaves(var1, var3, var4 + var10, var5))
                         {
-                            this.setBlockAndMetadata(var1, var3, var4 + var10, var5, DivineRPG.redWood.blockID, this.metaWood);
+                            this.setBlockAndMetadata(var1, var3, var4 + var10, var5, TwilightBlockHelper.AugiteLogs.blockID, this.metaWood);
 
                             if (this.vinesGrow && var10 > 0)
                             {

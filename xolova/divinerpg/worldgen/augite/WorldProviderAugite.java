@@ -1,18 +1,18 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.augite;
 
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.proxies.TwilightProxy;
 
-public class WorldProviderDense extends WorldProvider
+public class WorldProviderAugite extends WorldProvider
 {
     /**
      * creates a new world chunk manager for WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.denseBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(TwilightProxy.AugiteBiome, 0.5F, 0.5F);
     }
 
     /**
@@ -43,7 +43,7 @@ public class WorldProviderDense extends WorldProvider
      */
     public IChunkProvider createChunkGenerator()
     {
-        return new ChunkProviderDense(this.worldObj, this.worldObj.getSeed());
+        return new ChunkProviderAugite(this.worldObj, this.worldObj.getSeed());
     }
 
     /**

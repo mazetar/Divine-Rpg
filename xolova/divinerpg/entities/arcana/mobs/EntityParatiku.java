@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.entities.mobs.arcana;
+package xolova.divinerpg.entities.arcana.mobs;
 
 import java.util.Calendar;
 
@@ -21,9 +21,9 @@ import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.entities.ai.EntityAIParatikuFollowOwner;
-import xolova.blued00r.divinerpg.entities.ai.EntityAIParatikuOwnerHurtByTarget;
-import xolova.blued00r.divinerpg.entities.ai.EntityAIParatikuOwnerHurtTarget;
+import xolova.divinerpg.entities.ai.EntityAIParatikuFollowOwner;
+import xolova.divinerpg.entities.ai.EntityAIParatikuOwnerHurtByTarget;
+import xolova.divinerpg.entities.ai.EntityAIParatikuOwnerHurtTarget;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

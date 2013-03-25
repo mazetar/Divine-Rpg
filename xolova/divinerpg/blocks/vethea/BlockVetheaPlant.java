@@ -4,27 +4,22 @@ import static net.minecraftforge.common.EnumPlantType.Plains;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
-public class BlockVetheaPlant extends Block implements IPlantable
+public class BlockVetheaPlant extends BlockDivineRPG implements IPlantable
 {
-    protected BlockVetheaPlant(int par1, Material par3Material)
+    public BlockVetheaPlant(int par1, int par2)
     {
-        super(par1, par3Material);
+        super(par1, par2, Material.plants);
         this.setTickRandomly(true);
         float var4 = 0.2F;
         this.setBlockBounds(0.5F - var4, 0.0F, 0.5F - var4, 0.5F + var4, var4 * 3.0F, 0.5F + var4);
-    }
-
-    public BlockVetheaPlant(int par1)
-    {
-        this(par1, Material.plants);
     }
 
     /**

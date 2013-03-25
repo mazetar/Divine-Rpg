@@ -9,16 +9,18 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.entities.vethea.mobs.EntityKaros;
 import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
-public class BlockKarosHeatTileRed extends Block
+public class BlockKarosHeatTileRed extends BlockDivineRPG
 {
     private final boolean powered;
     public boolean override;
 
-    public BlockKarosHeatTileRed(int var1, boolean var2)
+    public BlockKarosHeatTileRed(int var1, int par2, boolean var2)
     {
-        super(var1, Material.glass);
+        super(var1, par2, Material.glass);
         this.powered = var2;
         this.override = false;
         this.setTickRandomly(true);
@@ -31,7 +33,7 @@ public class BlockKarosHeatTileRed extends Block
     {
         if (!var1.isRemote)
         {
-           var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
+           var1.setBlock(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
         }
     }
 
@@ -50,7 +52,7 @@ public class BlockKarosHeatTileRed extends Block
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4) && !this.override)
         {
-            var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileGreen.blockID);
+            var1.setBlock(var2, var3, var4, VetheaBlockHelper.karosHeatTileGreen.blockID);
         }
     }
 

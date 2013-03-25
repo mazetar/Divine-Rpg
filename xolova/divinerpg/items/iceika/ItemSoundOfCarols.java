@@ -24,5 +24,10 @@ public class ItemSoundOfCarols extends ItemDivineRPGRanged {
 	public Entity projectile(ItemStack stack, World world, EntityPlayer player) {
 		return new EntityNoteProjectile(world, player);
 	}
+	
+	@Override
+	public String sound(ItemStack stack, World world, EntityPlayer player) {
+		return "xolovon.SoundOfCarols";
+	}
 
 }

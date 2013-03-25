@@ -25,6 +25,7 @@ public class ItemIceineSword extends ItemDivineRPGSword {
     
     public ItemIceineSword(int par1) {
 		super(par1, material, true);
+		setIconIndex(3, 0, 14);
     }
     
 }

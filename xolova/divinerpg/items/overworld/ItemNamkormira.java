@@ -8,9 +8,9 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.items.iceika.ItemSwordIceika;
+import xolova.divinerpg.items.iceika.ItemFrostkingSword;
 
-public class ItemNamkormira extends ItemSwordIceika
+public class ItemNamkormira extends ItemFrostkingSword
 {
     private int weaponDamage;
     private final EnumToolMaterial field_40439_b;

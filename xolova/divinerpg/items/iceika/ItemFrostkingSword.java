@@ -19,13 +19,13 @@ import net.minecraftforge.common.EnumHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemGlacierSword extends ItemDivineRPGSword {
+public class ItemFrostkingSword extends ItemDivineRPGSword {
     
-	private static final EnumToolMaterial material =  EnumHelper.addToolMaterial("glacierSword", 1, 1000, 1.5F, 18, 16);
+	private static final EnumToolMaterial material =  EnumHelper.addToolMaterial("frostkingSword", 1, 6000, 1.5F, 16, 16);
     
-    public ItemGlacierSword(int par1) {
+    public ItemFrostkingSword(int par1) {
 		super(par1, material, false);
-		setIconIndex(3, 7, 14);
+		setIconIndex(3, 13, 15);
     }
     
     @Override

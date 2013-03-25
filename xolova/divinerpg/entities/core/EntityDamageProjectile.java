@@ -35,7 +35,7 @@ public class EntityDamageProjectile extends EntityThrowable {
 
 	@Override
 	protected void onImpact(MovingObjectPosition pos) {
-		if(pos.entityHit != null)
+		if(pos.entityHit != null && pos.entityHit != getThrower())
 			pos.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, getThrower()), damage);
 		
 		if(!worldObj.isRemote)

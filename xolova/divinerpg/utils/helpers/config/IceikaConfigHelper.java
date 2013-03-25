@@ -109,7 +109,7 @@ public class IceikaConfigHelper
 		SnowflakeShurikenID = config.getItem("Snowflake Shuriken", 5751).getInt();
 		FrossivenceID = config.getItem("Frossivence", 5742).getInt();
 		SerenadeOfIceID = config.getItem("Serenade Of Ice", 5745).getInt();
-		GlacierSwordID = config.getItem("Serenade Of Ice", 5745).getInt();
+		GlacierSwordID = config.getItem("Glacier Sword", 5490).getInt();
 		IcicleBowID = config.getItem("Icicle Bow", 5752).getInt();
 		IcicleBaneID = config.getItem("Icicle Bane", 5483).getInt();
 		FrostclawCannonID = config.getItem("Frostclaw Cannon", 5749).getInt();

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.entities.projectile;
+package xolova.divinerpg.entities.arcana.projectile;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
@@ -16,7 +16,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.client.particles.EntityFireFX;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -39,9 +38,6 @@ public class EntityMerikMissile extends EntityThrowable implements IProjectile
     private int ticksInAir = 0;
     private EntityLiving target;
 	private int age = 500;
-	private double mX;
-	private double mY;
-	private double mZ;
 	private int damage;
 
     public EntityMerikMissile(World par1World)
@@ -336,8 +332,7 @@ public class EntityMerikMissile extends EntityThrowable implements IProjectile
 
     	for (int i = 0; i < 1; i++)
     	{
-    		EntityFireFX var23 = new EntityFireFX(this.worldObj, this.posX, this.posY, this.posZ, 0, 0, 0);
-    		FMLClientHandler.instance().getClient().effectRenderer.addEffect(var23, var23);
+    		this.worldObj.spawnParticle("smoke", this.posX, this.posY, this.posZ, 0, 0, 0);
     	}
 
         this.motionX *= (double)var18;

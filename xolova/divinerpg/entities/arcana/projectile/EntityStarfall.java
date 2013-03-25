@@ -1,11 +1,9 @@
-package xolova.blued00r.divinerpg.entities.projectile;
+package xolova.divinerpg.entities.arcana.projectile;
 
 import java.awt.Color;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -61,7 +59,7 @@ public class EntityStarfall extends EntityThrowable
         if (par1MovingObjectPosition.entityHit != null)
         {
             byte var2 = 40;
-            par1MovingObjectPosition.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.func_85052_h()), var2);
+            par1MovingObjectPosition.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), var2);
         }
 
         if (!this.worldObj.isRemote)

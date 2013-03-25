@@ -25,6 +25,7 @@ import xolova.divinerpg.blocks.arcana.BlockMarsine;
 import xolova.divinerpg.blocks.arcana.BlockMoltenFurnace;
 import xolova.divinerpg.blocks.arcana.BlockMoonlightFurnace;
 import xolova.divinerpg.blocks.arcana.BlockOceanfireFurnace;
+import xolova.divinerpg.blocks.arcana.BlockOfLight;
 import xolova.divinerpg.blocks.arcana.BlockOreDoor;
 import xolova.divinerpg.blocks.arcana.BlockOreDoor2;
 import xolova.divinerpg.blocks.arcana.BlockOreDoor3;
@@ -36,7 +37,17 @@ import xolova.divinerpg.blocks.arcana.BlockStarBridge;
 import xolova.divinerpg.blocks.arcana.BlockStarBridgeOn;
 import xolova.divinerpg.blocks.arcana.BlockVeilo;
 import xolova.divinerpg.blocks.arcana.BlockWhitefireFurnace;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityDemonFurnace;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityDramixAltar;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityGreenlightFurnace;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityOceanfireFurnace;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityParasectaAltar;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
 import xolova.divinerpg.utils.helpers.config.ArcanaConfigHelper;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ArcanaBlockHelper 
 {
@@ -112,11 +123,9 @@ public class ArcanaBlockHelper
     public static Block arcanaSpawner4;
     public static Block arcanaSpawner5;
 
-	public static Block heatTrapsID;
-	public static Block heatTrapsOnID;
-	public static Block arcanaPortalID;
-	public static Block arcanaPortalFrameID;
-	public static Block blockOfLightID;
+	public static Block arcanaPortal;
+	public static Block arcanaPortalFrame;
+	public static Block blockOfLight;
 	
 	public static void init()
 	{
@@ -137,6 +146,7 @@ public class ArcanaBlockHelper
 		
 		heatTraps = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsID, 110).setUnlocalizedName("heatTraps");
 		heatTrapsOn = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsOnID, 109).setUnlocalizedName("heatTrapsOn");
+		blockOfLight = new BlockOfLight(ArcanaConfigHelper.heatTrapsOnID).setUnlocalizedName("heatTrapsOn");
 		
 		arcaniumOre = new BlockDungeonBlock(ArcanaConfigHelper.arcaniumOreID).setUnlocalizedName("arcaniumOre");
 		oreDoor1 = new BlockOreDoor(ArcanaConfigHelper.oreDoor1ID).setUnlocalizedName("oreDoor1");
@@ -196,6 +206,77 @@ public class ArcanaBlockHelper
 	
 	public static void InitGameRegistryBlocks()
 	{
-		
+		GameRegistry.registerBlock(ancientBricks, "ancientBricks");
+        GameRegistry.registerBlock(ancientTile, "ancientTile");
+        GameRegistry.registerBlock(ancientStone, "ancientStone");
+        GameRegistry.registerBlock(dungeonLamp, "dungeonLamp");
+        GameRegistry.registerBlock(arcaniteTubes, "arcanitetubes");
+        GameRegistry.registerBlock(arcaniteMetal, "arcanitemetal");
+        GameRegistry.registerBlock(soulSludge, "soulSludge");
+        GameRegistry.registerBlock(soulStone, "soulstone");
+        GameRegistry.registerBlock(degradedBricks, "degradedBricks");
+        GameRegistry.registerBlock(heatTraps, "heatTraps");
+        GameRegistry.registerBlock(extractor, "extractor");
+        GameRegistry.registerBlock(dramixAltar, "dramixAltar");
+        GameRegistry.registerBlock(parasectaAltar, "parasectaAltar");
+        GameRegistry.registerBlock(arcaniumPower, "arcaniumpower");
+        GameRegistry.registerBlock(arcaniumOre, "arcaniumOre");
+        GameRegistry.registerTileEntity(TileEntityDramixAltar.class, "Dramix Altar");
+        GameRegistry.registerTileEntity(TileEntityExtractor.class, "Extractinator");
+        GameRegistry.registerTileEntity(TileEntityParasectaAltar.class, "PheonixAltar");
+        GameRegistry.registerBlock(starBridge, "starBridge");
+        GameRegistry.registerBlock(starBridgeOn, "starBridgeOn");
+        GameRegistry.registerBlock(oreDoor1, "oreDoor1");
+        GameRegistry.registerBlock(oreDoor2, "oreDoor2");
+        GameRegistry.registerBlock(oreDoor3, "oreDoor3");
+        GameRegistry.registerBlock(oreDoor4, "oreDoor4");
+        GameRegistry.registerBlock(heatTrapsOn, "heatTrapsOn");
+        GameRegistry.registerBlock(arcaniteRails, "arcaniteRails");
+        GameRegistry.registerBlock(arcanaPortal, "arcanaPortal");
+        GameRegistry.registerBlock(arcanaPortalFrame, "arcanaPortalFrame");
+        GameRegistry.registerBlock(arcaniteDirt, "arcaniteDirt");
+        GameRegistry.registerBlock(arcaniteGrass, "arcaniteGrass");
+        GameRegistry.registerBlock(fireStock, "fireStock");
+        GameRegistry.registerBlock(pinFly, "pinFly");
+        GameRegistry.registerBlock(veilo, "veilo");
+        GameRegistry.registerBlock(lamona, "lamon");
+        GameRegistry.registerBlock(hitchak, "hitchak");
+        GameRegistry.registerBlock(marsine, "marsine");
+        GameRegistry.registerBlock(aquamarine, "aquamarine");
+        GameRegistry.registerBlock(stainedGlass, "stainedGlass");
+        GameRegistry.registerBlock(stainedGlass1, "stainedGlass1");
+        GameRegistry.registerBlock(stainedGlass2, "stainedGlass2");
+        GameRegistry.registerBlock(stainedGlass3, "stainedGlass3");
+        GameRegistry.registerBlock(stainedGlass4, "stainedGlass4");
+        GameRegistry.registerBlock(stainedGlass5, "stainedGlass5");
+        GameRegistry.registerBlock(stainedGlass6, "stainedGlass6");
+        GameRegistry.registerBlock(stainedGlass7, "stainedGlass7");
+        GameRegistry.registerBlock(moltenFurnace, "moltenFurnace");
+        GameRegistry.registerBlock(moltenFurnaceOn, "moltenFurnaceOn");
+        GameRegistry.registerTileEntity(TileEntityMoltenFurnace.class, "MoltenFurnaceTE");
+        GameRegistry.registerBlock(greenlightFurnace, "greenlightFurnace");
+        GameRegistry.registerBlock(greenlightFurnaceOn, "greenlightFurnaceOn");
+        GameRegistry.registerTileEntity(TileEntityGreenlightFurnace.class, "GreenlightFurnaceTE");
+        GameRegistry.registerBlock(oceanfireFurnace, "oceanfireFurnace");
+        GameRegistry.registerBlock(oceanfireFurnaceOn, "oceanfireFurnaceOn");
+        GameRegistry.registerTileEntity(TileEntityOceanfireFurnace.class, "OceanfireFurnaceTE");
+        GameRegistry.registerBlock(moonlightFurnace, "moonlightFurnace");
+        GameRegistry.registerBlock(moonlightFurnaceOn, "moonlightFurnaceOn");
+        GameRegistry.registerTileEntity(TileEntityMoonlightFurnace.class, "MoonlightFurnaceTE");
+        GameRegistry.registerBlock(whitefireFurnace, "whitefireFurnace");
+        GameRegistry.registerBlock(whitefireFurnaceOn, "whitefireFurnaceOn");
+        GameRegistry.registerTileEntity(TileEntityWhitefireFurnace.class, "WhitefireFurnaceTE");
+        GameRegistry.registerBlock(demonFurnace, "demonFurnace");
+        GameRegistry.registerTileEntity(TileEntityDemonFurnace.class, "DemonFurnaceTE");
+        GameRegistry.registerBlock(fireStock2, "fireStock2");
+        GameRegistry.registerBlock(pinFly2, "pinFly2");
+        GameRegistry.registerBlock(arcanaSpawner, "arcanaSpawner");
+        GameRegistry.registerBlock(arcanaSpawner1, "arcanaSpawner1");
+        GameRegistry.registerBlock(arcanaSpawner2, "arcanaSpawner2");
+        GameRegistry.registerBlock(arcanaSpawner3, "arcanaSpawner3");
+        GameRegistry.registerBlock(arcanaSpawner4, "arcanaSpawner4");
+        GameRegistry.registerBlock(arcanaSpawner5, "arcanaSpawner5");
+        GameRegistry.registerBlock(arcanaSpawner5, "arcanaSpawner5");
+        
 	}
 }

@@ -1,7 +1,7 @@
-package xolova.blued00r.divinerpg.entities.projectile;
+package xolova.divinerpg.entities.arcana.projectile;
 
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
@@ -31,14 +31,7 @@ public class EntityReflector extends EntityThrowable
     {
         if (var1.entityHit != null)
         {
-            byte var2 = 0;
-
-            if (var1.entityHit instanceof EntityBlaze)
-            {
-            	var2 = 0;
-            }
             var1.entityHit.addVelocity((double)(this.motionX * 3.0D), 0.1D, (double)(this.motionZ * 3.0D));
-            boolean var3 = true;
         }
 
         if (!this.worldObj.isRemote)

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.entities.mobs.arcana;
+package xolova.divinerpg.entities.arcana.mobs;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;

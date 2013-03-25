@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.entities.mobs.arcana;
+package xolova.divinerpg.entities.arcana.mobs;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
@@ -13,9 +13,7 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
 public class EntityRazorback extends EntityMob
 {
@@ -93,7 +91,7 @@ public class EntityRazorback extends EntityMob
 	 */
 	protected void dropFewItems(boolean var1, int var2)
 	{
-		this.dropItem(DivineRPG.collectorFragments.itemID, 1);
+		this.dropItem(ArcanaItemHelper.collectorFragments.itemID, 1);
 	}
 
 
@@ -110,7 +108,7 @@ public class EntityRazorback extends EntityMob
      */
     protected int getDropItemId()
     {
-        return DivineRPG.collectorFragments.itemID;
+        return ArcanaItemHelper.collectorFragments.itemID;
     }
 
     /**

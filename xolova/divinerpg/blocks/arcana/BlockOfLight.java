@@ -1,18 +1,17 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockOfLight extends Block
+public class BlockOfLight extends BlockDivineRPG
 {
-    public BlockOfLight(int par1, Material par2Material)
+    public BlockOfLight(int par1)
     {
-		super(par1, Material.air);
-		this.blockIndexInTexture = 23;
+		super(par1, 4, Material.air);
 		this.setLightValue(1.0F);
 		this.setTickRandomly(true);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
@@ -22,7 +21,7 @@ public class BlockOfLight extends Block
      * How many world ticks before ticking
      */
     @Override
-    public int tickRate()
+    public int tickRate(World par1)
     {
         return 20;
     }
@@ -36,7 +35,7 @@ public class BlockOfLight extends Block
 
         if (par1World.getBlockId(par2, par3, par4) == this.blockID)
         {
-            par1World.scheduleBlockUpdate(par2, par3, par4, this.blockID, this.tickRate());
+            par1World.scheduleBlockUpdate(par2, par3, par4, this.blockID, this.tickRate(par1World));
         }
     }
     
@@ -46,7 +45,7 @@ public class BlockOfLight extends Block
     @Override
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
-    	par1World.setBlockWithNotify(par2, par3, par4, 0);
+    	par1World.setBlock(par2, par3, par4, 0);
     }
     
     /**

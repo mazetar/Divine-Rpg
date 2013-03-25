@@ -1,5 +1,6 @@
-package xolova.blued00r.divinerpg.entities.mobs.arcana;
+package xolova.divinerpg.entities.arcana.mobs;
 
+import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.ai.EntityAIFollowOwner;
@@ -12,8 +13,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.misc.ArcanaBar;
-import xolova.blued00r.divinerpg.misc.ArcanaList;
 
 public class EntitySeimer extends EntityTameable
 {
@@ -116,9 +115,9 @@ public class EntitySeimer extends EntityTameable
 
         if (this.getOwner() != null)
         {
-            if (this.regenTimer == 2)
+            if (this.regenTimer >= 2)
             {
-            	ArcanaList.get(this.getOwnerName()).arcanaAdd(1);
+            	ArcanaHelper.regen(this.getOwnerName(), 1);
                 this.regenTimer = 0;
             }
             else

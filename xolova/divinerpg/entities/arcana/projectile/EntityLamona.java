@@ -1,21 +1,14 @@
-package xolova.blued00r.divinerpg.entities.projectile;
+package xolova.divinerpg.entities.arcana.projectile;
 
-import xolova.blued00r.divinerpg.DivineRPG;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class EntityLamona extends EntityThrowable
 {
-	private boolean glowing = false;
-	private int blockX;
-	private int blockY;
-	private int blockZ;
-
 	public EntityLamona(World var1)
 	{
 		super(var1);
@@ -38,7 +31,7 @@ public class EntityLamona extends EntityThrowable
 
 		if(this.worldObj.getBlockMaterial((int)this.posX, (int)this.posY, (int)this.posZ) == Material.air)
 		{	
-			this.worldObj.setBlock((int)this.posX, (int)this.posY, (int)this.posZ, DivineRPG.blockOfLight.blockID);
+			this.worldObj.setBlock((int)this.posX, (int)this.posY, (int)this.posZ, ArcanaBlockHelper.blockOfLight.blockID);
 		}
 	}
 

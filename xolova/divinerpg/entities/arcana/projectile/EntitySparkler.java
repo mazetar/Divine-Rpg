@@ -1,12 +1,10 @@
-package xolova.blued00r.divinerpg.entities.projectile;
+package xolova.divinerpg.entities.arcana.projectile;
 
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.client.particles.EntityAzuritePortalFX;
-import xolova.blued00r.divinerpg.client.particles.EntitySparklerFX;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -50,7 +48,7 @@ public class EntitySparkler extends EntityThrowable
         {
             byte var2 = 26;
 
-            if (var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), var2))
+            if (var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), var2))
             {
                 boolean var3 = true;
             }

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.entities.mobs.arcana;
+package xolova.divinerpg.entities.arcana.mobs;
 
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
@@ -14,15 +14,12 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
 public class EntityDeathcryx extends EntityMob
 {
@@ -113,7 +110,7 @@ public class EntityDeathcryx extends EntityMob
      */
     protected int getDropItemId()
     {
-        return DivineRPG.collectorFragments.itemID;
+        return ArcanaItemHelper.collectorFragments.itemID;
     }
 
     /**

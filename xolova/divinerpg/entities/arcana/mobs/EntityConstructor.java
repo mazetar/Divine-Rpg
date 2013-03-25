@@ -1,11 +1,11 @@
-package xolova.blued00r.divinerpg.entities.mobs.arcana;
+package xolova.divinerpg.entities.arcana.mobs;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -107,13 +107,13 @@ public class EntityConstructor extends EntityZombie
         switch (this.rand.nextInt(4))
         {
         case 0:
-        	return DivineRPG.key1.itemID;
+        	return ArcanaItemHelper.key1.itemID;
         case 1:
-        	return DivineRPG.key2.itemID;
+        	return ArcanaItemHelper.key2.itemID;
         case 2:
-        	return DivineRPG.key3.itemID;
+        	return ArcanaItemHelper.key3.itemID;
         case 3:
-        	return DivineRPG.key4.itemID;
+        	return ArcanaItemHelper.key4.itemID;
         }
         
         return 0;

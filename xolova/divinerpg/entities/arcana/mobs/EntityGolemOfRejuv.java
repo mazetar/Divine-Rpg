@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.entities.mobs.arcana;
+package xolova.divinerpg.entities.arcana.mobs;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
@@ -83,7 +83,7 @@ public class EntityGolemOfRejuv extends EntityTameable
                 {
                     ItemFood var3 = (ItemFood)Item.itemsList[var2.itemID];
 
-                    if (var3.isWolfsFavoriteMeat() && this.dataWatcher.getWatchableObjectInt(18) < 20)
+                    if (var3.isWolfsFavoriteMeat() && this.dataWatcher.getWatchableObjectInt(18) < this.getMaxHealth())
                     {
                         if (!par1EntityPlayer.capabilities.isCreativeMode)
                         {

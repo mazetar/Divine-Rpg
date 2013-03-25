@@ -1,8 +1,7 @@
-package xolova.blued00r.divinerpg.entities.projectile;
+package xolova.divinerpg.entities.arcana.projectile;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.projectile.EntitySnowball;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 

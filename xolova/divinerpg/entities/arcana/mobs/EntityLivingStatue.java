@@ -1,24 +1,25 @@
-package xolova.blued00r.divinerpg.entities.mobs.arcana;
+package xolova.divinerpg.entities.arcana.mobs;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.IRangedAttackMob;
+import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.ai.EntityAIStatueArrowAttack;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
-public class EntityLivingStatue extends EntityMob
+public class EntityLivingStatue extends EntityMob implements IRangedAttackMob
 {
     public EntityLivingStatue(World var1)
     {
         super(var1);
         this.texture = "/mob/LivingStatueSleep.png";
         this.moveSpeed = 0.4F;
-        this.tasks.addTask(4, new EntityAIStatueArrowAttack(this, this.moveSpeed, 1, 60));
+        this.tasks.addTask(4, new EntityAIArrowAttack(this, this.moveSpeed, 1, 60));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, false));
         this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 16.0F, 0, true));
     }
@@ -94,7 +95,7 @@ public class EntityLivingStatue extends EntityMob
 	 */
 	protected void dropFewItems(boolean var1, int var2)
 	{
-		this.dropItem(DivineRPG.collectorFragments.itemID, 1);
+		this.dropItem(ArcanaItemHelper.collectorFragments.itemID, 1);
 	}
 
 
@@ -104,15 +105,6 @@ public class EntityLivingStatue extends EntityMob
      */
     public void onLivingUpdate()
     {
-        /*if (this.worldObj.isDaytime() && !this.worldObj.isRemote)
-        {
-            float var1 = this.getBrightness(1.0F);
-
-            if (var1 > 0.5F && this.worldObj.canBlockSeeTheSky(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ)) && this.rand.nextFloat() * 30.0F < (var1 - 0.4F) * 2.0F)
-            {
-                this.setFire(8);
-            }
-        }*/
         byte var1 = this.dataWatcher.getWatchableObjectByte(16);
         this.texture = var1 == 1 ? "/mob/LivingStatueAwake.png" : "/mob/LivingStatueSleep.png";
         super.onLivingUpdate();
@@ -146,7 +138,7 @@ public class EntityLivingStatue extends EntityMob
      */
     protected int getDropItemId()
     {
-        return DivineRPG.denseSoul.itemID;
+        return 0;
     }
 
     /**
@@ -157,8 +149,9 @@ public class EntityLivingStatue extends EntityMob
         return EnumCreatureAttribute.UNDEAD;
     }
 
-    private boolean getMoving()
-    {
-        return this.getAttackTarget() instanceof EntityLiving;
-    }
+	@Override
+	public void attackEntityWithRangedAttack(EntityLiving entityliving, float f) 
+	{
+		
+	}
 }

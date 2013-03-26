@@ -1,19 +1,20 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.arcana.projectile.EntityLamona;
+import xolova.divinerpg.items.ItemDivineRPG;
 
-public class ItemLamona extends Item
+public class ItemLamona extends ItemDivineRPG
 {
     public ItemLamona(int par1)
     {
         super(par1);
         this.maxStackSize = 16;
         this.setCreativeTab(CreativeTabs.tabMisc);
-        this.setIconCoord(6, 7);
+        this.setIconIndex(4, 6, 7);
     }
 
     /**

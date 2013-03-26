@@ -1,10 +1,10 @@
 package xolova.divinerpg.items.arcana;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.items.ItemDivineRPG;
+import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 

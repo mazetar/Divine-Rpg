@@ -1,9 +1,9 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.mythril;
 
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.proxies.TwilightProxy;
 
 public class WorldProviderMythil extends WorldProvider
 {
@@ -12,7 +12,7 @@ public class WorldProviderMythil extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.mythilBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(TwilightProxy.mythilBiome, 0.5F, 0.5F);
     }
 
     /**

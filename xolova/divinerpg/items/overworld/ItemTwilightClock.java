@@ -1,15 +1,16 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.overworld;
 
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.items.ItemDivineRPG;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
-public class ItemTwilightClock extends Item
+public class ItemTwilightClock extends ItemDivineRPG
 {
     protected Random rand = new Random();
     public double lastX;
@@ -17,9 +18,9 @@ public class ItemTwilightClock extends Item
     public double lastZ;
     //public TeleporterTwilightClock teleporter = new TeleporterTwilightClock(null);
 
-    public ItemTwilightClock(int var1)
+    public ItemTwilightClock(int var1, int par2)
     {
-        super(var1);
+        super(var1, par2);
         this.maxStackSize = 1;
     }
 
@@ -37,34 +38,34 @@ public class ItemTwilightClock extends Item
         {
             int var11 = var3.getBlockId(var4, var5, var6);
 
-            if (var11 == DivineRPG.divineRock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            if (var11 == OverworldBlockHelper.divineRock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlock(var4, var5 + 1, var6, OverworldBlockHelper.blueFire.blockID);
                 return true;
             }
-            else if (var11 == DivineRPG.serenityBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == TwilightBlockHelper.DraviteBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlock(var4, var5 + 1, var6, OverworldBlockHelper.blueFire.blockID);
                 return true;
             }
-            else if (var11 == DivineRPG.azuriteBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == TwilightBlockHelper.AzuriteBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlock(var4, var5 + 1, var6, OverworldBlockHelper.blueFire.blockID);
                 return true;
             }
-            else if (var11 == DivineRPG.energyBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == TwilightBlockHelper.UviteBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlock(var4, var5 + 1, var6, OverworldBlockHelper.blueFire.blockID);
                 return true;
             }
-            else if (var11 == DivineRPG.mythilBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == TwilightBlockHelper.MythilBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlock(var4, var5 + 1, var6, OverworldBlockHelper.blueFire.blockID);
                 return true;
             }
             else if (var11 == Block.blockSnow.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlock(var4, var5 + 1, var6, OverworldBlockHelper.blueFire.blockID);
                 return true;
             }
             else
@@ -77,8 +78,9 @@ public class ItemTwilightClock extends Item
             return false;
         }
     }
-    public String getTextureFile()
+    
+    public int getSheet()
     {
-        return DivineRPG.textureFile2;
+        return 3;
     }
 }

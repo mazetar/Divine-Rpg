@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items.arcana;
+package xolova.divinerpg.items.arcana;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class ItemOrbOfLight extends Item
 {
@@ -24,9 +24,9 @@ public class ItemOrbOfLight extends Item
     	if(par3Entity instanceof EntityPlayerMP)
     	{
     		
-    		if(par2World.getBlockMaterial((int)par3Entity.posX, (int)par3Entity.posY, (int)par3Entity.posZ) == Material.air || par2World.getBlockId((int)par3Entity.posX, (int)par3Entity.posY, (int)par3Entity.posZ) == DivineRPG.blockOfLight.blockID)
+    		if(par2World.getBlockMaterial((int)par3Entity.posX, (int)par3Entity.posY, (int)par3Entity.posZ) == Material.air || par2World.getBlockId((int)par3Entity.posX, (int)par3Entity.posY, (int)par3Entity.posZ) == ArcanaBlockHelper.blockOfLight.blockID)
     		{	
-    			par2World.setBlock((int)par3Entity.posX, (int)par3Entity.posY, (int)par3Entity.posZ, DivineRPG.blockOfLight.blockID);
+    			par2World.setBlock((int)par3Entity.posX, (int)par3Entity.posY, (int)par3Entity.posZ, ArcanaBlockHelper.blockOfLight.blockID);
     		}
     	}
     }

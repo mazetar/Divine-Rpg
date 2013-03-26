@@ -3,6 +3,7 @@ package xolova.divinerpg.utils.helpers.item;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import xolova.divinerpg.items.ItemDivineRPG;
+import xolova.divinerpg.items.overworld.ItemTwilightClock;
 import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
 
 public class TwilightItemHelper 
@@ -106,5 +107,6 @@ public class TwilightItemHelper
 		DraviteChest = new ItemDivineRPG(x.DraviteChestID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
 		DraviteSlicer = new ItemDivineRPG(x.DraviteSlicerID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
 		DraviteSoul = new ItemDivineRPG(x.DraviteSoulID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		TwilightClock = new ItemTwilightClock(5330, 103).setCreativeTab(CreativeTabs.tabMisc);
 	}
 }

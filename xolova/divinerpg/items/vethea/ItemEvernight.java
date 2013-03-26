@@ -6,6 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EntityDamageSourceIndirect;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.vethea.projectile.EntityEvernightProjectile;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

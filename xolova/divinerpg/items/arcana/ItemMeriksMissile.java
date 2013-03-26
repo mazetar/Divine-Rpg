@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
 import java.util.List;
 import java.util.Random;
@@ -15,6 +15,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.entities.arcana.projectile.EntityMerikMissile;
+import xolova.divinerpg.utils.helpers.ArcanaHelper;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -43,7 +46,7 @@ public class ItemMeriksMissile extends ItemBow
         }
         else
         {
-            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(DivineRPG.meriksMissile.itemID))
+            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(ArcanaItemHelper.meriksMissile.itemID))
             {
                 var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
             }
@@ -69,7 +72,7 @@ public class ItemMeriksMissile extends ItemBow
         var6 = event.charge;
         boolean var5 = par3EntityPlayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
 
-        if (ArcanaList.get(par3EntityPlayer.username).arcanaUse((5 * var6 / 25) * 10))
+        if (ArcanaHelper.useBar(par3EntityPlayer,(5 * var6 / 25) * 10))
         {
             float var7 = (float)var6 / 20.0F;
             var7 = (var7 * var7 + var7 * 2.0F) / 3.0F;
@@ -108,7 +111,7 @@ public class ItemMeriksMissile extends ItemBow
         return EnumAction.none;
     }
 
-    public int getIconIndex(ItemStack var1, int var2, EntityPlayer var3, ItemStack var4, int var5)
+    public int getIndex(ItemStack var1, int var2, EntityPlayer var3, ItemStack var4, int var5)
     {
         if (var4 != null)
         {

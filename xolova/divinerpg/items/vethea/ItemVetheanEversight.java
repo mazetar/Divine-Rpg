@@ -3,6 +3,7 @@ package xolova.divinerpg.items.vethea;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.vethea.projectile.EntityEversightProjectile;
 import xolova.divinerpg.utils.helpers.item.VetheaItemHelper;
 
 public class ItemVetheanEversight extends ItemVetheanCannon

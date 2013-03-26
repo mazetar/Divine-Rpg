@@ -7,6 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.vethea.projectile.EntityVetheanCannonShot;
 import xolova.divinerpg.utils.helpers.item.VetheaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

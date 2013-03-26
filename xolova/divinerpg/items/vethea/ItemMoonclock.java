@@ -4,6 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.vethea.mobs.EntityLadyLuna;
 import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
 public class ItemMoonclock extends Item

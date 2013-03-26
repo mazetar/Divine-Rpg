@@ -5,9 +5,9 @@ import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
 import xolova.divinerpg.items.core.ItemDivineRPGSword;
+import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
 
 public class ItemStormSword extends ItemDivineRPGSword

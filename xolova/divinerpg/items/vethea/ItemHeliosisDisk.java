@@ -2,6 +2,7 @@ package xolova.divinerpg.items.vethea;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.vethea.projectile.EntityHeliosisDisk;
 
 public class ItemHeliosisDisk extends ItemVetheanDisk
 {

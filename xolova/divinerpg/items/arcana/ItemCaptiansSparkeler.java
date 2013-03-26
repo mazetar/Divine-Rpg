@@ -8,6 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.arcana.projectile.EntitySparkler;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

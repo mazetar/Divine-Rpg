@@ -6,6 +6,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import xolova.divinerpg.utils.helpers.block.IceikaBlockHelper;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -83,7 +86,7 @@ public class BlockBlueFire extends Block
     {
         if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
         {
-            var1.func_94575_c(var2, var3, var4, 0);
+            var1.setBlock(var2, var3, var4, 0);
         }
     }
 
@@ -92,11 +95,11 @@ public class BlockBlueFire extends Block
      */
     public void onBlockAdded(World var1, int var2, int var3, int var4)
     {
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != VanillaBlockHelper.divineRock.blockID || !VanillaBlockHelper.twilightPortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != OverworldBlockHelper.divineRock.blockID || !TwilightBlockHelper.DravitePortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.func_94575_c(var2, var3, var4, 0);
+                var1.setBlock(var2, var3, var4, 0);
             }
             else
             {
@@ -104,11 +107,11 @@ public class BlockBlueFire extends Block
             }
         }
 
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != VanillaBlockHelper.serenityBlock.blockID || !VanillaBlockHelper.azuritePortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != TwilightBlockHelper.DraviteBlock.blockID || !TwilightBlockHelper.AzuritePortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.func_94575_c(var2, var3, var4, 0);
+                var1.setBlock(var2, var3, var4, 0);
             }
             else
             {
@@ -116,11 +119,11 @@ public class BlockBlueFire extends Block
             }
         }
 
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != VanillaBlockHelper.azuriteBlock.blockID || !VanillaBlockHelper.energyPortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != TwilightBlockHelper.AzuriteBlock.blockID || !TwilightBlockHelper.UvitePortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.func_94575_c(var2, var3, var4, 0);
+                var1.setBlock(var2, var3, var4, 0);
             }
             else
             {
@@ -128,11 +131,11 @@ public class BlockBlueFire extends Block
             }
         }
 
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != VanillaBlockHelper.energyBlock.blockID || !VanillaBlockHelper.mythrilPortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != TwilightBlockHelper.UviteBlock.blockID || !TwilightBlockHelper.MythrilPortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.func_94575_c(var2, var3, var4, 0);
+                var1.setBlock(var2, var3, var4, 0);
             }
             else
             {
@@ -140,11 +143,11 @@ public class BlockBlueFire extends Block
             }
         }
 
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != VanillaBlockHelper.mythilBlock.blockID || !VanillaBlockHelper.densePortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != TwilightBlockHelper.MythilBlock.blockID || !TwilightBlockHelper.AugitePortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.func_94575_c(var2, var3, var4, 0);
+                var1.setBlock(var2, var3, var4, 0);
             }
             else
             {
@@ -152,11 +155,11 @@ public class BlockBlueFire extends Block
             }
         }
         
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != Block.blockSnow.blockID || !VanillaBlockHelper.iceikaPortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != Block.blockSnow.blockID || !IceikaBlockHelper.iceikaPortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
-                var1.func_94575_c(var2, var3, var4, 0);
+                var1.setBlock(var2, var3, var4, 0);
             }
             else
             {

@@ -1,9 +1,9 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.dravite;
 
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.proxies.TwilightProxy;
 
 public class WorldProviderTwilight extends WorldProvider
 {
@@ -12,7 +12,7 @@ public class WorldProviderTwilight extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.serenityBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(TwilightProxy.draviteBiome, 0.5F, 0.5F);
     }
 
     /**
@@ -29,7 +29,7 @@ public class WorldProviderTwilight extends WorldProvider
      */
     public IChunkProvider createChunkGenerator()
     {
-        return new ChunkProviderTwilight(this.worldObj, this.worldObj.getSeed(), true);
+        return new ChunkProviderDravite(this.worldObj, this.worldObj.getSeed(), true);
     }
 
     /**

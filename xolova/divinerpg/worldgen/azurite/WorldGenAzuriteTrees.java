@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.azurite;
 
 import java.util.Random;
 
@@ -6,7 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class WorldGenAzuriteTrees extends WorldGenerator
 {
@@ -78,9 +79,9 @@ public class WorldGenAzuriteTrees extends WorldGenerator
             {
                 var8 = var1.getBlockId(var3, var4 - 1, var5);
 
-                if ((var8 == DivineRPG.azuriteGrass.blockID || var8 == DivineRPG.azuriteDirt.blockID) && var4 < 128 - var6 - 1)
+                if ((var8 == TwilightBlockHelper.AzuriteGrass.blockID || var8 == TwilightBlockHelper.AzuriteDirt.blockID) && var4 < 128 - var6 - 1)
                 {
-                    this.setBlock(var1, var3, var4 - 1, var5, DivineRPG.azuriteDirt.blockID);
+                    this.setBlock(var1, var3, var4 - 1, var5, TwilightBlockHelper.AzuriteDirt.blockID);
                     int var13;
                     int var17;
 
@@ -100,7 +101,7 @@ public class WorldGenAzuriteTrees extends WorldGenerator
 
                                 if ((Math.abs(var17) != var10 || Math.abs(var15) != var10 || var2.nextInt(2) != 0 && var9 != 0) && (var16 == null || var16.canBeReplacedByLeaves(var1, var11, var13, var14)))
                                 {
-                                    this.setBlock(var1, var11, var13, var14, DivineRPG.azuriteLeaves.blockID);
+                                    this.setBlock(var1, var11, var13, var14, TwilightBlockHelper.AzuriteLeaves.blockID);
                                 }
                             }
                         }
@@ -113,7 +114,7 @@ public class WorldGenAzuriteTrees extends WorldGenerator
 
                         if (var9 == 0 || var18 != null && var18.isLeaves(var1, var3, var4 + var13, var5) || var9 == Block.waterMoving.blockID || var9 == Block.waterStill.blockID)
                         {
-                            this.setBlock(var1, var3, var4 + var13, var5, DivineRPG.blueWood.blockID);
+                            this.setBlock(var1, var3, var4 + var13, var5, TwilightBlockHelper.AzuriteLogs.blockID);
                         }
                     }
 
@@ -161,7 +162,7 @@ public class WorldGenAzuriteTrees extends WorldGenerator
 
     private void generateVines(World var1, int var2, int var3, int var4, int var5)
     {
-        this.setBlockAndMetadata(var1, var2, var3, var4, DivineRPG.azuriteVines.blockID, var5);
+        this.setBlockAndMetadata(var1, var2, var3, var4, TwilightBlockHelper.AzuriteVines.blockID, var5);
         int var6 = 4;
 
         while (true)
@@ -173,7 +174,7 @@ public class WorldGenAzuriteTrees extends WorldGenerator
                 return;
             }
 
-            this.setBlockAndMetadata(var1, var2, var3, var4, DivineRPG.azuriteVines.blockID, var5);
+            this.setBlockAndMetadata(var1, var2, var3, var4, TwilightBlockHelper.AzuriteVines.blockID, var5);
             --var6;
         }
     }

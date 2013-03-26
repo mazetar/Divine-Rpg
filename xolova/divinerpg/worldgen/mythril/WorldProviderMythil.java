@@ -12,7 +12,7 @@ public class WorldProviderMythil extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.mythilBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPGTwilight.mythilBiome, 0.5F, 0.5F);
     }
 
     /**

@@ -2,14 +2,19 @@ package xolova.divinerpg.utils.helpers.item;
 
 import net.minecraft.item.Item;
 import xolova.divinerpg.items.ItemDivineRPG;
+import xolova.divinerpg.items.core.ItemDivineRPGRangedConsumable;
 import xolova.divinerpg.items.iceika.ItemEnderice;
+import xolova.divinerpg.items.iceika.ItemFrostClawCannon;
 import xolova.divinerpg.items.iceika.ItemFrostkingSword;
 import xolova.divinerpg.items.iceika.ItemFrozenMaul;
 import xolova.divinerpg.items.iceika.ItemGlacierSword;
 import xolova.divinerpg.items.iceika.ItemIceicleBane;
 import xolova.divinerpg.items.iceika.ItemIceineSword;
+import xolova.divinerpg.items.iceika.ItemIcicleBow;
 import xolova.divinerpg.items.iceika.ItemSerenadeOfIce;
 import xolova.divinerpg.items.iceika.ItemSnowSlash;
+import xolova.divinerpg.items.iceika.ItemSnowStormBow;
+import xolova.divinerpg.items.iceika.ItemSnowflakeShuriken;
 import xolova.divinerpg.items.iceika.ItemSoundOfCarols;
 import xolova.divinerpg.items.vanilla.ItemMassivence;
 import xolova.divinerpg.utils.helpers.config.IceikaConfigHelper;
@@ -61,12 +66,12 @@ public class IceikaItemHelper
         frostKingSword = new ItemFrostkingSword(x.FrostkingSwordID).setUnlocalizedName("frostKingSword").setCreativeTab(CreativeTabHelper.tabSword);
         frozenMaul = new ItemFrozenMaul(x.FrozenMaulID).setUnlocalizedName("frozenMaul").setCreativeTab(CreativeTabHelper.tabSword);
         
-        /*frostClawCannon = new ItemFrostClawCannon(IceikaConfigHelper.frostClawCannonID).setUnlocalizedName("frostClawCannon").setCreativeTab(CreativeTabHelper.tabRanged);
-        fractiteCannon = new ItemFractiteCannon(IceikaConfigHelper.fractiteCannonID).setUnlocalizedName("fractiteCannon").setCreativeTab(CreativeTabHelper.tabRanged);
-        snowFlakeShuriken = new ItemSnowFlakeShuriken(IceikaConfigHelper.snowFlakeShurikenID).setUnlocalizedName("snowFlakeShuriken").setCreativeTab(CreativeTabHelper.tabRanged);
-        icicleBow = new ItemIcicleBow(IceikaConfigHelper.icicleBowID).setUnlocalizedName("icicleBow").setCreativeTab(CreativeTabHelper.tabRanged);
-        snowStormBow = new ItemSnowStormBow(IceikaConfigHelper.snowStormBowID).setUnlocalizedName("frostStormBow").setCreativeTab(CreativeTabHelper.tabRanged);
-        pepperMints = new ItemFood(IceikaConfigHelper.pepperMintsID, 1, 0.3F, false).setUnlocalizedName("pepperMints").setCreativeTab(CreativeTabHelper.tabHerb);
+        frostClawCannon = new ItemFrostClawCannon(x.FrostclawCannonID).setUnlocalizedName("frostClawCannon").setCreativeTab(CreativeTabHelper.tabRanged);
+        //fractiteCannon = new ItemFractiteCannon(IceikaConfigHelper.fractiteCannonID).setUnlocalizedName("fractiteCannon").setCreativeTab(CreativeTabHelper.tabRanged);
+        snowFlakeShuriken = new ItemSnowflakeShuriken(x.SnowflakeShurikenID).setUnlocalizedName("snowFlakeShuriken").setCreativeTab(CreativeTabHelper.tabRanged);
+        icicleBow = new ItemIcicleBow(x.IcicleBowID).setUnlocalizedName("icicleBow").setCreativeTab(CreativeTabHelper.tabRanged);
+        snowStormBow = new ItemSnowStormBow(x.SnowstormBowID).setUnlocalizedName("frostStormBow").setCreativeTab(CreativeTabHelper.tabRanged);
+        /*pepperMints = new ItemFood(IceikaConfigHelper.pepperMintsID, 1, 0.3F, false).setUnlocalizedName("pepperMints").setCreativeTab(CreativeTabHelper.tabHerb);
         eggNog = new ItemBucketMilk(IceikaConfigHelper.eggNogID).setUnlocalizedName("eggNog").setCreativeTab(CreativeTabHelper.tabHerb);
         chocolateLog = new ItemFood(IceikaConfigHelper.chocolateLogID, 4, 1.0F, false).setUnlocalizedName("chocolateLog").setCreativeTab(CreativeTabHelper.tabHerb);
         snowCones = new ItemFood(IceikaConfigHelper.snowConesID, 2, 0.3F, false).setUnlocalizedName("snowCones").setCreativeTab(CreativeTabHelper.tabHerb);
@@ -90,5 +95,10 @@ public class IceikaItemHelper
         LanguageRegistry.addName(glacierSword, "Glacier Sword");
         LanguageRegistry.addName(frostKingSword, "Frostking Sword");
         LanguageRegistry.addName(frozenMaul, "Frozen Maul");
+        LanguageRegistry.addName(frostClawCannon, "Frostclaw Cannon");
+        //LanguageRegistry.addName(fractiteCannon, "Fractite Cannon");
+        LanguageRegistry.addName(snowFlakeShuriken, "Snowflake Shuriken");
+        LanguageRegistry.addName(icicleBow, "Icicle Bow");
+        LanguageRegistry.addName(snowStormBow, "Snowstorm Bow");
     }
 }

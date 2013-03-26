@@ -270,16 +270,16 @@ public class ChunkProviderVethea implements IChunkProvider
         layer3TreeBig = new WorldGenLayer3BigTree(false);
         infusion = new InfusionOutpost();
         
-        cracklespikes = new WorldGenVetheanFlower(DivineRPG.cracklespike.blockID);
-        fernites = new WorldGenVetheanFlower(DivineRPG.fernite.blockID);
-        bulatobes = new WorldGenVetheanFlower(DivineRPG.bulatobe.blockID);
-        shinegrass = new WorldGenVetheanFlower(DivineRPG.shineGrass.blockID);
-        shimmers = new WorldGenVetheanFlower(DivineRPG.shimmer.blockID);
-        dreamglows = new WorldGenVetheanFlower(DivineRPG.dreamglow.blockID);
-        greenGemTops = new WorldGenVetheanFlower(DivineRPG.gemtopGreen.blockID);;
-        purpleGemTops = new WorldGenVetheanFlower(DivineRPG.gemtopPurple.blockID);;
-        yellowDulahs = new WorldGenVetheanFlower(DivineRPG.yellowDulah.blockID);;
-        greenDulahs = new WorldGenVetheanFlower(DivineRPG.greenDulah.blockID);;
+        cracklespikes = new WorldGenVetheanFlower(DivineRPGTwilight.cracklespike.blockID);
+        fernites = new WorldGenVetheanFlower(DivineRPGTwilight.fernite.blockID);
+        bulatobes = new WorldGenVetheanFlower(DivineRPGTwilight.bulatobe.blockID);
+        shinegrass = new WorldGenVetheanFlower(DivineRPGTwilight.shineGrass.blockID);
+        shimmers = new WorldGenVetheanFlower(DivineRPGTwilight.shimmer.blockID);
+        dreamglows = new WorldGenVetheanFlower(DivineRPGTwilight.dreamglow.blockID);
+        greenGemTops = new WorldGenVetheanFlower(DivineRPGTwilight.gemtopGreen.blockID);;
+        purpleGemTops = new WorldGenVetheanFlower(DivineRPGTwilight.gemtopPurple.blockID);;
+        yellowDulahs = new WorldGenVetheanFlower(DivineRPGTwilight.yellowDulah.blockID);;
+        greenDulahs = new WorldGenVetheanFlower(DivineRPGTwilight.greenDulah.blockID);;
         
     }
 
@@ -392,7 +392,7 @@ public class ChunkProviderVethea implements IChunkProvider
         				
         				if (var16 <= var5 + 15)
         				{
-        					par3ArrayOfByte[var17] = (byte)DivineRPG.dreamstone.blockID;//bedrock
+        					par3ArrayOfByte[var17] = (byte)DivineRPGTwilight.dreamstone.blockID;//bedrock
         				}
         				else
         				{
@@ -409,7 +409,7 @@ public class ChunkProviderVethea implements IChunkProvider
         							if (var12 <= 0)
         							{
         								var14 = 0;
-        								var15 = (byte)DivineRPG.dreamstone.blockID;
+        								var15 = (byte)DivineRPGTwilight.dreamstone.blockID;
         							}
         							else if (var16 >= var5 - 4 && var16 <= var5 + 1)
         							{

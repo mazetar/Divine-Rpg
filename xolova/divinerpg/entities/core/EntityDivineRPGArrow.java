@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 public class EntityDivineRPGArrow extends EntityArrow {
 
 	public static String[] TEXTURES = new String[] {
-		// TODO have textures here
+		"/item/arrow.png"
 	};
 	
 	/** Stack to pickup on player collision **/
@@ -39,14 +39,21 @@ public class EntityDivineRPGArrow extends EntityArrow {
         setID(arrowID);
     }
     
+    @Override
+    protected void entityInit() {
+    	super.entityInit();
+    	dataWatcher.addObject(12, 0);
+    	dataWatcher.setObjectWatched(12);
+    }
+    
     // Set the Index in the TEXTURES array that the texture for this arrow
     // should be loaded for the render
     public void setID(int id) {
-    	dataWatcher.updateObject(0, id);
+    	dataWatcher.updateObject(12, id);
     }
     
     public int getID() {
-    	return dataWatcher.getWatchableObjectInt(0);
+    	return dataWatcher.getWatchableObjectInt(12);
     }
     
     @Override
@@ -67,6 +74,6 @@ public class EntityDivineRPGArrow extends EntityArrow {
     
     // Reflection method to get the inGround field
     public boolean isInGround() {
-    	return ReflectionHelper.getPrivateValue(EntityArrow.class, this, 4);
+    	return ReflectionHelper.getPrivateValue(EntityArrow.class, this, 5);
     }
 }

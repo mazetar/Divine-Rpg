@@ -7,7 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class ItemTwilightClock extends Item
 {
@@ -37,34 +37,34 @@ public class ItemTwilightClock extends Item
         {
             int var11 = var3.getBlockId(var4, var5, var6);
 
-            if (var11 == DivineRPG.divineRock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            if (var11 == DivineRPGTwilight.DivineRPGTwilight.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPGTwilight.DivineRPGTwilight.blockID);
                 return true;
             }
-            else if (var11 == DivineRPG.serenityBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == DivineRPGTwilight.DivineRPGTwilight.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPGTwilight.DivineRPGTwilight.blockID);
                 return true;
             }
-            else if (var11 == DivineRPG.azuriteBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == DivineRPGTwilight.DivineRPGTwilight.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPGTwilight.DivineRPGTwilight.blockID);
                 return true;
             }
-            else if (var11 == DivineRPG.energyBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == DivineRPGTwilight.DivineRPGTwilight.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPGTwilight.DivineRPGTwilight.blockID);
                 return true;
             }
-            else if (var11 == DivineRPG.mythilBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == DivineRPGTwilight.DivineRPGTwilight.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPGTwilight.DivineRPGTwilight.blockID);
                 return true;
             }
             else if (var11 == Block.blockSnow.blockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPG.blueFire.blockID);
+                var3.setBlockWithNotify(var4, var5 + 1, var6, DivineRPGTwilight.DivineRPGTwilight.blockID);
                 return true;
             }
             else
@@ -79,6 +79,6 @@ public class ItemTwilightClock extends Item
     }
     public String getTextureFile()
     {
-        return DivineRPG.textureFile2;
+        return DivineRPGTwilight.textureFile2;
     }
 }

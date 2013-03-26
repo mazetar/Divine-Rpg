@@ -17,8 +17,8 @@ public class BiomeGenSerenity extends BiomeGenBase
         this.setBiomeName("Dravite");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        this.topBlock = (byte)DivineRPG.serenityGrass.blockID;
-        this.fillerBlock = (byte)DivineRPG.serenityDirt.blockID;
+        this.topBlock = (byte)DivineRPGTwilight.serenityGrass.blockID;
+        this.fillerBlock = (byte)DivineRPGTwilight.serenityDirt.blockID;
         this.waterColorMultiplier = 2368548;
     }
     

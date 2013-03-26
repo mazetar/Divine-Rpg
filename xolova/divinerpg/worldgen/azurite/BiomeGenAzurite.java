@@ -14,8 +14,8 @@ public class BiomeGenAzurite extends BiomeGenBase
         this.setBiomeName("Azurite");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        this.topBlock = (byte)DivineRPG.azuriteGrass.blockID;
-        this.fillerBlock = (byte)DivineRPG.azuriteDirt.blockID;
+        this.topBlock = (byte)DivineRPGTwilight.azuriteGrass.blockID;
+        this.fillerBlock = (byte)DivineRPGTwilight.azuriteDirt.blockID;
 //        this.waterColorMultiplier = 2368548;
     }
 

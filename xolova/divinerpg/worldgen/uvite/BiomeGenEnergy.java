@@ -11,8 +11,8 @@ public class BiomeGenEnergy extends BiomeGenBase
         this.setBiomeName("Uvite");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        this.topBlock = (byte)DivineRPG.energyGrass.blockID;
-        this.fillerBlock = (byte)DivineRPG.energyDirt.blockID;
+        this.topBlock = (byte)DivineRPGTwilight.energyGrass.blockID;
+        this.fillerBlock = (byte)DivineRPGTwilight.energyDirt.blockID;
         this.waterColorMultiplier = 2368548;
     }
 }

@@ -26,7 +26,7 @@ import xolova.blued00r.divinerpg.generation.vethea.village.LightUp4;
 
 public class WorldGenVillageIsland extends WorldGenerator
 {
-	public final WorldGenConeUp spike = new WorldGenConeUp(DivineRPG.dreamstone.blockID, 1F);
+	public final WorldGenConeUp spike = new WorldGenConeUp(DivineRPGTwilight.dreamstone.blockID, 1F);
 	public final ArrayList<WorldGenerator> housesDown;
 	public final ArrayList<WorldGenerator> housesUp;
 	public final ArrayList<WorldGenerator> lampsDown;

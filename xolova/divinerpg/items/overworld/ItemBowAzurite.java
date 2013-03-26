@@ -13,7 +13,7 @@ import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.entities.twilight.projectile.EntitySerenityArrow;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -43,7 +43,7 @@ public class ItemBowAzurite extends ItemBow
         }
         else
         {
-            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(DivineRPG.azuriteArrow.itemID))
+            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(DivineRPGTwilight.DivineRPGTwilight.itemID))
             {
                 var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
             }
@@ -60,7 +60,7 @@ public class ItemBowAzurite extends ItemBow
         this.lastDamage = -1;
         boolean var5 = var3.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, var1) > 0;
 
-        if (var5 || var3.inventory.hasItem(DivineRPG.azuriteArrow.itemID))
+        if (var5 || var3.inventory.hasItem(DivineRPGTwilight.DivineRPGTwilight.itemID))
         {
             int var6 = this.getMaxItemUseDuration(var1) - var4;
             float var7 = (float)var6 / 20.0F;
@@ -114,7 +114,7 @@ public class ItemBowAzurite extends ItemBow
 
             if (!var5)
             {
-                var3.inventory.consumeInventoryItem(DivineRPG.azuriteArrow.itemID);
+                var3.inventory.consumeInventoryItem(DivineRPGTwilight.DivineRPGTwilight.itemID);
             }
             else
             {
@@ -134,17 +134,17 @@ public class ItemBowAzurite extends ItemBow
         {
             int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
 
-            if ((float)var6 >= 40.0F * DivineRPG.decreaseBowTime)
+            if ((float)var6 >= 40.0F * DivineRPGTwilight.decreaseBowTime)
             {
                 return this.iconIndex + 2;
             }
 
-            if ((float)var6 >= 18.0F * DivineRPG.decreaseBowTime)
+            if ((float)var6 >= 18.0F * DivineRPGTwilight.decreaseBowTime)
             {
                 return this.iconIndex - 1;
             }
 
-            if ((float)var6 > 13.0F * DivineRPG.decreaseBowTime)
+            if ((float)var6 > 13.0F * DivineRPGTwilight.decreaseBowTime)
             {
                 return this.iconIndex + 1;
             }
@@ -193,7 +193,7 @@ public class ItemBowAzurite extends ItemBow
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile2;
+        return DivineRPGTwilight.textureFile2;
     }
 
     @Override

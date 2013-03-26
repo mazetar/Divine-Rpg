@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
 public class ItemTarBucket extends ItemBucket
@@ -110,7 +110,7 @@ public class ItemTarBucket extends ItemBucket
                         return par1ItemStack;
                     }
 
-                    if (par2World.getBlockMaterial(var13, var14, var15) == Material.lava && par2World.getBlockMetadata(var13, var14, var15) == 0 && par2World.getBlockId(var13, var14, var15) == DivineRPG.tarStill.blockID)
+                    if (par2World.getBlockMaterial(var13, var14, var15) == Material.lava && par2World.getBlockMetadata(var13, var14, var15) == 0 && par2World.getBlockId(var13, var14, var15) == DivineRPGTwilight.DivineRPGTwilight.blockID)
                     {
                         par2World.func_94575_c(var13, var14, var15, 0);
 

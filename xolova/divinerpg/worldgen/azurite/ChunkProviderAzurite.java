@@ -143,7 +143,7 @@ public class ChunkProviderAzurite implements IChunkProvider
                 int var12 = (int)(this.stoneNoise[var8 + var9 * 16] / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
                 int var13 = -1;
                 byte var14 = var10.topBlock;
-                byte var15 = (byte)DivineRPG.azuriteGrass.blockID;
+                byte var15 = (byte)DivineRPGTwilight.azuriteGrass.blockID;
 
                 for (int var16 = 127; var16 >= 0; --var16)
                 {
@@ -167,13 +167,13 @@ public class ChunkProviderAzurite implements IChunkProvider
                             {
                                 if (var12 <= 0)
                                 {
-                                    var14 = (byte)DivineRPG.azuriteGrass.blockID;
-                                    var15 = (byte)DivineRPG.azuriteGrass.blockID;
+                                    var14 = (byte)DivineRPGTwilight.azuriteGrass.blockID;
+                                    var15 = (byte)DivineRPGTwilight.azuriteGrass.blockID;
                                 }
                                 else if (var16 >= var5 - 4 && var16 <= var5 + 1)
                                 {
-                                    var14 = (byte)DivineRPG.azuriteGrass.blockID;
-                                    var15 = (byte)DivineRPG.twilightStone.blockID;
+                                    var14 = (byte)DivineRPGTwilight.azuriteGrass.blockID;
+                                    var15 = (byte)DivineRPGTwilight.twilightStone.blockID;
                                 }
 
                                 if (var16 >= var5 - 1)
@@ -190,10 +190,10 @@ public class ChunkProviderAzurite implements IChunkProvider
                                 --var13;
                                 var3[var17] = var15;
 
-                                if (var13 == 0 && var15 == DivineRPG.azuriteGrass.blockID)
+                                if (var13 == 0 && var15 == DivineRPGTwilight.azuriteGrass.blockID)
                                 {
-                                    var13 = (byte)DivineRPG.azuriteGrass.blockID;
-                                    var15 = (byte)DivineRPG.azuriteGrass.blockID;
+                                    var13 = (byte)DivineRPGTwilight.azuriteGrass.blockID;
+                                    var15 = (byte)DivineRPGTwilight.azuriteGrass.blockID;
                                 }
                             }
                         }
@@ -203,10 +203,10 @@ public class ChunkProviderAzurite implements IChunkProvider
                             --var13;
                             var3[var17] = var15;
 
-                            if (var13 == 0 && var15 == DivineRPG.twilightStone.blockID)
+                            if (var13 == 0 && var15 == DivineRPGTwilight.twilightStone.blockID)
                             {
-                                var13 = (byte)DivineRPG.azuriteGrass.blockID;
-                                var15 = (byte)DivineRPG.twilightStone.blockID;
+                                var13 = (byte)DivineRPGTwilight.azuriteGrass.blockID;
+                                var15 = (byte)DivineRPGTwilight.twilightStone.blockID;
                             }
                         }
                     }
@@ -396,7 +396,7 @@ public class ChunkProviderAzurite implements IChunkProvider
             var14 = var4 + this.rand.nextInt(16);
             var15 = this.rand.nextInt(128);
             var16 = var5 + this.rand.nextInt(16);
-            (new WorldGenTwilightMineable(DivineRPG.azuriteOre.blockID, 8)).generate(this.worldObj, this.rand, var14, var15, var16);
+            (new WorldGenTwilightMineable(DivineRPGTwilight.azuriteOre.blockID, 8)).generate(this.worldObj, this.rand, var14, var15, var16);
         }
 
         WorldGenAzuriteTrees var17 = new WorldGenAzuriteTrees();

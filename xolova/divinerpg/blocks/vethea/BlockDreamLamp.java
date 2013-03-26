@@ -7,7 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockDreamLamp extends BlockContainer
 {
@@ -41,13 +41,13 @@ public class BlockDreamLamp extends BlockContainer
 		{
 			return false;
 		}
-		par5EntityPlayer.openGui(DivineRPG.instance, 19, world, x, y, z);
+		par5EntityPlayer.openGui(DivineRPGTwilight.instance, 19, world, x, y, z);
 		return true;
     }
     
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return DivineRPG.dreamlamp.blockID;
+        return DivineRPGTwilight.DivineRPGTwilight.blockID;
     }
     
     public static void updateFurnaceBlockState(boolean par0, World par1World, int par2, int par3, int par4)
@@ -58,11 +58,11 @@ public class BlockDreamLamp extends BlockContainer
 
         if (par0)
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.dreamlampOn.blockID);
+            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
         }
         else
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.dreamlamp.blockID);
+            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
         }
 
         keepFurnaceInventory = false;

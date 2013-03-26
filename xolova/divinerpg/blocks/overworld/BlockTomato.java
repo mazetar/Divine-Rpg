@@ -9,7 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockTomato extends BlockFlower
 {
@@ -169,14 +169,14 @@ public class BlockTomato extends BlockFlower
 
         if (var5 == 6)
         {
-            var7.add(new ItemStack(DivineRPG.tomato));
+            var7.add(new ItemStack(DivineRPGTwilight.tomato));
         }
 
         for (int var8 = 0; var8 < 3 + var6; ++var8)
         {
             if (var1.rand.nextInt(15) <= var5)
             {
-                var7.add(new ItemStack(DivineRPG.tomatoSeeds));
+                var7.add(new ItemStack(DivineRPGTwilight.tomatoSeeds));
             }
         }
 
@@ -188,7 +188,7 @@ public class BlockTomato extends BlockFlower
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return var1 == 6 ? DivineRPG.tomato.itemID : -1;
+        return var1 == 6 ? DivineRPGTwilight.DivineRPGTwilight.itemID : -1;
     }
 
     public int setBlockBounds(Random var1)
@@ -198,6 +198,6 @@ public class BlockTomato extends BlockFlower
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile2;
+        return DivineRPGTwilight.textureFile2;
     }
 }

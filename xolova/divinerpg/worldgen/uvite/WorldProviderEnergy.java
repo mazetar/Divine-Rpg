@@ -12,7 +12,7 @@ public class WorldProviderEnergy extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.energyBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPGTwilight.energyBiome, 0.5F, 0.5F);
     }
 
     /**

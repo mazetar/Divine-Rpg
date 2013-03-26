@@ -12,8 +12,8 @@ public class BiomeGenIceikaMountians extends BiomeGenBase
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
         this.maxHeight = 2.0F;
-        this.topBlock = (byte)DivineRPG.iceikaGrass.blockID;
-        this.fillerBlock = (byte)DivineRPG.iceikaDirt.blockID;
+        this.topBlock = (byte)DivineRPGTwilight.iceikaGrass.blockID;
+        this.fillerBlock = (byte)DivineRPGTwilight.iceikaDirt.blockID;
         this.setEnableSnow();
         this.rainfall = 999;
     }

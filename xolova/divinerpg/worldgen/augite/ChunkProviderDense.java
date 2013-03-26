@@ -162,7 +162,7 @@ public class ChunkProviderDense implements IChunkProvider
 
                                 if (var46 > 0.0D)
                                 {
-                                    var51 = DivineRPG.denseGrass.blockID;
+                                    var51 = DivineRPGTwilight.denseGrass.blockID;
                                 }
 
                                 par3ArrayOfByte[var42] = (byte)var51;
@@ -207,8 +207,8 @@ public class ChunkProviderDense implements IChunkProvider
                 boolean var10 = this.gravelNoise[var7 + var8 * 16] + this.hellRNG.nextDouble() * 0.2D > 0.0D;
                 int var11 = (int)(this.netherrackExclusivityNoise[var7 + var8 * 16] / 3.0D + 3.0D + this.hellRNG.nextDouble() * 0.25D);
                 int var12 = -1;
-                byte var13 = (byte)DivineRPG.denseGrass.blockID;
-                byte var14 = (byte)DivineRPG.denseGrass.blockID;
+                byte var13 = (byte)DivineRPGTwilight.denseGrass.blockID;
+                byte var14 = (byte)DivineRPGTwilight.denseGrass.blockID;
 
                 for (int var15 = 127; var15 >= 0; --var15)
                 {
@@ -222,38 +222,38 @@ public class ChunkProviderDense implements IChunkProvider
                         {
                             var12 = -1;
                         }
-                        else if (var17 == DivineRPG.denseGrass.blockID)
+                        else if (var17 == DivineRPGTwilight.denseGrass.blockID)
                         {
                             if (var12 == -1)
                             {
                                 if (var11 <= 0)
                                 {
                                     var13 = 0;
-                                    var14 = (byte)DivineRPG.denseGrass.blockID;
+                                    var14 = (byte)DivineRPGTwilight.denseGrass.blockID;
                                 }
                                 else if (var15 >= var4 - 4 && var15 <= var4 + 1)
                                 {
-                                    var13 = (byte)DivineRPG.denseGrass.blockID;
-                                    var14 = (byte)DivineRPG.denseGrass.blockID;
+                                    var13 = (byte)DivineRPGTwilight.denseGrass.blockID;
+                                    var14 = (byte)DivineRPGTwilight.denseGrass.blockID;
 
                                     if (var10)
                                     {
-                                        var13 = (byte)DivineRPG.twilightStone.blockID;
+                                        var13 = (byte)DivineRPGTwilight.twilightStone.blockID;
                                     }
 
                                     if (var10)
                                     {
-                                        var14 = (byte)DivineRPG.twilightStone.blockID;
+                                        var14 = (byte)DivineRPGTwilight.twilightStone.blockID;
                                     }
 
                                     if (var9)
                                     {
-                                        var13 = (byte)DivineRPG.twilightStone.blockID;
+                                        var13 = (byte)DivineRPGTwilight.twilightStone.blockID;
                                     }
 
                                     if (var9)
                                     {
-                                        var14 = (byte)DivineRPG.twilightStone.blockID;
+                                        var14 = (byte)DivineRPGTwilight.twilightStone.blockID;
                                     }
                                 }
 
@@ -498,7 +498,7 @@ public class ChunkProviderDense implements IChunkProvider
             var15 = this.hellRNG.nextInt(128);
             var16 = var5 + this.hellRNG.nextInt(16);
             (new WorldGenAugiteStone(50)).generate(this.worldObj, this.hellRNG, var14, var15, var16);
-            (new WorldGenTwilightMineable(DivineRPG.denseOre.blockID, 8)).generate(this.worldObj, this.hellRNG, var14, var15, var16);
+            (new WorldGenTwilightMineable(DivineRPGTwilight.denseOre.blockID, 8)).generate(this.worldObj, this.hellRNG, var14, var15, var16);
         }
         
         WorldGenDenseTrees var17 = new WorldGenDenseTrees(false);

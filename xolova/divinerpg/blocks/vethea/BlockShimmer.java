@@ -1,14 +1,15 @@
 package xolova.divinerpg.blocks.vethea;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockFlower;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
-public class BlockShimmer extends BlockVetheaPlant
+public class BlockShimmer extends BlockFlower
 {
-    public BlockShimmer(int par1, int par2)
+    public BlockShimmer(int par1)
     {
-        super(par1, par2);
+        super(par1);
         float var3 = 0.5F;
         float var4 = 0.015625F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, var4, 0.5F + var3);

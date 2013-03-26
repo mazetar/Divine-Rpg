@@ -12,7 +12,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
@@ -259,7 +259,7 @@ public class BlockMythrilPortal extends BlockBreakable
                     {
                         if (var6.dimension != TwilightBlockHelper.mythrilID)
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, TwilightBlockHelper.mythrilID, new TeleporterMythril(var6.mcServer.worldServerForDimension(DivineRPG.mythrilID)));
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, TwilightBlockHelper.mythrilID, new TeleporterMythril(var6.mcServer.worldServerForDimension(DivineRPGTwilight.mythrilID)));
                         }
                         else
                         {

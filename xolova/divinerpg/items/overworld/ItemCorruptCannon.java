@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -42,7 +42,7 @@ public class ItemCorruptCannon extends Item
     	
         if (!var2.isRemote)
         {
-           if (var5 || var3.inventory.hasItem(DivineRPG.corruptBullet.itemID))
+           if (var5 || var3.inventory.hasItem(DivineRPGTwilight.DivineRPGTwilight.itemID))
            {
         	   if (this.firetick == this.firemax && this.firemax != 0)
                {
@@ -53,7 +53,7 @@ public class ItemCorruptCannon extends Item
                	var2.playSoundAtEntity(var3, this.firesound, 1.0F, 1.0F);
                	if (!var5)
                	{
-               		var3.inventory.consumeInventoryItem(DivineRPG.corruptBullet.itemID);
+               		var3.inventory.consumeInventoryItem(DivineRPGTwilight.DivineRPGTwilight.itemID);
                	}
                	this.firetick = 0;
                }
@@ -88,7 +88,7 @@ public class ItemCorruptCannon extends Item
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 
     @Override

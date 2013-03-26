@@ -179,7 +179,7 @@ public class MapGenFloorCrystals extends MapGenBase
                                         {
                                             byte var53 = par5ArrayOfByte[var48];
 
-                                            if (var53 == DivineRPG.dreamgrass.blockID)
+                                            if (var53 == DivineRPGTwilight.dreamgrass.blockID)
                                             {
                                                 var49 = true;
                                             }
@@ -188,13 +188,13 @@ public class MapGenFloorCrystals extends MapGenBase
                                             {
                                                 if (var50 < 10)
                                                 {
-                                                    par5ArrayOfByte[var48] = (byte) DivineRPG.firecrystal.blockID;
+                                                    par5ArrayOfByte[var48] = (byte) DivineRPGTwilight.firecrystal.blockID;
                                                 }
                                                 else
                                                 {
-                                                    par5ArrayOfByte[var48] = (byte) DivineRPG.firecrystal.blockID;
+                                                    par5ArrayOfByte[var48] = (byte) DivineRPGTwilight.firecrystal.blockID;
 
-                                                    if (var49 && par5ArrayOfByte[var48 - 1] == DivineRPG.dreamdirt.blockID)
+                                                    if (var49 && par5ArrayOfByte[var48 - 1] == DivineRPGTwilight.dreamdirt.blockID)
                                                     {
                                                         par5ArrayOfByte[var48 - 1] = this.worldObj.getBiomeGenForCoords(var42 + par3 * 16, var45 + par4 * 16).topBlock;
                                                     }

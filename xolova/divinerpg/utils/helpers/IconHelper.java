@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public final class IconHelper {
 	
@@ -24,7 +24,7 @@ public final class IconHelper {
 			return;
 		loadedItemSprites = true;
 		
-		InputStream stream = DivineRPG.class.getResourceAsStream("/mods/DivineRPG/textures/items/list.txt");
+		InputStream stream = DivineRPGTwilight.class.getResourceAsStream("/mods/DivineRPG/textures/items/list.txt");
 		try {
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
 			String line = null;
@@ -54,7 +54,7 @@ public final class IconHelper {
 			return;
 		loadedBlockSprites = true;
 		
-		InputStream stream = DivineRPG.class.getResourceAsStream("/mods/DivineRPG/textures/blocks/list.txt");
+		InputStream stream = DivineRPGTwilight.class.getResourceAsStream("/mods/DivineRPG/textures/blocks/list.txt");
 		try {
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
 			String line = null;

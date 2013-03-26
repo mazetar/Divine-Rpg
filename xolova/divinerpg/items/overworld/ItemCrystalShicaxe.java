@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -102,7 +102,7 @@ public class ItemCrystalShicaxe extends ItemTool
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 
     @Override

@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -52,7 +52,7 @@ public class BlockSpikes extends Block
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile2;
+        return DivineRPGTwilight.textureFile2;
     }
 
     public void addCreativeItems(ArrayList var1)

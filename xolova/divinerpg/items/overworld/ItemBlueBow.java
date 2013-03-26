@@ -10,7 +10,7 @@ import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -39,7 +39,7 @@ public class ItemBlueBow extends ItemBow
         }
         else
         {
-            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(DivineRPG.bluefirebow.itemID))
+            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(DivineRPGTwilight.DivineRPGTwilight.itemID))
             {
                 var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
             }
@@ -55,11 +55,11 @@ public class ItemBlueBow extends ItemBow
     {
         this.lastDamage = -1;
         int var5 = this.getMaxItemUseDuration(var1) - var4;
-        var5 = (int)((float)var5 / DivineRPG.increaseBowTime);
+        var5 = (int)((float)var5 / DivineRPGTwilight.increaseBowTime);
         float var6 = (float)var5 / 20.0F;
         var6 = (var6 * var6 + var6 * 2.0F) / 3.0F;
 
-        if ((double)var6 >= 0.1D * (double)DivineRPG.increaseBowTime)
+        if ((double)var6 >= 0.1D * (double)DivineRPGTwilight.increaseBowTime)
         {
             boolean var7 = false;
 
@@ -89,17 +89,17 @@ public class ItemBlueBow extends ItemBow
         {
             int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
 
-            if ((float)var6 >= 40.0F * DivineRPG.increaseBowTime)
+            if ((float)var6 >= 40.0F * DivineRPGTwilight.increaseBowTime)
             {
                 return this.iconIndex + 4;
             }
 
-            if ((float)var6 >= 18.0F * DivineRPG.increaseBowTime)
+            if ((float)var6 >= 18.0F * DivineRPGTwilight.increaseBowTime)
             {
                 return this.iconIndex + 3;
             }
 
-            if ((float)var6 > 13.0F * DivineRPG.increaseBowTime)
+            if ((float)var6 > 13.0F * DivineRPGTwilight.increaseBowTime)
             {
                 return this.iconIndex + 2;
             }
@@ -148,7 +148,7 @@ public class ItemBlueBow extends ItemBow
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile2;
+        return DivineRPGTwilight.textureFile2;
     }
 
     @Override

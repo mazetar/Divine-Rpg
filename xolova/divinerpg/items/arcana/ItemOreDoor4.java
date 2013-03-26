@@ -8,7 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class ItemOreDoor4 extends Item
 {
@@ -39,7 +39,7 @@ public class ItemOreDoor4 extends Item
 
             if (this.doorMaterial == Material.wood)
             {
-                var11 = DivineRPG.oreDoor4;
+                var11 = DivineRPGTwilight.oreDoor4;
             }
             else
             {

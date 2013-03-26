@@ -13,7 +13,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockGlowingStairs extends BlockStairs
 {
@@ -239,7 +239,7 @@ public class BlockGlowingStairs extends BlockStairs
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 
     public void onBlockPlaced(World var1, int var2, int var3, int var4, int var5)

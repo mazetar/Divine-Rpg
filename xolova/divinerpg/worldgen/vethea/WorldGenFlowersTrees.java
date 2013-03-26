@@ -133,12 +133,12 @@ public class WorldGenFlowersTrees extends WorldGenerator
         pillar = new WorldGenVetheanPillar();
         layer3TreeBig = new WorldGenLayer3BigTree(false);
         
-        cracklespikes = new WorldGenFlowers(DivineRPG.cracklespike.blockID);
-        fernites = new WorldGenFlowers(DivineRPG.fernite.blockID);
-        bulatobes = new WorldGenFlowers(DivineRPG.bulatobe.blockID);
-        shinegrass = new WorldGenFlowers(DivineRPG.shineGrass.blockID);
-        shimmers = new WorldGenFlowers(DivineRPG.shimmer.blockID);
-        dreamglows = new WorldGenFlowers(DivineRPG.dreamglow.blockID);
+        cracklespikes = new WorldGenFlowers(DivineRPGTwilight.cracklespike.blockID);
+        fernites = new WorldGenFlowers(DivineRPGTwilight.fernite.blockID);
+        bulatobes = new WorldGenFlowers(DivineRPGTwilight.bulatobe.blockID);
+        shinegrass = new WorldGenFlowers(DivineRPGTwilight.shineGrass.blockID);
+        shimmers = new WorldGenFlowers(DivineRPGTwilight.shimmer.blockID);
+        dreamglows = new WorldGenFlowers(DivineRPGTwilight.dreamglow.blockID);
     }
 
 	@Override

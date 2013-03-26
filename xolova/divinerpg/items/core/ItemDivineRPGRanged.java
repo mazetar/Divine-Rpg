@@ -15,7 +15,7 @@ public abstract class ItemDivineRPGRanged extends ItemDivineRPG {
 
 	boolean unbreakable;
 	boolean displayDamageMeter = true;
-	int dmg;
+	protected int dmg;
 	
 	int ammoID = -1;
 	
@@ -26,7 +26,7 @@ public abstract class ItemDivineRPGRanged extends ItemDivineRPG {
 	public ItemDivineRPGRanged(int id, int maxDmg, int weaponDmg, boolean unbreakable) {
 		super(id);
 		setMaxDamage(maxDmg);
-		maxStackSize = 1;
+		setMaxStackSize(1);
 		dmg = weaponDmg;
 	}
 	
@@ -45,10 +45,11 @@ public abstract class ItemDivineRPGRanged extends ItemDivineRPG {
 	
 	@Override
     public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3) {
-        if (!var2.isRemote) {
+        if (!var2.isRemote && checkAndConsumeAmmo(var1, var2, var3)) {
         	if(sound(var1, var2, var3) != null)
         		var2.playSoundAtEntity(var3, sound(var1, var2, var3), 1.0F, 1.0F);
-            var2.spawnEntityInWorld(projectile(var1, var2, var3));
+           
+        	var2.spawnEntityInWorld(projectile(var1, var2, var3));
             if(!unbreakable)
             	var1.damageItem(1, var3);
             
@@ -59,7 +60,7 @@ public abstract class ItemDivineRPGRanged extends ItemDivineRPG {
     }
 	
 	public boolean checkAndConsumeAmmo(ItemStack stack, World world, EntityPlayer player) {
-		if(ammoID == -1)
+		if(ammoID == -1 || player.capabilities.isCreativeMode)
 			return true; // No ammo required
 		
 		return player.inventory.consumeInventoryItem(ammoID);

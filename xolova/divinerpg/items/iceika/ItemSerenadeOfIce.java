@@ -7,7 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.entities.iceika.projectile.EntityIce;
 import xolova.divinerpg.items.core.ItemDivineRPGRanged;
 import cpw.mods.fml.relauncher.Side;
@@ -17,7 +17,7 @@ public class ItemSerenadeOfIce extends ItemDivineRPGRanged {
 
 	public ItemSerenadeOfIce(int id) {
 		super(id, 100, 0);
-		setIconIndex(3, 14, 8);
+		setIconIndex(3, 8, 14);
 	}
 
 	@Override

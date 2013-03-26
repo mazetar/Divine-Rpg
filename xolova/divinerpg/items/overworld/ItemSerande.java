@@ -11,7 +11,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -105,7 +105,7 @@ public class ItemSerande extends Item
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 
     @Override

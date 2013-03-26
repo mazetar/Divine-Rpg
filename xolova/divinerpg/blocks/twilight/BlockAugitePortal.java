@@ -11,7 +11,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
@@ -177,7 +177,7 @@ public class BlockAugitePortal extends BlockBreakable
                 ;
             }
 
-            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == DivineRPG.mythilBlock.blockID)
+            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == DivineRPGTwilight.DivineRPGTwilight.blockID)
             {
                 boolean var10 = var1.getBlockId(var2 - 1, var3, var4) == this.blockID || var1.getBlockId(var2 + 1, var3, var4) == this.blockID;
                 boolean var11 = var1.getBlockId(var2, var3, var4 - 1) == this.blockID || var1.getBlockId(var2, var3, var4 + 1) == this.blockID;
@@ -255,9 +255,9 @@ public class BlockAugitePortal extends BlockBreakable
                     	
                     	//var6.addStat(AchievementPageDivineRPG.possibilities, 1); TODO
                         var1.playSound((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "xolovon.AugitePortal", 0.5F, ((EntityPlayerMP) var5).getRNG().nextFloat() * 0.4F + 0.8F, false);
-                        if (var6.dimension != DivineRPG.augiteID)
+                        if (var6.dimension != DivineRPGTwilight.augiteID)
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, TwilightBlockHelper.augiteID, new TeleporterAugite(var6.mcServer.worldServerForDimension(DivineRPG.augiteID)));
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, TwilightBlockHelper.augiteID, new TeleporterAugite(var6.mcServer.worldServerForDimension(DivineRPGTwilight.augiteID)));
                         }
                         else
                         {

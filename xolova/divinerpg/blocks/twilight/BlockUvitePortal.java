@@ -11,7 +11,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -167,7 +167,7 @@ public class BlockUvitePortal extends BlockBreakable
             ;
         }
 
-        if (var1.getBlockId(var2, var8 - 1, var4) != DivineRPG.azuriteBlock.blockID)
+        if (var1.getBlockId(var2, var8 - 1, var4) != DivineRPGTwilight.DivineRPGTwilight.blockID)
         {
             var1.setBlockWithNotify(var2, var3, var4, 0);
         }
@@ -189,7 +189,7 @@ public class BlockUvitePortal extends BlockBreakable
                 {
                     var1.setBlockWithNotify(var2, var3, var4, 0);
                 }
-                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.azuriteBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != DivineRPG.azuriteBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
+                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.azuriteBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != DivineRPGTwilight.DivineRPGTwilight.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
                     var1.setBlockWithNotify(var2, var3, var4, 0);
                 }
@@ -258,7 +258,7 @@ public class BlockUvitePortal extends BlockBreakable
                         var1.playSound((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "xolovon.UvitePortal", 0.5F, ((EntityPlayerMP) var5).getRNG().nextFloat() * 0.4F + 0.8F, false);
                         if (var6.dimension != TwilightHelper.uviteID)
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DivineRPG.uviteID, new TeleporterUvite(var6.mcServer.worldServerForDimension(DivineRPG.uviteID)));
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DivineRPGTwilight.uviteID, new TeleporterUvite(var6.mcServer.worldServerForDimension(DivineRPGTwilight.uviteID)));
                         }
                         else
                         {

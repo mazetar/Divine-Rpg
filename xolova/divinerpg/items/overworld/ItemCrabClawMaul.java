@@ -9,7 +9,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class ItemCrabClawMaul extends ItemSword
 {
@@ -109,6 +109,6 @@ public class ItemCrabClawMaul extends ItemSword
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 }

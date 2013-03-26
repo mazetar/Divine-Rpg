@@ -7,7 +7,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.entities.twilight.projectile.EntityPurpleFireball;
 
 public class EntityScorcher extends EntityMob
@@ -242,7 +242,7 @@ public class EntityScorcher extends EntityMob
 
             for (int var4 = 0; var4 < var3; ++var4)
             {
-                this.dropItem(DivineRPG.purpleBlaze.itemID, 1);
+                this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
             }
         }
     }

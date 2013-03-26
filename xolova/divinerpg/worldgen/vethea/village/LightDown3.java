@@ -20,23 +20,23 @@ public class LightDown3 extends WorldGenerator
 
 	public boolean generate(World world, Random rand, int i, int j, int k) {
 
-		world.setBlock(i + 0, j + 7, k + 0, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 0, j + 7, k + 1, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 0, j + 7, k + 2, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 0, k + 1, DivineRPG.firelight.blockID);
-		world.setBlock(i + 1, j + 1, k + 1, DivineRPG.firelight.blockID);
-		world.setBlock(i + 1, j + 2, k + 1, DivineRPG.firelight.blockID);
-		world.setBlock(i + 1, j + 3, k + 1, DivineRPG.firelight.blockID);
-		world.setBlock(i + 1, j + 4, k + 1, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 5, k + 1, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 7, k + 0, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 7, k + 1, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 7, k + 2, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 5, k + 1, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 6, k + 1, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 7, k + 0, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 7, k + 1, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 7, k + 2, DivineRPG.darkEverstone.blockID);
+		world.setBlock(i + 0, j + 7, k + 0, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 0, j + 7, k + 1, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 0, j + 7, k + 2, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 0, k + 1, DivineRPGTwilight.firelight.blockID);
+		world.setBlock(i + 1, j + 1, k + 1, DivineRPGTwilight.firelight.blockID);
+		world.setBlock(i + 1, j + 2, k + 1, DivineRPGTwilight.firelight.blockID);
+		world.setBlock(i + 1, j + 3, k + 1, DivineRPGTwilight.firelight.blockID);
+		world.setBlock(i + 1, j + 4, k + 1, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 5, k + 1, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 7, k + 0, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 7, k + 1, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 7, k + 2, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 5, k + 1, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 6, k + 1, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 7, k + 0, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 7, k + 1, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 7, k + 2, DivineRPGTwilight.darkEverstone.blockID);
 
 		return true;
 	}

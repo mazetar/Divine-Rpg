@@ -7,13 +7,14 @@ import net.minecraft.world.World;
 
 public abstract class ItemDivineRPGRangedConsumable extends ItemDivineRPGRanged {
 
-	public ItemDivineRPGRangedConsumable(int id, int maxDmg, int weaponDmg) {
-		super(id, maxDmg, weaponDmg, false);
+	public ItemDivineRPGRangedConsumable(int id, int weaponDmg) {
+		super(id, 0, weaponDmg, false);
+		setMaxStackSize(64);
 	}
 	
 	@Override
 	public ItemStack consume(ItemStack var1, World var2, EntityPlayer var3) {
 		var1.stackSize--;
-		return var1.stackSize == 0 ? null : var1;
+		return var1;
 	}
 }

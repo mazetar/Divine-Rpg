@@ -2,7 +2,7 @@ package xolova.blued00r.divinerpg.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockLightStone1 extends Block
 {
@@ -14,6 +14,6 @@ public class BlockLightStone1 extends Block
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile1;
+        return DivineRPGTwilight.textureFile1;
     }
 }

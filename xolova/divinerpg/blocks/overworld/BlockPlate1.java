@@ -2,7 +2,7 @@ package xolova.blued00r.divinerpg.blocks;
 
 import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.Material;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockPlate1 extends BlockPlate
 {
@@ -13,6 +13,6 @@ public class BlockPlate1 extends BlockPlate
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile1;
+        return DivineRPGTwilight.textureFile1;
     }
 }

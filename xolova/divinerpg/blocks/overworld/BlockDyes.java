@@ -7,7 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -88,52 +88,52 @@ public class BlockDyes extends Block
         switch (var1)
         {
             case 0:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 1:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 2:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 3:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 4:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 5:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 6:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 7:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 8:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 9:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 10:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 11:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 12:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 13:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 14:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             default:
-                return DivineRPG.dyeblocks.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
         }
     }
 
@@ -250,7 +250,7 @@ public class BlockDyes extends Block
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 
     @SideOnly(Side.CLIENT)

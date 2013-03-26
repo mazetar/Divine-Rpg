@@ -55,13 +55,13 @@ public class WorldGenGiantTree extends WorldGenerator {
                 }
         }
 
-        if (world.getBlockId(x, y - 1, z) !=DivineRPG.iceikaGrass.blockID  || y >= 256 - height - 1)
+        if (world.getBlockId(x, y - 1, z) !=DivineRPGTwilight.iceikaGrass.blockID  || y >= 256 - height - 1)
             return false;
 
-        world.setBlock(x, y - 1, z, DivineRPG.iceikaGrass.blockID );
-        world.setBlock(x - 1, y - 1, z, DivineRPG.iceikaGrass.blockID );
-        world.setBlock(x, y - 1, z - 1, DivineRPG.iceikaGrass.blockID );
-        world.setBlock(x - 1, y - 1, z - 1, DivineRPG.iceikaGrass.blockID );
+        world.setBlock(x, y - 1, z, DivineRPGTwilight.iceikaGrass.blockID );
+        world.setBlock(x - 1, y - 1, z, DivineRPGTwilight.iceikaGrass.blockID );
+        world.setBlock(x, y - 1, z - 1, DivineRPGTwilight.iceikaGrass.blockID );
+        world.setBlock(x - 1, y - 1, z - 1, DivineRPGTwilight.iceikaGrass.blockID );
         int l1 = rand.nextInt(2);
         int j2 = 1;
         boolean flag1 = false;
@@ -81,13 +81,13 @@ public class WorldGenGiantTree extends WorldGenerator {
                             && (block == null || block.canBeReplacedByLeaves(world, i4, k3, l4)))
                     {
                         setBlockandMetadataIfChunkExists(world, i4, k3, l4,
-                                DivineRPG.iceikaLeaves.blockID, 0);
+                                DivineRPGTwilight.iceikaLeaves.blockID, 0);
                         setBlockandMetadataIfChunkExists(world, i4 - 1, k3, l4,
-                        		DivineRPG.iceikaLeaves.blockID, 0);
+                        		DivineRPGTwilight.iceikaLeaves.blockID, 0);
                         setBlockandMetadataIfChunkExists(world, i4, k3, l4 - 1,
-                        		DivineRPG.iceikaLeaves.blockID, 0);
+                        		DivineRPGTwilight.iceikaLeaves.blockID, 0);
                         setBlockandMetadataIfChunkExists(world, i4 - 1, k3, l4 - 1,
-                        		DivineRPG.iceikaLeaves.blockID, 0);
+                        		DivineRPGTwilight.iceikaLeaves.blockID, 0);
                     }
                 }
             }
@@ -108,13 +108,13 @@ public class WorldGenGiantTree extends WorldGenerator {
 
             if (Block.blocksList[id] == null || Block.blocksList[id].isLeaves(world, x, y + l3, z))
             {
-                setBlockAndMetadata(world, x, y + l3, z, DivineRPG.iceikaLog.blockID,
+                setBlockAndMetadata(world, x, y + l3, z, DivineRPGTwilight.iceikaLog.blockID,
                         0);
-                setBlockAndMetadata(world, x - 1, y + l3, z, DivineRPG.iceikaLog.blockID,
+                setBlockAndMetadata(world, x - 1, y + l3, z, DivineRPGTwilight.iceikaLog.blockID,
                         0);
-                setBlockAndMetadata(world, x, y + l3, z - 1, DivineRPG.iceikaLog.blockID,
+                setBlockAndMetadata(world, x, y + l3, z - 1, DivineRPGTwilight.iceikaLog.blockID,
                         0);
-                setBlockAndMetadata(world, x - 1, y + l3, z - 1, DivineRPG.iceikaLog.blockID,
+                setBlockAndMetadata(world, x - 1, y + l3, z - 1, DivineRPGTwilight.iceikaLog.blockID,
                         0);
             }
         }

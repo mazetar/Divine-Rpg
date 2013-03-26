@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Facing;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class ItemAyeracoSpawner extends Item
 {
@@ -109,11 +109,11 @@ public class ItemAyeracoSpawner extends Item
     	var4.setLocationAndAngles(par3 - 5, par4 + 4, par5 - 12, par1.rand.nextFloat() * 360.0F, 0.0F);
     	var5.setLocationAndAngles(par3 - 8, par4 + 4, par5 + 8, par1.rand.nextFloat() * 360.0F, 0.0F);
     	
-    	par1.setBlockWithNotify((int)(par3 + 15), (int)(par4),(int)(par5), DivineRPG.ayeracoBeamBlue.blockID);
-    	par1.setBlockWithNotify((int)(par3 + 8), (int)(par4),(int)(par5 + 8), DivineRPG.ayeracoBeamGreen.blockID);
-    	par1.setBlockWithNotify((int)(par3 + 5), (int)(par4),(int)(par5 - 12), DivineRPG.ayeracoBeamRed.blockID);
-    	par1.setBlockWithNotify((int)(par3 - 5), (int)(par4),(int)(par5 - 12), DivineRPG.ayeracoBeamYellow.blockID);
-    	par1.setBlockWithNotify((int)(par3 - 8), (int)(par4),(int)(par5 + 8), DivineRPG.ayeracoBeamPurple.blockID);
+    	par1.setBlockWithNotify((int)(par3 + 15), (int)(par4),(int)(par5), DivineRPGTwilight.DivineRPGTwilight.blockID);
+    	par1.setBlockWithNotify((int)(par3 + 8), (int)(par4),(int)(par5 + 8), DivineRPGTwilight.DivineRPGTwilight.blockID);
+    	par1.setBlockWithNotify((int)(par3 + 5), (int)(par4),(int)(par5 - 12), DivineRPGTwilight.DivineRPGTwilight.blockID);
+    	par1.setBlockWithNotify((int)(par3 - 5), (int)(par4),(int)(par5 - 12), DivineRPGTwilight.DivineRPGTwilight.blockID);
+    	par1.setBlockWithNotify((int)(par3 - 8), (int)(par4),(int)(par5 + 8), DivineRPGTwilight.DivineRPGTwilight.blockID);
 
     	var1.initOthers(var2, var3, var4, var5);
     	var2.initOthers(var1, var3, var4, var5);

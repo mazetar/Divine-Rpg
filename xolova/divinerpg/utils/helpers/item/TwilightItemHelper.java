@@ -92,9 +92,9 @@ public class TwilightItemHelper
 
 	public static void init()
 	{
-		DraviteGem = new ItemDivineRPG(x.DraviteGemID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteChunk = new ItemDivineRPG(x.DraviteChunkID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteFragments = new ItemDivineRPG(x.DraviteFragmentsID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteGem = new ItemDivineRPG(x.DraviteGemID, 2).setIconIndex(2, 11, 6).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteChunk = new ItemDivineRPG(x.DraviteChunkID, 2).setIconIndex(2, 2, 6).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteFragments = new ItemDivineRPG(x.DraviteFragmentsID, 2).setIconIndex(2, 15, 9).setCreativeTab(CreativeTabs.tabMisc);
 		DraviteDust = new ItemDivineRPG(x.DraviteDustID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
 		DraviteBlade = new ItemDivineRPG(x.DraviteBladeID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
 		DravitePhaser = new ItemDivineRPG(x.DravitePhaserID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);

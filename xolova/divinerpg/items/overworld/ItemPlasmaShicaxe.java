@@ -2,7 +2,7 @@ package xolova.blued00r.divinerpg.items;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumToolMaterial;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class ItemPlasmaShicaxe extends ItemCrystalShicaxe
 {
@@ -21,6 +21,6 @@ public class ItemPlasmaShicaxe extends ItemCrystalShicaxe
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 }

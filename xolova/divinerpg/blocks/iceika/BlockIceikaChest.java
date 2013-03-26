@@ -16,7 +16,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -143,7 +143,7 @@ public class BlockIceikaChest extends BlockContainer
      */
     protected int getSeedItem()
     {
-        return DivineRPG.iceikaChest2.blockID;
+        return DivineRPGTwilight.DivineRPGTwilight.blockID;
     }
 
     /**
@@ -151,7 +151,7 @@ public class BlockIceikaChest extends BlockContainer
      */
     protected int getCropItem()
     {
-        return DivineRPG.snowFlake.itemID;
+        return DivineRPGTwilight.DivineRPGTwilight.itemID;
     }
 
     /**

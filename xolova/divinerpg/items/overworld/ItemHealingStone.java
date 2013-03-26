@@ -4,7 +4,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class ItemHealingStone extends Item
 {
@@ -22,7 +22,7 @@ public class ItemHealingStone extends Item
         {
             var2.playSoundAtEntity(var3, "xolovon.HealingStone", 1.0F, 1.0F);
             var3.setEntityHealth(20);
-            var3.inventory.consumeInventoryItem(DivineRPG.healingStone.itemID);
+            var3.inventory.consumeInventoryItem(DivineRPGTwilight.DivineRPGTwilight.itemID);
         }
         else
         {
@@ -34,6 +34,6 @@ public class ItemHealingStone extends Item
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 }

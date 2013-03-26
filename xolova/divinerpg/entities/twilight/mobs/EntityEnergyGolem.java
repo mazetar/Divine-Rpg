@@ -5,7 +5,7 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -109,14 +109,14 @@ public class EntityEnergyGolem extends EntityZombie
 
         for (var4 = 0; var4 < var3; ++var4)
         {
-            this.dropItem(DivineRPG.pinkSeeds.itemID, 1);
+            this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
         }
 
         for (var4 = 0; var4 < var3; ++var4)
         {
-            this.dropItem(DivineRPG.purpleSeeds.itemID, 1);
+            this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
         }
-        this.dropItem(DivineRPG.magicMeatPlus.itemID, 1);
+        this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
     }
 
     /**

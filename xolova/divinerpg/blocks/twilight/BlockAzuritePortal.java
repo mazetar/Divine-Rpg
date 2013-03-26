@@ -13,7 +13,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.Utils;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.client.FMLClientHandler;
@@ -85,12 +85,12 @@ public class BlockAzuritePortal extends BlockBreakable
         byte var5 = 0;
         byte var6 = 0;
 
-        if (var1.getBlockId(var2 - 1, var3, var4) == TwilightBlockHelper.serenityBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == DivineRPG.serenityBlock.blockID)
+        if (var1.getBlockId(var2 - 1, var3, var4) == TwilightBlockHelper.serenityBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == DivineRPGTwilight.DivineRPGTwilight.blockID)
         {
             var5 = 1;
         }
 
-        if (var1.getBlockId(var2, var3, var4 - 1) == TwilightBlockHelper.serenityBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == DivineRPG.serenityBlock.blockID)
+        if (var1.getBlockId(var2, var3, var4 - 1) == TwilightBlockHelper.serenityBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == DivineRPGTwilight.DivineRPGTwilight.blockID)
         {
             var6 = 1;
         }
@@ -194,7 +194,7 @@ public class BlockAzuritePortal extends BlockBreakable
                 {
                     var1.func_94571_i(var2, var3, var4);
                 }
-                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.serenityBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != DivineRPG.serenityBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
+                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.serenityBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != DivineRPGTwilight.DivineRPGTwilight.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
                     var1.func_94571_i(var2, var3, var4);
                 }
@@ -263,7 +263,7 @@ public class BlockAzuritePortal extends BlockBreakable
                         var1.playSound((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "xolovon.AzuritePortal", 0.5F, ((EntityPlayerMP) var5).getRNG().nextFloat() * 0.4F + 0.8F, false);
                         if (var6.dimension != Utils.azuriteID)
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DivineRPG.azuriteID, new TeleporterAzurite(var6.mcServer.worldServerForDimension(DivineRPG.azuriteID)));
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DivineRPGTwilight.azuriteID, new TeleporterAzurite(var6.mcServer.worldServerForDimension(DivineRPGTwilight.azuriteID)));
                         }
                         else
                         {

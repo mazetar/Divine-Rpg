@@ -15,7 +15,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -167,7 +167,7 @@ public class BlockTwilightFurnace extends BlockContainer
 
             if (var10 != null)
             {
-                var5.openGui(DivineRPG.instance, 0, var1, var2, var3, var4);
+                var5.openGui(DivineRPGTwilight.instance, 0, var1, var2, var3, var4);
                 return true;
             }
             else

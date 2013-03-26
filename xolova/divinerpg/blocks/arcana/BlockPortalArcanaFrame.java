@@ -10,7 +10,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockPortalArcanaFrame extends Block
 {
@@ -99,15 +99,15 @@ public class BlockPortalArcanaFrame extends Block
                 && var1.getBlockId(var2 + 1, var3, var4 - 1) == this.blockID && var1.getBlockId(var2 + 2, var3, var4 - 1) == this.blockID
                 && var1.getBlockId(var2 + 3, var3, var4 - 1) == this.blockID)
         {
-            var1.setBlockWithNotify(var2 + 1, var3, var4, DivineRPG.arcanaPortal.blockID);
-            var1.setBlockWithNotify(var2 + 2, var3, var4, DivineRPG.arcanaPortal.blockID);
-            var1.setBlockWithNotify(var2 + 3, var3, var4, DivineRPG.arcanaPortal.blockID);
-            var1.setBlockWithNotify(var2 + 1, var3, var4 + 1, DivineRPG.arcanaPortal.blockID);
-            var1.setBlockWithNotify(var2 + 2, var3, var4 + 1, DivineRPG.arcanaPortal.blockID);
-            var1.setBlockWithNotify(var2 + 3, var3, var4 + 1, DivineRPG.arcanaPortal.blockID);
-            var1.setBlockWithNotify(var2 + 1, var3, var4 + 2, DivineRPG.arcanaPortal.blockID);
-            var1.setBlockWithNotify(var2 + 2, var3, var4 + 2, DivineRPG.arcanaPortal.blockID);
-            var1.setBlockWithNotify(var2 + 3, var3, var4 + 2, DivineRPG.arcanaPortal.blockID);
+            var1.setBlockWithNotify(var2 + 1, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlockWithNotify(var2 + 2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlockWithNotify(var2 + 3, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlockWithNotify(var2 + 1, var3, var4 + 1, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlockWithNotify(var2 + 2, var3, var4 + 1, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlockWithNotify(var2 + 3, var3, var4 + 1, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlockWithNotify(var2 + 1, var3, var4 + 2, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlockWithNotify(var2 + 2, var3, var4 + 2, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlockWithNotify(var2 + 3, var3, var4 + 2, DivineRPGTwilight.DivineRPGTwilight.blockID);
         }
     }
 

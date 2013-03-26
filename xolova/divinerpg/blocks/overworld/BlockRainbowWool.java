@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockRainbowWool extends Block
 {
@@ -17,7 +17,7 @@ public class BlockRainbowWool extends Block
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile1;
+        return DivineRPGTwilight.textureFile1;
     }
 
     /**

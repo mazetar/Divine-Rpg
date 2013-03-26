@@ -3,14 +3,14 @@ package xolova.blued00r.divinerpg.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockIceikaLog extends Block
 {
     public BlockIceikaLog(int var1)
     {
         super(var1, 4, Material.wood);
-        this.setCreativeTab(DivineRPG.tabBlocks);
+        this.setCreativeTab(DivineRPGTwilight.tabBlocks);
     }
 
     /**

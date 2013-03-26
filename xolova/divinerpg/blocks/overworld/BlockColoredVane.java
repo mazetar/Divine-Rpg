@@ -7,7 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -58,22 +58,22 @@ public class BlockColoredVane extends Block
         switch (var1)
         {
             case 0:
-                return DivineRPG.clrdvane.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 1:
-                return DivineRPG.clrdvane.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 2:
-                return DivineRPG.clrdvane.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 3:
-                return DivineRPG.clrdvane.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 4:
-                return DivineRPG.clrdvane.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             default:
-                return DivineRPG.clrdvane.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
         }
     }
 
@@ -130,7 +130,7 @@ public class BlockColoredVane extends Block
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile1;
+        return DivineRPGTwilight.textureFile1;
     }
 
     @SideOnly(Side.CLIENT)

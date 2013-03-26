@@ -13,7 +13,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -238,11 +238,11 @@ public class BlockStarBridgeOn extends Block
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
                 this.altpowered = true;
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.starBridgeOn.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
             }
             else if (!this.powered && this.altpowered == true)
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.starBridgeOn.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
             }
         }
     }
@@ -351,11 +351,11 @@ public class BlockStarBridgeOn extends Block
             else if (!this.powered && par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))
             {
                 this.altpowered = true;
-                par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.starBridgeOn.blockID);
+                par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
             }
             else if (!this.powered && this.altpowered == true)
             {
-                par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.starBridgeOn.blockID);
+                par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
             }
 
             super.onNeighborBlockChange(par1World, par2, par3, par4, par5);
@@ -370,7 +370,7 @@ public class BlockStarBridgeOn extends Block
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
         {
-            var1.setBlockWithNotify(var2, var3, var4, DivineRPG.starBridge.blockID);
+            var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
         }
     }
 
@@ -495,7 +495,7 @@ public class BlockStarBridgeOn extends Block
     {
         int var5 = par0IBlockAccess.getBlockId(par1, par2, par3);
 
-        if (var5 == DivineRPG.starBridge.blockID)
+        if (var5 == DivineRPGTwilight.DivineRPGTwilight.blockID)
         {
             return true;
         }

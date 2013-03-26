@@ -12,7 +12,7 @@ public class WorldProviderIceika extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerIceika(DivineRPG.IceikaMountains);
+        this.worldChunkMgr = new WorldChunkManagerIceika(DivineRPGTwilight.IceikaMountains);
     }
 
     /**

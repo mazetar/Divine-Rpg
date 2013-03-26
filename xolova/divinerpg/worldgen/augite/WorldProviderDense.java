@@ -12,7 +12,7 @@ public class WorldProviderDense extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.denseBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPGTwilight.denseBiome, 0.5F, 0.5F);
     }
 
     /**

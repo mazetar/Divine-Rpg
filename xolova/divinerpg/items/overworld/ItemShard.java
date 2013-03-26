@@ -1,7 +1,7 @@
 package xolova.blued00r.divinerpg.items;
 
 import net.minecraft.item.Item;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class ItemShard extends Item
 {
@@ -12,6 +12,6 @@ public class ItemShard extends Item
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile2;
+        return DivineRPGTwilight.textureFile2;
     }
 }

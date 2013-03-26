@@ -21,24 +21,24 @@ public class FloatingTree4 extends WorldGenerator
 
 	public boolean generate(World world, Random rand, int i, int j, int k) {
 
-		world.setBlock(i + 0, j + 2, k + 1, DivineRPG.dreamstone.blockID);
-		world.setBlock(i + 1, j + 2, k + 0, DivineRPG.dreamstone.blockID);
-		world.setBlock(i + 1, j + 2, k + 1, DivineRPG.dreamstone.blockID);
-		world.setBlock(i + 1, j + 2, k + 2, DivineRPG.dreamstone.blockID);
-		world.setBlock(i + 1, j + 3, k + 1, DivineRPG.hyrewood.blockID);
-		world.setBlockAndMetadata(i + 1, j + 4, k + 1, DivineRPG.hyrewood.blockID, 4);
-		world.setBlock(i + 2, j + 2, k + 1, DivineRPG.dreamstone.blockID);
-		world.setBlockAndMetadata(i + 2, j + 4, k + 1, DivineRPG.hyrewood.blockID, 4);
-		world.setBlock(i + 3, j + 1, k + 1, DivineRPG.hyrewoodLeaves.blockID);
-		world.setBlockAndMetadata(i + 3, j + 4, k + 1, DivineRPG.hyrewood.blockID, 4);
-		world.setBlock(i + 4, j + 0, k + 1, DivineRPG.hyrewoodLeaves.blockID);
-		world.setBlock(i + 4, j + 1, k + 0, DivineRPG.hyrewoodLeaves.blockID);
-		world.setBlock(i + 4, j + 1, k + 1, DivineRPG.hyrewood.blockID);
-		world.setBlock(i + 4, j + 1, k + 2, DivineRPG.hyrewoodLeaves.blockID);
-		world.setBlock(i + 4, j + 2, k + 1, DivineRPG.hyrewood.blockID);
-		world.setBlock(i + 4, j + 3, k + 1, DivineRPG.hyrewood.blockID);
-		world.setBlock(i + 4, j + 4, k + 1, DivineRPG.hyrewood.blockID);
-		world.setBlock(i + 5, j + 1, k + 1, DivineRPG.hyrewoodLeaves.blockID);
+		world.setBlock(i + 0, j + 2, k + 1, DivineRPGTwilight.dreamstone.blockID);
+		world.setBlock(i + 1, j + 2, k + 0, DivineRPGTwilight.dreamstone.blockID);
+		world.setBlock(i + 1, j + 2, k + 1, DivineRPGTwilight.dreamstone.blockID);
+		world.setBlock(i + 1, j + 2, k + 2, DivineRPGTwilight.dreamstone.blockID);
+		world.setBlock(i + 1, j + 3, k + 1, DivineRPGTwilight.hyrewood.blockID);
+		world.setBlockAndMetadata(i + 1, j + 4, k + 1, DivineRPGTwilight.hyrewood.blockID, 4);
+		world.setBlock(i + 2, j + 2, k + 1, DivineRPGTwilight.dreamstone.blockID);
+		world.setBlockAndMetadata(i + 2, j + 4, k + 1, DivineRPGTwilight.hyrewood.blockID, 4);
+		world.setBlock(i + 3, j + 1, k + 1, DivineRPGTwilight.hyrewoodLeaves.blockID);
+		world.setBlockAndMetadata(i + 3, j + 4, k + 1, DivineRPGTwilight.hyrewood.blockID, 4);
+		world.setBlock(i + 4, j + 0, k + 1, DivineRPGTwilight.hyrewoodLeaves.blockID);
+		world.setBlock(i + 4, j + 1, k + 0, DivineRPGTwilight.hyrewoodLeaves.blockID);
+		world.setBlock(i + 4, j + 1, k + 1, DivineRPGTwilight.hyrewood.blockID);
+		world.setBlock(i + 4, j + 1, k + 2, DivineRPGTwilight.hyrewoodLeaves.blockID);
+		world.setBlock(i + 4, j + 2, k + 1, DivineRPGTwilight.hyrewood.blockID);
+		world.setBlock(i + 4, j + 3, k + 1, DivineRPGTwilight.hyrewood.blockID);
+		world.setBlock(i + 4, j + 4, k + 1, DivineRPGTwilight.hyrewood.blockID);
+		world.setBlock(i + 5, j + 1, k + 1, DivineRPGTwilight.hyrewoodLeaves.blockID);
 
 		return true;
 	}

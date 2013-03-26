@@ -2,7 +2,7 @@ package xolova.blued00r.divinerpg.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockEucalyptusPlanks extends Block
 {
@@ -14,6 +14,6 @@ public class BlockEucalyptusPlanks extends Block
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 }

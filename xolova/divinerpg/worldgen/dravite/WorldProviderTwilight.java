@@ -12,7 +12,7 @@ public class WorldProviderTwilight extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.serenityBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPGTwilight.serenityBiome, 0.5F, 0.5F);
     }
 
     /**

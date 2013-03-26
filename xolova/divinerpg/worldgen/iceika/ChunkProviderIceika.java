@@ -159,7 +159,7 @@ public class ChunkProviderIceika implements IChunkProvider
                             {
                                 if ((var49 += var47) > 0.0D)
                                 {
-                                    var3[var43 += var44] = (byte)DivineRPG.iceikaStone.blockID;
+                                    var3[var43 += var44] = (byte)DivineRPGTwilight.iceikaStone.blockID;
                                 }
                                 else if (var12 * 8 + var31 < var6)
                                 {
@@ -225,7 +225,7 @@ public class ChunkProviderIceika implements IChunkProvider
                                 if (var12 <= 0)
                                 {
                                     var14 = 0;
-                                    var15 = (byte)DivineRPG.iceikaStone.blockID;
+                                    var15 = (byte)DivineRPGTwilight.iceikaStone.blockID;
                                 }
                                 else if (var16 >= var5 - 4 && var16 <= var5 + 1)
                                 {

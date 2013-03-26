@@ -72,9 +72,9 @@ public class WorldGenMythrilTrees extends WorldGenerator
             {
                 var8 = par1World.getBlockId(par3, par4 - 1, par5);
 
-                if ((var8 == DivineRPG.mythilGrass.blockID || var8 == DivineRPG.mythilDirt.blockID) && par4 < 256 - var6 - 1)
+                if ((var8 == DivineRPGTwilight.mythilGrass.blockID || var8 == DivineRPGTwilight.mythilDirt.blockID) && par4 < 256 - var6 - 1)
                 {
-                    this.setBlock(par1World, par3, par4 - 1, par5, DivineRPG.mythilDirt.blockID);
+                    this.setBlock(par1World, par3, par4 - 1, par5, DivineRPGTwilight.mythilDirt.blockID);
                     int var16;
 
                     for (var16 = par4 - 3 + var6; var16 <= par4 + var6; ++var16)
@@ -95,7 +95,7 @@ public class WorldGenMythrilTrees extends WorldGenerator
                                 if ((Math.abs(var13) != var11 || Math.abs(var15) != var11 || par2Random.nextInt(2) != 0 && var10 != 0) && 
                                     (block == null || block.canBeReplacedByLeaves(par1World, var12, var16, var14)))
                                 {
-                                    this.setBlockAndMetadata(par1World, var12, var16, var14, DivineRPG.mythilLeaves.blockID, 2);
+                                    this.setBlockAndMetadata(par1World, var12, var16, var14, DivineRPGTwilight.mythilLeaves.blockID, 2);
                                 }
                             }
                         }
@@ -109,7 +109,7 @@ public class WorldGenMythrilTrees extends WorldGenerator
 
                         if (var10 == 0 || block == null || block.isLeaves(par1World, par3, par4 + var16, par5))
                         {
-                            this.setBlockAndMetadata(par1World, par3, par4 + var16, par5, DivineRPG.whiteWood.blockID, 2);
+                            this.setBlockAndMetadata(par1World, par3, par4 + var16, par5, DivineRPGTwilight.whiteWood.blockID, 2);
                         }
                     }
 

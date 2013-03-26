@@ -7,7 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -41,7 +41,7 @@ public class BlockInfusionTable extends BlockContainer
 		{
 			return false;
 		}
-		par5EntityPlayer.openGui(DivineRPG.instance, 18, world, x, y, z);
+		par5EntityPlayer.openGui(DivineRPGTwilight.instance, 18, world, x, y, z);
 		return true;
     	
     }

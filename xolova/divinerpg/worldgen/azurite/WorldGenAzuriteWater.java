@@ -20,11 +20,11 @@ public class WorldGenAzuriteWater extends WorldGenerator
 
     public boolean generate(World par1World, Random par2Random, int par3, int par4, int par5)
     {
-        if (par1World.getBlockId(par3, par4 + 1, par5) != DivineRPG.azuriteGrass.blockID)
+        if (par1World.getBlockId(par3, par4 + 1, par5) != DivineRPGTwilight.azuriteGrass.blockID)
         {
             return false;
         }
-        else if (par1World.getBlockId(par3, par4, par5) != 0 && par1World.getBlockId(par3, par4, par5) != DivineRPG.azuriteGrass.blockID)
+        else if (par1World.getBlockId(par3, par4, par5) != 0 && par1World.getBlockId(par3, par4, par5) != DivineRPGTwilight.azuriteGrass.blockID)
         {
             return false;
         }
@@ -32,27 +32,27 @@ public class WorldGenAzuriteWater extends WorldGenerator
         {
             int var6 = 0;
 
-            if (par1World.getBlockId(par3 - 1, par4, par5) == DivineRPG.azuriteGrass.blockID)
+            if (par1World.getBlockId(par3 - 1, par4, par5) == DivineRPGTwilight.azuriteGrass.blockID)
             {
                 ++var6;
             }
 
-            if (par1World.getBlockId(par3 + 1, par4, par5) == DivineRPG.azuriteGrass.blockID)
+            if (par1World.getBlockId(par3 + 1, par4, par5) == DivineRPGTwilight.azuriteGrass.blockID)
             {
                 ++var6;
             }
 
-            if (par1World.getBlockId(par3, par4, par5 - 1) == DivineRPG.azuriteGrass.blockID)
+            if (par1World.getBlockId(par3, par4, par5 - 1) == DivineRPGTwilight.azuriteGrass.blockID)
             {
                 ++var6;
             }
 
-            if (par1World.getBlockId(par3, par4, par5 + 1) == DivineRPG.azuriteGrass.blockID)
+            if (par1World.getBlockId(par3, par4, par5 + 1) == DivineRPGTwilight.azuriteGrass.blockID)
             {
                 ++var6;
             }
 
-            if (par1World.getBlockId(par3, par4 - 1, par5) == DivineRPG.azuriteGrass.blockID)
+            if (par1World.getBlockId(par3, par4 - 1, par5) == DivineRPGTwilight.azuriteGrass.blockID)
             {
                 ++var6;
             }

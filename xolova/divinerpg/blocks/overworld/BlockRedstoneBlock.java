@@ -8,7 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockRedstoneBlock extends Block
 {
@@ -129,7 +129,7 @@ public class BlockRedstoneBlock extends Block
         {
             if (var6)
             {
-                var1.setBlockAndMetadataWithNotify(var2, var3, var4, DivineRPG.redstoneBlock.blockID, var1.getBlockMetadata(var2, var3, var4));
+                var1.setBlockAndMetadataWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID, var1.getBlockMetadata(var2, var3, var4));
 
                 if (this.checkForBurnout(var1, var2, var3, var4, true))
                 {
@@ -147,7 +147,7 @@ public class BlockRedstoneBlock extends Block
         }
         else if (!var6 && !this.checkForBurnout(var1, var2, var3, var4, false))
         {
-            var1.setBlockAndMetadataWithNotify(var2, var3, var4, DivineRPG.redstoneBlockOn.blockID, var1.getBlockMetadata(var2, var3, var4));
+            var1.setBlockAndMetadataWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID, var1.getBlockMetadata(var2, var3, var4));
         }
     }
 
@@ -235,7 +235,7 @@ public class BlockRedstoneBlock extends Block
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile1;
+        return DivineRPGTwilight.textureFile1;
     }
 
     /**

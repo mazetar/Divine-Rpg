@@ -13,7 +13,7 @@ import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -38,11 +38,11 @@ public class ItemShadowBow extends ItemBow
         if (var5 || var3.inventory.hasItem(Item.arrow.itemID))
         {
             int var6 = this.getMaxItemUseDuration(var1) - var4;
-            var6 = (int)((float)var6 / DivineRPG.decreaseBowTime);
+            var6 = (int)((float)var6 / DivineRPGTwilight.decreaseBowTime);
             float var7 = (float)var6 / 20.0F;
             var7 = (var7 * var7 + var7 * 2.0F) / 3.0F;
 
-            if ((double)var7 < 0.1D * (double)DivineRPG.decreaseBowTime)
+            if ((double)var7 < 0.1D * (double)DivineRPGTwilight.decreaseBowTime)
             {
                 return;
             }
@@ -110,17 +110,17 @@ public class ItemShadowBow extends ItemBow
         {
             int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
 
-            if ((float)var6 >= 40.0F * DivineRPG.decreaseBowTime)
+            if ((float)var6 >= 40.0F * DivineRPGTwilight.decreaseBowTime)
             {
                 return this.iconIndex + 3;
             }
 
-            if ((float)var6 >= 18.0F * DivineRPG.decreaseBowTime)
+            if ((float)var6 >= 18.0F * DivineRPGTwilight.decreaseBowTime)
             {
                 return this.iconIndex + 2;
             }
 
-            if ((float)var6 > 13.0F * DivineRPG.decreaseBowTime)
+            if ((float)var6 > 13.0F * DivineRPGTwilight.decreaseBowTime)
             {
                 return this.iconIndex + 1;
             }
@@ -177,7 +177,7 @@ public class ItemShadowBow extends ItemBow
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile2;
+        return DivineRPGTwilight.textureFile2;
     }
 
     @Override

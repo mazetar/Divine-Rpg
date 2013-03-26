@@ -168,7 +168,7 @@ public class WorldGenEnergyTrees extends WorldGenerator
                     var11[var9] = var10[var9] + var13;
                     int var14 = this.worldObj.getBlockId(var11[0], var11[1], var11[2]);
 
-                    if (var14 != 0 && var14 != DivineRPG.energyLeaves.blockID)
+                    if (var14 != 0 && var14 != DivineRPGTwilight.energyLeaves.blockID)
                     {
                         ++var13;
                     }
@@ -230,7 +230,7 @@ public class WorldGenEnergyTrees extends WorldGenerator
         for (int var5 = par2 + this.leafDistanceLimit; var4 < var5; ++var4)
         {
             float var6 = this.leafSize(var4 - par2);
-            this.genTreeLayer(par1, var4, par3, var6, (int)1, DivineRPG.energyLeaves.blockID);
+            this.genTreeLayer(par1, var4, par3, var6, (int)1, DivineRPGTwilight.energyLeaves.blockID);
         }
     }
 
@@ -336,19 +336,19 @@ public class WorldGenEnergyTrees extends WorldGenerator
         int var4 = this.basePos[2];
         int[] var5 = new int[] {var1, var2, var4};
         int[] var6 = new int[] {var1, var3, var4};
-        this.placeBlockLine(var5, var6, DivineRPG.purpleWood.blockID);
+        this.placeBlockLine(var5, var6, DivineRPGTwilight.purpleWood.blockID);
 
         if (this.trunkSize == 2)
         {
             ++var5[0];
             ++var6[0];
-            this.placeBlockLine(var5, var6, DivineRPG.purpleWood.blockID);
+            this.placeBlockLine(var5, var6, DivineRPGTwilight.purpleWood.blockID);
             ++var5[2];
             ++var6[2];
-            this.placeBlockLine(var5, var6, DivineRPG.purpleWood.blockID);
+            this.placeBlockLine(var5, var6, DivineRPGTwilight.purpleWood.blockID);
             var5[0] += -1;
             var6[0] += -1;
-            this.placeBlockLine(var5, var6, DivineRPG.purpleWood.blockID);
+            this.placeBlockLine(var5, var6, DivineRPGTwilight.purpleWood.blockID);
         }
     }
 
@@ -369,7 +369,7 @@ public class WorldGenEnergyTrees extends WorldGenerator
 
             if (this.leafNodeNeedsBase(var6))
             {
-                this.placeBlockLine(var3, var5, (int)DivineRPG.purpleWood.blockID);
+                this.placeBlockLine(var3, var5, (int)DivineRPGTwilight.purpleWood.blockID);
             }
         }
     }
@@ -426,7 +426,7 @@ public class WorldGenEnergyTrees extends WorldGenerator
                 var13[var7] = MathHelper.floor_double((double)par1ArrayOfInteger[var7] + (double)var14 * var11);
                 int var16 = this.worldObj.getBlockId(var13[0], var13[1], var13[2]);
 
-                if (var16 != 0 && var16 != DivineRPG.energyLeaves.blockID)
+                if (var16 != 0 && var16 != DivineRPGTwilight.energyLeaves.blockID)
                 {
                     break;
                 }
@@ -446,7 +446,7 @@ public class WorldGenEnergyTrees extends WorldGenerator
         int[] var2 = new int[] {this.basePos[0], this.basePos[1] + this.heightLimit - 1, this.basePos[2]};
         int var3 = this.worldObj.getBlockId(this.basePos[0], this.basePos[1] - 1, this.basePos[2]);
 
-        if (var3 != DivineRPG.energyGrass.blockID && var3 != DivineRPG.energyDirt.blockID)
+        if (var3 != DivineRPGTwilight.energyGrass.blockID && var3 != DivineRPGTwilight.energyDirt.blockID)
         {
             return false;
         }

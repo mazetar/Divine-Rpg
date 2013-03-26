@@ -7,7 +7,7 @@ import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockLightFence1 extends BlockFence
 {
@@ -32,7 +32,7 @@ public class BlockLightFence1 extends BlockFence
     {
         int var5 = var1.getBlockId(var2, var3, var4);
 
-        if (var5 != DivineRPG.fenceLightoff.blockID && var5 != Block.fenceGate.blockID && var5 != DivineRPG.fenceLighton.blockID && var5 != DivineRPG.fenceLighton1.blockID && var5 != DivineRPG.fenceLightoff1.blockID)
+        if (var5 != DivineRPGTwilight.DivineRPGTwilight.blockID && var5 != Block.fenceGate.blockID && var5 != DivineRPGTwilight.DivineRPGTwilight.blockID && var5 != DivineRPGTwilight.DivineRPGTwilight.blockID && var5 != DivineRPGTwilight.DivineRPGTwilight.blockID)
         {
             Block var6 = Block.blocksList[var5];
             return var6 != null && var6.blockMaterial.isOpaque() && var6.renderAsNormalBlock() ? var6.blockMaterial != Material.pumpkin : false;
@@ -56,7 +56,7 @@ public class BlockLightFence1 extends BlockFence
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.fenceLighton1.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
             }
         }
     }
@@ -75,7 +75,7 @@ public class BlockLightFence1 extends BlockFence
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.fenceLighton1.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
             }
         }
     }
@@ -87,7 +87,7 @@ public class BlockLightFence1 extends BlockFence
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
         {
-            var1.setBlockWithNotify(var2, var3, var4, DivineRPG.fenceLightoff1.blockID);
+            var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
         }
     }
 
@@ -96,11 +96,11 @@ public class BlockLightFence1 extends BlockFence
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.fenceLightoff1.blockID;
+        return DivineRPGTwilight.DivineRPGTwilight.blockID;
     }
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 }

@@ -19,7 +19,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -487,7 +487,7 @@ public class EntityEnergyArrow extends Entity
         {
             boolean var2 = this.canBePickedUp == 1 || this.canBePickedUp == 2 && var1.capabilities.isCreativeMode;
 
-            if (this.canBePickedUp == 1 && !var1.inventory.addItemStackToInventory(new ItemStack(DivineRPG.azuriteArrow, 1)))
+            if (this.canBePickedUp == 1 && !var1.inventory.addItemStackToInventory(new ItemStack(DivineRPGTwilight.azuriteArrow, 1)))
             {
                 var2 = false;
             }

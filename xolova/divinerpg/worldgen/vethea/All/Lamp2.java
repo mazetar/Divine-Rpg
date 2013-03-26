@@ -21,13 +21,13 @@ public class Lamp2 extends WorldGenerator
 
 	public boolean generate(World world, Random rand, int i, int j, int k) {
 
-		world.setBlock(i + 0, j + 0, k + 1, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 0, k + 0, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 0, k + 1, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 0, k + 2, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 1, k + 1, DivineRPG.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 2, k + 1, DivineRPG.dreamlamp.blockID);
-		world.setBlock(i + 2, j + 0, k + 1, DivineRPG.darkEverstone.blockID);
+		world.setBlock(i + 0, j + 0, k + 1, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 0, k + 0, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 0, k + 1, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 0, k + 2, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 1, k + 1, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 2, k + 1, DivineRPGTwilight.dreamlamp.blockID);
+		world.setBlock(i + 2, j + 0, k + 1, DivineRPGTwilight.darkEverstone.blockID);
 
 		return true;
 	}

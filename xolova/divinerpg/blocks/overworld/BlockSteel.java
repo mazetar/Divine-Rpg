@@ -7,7 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -89,55 +89,55 @@ public class BlockSteel extends Block
         switch (var1)
         {
             case 0:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 1:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 2:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 3:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 4:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 5:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 6:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 7:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 8:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 9:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 10:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 11:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 12:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 13:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 14:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             case 15:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
 
             default:
-                return DivineRPG.steel.blockID;
+                return DivineRPGTwilight.DivineRPGTwilight.blockID;
         }
     }
 
@@ -260,7 +260,7 @@ public class BlockSteel extends Block
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile1;
+        return DivineRPGTwilight.textureFile1;
     }
 
     @SideOnly(Side.CLIENT)

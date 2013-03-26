@@ -12,7 +12,7 @@ public class WorldProviderAzurite extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPG.azuriteBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPGTwilight.azuriteBiome, 0.5F, 0.5F);
     }
 
     /**

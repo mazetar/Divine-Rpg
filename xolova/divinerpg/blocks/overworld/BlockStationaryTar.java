@@ -8,7 +8,7 @@ import net.minecraft.block.BlockFluid;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockStationaryTar extends BlockFluid
 {
@@ -62,7 +62,7 @@ public class BlockStationaryTar extends BlockFluid
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 
     public void addCreativeItems(ArrayList var1)

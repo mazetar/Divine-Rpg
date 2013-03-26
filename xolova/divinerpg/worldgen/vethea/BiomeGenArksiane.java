@@ -13,8 +13,8 @@ public class BiomeGenArksiane extends BiomeGenBase
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
         this.field_82914_M.clear();
-        this.topBlock = (byte)DivineRPG.dreamgrass.blockID;
-        this.fillerBlock = (byte)DivineRPG.dreamdirt.blockID;
+        this.topBlock = (byte)DivineRPGTwilight.dreamgrass.blockID;
+        this.fillerBlock = (byte)DivineRPGTwilight.dreamdirt.blockID;
         this.setMinMaxHeight(-1.5F, 0.25F);
     }
 }

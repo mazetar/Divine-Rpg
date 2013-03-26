@@ -6,7 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockMoonBulb extends Block
 {
@@ -31,7 +31,7 @@ public class BlockMoonBulb extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.blueSeeds.itemID;
+        return DivineRPGTwilight.DivineRPGTwilight.itemID;
     }
 
     /**
@@ -39,7 +39,7 @@ public class BlockMoonBulb extends Block
      */
     public int quantityDropped(Random var1)
     {
-        return this.blockID == DivineRPG.moonBulbBase.blockID ? 1 : 0;
+        return this.blockID == DivineRPGTwilight.DivineRPGTwilight.blockID ? 1 : 0;
     }
 
     /**
@@ -69,6 +69,6 @@ public class BlockMoonBulb extends Block
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile1;
+        return DivineRPGTwilight.textureFile1;
     }
 }

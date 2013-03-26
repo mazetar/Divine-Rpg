@@ -15,7 +15,7 @@ public class LightPost5 extends WorldGenerator
 {
 	protected int[] GetValidSpawnBlocks() {
 		return new int[] {
-			DivineRPG.iceikaGrass.blockID
+			DivineRPGTwilight.iceikaGrass.blockID
 		};
 	}
 
@@ -58,27 +58,27 @@ public class LightPost5 extends WorldGenerator
 			return false;
 		}
 
-		world.setBlock(i + 0, j + 1, k + 2, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 0, j + 7, k + 2, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 1, k + 1, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 1, k + 2, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 1, k + 3, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 2, k + 2, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 3, k + 2, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 4, k + 2, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 5, k + 2, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 6, k + 0, DivineRPG.workshopLamp.blockID);
-		world.setBlock(i + 1, j + 6, k + 2, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 6, k + 4, DivineRPG.workshopLamp.blockID);
-		world.setBlock(i + 1, j + 7, k + 0, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 7, k + 1, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 7, k + 2, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 7, k + 3, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 1, j + 7, k + 4, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 2, j + 1, k + 2, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 2, j + 7, k + 2, DivineRPG.coalStone.blockID);
-		world.setBlock(i + 3, j + 6, k + 2, DivineRPG.workshopLamp.blockID);
-		world.setBlock(i + 3, j + 7, k + 2, DivineRPG.coalStone.blockID);
+		world.setBlock(i + 0, j + 1, k + 2, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 0, j + 7, k + 2, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 1, k + 1, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 1, k + 2, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 1, k + 3, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 2, k + 2, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 3, k + 2, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 4, k + 2, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 5, k + 2, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 6, k + 0, DivineRPGTwilight.workshopLamp.blockID);
+		world.setBlock(i + 1, j + 6, k + 2, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 6, k + 4, DivineRPGTwilight.workshopLamp.blockID);
+		world.setBlock(i + 1, j + 7, k + 0, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 7, k + 1, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 7, k + 2, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 7, k + 3, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 1, j + 7, k + 4, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 2, j + 1, k + 2, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 2, j + 7, k + 2, DivineRPGTwilight.coalStone.blockID);
+		world.setBlock(i + 3, j + 6, k + 2, DivineRPGTwilight.workshopLamp.blockID);
+		world.setBlock(i + 3, j + 7, k + 2, DivineRPGTwilight.coalStone.blockID);
 
 		return true;
 	}

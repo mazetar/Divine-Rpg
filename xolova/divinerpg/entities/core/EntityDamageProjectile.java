@@ -2,6 +2,7 @@ package xolova.divinerpg.entities.core;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.projectile.EntityThrowable;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -9,6 +10,10 @@ import net.minecraft.world.World;
 public class EntityDamageProjectile extends EntityThrowable {
 
 	int damage;
+	
+	public EntityDamageProjectile(World world) {
+		super(world);
+	}
 	
 	public EntityDamageProjectile(World par1World, int damage) {
 		super(par1World);
@@ -24,13 +29,32 @@ public class EntityDamageProjectile extends EntityThrowable {
         super(var1, var2, var4, var6);
         this.damage = damage;
     }
-    
-    public void setIcon(int i) {
-    	dataWatcher.updateObject(0, i);
+
+    @Override
+    protected void entityInit() {
+    	super.entityInit();
+    	dataWatcher.addObject(12, 0);
+    	dataWatcher.setObjectWatched(12);
     }
     
-    public int getIcon(int i) {
-    	return dataWatcher.getWatchableObjectInt(0);
+    public void setIcon(int i) {
+    	dataWatcher.updateObject(12, i);
+    }
+    
+    public int getIcon() {
+    	return dataWatcher.getWatchableObjectInt(12);
+    }
+    
+    @Override
+    public void writeToNBT(NBTTagCompound par1nbtTagCompound) {
+    	super.writeToNBT(par1nbtTagCompound);
+    	par1nbtTagCompound.setInteger("damage", damage);
+    }
+    
+    @Override
+    public void readFromNBT(NBTTagCompound par1nbtTagCompound) {
+    	super.readFromNBT(par1nbtTagCompound);
+    	damage = par1nbtTagCompound.getInteger("damage");
     }
 
 	@Override

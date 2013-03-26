@@ -7,17 +7,16 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
-public class BlockKarosHeatTileGreen extends BlockDivineRPG
+public class BlockKarosHeatTileGreen extends Block
 {
     private final boolean powered;
     public boolean override;
 
-    public BlockKarosHeatTileGreen(int var1, int par2, boolean var2)
+    public BlockKarosHeatTileGreen(int var1, boolean var2)
     {
-        super(var1, par2, Material.glass);
+        super(var1, Material.glass);
         this.powered = var2;
         this.override = false;
     }
@@ -35,7 +34,7 @@ public class BlockKarosHeatTileGreen extends BlockDivineRPG
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlock(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
             }
         }
     }
@@ -54,7 +53,7 @@ public class BlockKarosHeatTileGreen extends BlockDivineRPG
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlock(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
             }
         }
     }
@@ -66,7 +65,7 @@ public class BlockKarosHeatTileGreen extends BlockDivineRPG
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4) && !this.override)
         {
-            var1.setBlock(var2, var3, var4, VetheaBlockHelper.karosHeatTileGreen.blockID);
+            var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileGreen.blockID);
         }
     }
 

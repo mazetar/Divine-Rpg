@@ -139,7 +139,7 @@ public class ChunkProviderMythril implements IChunkProvider
                 int var12 = (int)(this.stoneNoise[var8 + var9 * 16] / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
                 int var13 = -1;
                 byte var14 = var10.topBlock;
-                byte var15 = (byte)DivineRPG.mythilGrass.blockID;
+                byte var15 = (byte)DivineRPGTwilight.mythilGrass.blockID;
 
                 for (int var16 = 128; var16 >= 0; --var16)
                 {
@@ -163,13 +163,13 @@ public class ChunkProviderMythril implements IChunkProvider
                             {
                                 if (var12 <= 0)
                                 {
-                                    var14 = (byte)DivineRPG.mythilGrass.blockID;
-                                    var15 = (byte)DivineRPG.mythilGrass.blockID;
+                                    var14 = (byte)DivineRPGTwilight.mythilGrass.blockID;
+                                    var15 = (byte)DivineRPGTwilight.mythilGrass.blockID;
                                 }
                                 else if (var16 >= var5 - 4 && var16 <= var5 + 1)
                                 {
-                                    var14 = (byte)DivineRPG.mythilGrass.blockID;
-                                    var15 = (byte)DivineRPG.twilightStone.blockID;
+                                    var14 = (byte)DivineRPGTwilight.mythilGrass.blockID;
+                                    var15 = (byte)DivineRPGTwilight.twilightStone.blockID;
                                 }
 
                                 if (var16 >= var5 - 1)
@@ -186,10 +186,10 @@ public class ChunkProviderMythril implements IChunkProvider
                                 --var13;
                                 var3[var17] = var15;
 
-                                if (var13 == 0 && var15 == DivineRPG.mythilGrass.blockID)
+                                if (var13 == 0 && var15 == DivineRPGTwilight.mythilGrass.blockID)
                                 {
-                                    var13 = (byte)DivineRPG.mythilGrass.blockID;
-                                    var15 = (byte)DivineRPG.mythilGrass.blockID;
+                                    var13 = (byte)DivineRPGTwilight.mythilGrass.blockID;
+                                    var15 = (byte)DivineRPGTwilight.mythilGrass.blockID;
                                 }
                             }
                         }
@@ -199,10 +199,10 @@ public class ChunkProviderMythril implements IChunkProvider
                             --var13;
                             var3[var17] = var15;
 
-                            if (var13 == 0 && var15 == DivineRPG.twilightStone.blockID)
+                            if (var13 == 0 && var15 == DivineRPGTwilight.twilightStone.blockID)
                             {
-                                var13 = (byte)DivineRPG.mythilGrass.blockID;
-                                var15 = (byte)DivineRPG.twilightStone.blockID;
+                                var13 = (byte)DivineRPGTwilight.mythilGrass.blockID;
+                                var15 = (byte)DivineRPGTwilight.twilightStone.blockID;
                             }
                         }
                     }
@@ -384,7 +384,7 @@ public class ChunkProviderMythril implements IChunkProvider
             var14 = var4 + this.rand.nextInt(16);
             var15 = this.rand.nextInt(250);
             var16 = var5 + this.rand.nextInt(16);
-            (new WorldGenTwilightMineable(DivineRPG.mythilOre.blockID, 8)).generate(this.worldObj, this.rand, var14, var15, var16);
+            (new WorldGenTwilightMineable(DivineRPGTwilight.mythilOre.blockID, 8)).generate(this.worldObj, this.rand, var14, var15, var16);
         }
 
         WorldGenMythrilTrees var17 = new WorldGenMythrilTrees(false);

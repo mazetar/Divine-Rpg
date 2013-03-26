@@ -8,7 +8,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -33,7 +33,7 @@ public class BlockMarsine extends BlockFlower
      */
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
-        return par1 == DivineRPG.arcaniteGrass.blockID;
+        return par1 == DivineRPGTwilight.DivineRPGTwilight.blockID;
     }
 
     /**
@@ -155,7 +155,7 @@ public class BlockMarsine extends BlockFlower
      */
     protected int getSeedItem()
     {
-        return DivineRPG.marsineSeeds.itemID;
+        return DivineRPGTwilight.DivineRPGTwilight.itemID;
     }
 
     /**
@@ -163,7 +163,7 @@ public class BlockMarsine extends BlockFlower
      */
     protected int getCropItem()
     {
-        return DivineRPG.marsineItem.itemID;
+        return DivineRPGTwilight.DivineRPGTwilight.itemID;
     }
 
     /**

@@ -15,7 +15,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -47,7 +47,7 @@ public class BlockGreenlightFurnace extends BlockContainer
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return DivineRPG.moltenFurnace.blockID;
+        return DivineRPGTwilight.DivineRPGTwilight.blockID;
     }
 
     /**
@@ -180,7 +180,7 @@ public class BlockGreenlightFurnace extends BlockContainer
 
             if (var10 != null)
             {
-                par5EntityPlayer.openGui(DivineRPG.instance, 2, par1World, par2, par3, par4);
+                par5EntityPlayer.openGui(DivineRPGTwilight.instance, 2, par1World, par2, par3, par4);
             }
 
             return true;
@@ -198,11 +198,11 @@ public class BlockGreenlightFurnace extends BlockContainer
 
         if (par0)
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.greenlightFurnaceOn.blockID);
+            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
         }
         else
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPG.greenlightFurnace.blockID);
+            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
         }
 
         keepFurnaceInventory = false;

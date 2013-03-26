@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockRupeeOre extends Block
 {
@@ -17,7 +17,7 @@ public class BlockRupeeOre extends Block
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 
     /**
@@ -25,7 +25,7 @@ public class BlockRupeeOre extends Block
      */
     public int damageDropped(int var1)
     {
-        return DivineRPG.rupee.itemID;
+        return DivineRPGTwilight.DivineRPGTwilight.itemID;
     }
 
     public void addCreativeItems(ArrayList var1)

@@ -9,7 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 
 public class EntityEnergyCadillion extends EntityMob
@@ -173,7 +173,7 @@ public class EntityEnergyCadillion extends EntityMob
         {
             this.dropItem(getDropItemId(), 1);
         }
-        this.dropItem(DivineRPG.magicMeatPlus.itemID, 1);
+        this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
     }
 
     /**

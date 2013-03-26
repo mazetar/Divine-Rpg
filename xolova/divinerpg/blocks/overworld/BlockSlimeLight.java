@@ -5,7 +5,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockSlimeLight extends Block
 {
@@ -36,7 +36,7 @@ public class BlockSlimeLight extends Block
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.slimelightOn.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
             }
         }
     }
@@ -55,7 +55,7 @@ public class BlockSlimeLight extends Block
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.slimelightOn.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
             }
         }
     }
@@ -67,7 +67,7 @@ public class BlockSlimeLight extends Block
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
         {
-            var1.setBlockWithNotify(var2, var3, var4, DivineRPG.slimelight.blockID);
+            var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
         }
     }
 
@@ -76,11 +76,11 @@ public class BlockSlimeLight extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.slimelight.blockID;
+        return DivineRPGTwilight.DivineRPGTwilight.blockID;
     }
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile1;
+        return DivineRPGTwilight.textureFile1;
     }
 }

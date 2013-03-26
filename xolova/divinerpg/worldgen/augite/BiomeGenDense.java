@@ -11,8 +11,8 @@ public class BiomeGenDense extends BiomeGenBase
         this.setBiomeName("Augite");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        this.topBlock = (byte)DivineRPG.denseGrass.blockID;
-        this.fillerBlock = (byte)DivineRPG.denseDirt.blockID;
+        this.topBlock = (byte)DivineRPGTwilight.denseGrass.blockID;
+        this.fillerBlock = (byte)DivineRPGTwilight.denseDirt.blockID;
         this.waterColorMultiplier = 2368548;
     }
 }

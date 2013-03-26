@@ -8,7 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockDarkBridge extends Block
 {
@@ -57,7 +57,7 @@ public class BlockDarkBridge extends Block
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.lightbridge.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
             }
         }
     }
@@ -76,7 +76,7 @@ public class BlockDarkBridge extends Block
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPG.lightbridge.blockID);
+                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
             }
         }
     }
@@ -88,7 +88,7 @@ public class BlockDarkBridge extends Block
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
         {
-            var1.setBlockWithNotify(var2, var3, var4, DivineRPG.deadbridge.blockID);
+            var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
         }
     }
 
@@ -97,12 +97,12 @@ public class BlockDarkBridge extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPG.deadbridge.blockID;
+        return DivineRPGTwilight.DivineRPGTwilight.blockID;
     }
 
     public String getTextureFile()
     {
-        return DivineRPG.textureFile;
+        return DivineRPGTwilight.textureFile;
     }
 
     public void addCreativeItems(ArrayList var1)

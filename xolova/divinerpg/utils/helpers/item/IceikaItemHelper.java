@@ -1,8 +1,12 @@
 package xolova.divinerpg.utils.helpers.item;
 
 import net.minecraft.item.Item;
+import net.minecraftforge.common.EnumHelper;
 import xolova.divinerpg.items.ItemDivineRPG;
+import xolova.divinerpg.items.core.ItemDivineRPGArmor;
+import xolova.divinerpg.items.core.ItemDivineRPGFood;
 import xolova.divinerpg.items.core.ItemDivineRPGRangedConsumable;
+import xolova.divinerpg.items.iceika.ItemEggNog;
 import xolova.divinerpg.items.iceika.ItemEnderice;
 import xolova.divinerpg.items.iceika.ItemFrostClawCannon;
 import xolova.divinerpg.items.iceika.ItemFrostkingSword;
@@ -11,6 +15,7 @@ import xolova.divinerpg.items.iceika.ItemGlacierSword;
 import xolova.divinerpg.items.iceika.ItemIceicleBane;
 import xolova.divinerpg.items.iceika.ItemIceineSword;
 import xolova.divinerpg.items.iceika.ItemIcicleBow;
+import xolova.divinerpg.items.iceika.ItemSantaArmor;
 import xolova.divinerpg.items.iceika.ItemSerenadeOfIce;
 import xolova.divinerpg.items.iceika.ItemSnowSlash;
 import xolova.divinerpg.items.iceika.ItemSnowStormBow;
@@ -19,6 +24,7 @@ import xolova.divinerpg.items.iceika.ItemSoundOfCarols;
 import xolova.divinerpg.items.vanilla.ItemMassivence;
 import xolova.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class IceikaItemHelper 
@@ -71,18 +77,16 @@ public class IceikaItemHelper
         snowFlakeShuriken = new ItemSnowflakeShuriken(x.SnowflakeShurikenID).setUnlocalizedName("snowFlakeShuriken").setCreativeTab(CreativeTabHelper.tabRanged);
         icicleBow = new ItemIcicleBow(x.IcicleBowID).setUnlocalizedName("icicleBow").setCreativeTab(CreativeTabHelper.tabRanged);
         snowStormBow = new ItemSnowStormBow(x.SnowstormBowID).setUnlocalizedName("frostStormBow").setCreativeTab(CreativeTabHelper.tabRanged);
-        /*pepperMints = new ItemFood(IceikaConfigHelper.pepperMintsID, 1, 0.3F, false).setUnlocalizedName("pepperMints").setCreativeTab(CreativeTabHelper.tabHerb);
-        eggNog = new ItemBucketMilk(IceikaConfigHelper.eggNogID).setUnlocalizedName("eggNog").setCreativeTab(CreativeTabHelper.tabHerb);
-        chocolateLog = new ItemFood(IceikaConfigHelper.chocolateLogID, 4, 1.0F, false).setUnlocalizedName("chocolateLog").setCreativeTab(CreativeTabHelper.tabHerb);
-        snowCones = new ItemFood(IceikaConfigHelper.snowConesID, 2, 0.3F, false).setUnlocalizedName("snowCones").setCreativeTab(CreativeTabHelper.tabHerb);
-        fruitCake = new ItemFood(IceikaConfigHelper.fruitCakeID, 16, 2.0F, false).setUnlocalizedName("fruitCake").setCreativeTab(CreativeTabHelper.tabHerb);
-        
-        int santaRender = RenderingRegistry.addNewArmourRendererPrefix("santa");
-        santaHead = new ItemDivinerpgArmor(IceikaConfigHelper.santaHeadID, santaRender, 0, -1, 0.0D).setUnlocalizedName("santaHelmet").setCreativeTab(CreativeTabHelper.tabArmor);
-        santaBody = new ItemDivinerpgArmor(IceikaConfigHelper.santaBodyID, santaRender, 1, -1, 0.0D).setUnlocalizedName("santaChest").setCreativeTab(CreativeTabHelper.tabArmor);
-        santaLegs = new ItemDivinerpgArmor(IceikaConfigHelper.santaLegsID, santaRender, 2, -1, 0.0D).setUnlocalizedName("santaLegs").setCreativeTab(CreativeTabHelper.tabArmor);
-        santaBoots = new ItemDivinerpgArmor(IceikaConfigHelper.santaBootsID, santaRender, 3, -1, 0.0D).setUnlocalizedName("santaBoots").setCreativeTab(CreativeTabHelper.tabArmor);
-         */	
+        pepperMints = new ItemDivineRPGFood(x.PeppermintsID, 1, 0.3F, false).setIconIndex(3, 10, 15).setUnlocalizedName("pepperMints").setCreativeTab(CreativeTabHelper.tabHerb);
+        eggNog = new ItemEggNog(x.EggNogID).setUnlocalizedName("eggNog").setCreativeTab(CreativeTabHelper.tabHerb);
+        chocolateLog = new ItemDivineRPGFood(x.ChocolateLogID, 4, 1.0F, false).setIconIndex(3, 11, 15).setUnlocalizedName("chocolateLog").setCreativeTab(CreativeTabHelper.tabHerb);
+        snowCones = new ItemDivineRPGFood(x.SnowconesID, 2, 0.3F, false).setIconIndex(3, 8, 15).setUnlocalizedName("snowCones").setCreativeTab(CreativeTabHelper.tabHerb);
+        fruitCake = new ItemDivineRPGFood(x.FruitCakeID, 16, 2.0F, false).setIconIndex(3, 12, 15).setUnlocalizedName("fruitCake").setCreativeTab(CreativeTabHelper.tabHerb);
+                
+        santaHead = new ItemSantaArmor(x.SantaHeadID, 0).setUnlocalizedName("santaHelmet").setCreativeTab(CreativeTabHelper.tabArmor);
+        santaBody = new ItemSantaArmor(x.SantaBodyID, 1).setUnlocalizedName("santaChest").setCreativeTab(CreativeTabHelper.tabArmor);
+        santaLegs = new ItemSantaArmor(x.SantaLegsID, 2).setUnlocalizedName("santaLegs").setCreativeTab(CreativeTabHelper.tabArmor);
+        santaBoots = new ItemSantaArmor(x.SantaBootsID, 3).setUnlocalizedName("santaBoots").setCreativeTab(CreativeTabHelper.tabArmor);
     
         LanguageRegistry.addName(snowFlake, "Snowflake");
         LanguageRegistry.addName(icicleBane, "Icicle Bane");
@@ -100,5 +104,15 @@ public class IceikaItemHelper
         LanguageRegistry.addName(snowFlakeShuriken, "Snowflake Shuriken");
         LanguageRegistry.addName(icicleBow, "Icicle Bow");
         LanguageRegistry.addName(snowStormBow, "Snowstorm Bow");
+        LanguageRegistry.addName(pepperMints, "Peppermints");
+        LanguageRegistry.addName(eggNog, "Egg Nog");
+        LanguageRegistry.addName(chocolateLog, "Chocolate Log");
+        LanguageRegistry.addName(snowCones, "Snow Cones");
+        LanguageRegistry.addName(fruitCake, "Fruit Cake");
+        LanguageRegistry.addName(santaHead, "Santa Head");        
+        LanguageRegistry.addName(santaBody, "Santa Body");
+        LanguageRegistry.addName(santaLegs, "Santa Legs");
+        LanguageRegistry.addName(santaBoots, "Santa Boots");
+
     }
 }

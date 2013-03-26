@@ -12,7 +12,6 @@ public class ExplosiveArrowHitHandler {
 	
 	@ForgeSubscribe
 	public void onEntityDamage(LivingHurtEvent event) {
-		System.out.println(event.source.getEntity());
 		if(event.source != null && event.source.getEntity() != null && event.source.getEntity() instanceof EntityExplosiveArrow) {
 			Entity arrow = event.source.getEntity();
 			event.entity.worldObj.createExplosion(event.source.getEntity(), arrow.posX, arrow.posY, arrow.posZ, 3F, false);

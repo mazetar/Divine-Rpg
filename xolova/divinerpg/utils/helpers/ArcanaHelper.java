@@ -3,12 +3,14 @@ package xolova.divinerpg.utils.helpers;
 import java.util.HashMap;
 import java.util.List;
 
+import cpw.mods.fml.common.IPlayerTracker;
+
 import net.minecraft.entity.player.EntityPlayer;
 
-public class ArcanaHelper {
+public class ArcanaHelper implements IPlayerTracker {
 	public static HashMap<String, Integer> bars = new HashMap<String, Integer>();
 	public static HashMap<String, Integer> delays = new HashMap<String, Integer>();
-
+	
 	public static void add (String username)
 	{
 		bars.put(username, 200);
@@ -26,6 +28,9 @@ public class ArcanaHelper {
 		for (int l = 0; l < players.size(); l++)
 		{
 			String user = players.get(l).username;
+			if(user == null)
+				continue;
+			
 			if (delays.get(user) == 0)
 			{
 				bars.put(user, bars.get(user) + 1);
@@ -73,4 +78,20 @@ public class ArcanaHelper {
 			add(par1);
 		}
 	}
+
+	@Override
+	public void onPlayerLogin(EntityPlayer player) {
+		add(player.username);
+	}
+
+	@Override
+	public void onPlayerLogout(EntityPlayer player) {
+		remove(player.username);
+	}
+
+	@Override
+	public void onPlayerChangedDimension(EntityPlayer player) { }
+
+	@Override
+	public void onPlayerRespawn(EntityPlayer player) { }
 }

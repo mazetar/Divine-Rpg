@@ -107,6 +107,7 @@ public class TwilightItemHelper
 		DraviteChest = new ItemDivineRPG(x.DraviteChestID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
 		DraviteSlicer = new ItemDivineRPG(x.DraviteSlicerID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
 		DraviteSoul = new ItemDivineRPG(x.DraviteSoulID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		TwilightClock = new ItemTwilightClock(5330, 103).setCreativeTab(CreativeTabs.tabMisc);
+		
+		TwilightClock = new ItemTwilightClock(5330).setCreativeTab(CreativeTabs.tabTools);
 	}
 }

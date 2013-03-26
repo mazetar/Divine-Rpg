@@ -10,6 +10,7 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.arcana.projectile.EntityLivingStatueArrow;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
 public class EntityLivingStatue extends EntityMob implements IRangedAttackMob
@@ -152,6 +153,8 @@ public class EntityLivingStatue extends EntityMob implements IRangedAttackMob
 	@Override
 	public void attackEntityWithRangedAttack(EntityLiving entityliving, float f) 
 	{
-		
+		EntityLivingStatueArrow var1 = new EntityLivingStatueArrow(this.worldObj, this, 15F);
+        this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+        this.worldObj.spawnEntityInWorld(var1);
 	}
 }

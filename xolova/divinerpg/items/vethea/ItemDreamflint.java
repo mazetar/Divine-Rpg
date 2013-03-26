@@ -4,6 +4,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.vethea.mobs.EntityKaros;
+import xolova.divinerpg.entities.vethea.mobs.EntityQuadro;
+import xolova.divinerpg.entities.vethea.mobs.EntityRaglok;
+import xolova.divinerpg.entities.vethea.mobs.EntityWreck;
 import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
 public class ItemDreamflint extends Item

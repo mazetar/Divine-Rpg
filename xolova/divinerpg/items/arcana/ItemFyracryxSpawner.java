@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Facing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.arcana.mobs.EntityFyracryx;
+import xolova.divinerpg.utils.AchievementPageDivineRPG;
 
 public class ItemFyracryxSpawner extends Item
 {
@@ -42,7 +44,7 @@ public class ItemFyracryxSpawner extends Item
                 var12 = 0.5D;
             }
 
-            if (spawnCreature(par3World, par1ItemStack.getItemDamage(), (double)par4 + 0.5D, (double)par5 + var12, (double)par6 + 0.5D, par2EntityPlayer) != null && !par2EntityPlayer.capabilities.isCreativeMode && ArcanaList.get(par2EntityPlayer.username).arcanaUse(200))
+            if (spawnCreature(par3World, par1ItemStack.getItemDamage(), (double)par4 + 0.5D, (double)par5 + var12, (double)par6 + 0.5D, par2EntityPlayer) != null && !par2EntityPlayer.capabilities.isCreativeMode)
             {
             	par2EntityPlayer.addStat(AchievementPageDivineRPG.littleCreature, 1);
                 --par1ItemStack.stackSize;

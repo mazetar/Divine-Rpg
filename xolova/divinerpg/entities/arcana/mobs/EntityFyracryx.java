@@ -2,6 +2,9 @@ package xolova.divinerpg.entities.arcana.mobs;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.IRangedAttackMob;
+import net.minecraft.entity.ai.EntityAIArrowAttack;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIFollowOwner;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -18,32 +21,17 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.entities.ai.EntityAIFyracryxFireballAttack;
+import xolova.divinerpg.entities.arcana.projectile.EntityFyracryxFireball;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EntityFyracryx extends EntityTameable
+public class EntityFyracryx extends EntityTameable implements IRangedAttackMob
 {
     public EntityFyracryx(World par1World, EntityPlayer par2EntityPlayer)
     {
-        super(par1World);
-        this.texture = "mob/Fyracryx.png";
-        this.moveSpeed = 0.3F;
-        this.getNavigator().setAvoidsWater(true);
-        this.tasks.addTask(1, new EntityAISwimming(this));
-        this.tasks.addTask(2, this.aiSit);
-        this.tasks.addTask(4, new EntityAIFollowOwner(this, this.moveSpeed, 10.0F, 2.0F));
-        this.tasks.addTask(3, new EntityAIFyracryxFireballAttack(this, this.moveSpeed, 1, 60));
-        this.tasks.addTask(5, new EntityAIAttackOnCollide(this, this.moveSpeed, true));
-        this.tasks.addTask(6, new EntityAIFollowOwner(this, this.moveSpeed, 10.0F, 2.0F));
-        this.tasks.addTask(7, new EntityAIMate(this, this.moveSpeed));
-        this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.tasks.addTask(9, new EntityAILookIdle(this));
-        this.targetTasks.addTask(1, new EntityAIOwnerHurtByTarget(this));
-        this.targetTasks.addTask(2, new EntityAIOwnerHurtTarget(this));
-        this.targetTasks.addTask(3, new EntityAIHurtByTarget(this, true));
-        this.targetTasks.addTask(4, new EntityAITargetNonTamed(this, EntitySheep.class, 16.0F, 200, false));
+        this(par1World);
         this.setTamed(true);
         this.setOwner(par2EntityPlayer.username);
     }
@@ -57,7 +45,7 @@ public class EntityFyracryx extends EntityTameable
         this.tasks.addTask(1, new EntityAISwimming(this));
         this.tasks.addTask(2, this.aiSit);
         this.tasks.addTask(4, new EntityAIFollowOwner(this, this.moveSpeed, 10.0F, 2.0F));
-        this.tasks.addTask(3, new EntityAIFyracryxFireballAttack(this, this.moveSpeed, 1, 60));
+        this.tasks.addTask(3, new EntityAIArrowAttack(this, this.moveSpeed, 1, 60));
         this.tasks.addTask(5, new EntityAIAttackOnCollide(this, this.moveSpeed, true));
         this.tasks.addTask(6, new EntityAIFollowOwner(this, this.moveSpeed, 10.0F, 2.0F));
         this.tasks.addTask(7, new EntityAIMate(this, this.moveSpeed));
@@ -190,5 +178,22 @@ public class EntityFyracryx extends EntityTameable
 	@Override
 	public EntityAgeable createChild(EntityAgeable var1) {
 		return null;
+	}
+
+	@Override
+	public void attackEntityWithRangedAttack(EntityLiving entityliving, float f) 
+	{
+		double var3 = this.posX - this.posX;
+        double var5 = this.boundingBox.minY + (double)(this.height / 2.0F) - (this.posY + (double)(this.height / 2.0F));
+        double var7 = this.posZ - this.posZ;
+        float var9 = MathHelper.sqrt_float(this.getDistanceToEntity(this)) * 0.5F;
+        this.worldObj.playAuxSFXAtEntity((EntityPlayer)null, 1009, (int)this.posX, (int)this.posY, (int)this.posZ, 0);
+
+        for (int var10 = 0; var10 < 1; ++var10)
+        {
+            EntityFyracryxFireball var11 = new EntityFyracryxFireball(this.worldObj, this, var3 + this.rand.nextGaussian() * (double)var9, var5, var7 + this.rand.nextGaussian() * (double)var9);
+            var11.posY = this.posY + (double)(this.height / 2.0F) + 0.5D;
+            this.worldObj.spawnEntityInWorld(var11);
+        }
 	}
 }

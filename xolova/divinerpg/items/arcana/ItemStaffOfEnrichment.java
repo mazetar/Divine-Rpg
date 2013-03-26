@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -45,7 +46,7 @@ public class ItemStaffOfEnrichment extends Item
 				}
 				else
 				{
-					par3World.func_94575_c(par4, par5, par6, var13.blockID);
+					par3World.setBlock(par4, par5, par6, var13.blockID);
 					par1ItemStack.damageItem(1, par2EntityPlayer);
 					par2EntityPlayer.addStat(AchievementPageDivineRPG.enrichment, 1);
 					return true;

@@ -1,16 +1,16 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.arcana;
 
-import net.minecraft.item.Item;
+import xolova.divinerpg.items.ItemDivineRPG;
 
-public class ItemKey extends Item
+public class ItemKey extends ItemDivineRPG
 {
-    public ItemKey(int par1)
+    public ItemKey(int par1, int par2)
     {
-        super(par1);
+        super(par1, par2);
     }
 
-    public String getTextureFile()
+    public int getSheet()
     {
-        return "/Xolovon3.png";
+        return 4;
     }
 }

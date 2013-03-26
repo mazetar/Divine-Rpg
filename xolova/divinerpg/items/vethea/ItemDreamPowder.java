@@ -24,7 +24,7 @@ public class ItemDreamPowder extends Item
         else if (player.canPlayerEdit(x, y, z, var7, itemstack) && player.canPlayerEdit(x, y + 1, z, var7, itemstack))
         {
             int var11 = world.getBlockId(x, y, z);
-            int b = TwilightBlockHelper.augiteBlock.blockID;
+            int b = TwilightBlockHelper.AugiteBlock.blockID;
 
             if (var11 == b && world.isAirBlock(x, y + 1, z))
             {

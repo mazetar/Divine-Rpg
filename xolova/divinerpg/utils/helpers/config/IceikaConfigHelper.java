@@ -17,6 +17,7 @@ public class IceikaConfigHelper
 	public static int IcyBricksID;
 	public static int SnowyBricksID;
 	public static int CoalstoneID;
+	public static int CoalstoneFurnaceActiveID;
 	public static int CoalstoneFurnaceID;
 	public static int WorkshopCarpetID;
 	public static int WorkshopBookcaseID;
@@ -54,6 +55,7 @@ public class IceikaConfigHelper
 		SnowyBricksID = config.getBlock("Snowy Bricks", 719).getInt();
 		CoalstoneID = config.getBlock("Coalstone", 731).getInt();
 		CoalstoneFurnaceID = config.getBlock("Coalstone Furnace", 727).getInt();
+		CoalstoneFurnaceID = config.getBlock("Coalstone Furnace Active", 716).getInt();
 		WorkshopCarpetID = config.getBlock("Workshop Carpet", 730).getInt();
 		WorkshopBookcaseID = config.getBlock("Workshop Bookcase", 723).getInt();
 		WorkshopLampID = config.getBlock("Workshop Lamp", 729).getInt();

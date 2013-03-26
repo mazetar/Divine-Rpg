@@ -35,7 +35,7 @@ public class ItemDivineRPGArmor extends ItemArmor implements IArmorTextureProvid
 	}
 	
 	public ItemDivineRPGArmor(int id, int armorType, String armorName, double damageReduction, int durability, boolean unbreakable) {
-		super(id, DUMMY_MATERIAL, armorType, armorType);
+		super(id - 256, DUMMY_MATERIAL, armorType, armorType);
 		this.armorName = armorName;
 		this.unbrekable = unbreakable;
 		this.armorType = armorType;

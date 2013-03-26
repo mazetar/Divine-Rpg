@@ -1,32 +1,24 @@
+package xolova.divinerpg.blocks.iceika;
 
-package xolova.blued00r.divinerpg.blocks;
-
+import xolova.divinerpg.utils.helpers.IconHelper;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockIceikaDoor extends BlockDoor
 {
-    public BlockIceikaDoor(int par1, Material par2Material)
-    {
+    public BlockIceikaDoor(int par1, Material par2Material) {
         super(par1, par2Material);
-        this.blockIndexInTexture = 219;
     }
 
-    @SideOnly(Side.CLIENT)
-
-    /**
-     * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
-     */
     @Override
-    public int getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
-    {
-        if (par5 != 0 && par5 != 1)
-        {
+    public Icon getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5) {
+        if (par5 != 0 && par5 != 1) {
             int var6 = this.getFullMetadata(par1IBlockAccess, par2, par3, par4);
-            int var7 = this.blockIndexInTexture;
+            int var7 = (13 * 16) + 11;
 
             if ((var6 & 8) != 0)
             {
@@ -80,16 +72,11 @@ public class BlockIceikaDoor extends BlockDoor
                 }
             }
 
-            return var7;
+            return IconHelper.icons[3][var7];
         }
         else
         {
-            return this.blockIndexInTexture;
+            return IconHelper.icons[3][(13 * 16) + 10];
         }
-    }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
     }
 }

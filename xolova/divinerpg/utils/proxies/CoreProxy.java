@@ -2,11 +2,14 @@ package xolova.divinerpg.utils.proxies;
 
 import net.minecraft.entity.Entity;
 import net.minecraftforge.common.MinecraftForge;
+import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.DivineRPGIceika;
 import xolova.divinerpg.entities.core.EntityDamageProjectile;
+import xolova.divinerpg.utils.helpers.gui.GuiHelper;
 import xolova.divinerpg.utils.helpers.misc.core.ArmorEffectHandler;
 import xolova.divinerpg.utils.helpers.misc.core.ServerTickHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -19,6 +22,8 @@ public class CoreProxy {
 		entityRegistry();
 		tickRegistry();
 		eventRegistry();
+		
+		NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new GuiHelper());
 	}
 	
 	public void tickRegistry() {

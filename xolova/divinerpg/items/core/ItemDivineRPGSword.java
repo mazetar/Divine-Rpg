@@ -25,7 +25,7 @@ public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
 	}
 	
 	public ItemDivineRPGSword(int par1, EnumToolMaterial par2EnumToolMaterial, boolean unbreakable) {
-		super(par1, par2EnumToolMaterial);
+		super(par1 - 256, par2EnumToolMaterial);
 		this.unbreakable = unbreakable;
 		dmg = par2EnumToolMaterial.getDamageVsEntity();
 	}

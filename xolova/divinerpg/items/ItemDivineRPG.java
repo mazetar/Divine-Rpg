@@ -16,7 +16,7 @@ public class ItemDivineRPG extends Item implements IItemDivineRPG
 	}
 	
 	public ItemDivineRPG(int id, int sprite) {
-		super(id);
+		super(id - 256);
 		this.index = sprite;
 	}
 	

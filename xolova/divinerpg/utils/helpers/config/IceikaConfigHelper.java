@@ -26,7 +26,8 @@ public class IceikaConfigHelper
 	public static int SteelDoorID;
 	public static int FrostedChestID;
 	public static int XmasTreeLightsID;
-	public static int FrozenDungeonSpawnerID;
+	public static int GlacideSpawnerID;
+	public static int RolumSpawnerID;
 	public static int RedXmasLightsID;
 	public static int GreenXmasLightsID;
 	public static int BlueXmasLightsID;
@@ -45,17 +46,17 @@ public class IceikaConfigHelper
 		
 		config.load();
 		
-		FrostedStoneID = config.getBlock("Frosted Stone", 721).getInt();
+		FrostedStoneID = config.getBlock("Frosted Stone", 203).getInt();
 		FrostedDirtID = config.getBlock("Frosted Dirt", 200).getInt();
 		FrostedGrassID = config.getBlock("Frosted Grass", 201).getInt();
 		FrostedWoodID = config.getBlock("Frosted Wood", 720).getInt();
 		FrostedLeavesID = config.getBlock("Frosted Leaves", 718).getInt();
-		IcyStoneID = config.getBlock("Icy Stone", 203).getInt();
+		IcyStoneID = config.getBlock("Icy Stone", 721).getInt();
 		IcyBricksID = config.getBlock("Icy Bricks", 719).getInt();
 		SnowyBricksID = config.getBlock("Snowy Bricks", 719).getInt();
 		CoalstoneID = config.getBlock("Coalstone", 731).getInt();
 		CoalstoneFurnaceID = config.getBlock("Coalstone Furnace", 727).getInt();
-		CoalstoneFurnaceID = config.getBlock("Coalstone Furnace Active", 716).getInt();
+		CoalstoneFurnaceActiveID = config.getBlock("Coalstone Furnace Active", 716).getInt();
 		WorkshopCarpetID = config.getBlock("Workshop Carpet", 730).getInt();
 		WorkshopBookcaseID = config.getBlock("Workshop Bookcase", 723).getInt();
 		WorkshopLampID = config.getBlock("Workshop Lamp", 729).getInt();
@@ -63,7 +64,8 @@ public class IceikaConfigHelper
 		SteelDoorID = config.getBlock("Steel Door", 725).getInt();
 		FrostedChestID = config.getBlock("Frosted Chest", 728).getInt();
 		XmasTreeLightsID = config.getBlock("Xmas Light Leaves", 732).getInt();
-		FrozenDungeonSpawnerID = config.getBlock("Glacide Spawner", 749).getInt();
+		GlacideSpawnerID = config.getBlock("Glacide Spawner", 749).getInt();
+		RolumSpawnerID = config.getBlock("Rollum Spawner", 750).getInt();
 		RedXmasLightsID = config.getBlock("Red Xmas Lights", 743).getInt();
 		GreenXmasLightsID = config.getBlock("Green Xmas Lights", 744).getInt();
 		BlueXmasLightsID = config.getBlock("Blue Xmas Lights", 745).getInt();

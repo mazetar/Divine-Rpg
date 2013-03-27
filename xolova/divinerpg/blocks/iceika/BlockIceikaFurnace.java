@@ -67,6 +67,11 @@ public class BlockIceikaFurnace extends BlockDivineRPGContainer {
     }
 
 
+    @Override
+    public int getSheet(int side, int metadata) {
+    	return 3;
+    }
+    
     public int getIndex(int var6, int par5) {
     	if (par5 == 1 || par5 == 0)
             return (11 * 16 + 14);

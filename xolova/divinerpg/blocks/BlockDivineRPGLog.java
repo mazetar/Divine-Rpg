@@ -54,6 +54,7 @@ public abstract class BlockDivineRPGLog extends BlockDivineRPG {
         return true;
     }
 
+    @Override
     public int getIndex(int par1, int par2) {
         int var3 = par2 & 12;
         int var4 = par2 & 3;

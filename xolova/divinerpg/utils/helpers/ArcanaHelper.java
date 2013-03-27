@@ -8,6 +8,7 @@ import cpw.mods.fml.common.IPlayerTracker;
 import net.minecraft.entity.player.EntityPlayer;
 
 public class ArcanaHelper implements IPlayerTracker {
+	
 	public static HashMap<String, Integer> bars = new HashMap<String, Integer>();
 	public static HashMap<String, Integer> delays = new HashMap<String, Integer>();
 	

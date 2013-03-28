@@ -6,23 +6,24 @@ import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.particle.EntityAugitePortalFX;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EntityUltimaPhaser extends EntityThrowable
+public class EntityBlitzAugite extends EntityThrowable
 {
-    public EntityUltimaPhaser(World var1)
+    public EntityBlitzAugite(World var1)
     {
         super(var1);
     }
 
-    public EntityUltimaPhaser(World var1, EntityLiving var2)
+    public EntityBlitzAugite(World var1, EntityLiving var2)
     {
         super(var1, var2);
     }
 
-    public EntityUltimaPhaser(World var1, double var2, double var4, double var6)
+    public EntityBlitzAugite(World var1, double var2, double var4, double var6)
     {
         super(var1, var2, var4, var6);
     }
@@ -34,8 +35,8 @@ public class EntityUltimaPhaser extends EntityThrowable
 
         for (int var3 = 0; var3 < 8; ++var3)
         {
-            EntityGreenPortalFX var20 = new EntityGreenPortalFX(this.worldObj, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
-            FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20, var20);
+            EntityAugitePortalFX var20 = new EntityAugitePortalFX(this.worldObj, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
+            FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
         }
     }
 
@@ -46,17 +47,14 @@ public class EntityUltimaPhaser extends EntityThrowable
     {
         if (var1.entityHit != null)
         {
-            byte var2 = 51;
+            byte var2 = 31;
 
             if (var1.entityHit instanceof EntityBlaze)
             {
-                var2 = 51;
+                var2 = 31;
             }
 
-            if (var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), var2))
-            {
-                boolean var3 = true;
-            }
+            var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), var2);
         }
 
         if (!this.worldObj.isRemote)

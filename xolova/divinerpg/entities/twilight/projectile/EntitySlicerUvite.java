@@ -7,19 +7,19 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-public class EntityMythrilSlicer extends EntityThrowable
+public class EntitySlicerUvite extends EntityThrowable
 {
-    public EntityMythrilSlicer(World var1)
+    public EntitySlicerUvite(World var1)
     {
         super(var1);
     }
 
-    public EntityMythrilSlicer(World var1, EntityLiving var2)
+    public EntitySlicerUvite(World var1, EntityLiving var2)
     {
         super(var1, var2);
     }
 
-    public EntityMythrilSlicer(World var1, double var2, double var4, double var6)
+    public EntitySlicerUvite(World var1, double var2, double var4, double var6)
     {
         super(var1, var2, var4, var6);
     }
@@ -31,17 +31,14 @@ public class EntityMythrilSlicer extends EntityThrowable
     {
         if (var1.entityHit != null)
         {
-            byte var2 = 28;
+            byte var2 = 22;
 
             if (var1.entityHit instanceof EntityBlaze)
             {
-                var2 = 28;
+                var2 = 22;
             }
 
-            if (var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), var2))
-            {
-                boolean var3 = true;
-            }
+            var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), var2);
         }
 
         if (!this.worldObj.isRemote)

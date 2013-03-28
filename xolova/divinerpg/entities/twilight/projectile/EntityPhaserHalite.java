@@ -6,22 +6,24 @@ import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.particle.EntityGreenPortalFX;
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EntityBlitzEnergy extends EntityThrowable
+public class EntityPhaserHalite extends EntityThrowable
 {
-    public EntityBlitzEnergy(World var1)
+    public EntityPhaserHalite(World var1)
     {
         super(var1);
     }
 
-    public EntityBlitzEnergy(World var1, EntityLiving var2)
+    public EntityPhaserHalite(World var1, EntityLiving var2)
     {
         super(var1, var2);
     }
 
-    public EntityBlitzEnergy(World var1, double var2, double var4, double var6)
+    public EntityPhaserHalite(World var1, double var2, double var4, double var6)
     {
         super(var1, var2, var4, var6);
     }
@@ -30,11 +32,11 @@ public class EntityBlitzEnergy extends EntityThrowable
     public void onUpdate()
     {
         super.onUpdate();
-        float var10 = 0.25F;
 
         for (int var3 = 0; var3 < 8; ++var3)
         {
-            this.worldObj.spawnParticle("portal", this.posX - this.motionX * (double)var10 + this.rand.nextDouble() * 0.6D - 0.3D, this.posY - this.motionY * (double)var10 - 0.5D, this.posZ - this.motionZ * (double)var10 + this.rand.nextDouble() * 0.6D - 0.3D, this.motionX, this.motionY, this.motionZ);
+            EntityGreenPortalFX var20 = new EntityGreenPortalFX(this.worldObj, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
+            FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
         }
     }
 
@@ -45,17 +47,14 @@ public class EntityBlitzEnergy extends EntityThrowable
     {
         if (var1.entityHit != null)
         {
-            byte var2 = 22;
+            byte var2 = 51;
 
             if (var1.entityHit instanceof EntityBlaze)
             {
-                var2 = 22;
+                var2 = 51;
             }
 
-            if (var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), var2))
-            {
-                boolean var3 = true;
-            }
+            var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), var2);
         }
 
         if (!this.worldObj.isRemote)

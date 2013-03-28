@@ -34,10 +34,7 @@ public class EntityCoriShot extends EntityThrowable
         if (var1.entityHit != null)
         {
 
-            if (var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), this.damage))
-            {
-                boolean var3 = true;
-            }
+            var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), this.damage);
         }
 
         if (!this.worldObj.isRemote)

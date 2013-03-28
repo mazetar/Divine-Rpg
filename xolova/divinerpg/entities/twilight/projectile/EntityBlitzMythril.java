@@ -1,5 +1,6 @@
 package xolova.divinerpg.entities.twilight.projectile;
 
+import xolova.divinerpg.entities.particle.EntityMythrilPortalFX;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.projectile.EntityThrowable;
@@ -35,7 +36,7 @@ public class EntityBlitzMythril extends EntityThrowable
         for (int var3 = 0; var3 < 8; ++var3)
         {
             EntityMythrilPortalFX var20 = new EntityMythrilPortalFX(this.worldObj, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
-            FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20, var20);
+            FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
         }
     }
 
@@ -53,10 +54,7 @@ public class EntityBlitzMythril extends EntityThrowable
                 var2 = 27;
             }
 
-            if (var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), var2))
-            {
-                boolean var3 = true;
-            }
+            var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), var2);
         }
 
         if (!this.worldObj.isRemote)

@@ -6,6 +6,7 @@ import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.particle.EntityAzuritePortalFX;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -36,7 +37,7 @@ public class EntityBlitzAzurite extends EntityThrowable
         for (int var3 = 0; var3 < 8; ++var3)
         {
             EntityAzuritePortalFX var20 = new EntityAzuritePortalFX(this.worldObj, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
-            FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20, var20);
+            FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
         }
     }
 
@@ -54,10 +55,7 @@ public class EntityBlitzAzurite extends EntityThrowable
                 var2 = 19;
             }
 
-            if (var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), var2))
-            {
-                boolean var3 = true;
-            }
+            var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), var2);
         }
 
         if (!this.worldObj.isRemote)

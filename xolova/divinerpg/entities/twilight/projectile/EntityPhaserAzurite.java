@@ -1,27 +1,29 @@
 package xolova.divinerpg.entities.twilight.projectile;
 
+import xolova.divinerpg.entities.particle.EntityAzuritePortalFX;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EntityEnergyPhaser extends EntityThrowable
+public class EntityPhaserAzurite extends EntityThrowable
 {
-    public EntityEnergyPhaser(World var1)
+    public EntityPhaserAzurite(World var1)
     {
         super(var1);
     }
 
-    public EntityEnergyPhaser(World var1, EntityLiving var2)
+    public EntityPhaserAzurite(World var1, EntityLiving var2)
     {
         super(var1, var2);
     }
 
-    public EntityEnergyPhaser(World var1, double var2, double var4, double var6)
+    public EntityPhaserAzurite(World var1, double var2, double var4, double var6)
     {
         super(var1, var2, var4, var6);
     }
@@ -30,11 +32,11 @@ public class EntityEnergyPhaser extends EntityThrowable
     public void onUpdate()
     {
         super.onUpdate();
-        float var10 = 0.25F;
 
         for (int var3 = 0; var3 < 8; ++var3)
         {
-            this.worldObj.spawnParticle("portal", this.posX - this.motionX * (double)var10 + this.rand.nextDouble() * 0.6D - 0.3D, this.posY - this.motionY * (double)var10 - 0.5D, this.posZ - this.motionZ * (double)var10 + this.rand.nextDouble() * 0.6D - 0.3D, this.motionX, this.motionY, this.motionZ);
+            EntityAzuritePortalFX var20 = new EntityAzuritePortalFX(this.worldObj, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
+            FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
         }
     }
 
@@ -45,17 +47,14 @@ public class EntityEnergyPhaser extends EntityThrowable
     {
         if (var1.entityHit != null)
         {
-            byte var2 = 35;
+            byte var2 = 30;
 
             if (var1.entityHit instanceof EntityBlaze)
             {
-                var2 = 35;
+                var2 = 30;
             }
 
-            if (var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), var2))
-            {
-                boolean var3 = true;
-            }
+            var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), var2);
         }
 
         if (!this.worldObj.isRemote)

@@ -7,19 +7,19 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-public class EntityDenseSlicer extends EntityThrowable
+public class EntitySlicerAzurite extends EntityThrowable
 {
-    public EntityDenseSlicer(World var1)
+    public EntitySlicerAzurite(World var1)
     {
         super(var1);
     }
 
-    public EntityDenseSlicer(World var1, EntityLiving var2)
+    public EntitySlicerAzurite(World var1, EntityLiving var2)
     {
         super(var1, var2);
     }
 
-    public EntityDenseSlicer(World var1, double var2, double var4, double var6)
+    public EntitySlicerAzurite(World var1, double var2, double var4, double var6)
     {
         super(var1, var2, var4, var6);
     }
@@ -31,17 +31,14 @@ public class EntityDenseSlicer extends EntityThrowable
     {
         if (var1.entityHit != null)
         {
-            byte var2 = 36;
+            byte var2 = 18;
 
             if (var1.entityHit instanceof EntityBlaze)
             {
-                var2 = 36;
+                var2 = 18;
             }
 
-            if (var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.thrower), var2))
-            {
-                boolean var3 = true;
-            }
+            var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), var2);
         }
 
         if (!this.worldObj.isRemote)

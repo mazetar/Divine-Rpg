@@ -8,7 +8,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.entities.twilight.projectile.EntityBlitzEnergy;
+import xolova.divinerpg.entities.twilight.projectile.EntityBlitzUvite;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -41,7 +41,7 @@ public class ItemBlitzUvite extends Item
         {
             var2.playSoundAtEntity(var3, "xolovon.blitz", 1.0F, 1.0F);
             var3.inventory.consumeInventoryItem(TwilightItemHelper.UviteDust.itemID);
-            var2.spawnEntityInWorld(new EntityBlitzEnergy(var2, var3));
+            var2.spawnEntityInWorld(new EntityBlitzUvite(var2, var3));
             var1.damageItem(1, var3);
             return var1;
         }

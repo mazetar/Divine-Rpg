@@ -7,7 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
-import xolova.divinerpg.entities.twilight.projectile.EntityEnergySlicer;
+import xolova.divinerpg.entities.twilight.projectile.EntitySlicerUvite;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -33,7 +33,7 @@ public class ItemEnergySlicer extends Item
 
         if (!var2.isRemote)
         {
-            var2.spawnEntityInWorld(new EntityEnergySlicer(var2, var3));
+            var2.spawnEntityInWorld(new EntitySlicerUvite(var2, var3));
         }
 
         return var1;

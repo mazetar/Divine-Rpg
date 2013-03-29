@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.generation.vethea;
+package xolova.divinerpg.worldgen.vethea;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.MINESHAFT;

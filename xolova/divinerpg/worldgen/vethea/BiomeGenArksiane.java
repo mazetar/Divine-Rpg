@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.generation.vethea;
+package xolova.divinerpg.worldgen.vethea;
 
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.BiomeGenBase;

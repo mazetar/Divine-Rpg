@@ -29,7 +29,7 @@ public class ExtractorRecipes
 
     private ExtractorRecipes()
     {
-        this.addSmelting(ArcanaBlockHelper.arcanaOre.blockID, new ItemStack(ArcanaItemHelper.arcanium), 0.0F);
+        this.addSmelting(ArcanaBlockHelper.arcaniumOre.blockID, new ItemStack(ArcanaItemHelper.arcanium), 0.0F);
     }
 
     /**

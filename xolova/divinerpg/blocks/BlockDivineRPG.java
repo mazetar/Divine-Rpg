@@ -1,12 +1,12 @@
 package xolova.divinerpg.blocks;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import xolova.divinerpg.api.IBlockDivineRPG;
 import xolova.divinerpg.utils.helpers.IconHelper;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockDivineRPG extends Block implements IBlockDivineRPG {
 	

@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -38,7 +39,7 @@ public class BlockAquamarine extends BlockFlower
      */
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
-        return par1 == ArcanaItemHelper.arcaniteGrass.blockID;
+        return par1 == ArcanaBlockHelper.arcaniteGrass.blockID;
     }
 
     /**
@@ -212,13 +213,13 @@ public class BlockAquamarine extends BlockFlower
     }
 
     @SideOnly(Side.CLIENT)
-    public void func_94332_a(IconRegister par1IconRegister)
+    public void registerIcons(IconRegister par1IconRegister)
     {
         this.texture = new Icon[4];
 
         for (int i = 0; i < this.texture.length; ++i)
         {
-            this.texture[i] = par1IconRegister.func_94245_a("aquamarine_" + i);
+            this.texture[i] = par1IconRegister.registerIcon("aquamarine_" + i);
         }
     }
 }

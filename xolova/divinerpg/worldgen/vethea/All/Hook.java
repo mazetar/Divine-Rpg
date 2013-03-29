@@ -2,14 +2,12 @@
 *** MADE BY MITHION'S .SCHEMATIC TO JAVA CONVERTING TOOL v1.6 ***
 */
 
-package xolova.blued00r.divinerpg.generation.vethea.All;
+package xolova.divinerpg.worldgen.vethea.All;
 import java.util.Random;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-
-import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
 public class Hook extends WorldGenerator
 {
@@ -22,48 +20,48 @@ public class Hook extends WorldGenerator
 
 	public boolean generate(World world, Random rand, int i, int j, int k) {
 
-		world.setBlock(i + 0, j + 6, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 0, j + 7, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 5, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 1, j + 6, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 1, j + 7, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 1, j + 8, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 0, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 1, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 2, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 3, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 4, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 5, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 2, j + 6, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 7, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 2, j + 8, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 2, j + 9, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 3, j + 0, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 3, j + 1, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 3, j + 2, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 3, j + 3, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 3, j + 4, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 3, j + 5, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 3, j + 8, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 3, j + 9, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 3, j + 10, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 3, j + 11, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 4, j + 0, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 4, j + 1, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 4, j + 2, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 4, j + 3, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 4, j + 4, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 4, j + 5, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 4, j + 9, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 4, j + 10, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 4, j + 11, k + 0, DivineRPGTwilight.everstone.blockID);
-		world.setBlock(i + 4, j + 12, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 5, j + 0, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 5, j + 1, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 5, j + 2, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 5, j + 3, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 5, j + 10, k + 0, DivineRPGTwilight.darkEverstone.blockID);
-		world.setBlock(i + 5, j + 11, k + 0, DivineRPGTwilight.darkEverstone.blockID);
+		world.setBlock(i + 0, j + 6, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 0, j + 7, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 5, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 1, j + 6, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 1, j + 7, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 1, j + 8, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 0, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 1, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 2, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 3, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 4, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 5, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 2, j + 6, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 7, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 2, j + 8, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 2, j + 9, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 3, j + 0, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 3, j + 1, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 3, j + 2, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 3, j + 3, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 3, j + 4, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 3, j + 5, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 3, j + 8, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 3, j + 9, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 3, j + 10, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 3, j + 11, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 4, j + 0, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 4, j + 1, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 4, j + 2, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 4, j + 3, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 4, j + 4, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 4, j + 5, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 4, j + 9, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 4, j + 10, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 4, j + 11, k + 0, VetheaBlockHelper.everstone.blockID);
+		world.setBlock(i + 4, j + 12, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 5, j + 0, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 5, j + 1, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 5, j + 2, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 5, j + 3, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 5, j + 10, k + 0, VetheaBlockHelper.darkEverstone.blockID);
+		world.setBlock(i + 5, j + 11, k + 0, VetheaBlockHelper.darkEverstone.blockID);
 
 		return true;
 	}

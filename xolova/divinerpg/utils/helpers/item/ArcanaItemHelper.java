@@ -115,10 +115,10 @@ public class ArcanaItemHelper
 		oreDoor2Item = (new ItemOreDoor2(ArcanaConfigHelper.oreDoor2ItemID, Material.wood)).setUnlocalizedName("doorWood2").setCreativeTab(CreativeTabHelper.tabItems);
 		oreDoor3Item = (new ItemOreDoor3(ArcanaConfigHelper.oreDoor3ItemID, Material.wood)).setUnlocalizedName("doorWood3").setCreativeTab(CreativeTabHelper.tabItems);
 		oreDoor4Item = (new ItemOreDoor4(ArcanaConfigHelper.oreDoor4ItemID, Material.wood)).setUnlocalizedName("doorWood4").setCreativeTab(CreativeTabHelper.tabItems);
-		key1 = new ItemKey(ArcanaConfigHelper.key1ID).setUnlocalizedName("key1").setCreativeTab(CreativeTabHelper.tabItems);
-	    key2 = new ItemKey(ArcanaConfigHelper.key2ID).setUnlocalizedName("key2").setCreativeTab(CreativeTabHelper.tabItems);
-	    key3 = new ItemKey(ArcanaConfigHelper.key3ID).setUnlocalizedName("key3").setCreativeTab(CreativeTabHelper.tabItems);
-	    key4 = new ItemKey(ArcanaConfigHelper.key4ID).setUnlocalizedName("key4").setCreativeTab(CreativeTabHelper.tabItems);
+		key1 = new ItemKey(ArcanaConfigHelper.key1ID, 12).setUnlocalizedName("key1").setCreativeTab(CreativeTabHelper.tabItems); //TODO: Add Right Textures
+	    key2 = new ItemKey(ArcanaConfigHelper.key2ID, 13).setUnlocalizedName("key2").setCreativeTab(CreativeTabHelper.tabItems);
+	    key3 = new ItemKey(ArcanaConfigHelper.key3ID, 14).setUnlocalizedName("key3").setCreativeTab(CreativeTabHelper.tabItems);
+	    key4 = new ItemKey(ArcanaConfigHelper.key4ID, 15).setUnlocalizedName("key4").setCreativeTab(CreativeTabHelper.tabItems);
 	    fireStockItem = new Item(ArcanaConfigHelper.fireStockItemID).setUnlocalizedName("fireStockItem").setCreativeTab(CreativeTabHelper.tabHerb);
         fireStockSeeds = new ItemSeeds(ArcanaConfigHelper.fireStockSeedsID, ArcanaBlockHelper.fireStock.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setUnlocalizedName("fireStockSeeds").setCreativeTab(CreativeTabHelper.tabHerb);
         pinFlyItem = new ItemPinFly(ArcanaConfigHelper.pinFlyItemID, 2, 0.3F, false).setUnlocalizedName("pinflyItem").setCreativeTab(CreativeTabHelper.tabHerb);
@@ -146,7 +146,7 @@ public class ArcanaItemHelper
         arcaniumSaber = new ItemArcaniumSaber(ArcanaConfigHelper.arcaniumSaberID, arcanaSword).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("arcaniumSaber");
         liviciaSword = new ItemLiviciaSword(ArcanaConfigHelper.liviciaSwordID, arcanaSword).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("liviciaSword");
         
-        staffOfStarlight = new ItemStaffOfStarlight(ArcanaConfigHelper.staffOfStarlightID).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("staffOfStarlight");
+        staffOfStarlight = new ItemStaffOfStarlight(ArcanaConfigHelper.staffOfStarlightID, 14).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("staffOfStarlight");
         wraithbane = new ItemWraithbane(ArcanaConfigHelper.wraithbaneID).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("wraithbane");
         captiansSparkler = new ItemCaptiansSparkeler(ArcanaConfigHelper.captiansSparklerID).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("captiansSparkler");
         enderScepter = new ItemEnderScepter(ArcanaConfigHelper.enderScepterID).setUnlocalizedName("enderScepter").setCreativeTab(CreativeTabHelper.tabSword);

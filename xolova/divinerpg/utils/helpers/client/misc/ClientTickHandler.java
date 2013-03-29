@@ -89,7 +89,7 @@ public class ClientTickHandler implements ITickHandler
 				// ================== CONSTANTS ======================== //
 				final int tempArcana = 400; // Test value!! Will be weird if it's larger than the barWidth!
 				final int startY = (height - 30) * 2;
-				final int startX = (width - 220) * 2;
+				final int startX = (width - 250) * 2;
 				final int barHeight = 40;
 				final int barWidth = 400;
 				final int lines = 6;
@@ -98,7 +98,7 @@ public class ClientTickHandler implements ITickHandler
 				final int colorOutline = 0x8EC7FF;
 				final int colorInside = 0x46A3FF;
 				final int colorGray = 0x888888;
-				final float insideBarWidth = 1F;
+				final float insideBarWidth = 1.5F;
 				final float outlineBarWidth =  3F;
 				final float grayBarWidth = 2F;
 				// ====================================================== //

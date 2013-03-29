@@ -1,11 +1,11 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.dravite;
 
 import java.util.Random;
 
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class WorldGenTwilightMineable extends WorldGenerator
 {

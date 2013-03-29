@@ -1,13 +1,13 @@
 package xolova.divinerpg.blocks;
 
-import xolova.divinerpg.api.IBlockDivineRPG;
-import xolova.divinerpg.utils.helpers.IconHelper;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
+import xolova.divinerpg.api.IBlockDivineRPG;
+import xolova.divinerpg.utils.helpers.IconHelper;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockColoredGlass extends BlockGlass implements IBlockDivineRPG {
 

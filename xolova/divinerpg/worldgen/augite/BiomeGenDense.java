@@ -1,7 +1,7 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.augite;
 
 import net.minecraft.world.biome.BiomeGenBase;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class BiomeGenDense extends BiomeGenBase
 {
@@ -11,8 +11,8 @@ public class BiomeGenDense extends BiomeGenBase
         this.setBiomeName("Augite");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        this.topBlock = (byte)DivineRPGTwilight.denseGrass.blockID;
-        this.fillerBlock = (byte)DivineRPGTwilight.denseDirt.blockID;
+        this.topBlock = (byte)TwilightBlockHelper.DraviteGrass.blockID;
+        this.fillerBlock = (byte)TwilightBlockHelper.DraviteDirt.blockID;
         this.waterColorMultiplier = 2368548;
     }
 }

@@ -1,10 +1,7 @@
 package xolova.divinerpg.blocks;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
-import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
 
 public abstract class BlockDivineRPGLog extends BlockDivineRPG {

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.generation.vethea;
+package xolova.divinerpg.worldgen.vethea;
 
 import java.util.Random;
 import net.minecraft.block.Block;

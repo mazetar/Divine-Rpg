@@ -1,11 +1,7 @@
 package xolova.divinerpg;
 
 import xolova.divinerpg.utils.Utils;
-import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
-import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
-import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import xolova.divinerpg.utils.proxies.CoreProxy;
-import xolova.divinerpg.utils.proxies.TwilightProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;

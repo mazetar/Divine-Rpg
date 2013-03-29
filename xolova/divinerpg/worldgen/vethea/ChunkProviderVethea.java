@@ -6,7 +6,6 @@ import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.RAVI
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.SCATTERED_FEATURE;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.STRONGHOLD;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.VILLAGE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +25,6 @@ import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenRavine;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.MapGenScatteredFeature;
-import net.minecraft.world.gen.feature.WorldGenFlowers;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraft.world.gen.structure.MapGenMineshaft;
 import net.minecraft.world.gen.structure.MapGenStronghold;
@@ -36,43 +34,42 @@ import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.generation.vethea.All.Bow;
-import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree4;
-import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree5;
-import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree6;
-import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree7;
-import xolova.blued00r.divinerpg.generation.vethea.All.Hook;
-import xolova.blued00r.divinerpg.generation.vethea.All.InfusionOutpost;
-import xolova.blued00r.divinerpg.generation.vethea.All.Lamp1;
-import xolova.blued00r.divinerpg.generation.vethea.All.Lamp2;
-import xolova.blued00r.divinerpg.generation.vethea.All.Mushroom;
-import xolova.blued00r.divinerpg.generation.vethea.All.Pickaxe;
-import xolova.blued00r.divinerpg.generation.vethea.All.Pointedsquare;
-import xolova.blued00r.divinerpg.generation.vethea.All.Ring;
-import xolova.blued00r.divinerpg.generation.vethea.All.Sword;
-import xolova.blued00r.divinerpg.generation.vethea.All.TreeFloating1;
-import xolova.blued00r.divinerpg.generation.vethea.All.TreeFloating2;
-import xolova.blued00r.divinerpg.generation.vethea.All.TreeFloating3;
-import xolova.blued00r.divinerpg.generation.vethea.All.Trident;
-import xolova.blued00r.divinerpg.generation.vethea.layer1.Crypt1;
-import xolova.blued00r.divinerpg.generation.vethea.layer1.Crypt2;
-import xolova.blued00r.divinerpg.generation.vethea.layer1.Tree4;
-import xolova.blued00r.divinerpg.generation.vethea.layer1.Tree5;
-import xolova.blued00r.divinerpg.generation.vethea.layer1.Tree6;
-import xolova.blued00r.divinerpg.generation.vethea.layer2.HiveNest;
-import xolova.blued00r.divinerpg.generation.vethea.layer2.Pyramid1;
-import xolova.blued00r.divinerpg.generation.vethea.layer2.Pyramid2;
-import xolova.blued00r.divinerpg.generation.vethea.layer2.Tree3;
-import xolova.blued00r.divinerpg.generation.vethea.layer3.KarosMadhouse;
-import xolova.blued00r.divinerpg.generation.vethea.layer3.QuadroticPost;
-import xolova.blued00r.divinerpg.generation.vethea.layer3.Tree7;
-import xolova.blued00r.divinerpg.generation.vethea.layer3.Tree8;
-import xolova.blued00r.divinerpg.generation.vethea.layer4.Evergarden;
-import xolova.blued00r.divinerpg.generation.vethea.layer4.RaglokChamber;
-import xolova.blued00r.divinerpg.generation.vethea.layer4.Tree1;
-import xolova.blued00r.divinerpg.generation.vethea.layer4.Tree2;
-import xolova.blued00r.divinerpg.generation.vethea.layer4.WreckHall;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
+import xolova.divinerpg.worldgen.vethea.All.Bow;
+import xolova.divinerpg.worldgen.vethea.All.FloatingTree4;
+import xolova.divinerpg.worldgen.vethea.All.FloatingTree5;
+import xolova.divinerpg.worldgen.vethea.All.FloatingTree6;
+import xolova.divinerpg.worldgen.vethea.All.FloatingTree7;
+import xolova.divinerpg.worldgen.vethea.All.Hook;
+import xolova.divinerpg.worldgen.vethea.All.InfusionOutpost;
+import xolova.divinerpg.worldgen.vethea.All.Lamp1;
+import xolova.divinerpg.worldgen.vethea.All.Lamp2;
+import xolova.divinerpg.worldgen.vethea.All.Mushroom;
+import xolova.divinerpg.worldgen.vethea.All.Pickaxe;
+import xolova.divinerpg.worldgen.vethea.All.Pointedsquare;
+import xolova.divinerpg.worldgen.vethea.All.Ring;
+import xolova.divinerpg.worldgen.vethea.All.Sword;
+import xolova.divinerpg.worldgen.vethea.All.TreeFloating1;
+import xolova.divinerpg.worldgen.vethea.All.TreeFloating2;
+import xolova.divinerpg.worldgen.vethea.All.TreeFloating3;
+import xolova.divinerpg.worldgen.vethea.All.Trident;
+import xolova.divinerpg.worldgen.vethea.layer1.Crypt1;
+import xolova.divinerpg.worldgen.vethea.layer1.Crypt2;
+import xolova.divinerpg.worldgen.vethea.layer1.Tree4;
+import xolova.divinerpg.worldgen.vethea.layer1.Tree5;
+import xolova.divinerpg.worldgen.vethea.layer1.Tree6;
+import xolova.divinerpg.worldgen.vethea.layer2.HiveNest;
+import xolova.divinerpg.worldgen.vethea.layer2.Pyramid1;
+import xolova.divinerpg.worldgen.vethea.layer2.Pyramid2;
+import xolova.divinerpg.worldgen.vethea.layer3.KarosMadhouse;
+import xolova.divinerpg.worldgen.vethea.layer3.QuadroticPost;
+import xolova.divinerpg.worldgen.vethea.layer3.Tree7;
+import xolova.divinerpg.worldgen.vethea.layer3.Tree8;
+import xolova.divinerpg.worldgen.vethea.layer4.Evergarden;
+import xolova.divinerpg.worldgen.vethea.layer4.RaglokChamber;
+import xolova.divinerpg.worldgen.vethea.layer4.Tree1;
+import xolova.divinerpg.worldgen.vethea.layer4.Tree2;
+import xolova.divinerpg.worldgen.vethea.layer4.WreckHall;
 
 public class ChunkProviderVethea implements IChunkProvider
 {
@@ -137,7 +134,6 @@ public class ChunkProviderVethea implements IChunkProvider
     
     private final WorldGenerator layer1Gen;
     
-    //TODO
     private final WorldGenerator ceilingTexture;
     private final WorldGenerator pillar;
     
@@ -270,16 +266,16 @@ public class ChunkProviderVethea implements IChunkProvider
         layer3TreeBig = new WorldGenLayer3BigTree(false);
         infusion = new InfusionOutpost();
         
-        cracklespikes = new WorldGenVetheanFlower(DivineRPGTwilight.cracklespike.blockID);
-        fernites = new WorldGenVetheanFlower(DivineRPGTwilight.fernite.blockID);
-        bulatobes = new WorldGenVetheanFlower(DivineRPGTwilight.bulatobe.blockID);
-        shinegrass = new WorldGenVetheanFlower(DivineRPGTwilight.shineGrass.blockID);
-        shimmers = new WorldGenVetheanFlower(DivineRPGTwilight.shimmer.blockID);
-        dreamglows = new WorldGenVetheanFlower(DivineRPGTwilight.dreamglow.blockID);
-        greenGemTops = new WorldGenVetheanFlower(DivineRPGTwilight.gemtopGreen.blockID);;
-        purpleGemTops = new WorldGenVetheanFlower(DivineRPGTwilight.gemtopPurple.blockID);;
-        yellowDulahs = new WorldGenVetheanFlower(DivineRPGTwilight.yellowDulah.blockID);;
-        greenDulahs = new WorldGenVetheanFlower(DivineRPGTwilight.greenDulah.blockID);;
+        cracklespikes = new WorldGenVetheanFlower(VetheaBlockHelper.cracklespike.blockID);
+        fernites = new WorldGenVetheanFlower(VetheaBlockHelper.fernite.blockID);
+        bulatobes = new WorldGenVetheanFlower(VetheaBlockHelper.bulatobe.blockID);
+        shinegrass = new WorldGenVetheanFlower(VetheaBlockHelper.shineGrass.blockID);
+        shimmers = new WorldGenVetheanFlower(VetheaBlockHelper.shimmer.blockID);
+        dreamglows = new WorldGenVetheanFlower(VetheaBlockHelper.dreamglow.blockID);
+        greenGemTops = new WorldGenVetheanFlower(VetheaBlockHelper.gemtopGreen.blockID);;
+        purpleGemTops = new WorldGenVetheanFlower(VetheaBlockHelper.gemtopPurple.blockID);;
+        yellowDulahs = new WorldGenVetheanFlower(VetheaBlockHelper.yellowDulah.blockID);;
+        greenDulahs = new WorldGenVetheanFlower(VetheaBlockHelper.greenDulah.blockID);;
         
     }
 
@@ -392,7 +388,7 @@ public class ChunkProviderVethea implements IChunkProvider
         				
         				if (var16 <= var5 + 15)
         				{
-        					par3ArrayOfByte[var17] = (byte)DivineRPGTwilight.dreamstone.blockID;//bedrock
+        					par3ArrayOfByte[var17] = (byte)VetheaBlockHelper.dreamstone.blockID;//bedrock
         				}
         				else
         				{
@@ -409,7 +405,7 @@ public class ChunkProviderVethea implements IChunkProvider
         							if (var12 <= 0)
         							{
         								var14 = 0;
-        								var15 = (byte)DivineRPGTwilight.dreamstone.blockID;
+        								var15 = (byte)VetheaBlockHelper.dreamstone.blockID;
         							}
         							else if (var16 >= var5 - 4 && var16 <= var5 + 1)
         							{
@@ -1088,4 +1084,10 @@ public class ChunkProviderVethea implements IChunkProvider
         {
         }
     }
+
+	@Override
+	public boolean unloadQueuedChunks() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

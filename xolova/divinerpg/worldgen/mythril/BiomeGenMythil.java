@@ -1,7 +1,7 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.mythril;
 
 import net.minecraft.world.biome.BiomeGenBase;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class BiomeGenMythil extends BiomeGenBase
 {
@@ -11,8 +11,8 @@ public class BiomeGenMythil extends BiomeGenBase
         this.setBiomeName("Mythril");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        this.topBlock = (byte)DivineRPGTwilight.mythilGrass.blockID;
-        this.fillerBlock = (byte)DivineRPGTwilight.mythilDirt.blockID;
+        this.topBlock = (byte)TwilightBlockHelper.MythrilGrass.blockID;
+        this.fillerBlock = (byte)TwilightBlockHelper.MythrilDirt.blockID;
         this.waterColorMultiplier = 2368548;
     }
 }

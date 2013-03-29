@@ -4,7 +4,7 @@ import java.util.Random;
 
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
 public class WorldGenVetheanPillar extends WorldGenerator
 {
@@ -63,7 +63,7 @@ public class WorldGenVetheanPillar extends WorldGenerator
 		{
 			for (float j = 0; j < 2*Math.PI*i; j += 0.5)
 			{
-				this.setBlock(par1World, (int)Math.floor(x + Math.sin(j) * i), y, (int)Math.floor(z + Math.cos(j) * i), DivineRPGTwilight.dreamstone.blockID);
+				this.setBlock(par1World, (int)Math.floor(x + Math.sin(j) * i), y, (int)Math.floor(z + Math.cos(j) * i), VetheaBlockHelper.dreamstone.blockID);
 			}
 		}
 	}

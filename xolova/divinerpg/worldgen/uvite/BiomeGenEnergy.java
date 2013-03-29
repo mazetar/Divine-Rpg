@@ -1,7 +1,7 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.uvite;
 
 import net.minecraft.world.biome.BiomeGenBase;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class BiomeGenEnergy extends BiomeGenBase
 {
@@ -11,8 +11,8 @@ public class BiomeGenEnergy extends BiomeGenBase
         this.setBiomeName("Uvite");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        this.topBlock = (byte)DivineRPGTwilight.energyGrass.blockID;
-        this.fillerBlock = (byte)DivineRPGTwilight.energyDirt.blockID;
+        this.topBlock = (byte)TwilightBlockHelper.UviteGrass.blockID;
+        this.fillerBlock = (byte)TwilightBlockHelper.UviteDirt.blockID;
         this.waterColorMultiplier = 2368548;
     }
 }

@@ -1,13 +1,11 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.uvite;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
-import net.minecraft.util.Direction;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class WorldGenEnergyTrees extends WorldGenerator
 {
@@ -168,7 +166,7 @@ public class WorldGenEnergyTrees extends WorldGenerator
                     var11[var9] = var10[var9] + var13;
                     int var14 = this.worldObj.getBlockId(var11[0], var11[1], var11[2]);
 
-                    if (var14 != 0 && var14 != DivineRPGTwilight.energyLeaves.blockID)
+                    if (var14 != 0 && var14 != TwilightBlockHelper.UviteLeaves.blockID)
                     {
                         ++var13;
                     }
@@ -230,7 +228,7 @@ public class WorldGenEnergyTrees extends WorldGenerator
         for (int var5 = par2 + this.leafDistanceLimit; var4 < var5; ++var4)
         {
             float var6 = this.leafSize(var4 - par2);
-            this.genTreeLayer(par1, var4, par3, var6, (int)1, DivineRPGTwilight.energyLeaves.blockID);
+            this.genTreeLayer(par1, var4, par3, var6, (int)1, TwilightBlockHelper.UviteLeaves.blockID);
         }
     }
 
@@ -336,19 +334,19 @@ public class WorldGenEnergyTrees extends WorldGenerator
         int var4 = this.basePos[2];
         int[] var5 = new int[] {var1, var2, var4};
         int[] var6 = new int[] {var1, var3, var4};
-        this.placeBlockLine(var5, var6, DivineRPGTwilight.purpleWood.blockID);
+        this.placeBlockLine(var5, var6, TwilightBlockHelper.UviteLogs.blockID);
 
         if (this.trunkSize == 2)
         {
             ++var5[0];
             ++var6[0];
-            this.placeBlockLine(var5, var6, DivineRPGTwilight.purpleWood.blockID);
+            this.placeBlockLine(var5, var6, TwilightBlockHelper.UviteLogs.blockID);
             ++var5[2];
             ++var6[2];
-            this.placeBlockLine(var5, var6, DivineRPGTwilight.purpleWood.blockID);
+            this.placeBlockLine(var5, var6, TwilightBlockHelper.UviteLogs.blockID);
             var5[0] += -1;
             var6[0] += -1;
-            this.placeBlockLine(var5, var6, DivineRPGTwilight.purpleWood.blockID);
+            this.placeBlockLine(var5, var6, TwilightBlockHelper.UviteLogs.blockID);
         }
     }
 
@@ -369,7 +367,7 @@ public class WorldGenEnergyTrees extends WorldGenerator
 
             if (this.leafNodeNeedsBase(var6))
             {
-                this.placeBlockLine(var3, var5, (int)DivineRPGTwilight.purpleWood.blockID);
+                this.placeBlockLine(var3, var5, (int)TwilightBlockHelper.UviteLogs.blockID);
             }
         }
     }
@@ -426,7 +424,7 @@ public class WorldGenEnergyTrees extends WorldGenerator
                 var13[var7] = MathHelper.floor_double((double)par1ArrayOfInteger[var7] + (double)var14 * var11);
                 int var16 = this.worldObj.getBlockId(var13[0], var13[1], var13[2]);
 
-                if (var16 != 0 && var16 != DivineRPGTwilight.energyLeaves.blockID)
+                if (var16 != 0 && var16 != TwilightBlockHelper.UviteLeaves.blockID)
                 {
                     break;
                 }
@@ -446,7 +444,7 @@ public class WorldGenEnergyTrees extends WorldGenerator
         int[] var2 = new int[] {this.basePos[0], this.basePos[1] + this.heightLimit - 1, this.basePos[2]};
         int var3 = this.worldObj.getBlockId(this.basePos[0], this.basePos[1] - 1, this.basePos[2]);
 
-        if (var3 != DivineRPGTwilight.energyGrass.blockID && var3 != DivineRPGTwilight.energyDirt.blockID)
+        if (var3 != TwilightBlockHelper.UviteGrass.blockID && var3 != TwilightBlockHelper.UviteDirt.blockID)
         {
             return false;
         }

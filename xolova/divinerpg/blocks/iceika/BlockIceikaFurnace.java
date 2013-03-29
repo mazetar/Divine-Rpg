@@ -14,7 +14,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.blocks.BlockDivineRPGContainer;
-import xolova.divinerpg.blocks.iceika.tileentity.TileEntityCoalStoneFurnace;
+import xolova.divinerpg.blocks.iceika.tileentities.TileEntityCoalStoneFurnace;
 import xolova.divinerpg.utils.helpers.block.IceikaBlockHelper;
 
 public class BlockIceikaFurnace extends BlockDivineRPGContainer {

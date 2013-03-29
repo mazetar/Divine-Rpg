@@ -3,42 +3,6 @@ package xolova.divinerpg.worldgen.vethea;
 import java.util.ArrayList;
 import java.util.Random;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.generation.vethea.All.Bow;
-import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree4;
-import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree5;
-import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree6;
-import xolova.blued00r.divinerpg.generation.vethea.All.FloatingTree7;
-import xolova.blued00r.divinerpg.generation.vethea.All.Hook;
-import xolova.blued00r.divinerpg.generation.vethea.All.Lamp1;
-import xolova.blued00r.divinerpg.generation.vethea.All.Lamp2;
-import xolova.blued00r.divinerpg.generation.vethea.All.Mushroom;
-import xolova.blued00r.divinerpg.generation.vethea.All.Pickaxe;
-import xolova.blued00r.divinerpg.generation.vethea.All.Pointedsquare;
-import xolova.blued00r.divinerpg.generation.vethea.All.Ring;
-import xolova.blued00r.divinerpg.generation.vethea.All.Sword;
-import xolova.blued00r.divinerpg.generation.vethea.All.TreeFloating1;
-import xolova.blued00r.divinerpg.generation.vethea.All.TreeFloating2;
-import xolova.blued00r.divinerpg.generation.vethea.All.TreeFloating3;
-import xolova.blued00r.divinerpg.generation.vethea.All.Trident;
-import xolova.blued00r.divinerpg.generation.vethea.layer1.Crypt1;
-import xolova.blued00r.divinerpg.generation.vethea.layer1.Crypt2;
-import xolova.blued00r.divinerpg.generation.vethea.layer1.Tree4;
-import xolova.blued00r.divinerpg.generation.vethea.layer1.Tree5;
-import xolova.blued00r.divinerpg.generation.vethea.layer1.Tree6;
-import xolova.blued00r.divinerpg.generation.vethea.layer2.HiveNest;
-import xolova.blued00r.divinerpg.generation.vethea.layer2.Pyramid1;
-import xolova.blued00r.divinerpg.generation.vethea.layer2.Pyramid2;
-import xolova.blued00r.divinerpg.generation.vethea.layer2.Tree3;
-import xolova.blued00r.divinerpg.generation.vethea.layer3.QuadroticPost;
-import xolova.blued00r.divinerpg.generation.vethea.layer3.Tree7;
-import xolova.blued00r.divinerpg.generation.vethea.layer3.Tree8;
-import xolova.blued00r.divinerpg.generation.vethea.layer4.Evergarden;
-import xolova.blued00r.divinerpg.generation.vethea.layer4.RaglokChamber;
-import xolova.blued00r.divinerpg.generation.vethea.layer4.Tree1;
-import xolova.blued00r.divinerpg.generation.vethea.layer4.Tree2;
-import xolova.blued00r.divinerpg.generation.vethea.layer4.WreckHall;
-
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -46,6 +10,40 @@ import net.minecraft.world.gen.feature.WorldGenFlowers;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
+import xolova.divinerpg.worldgen.vethea.All.Bow;
+import xolova.divinerpg.worldgen.vethea.All.FloatingTree4;
+import xolova.divinerpg.worldgen.vethea.All.FloatingTree5;
+import xolova.divinerpg.worldgen.vethea.All.FloatingTree6;
+import xolova.divinerpg.worldgen.vethea.All.FloatingTree7;
+import xolova.divinerpg.worldgen.vethea.All.Hook;
+import xolova.divinerpg.worldgen.vethea.All.Lamp1;
+import xolova.divinerpg.worldgen.vethea.All.Lamp2;
+import xolova.divinerpg.worldgen.vethea.All.Mushroom;
+import xolova.divinerpg.worldgen.vethea.All.Pickaxe;
+import xolova.divinerpg.worldgen.vethea.All.Pointedsquare;
+import xolova.divinerpg.worldgen.vethea.All.Ring;
+import xolova.divinerpg.worldgen.vethea.All.Sword;
+import xolova.divinerpg.worldgen.vethea.All.TreeFloating1;
+import xolova.divinerpg.worldgen.vethea.All.TreeFloating2;
+import xolova.divinerpg.worldgen.vethea.All.TreeFloating3;
+import xolova.divinerpg.worldgen.vethea.All.Trident;
+import xolova.divinerpg.worldgen.vethea.layer1.Crypt1;
+import xolova.divinerpg.worldgen.vethea.layer1.Crypt2;
+import xolova.divinerpg.worldgen.vethea.layer1.Tree4;
+import xolova.divinerpg.worldgen.vethea.layer1.Tree5;
+import xolova.divinerpg.worldgen.vethea.layer1.Tree6;
+import xolova.divinerpg.worldgen.vethea.layer2.HiveNest;
+import xolova.divinerpg.worldgen.vethea.layer2.Pyramid1;
+import xolova.divinerpg.worldgen.vethea.layer2.Pyramid2;
+import xolova.divinerpg.worldgen.vethea.layer3.QuadroticPost;
+import xolova.divinerpg.worldgen.vethea.layer3.Tree7;
+import xolova.divinerpg.worldgen.vethea.layer3.Tree8;
+import xolova.divinerpg.worldgen.vethea.layer4.Evergarden;
+import xolova.divinerpg.worldgen.vethea.layer4.RaglokChamber;
+import xolova.divinerpg.worldgen.vethea.layer4.Tree1;
+import xolova.divinerpg.worldgen.vethea.layer4.Tree2;
+import xolova.divinerpg.worldgen.vethea.layer4.WreckHall;
 
 public class BiomeDecoratorArksiane extends BiomeDecorator
 {
@@ -153,12 +151,12 @@ public class BiomeDecoratorArksiane extends BiomeDecorator
         pillar = new WorldGenVetheanPillar();
         layer3TreeBig = new WorldGenLayer3BigTree(false);
         
-        cracklespikes = new WorldGenFlowers(DivineRPGTwilight.cracklespike.blockID);
-        fernites = new WorldGenFlowers(DivineRPGTwilight.fernite.blockID);
-        bulatobes = new WorldGenFlowers(DivineRPGTwilight.bulatobe.blockID);
-        shinegrass = new WorldGenFlowers(DivineRPGTwilight.shineGrass.blockID);
-        shimmers = new WorldGenFlowers(DivineRPGTwilight.shimmer.blockID);
-        dreamglows = new WorldGenFlowers(DivineRPGTwilight.dreamglow.blockID);
+        cracklespikes = new WorldGenFlowers(VetheaBlockHelper.cracklespike.blockID);
+        fernites = new WorldGenFlowers(VetheaBlockHelper.fernite.blockID);
+        bulatobes = new WorldGenFlowers(VetheaBlockHelper.bulatobe.blockID);
+        shinegrass = new WorldGenFlowers(VetheaBlockHelper.shineGrass.blockID);
+        shimmers = new WorldGenFlowers(VetheaBlockHelper.shimmer.blockID);
+        dreamglows = new WorldGenFlowers(VetheaBlockHelper.dreamglow.blockID);
     }
 
     /**

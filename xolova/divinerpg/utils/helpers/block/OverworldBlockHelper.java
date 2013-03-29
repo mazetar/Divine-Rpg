@@ -7,6 +7,7 @@ import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
 public class OverworldBlockHelper 
 {
 	public static Block blueFire;
+	public static Block TarStill;
 	
 	public static void init()
 	{

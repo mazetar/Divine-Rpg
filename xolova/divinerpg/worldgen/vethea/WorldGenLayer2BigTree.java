@@ -2,11 +2,10 @@ package xolova.divinerpg.worldgen.vethea;
 
 import java.util.Random;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-import net.minecraft.block.Block;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
 public class WorldGenLayer2BigTree extends WorldGenerator
 {
@@ -167,7 +166,7 @@ public class WorldGenLayer2BigTree extends WorldGenerator
                     var11[var9] = var10[var9] + var13;
                     int var14 = this.worldObj.getBlockId(var11[0], var11[1], var11[2]);
 
-                    if (var14 != 0 && var14 != DivineRPGTwilight.firewoodLeaves.blockID)
+                    if (var14 != 0 && var14 != VetheaBlockHelper.firewoodLeaves.blockID)
                     {
                         ++var13;
                     }
@@ -229,7 +228,7 @@ public class WorldGenLayer2BigTree extends WorldGenerator
         for (int var5 = par2 + this.leafDistanceLimit; var4 < var5; ++var4)
         {
             float var6 = this.leafSize(var4 - par2);
-            this.genTreeLayer(par1, var4, par3, var6, (byte)1, DivineRPGTwilight.firewoodLeaves.blockID);
+            this.genTreeLayer(par1, var4, par3, var6, (byte)1, VetheaBlockHelper.firewoodLeaves.blockID);
         }
     }
 
@@ -335,19 +334,19 @@ public class WorldGenLayer2BigTree extends WorldGenerator
         int var4 = this.basePos[2];
         int[] var5 = new int[] {var1, var2, var4};
         int[] var6 = new int[] {var1, var3, var4};
-        this.placeBlockLine(var5, var6, DivineRPGTwilight.firewood.blockID);
+        this.placeBlockLine(var5, var6, VetheaBlockHelper.firewood.blockID);
 
         if (this.trunkSize == 2)
         {
             ++var5[0];
             ++var6[0];
-            this.placeBlockLine(var5, var6, DivineRPGTwilight.firewood.blockID);
+            this.placeBlockLine(var5, var6, VetheaBlockHelper.firewood.blockID);
             ++var5[2];
             ++var6[2];
-            this.placeBlockLine(var5, var6, DivineRPGTwilight.firewood.blockID);
+            this.placeBlockLine(var5, var6, VetheaBlockHelper.firewood.blockID);
             var5[0] += -1;
             var6[0] += -1;
-            this.placeBlockLine(var5, var6, DivineRPGTwilight.firewood.blockID);
+            this.placeBlockLine(var5, var6, VetheaBlockHelper.firewood.blockID);
         }
     }
 
@@ -368,7 +367,7 @@ public class WorldGenLayer2BigTree extends WorldGenerator
 
             if (this.leafNodeNeedsBase(var6))
             {
-                this.placeBlockLine(var3, var5, (byte)DivineRPGTwilight.firewood.blockID);
+                this.placeBlockLine(var3, var5, (byte)VetheaBlockHelper.firewood.blockID);
             }
         }
     }
@@ -425,7 +424,7 @@ public class WorldGenLayer2BigTree extends WorldGenerator
                 var13[var7] = MathHelper.floor_double((double)par1ArrayOfInteger[var7] + (double)var14 * var11);
                 int var16 = this.worldObj.getBlockId(var13[0], var13[1], var13[2]);
 
-                if (var16 != 0 && var16 != DivineRPGTwilight.firewoodLeaves.blockID)
+                if (var16 != 0 && var16 != VetheaBlockHelper.firewoodLeaves.blockID)
                 {
                     break;
                 }
@@ -445,7 +444,7 @@ public class WorldGenLayer2BigTree extends WorldGenerator
         int[] var2 = new int[] {this.basePos[0], this.basePos[1] + this.heightLimit - 1, this.basePos[2]};
         int var3 = this.worldObj.getBlockId(this.basePos[0], this.basePos[1] - 1, this.basePos[2]);
 
-        if (var3 != DivineRPGTwilight.dreamdirt.blockID && var3 != DivineRPGTwilight.dreamgrass.blockID)
+        if (var3 != VetheaBlockHelper.dreamdirt.blockID && var3 != VetheaBlockHelper.dreamgrass.blockID)
         {
             return false;
         }

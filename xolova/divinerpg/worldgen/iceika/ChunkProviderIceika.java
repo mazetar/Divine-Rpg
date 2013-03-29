@@ -1,61 +1,29 @@
-package xolova.blued00r.divinerpg.generation.iceika;
+package xolova.divinerpg.worldgen.iceika;
 
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.DUNGEON;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ICE;
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.entities.mobs.iceika.EntityWorkshopTickerer;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponenet18;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponenet19;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent1;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent10;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent11;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent12;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent13;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent14;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent15;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent16;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent17;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent2;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent20;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent21;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent22;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent3;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent4;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent5;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent6;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent7;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent8;
-import xolova.blued00r.divinerpg.generation.arcana.DungeonComponent9;
-import xolova.blued00r.divinerpg.generation.twilight.WorldGenAzuriteTrees;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSand;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.util.IProgressUpdate;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.ChunkPosition;
-import net.minecraft.world.SpawnerAnimals;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
-import net.minecraft.world.gen.feature.WorldGenDungeons;
 import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import xolova.divinerpg.utils.helpers.block.IceikaBlockHelper;
 
 public class ChunkProviderIceika implements IChunkProvider
 {
@@ -159,7 +127,7 @@ public class ChunkProviderIceika implements IChunkProvider
                             {
                                 if ((var49 += var47) > 0.0D)
                                 {
-                                    var3[var43 += var44] = (byte)DivineRPGTwilight.iceikaStone.blockID;
+                                    var3[var43 += var44] = (byte)IceikaBlockHelper.icyStone.blockID;
                                 }
                                 else if (var12 * 8 + var31 < var6)
                                 {
@@ -225,7 +193,7 @@ public class ChunkProviderIceika implements IChunkProvider
                                 if (var12 <= 0)
                                 {
                                     var14 = 0;
-                                    var15 = (byte)DivineRPGTwilight.iceikaStone.blockID;
+                                    var15 = (byte)IceikaBlockHelper.icyStone.blockID;
                                 }
                                 else if (var16 >= var5 - 4 && var16 <= var5 + 1)
                                 {
@@ -624,5 +592,11 @@ public class ChunkProviderIceika implements IChunkProvider
 	@Override
 	public void recreateStructures(int var1, int var2) {
 		
+	}
+
+	@Override
+	public boolean unloadQueuedChunks() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

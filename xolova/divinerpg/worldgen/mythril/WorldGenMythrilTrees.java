@@ -1,12 +1,11 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.mythril;
 
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.util.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class WorldGenMythrilTrees extends WorldGenerator
 {
@@ -72,9 +71,9 @@ public class WorldGenMythrilTrees extends WorldGenerator
             {
                 var8 = par1World.getBlockId(par3, par4 - 1, par5);
 
-                if ((var8 == DivineRPGTwilight.mythilGrass.blockID || var8 == DivineRPGTwilight.mythilDirt.blockID) && par4 < 256 - var6 - 1)
+                if ((var8 == TwilightBlockHelper.MythrilGrass.blockID || var8 == TwilightBlockHelper.MythrilDirt.blockID) && par4 < 256 - var6 - 1)
                 {
-                    this.setBlock(par1World, par3, par4 - 1, par5, DivineRPGTwilight.mythilDirt.blockID);
+                    this.setBlock(par1World, par3, par4 - 1, par5, TwilightBlockHelper.MythrilDirt.blockID);
                     int var16;
 
                     for (var16 = par4 - 3 + var6; var16 <= par4 + var6; ++var16)
@@ -95,7 +94,7 @@ public class WorldGenMythrilTrees extends WorldGenerator
                                 if ((Math.abs(var13) != var11 || Math.abs(var15) != var11 || par2Random.nextInt(2) != 0 && var10 != 0) && 
                                     (block == null || block.canBeReplacedByLeaves(par1World, var12, var16, var14)))
                                 {
-                                    this.setBlockAndMetadata(par1World, var12, var16, var14, DivineRPGTwilight.mythilLeaves.blockID, 2);
+                                    this.setBlockAndMetadata(par1World, var12, var16, var14, TwilightBlockHelper.MythrilLeaves.blockID, 2);
                                 }
                             }
                         }
@@ -109,7 +108,7 @@ public class WorldGenMythrilTrees extends WorldGenerator
 
                         if (var10 == 0 || block == null || block.isLeaves(par1World, par3, par4 + var16, par5))
                         {
-                            this.setBlockAndMetadata(par1World, par3, par4 + var16, par5, DivineRPGTwilight.whiteWood.blockID, 2);
+                            this.setBlockAndMetadata(par1World, par3, par4 + var16, par5, TwilightBlockHelper.MythrilLogs.blockID, 2);
                         }
                     }
 

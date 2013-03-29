@@ -1,13 +1,12 @@
-package xolova.blued00r.divinerpg.generation.iceika;
+package xolova.divinerpg.worldgen.iceika;
 
 import java.util.Random;
-
-import xolova.blued00r.divinerpg.DivineRPG;
 
 import net.minecraft.block.Block;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.MapGenBase;
+import xolova.divinerpg.utils.helpers.block.IceikaBlockHelper;
 
 public class IceikaGenCaves extends MapGenBase
 {
@@ -174,12 +173,12 @@ public class IceikaGenCaves extends MapGenBase
                                         {
                                             byte var61 = var5[var56];
 
-                                            if (var61 == DivineRPGTwilight.iceikaGrass.blockID)
+                                            if (var61 == IceikaBlockHelper.frostedGrass.blockID)
                                             {
                                                 var57 = true;
                                             }
 
-                                            if (var61 != DivineRPGTwilight.iceikaStone.blockID || var61 != DivineRPGTwilight.iceikaDirt.blockID || var61 != DivineRPGTwilight.iceikaGrass.blockID)
+                                            if (var61 != IceikaBlockHelper.icyStone.blockID || var61 != IceikaBlockHelper.frostedDirt.blockID || var61 != IceikaBlockHelper.frostedGrass.blockID)
                                             {
                                                 if (var58 < 10)
                                                 {
@@ -189,7 +188,7 @@ public class IceikaGenCaves extends MapGenBase
                                                 {
                                                     var5[var56] = 0;
 
-                                                    if (var57 && var5[var56 - 1] == DivineRPGTwilight.iceikaDirt.blockID)
+                                                    if (var57 && var5[var56 - 1] == IceikaBlockHelper.frostedDirt.blockID)
                                                     {
                                                         var5[var56 - 1] = this.worldObj.getBiomeGenForCoords(var50 + var3 * 16, var51 + var4 * 16).topBlock;
                                                     }

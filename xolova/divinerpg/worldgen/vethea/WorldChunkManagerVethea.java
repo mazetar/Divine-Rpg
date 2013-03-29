@@ -1,10 +1,9 @@
 package xolova.divinerpg.worldgen.vethea;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.world.biome.WorldChunkManager;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class WorldChunkManagerVethea extends WorldChunkManager
 {

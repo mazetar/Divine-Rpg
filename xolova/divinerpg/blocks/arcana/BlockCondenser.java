@@ -10,15 +10,16 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.blocks.BlockDivineRPGContainer;
 
-public class BlockCondenser extends BlockContainer
+public class BlockCondenser extends BlockDivineRPGContainer
 {
 
 	private Icon[] texture;
 
-	public BlockCondenser(int par1, Material par2Material)
+	public BlockCondenser(int par1, int par2,Material par2Material)
 	{
-		super(par1, par2Material);
+		super(par1, par2, par2Material);
 	}
 	
     /**
@@ -54,17 +55,6 @@ public class BlockCondenser extends BlockContainer
             }
 
             return true;
-        }
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void func_94332_a(IconRegister par1IconRegister)
-    {
-        this.texture = new Icon[3];
-
-        for (int i = 0; i < this.texture.length; ++i)
-        {
-            this.texture[i] = par1IconRegister.func_94245_a("condenser_" + i);
         }
     }
 }

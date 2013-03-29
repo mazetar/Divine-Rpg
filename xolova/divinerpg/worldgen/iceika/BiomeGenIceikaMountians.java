@@ -1,7 +1,7 @@
-package xolova.blued00r.divinerpg.generation.iceika;
+package xolova.divinerpg.worldgen.iceika;
 
-import xolova.blued00r.divinerpg.DivineRPG;
 import net.minecraft.world.biome.BiomeGenBase;
+import xolova.divinerpg.utils.helpers.block.IceikaBlockHelper;
 
 public class BiomeGenIceikaMountians extends BiomeGenBase
 {
@@ -12,8 +12,8 @@ public class BiomeGenIceikaMountians extends BiomeGenBase
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
         this.maxHeight = 2.0F;
-        this.topBlock = (byte)DivineRPGTwilight.iceikaGrass.blockID;
-        this.fillerBlock = (byte)DivineRPGTwilight.iceikaDirt.blockID;
+        this.topBlock = (byte)IceikaBlockHelper.frostedGrass.blockID;
+        this.fillerBlock = (byte)IceikaBlockHelper.frostedDirt.blockID;
         this.setEnableSnow();
         this.rainfall = 999;
     }

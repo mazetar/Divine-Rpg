@@ -1,9 +1,9 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.uvite;
 
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.DivineRPGTwilight;
 
 public class WorldProviderEnergy extends WorldProvider
 {
@@ -12,7 +12,7 @@ public class WorldProviderEnergy extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPGTwilight.energyBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPGTwilight.UviteBiome, 0.5F, 0.5F);
     }
 
     /**
@@ -43,7 +43,7 @@ public class WorldProviderEnergy extends WorldProvider
      */
     public IChunkProvider createChunkGenerator()
     {
-        return new ChunkProviderEnergy(this.worldObj, this.worldObj.getSeed(), true);
+        return new ChunkProviderUvite(this.worldObj, this.worldObj.getSeed(), true);
     }
 
     /**

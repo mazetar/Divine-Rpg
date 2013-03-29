@@ -1,6 +1,6 @@
 package xolova.divinerpg.utils.helpers.gui;
 
-import xolova.divinerpg.blocks.iceika.tileentity.TileEntityCoalStoneFurnace;
+import xolova.divinerpg.blocks.iceika.tileentities.TileEntityCoalStoneFurnace;
 import xolova.divinerpg.client.gui.GuiStoneFurnace;
 import xolova.divinerpg.containers.ContainerCoalStoneFurnace;
 import net.minecraft.entity.player.EntityPlayer;

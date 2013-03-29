@@ -3,30 +3,29 @@ package xolova.divinerpg.worldgen.vethea;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
-import xolova.blued00r.divinerpg.DivineRPG;
-import xolova.blued00r.divinerpg.generation.vethea.village.HouseDown1;
-import xolova.blued00r.divinerpg.generation.vethea.village.HouseDown2;
-import xolova.blued00r.divinerpg.generation.vethea.village.HouseDown3;
-import xolova.blued00r.divinerpg.generation.vethea.village.HouseUp1;
-import xolova.blued00r.divinerpg.generation.vethea.village.HouseUp2;
-import xolova.blued00r.divinerpg.generation.vethea.village.HouseUp3;
-import xolova.blued00r.divinerpg.generation.vethea.village.HouseUp4;
-import xolova.blued00r.divinerpg.generation.vethea.village.HouseUp5;
-import xolova.blued00r.divinerpg.generation.vethea.village.LightDown1;
-import xolova.blued00r.divinerpg.generation.vethea.village.LightDown2;
-import xolova.blued00r.divinerpg.generation.vethea.village.LightDown3;
-import xolova.blued00r.divinerpg.generation.vethea.village.LightDown4;
-import xolova.blued00r.divinerpg.generation.vethea.village.LightUp1;
-import xolova.blued00r.divinerpg.generation.vethea.village.LightUp2;
-import xolova.blued00r.divinerpg.generation.vethea.village.LightUp3;
-import xolova.blued00r.divinerpg.generation.vethea.village.LightUp4;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
+import xolova.divinerpg.worldgen.vethea.village.HouseDown1;
+import xolova.divinerpg.worldgen.vethea.village.HouseDown2;
+import xolova.divinerpg.worldgen.vethea.village.HouseDown3;
+import xolova.divinerpg.worldgen.vethea.village.HouseUp1;
+import xolova.divinerpg.worldgen.vethea.village.HouseUp2;
+import xolova.divinerpg.worldgen.vethea.village.HouseUp3;
+import xolova.divinerpg.worldgen.vethea.village.HouseUp4;
+import xolova.divinerpg.worldgen.vethea.village.HouseUp5;
+import xolova.divinerpg.worldgen.vethea.village.LightDown1;
+import xolova.divinerpg.worldgen.vethea.village.LightDown2;
+import xolova.divinerpg.worldgen.vethea.village.LightDown3;
+import xolova.divinerpg.worldgen.vethea.village.LightDown4;
+import xolova.divinerpg.worldgen.vethea.village.LightUp1;
+import xolova.divinerpg.worldgen.vethea.village.LightUp2;
+import xolova.divinerpg.worldgen.vethea.village.LightUp3;
+import xolova.divinerpg.worldgen.vethea.village.LightUp4;
 
 public class WorldGenVillageIsland extends WorldGenerator
 {
-	public final WorldGenConeUp spike = new WorldGenConeUp(DivineRPGTwilight.dreamstone.blockID, 1F);
+	public final WorldGenConeUp spike = new WorldGenConeUp(VetheaBlockHelper.dreamstone.blockID, 1F);
 	public final ArrayList<WorldGenerator> housesDown;
 	public final ArrayList<WorldGenerator> housesUp;
 	public final ArrayList<WorldGenerator> lampsDown;

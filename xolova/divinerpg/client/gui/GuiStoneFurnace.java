@@ -6,7 +6,7 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import xolova.divinerpg.blocks.iceika.tileentity.TileEntityCoalStoneFurnace;
+import xolova.divinerpg.blocks.iceika.tileentities.TileEntityCoalStoneFurnace;
 import xolova.divinerpg.containers.ContainerCoalStoneFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

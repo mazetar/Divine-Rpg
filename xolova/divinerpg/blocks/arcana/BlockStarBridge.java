@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
@@ -7,8 +7,9 @@ import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockStarBridge extends Block
+public class BlockStarBridge extends BlockDivineRPG
 {
     /** Whether this lamp block is the powered version. */
     private final boolean powered;
@@ -17,12 +18,10 @@ public class BlockStarBridge extends Block
     {
         super(par1, 211, Material.glass);
         this.powered = par2;
-        this.blockIndexInTexture = 98;
 
         if (par2)
         {
             this.setLightValue(1.0F);
-            this.blockIndexInTexture = 129;
         }
     }
 

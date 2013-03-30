@@ -34,6 +34,7 @@ public class TwilightBlockHelper
 	public static Block AzuriteLogs;
 	public static Block AzuriteLeaves;
 	public static Block AzuriteOre;
+	public static Block AzuriteVines;
 	//-==-Uvite-==-//
 	public static Block UviteGrass;
 	public static Block UviteDirt;

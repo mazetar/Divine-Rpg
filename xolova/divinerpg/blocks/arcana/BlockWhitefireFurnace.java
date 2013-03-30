@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
@@ -16,6 +16,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -39,7 +40,6 @@ public class BlockWhitefireFurnace extends BlockContainer
     {
         super(par1, Material.rock);
         this.isActive = par2;
-        this.blockIndexInTexture = 41;
     }
 
     /**
@@ -92,15 +92,15 @@ public class BlockWhitefireFurnace extends BlockContainer
                 var9 = 4;
             }
 
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9, 0);
         }
     }
 
-    @SideOnly(Side.CLIENT)
+    //@SideOnly(Side.CLIENT)
 
     /**
      * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
-     */
+     
     public int getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
     {
         if (par5 == 1)
@@ -116,7 +116,7 @@ public class BlockWhitefireFurnace extends BlockContainer
             int var6 = par1IBlockAccess.getBlockMetadata(par2, par3, par4);
             return par5 != var6 ? this.blockIndexInTexture : (this.isActive ? this.blockIndexInTexture + 1 : this.blockIndexInTexture - 1);
         }
-    }
+    }*/
 
     @SideOnly(Side.CLIENT)
 
@@ -159,11 +159,11 @@ public class BlockWhitefireFurnace extends BlockContainer
 
     /**
      * Returns the block texture based on the side being looked at.  Args: side
-     */
+     
     public int getBlockTextureFromSide(int par1)
     {
         return par1 == 1 ? this.blockIndexInTexture + 2 : (par1 == 0 ? this.blockIndexInTexture + 2 : (par1 == 3 ? this.blockIndexInTexture - 1 : this.blockIndexInTexture));
-    }
+    }*/
 
     /**
      * Called upon block activation (right click on the block.)
@@ -206,7 +206,7 @@ public class BlockWhitefireFurnace extends BlockContainer
         }
 
         keepFurnaceInventory = false;
-        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5);
+        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5, 0);
 
         if (var6 != null)
         {

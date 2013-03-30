@@ -1,12 +1,12 @@
 package xolova.divinerpg.entities.twilight.projectile;
 
-import xolova.divinerpg.entities.particle.EntityGreenPortalFX;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.particle.EntityGreenPortalFX;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

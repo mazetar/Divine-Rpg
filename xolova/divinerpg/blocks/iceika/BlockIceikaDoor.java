@@ -1,12 +1,10 @@
 package xolova.divinerpg.blocks.iceika;
 
-import xolova.divinerpg.utils.helpers.IconHelper;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import xolova.divinerpg.utils.helpers.IconHelper;
 
 public class BlockIceikaDoor extends BlockDoor
 {

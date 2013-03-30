@@ -2,21 +2,19 @@ package xolova.divinerpg.items.core;
 
 import java.util.List;
 
-import xolova.divinerpg.api.IItemDivineRPG;
-import xolova.divinerpg.items.ItemDivineRPG;
-import xolova.divinerpg.utils.helpers.IconHelper;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
+import xolova.divinerpg.api.IItemDivineRPG;
+import xolova.divinerpg.utils.helpers.IconHelper;
 
 public class ItemDivineRPGBow extends ItemBow implements IItemDivineRPG {
 

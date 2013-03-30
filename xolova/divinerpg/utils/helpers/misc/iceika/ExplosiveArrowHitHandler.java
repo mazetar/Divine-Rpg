@@ -1,8 +1,5 @@
 package xolova.divinerpg.utils.helpers.misc.iceika;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.entity.Entity;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;

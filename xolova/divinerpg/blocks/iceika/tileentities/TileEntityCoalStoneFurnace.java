@@ -1,6 +1,5 @@
 package xolova.divinerpg.blocks.iceika.tileentities;
 
-import xolova.divinerpg.blocks.iceika.BlockIceikaFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -8,12 +7,11 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.common.ForgeDirection;
-import net.minecraftforge.common.ISidedInventory;
+import xolova.divinerpg.blocks.iceika.BlockIceikaFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityCoalStoneFurnace extends TileEntity implements IInventory, ISidedInventory {
+public class TileEntityCoalStoneFurnace extends TileEntity implements IInventory {
     /**
      * The ItemStacks that hold the items currently being used in the furnace
      */
@@ -355,27 +353,6 @@ public class TileEntityCoalStoneFurnace extends TileEntity implements IInventory
     public void openChest() {}
 
     public void closeChest() {}
-
-    @Override
-    public int getStartInventorySide(ForgeDirection side)
-    {
-        if (side == ForgeDirection.DOWN)
-        {
-            return 1;
-        }
-
-        if (side == ForgeDirection.UP)
-        {
-            return 0;
-        }
-
-        return 2;
-    }
-
-    @Override
-    public int getSizeInventorySide(ForgeDirection side) {
-        return 1;
-    }
 
 	@Override
 	public boolean isInvNameLocalized() {

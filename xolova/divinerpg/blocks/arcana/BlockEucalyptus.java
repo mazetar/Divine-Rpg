@@ -1,28 +1,21 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.ArrayList;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockEucalyptus extends Block
+public class BlockEucalyptus extends BlockDivineRPG
 {
-    public BlockEucalyptus(int var1)
+    public BlockEucalyptus(int var1, int var2)
     {
-        super(var1, Material.wood);
-        this.blockIndexInTexture = 94;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
+        super(var1, var2, Material.wood);
     }
 
     /**
      * Returns the block texture based on the side being looked at.  Args: side
-     */
+    
     public int getBlockTextureFromSide(int var1)
     {
         switch (var1)
@@ -45,7 +38,7 @@ public class BlockEucalyptus extends Block
             default:
                 return 93;
         }
-    }
+    } */
 
     /**
      * Determines the damage on the item the block drops. Used in cloth and wood.

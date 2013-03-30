@@ -1,14 +1,12 @@
 package xolova.divinerpg.entities.core;
 
-import cpw.mods.fml.relauncher.ReflectionHelper;
-import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import cpw.mods.fml.relauncher.ReflectionHelper;
 
 public class EntityDivineRPGArrow extends EntityArrow {
 

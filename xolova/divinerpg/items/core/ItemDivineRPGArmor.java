@@ -13,7 +13,6 @@ import net.minecraft.util.Icon;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.IArmorTextureProvider;
 import net.minecraftforge.common.ISpecialArmor;
-import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.IconHelper;
 
 public class ItemDivineRPGArmor extends ItemArmor implements IArmorTextureProvider, ISpecialArmor {

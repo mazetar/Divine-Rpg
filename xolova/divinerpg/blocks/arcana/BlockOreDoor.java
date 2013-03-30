@@ -4,7 +4,6 @@ import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
@@ -15,14 +14,12 @@ public class BlockOreDoor extends BlockDoor
     public BlockOreDoor(int par1)
     {
         super(par1, Material.wood);
-        this.blockIndexInTexture = 145;
     }
 
     @SideOnly(Side.CLIENT)
 
     /**
      * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
-     */
     @Override
     public int getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
     {
@@ -89,7 +86,7 @@ public class BlockOreDoor extends BlockDoor
         {
             return this.blockIndexInTexture;
         }
-    }
+    }*/
 
     /**
      * Called upon block activation (right click on the block.)
@@ -125,12 +122,12 @@ public class BlockOreDoor extends BlockDoor
 
                     if ((var10 & 8) == 0)
                     {
-                        par1World.setBlockMetadataWithNotify(par2, par3, par4, var11);
+                        par1World.setBlock(par2, par3, par4, var11);
                         par1World.markBlockRangeForRenderUpdate(par2, par3, par4, par2, par3, par4);
                     }
                     else
                     {
-                        par1World.setBlockMetadataWithNotify(par2, par3 - 1, par4, var11);
+                        par1World.setBlock(par2, par3 - 1, par4, var11);
                         par1World.markBlockRangeForRenderUpdate(par2, par3 - 1, par4, par2, par3, par4);
                     }
 

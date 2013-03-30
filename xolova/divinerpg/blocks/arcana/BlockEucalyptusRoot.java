@@ -1,5 +1,4 @@
-
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -17,7 +16,7 @@ public class BlockEucalyptusRoot extends BlockFlower
 {
     public BlockEucalyptusRoot(int par1)
     {
-        super(par1, 68);
+        super(par1);
         this.setTickRandomly(true);
         float var3 = 0.5F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 0.25F, 0.5F + var3);
@@ -124,7 +123,7 @@ public class BlockEucalyptusRoot extends BlockFlower
 
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
+     
     public int getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
         switch (par2)
@@ -144,7 +143,7 @@ public class BlockEucalyptusRoot extends BlockFlower
             default:
                 return par2;
         }
-    }
+    }*/
 
     /**
      * The type of render function that is called for this block

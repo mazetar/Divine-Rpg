@@ -69,7 +69,7 @@ public class EntityAcidHag extends EntityMob
 
             if (this.worldObj.getBlockId(var2, var3, var4) == 0 && Block.snow.canPlaceBlockAt(this.worldObj, var2, var3, var4))
             {
-                this.worldObj.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.blockAcid.blockID);
+                this.worldObj.setBlock(var2, var3, var4, VetheaBlockHelper.blockAcid.blockID);
             }
         }
     }

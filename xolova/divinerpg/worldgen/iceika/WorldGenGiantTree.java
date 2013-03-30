@@ -1,22 +1,22 @@
-package xolova.blued00r.divinerpg.generation.iceika;
+package xolova.divinerpg.worldgen.iceika;
 
 import java.util.Random;
 
-import xolova.blued00r.divinerpg.DivineRPG;
-
 import net.minecraft.block.Block;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import xolova.divinerpg.utils.helpers.block.IceikaBlockHelper;
+import xolova.divinerpg.worldgen.vethea.WorldAddition;
 
 public class WorldGenGiantTree extends WorldGenerator {
 
+	private static WorldAddition world1;
 
     private static void setBlockandMetadataIfChunkExists(World world, int x, int y, int z,
             int blockId, int metadata)
     {
         if (world.getChunkProvider().chunkExists(x >> 4, z >> 4))
-            world.setBlockAndMetadata(x, y, z, blockId, metadata);
+            world1.setBlockWithMetadata(x, y, z, blockId, metadata);
     }
 
     public WorldGenGiantTree(boolean doNotify) {
@@ -55,13 +55,13 @@ public class WorldGenGiantTree extends WorldGenerator {
                 }
         }
 
-        if (world.getBlockId(x, y - 1, z) !=DivineRPGTwilight.iceikaGrass.blockID  || y >= 256 - height - 1)
+        if (world.getBlockId(x, y - 1, z) !=IceikaBlockHelper.frostedGrass.blockID  || y >= 256 - height - 1)
             return false;
 
-        world.setBlock(x, y - 1, z, DivineRPGTwilight.iceikaGrass.blockID );
-        world.setBlock(x - 1, y - 1, z, DivineRPGTwilight.iceikaGrass.blockID );
-        world.setBlock(x, y - 1, z - 1, DivineRPGTwilight.iceikaGrass.blockID );
-        world.setBlock(x - 1, y - 1, z - 1, DivineRPGTwilight.iceikaGrass.blockID );
+        world.setBlock(x, y - 1, z, IceikaBlockHelper.frostedGrass.blockID );
+        world.setBlock(x - 1, y - 1, z, IceikaBlockHelper.frostedGrass.blockID );
+        world.setBlock(x, y - 1, z - 1, IceikaBlockHelper.frostedGrass.blockID );
+        world.setBlock(x - 1, y - 1, z - 1, IceikaBlockHelper.frostedGrass.blockID );
         int l1 = rand.nextInt(2);
         int j2 = 1;
         boolean flag1 = false;
@@ -81,13 +81,13 @@ public class WorldGenGiantTree extends WorldGenerator {
                             && (block == null || block.canBeReplacedByLeaves(world, i4, k3, l4)))
                     {
                         setBlockandMetadataIfChunkExists(world, i4, k3, l4,
-                                DivineRPGTwilight.iceikaLeaves.blockID, 0);
+                                IceikaBlockHelper.frostedLeaves.blockID, 0);
                         setBlockandMetadataIfChunkExists(world, i4 - 1, k3, l4,
-                        		DivineRPGTwilight.iceikaLeaves.blockID, 0);
+                        		IceikaBlockHelper.frostedLeaves.blockID, 0);
                         setBlockandMetadataIfChunkExists(world, i4, k3, l4 - 1,
-                        		DivineRPGTwilight.iceikaLeaves.blockID, 0);
+                        		IceikaBlockHelper.frostedLeaves.blockID, 0);
                         setBlockandMetadataIfChunkExists(world, i4 - 1, k3, l4 - 1,
-                        		DivineRPGTwilight.iceikaLeaves.blockID, 0);
+                        		IceikaBlockHelper.frostedLeaves.blockID, 0);
                     }
                 }
             }
@@ -108,13 +108,13 @@ public class WorldGenGiantTree extends WorldGenerator {
 
             if (Block.blocksList[id] == null || Block.blocksList[id].isLeaves(world, x, y + l3, z))
             {
-                setBlockAndMetadata(world, x, y + l3, z, DivineRPGTwilight.iceikaLog.blockID,
+                setBlockAndMetadata(world, x, y + l3, z, IceikaBlockHelper.frostedWood.blockID,
                         0);
-                setBlockAndMetadata(world, x - 1, y + l3, z, DivineRPGTwilight.iceikaLog.blockID,
+                setBlockAndMetadata(world, x - 1, y + l3, z, IceikaBlockHelper.frostedWood.blockID,
                         0);
-                setBlockAndMetadata(world, x, y + l3, z - 1, DivineRPGTwilight.iceikaLog.blockID,
+                setBlockAndMetadata(world, x, y + l3, z - 1, IceikaBlockHelper.frostedWood.blockID,
                         0);
-                setBlockAndMetadata(world, x - 1, y + l3, z - 1, DivineRPGTwilight.iceikaLog.blockID,
+                setBlockAndMetadata(world, x - 1, y + l3, z - 1, IceikaBlockHelper.frostedWood.blockID,
                         0);
             }
         }

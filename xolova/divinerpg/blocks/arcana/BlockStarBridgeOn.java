@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -27,7 +27,6 @@ public class BlockStarBridgeOn extends Block
     {
         super(par1, Material.rock);
         this.powered = par2;
-        this.blockIndexInTexture = 129;
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
     }
 
@@ -132,10 +131,8 @@ public class BlockStarBridgeOn extends Block
 
         if (var8 != var9)
         {
-            par1World.editingBlocks = true;
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9);
+            par1World.setBlock(par2, par3, par4, var9);
             par1World.markBlockRangeForRenderUpdate(par2, par3, par4, par2, par3, par4);
-            par1World.editingBlocks = false;
 
             for (var11 = 0; var11 < 4; ++var11)
             {
@@ -341,7 +338,7 @@ public class BlockStarBridgeOn extends Block
             else
             {
                 this.dropBlockAsItem(par1World, par2, par3, par4, var6, 0);
-                par1World.setBlockWithNotify(par2, par3, par4, 0);
+                par1World.setBlock(par2, par3, par4, 0);
             }
 
             if (this.powered && !par1World.isBlockIndirectlyGettingPowered(par2, par3, par4))

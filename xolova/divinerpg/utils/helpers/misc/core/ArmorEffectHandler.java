@@ -1,13 +1,12 @@
 package xolova.divinerpg.utils.helpers.misc.core;
 
-import xolova.divinerpg.utils.helpers.item.IceikaItemHelper;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import xolova.divinerpg.utils.helpers.item.IceikaItemHelper;
 
 public class ArmorEffectHandler  {
 	

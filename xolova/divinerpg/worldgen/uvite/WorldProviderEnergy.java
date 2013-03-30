@@ -3,7 +3,7 @@ package xolova.divinerpg.worldgen.uvite;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 
 public class WorldProviderEnergy extends WorldProvider
 {
@@ -12,7 +12,7 @@ public class WorldProviderEnergy extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPGTwilight.UviteBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.UviteBiome, 0.5F, 0.5F);
     }
 
     /**

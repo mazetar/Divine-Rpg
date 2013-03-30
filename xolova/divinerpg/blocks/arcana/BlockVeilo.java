@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -16,7 +16,7 @@ public class BlockVeilo extends BlockFlower
 {
     public BlockVeilo(int par1)
     {
-        super(par1, 72);
+        super(par1);
         this.setTickRandomly(true);
         float var3 = 0.5F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 0.25F, 0.5F + var3);
@@ -24,7 +24,6 @@ public class BlockVeilo extends BlockFlower
         this.setHardness(0.0F);
         this.setStepSound(soundGrassFootstep);
         this.disableStats();
-        this.setRequiresSelfNotify();
     }
 
     /**
@@ -54,7 +53,7 @@ public class BlockVeilo extends BlockFlower
                 if (par5Random.nextInt((int)(25.0F / var7) + 1) == 0)
                 {
                     ++var6;
-                    par1World.setBlockMetadataWithNotify(par2, par3, par4, var6);
+                    par1World.setBlock(par2, par3, par4, var6);
                 }
             }
         }
@@ -123,7 +122,7 @@ public class BlockVeilo extends BlockFlower
 
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
+     
     public int getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
         switch (par2)
@@ -143,7 +142,7 @@ public class BlockVeilo extends BlockFlower
             default:
                 return par2;
         }
-    }
+    }*/
 
     /**
      * The type of render function that is called for this block

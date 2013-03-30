@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.dravite;
 
 import java.util.List;
 import java.util.Random;
@@ -16,15 +16,8 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
-import net.minecraft.world.gen.feature.WorldGenDeadBush;
-import net.minecraft.world.gen.feature.WorldGenFlowers;
 import net.minecraft.world.gen.feature.WorldGenLakes;
-import net.minecraft.world.gen.feature.WorldGenLiquids;
-import net.minecraft.world.gen.feature.WorldGenPumpkin;
-import net.minecraft.world.gen.feature.WorldGenReed;
-import net.minecraft.world.gen.feature.WorldGenTallGrass;
-import net.minecraft.world.gen.feature.WorldGenerator;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class ChunkProviderTwilight implements IChunkProvider
 {
@@ -147,7 +140,7 @@ public class ChunkProviderTwilight implements IChunkProvider
                 int var12 = (int)(this.stoneNoise[var8 + var9 * 16] / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
                 int var13 = -1;
                 byte var14 = var10.topBlock;
-                byte var15 = (byte)DivineRPGTwilight.serenityGrass.blockID;
+                byte var15 = (byte)TwilightBlockHelper.DraviteGrass.blockID;
 
                 for (int var16 = 127; var16 >= 0; --var16)
                 {
@@ -171,13 +164,13 @@ public class ChunkProviderTwilight implements IChunkProvider
                             {
                                 if (var12 <= 0)
                                 {
-                                    var14 = (byte)DivineRPGTwilight.serenityGrass.blockID;
-                                    var15 = (byte)DivineRPGTwilight.serenityGrass.blockID;
+                                    var14 = (byte)TwilightBlockHelper.DraviteGrass.blockID;
+                                    var15 = (byte)TwilightBlockHelper.DraviteGrass.blockID;
                                 }
                                 else if (var16 >= var5 - 4 && var16 <= var5 + 1)
                                 {
-                                    var14 = (byte)DivineRPGTwilight.serenityGrass.blockID;
-                                    var15 = (byte)DivineRPGTwilight.twilightStone.blockID;
+                                    var14 = (byte)TwilightBlockHelper.DraviteGrass.blockID;
+                                    var15 = (byte)TwilightBlockHelper.TwilightStone.blockID;
                                 }
 
                                 if (var16 >= var5 - 1)
@@ -194,10 +187,10 @@ public class ChunkProviderTwilight implements IChunkProvider
                                 --var13;
                                 var3[var17] = var15;
 
-                                if (var13 == 0 && var15 == DivineRPGTwilight.serenityGrass.blockID)
+                                if (var13 == 0 && var15 == TwilightBlockHelper.DraviteGrass.blockID)
                                 {
-                                    var13 = (byte)DivineRPGTwilight.serenityGrass.blockID;
-                                    var15 = (byte)DivineRPGTwilight.serenityGrass.blockID;
+                                    var13 = (byte)TwilightBlockHelper.DraviteGrass.blockID;
+                                    var15 = (byte)TwilightBlockHelper.DraviteGrass.blockID;
                                 }
                             }
                         }
@@ -207,10 +200,10 @@ public class ChunkProviderTwilight implements IChunkProvider
                             --var13;
                             var3[var17] = var15;
 
-                            if (var13 == 0 && var15 == DivineRPGTwilight.twilightStone.blockID)
+                            if (var13 == 0 && var15 == TwilightBlockHelper.TwilightStone.blockID)
                             {
-                                var13 = (byte)DivineRPGTwilight.serenityGrass.blockID;
-                                var15 = (byte)DivineRPGTwilight.twilightStone.blockID;
+                                var13 = (byte)TwilightBlockHelper.DraviteGrass.blockID;
+                                var15 = (byte)TwilightBlockHelper.TwilightStone.blockID;
                             }
                         }
                     }
@@ -404,7 +397,7 @@ public class ChunkProviderTwilight implements IChunkProvider
             var14 = var4 + this.rand.nextInt(16);
             var15 = this.rand.nextInt(128);
             var16 = var5 + this.rand.nextInt(16);
-            (new WorldGenTwilightMineable(DivineRPGTwilight.serenityOre.blockID, 8)).generate(this.worldObj, this.rand, var14, var15, var16);
+            (new WorldGenTwilightMineable(TwilightBlockHelper.DraviteOre.blockID, 8)).generate(this.worldObj, this.rand, var14, var15, var16);
         }
 
         WorldGenSerenityTrees var17 = new WorldGenSerenityTrees(false);
@@ -444,16 +437,6 @@ public class ChunkProviderTwilight implements IChunkProvider
     public boolean saveChunks(boolean var1, IProgressUpdate var2)
     {
         return true;
-    }
-
-    /**
-     * Unloads the 100 oldest chunks from memory, due to a bug with chunkSet.add() never being called it thinks the list
-     * is always empty and will not remove any chunks.
-     */
-    @Override
-    public boolean unload100OldestChunks()
-    {
-        return false;
     }
 
     /**
@@ -502,5 +485,11 @@ public class ChunkProviderTwilight implements IChunkProvider
 	@Override
 	public void recreateStructures(int var1, int var2) {
 		
+	}
+
+	@Override
+	public boolean unloadQueuedChunks() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

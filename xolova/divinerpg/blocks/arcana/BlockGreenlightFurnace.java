@@ -1,5 +1,5 @@
 
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
@@ -16,6 +16,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityGreenlightFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -39,7 +40,6 @@ public class BlockGreenlightFurnace extends BlockContainer
     {
         super(par1, Material.rock);
         this.isActive = par2;
-        this.blockIndexInTexture = 28;
     }
 
     /**

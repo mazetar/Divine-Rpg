@@ -1,9 +1,5 @@
 package xolova.divinerpg.blocks.core.tileentities;
 
-import java.util.List;
-import java.util.Vector;
-
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;

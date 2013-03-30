@@ -1,9 +1,9 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.azurite;
 
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 
 public class WorldProviderAzurite extends WorldProvider
 {
@@ -12,7 +12,7 @@ public class WorldProviderAzurite extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPGTwilight.azuriteBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.azuriteBiome, 0.5F, 0.5F);
     }
 
     /**

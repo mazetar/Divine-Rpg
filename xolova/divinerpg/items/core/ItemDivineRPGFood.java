@@ -7,7 +7,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
-import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.IconHelper;
 
 public class ItemDivineRPGFood extends ItemFood {

@@ -3,7 +3,7 @@ package xolova.divinerpg.worldgen.arcana;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import xolova.divinerpg.utils.proxies.ArcanaProxy;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 
 public class WorldProviderArcana extends WorldProvider
 {
@@ -12,7 +12,7 @@ public class WorldProviderArcana extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(ArcanaProxy.arcanaBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.arcanaBiome, 0.5F, 0.5F);
     }
 
     /**

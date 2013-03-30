@@ -1,9 +1,8 @@
 package xolova.divinerpg.items.iceika;
 
-import xolova.divinerpg.utils.helpers.IconHelper;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.ItemBucketMilk;
-import net.minecraft.util.Icon;
+import xolova.divinerpg.utils.helpers.IconHelper;
 
 public class ItemEggNog extends ItemBucketMilk {
 

@@ -1,9 +1,8 @@
-package xolova.blued00r.divinerpg.generation.iceika;
+package xolova.divinerpg.worldgen.iceika;
 
 import net.minecraft.world.WorldProvider;
-import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import xolova.blued00r.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 
 public class WorldProviderIceika extends WorldProvider
 {
@@ -12,7 +11,7 @@ public class WorldProviderIceika extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerIceika(DivineRPGTwilight.IceikaMountains);
+        this.worldChunkMgr = new WorldChunkManagerIceika(DimensionRegistry.IceikaMountains);
     }
 
     /**

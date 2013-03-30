@@ -3,7 +3,6 @@ package xolova.divinerpg.entities.particle;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.world.World;
-import net.minecraftforge.client.ForgeHooksClient;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

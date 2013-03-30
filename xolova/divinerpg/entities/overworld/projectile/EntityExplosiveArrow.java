@@ -1,9 +1,8 @@
 package xolova.divinerpg.entities.overworld.projectile;
 
-import xolova.divinerpg.entities.core.EntityDivineRPGArrow;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.core.EntityDivineRPGArrow;
 
 /** @see xolova.divinerpg.utils.helpers.misc.iceika.ExplosiveArrowHitHandler **/
 public class EntityExplosiveArrow extends EntityDivineRPGArrow {

@@ -3,7 +3,7 @@ package xolova.divinerpg.worldgen.vethea;
 import java.util.List;
 
 import net.minecraft.world.biome.WorldChunkManager;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 
 public class WorldChunkManagerVethea extends WorldChunkManager
 {
@@ -15,7 +15,7 @@ public class WorldChunkManagerVethea extends WorldChunkManager
 	{
 		super();
 		this.allowedBiomes.clear();
-		this.allowedBiomes.add(DivineRPGTwilight.arksianeBiome);
-		this.allowedBiomes.add(DivineRPGTwilight.heliosisBiome);
+		this.allowedBiomes.add(DimensionRegistry.arksianeBiome);
+		this.allowedBiomes.add(DimensionRegistry.heliosisBiome);
 	}
 }

@@ -4,6 +4,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import xolova.divinerpg.blocks.BlockDivineRPGContainer;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityDramixAltar;
 
 public class BlockDramixAltar extends BlockDivineRPGContainer
 {

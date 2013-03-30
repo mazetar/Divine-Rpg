@@ -11,6 +11,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

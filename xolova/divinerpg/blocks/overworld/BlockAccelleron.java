@@ -1,19 +1,16 @@
 package xolova.divinerpg.blocks.overworld;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockAccelleron extends Block
+public class BlockAccelleron extends BlockDivineRPG
 {
     private Icon[] texture;
 
-	public BlockAccelleron(int var1)
+	public BlockAccelleron(int var1, int par2)
     {
-        super(var1, Material.rock);
+        super(var1, par2, Material.rock);
         this.slipperiness = 1.2F;
     }
 
@@ -32,17 +29,6 @@ public class BlockAccelleron extends Block
 
             default:
                 return this.texture[1];
-        }
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void func_94332_a(IconRegister par1IconRegister)
-    {
-        this.texture = new Icon[2];
-
-        for (int i = 0; i < this.texture.length; ++i)
-        {
-            this.texture[i] = par1IconRegister.func_94245_a("accelleron_" + i);
         }
     }
 }

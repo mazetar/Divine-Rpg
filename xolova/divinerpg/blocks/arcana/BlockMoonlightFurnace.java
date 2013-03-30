@@ -16,6 +16,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

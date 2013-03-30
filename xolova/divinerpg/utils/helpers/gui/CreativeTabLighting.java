@@ -3,7 +3,6 @@ package xolova.divinerpg.utils.helpers.gui;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 
 public class CreativeTabLighting extends CreativeTabs
 {

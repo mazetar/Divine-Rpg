@@ -3,7 +3,7 @@ package xolova.divinerpg.worldgen.mythril;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 
 public class WorldProviderMythil extends WorldProvider
 {
@@ -12,7 +12,7 @@ public class WorldProviderMythil extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DivineRPGTwilight.mythilBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.mythilBiome, 0.5F, 0.5F);
     }
 
     /**

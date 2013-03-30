@@ -3,8 +3,6 @@ package xolova.divinerpg.entities.iceika.projectile;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.world.World;
 import xolova.divinerpg.entities.core.EntityDamageProjectile;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class EntityNoteProjectile extends EntityDamageProjectile {
     

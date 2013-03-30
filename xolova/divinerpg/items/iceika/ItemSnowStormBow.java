@@ -2,20 +2,12 @@ package xolova.divinerpg.items.iceika;
 
 import java.util.List;
 
-import xolova.divinerpg.entities.overworld.projectile.EntityExplosiveArrow;
-import xolova.divinerpg.items.core.ItemDivineRPGBow;
-
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
-import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.ArrowNockEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import xolova.divinerpg.entities.overworld.projectile.EntityExplosiveArrow;
+import xolova.divinerpg.items.core.ItemDivineRPGBow;
 
 public class ItemSnowStormBow extends ItemDivineRPGBow {
 

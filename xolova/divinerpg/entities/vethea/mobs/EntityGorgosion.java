@@ -13,7 +13,6 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import xolova.divinerpg.entities.ai.EntityAIGorgosionLeapAI;
 import xolova.divinerpg.utils.helpers.item.VetheaItemHelper;
 
 public class EntityGorgosion extends EntityMob

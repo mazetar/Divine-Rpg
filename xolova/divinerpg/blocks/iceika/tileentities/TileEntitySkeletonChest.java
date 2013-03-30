@@ -3,13 +3,13 @@ package xolova.divinerpg.blocks.iceika.tileentities;
 import java.util.List;
 import java.util.Vector;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import xolova.divinerpg.utils.helpers.block.IceikaBlockHelper;
 
 public class TileEntitySkeletonChest extends TileEntity implements IInventory
 {
@@ -307,13 +307,13 @@ public class TileEntitySkeletonChest extends TileEntity implements IInventory
     public void openChest()
     {
         ++this.numUsingPlayers;
-        this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, DivineRPGTwilight.skeletonChest.blockID, 1, this.numUsingPlayers);
+        this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, IceikaBlockHelper.frostedChest.blockID, 1, this.numUsingPlayers);
     }
 
     public void closeChest()
     {
         --this.numUsingPlayers;
-        this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, DivineRPGTwilight.skeletonChest.blockID, 1, this.numUsingPlayers);
+        this.worldObj.addBlockEvent(this.xCoord, this.yCoord, this.zCoord, IceikaBlockHelper.frostedChest.blockID, 1, this.numUsingPlayers);
     }
 
     /**

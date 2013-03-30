@@ -14,7 +14,6 @@ import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
-import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;

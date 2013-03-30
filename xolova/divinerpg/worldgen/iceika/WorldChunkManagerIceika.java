@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.generation.iceika;
+package xolova.divinerpg.worldgen.iceika;
 
 import java.util.Arrays;
 import java.util.List;

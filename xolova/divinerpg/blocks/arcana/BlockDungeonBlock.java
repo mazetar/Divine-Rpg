@@ -1,8 +1,8 @@
 package xolova.divinerpg.blocks.arcana;
 
+import net.minecraft.block.material.Material;
 import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
-import net.minecraft.block.material.Material;
 
 public class BlockDungeonBlock extends BlockDivineRPG
 {

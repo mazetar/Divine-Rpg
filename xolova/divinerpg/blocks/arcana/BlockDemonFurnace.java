@@ -11,6 +11,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityDemonFurnace;
+import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class BlockDemonFurnace extends BlockContainer
@@ -54,7 +56,7 @@ public class BlockDemonFurnace extends BlockContainer
 
             if (var10 != null)
             {
-            	par5EntityPlayer.addStat(AchievementPageDivineRPG.totalDemonization, 1);
+            	//par5EntityPlayer.addStat(AchievementPageDivineRPG.totalDemonization, 1);
                 par5EntityPlayer.openGui(DivineRPGTwilight.instance, 4, par1World, par2, par3, par4);
             }
 

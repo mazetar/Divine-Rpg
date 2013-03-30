@@ -3,7 +3,7 @@ package xolova.divinerpg.worldgen.vethea;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 
 public class WorldProviderVethea extends WorldProvider
 	{
@@ -12,7 +12,7 @@ public class WorldProviderVethea extends WorldProvider
 	 */
 	public void registerWorldChunkManager()
 	{
-		this.worldChunkMgr = new WorldChunkManagerHell(VetheaBlockHelper.arksianeBiome, 1.0F, 1.0F);
+		this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.arksianeBiome, 1.0F, 1.0F);
 	}
 
 	/**

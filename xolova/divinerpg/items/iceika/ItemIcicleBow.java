@@ -2,8 +2,6 @@ package xolova.divinerpg.items.iceika;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
-import net.minecraft.world.World;
 import xolova.divinerpg.items.core.ItemDivineRPGBow;
 
 public class ItemIcicleBow extends ItemDivineRPGBow {

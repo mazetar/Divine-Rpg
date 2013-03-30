@@ -1,10 +1,10 @@
 package xolova.divinerpg.blocks.iceika;
 
-import xolova.divinerpg.api.IBlockDivineRPG;
-import xolova.divinerpg.utils.helpers.IconHelper;
 import net.minecraft.block.BlockLadder;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.world.World;
+import xolova.divinerpg.api.IBlockDivineRPG;
+import xolova.divinerpg.utils.helpers.IconHelper;
 
 public class BlockXmasLights extends BlockLadder implements IBlockDivineRPG {
 

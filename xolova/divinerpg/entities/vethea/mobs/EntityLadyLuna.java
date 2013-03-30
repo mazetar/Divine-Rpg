@@ -127,7 +127,7 @@ public class EntityLadyLuna extends EntityMob implements IBossDisplayData
 
             if (this.worldObj.getBlockId(var2, var3, var4) == 0 && Block.snow.canPlaceBlockAt(this.worldObj, var2, var3, var4))
             {
-                this.worldObj.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.lunicAcid.blockID);
+                this.worldObj.setBlock(var2, var3, var4, VetheaBlockHelper.lunicAcid.blockID);
             }
         }
 

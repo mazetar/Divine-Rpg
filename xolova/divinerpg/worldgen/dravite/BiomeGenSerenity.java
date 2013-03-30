@@ -1,11 +1,11 @@
-package xolova.blued00r.divinerpg.generation.twilight;
+package xolova.divinerpg.worldgen.dravite;
 
 import java.awt.Color;
 
+import net.minecraft.world.biome.BiomeGenBase;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.world.biome.BiomeGenBase;
-import xolova.blued00r.divinerpg.DivineRPG;
 
 public class BiomeGenSerenity extends BiomeGenBase
 {
@@ -17,8 +17,8 @@ public class BiomeGenSerenity extends BiomeGenBase
         this.setBiomeName("Dravite");
         this.spawnableCreatureList.clear();
         this.spawnableMonsterList.clear();
-        this.topBlock = (byte)DivineRPGTwilight.serenityGrass.blockID;
-        this.fillerBlock = (byte)DivineRPGTwilight.serenityDirt.blockID;
+        this.topBlock = (byte)TwilightBlockHelper.DraviteGrass.blockID;
+        this.fillerBlock = (byte)TwilightBlockHelper.DraviteDirt.blockID;
         this.waterColorMultiplier = 2368548;
     }
     

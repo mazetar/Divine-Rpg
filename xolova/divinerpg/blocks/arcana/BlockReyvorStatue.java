@@ -1,5 +1,7 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 import java.util.Random;
+
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityReyvorStatue;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -11,7 +13,7 @@ public class BlockReyvorStatue extends BlockContainer
 {
     public BlockReyvorStatue(int par1)
     {
-        super(par1, 23, Material.air);
+        super(par1, Material.air);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
     }
 

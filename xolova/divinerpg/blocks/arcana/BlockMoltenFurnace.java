@@ -16,6 +16,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -39,7 +41,6 @@ public class BlockMoltenFurnace extends BlockContainer
     {
         super(par1, Material.rock);
         this.isActive = par2;
-        this.blockIndexInTexture = 24;
     }
 
     /**
@@ -47,7 +48,7 @@ public class BlockMoltenFurnace extends BlockContainer
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return DivineRPGTwilight.DivineRPGTwilight.blockID;
+        return ArcanaBlockHelper.moltenFurnace.blockID;
     }
 
     /**
@@ -92,37 +93,11 @@ public class BlockMoltenFurnace extends BlockContainer
                 var9 = 4;
             }
 
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9, 3);
         }
     }
 
     @SideOnly(Side.CLIENT)
-
-    /**
-     * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
-     */
-    public int getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
-    {
-        if (par5 == 1)
-        {
-            return this.blockIndexInTexture + 2;
-        }
-        else if (par5 == 0)
-        {
-            return this.blockIndexInTexture + 2;
-        }
-        else
-        {
-            int var6 = par1IBlockAccess.getBlockMetadata(par2, par3, par4);
-            return par5 != var6 ? this.blockIndexInTexture : (this.isActive ? this.blockIndexInTexture + 1 : this.blockIndexInTexture - 1);
-        }
-    }
-
-    @SideOnly(Side.CLIENT)
-
-    /**
-     * A randomly called display update to be able to add particles or other items for display
-     */
     public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
         if (this.isActive)
@@ -158,14 +133,6 @@ public class BlockMoltenFurnace extends BlockContainer
     }
 
     /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     */
-    public int getBlockTextureFromSide(int par1)
-    {
-        return par1 == 1 ? this.blockIndexInTexture + 2 : (par1 == 0 ? this.blockIndexInTexture + 2 : (par1 == 3 ? this.blockIndexInTexture - 1 : this.blockIndexInTexture));
-    }
-
-    /**
      * Called upon block activation (right click on the block.)
      */
     public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
@@ -198,15 +165,15 @@ public class BlockMoltenFurnace extends BlockContainer
 
         if (par0)
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            par1World.setBlock(par2, par3, par4, ArcanaBlockHelper.moltenFurnaceOn.blockID);
         }
         else
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            par1World.setBlock(par2, par3, par4, ArcanaBlockHelper.moltenFurnaceOn.blockID);
         }
 
         keepFurnaceInventory = false;
-        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5);
+        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5, 3);
 
         if (var6 != null)
         {

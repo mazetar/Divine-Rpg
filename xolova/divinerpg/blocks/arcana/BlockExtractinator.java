@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
@@ -11,6 +11,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class BlockExtractinator extends BlockContainer
 {	
@@ -33,7 +35,7 @@ public class BlockExtractinator extends BlockContainer
 
     public TileEntity createNewTileEntity(World var1)
     {
-        return new TileEntityExtractinator();
+        return new TileEntityExtractor();
     }
 
     @Override
@@ -64,7 +66,7 @@ public class BlockExtractinator extends BlockContainer
         }
         else
         {
-        	TileEntityExtractinator var10 = (TileEntityExtractinator)par1World.getBlockTileEntity(par2, par3, par4);
+        	TileEntityExtractor var10 = (TileEntityExtractor)par1World.getBlockTileEntity(par2, par3, par4);
 
             if (var10 != null)
             {
@@ -86,15 +88,15 @@ public class BlockExtractinator extends BlockContainer
 
         if (par0)
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            par1World.setBlock(par2, par3, par4, ArcanaBlockHelper.extractor.blockID);
         }
         else
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            par1World.setBlock(par2, par3, par4, ArcanaBlockHelper.extractor.blockID);
         }
 
         keepFurnaceInventory = false;
-        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5);
+        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5, 3);
 
         if (var6 != null)
         {
@@ -110,7 +112,7 @@ public class BlockExtractinator extends BlockContainer
     {
         if (!keepFurnaceInventory)
         {
-        	TileEntityExtractinator var7 = (TileEntityExtractinator)par1World.getBlockTileEntity(par2, par3, par4);
+        	TileEntityExtractor var7 = (TileEntityExtractor)par1World.getBlockTileEntity(par2, par3, par4);
 
             if (var7 != null)
             {

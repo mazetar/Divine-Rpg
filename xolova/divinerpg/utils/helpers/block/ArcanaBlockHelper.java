@@ -11,6 +11,7 @@ import xolova.divinerpg.blocks.arcana.BlockArcanaSpawner5;
 import xolova.divinerpg.blocks.arcana.BlockArcaniteGrass;
 import xolova.divinerpg.blocks.arcana.BlockArcaniteRails;
 import xolova.divinerpg.blocks.arcana.BlockArcaniteTubes;
+import xolova.divinerpg.blocks.arcana.BlockCondenser;
 import xolova.divinerpg.blocks.arcana.BlockDemonFurnace;
 import xolova.divinerpg.blocks.arcana.BlockDramixAltar;
 import xolova.divinerpg.blocks.arcana.BlockDungeonBlock;
@@ -127,6 +128,8 @@ public class ArcanaBlockHelper
 	public static Block arcanaPortalFrame;
 	public static Block blockOfLight;
 	
+	public static Block condenser;
+	
 	public static void init()
 	{
 		ancientBricks = new BlockDungeonBlock(ArcanaConfigHelper.ancientBricksID).setUnlocalizedName("ancientBricks");
@@ -200,6 +203,8 @@ public class ArcanaBlockHelper
 		arcanaSpawner3 = new BlockArcanaSpawner3(ArcanaConfigHelper.arcanaSpawner3ID).setUnlocalizedName("arcanaSpawner3");
 		arcanaSpawner4 = new BlockArcanaSpawner4(ArcanaConfigHelper.arcanaSpawner4ID).setUnlocalizedName("arcanaSpawner4");
 		arcanaSpawner5 = new BlockArcanaSpawner5(ArcanaConfigHelper.arcanaSpawner5ID).setUnlocalizedName("arcanaSpawner5");
+		
+		condenser = new BlockCondenser(0, 0, null);
 		
 		InitGameRegistryBlocks();
 	}

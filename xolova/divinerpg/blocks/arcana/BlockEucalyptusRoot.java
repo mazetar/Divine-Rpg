@@ -9,6 +9,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -24,7 +26,6 @@ public class BlockEucalyptusRoot extends BlockFlower
         this.setHardness(0.0F);
         this.setStepSound(soundGrassFootstep);
         this.disableStats();
-        this.setRequiresSelfNotify();
     }
 
     /**
@@ -33,7 +34,7 @@ public class BlockEucalyptusRoot extends BlockFlower
      */
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
-        return par1 == DivineRPGTwilight.DivineRPGTwilight.blockID;
+        return par1 == ArcanaBlockHelper.arcaniteDirt.blockID;
     }
 
     /**
@@ -54,7 +55,7 @@ public class BlockEucalyptusRoot extends BlockFlower
                 if (par5Random.nextInt((int)(25.0F / var7) + 1) == 0)
                 {
                     ++var6;
-                    par1World.setBlockMetadataWithNotify(par2, par3, par4, var6);
+                    par1World.setBlockMetadataWithNotify(par2, par3, par4, var6, 3);
                 }
             }
         }
@@ -158,7 +159,7 @@ public class BlockEucalyptusRoot extends BlockFlower
      */
     protected int getSeedItem()
     {
-        return DivineRPGTwilight.DivineRPGTwilight.itemID;
+        return ArcanaItemHelper.eucalyptusRootSeeds.itemID;
     }
 
     /**
@@ -166,7 +167,7 @@ public class BlockEucalyptusRoot extends BlockFlower
      */
     protected int getCropItem()
     {
-        return DivineRPGTwilight.DivineRPGTwilight.blockID;
+        return ArcanaBlockHelper.eucalyptusRoot.blockID;
     }
 
     /**

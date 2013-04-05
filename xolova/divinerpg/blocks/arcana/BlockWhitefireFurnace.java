@@ -232,22 +232,22 @@ public class BlockWhitefireFurnace extends BlockContainer
 
         if (var6 == 0)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 2);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 2, 3);
         }
 
         if (var6 == 1)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 5);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 5, 3);
         }
 
         if (var6 == 2)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 3);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 3, 3);
         }
 
         if (var6 == 3)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 4);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, 4, 3);
         }
     }
 

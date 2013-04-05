@@ -1,14 +1,18 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 import net.minecraft.block.BlockFlower;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -16,7 +20,7 @@ public class BlockLamona extends BlockFlower
 {
     public BlockLamona(int par1)
     {
-        super(par1, 76);
+        super(par1, Material.plants);
         this.setTickRandomly(true);
         float var3 = 0.5F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 0.25F, 0.5F + var3);
@@ -24,7 +28,6 @@ public class BlockLamona extends BlockFlower
         this.setHardness(0.0F);
         this.setStepSound(soundGrassFootstep);
         this.disableStats();
-        this.setRequiresSelfNotify();
     }
 
     /**
@@ -33,7 +36,7 @@ public class BlockLamona extends BlockFlower
      */
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
-        return par1 == DivineRPGTwilight.DivineRPGTwilight.blockID;
+        return par1 == ArcanaBlockHelper.arcaniteDirt.blockID;
     }
 
     /**
@@ -54,7 +57,7 @@ public class BlockLamona extends BlockFlower
                 if (par5Random.nextInt((int)(25.0F / var7) + 1) == 0)
                 {
                     ++var6;
-                    par1World.setBlockMetadataWithNotify(par2, par3, par4, var6);
+                    par1World.setBlockMetadataWithNotify(par2, par3, par4, var6, 3);
                 }
             }
         }
@@ -124,21 +127,21 @@ public class BlockLamona extends BlockFlower
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
+    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
         switch (par2)
         {
             case 0:
-                return 76;
+                return Icon[0];
 
             case 1:
-                return 77;
+                return Icon[1];
 
             case 2:
-                return 78;
+                return Icon[2];
 
             default:
-                return par2;
+                return Icon[0];
         }
     }
 
@@ -155,7 +158,7 @@ public class BlockLamona extends BlockFlower
      */
     protected int getSeedItem()
     {
-        return DivineRPGTwilight.DivineRPGTwilight.itemID;
+        return ArcanaItemHelper.lamonaSeeds.itemID;
     }
 
     /**
@@ -163,7 +166,7 @@ public class BlockLamona extends BlockFlower
      */
     protected int getCropItem()
     {
-        return DivineRPGTwilight.DivineRPGTwilight.itemID;
+        return ArcanaBlockHelper.lamona.blockID;
     }
 
     /**

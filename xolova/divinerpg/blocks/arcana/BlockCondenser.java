@@ -11,6 +11,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.blocks.BlockDivineRPGContainer;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityCondenser;
 
 public class BlockCondenser extends BlockDivineRPGContainer
 {
@@ -25,7 +26,7 @@ public class BlockCondenser extends BlockDivineRPGContainer
     /**
      * Returns the block texture based on the side being looked at.  Args: side
      */
-    public Icon getBlockTextureFromSideAndMetadata(int par1, par2)
+    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
     {
         return par1 == 1 ? this.texture[1] : (par1 == 0 ? this.texture[1] : (par1 == 3 ? this.texture[2] : this.texture[0]));
     }

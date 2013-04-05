@@ -75,8 +75,7 @@ public class BlockHeatTraps extends BlockDivineRPG
         {
             var5.attackEntityFrom(DamageSource.cactus, 16);
             var5.setFire(20);
-            ((EntityPlayerMP)var5).addStat(AchievementPageDivineRPG.hoterthanHell, 1);
-            //this.blockIndexInTexture = 110;
+            //((EntityPlayerMP)var5).addStat(AchievementPageDivineRPG.hoterthanHell, 1);
         }
     }
 

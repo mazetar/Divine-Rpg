@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.List;
 import java.util.Random;
@@ -11,13 +11,13 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class BlockPortalArcanaFrame extends Block
 {
     public BlockPortalArcanaFrame(int par1)
     {
-        super(par1, 159, Material.rock);
-        this.blockIndexInTexture = 181;
+        super(par1, Material.rock);
     }
 
     /**
@@ -51,13 +51,13 @@ public class BlockPortalArcanaFrame extends Block
     public void addCollidingBlockToList(World par1World, int par2, int par3, int par4, AxisAlignedBB par5AxisAlignedBB, List par6List, Entity par7Entity)
     {
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.8125F, 1.0F);
-        super.addCollidingBlockToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
+        super.addCollisionBoxesToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
         int var8 = par1World.getBlockMetadata(par2, par3, par4);
 
         if (isEnderEyeInserted(var8))
         {
             this.setBlockBounds(0.3125F, 0.8125F, 0.3125F, 0.6875F, 1.0F, 0.6875F);
-            super.addCollidingBlockToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
+            super.addCollisionBoxesToList(par1World, par2, par3, par4, par5AxisAlignedBB, par6List, par7Entity);
         }
 
         this.setBlockBoundsForItemRender();
@@ -85,7 +85,7 @@ public class BlockPortalArcanaFrame extends Block
     public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving)
     {
         int var6 = ((MathHelper.floor_double((double)(par5EntityLiving.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3) + 2) % 4;
-        par1World.setBlockMetadataWithNotify(par2, par3, par4, var6);
+        par1World.setBlockMetadataWithNotify(par2, par3, par4, var6, 3);
     }
 
     @Override
@@ -99,21 +99,15 @@ public class BlockPortalArcanaFrame extends Block
                 && var1.getBlockId(var2 + 1, var3, var4 - 1) == this.blockID && var1.getBlockId(var2 + 2, var3, var4 - 1) == this.blockID
                 && var1.getBlockId(var2 + 3, var3, var4 - 1) == this.blockID)
         {
-            var1.setBlockWithNotify(var2 + 1, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
-            var1.setBlockWithNotify(var2 + 2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
-            var1.setBlockWithNotify(var2 + 3, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
-            var1.setBlockWithNotify(var2 + 1, var3, var4 + 1, DivineRPGTwilight.DivineRPGTwilight.blockID);
-            var1.setBlockWithNotify(var2 + 2, var3, var4 + 1, DivineRPGTwilight.DivineRPGTwilight.blockID);
-            var1.setBlockWithNotify(var2 + 3, var3, var4 + 1, DivineRPGTwilight.DivineRPGTwilight.blockID);
-            var1.setBlockWithNotify(var2 + 1, var3, var4 + 2, DivineRPGTwilight.DivineRPGTwilight.blockID);
-            var1.setBlockWithNotify(var2 + 2, var3, var4 + 2, DivineRPGTwilight.DivineRPGTwilight.blockID);
-            var1.setBlockWithNotify(var2 + 3, var3, var4 + 2, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlock(var2 + 1, var3, var4, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+            var1.setBlock(var2 + 2, var3, var4, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+            var1.setBlock(var2 + 3, var3, var4, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+            var1.setBlock(var2 + 1, var3, var4 + 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+            var1.setBlock(var2 + 2, var3, var4 + 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+            var1.setBlock(var2 + 3, var3, var4 + 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+            var1.setBlock(var2 + 1, var3, var4 + 2, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+            var1.setBlock(var2 + 2, var3, var4 + 2, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+            var1.setBlock(var2 + 3, var3, var4 + 2, ArcanaBlockHelper.arcanaPortalFrame.blockID);
         }
-    }
-
-    @Override
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
     }
 }

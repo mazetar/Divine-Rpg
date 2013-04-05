@@ -160,9 +160,4 @@ public class BlockOreDoor3 extends BlockDoor
             ;
         }
     }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
-    }
 }

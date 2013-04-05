@@ -369,18 +369,10 @@ public class VetheaItemHelper
         heliosisCannon = new ItemVetheanCannon(VetheaConfigHelper.heliosisCannonID, 28, "heliosisCannon").setCreativeTab(CreativeTabHelper.tabRanged);
         arksianeCannon = new ItemVetheanCannon(VetheaConfigHelper.arksianeCannonID, 36, "arksianeCannon").setCreativeTab(CreativeTabHelper.tabRanged);
         
-        //spinebackCannon = new ItemSpinebackCannon(spinebackCannonID, 55, "spinebackCannon").(8, 13).setCreativeTab(CreativeTabHelper.tabRanged);
         eversight = new ItemVetheanEversight(VetheaConfigHelper.eversightID, 42, "eversight").setCreativeTab(CreativeTabHelper.tabRanged);
-        
-        //spinebackDisc = new ItemSpinebackDisc(spinebackDiscID, 41).setCreativeTab(CreativeTabHelper.tabRanged).(5, 13).setUnlocalizedName("Spineback Disk");       
-        
-        //spinebackHammer = new ItemVetheanHammerSword(spinebackHammerID, 215, "spinebackHammer").setWeaponDamage(46).setCreativeTab(CreativeTabHelper.tabSword);
         everlight = new ItemVetheanHammerSword(VetheaConfigHelper.everlightID, "everlight", 44).setCreativeTab(CreativeTabHelper.tabSword);
-        
         everbright = new ItemVetheanClaw(VetheaConfigHelper.everbrightID, "everbright", 42).setCreativeTab(CreativeTabHelper.tabSword);
         everfight = new ItemVetheanBow(VetheaConfigHelper.everfightID, 4.6D, everArrow, "everfight").setUnlocalizedName("everfight").setCreativeTab(CreativeTabHelper.tabRanged);
-        
-        //spinebackStaff = new ItemSpinebackStaff(spinebackStaffID, 0, 200).(6, 13).setUnlocalizedName("spinebackStaff").setCreativeTab(CreativeTabHelper.tabRanged);
         evernight = new ItemEvernight(VetheaConfigHelper.evernightID, 115, 200).setUnlocalizedName("evernight").setCreativeTab(CreativeTabHelper.tabRanged);
         
         teakerStaff = new ItemVetheanStaff(VetheaConfigHelper.teakerStaffID, 3, 10).setUnlocalizedName("TeakerStaff").setCreativeTab(CreativeTabHelper.tabRanged);

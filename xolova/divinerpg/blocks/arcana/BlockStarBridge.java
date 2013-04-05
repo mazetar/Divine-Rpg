@@ -90,9 +90,4 @@ public class BlockStarBridge extends BlockDivineRPG
             var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
         }
     }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
-    }
 }

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.arcana;
 
 import java.util.List;
 import java.util.Random;
@@ -23,9 +23,8 @@ public class BlockPortalArcana extends Block
 
 	public BlockPortalArcana(int par1, Material par2Material)
 	{
-		super(par1, 0, par2Material);
+		super(par1, par2Material);
 		this.setLightValue(1.0F);
-		this.blockIndexInTexture = 183;
 	}
 
 	/**
@@ -73,11 +72,10 @@ public class BlockPortalArcana extends Block
 				{
 					EntityPlayerMP var6 = (EntityPlayerMP)par5Entity;
 
-					var6.addStat(AchievementPageDivineRPG.liesWithin, 1);
                     par1World.playSound((double)par2 + 0.5D, (double)par3 + 0.5D, (double)par4 + 0.5D, "xolovon.ArcanaPortal", 0.5F, ((EntityPlayerMP) par5Entity).getRNG().nextFloat() * 0.4F + 0.8F, false);
 					if (var6.dimension != 10)
 					{
-						var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DivineRPGTwilight.arcanaID, new TeleporterArcana(var6.mcServer.worldServerForDimension(DivineRPGTwilight.arcanaID)));
+						var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DimensionRegistry.arcanaID, new TeleporterArcana(var6.mcServer.worldServerForDimension(DivineRPGTwilight.arcanaID)));
 					}
 					else
 					{

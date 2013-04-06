@@ -85,7 +85,7 @@ public class BlockAcid extends Block
     {
         if (!this.canPlaceBlockAt(par1World, par2, par3, par4))
         {
-            par1World.func_94571_i(par2, par3, par4);
+            par1World.setBlockToAir(par2, par3, par4);
             return false;
         }
         else
@@ -101,7 +101,7 @@ public class BlockAcid extends Block
     public void harvestBlock(World par1World, EntityPlayer par2EntityPlayer, int par3, int par4, int par5, int par6)
     {
         super.harvestBlock(par1World, par2EntityPlayer, par3, par4, par5, par6);
-        par1World.func_94571_i(par3, par4, par5);
+        par1World.setBlockToAir(par3, par4, par5);
     }
     
     /**
@@ -134,7 +134,7 @@ public class BlockAcid extends Block
      */
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
-    	par1World.func_94571_i(par2, par3, par4);
+    	par1World.setBlockToAir(par2, par3, par4);
     }
 
     /**

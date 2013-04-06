@@ -34,7 +34,7 @@ public class BlockKarosHeatTileGreen extends Block
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
+                var1.setBlock(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
             }
         }
     }
@@ -53,7 +53,7 @@ public class BlockKarosHeatTileGreen extends Block
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
+                var1.setBlock(var2, var3, var4, VetheaBlockHelper.karosHeatTileRed.blockID);
             }
         }
     }
@@ -65,7 +65,7 @@ public class BlockKarosHeatTileGreen extends Block
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4) && !this.override)
         {
-            var1.setBlockWithNotify(var2, var3, var4, VetheaBlockHelper.karosHeatTileGreen.blockID);
+            var1.setBlock(var2, var3, var4, VetheaBlockHelper.karosHeatTileGreen.blockID);
         }
     }
 

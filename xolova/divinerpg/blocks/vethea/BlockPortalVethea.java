@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.vethea;
 
 import java.util.Random;
 
@@ -15,6 +15,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.entities.particle.EntityMythrilPortalFX;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -127,7 +129,7 @@ public class BlockPortalVethea extends BlockBreakable
                                 return false;
                             }
                         }
-                        else if (var10 != 0 && var10 != DivineRPGTwilight.DivineRPGTwilight.blockID)
+                        else if (var10 != 0 && var10 != TwilightBlockHelper.AugiteBlock.blockID)
                         {
                             return false;
                         }
@@ -135,17 +137,17 @@ public class BlockPortalVethea extends BlockBreakable
                 }
             }
 
-            var1.editingBlocks = true;
+            var1.scheduledUpdatesAreImmediate = true;
 
             for (var7 = 0; var7 < 2; ++var7)
             {
                 for (var8 = 0; var8 < 3; ++var8)
                 {
-                    var1.setBlockWithNotify(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, DivineRPGTwilight.DivineRPGTwilight.blockID);
+                    var1.setBlockWithNotify(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.AugiteBlock.blockID);
                 }
             }
 
-            var1.editingBlocks = false;
+            var1.scheduledUpdatesAreImmediate = false;
             return true;
         }
     }
@@ -174,7 +176,7 @@ public class BlockPortalVethea extends BlockBreakable
 
         if (var1.getBlockId(var2, var8 - 1, var4) != Block.blockSnow.blockID)
         {
-            var1.setBlockWithNotify(var2, var3, var4, 0);
+            var1.setBlock(var2, var3, var4, 0);
         }
         else
         {
@@ -192,16 +194,16 @@ public class BlockPortalVethea extends BlockBreakable
 
                 if (var10 && var11)
                 {
-                    var1.setBlockWithNotify(var2, var3, var4, 0);
+                    var1.setBlock(var2, var3, var4, 0);
                 }
                 else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != Block.blockSnow.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != Block.blockSnow.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
-                    var1.setBlockWithNotify(var2, var3, var4, 0);
+                    var1.setBlock(var2, var3, var4, 0);
                 }
             }
             else
             {
-                var1.setBlockWithNotify(var2, var3, var4, 0);
+                var1.setBlock(var2, var3, var4, 0);
             }
         }
     }
@@ -325,7 +327,7 @@ public class BlockPortalVethea extends BlockBreakable
             }
 
             EntityMythrilPortalFX var20 = new EntityMythrilPortalFX(var1, var7, var9, var11, var13, var15, var17);
-            FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20, var20);
+            FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
         }
     }
 }

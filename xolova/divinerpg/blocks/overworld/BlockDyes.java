@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.List;
 import java.util.Random;
@@ -8,10 +8,11 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDyes extends Block
+public class BlockDyes extends BlockDivineRPG
 {
     public static final String[] blockStepTypes = new String[0];
     private boolean blockType;
@@ -19,7 +20,6 @@ public class BlockDyes extends Block
     public BlockDyes(int var1, int var2, Material var3)
     {
         super(var1, var2, Material.rock);
-        this.blockIndexInTexture = var2;
         this.setLightOpacity(255);
     }
 

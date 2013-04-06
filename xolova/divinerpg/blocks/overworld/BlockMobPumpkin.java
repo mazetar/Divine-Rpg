@@ -134,7 +134,7 @@ public class BlockMobPumpkin extends Block
 
         for (int i = 0; i < this.texture.length; ++i)
         {
-            this.texture[i] = par1IconRegister.func_94245_a(this.name + "_" + i);
+            this.texture[i] = par1IconRegister.registerIcon(this.name + "_" + i);
         }
     }
 }

@@ -42,7 +42,7 @@ public class BlockRaglokAltar extends Block
 
         for (int i = 0; i < this.texture.length; ++i)
         {
-            this.texture[i] = par1IconRegister.func_94245_a("raglokAltar_" + i);
+            this.texture[i] = par1IconRegister.registerIcon("raglokAltar_" + i);
         }
     }
 }

@@ -22,7 +22,7 @@ public class BlockDreamwreckerSpawner extends BlockMobSpawner
     public TileEntity createNewTileEntity(World par1World)
     {
     	TileEntityMobSpawner var1 = new TileEntityMobSpawner();
-    	var1.func_98049_a().func_98272_a("DivineRPG.dreamwrecker");
+    	var1.func_98049_a().setMobID("DivineRPG.dreamwrecker");
         return var1;
     }
 

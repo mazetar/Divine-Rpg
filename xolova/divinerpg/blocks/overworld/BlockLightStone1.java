@@ -1,19 +1,19 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockLightStone1 extends Block
+public class BlockLightStone1 extends BlockDivineRPG
 {
     public BlockLightStone1(int var1, int var2)
     {
-        super(var1, Material.rock);
-        this.blockIndexInTexture = var2;
+        super(var1, var2, Material.rock);
     }
 
-    public String getTextureFile()
+    public int getSheet()
     {
-        return DivineRPGTwilight.textureFile1;
+        return 1;
     }
 }

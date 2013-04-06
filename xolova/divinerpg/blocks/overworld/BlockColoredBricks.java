@@ -1,17 +1,23 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.List;
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPGTwilight;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.Icon;
+import net.minecraft.world.ColorizerGrass;
+import net.minecraft.world.IBlockAccess;
+import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockColoredBricks extends Block
+public class BlockColoredBricks extends BlockDivineRPG
 {
     public static final String[] blockStepTypes = new String[0];
     private boolean blockType;
@@ -19,131 +25,130 @@ public class BlockColoredBricks extends Block
     public BlockColoredBricks(int var1, int var2, Material var3)
     {
         super(var1, var2, Material.rock);
-        this.blockIndexInTexture = var2;
         this.setLightOpacity(255);
     }
-
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public int getBlockTextureFromSideAndMetadata(int var1, int var2)
-    {
-        switch (var2)
-        {
-            case 0:
-                return 81;
-
-            case 1:
-                return 82;
-
-            case 2:
-                return 83;
-
-            case 3:
-                return 89;
-
-            case 4:
-                return 160;
-
-            default:
-                return var2;
-        }
-    }
-
-    /**
-     * Returns the ID of the items to drop on destruction.
-     */
-    public int idDropped(int var1, Random var2, int var3)
-    {
-        switch (var1)
-        {
-            case 0:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
-
-            case 1:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
-
-            case 2:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
-
-            case 3:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
-
-            case 4:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
-
-            default:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
-        }
-    }
-
-    public int quantityDropped(int var1, int var2, Random var3)
-    {
-        switch (var1)
-        {
-            case 0:
-                return 1;
-
-            case 1:
-                return 1;
-
-            case 2:
-                return 1;
-
-            case 3:
-                return 1;
-
-            case 4:
-                return 1;
-
-            default:
-                return 0;
-        }
-    }
-
+    
     /**
      * Determines the damage on the item the block drops. Used in cloth and wood.
      */
     public int damageDropped(int var1)
     {
-        switch (var1)
-        {
-            case 0:
-                return 0;
+    	return 0;
+    }
+	
+	// Meant to be overrided
+	public int getSheet(int side, int metadata) {
+		return 0;
+	}
 
-            case 1:
-                return 1;
+    /**
+     * Return the color for the specified armor ItemStack.
+     */
+    public int getColor(ItemStack par1ItemStack)
+    {
+    	NBTTagCompound nbttagcompound = par1ItemStack.getTagCompound();
 
-            case 2:
-                return 2;
-
-            case 3:
-                return 3;
-
-            case 4:
-                return 4;
-
-            default:
-                return 0;
-        }
+    	if (nbttagcompound == null)
+    	{
+    		return 10511680;
+    	}
+    	else
+    	{
+    		NBTTagCompound nbttagcompound1 = nbttagcompound.getCompoundTag("display");
+    		return nbttagcompound1 == null ? 10511680 : (nbttagcompound1.hasKey("color") ? nbttagcompound1.getInteger("color") : 10511680);
+    	}
     }
 
-    public String getTextureFile()
+    /**
+     * Remove the color from the specified armor ItemStack.
+     */
+    public void removeColor(ItemStack par1ItemStack)
     {
-        return DivineRPGTwilight.textureFile1;
+    	NBTTagCompound nbttagcompound = par1ItemStack.getTagCompound();
+
+    	if (nbttagcompound != null)
+    	{
+    		NBTTagCompound nbttagcompound1 = nbttagcompound.getCompoundTag("display");
+
+    		if (nbttagcompound1.hasKey("color"))
+    		{
+    			nbttagcompound1.removeTag("color");
+    		}
+    	}
     }
 
     @SideOnly(Side.CLIENT)
 
     /**
-     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
+     * When this method is called, your block should register all the icons it needs with the given IconRegister. This
+     * is the only chance you get to register icons.
      */
-    public void getSubBlocks(int var1, CreativeTabs var2, List var3)
+    public void registerIcons(IconRegister par1IconRegister)
     {
-        var3.add(new ItemStack(var1, 1, 0));
-        var3.add(new ItemStack(var1, 1, 1));
-        var3.add(new ItemStack(var1, 1, 2));
-        var3.add(new ItemStack(var1, 1, 3));
-        var3.add(new ItemStack(var1, 1, 4));
+        this.blockIcon = par1IconRegister.registerIcon("grass_side");
+    }
+
+    @SideOnly(Side.CLIENT)
+    public int getBlockColor()
+    {
+        double d0 = 0.5D;
+        double d1 = 1.0D;
+        return ColorizerGrass.getGrassColor(d0, d1);
+    }
+
+    public void func_82813_b(ItemStack par1ItemStack, int par2)
+    {
+    	NBTTagCompound nbttagcompound = par1ItemStack.getTagCompound();
+
+    	if (nbttagcompound == null)
+    	{
+    		nbttagcompound = new NBTTagCompound();
+    		par1ItemStack.setTagCompound(nbttagcompound);
+    	}
+
+    	NBTTagCompound nbttagcompound1 = nbttagcompound.getCompoundTag("display");
+
+    	if (!nbttagcompound.hasKey("display"))
+    	{
+    		nbttagcompound.setCompoundTag("display", nbttagcompound1);
+    	}
+
+    	nbttagcompound1.setInteger("color", par2);
+    }
+
+    @SideOnly(Side.CLIENT)
+
+    /**
+     * Returns the color this block should be rendered. Used by leaves.
+     */
+    public int getRenderColor(int par1)
+    {
+        return this.getColor();
+    }
+
+    @SideOnly(Side.CLIENT)
+
+    /**
+     * Returns a integer with hex for 0xrrggbb with this color multiplied against the blocks color. Note only called
+     * when first determining what to render.
+     */
+    public int colorMultiplier(IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
+    {
+        int l = 0;
+        int i1 = 0;
+        int j1 = 0;
+
+        for (int k1 = -1; k1 <= 1; ++k1)
+        {
+            for (int l1 = -1; l1 <= 1; ++l1)
+            {
+                int i2 = par1IBlockAccess.getBiomeGenForCoords(par2 + l1, par4 + k1).getBiomeGrassColor();
+                l += (i2 & 16711680) >> 16;
+                i1 += (i2 & 65280) >> 8;
+                j1 += i2 & 255;
+            }
+        }
+
+        return (l / 9 & 255) << 16 | (i1 / 9 & 255) << 8 | j1 / 9 & 255;
     }
 }

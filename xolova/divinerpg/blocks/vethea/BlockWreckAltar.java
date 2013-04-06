@@ -42,7 +42,7 @@ public class BlockWreckAltar extends Block
 
         for (int i = 0; i < this.texture.length; ++i)
         {
-            this.texture[i] = par1IconRegister.func_94245_a("wreckAltar_" + i);
+            this.texture[i] = par1IconRegister.registerIcon("wreckAltar_" + i);
         }
     }
 }

@@ -1,17 +1,17 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.List;
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMiniBricks extends Block
+public class BlockMiniBricks extends BlockDivineRPG
 {
     public static final String[] blockStepTypes = new String[0];
     private boolean blockType;
@@ -19,14 +19,13 @@ public class BlockMiniBricks extends Block
     public BlockMiniBricks(int var1, int var2, Material var3)
     {
         super(var1, var2, Material.rock);
-        this.blockIndexInTexture = var2;
         this.setLightOpacity(255);
     }
 
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
-    public int getBlockTextureFromSideAndMetadata(int var1, int var2)
+    public int getTextureIndexFromSideAndMetadata(int var1, int var2)
     {
         switch (var2)
         {
@@ -176,9 +175,9 @@ public class BlockMiniBricks extends Block
         }
     }
 
-    public String getTextureFile()
+    public int getSheet()
     {
-        return DivineRPGTwilight.textureFile1;
+        return 1;
     }
 
     @SideOnly(Side.CLIENT)

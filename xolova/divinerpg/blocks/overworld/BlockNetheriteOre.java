@@ -1,24 +1,22 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockNetheriteOre extends Block
+public class BlockNetheriteOre extends BlockDivineRPG
 {
     public BlockNetheriteOre(int var1, int var2)
     {
         super(var1, var2, Material.rock);
-        this.blockIndexInTexture = var2;
     }
 
     /**
@@ -28,7 +26,7 @@ public class BlockNetheriteOre extends Block
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World var1, int var2, int var3, int var4)
     {
         float var5 = 0.0625F;
-        return AxisAlignedBB.getAABBPool().addOrModifyAABBInPool((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)((float)(var3 + 1) - var5), (double)((float)(var4 + 1) - var5));
+        return AxisAlignedBB.getAABBPool().getAABB((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)((float)(var3 + 1) - var5), (double)((float)(var4 + 1) - var5));
     }
 
     @SideOnly(Side.CLIENT)
@@ -39,7 +37,7 @@ public class BlockNetheriteOre extends Block
     public AxisAlignedBB getSelectedBoundingBoxFromPool(World var1, int var2, int var3, int var4)
     {
         float var5 = 0.0625F;
-        return AxisAlignedBB.getAABBPool().addOrModifyAABBInPool((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)(var3 + 1), (double)((float)(var4 + 1) - var5));
+        return AxisAlignedBB.getAABBPool().getAABB((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)(var3 + 1), (double)((float)(var4 + 1) - var5));
     }
 
     /**
@@ -50,9 +48,9 @@ public class BlockNetheriteOre extends Block
         var5.attackEntityFrom(DamageSource.cactus, 1);
     }
 
-    public String getTextureFile()
+    public int getSheet()
     {
-        return DivineRPGTwilight.textureFile;
+        return 0;
     }
 
     /**

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.overworld;
 
 import java.util.List;
 
@@ -34,11 +34,6 @@ public class ItemAxeXolovon extends ItemAxe
     public float getStrVsBlock(ItemStack var1, Block var2)
     {
         return var2 != null && var2.blockMaterial == Material.wood ? this.efficiencyOnProperMaterial : super.getStrVsBlock(var1, var2);
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 
     @Override

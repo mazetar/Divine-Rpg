@@ -53,7 +53,7 @@ public class BlockInfusionTable extends BlockContainer
 
         for (int i = 0; i < this.texture.length; ++i)
         {
-            this.texture[i] = par1IconRegister.func_94245_a("infusionTable_" + i);
+            this.texture[i] = par1IconRegister.registerIcon("infusionTable_" + i);
         }
     }
 }

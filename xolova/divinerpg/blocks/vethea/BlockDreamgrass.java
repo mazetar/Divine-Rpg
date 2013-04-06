@@ -50,7 +50,7 @@ public class BlockDreamgrass extends Block
         {
             if (par1World.getBlockLightValue(par2, par3 + 1, par4) < 4 && par1World.getBlockLightOpacity(par2, par3 + 1, par4) > 2)
             {
-                par1World.setBlockWithNotify(par2, par3, par4, VetheaBlockHelper.dreamdirt.blockID);
+                par1World.setBlock(par2, par3, par4, VetheaBlockHelper.dreamdirt.blockID);
             }
             else if (par1World.getBlockLightValue(par2, par3 + 1, par4) >= 9)
             {
@@ -63,7 +63,7 @@ public class BlockDreamgrass extends Block
 
                     if (par1World.getBlockId(var7, var8, var9) == VetheaBlockHelper.dreamdirt.blockID && par1World.getBlockLightValue(var7, var8 + 1, var9) >= 4 && par1World.getBlockLightOpacity(var7, var8 + 1, var9) <= 2)
                     {
-                        par1World.setBlockWithNotify(var7, var8, var9, VetheaBlockHelper.dreamgrass.blockID);
+                        par1World.setBlock(var7, var8, var9, VetheaBlockHelper.dreamgrass.blockID);
                     }
                 }
             }
@@ -85,7 +85,7 @@ public class BlockDreamgrass extends Block
 
         for (int i = 0; i < this.texture.length; ++i)
         {
-            this.texture[i] = par1IconRegister.func_94245_a("dreamgrass_" + i);
+            this.texture[i] = par1IconRegister.registerIcon("dreamgrass_" + i);
         }
     }
 }

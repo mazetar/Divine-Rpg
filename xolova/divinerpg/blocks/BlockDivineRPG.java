@@ -16,7 +16,6 @@ public class BlockDivineRPG extends Block implements IBlockDivineRPG {
 	public BlockDivineRPG(int id, int sprite, Material mat) {
 		super(id, mat);
 		this.index = sprite;
-		GameRegistry.registerBlock(this);
 	}
 	
 	public BlockDivineRPG setIconIndex(int sheet, int index) {

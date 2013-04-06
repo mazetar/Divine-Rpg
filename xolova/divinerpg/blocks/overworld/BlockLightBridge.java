@@ -1,23 +1,22 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockLightBridge extends Block
+public class BlockLightBridge extends BlockDivineRPG
 {
     private final boolean powered;
 
     public BlockLightBridge(int var1, boolean var2, int var3)
     {
-        super(var1, Material.glass);
+        super(var1, var3, Material.glass);
         this.powered = var2;
-        this.blockIndexInTexture = var3;
 
         if (var2)
         {

@@ -223,7 +223,7 @@ public class BlockWeedwoodVine extends BlockDivineRPG implements IShearable
 		if (!par1World.isRemote && !this.canVineStay(par1World, par2, par3, par4))
 		{
 			this.dropBlockAsItem(par1World, par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4), 0);
-			par1World.func_94575_c(par2, par3, par4, 0);
+			par1World.setBlock(par2, par3, par4, 0);
 		}
 	}
 
@@ -289,7 +289,7 @@ public class BlockWeedwoodVine extends BlockDivineRPG implements IShearable
 
 					if (var12 > 0)
 					{
-						par1World.setBlockAndMetadataWithNotify(par2, par3 + 1, par4, this.blockID, var12, 3);
+						par1World.setBlock(par2, par3 + 1, par4, this.blockID, var12, 3);
 					}
 				}
 			}
@@ -320,23 +320,23 @@ public class BlockWeedwoodVine extends BlockDivineRPG implements IShearable
 
 						if ((var9 & 1 << var13) != 0 && this.canBePlacedOn(par1World.getBlockId(par2 + Direction.offsetX[var11] + Direction.offsetX[var13], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var13])))
 						{
-							par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 1 << var13, 3);
+							par1World.setBlock(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 1 << var13, 3);
 						}
 						else if ((var9 & 1 << var14) != 0 && this.canBePlacedOn(par1World.getBlockId(par2 + Direction.offsetX[var11] + Direction.offsetX[var14], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var14])))
 						{
-							par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 1 << var14, 3);
+							par1World.setBlock(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 1 << var14, 3);
 						}
 						else if ((var9 & 1 << var13) != 0 && par1World.isAirBlock(par2 + Direction.offsetX[var11] + Direction.offsetX[var13], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var13]) && this.canBePlacedOn(par1World.getBlockId(par2 + Direction.offsetX[var13], par3, par4 + Direction.offsetZ[var13])))
 						{
-							par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11] + Direction.offsetX[var13], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var13], this.blockID, 1 << (var11 + 2 & 3), 3);
+							par1World.setBlock(par2 + Direction.offsetX[var11] + Direction.offsetX[var13], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var13], this.blockID, 1 << (var11 + 2 & 3), 3);
 						}
 						else if ((var9 & 1 << var14) != 0 && par1World.isAirBlock(par2 + Direction.offsetX[var11] + Direction.offsetX[var14], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var14]) && this.canBePlacedOn(par1World.getBlockId(par2 + Direction.offsetX[var14], par3, par4 + Direction.offsetZ[var14])))
 						{
-							par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11] + Direction.offsetX[var14], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var14], this.blockID, 1 << (var11 + 2 & 3), 3);
+							par1World.setBlock(par2 + Direction.offsetX[var11] + Direction.offsetX[var14], par3, par4 + Direction.offsetZ[var11] + Direction.offsetZ[var14], this.blockID, 1 << (var11 + 2 & 3), 3);
 						}
 						else if (this.canBePlacedOn(par1World.getBlockId(par2 + Direction.offsetX[var11], par3 + 1, par4 + Direction.offsetZ[var11])))
 						{
-							par1World.setBlockAndMetadataWithNotify(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 0, 3);
+							par1World.setBlock(par2 + Direction.offsetX[var11], par3, par4 + Direction.offsetZ[var11], this.blockID, 0, 3);
 						}
 					}
 				}
@@ -350,7 +350,7 @@ public class BlockWeedwoodVine extends BlockDivineRPG implements IShearable
 
 						if (var13 > 0)
 						{
-							par1World.setBlockAndMetadataWithNotify(par2, par3 - 1, par4, this.blockID, var13, 3);
+							par1World.setBlock(par2, par3 - 1, par4, this.blockID, var13, 3);
 						}
 					}
 					else if (var12 == this.blockID)

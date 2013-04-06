@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.vethea.projectile.EntityZoragonBomb;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -138,7 +139,7 @@ public class BlockHelioticBeam extends Block
 
         for (int i = 0; i < this.texture.length; ++i)
         {
-            this.texture[i] = par1IconRegister.func_94245_a("helioticBeam_" + i);
+            this.texture[i] = par1IconRegister.registerIcon("helioticBeam_" + i);
         }
     }
 }

@@ -1,15 +1,17 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.vethea;
 
 import java.util.Random;
 
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPGContainer;
+import xolova.divinerpg.client.gui.GuiDreamLamp;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
-public class BlockDreamLamp extends BlockContainer
+public class BlockDreamLamp extends BlockDivineRPGContainer
 {
 	private GuiDreamLamp gui;
 	private TileEntityDreamLamp te;
@@ -17,8 +19,7 @@ public class BlockDreamLamp extends BlockContainer
 
 	public BlockDreamLamp(int par1, int i, Material par2Material, boolean k) 
 	{
-		super(par1, par2Material);
-		this.blockIndexInTexture = i;
+		super(par1, i, par2Material);
 		if(k)
 			this.setLightValue(1.0F);
 	}
@@ -47,7 +48,7 @@ public class BlockDreamLamp extends BlockContainer
     
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return DivineRPGTwilight.DivineRPGTwilight.blockID;
+        return VetheaBlockHelper.dreamLamp.blockID;
     }
     
     public static void updateFurnaceBlockState(boolean par0, World par1World, int par2, int par3, int par4)
@@ -58,15 +59,15 @@ public class BlockDreamLamp extends BlockContainer
 
         if (par0)
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            par1World.setBlockWithNotify(par2, par3, par4, VetheaBlockHelper.dreamLampOn.blockID);
         }
         else
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            par1World.setBlockWithNotify(par2, par3, par4, VetheaBlockHelper.dreamLamp.blockID);
         }
 
         keepFurnaceInventory = false;
-        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5);
+        par1World.setBlock(par2, par3, par4, var5);
 
         if (var6 != null)
         {

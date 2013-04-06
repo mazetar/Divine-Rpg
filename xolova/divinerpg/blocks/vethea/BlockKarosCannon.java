@@ -21,6 +21,7 @@ import net.minecraft.tileentity.TileEntityDispenser;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.vethea.projectile.EntityKarosCannonShot;
 import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
 public class BlockKarosCannon extends BlockContainer
@@ -256,7 +257,7 @@ public class BlockKarosCannon extends BlockContainer
 
     public static IPosition func_82525_a(IBlockSource par0IBlockSource)
     {
-        EnumFacing var1 = EnumFacing.getFront(par0IBlockSource.func_82620_h());
+        EnumFacing var1 = EnumFacing.getFront(par0IBlockSource.getBlockMetadata());
         double var2 = par0IBlockSource.getX() + 0.7D * (double)var1.getFrontOffsetX();
         double var4 = par0IBlockSource.getY();
         double var6 = par0IBlockSource.getZ() + 0.7D * (double)var1.getFrontOffsetZ();

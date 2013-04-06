@@ -8,15 +8,17 @@ import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.ISpecialArmor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemArmorVemos extends ItemArmor implements ISpecialArmor
 {
-    public ItemArmorVemos(int var1, EnumArmorMaterial var2, int var3, int var4)
+	private static EnumArmorMaterial enumz = EnumHelper.addArmorMaterial("korma", -1, new int[]{0,0,0,0}, 20);
+    public ItemArmorVemos(int var1, int var3, int var4)
     {
-        super(var1, var2, var3, var4);
+        super(var1, enumz, var3, var4);
     }
 
     public ArmorProperties getProperties(EntityLiving var1, ItemStack var2, DamageSource var3, double var4, int var6)

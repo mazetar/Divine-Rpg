@@ -146,7 +146,7 @@ public class ArcanaItemHelper
         arcaniumSaber = new ItemArcaniumSaber(ArcanaConfigHelper.arcaniumSaberID, arcanaSword).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("arcaniumSaber");
         liviciaSword = new ItemLiviciaSword(ArcanaConfigHelper.liviciaSwordID, arcanaSword).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("liviciaSword");
         
-        staffOfStarlight = new ItemStaffOfStarlight(ArcanaConfigHelper.staffOfStarlightID, 14).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("staffOfStarlight");
+        staffOfStarlight = new ItemStarfall(ArcanaConfigHelper.staffOfStarlightID).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("staffOfStarlight");
         wraithbane = new ItemWraithbane(ArcanaConfigHelper.wraithbaneID).setCreativeTab(CreativeTabHelper.tabSword).setUnlocalizedName("wraithbane");
         captiansSparkler = new ItemCaptiansSparkeler(ArcanaConfigHelper.captiansSparklerID).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("captiansSparkler");
         enderScepter = new ItemEnderScepter(ArcanaConfigHelper.enderScepterID).setUnlocalizedName("enderScepter").setCreativeTab(CreativeTabHelper.tabSword);
@@ -158,7 +158,7 @@ public class ArcanaItemHelper
         dungeonToken = new Item(ArcanaConfigHelper.dungeonTokenID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("dungeonToken");
         collector = new Item(ArcanaConfigHelper.collectorID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("collector");
         collectorFragments = new Item (ArcanaConfigHelper.collectorFragmentsID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("collectorFragment");
-        tarBucket = new ItemTarBucket(ArcanaConfigHelper.tarBucketID, OverworldBlockHelper.tarStill.blockID).setUnlocalizedName("tarBucket").setCreativeTab(CreativeTabHelper.tabItems);
+        tarBucket = new ItemTarBucket(ArcanaConfigHelper.tarBucketID, OverworldBlockHelper.TarStill.blockID).setUnlocalizedName("tarBucket").setCreativeTab(CreativeTabHelper.tabItems);
         arcaniumBucket = new ItemTarBucket(ArcanaConfigHelper.arcaniumBucketID, 0).setUnlocalizedName("arcaniumBucket").setCreativeTab(CreativeTabHelper.tabItems);
         staffOfEnrichment = new ItemStaffOfEnrichment(ArcanaConfigHelper.staffOfEnrichmentID).setUnlocalizedName("staffOfEnrichment").setCreativeTab(CreativeTabHelper.tabTool);
         

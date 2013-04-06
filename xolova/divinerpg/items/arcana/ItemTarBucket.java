@@ -12,6 +12,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
 public class ItemTarBucket extends ItemBucket
@@ -90,7 +91,7 @@ public class ItemTarBucket extends ItemBucket
 
                     if (par2World.getBlockMaterial(var13, var14, var15) == Material.water && par2World.getBlockMetadata(var13, var14, var15) == 0)
                     {
-                        par2World.func_94575_c(var13, var14, var15, 0);
+                        par2World.setBlockToAir(var13, var14, var15);
 
                         if (par3EntityPlayer.capabilities.isCreativeMode)
                         {
@@ -110,9 +111,9 @@ public class ItemTarBucket extends ItemBucket
                         return par1ItemStack;
                     }
 
-                    if (par2World.getBlockMaterial(var13, var14, var15) == Material.lava && par2World.getBlockMetadata(var13, var14, var15) == 0 && par2World.getBlockId(var13, var14, var15) == DivineRPGTwilight.DivineRPGTwilight.blockID)
+                    if (par2World.getBlockMaterial(var13, var14, var15) == Material.lava && par2World.getBlockMetadata(var13, var14, var15) == 0 && par2World.getBlockId(var13, var14, var15) == OverworldBlockHelper.TarStill.blockID)
                     {
-                        par2World.func_94575_c(var13, var14, var15, 0);
+                        par2World.setBlock(var13, var14, var15, 0);
 
                         if (par3EntityPlayer.capabilities.isCreativeMode)
                         {

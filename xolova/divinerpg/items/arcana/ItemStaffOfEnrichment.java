@@ -48,7 +48,6 @@ public class ItemStaffOfEnrichment extends Item
 				{
 					par3World.setBlock(par4, par5, par6, var13.blockID);
 					par1ItemStack.damageItem(1, par2EntityPlayer);
-					par2EntityPlayer.addStat(AchievementPageDivineRPG.enrichment, 1);
 					return true;
 				}
 			}

@@ -26,9 +26,7 @@ public class ItemStormSword extends ItemDivineRPGSword
     	{
     		this.createLightning(par2World, par3EntityPlayer);
     	}
-    	
-    	par3EntityPlayer.addStat(AchievementPageDivineRPG.allHellLoose, 1);
-    	
+    	    	
         return super.onItemRightClick(par1ItemStack, par2World, par3EntityPlayer);
     }
     
@@ -57,9 +55,7 @@ public class ItemStormSword extends ItemDivineRPGSword
     	{
         	this.createLightning(player.worldObj, player);
     	}
-    	
-    	player.addStat(AchievementPageDivineRPG.allHellLoose, 1);
-    	
+    	    	
         return false;
     }
 	

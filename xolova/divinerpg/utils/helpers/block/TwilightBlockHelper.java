@@ -21,6 +21,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class TwilightBlockHelper 
 {
+	public static Block ColoredVane;
 	public static Block TwilightStone;
 	public static Block blueFire;
 	public static Block divineRock;

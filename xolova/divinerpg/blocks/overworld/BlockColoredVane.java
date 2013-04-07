@@ -3,22 +3,23 @@ package xolova.divinerpg.blocks.overworld;
 import java.util.List;
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockColoredVane extends Block
+public class BlockColoredVane extends BlockDivineRPG
 {
     public static final String[] blockStepTypes = new String[0];
     private boolean blockType;
 
-    public BlockColoredVane(int var1, Material var3)
+    public BlockColoredVane(int var1, int var2, Material var3)
     {
-        super(var1, Material.rock);
+        super(var1, var1, Material.rock);
         this.setLightOpacity(255);
     }
 
@@ -27,22 +28,22 @@ public class BlockColoredVane extends Block
         switch (var1)
         {
             case 0:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return TwilightBlockHelper.ColoredVane.blockID;
 
             case 1:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return TwilightBlockHelper.ColoredVane.blockID;
 
             case 2:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return TwilightBlockHelper.ColoredVane.blockID;
 
             case 3:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return TwilightBlockHelper.ColoredVane.blockID;
 
             case 4:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return TwilightBlockHelper.ColoredVane.blockID;
 
             default:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return TwilightBlockHelper.ColoredVane.blockID;
         }
     }
 

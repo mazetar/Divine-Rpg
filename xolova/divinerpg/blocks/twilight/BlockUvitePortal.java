@@ -136,7 +136,7 @@ public class BlockUvitePortal extends BlockBreakable
             {
                 for (var8 = 0; var8 < 3; ++var8)
                 {
-                    var1.setBlockWithNotify(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.energyPortal.blockID);
+                    var1.setBlock(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.UvitePortal.blockID);
                 }
             }
 
@@ -166,7 +166,7 @@ public class BlockUvitePortal extends BlockBreakable
             ;
         }
 
-        if (var1.getBlockId(var2, var8 - 1, var4) != DivineRPGTwilight.DivineRPGTwilight.blockID)
+        if (var1.getBlockId(var2, var8 - 1, var4) != TwilightBlockHelper.UvitePortal.blockID)
         {
             var1.setBlock(var2, var3, var4, 0);
         }
@@ -188,7 +188,7 @@ public class BlockUvitePortal extends BlockBreakable
                 {
                     var1.setBlock(var2, var3, var4, 0);
                 }
-                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.AzuriteBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != DivineRPGTwilight.DivineRPGTwilight.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
+                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.AzuriteBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != TwilightBlockHelper.UviteBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
                     var1.setBlock(var2, var3, var4, 0);
                 }

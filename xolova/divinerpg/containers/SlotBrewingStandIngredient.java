@@ -1,10 +1,9 @@
 package xolova.divinerpg.containers;
 
-import xolova.blued00r.divinerpg.DivineRPG;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import xolova.divinerpg.DivineRPG;
 
 class SlotBrewingStandIngredient extends Slot
 {

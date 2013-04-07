@@ -3,12 +3,12 @@ package xolova.divinerpg.blocks.overworld;
 import java.util.List;
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -22,118 +22,58 @@ public class BlockDyes extends BlockDivineRPG
         super(var1, var2, Material.rock);
         this.setLightOpacity(255);
     }
-
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public int getBlockTextureFromSideAndMetadata(int var1, int var2)
-    {
-        switch (var2)
-        {
-            case 0:
-                return 73;
-
-            case 1:
-                return 111;
-
-            case 2:
-                return 75;
-
-            case 3:
-                return 88;
-
-            case 4:
-                return 87;
-
-            case 5:
-                return 86;
-
-            case 6:
-                return 74;
-
-            case 7:
-                return 50;
-
-            case 8:
-                return 110;
-
-            case 9:
-                return 84;
-
-            case 10:
-                return 83;
-
-            case 11:
-                return 132;
-
-            case 12:
-                return 133;
-
-            case 13:
-                return 85;
-
-            case 14:
-                return 79;
-
-            default:
-                return var2;
-        }
-    }
-
-    /**
-     * Returns the ID of the items to drop on destruction.
-     */
+    
     public int idDropped(int var1, Random var2, int var3)
     {
         switch (var1)
         {
             case 0:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 1:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 2:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 3:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 4:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 5:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 6:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 7:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 8:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 9:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 10:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 11:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 12:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 13:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             case 14:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
 
             default:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.dyeblocks.blockID;
         }
     }
 
@@ -246,11 +186,6 @@ public class BlockDyes extends BlockDivineRPG
             default:
                 return 0;
         }
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 
     @SideOnly(Side.CLIENT)

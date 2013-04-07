@@ -6,10 +6,8 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import xolova.blued00r.divinerpg.containers.ContainerGreenlightFurnace;
-import xolova.blued00r.divinerpg.containers.ContainerMoonlightFurnace;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityGreenlightFurnace;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityMoonlightFurnace;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
+import xolova.divinerpg.containers.ContainerMoonlightFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

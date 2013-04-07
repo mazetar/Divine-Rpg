@@ -6,8 +6,7 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import xolova.blued00r.divinerpg.containers.ContainerExtractinator;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityExtractinator;
+import xolova.divinerpg.containers.ContainerExtractinator;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.overworld;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -7,10 +7,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 
-public class ItemBloodDagger extends ItemSwordXolovon
+public class ItemBloodDagger extends ItemDivineRPGSword
 {
     private int weaponDamage;
     private final EnumToolMaterial field_40439_b;
@@ -104,10 +106,5 @@ public class ItemBloodDagger extends ItemSwordXolovon
     public int getItemEnchantability()
     {
         return this.field_40439_b.getEnchantability();
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile1;
     }
 }

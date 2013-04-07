@@ -10,7 +10,7 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotFurnace;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDemonFurnace;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityDemonFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

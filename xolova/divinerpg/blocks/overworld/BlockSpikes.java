@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 
@@ -10,15 +10,15 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockSpikes extends Block
+public class BlockSpikes extends BlockDivineRPG
 {
     public BlockSpikes(int var1, int var2)
     {
         super(var1, var2, Material.sand);
-        this.blockIndexInTexture = var2;
     }
 
     /**
@@ -28,7 +28,7 @@ public class BlockSpikes extends Block
     public AxisAlignedBB getCollisionBoundingBoxFromPool(World var1, int var2, int var3, int var4)
     {
         float var5 = 0.0625F;
-        return AxisAlignedBB.getAABBPool().addOrModifyAABBInPool((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)((float)(var3 + 1) - var5), (double)((float)(var4 + 1) - var5));
+        return AxisAlignedBB.getAABBPool().getAABB((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)((float)(var3 + 1) - var5), (double)((float)(var4 + 1) - var5));
     }
 
     @SideOnly(Side.CLIENT)
@@ -39,7 +39,7 @@ public class BlockSpikes extends Block
     public AxisAlignedBB getSelectedBoundingBoxFromPool(World var1, int var2, int var3, int var4)
     {
         float var5 = 0.0625F;
-        return AxisAlignedBB.getAABBPool().addOrModifyAABBInPool((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)(var3 + 1), (double)((float)(var4 + 1) - var5));
+        return AxisAlignedBB.getAABBPool().getAABB((double)((float)var2 + var5), (double)var3, (double)((float)var4 + var5), (double)((float)(var2 + 1) - var5), (double)(var3 + 1), (double)((float)(var4 + 1) - var5));
     }
 
     /**
@@ -49,12 +49,6 @@ public class BlockSpikes extends Block
     {
         var5.attackEntityFrom(DamageSource.cactus, 4);
     }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile2;
-    }
-
     public void addCreativeItems(ArrayList var1)
     {
         var1.add(new ItemStack(this, 1));

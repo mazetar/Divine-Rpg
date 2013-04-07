@@ -10,10 +10,9 @@ import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockMoonBulb extends Block
 {
-    public BlockMoonBulb(int var1, int var2)
+    public BlockMoonBulb(int var1)
     {
         super(var1, Material.plants);
-        this.blockIndexInTexture = var2;
         this.setTickRandomly(true);
     }
 
@@ -65,10 +64,5 @@ public class BlockMoonBulb extends Block
     public int getRenderType()
     {
         return 1;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile1;
     }
 }

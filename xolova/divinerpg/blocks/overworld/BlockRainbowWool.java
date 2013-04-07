@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 
@@ -6,36 +6,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockRainbowWool extends Block
+public class BlockRainbowWool extends BlockDivineRPG
 {
     public BlockRainbowWool(int var1, int var2)
     {
-        super(var1, Material.rock);
-        this.blockIndexInTexture = var2;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile1;
-    }
-
-    /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     */
-    public int getBlockTextureFromSide(int var1)
-    {
-        switch (var1)
-        {
-            case 0:
-                return 87;
-
-            case 1:
-                return 87;
-
-            default:
-                return 84;
-        }
+        super(var1, var2, Material.rock);
     }
 
     /**

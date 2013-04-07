@@ -6,8 +6,8 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import xolova.blued00r.divinerpg.containers.ContainerCondenser;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityCondenser;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityCondenser;
+import xolova.divinerpg.containers.ContainerCondenser;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

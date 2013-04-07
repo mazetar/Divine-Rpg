@@ -8,6 +8,10 @@ public class OverworldBlockHelper
 {
 	public static Block blueFire;
 	public static Block TarStill;
+	public static Block Steel;
+	public static Block divineRock;
+	public static Block dyeblocks;
+	public static Block miniBricks;
 	
 	public static void init()
 	{

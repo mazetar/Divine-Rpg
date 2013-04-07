@@ -47,8 +47,10 @@ public class IceikaBlockHelper {
 	public static Block blueCandyCane;
 	public static Block yellowCandyCane;
 	public static Block purpleCandyCane;
+	public static Block giftBox; 
+	public static Block iceikaPortal;
 	
-	static IceikaConfigHelper x; 
+	static IceikaConfigHelper x;
 	
 	public static void init() {
 		frostedStone = new BlockDivineRPG(x.FrostedStoneID, 0, Material.rock).setIconIndex(3, 15, 15).setHardness(1.5F).setResistance(10F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("frostedStone").setCreativeTab(CreativeTabHelper.tabBlocks);

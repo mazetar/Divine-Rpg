@@ -32,7 +32,7 @@ public class ItemVetheanBow extends ItemBow
     private String name;
     public final String[] texture;
     @SideOnly(Side.CLIENT)
-    private Icon[] field_94600_b;
+    private Icon[] icons;
     
 	public ItemVetheanBow(int par1, double par2, Item par3, String par4) {
 		super(par1);
@@ -196,20 +196,19 @@ public class ItemVetheanBow extends ItemBow
     }
 
     @SideOnly(Side.CLIENT)
-    public void func_94581_a(IconRegister par1IconRegister)
+    public void updateIcons(IconRegister par1IconRegister)
     {
-        super.func_94581_a(par1IconRegister);
-        this.field_94600_b = new Icon[texture.length];
+        this.icons = new Icon[texture.length];
 
-        for (int i = 0; i < this.field_94600_b.length; ++i)
+        for (int i = 0; i < this.icons.length; ++i)
         {
-            this.field_94600_b[i] = par1IconRegister.func_94245_a(texture[i]);
+            this.icons[i] = par1IconRegister.registerIcon(texture[i]);
         }
     }
 
     @SideOnly(Side.CLIENT)
     public Icon func_94599_c(int par1)
     {
-        return this.field_94600_b[par1];
+        return this.icons[par1];
     }
 }

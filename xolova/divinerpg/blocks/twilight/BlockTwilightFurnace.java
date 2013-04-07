@@ -3,7 +3,6 @@ package xolova.divinerpg.blocks.twilight;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityItem;
@@ -16,18 +15,20 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPGContainer;
+import xolova.divinerpg.blocks.overworld.tileentities.TileEntityTwilightFurance;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockTwilightFurnace extends BlockContainer
+public class BlockTwilightFurnace extends BlockDivineRPGContainer
 {
     private Random furnaceRand = new Random();
     private final boolean isActive;
     private static boolean keepFurnaceInventory = false;
 
-    protected BlockTwilightFurnace(int var1, boolean var2)
+    protected BlockTwilightFurnace(int var1, boolean var2, int var3)
     {
-        super(var1, Material.rock);
+        super(var1, var3, Material.rock);
         this.isActive = var2;
     }
 
@@ -144,17 +145,6 @@ public class BlockTwilightFurnace extends BlockContainer
         }
     }
 
-    /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     */
-    public int getBlockTextureFromSide(int var1)
-    {
-        return var1 == 1 ? 59 : (var1 == 0 ? 59 : (var1 == 3 ? this.blockIndexInTexture - 2 : this.blockIndexInTexture));
-    }
-
-    /**
-     * Called upon block activation (right click on the block.)
-     */
     public boolean onBlockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5, int var6, float var7, float var8, float var9)
     {
         if (var1.isRemote)
@@ -189,7 +179,7 @@ public class BlockTwilightFurnace extends BlockContainer
         }
 
         keepFurnaceInventory = false;
-        var1.setBlockMetadataWithNotify(var2, var3, var4, var5);
+        var1.setBlockMetadataWithNotify(var2, var3, var4, var5, 3);
 
         if (var6 != null)
         {
@@ -215,22 +205,22 @@ public class BlockTwilightFurnace extends BlockContainer
 
         if (var6 == 0)
         {
-            var1.setBlockMetadataWithNotify(var2, var3, var4, 2);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, 2, 3);
         }
 
         if (var6 == 1)
         {
-            var1.setBlockMetadataWithNotify(var2, var3, var4, 5);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, 5, 3);
         }
 
         if (var6 == 2)
         {
-            var1.setBlockMetadataWithNotify(var2, var3, var4, 3);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, 3, 3);
         }
 
         if (var6 == 3)
         {
-            var1.setBlockMetadataWithNotify(var2, var3, var4, 4);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, 4, 3);
         }
     }
 

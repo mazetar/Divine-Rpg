@@ -2,16 +2,13 @@ package xolova.blued00r.divinerpg.client.gui;
 
 import java.awt.Color;
 
-import org.lwjgl.opengl.GL11;
-
-import xolova.blued00r.divinerpg.containers.ContainerInfusionTable;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityInfusionTable;
-
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import org.lwjgl.opengl.GL11;
+
+import xolova.divinerpg.containers.ContainerInfusionTable;
 
 public class GuiInfusionTable extends GuiContainer
 {

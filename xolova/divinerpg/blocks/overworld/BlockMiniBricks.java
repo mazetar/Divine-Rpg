@@ -8,6 +8,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -69,34 +70,34 @@ public class BlockMiniBricks extends BlockDivineRPG
         switch (var1)
         {
             case 0:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.miniBricks.blockID;
 
             case 1:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.miniBricks.blockID;
 
             case 2:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.miniBricks.blockID;
 
             case 3:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.miniBricks.blockID;
 
             case 4:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.miniBricks.blockID;
 
             case 5:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.miniBricks.blockID;
 
             case 6:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.miniBricks.blockID;
 
             case 7:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.miniBricks.blockID;
 
             case 8:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.miniBricks.blockID;
 
             default:
-                return DivineRPGTwilight.DivineRPGTwilight.blockID;
+                return OverworldBlockHelper.miniBricks.blockID;
         }
     }
 

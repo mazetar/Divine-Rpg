@@ -1,5 +1,6 @@
 package xolova.divinerpg.models.overworld.mobs;
 
+import xolova.divinerpg.entities.overworld.mobs.EntityJungleBat;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;

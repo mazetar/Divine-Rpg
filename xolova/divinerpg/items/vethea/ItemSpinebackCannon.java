@@ -6,6 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.entities.vethea.projectile.EntitySpinebackCannonShot;
 import xolova.divinerpg.utils.helpers.item.VetheaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -62,7 +63,7 @@ public class ItemSpinebackCannon extends ItemVetheanCannon
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
         par3List.add(this.damage + " Ranged Damage");
-        par3List.add("Ammo: " + DivineRPGTwilight.rockChunks.getItemName());
+        //par3List.add("Ammo: " + DivineRPGTwilight.rockChunks.getItemName());
         par3List.add("\u00a72Vethean");
     }
 }

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.overworld;
 
 import java.util.List;
 
@@ -7,10 +7,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.entities.overworld.projectile.EntityCorruptShot;
+import xolova.divinerpg.items.ItemDivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemCorruptCannon extends Item
+public class ItemCorruptCannon extends ItemDivineRPG
 {
     private int damage;
     private int firetick;
@@ -84,11 +86,6 @@ public class ItemCorruptCannon extends Item
     public boolean isFull3D()
     {
         return true;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 
     @Override

@@ -2,14 +2,8 @@ package xolova.divinerpg.items.overworld;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
-import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.IconHelper;
 
 public class ItemTwilightClock extends Item

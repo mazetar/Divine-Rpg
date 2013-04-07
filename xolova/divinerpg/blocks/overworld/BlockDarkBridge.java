@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -14,11 +14,10 @@ public class BlockDarkBridge extends Block
 {
     private final boolean powered;
 
-    public BlockDarkBridge(int var1, boolean var2, int var3)
+    public BlockDarkBridge(int var1, boolean var2)
     {
         super(var1, Material.glass);
         this.powered = var2;
-        this.blockIndexInTexture = var3;
 
         if (var2)
         {
@@ -98,11 +97,6 @@ public class BlockDarkBridge extends Block
     public int idDropped(int var1, Random var2, int var3)
     {
         return DivineRPGTwilight.DivineRPGTwilight.blockID;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 
     public void addCreativeItems(ArrayList var1)

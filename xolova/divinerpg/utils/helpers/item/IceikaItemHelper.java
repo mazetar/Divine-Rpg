@@ -55,7 +55,7 @@ public class IceikaItemHelper
     public static Item santaBody;
     public static Item santaLegs;
     public static Item santaBoots;
-    
+    public static Item bluefireBow;    
     public static IceikaConfigHelper x;
     
     public static void init()

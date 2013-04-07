@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.overworld;
 
 import java.util.List;
 import java.util.Random;
@@ -38,11 +38,11 @@ public class ItemShadowBow extends ItemBow
         if (var5 || var3.inventory.hasItem(Item.arrow.itemID))
         {
             int var6 = this.getMaxItemUseDuration(var1) - var4;
-            var6 = (int)((float)var6 / DivineRPGTwilight.decreaseBowTime);
+            var6 = (int)((float)var6 / 0.5F);
             float var7 = (float)var6 / 20.0F;
             var7 = (var7 * var7 + var7 * 2.0F) / 3.0F;
 
-            if ((double)var7 < 0.1D * (double)DivineRPGTwilight.decreaseBowTime)
+            if ((double)var7 < 0.1D * (double)0.5F)
             {
                 return;
             }
@@ -104,36 +104,6 @@ public class ItemShadowBow extends ItemBow
         }
     }
 
-    public int getIconIndex(ItemStack var1, int var2, EntityPlayer var3, ItemStack var4, int var5)
-    {
-        if (var4 != null)
-        {
-            int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
-
-            if ((float)var6 >= 40.0F * DivineRPGTwilight.decreaseBowTime)
-            {
-                return this.iconIndex + 3;
-            }
-
-            if ((float)var6 >= 18.0F * DivineRPGTwilight.decreaseBowTime)
-            {
-                return this.iconIndex + 2;
-            }
-
-            if ((float)var6 > 13.0F * DivineRPGTwilight.decreaseBowTime)
-            {
-                return this.iconIndex + 1;
-            }
-
-            if (var6 > 0)
-            {
-                return 15;
-            }
-        }
-
-        return this.iconIndex;
-    }
-
     /**
      * returns the action that specifies what animation to play when the items is being used
      */
@@ -173,11 +143,6 @@ public class ItemShadowBow extends ItemBow
         {
             this.lastDamage = var1.getItemDamage();
         }
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile2;
     }
 
     @Override

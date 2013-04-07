@@ -412,20 +412,20 @@ public class EntityWorkshopTickerer extends EntityVillager implements INpc, IMer
         switch (this.getProfession())
         {
             default:
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 1, 1), new ItemStack(IceikaItemHelper.shuriken.itemID, 16, 0), new ItemStack(IceikaItemHelper.snowFlakeShuriken.itemID, 16, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 6, 1), new ItemStack(IceikaItemHelper.namkormira.itemID, 1, 0), new ItemStack(IceikaItemHelper.frossivence.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 4, 1), new ItemStack(IceikaItemHelper.serenadeStriker.itemID, 1, 0), new ItemStack(IceikaItemHelper.serenadeOfIce.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 7, 1), new ItemStack(IceikaItemHelper.slimeSword.itemID, 1, 0), new ItemStack(IceikaItemHelper.glacierSword.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 12, 1), new ItemStack(IceikaItemHelper.shadowBow.itemID, 1, 0),new ItemStack(IceikaItemHelper.icicleBow.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 12, 1), new ItemStack(IceikaItemHelper.crabClawCannon.itemID, 1, 0),new ItemStack(IceikaItemHelper.frostClawCannon.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 12, 1), new ItemStack(IceikaItemHelper.frostCannon.itemID, 1, 0),new ItemStack(IceikaItemHelper.fractiteCannon.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 15, 1),new ItemStack(IceikaItemHelper.frostSword.itemID, 1, 0), new ItemStack(IceikaItemHelper.frostKingSword.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 18, 1), new ItemStack(IceikaItemHelper.soundOfMusic.itemID, 1, 0), new ItemStack(IceikaItemHelper.soundOfCarols.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 25, 1), new ItemStack(IceikaItemHelper.enderSword.itemID, 1, 0), new ItemStack(IceikaItemHelper.enderice.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 30, 1), new ItemStack(IceikaItemHelper.bluefirebow.itemID, 1, 0), new ItemStack(IceikaItemHelper.snowStormBow.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 45, 1), new ItemStack(IceikaItemHelper.bedrockMaul.itemID, 1, 0), new ItemStack(IceikaItemHelper.frozenMaul.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 40, 1), new ItemStack(IceikaItemHelper.divinesword.itemID, 1, 0), new ItemStack(IceikaItemHelper.icineSword.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 15, 1), new ItemStack(IceikaItemHelper.sandSlash.itemID, 1, 0), new ItemStack(IceikaItemHelper.snowSlash.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 1, 1), new ItemStack(OverworldItemHelper.shuriken.itemID, 16, 0), new ItemStack(IceikaItemHelper.snowFlakeShuriken.itemID, 16, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 6, 1), new ItemStack(OverworldItemHelper.namkormira.itemID, 1, 0), new ItemStack(IceikaItemHelper.frossivence.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 4, 1), new ItemStack(OverworldItemHelper.serenadeStriker.itemID, 1, 0), new ItemStack(IceikaItemHelper.serenadeOfIce.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 7, 1), new ItemStack(OverworldItemHelper.slimeSword.itemID, 1, 0), new ItemStack(IceikaItemHelper.glacierSword.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 12, 1), new ItemStack(OverworldItemHelper.shadowBow.itemID, 1, 0),new ItemStack(IceikaItemHelper.icicleBow.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 12, 1), new ItemStack(OverworldItemHelper.crabClawCannon.itemID, 1, 0),new ItemStack(IceikaItemHelper.frostClawCannon.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 12, 1), new ItemStack(OverworldItemHelper.frostCannon.itemID, 1, 0),new ItemStack(IceikaItemHelper.fractiteCannon.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 15, 1),new ItemStack(OverworldItemHelper.frostSword.itemID, 1, 0), new ItemStack(IceikaItemHelper.frostKingSword.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 18, 1), new ItemStack(OverworldItemHelper.soundOfMusic.itemID, 1, 0), new ItemStack(IceikaItemHelper.soundOfCarols.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 25, 1), new ItemStack(OverworldItemHelper.enderSword.itemID, 1, 0), new ItemStack(IceikaItemHelper.enderice.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 30, 1), new ItemStack(IceikaItemHelper.bluefireBow.itemID, 1, 0), new ItemStack(IceikaItemHelper.snowStormBow.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 45, 1), new ItemStack(OverworldItemHelper.bedrockMaul.itemID, 1, 0), new ItemStack(IceikaItemHelper.frozenMaul.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 40, 1), new ItemStack(OverworldItemHelper.divinesword.itemID, 1, 0), new ItemStack(IceikaItemHelper.icineSword.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 15, 1), new ItemStack(OverworldItemHelper.sandSlash.itemID, 1, 0), new ItemStack(IceikaItemHelper.snowSlash.itemID, 1, 0)));
 
                 if (this.buyingList == null)
                 {

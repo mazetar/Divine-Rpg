@@ -8,6 +8,8 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import xolova.divinerpg.entities.iceika.mobs.EntityWorkshopMerchant;
+import xolova.divinerpg.entities.iceika.mobs.EntityWorkshopTickerer;
 import xolova.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import xolova.divinerpg.worldgen.vethea.WorldAddition;
 

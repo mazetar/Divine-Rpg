@@ -11,10 +11,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockBarredDoor extends BlockDoor
 {
-    public BlockBarredDoor(int par1, Material par2Material, int par3)
+    public BlockBarredDoor(int par1, Material par2Material)
     {
         super(par1, par2Material);
-        this.blockIndexInTexture = par3;
     }
 
     @SideOnly(Side.CLIENT)
@@ -28,7 +27,6 @@ public class BlockBarredDoor extends BlockDoor
         if (par5 != 0 && par5 != 1)
         {
             int var6 = this.getFullMetadata(par1IBlockAccess, par2, par3, par4);
-            int var7 = this.blockIndexInTexture;
 
             if ((var6 & 8) != 0)
             {
@@ -86,7 +84,6 @@ public class BlockBarredDoor extends BlockDoor
         }
         else
         {
-            return this.blockIndexInTexture;
         }
     }
 

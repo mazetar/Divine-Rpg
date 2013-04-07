@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.Random;
 
@@ -13,10 +13,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import xolova.divinerpg.blocks.iceika.tileentities.TileEntitySkeletonChest;
+import xolova.divinerpg.utils.helpers.block.IPersonalBlock;
 
 public class BlockSkeletonChest extends BlockContainer implements IPersonalBlock
 {
@@ -25,7 +24,6 @@ public class BlockSkeletonChest extends BlockContainer implements IPersonalBlock
     public BlockSkeletonChest(int var1)
     {
         super(var1, Material.wood);
-        this.blockIndexInTexture = 126;
         this.setCreativeTab(CreativeTabs.tabDecorations);
     }
 
@@ -36,36 +34,6 @@ public class BlockSkeletonChest extends BlockContainer implements IPersonalBlock
     {
         super.onBlockAdded(var1, var2, var3, var4);
         this.setDefaultDirection(var1, var2, var3, var4);
-    }
-
-    @SideOnly(Side.CLIENT)
-
-    /**
-     * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
-     */
-    public int getBlockTexture(IBlockAccess var1, int var2, int var3, int var4, int var5)
-    {
-        if (var5 == 1)
-        {
-            return 125;
-        }
-        else if (var5 == 0)
-        {
-            return 125;
-        }
-        else
-        {
-            int var6 = var1.getBlockMetadata(var2, var3, var4);
-            return var5 != var6 ? this.blockIndexInTexture : this.blockIndexInTexture + 1;
-        }
-    }
-
-    /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     */
-    public int getBlockTextureFromSide(int var1)
-    {
-        return var1 == 1 ? 125 : (var1 == 0 ? 125 : (var1 == 3 ? this.blockIndexInTexture + 1 : this.blockIndexInTexture));
     }
 
     private void setDefaultDirection(World var1, int var2, int var3, int var4)
@@ -98,7 +66,7 @@ public class BlockSkeletonChest extends BlockContainer implements IPersonalBlock
                 var9 = 4;
             }
 
-            var1.setBlockMetadataWithNotify(var2, var3, var4, var9);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, var9, 3);
         }
     }
 
@@ -130,7 +98,7 @@ public class BlockSkeletonChest extends BlockContainer implements IPersonalBlock
             var6 = 4;
         }
 
-        var1.setBlockMetadataWithNotify(var2, var3, var4, var6);
+        var1.setBlockMetadataWithNotify(var2, var3, var4, var6, 3);
     }
 
     /**
@@ -197,11 +165,6 @@ public class BlockSkeletonChest extends BlockContainer implements IPersonalBlock
     public TileEntity createNewTileEntity(World var1)
     {
         return new TileEntitySkeletonChest();
-    }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
     }
 
     public boolean canAccess(EntityPlayer var1)

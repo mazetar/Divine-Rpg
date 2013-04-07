@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 
@@ -12,19 +12,13 @@ public class BlockPlate extends BlockPressurePlate
 {
     private EnumMobType triggerMobType;
 
-    public BlockPlate(int var1, int var2, EnumMobType var3, Material var4)
+    public BlockPlate(int var1, String var2, EnumMobType var3, Material var4)
     {
-        super(var1, var2, var3, var4);
+        super(var1, var2, var4, var3);
         this.triggerMobType = var3;
-        this.blockIndexInTexture = var2;
         this.setTickRandomly(true);
         float var5 = 0.0625F;
         this.setBlockBounds(var5, 0.0F, var5, 1.0F - var5, 0.03125F, 1.0F - var5);
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 
     /**

@@ -34,10 +34,11 @@ import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.village.Village;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.DivineRPGIceika;
-import xolova.divinerpg.utils.AchievementPageDivineRPG;
+import xolova.divinerpg.utils.helpers.block.IceikaBlockHelper;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import xolova.divinerpg.utils.helpers.item.IceikaItemHelper;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -193,7 +194,6 @@ public class EntityWorkshopMerchant extends EntityVillager implements INpc, IMer
             	}
                 
                 var1.openGui(DivineRPGIceika.instance, 15, this.worldObj, this.entityId, 0, 0);
-                var1.addStat(AchievementPageDivineRPG.lilGift, 1);
             }
 
             return true;
@@ -373,7 +373,7 @@ public class EntityWorkshopMerchant extends EntityVillager implements INpc, IMer
             }
         }
 
-        if (var1.getItemToBuy().itemID == IceikaItemHelper.arcanium.itemID)
+        if (var1.getItemToBuy().itemID == ArcanaItemHelper.arcanium.itemID)
         {
             this.wealth += var1.getItemToBuy().stackSize;
         }
@@ -419,18 +419,18 @@ public class EntityWorkshopMerchant extends EntityVillager implements INpc, IMer
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 1, 0), new ItemStack(IceikaItemHelper.chocolateLog.itemID, 5, 0)));
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 1, 0), new ItemStack(IceikaItemHelper.pepperMints.itemID, 15, 0)));
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 1, 0), new ItemStack(IceikaItemHelper.fruitCake.itemID, 3, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaItemHelper.blueLights.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaItemHelper.greenLights.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaItemHelper.redLights.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaItemHelper.yellowLights.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaItemHelper.pinkLights.blockID, 4, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.blueXmasLights.blockID, 4, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.greenXmasLights.blockID, 4, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.redXmasLights.blockID, 4, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.yellowXmasLights.blockID, 4, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.purpleXmasLights.blockID, 4, 0)));
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 15, 0), new ItemStack(IceikaItemHelper.icicleBane.itemID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 3, 0), new ItemStack(IceikaItemHelper.giftBox.blockID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaItemHelper.candyCaneRed.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaItemHelper.candyCaneGreen.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaItemHelper.candyCaneBlue.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 1), new ItemStack(IceikaItemHelper.candyCaneYellow.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 1), new ItemStack(IceikaItemHelper.candyCanePurple.blockID, 4, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 3, 0), new ItemStack(IceikaBlockHelper.giftBox.blockID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.redCandyCane.blockID, 4, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.greenCandyCane.blockID, 4, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.blueCandyCane.blockID, 4, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 1), new ItemStack(IceikaBlockHelper.yellowCandyCane.blockID, 4, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 1), new ItemStack(IceikaBlockHelper.purpleCandyCane.blockID, 4, 0)));
                 
                 if (this.buyingList == null)
                 {
@@ -476,7 +476,7 @@ public class EntityWorkshopMerchant extends EntityVillager implements INpc, IMer
 
             if (var4 < 0)
             {
-                var5 = new ItemStack(IceikaItemHelper.divineShard.itemID, 1, 0);
+                var5 = new ItemStack(TwilightItemHelper.divineShard.itemID, 1, 0);
                 var6 = new ItemStack(var1, -var4, 0);
             }
             else

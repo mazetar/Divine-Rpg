@@ -22,12 +22,16 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class TwilightBlockHelper 
 {
 	public static Block TwilightStone;
+	public static Block blueFire;
+	public static Block divineRock;
 	//-==-DRAVITE-==-//
 	public static Block DraviteGrass;
 	public static Block DraviteDirt;
 	public static Block DraviteLogs;
 	public static Block DraviteLeaves;
 	public static Block DraviteOre;
+	public static Block DravitePortal;
+	public static Block DraviteBlock;
 	//-==-AZURITE-==-//
 	public static Block AzuriteGrass;
 	public static Block AzuriteDirt;
@@ -35,24 +39,32 @@ public class TwilightBlockHelper
 	public static Block AzuriteLeaves;
 	public static Block AzuriteOre;
 	public static Block AzuriteVines;
+	public static Block AzuriteBlock;
+	public static Block AzuritePortal;
 	//-==-Uvite-==-//
 	public static Block UviteGrass;
 	public static Block UviteDirt;
 	public static Block UviteLogs;
 	public static Block UviteLeaves;
 	public static Block UviteOre;
+	public static Block UviteBlock;
+	public static Block UvitePortal;
 	//-==-Mythril-==-//
 	public static Block MythrilGrass;
 	public static Block MythrilDirt;
 	public static Block MythrilLogs;
 	public static Block MythrilLeaves;
 	public static Block MythrilOre;
+	public static Block MytrilPortal;
+	public static Block MythrilBlock;
 	//-==-Augite-==-//
 	public static Block AugiteGrass;
 	public static Block AugiteDirt;
 	public static Block AugiteLogs;
 	public static Block AugiteLeaves;
 	public static Block AugiteOre;
+	public static Block AugiteBlock;
+	public static Block AugitePortal;
 	
 	public static void initBlocks()
 	{

@@ -4,7 +4,6 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;

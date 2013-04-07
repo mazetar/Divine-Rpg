@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.Random;
 
@@ -13,11 +13,10 @@ public class BlockLightFence extends BlockFence
 {
     private final boolean powered;
 
-    public BlockLightFence(int var1, boolean var2, int var3)
+    public BlockLightFence(int var1, String x, boolean var2)
     {
-        super(var1, var3);
+        super(var1, x, Material.wood);
         this.powered = var2;
-        this.blockIndexInTexture = var3;
 
         if (var2)
         {
@@ -97,10 +96,5 @@ public class BlockLightFence extends BlockFence
     public int idDropped(int var1, Random var2, int var3)
     {
         return DivineRPGTwilight.DivineRPGTwilight.blockID;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 }

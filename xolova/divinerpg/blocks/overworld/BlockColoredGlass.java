@@ -1,5 +1,4 @@
-
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
@@ -9,10 +8,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockColoredGlass extends BlockGlass
 {
-    public BlockColoredGlass(int var1, int var2, Material var3, boolean var4)
+    public BlockColoredGlass(int var1, Material var3, boolean var4)
     {
-        super(var1, var2, var3, var4);
-        this.blockIndexInTexture = var2;
+        super(var1, var3, var4);
     }
 
     @SideOnly(Side.CLIENT)

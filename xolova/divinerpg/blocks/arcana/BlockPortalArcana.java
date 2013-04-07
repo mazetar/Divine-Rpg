@@ -10,8 +10,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
-import xolova.divinerpg.utils.AchievementPageDivineRPG;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -75,7 +74,7 @@ public class BlockPortalArcana extends Block
                     par1World.playSound((double)par2 + 0.5D, (double)par3 + 0.5D, (double)par4 + 0.5D, "xolovon.ArcanaPortal", 0.5F, ((EntityPlayerMP) par5Entity).getRNG().nextFloat() * 0.4F + 0.8F, false);
 					if (var6.dimension != 10)
 					{
-						var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DimensionRegistry.arcanaID, new TeleporterArcana(var6.mcServer.worldServerForDimension(DivineRPGTwilight.arcanaID)));
+						var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DimensionRegistry.ArcanaID, new TeleporterArcana(var6.mcServer.worldServerForDimension(DimensionRegistry.ArcanaID)));
 					}
 					else
 					{

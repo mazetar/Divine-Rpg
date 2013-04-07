@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.overworld;
 
 import java.util.List;
 
@@ -26,7 +26,6 @@ public class ItemSoundMusic extends Item
     {
         if (!var2.isRemote)
         {
-        	var3.addStat(AchievementPageDivineRPG.offKey, 1);
             var2.playSoundAtEntity(var3,  "xolovon.SoundOfMusic", 1.0F, 1.0F);
             var2.spawnEntityInWorld(new EntityMusicBall(var2, var3));
             var1.damageItem(1, var3);

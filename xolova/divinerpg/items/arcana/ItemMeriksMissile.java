@@ -15,6 +15,8 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.entities.arcana.projectile.EntityMerikMissile;
+import xolova.divinerpg.utils.ArcanaBar;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -69,7 +71,7 @@ public class ItemMeriksMissile extends ItemBow
         var6 = event.charge;
         boolean var5 = par3EntityPlayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
 
-        if (ArcanaList.get(par3EntityPlayer.username).arcanaUse((5 * var6 / 25) * 10))
+        if (ArcanaBar.get(par3EntityPlayer.username).arcanaUse((5 * var6 / 25) * 10))
         {
             float var7 = (float)var6 / 20.0F;
             var7 = (var7 * var7 + var7 * 2.0F) / 3.0F;

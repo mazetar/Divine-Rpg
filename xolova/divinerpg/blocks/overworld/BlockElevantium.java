@@ -3,7 +3,6 @@ package xolova.blued00r.divinerpg.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -50,10 +49,6 @@ public class BlockElevantium extends Block
      */
     public void onEntityWalking(World var1, int var2, int var3, int var4, Entity var5)
     {
-    	if(var5 instanceof EntityPlayerMP)
-    	{
-    		((EntityPlayerMP)var5).addStat(AchievementPageDivineRPG.skyHigh, 1);
-    	}
         ++var5.motionY;
     }
 

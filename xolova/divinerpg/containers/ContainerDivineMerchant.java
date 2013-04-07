@@ -1,5 +1,6 @@
 package xolova.divinerpg.containers;
 
+import xolova.divinerpg.blocks.overworld.tileentities.DivineInventory;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -11,7 +12,6 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotMerchantResult;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.blued00r.divinerpg.entities.mobs.traders.DivineInventory;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

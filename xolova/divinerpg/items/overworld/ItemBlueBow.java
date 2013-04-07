@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.overworld;
 
 import java.util.List;
 import java.util.Random;
@@ -11,18 +11,19 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.entities.overworld.projectile.EntityExplosiveArrow;
+import xolova.divinerpg.items.core.ItemDivineRPGBow;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBlueBow extends ItemBow
+public class ItemBlueBow extends ItemDivineRPGBow
 {
     private int lastDamage = -1;
 
     public ItemBlueBow(int var1)
     {
-        super(var1);
-        this.maxStackSize = 1;
-        this.setMaxDamage(-1);
+        super(var1, -1, var1, true);
+        this.setMaxStackSize(1);
     }
 
     /**
@@ -83,36 +84,6 @@ public class ItemBlueBow extends ItemBow
         }
     }
 
-    public int getIconIndex(ItemStack var1, int var2, EntityPlayer var3, ItemStack var4, int var5)
-    {
-        if (var4 != null)
-        {
-            int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
-
-            if ((float)var6 >= 40.0F * DivineRPGTwilight.increaseBowTime)
-            {
-                return this.iconIndex + 4;
-            }
-
-            if ((float)var6 >= 18.0F * DivineRPGTwilight.increaseBowTime)
-            {
-                return this.iconIndex + 3;
-            }
-
-            if ((float)var6 > 13.0F * DivineRPGTwilight.increaseBowTime)
-            {
-                return this.iconIndex + 2;
-            }
-
-            if (var6 > 0)
-            {
-                return this.iconIndex + 1;
-            }
-        }
-
-        return this.iconIndex;
-    }
-
     @SideOnly(Side.CLIENT)
     public void onUsingItemTick(ItemStack var1, EntityPlayer var2, int var3)
     {
@@ -145,18 +116,9 @@ public class ItemBlueBow extends ItemBow
     {
         return true;
     }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile2;
-    }
-
+    
     @Override
     @SideOnly(Side.CLIENT)
-
-    /**
-     * allows items to add custom lines of information to the mouseover description
-     */
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
         par3List.add("2 Ranged Damage");

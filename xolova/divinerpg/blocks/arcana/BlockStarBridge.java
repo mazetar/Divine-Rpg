@@ -2,7 +2,6 @@ package xolova.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;

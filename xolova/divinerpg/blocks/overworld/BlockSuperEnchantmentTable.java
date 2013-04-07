@@ -110,7 +110,6 @@ public class BlockSuperEnchantmentTable extends BlockContainer
         {
             if (!par5EntityPlayer.isSneaking())
             {
-            	par5EntityPlayer.addStat(AchievementPageDivineRPG.perfectlyCorrupted, 1);
                 par5EntityPlayer.openGui(DivineRPGTwilight.instance, 0, par1World, par2, par3, par4);
                 return true;
             }

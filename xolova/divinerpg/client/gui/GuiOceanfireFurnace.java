@@ -6,10 +6,8 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
-import xolova.blued00r.divinerpg.containers.ContainerMoltenFurnace;
-import xolova.blued00r.divinerpg.containers.ContainerOceanfireFurnace;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityMoltenFurnace;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityOceanfireFurnace;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityOceanfireFurnace;
+import xolova.divinerpg.containers.ContainerOceanfireFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

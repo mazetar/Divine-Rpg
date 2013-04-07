@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.items;
+package xolova.divinerpg.items.overworld;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumToolMaterial;

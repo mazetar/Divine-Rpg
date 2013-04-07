@@ -1,22 +1,20 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockSlimeLight extends Block
+public class BlockSlimeLight extends BlockDivineRPG
 {
     private final boolean powered;
 
     public BlockSlimeLight(int var1, boolean var2, int var3)
     {
-        super(var1, Material.glass);
+        super(var1, var3, Material.glass);
         this.powered = var2;
-        this.blockIndexInTexture = var3;
-
         if (var2)
         {
             this.setLightValue(1.0F);
@@ -77,10 +75,5 @@ public class BlockSlimeLight extends Block
     public int idDropped(int var1, Random var2, int var3)
     {
         return DivineRPGTwilight.DivineRPGTwilight.blockID;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile1;
     }
 }

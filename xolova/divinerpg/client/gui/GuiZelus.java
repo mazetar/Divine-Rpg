@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.client.gui;
+package xolova.divinerpg.client.gui;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
-import xolova.blued00r.divinerpg.containers.ContainerZelus;
+import xolova.divinerpg.containers.ContainerZelus;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -45,8 +45,8 @@ public class GuiZelus extends GuiContainer
         super.initGui();
         int var1 = (this.width - this.xSize) / 2;
         int var2 = (this.height - this.ySize) / 2;
-        this.controlList.add(this.nextRecipeButtonIndex = new GuiButtonMerchant(1, var1 + 120 + 27, var2 + 24 - 1, true));
-        this.controlList.add(this.previousRecipeButtonIndex = new GuiButtonMerchant(2, var1 + 36 - 19, var2 + 24 - 1, false));
+        this.buttonList.add(this.nextRecipeButtonIndex = new GuiButtonMerchant(1, var1 + 120 + 27, var2 + 24 - 1, true));
+        this.buttonList.add(this.previousRecipeButtonIndex = new GuiButtonMerchant(2, var1 + 36 - 19, var2 + 24 - 1, false));
         this.nextRecipeButtonIndex.enabled = false;
         this.previousRecipeButtonIndex.enabled = false;
     }
@@ -102,7 +102,7 @@ public class GuiZelus extends GuiContainer
             try
             {
                 var4.writeInt(this.currentRecipeIndex);
-                this.mc.getSendQueue().addToSendQueue(new Packet250CustomPayload("MC|TrSel", var3.toByteArray()));
+                this.mc.getNetHandler().addToSendQueue(new Packet250CustomPayload("MC|TrSel", var3.toByteArray()));
             }
             catch (Exception var6)
             {
@@ -116,9 +116,8 @@ public class GuiZelus extends GuiContainer
      */
     protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3)
     {
-        int var4 = this.mc.renderEngine.getTexture("/gui/Zelus.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.renderEngine.bindTexture(var4);
+        this.mc.renderEngine.bindTexture("/gui/Zelus.png");
         int var5 = (this.width - this.xSize) / 2;
         int var6 = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);

@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -10,13 +10,14 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPGFlower;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 
-public class BlockTomato extends BlockFlower
+public class BlockTomato extends BlockDivineRPGFlower
 {
     public BlockTomato(int var1, int var2)
     {
         super(var1, var2);
-        this.blockIndexInTexture = var2;
         this.setTickRandomly(true);
         float var3 = 0.5F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 0.25F, 0.5F + var3);
@@ -49,7 +50,7 @@ public class BlockTomato extends BlockFlower
                 if (var5.nextInt((int)(25.0F / var7) + 1) == 0)
                 {
                     ++var6;
-                    var1.setBlockMetadataWithNotify(var2, var3, var4, var6);
+                    var1.setBlockMetadataWithNotify(var2, var3, var4, var6, 3);
                 }
             }
         }
@@ -61,7 +62,7 @@ public class BlockTomato extends BlockFlower
 
         if (var6 != null && var6.itemID == Item.dyePowder.itemID && var6.getItemDamage() == 15)
         {
-            var1.setBlockMetadataWithNotify(var2, var3, var4, 6);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, 6, 3);
             --var6.stackSize;
             var1.notifyBlockChange(var2, var3, var4, 0);
         }
@@ -122,42 +123,6 @@ public class BlockTomato extends BlockFlower
         return false;
     }
 
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public int getBlockTextureFromSideAndMetadata(int var1, int var2)
-    {
-        switch (var2)
-        {
-            case 0:
-                return 71;
-
-            case 1:
-                return 72;
-
-            case 2:
-                return 73;
-
-            case 3:
-                return 74;
-
-            case 4:
-                return 75;
-
-            case 5:
-                return 76;
-
-            case 6:
-                return 77;
-
-            default:
-                return var2;
-        }
-    }
-
-    /**
-     * The type of render function that is called for this block
-     */
     public int getRenderType()
     {
         return 6;
@@ -169,14 +134,14 @@ public class BlockTomato extends BlockFlower
 
         if (var5 == 6)
         {
-            var7.add(new ItemStack(DivineRPGTwilight.tomato));
+            var7.add(new ItemStack(TwilightItemHelper.tomato));
         }
 
         for (int var8 = 0; var8 < 3 + var6; ++var8)
         {
             if (var1.rand.nextInt(15) <= var5)
             {
-                var7.add(new ItemStack(DivineRPGTwilight.tomatoSeeds));
+                var7.add(new ItemStack(TwilightItemHelper.tomatoSeeds));
             }
         }
 
@@ -188,16 +153,11 @@ public class BlockTomato extends BlockFlower
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return var1 == 6 ? DivineRPGTwilight.DivineRPGTwilight.itemID : -1;
+        return var1 == 6 ? TwilightItemHelper.DivineRPGTwilight.itemID : -1;
     }
 
     public int setBlockBounds(Random var1)
     {
         return 2;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile2;
     }
 }

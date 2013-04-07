@@ -1,11 +1,11 @@
 package xolova.blued00r.divinerpg.client.gui;
 
-import org.lwjgl.opengl.GL11;
-
-import xolova.blued00r.divinerpg.containers.ContainerDreamLamp;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityDreamLamp;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
+
+import org.lwjgl.opengl.GL11;
+
+import xolova.divinerpg.containers.ContainerDreamLamp;
 
 public class GuiDreamLamp extends GuiContainer {
 	

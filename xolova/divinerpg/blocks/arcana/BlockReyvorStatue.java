@@ -1,13 +1,12 @@
 package xolova.divinerpg.blocks.arcana;
 import java.util.Random;
 
-import xolova.divinerpg.blocks.arcana.tileentities.TileEntityReyvorStatue;
-
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityReyvorStatue;
 
 public class BlockReyvorStatue extends BlockContainer
 {

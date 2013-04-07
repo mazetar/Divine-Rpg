@@ -1,8 +1,8 @@
 package xolova.divinerpg.items.arcana;
 
-import xolova.divinerpg.items.core.ItemDivineRPGSword;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumToolMaterial;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 
 public class ItemLiviciaSword extends ItemDivineRPGSword
 {

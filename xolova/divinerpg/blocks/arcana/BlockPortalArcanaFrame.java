@@ -10,7 +10,6 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class BlockPortalArcanaFrame extends Block

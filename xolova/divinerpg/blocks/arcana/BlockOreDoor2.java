@@ -14,7 +14,6 @@ public class BlockOreDoor2 extends BlockDoor
     public BlockOreDoor2(int par1)
     {
         super(par1, Material.wood);
-        this.blockIndexInTexture = 147;
     }
 
     @SideOnly(Side.CLIENT)

@@ -1,6 +1,5 @@
 package xolova.divinerpg.containers;
 
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityInfusionTable;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;

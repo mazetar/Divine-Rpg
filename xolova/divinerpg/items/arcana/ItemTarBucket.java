@@ -11,7 +11,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 

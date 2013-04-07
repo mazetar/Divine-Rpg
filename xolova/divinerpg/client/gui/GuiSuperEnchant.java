@@ -19,7 +19,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 import org.lwjgl.util.glu.GLU;
 
-import xolova.blued00r.divinerpg.containers.ContainerSuperEnchant;
+import xolova.divinerpg.containers.ContainerSuperEnchant;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

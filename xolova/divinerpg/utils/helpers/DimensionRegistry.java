@@ -13,4 +13,13 @@ public class DimensionRegistry
 	public static BiomeGenBase UviteBiome;
 	public static BiomeGenBase arksianeBiome;
 	public static BiomeGenBase heliosisBiome;
+	
+	public static int DraviteID;
+	public static int AzuriteID;
+	public static int ArcanaID;
+	public static int UviteID;
+	public static int IceikaID;
+	public static int MythrilID;
+	public static int VetheaID;
+	public static int AugiteID;
 }

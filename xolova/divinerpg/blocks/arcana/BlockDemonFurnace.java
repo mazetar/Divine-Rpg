@@ -12,7 +12,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.blocks.arcana.tileentities.TileEntityDemonFurnace;
-import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class BlockDemonFurnace extends BlockContainer

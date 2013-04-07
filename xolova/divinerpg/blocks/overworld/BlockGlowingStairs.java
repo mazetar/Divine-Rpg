@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -19,11 +19,10 @@ public class BlockGlowingStairs extends BlockStairs
 {
     private Block modelBlock;
 
-    public BlockGlowingStairs(int var1, Block var2, int var3)
+    public BlockGlowingStairs(int var1, Block var2)
     {
-        super(var1, var2, var3);
+        super(var1, var2, 0);
         this.modelBlock = var2;
-        this.blockIndexInTexture = var3;
         this.setStepSound(var2.stepSound);
         this.setLightOpacity(255);
     }
@@ -138,9 +137,9 @@ public class BlockGlowingStairs extends BlockStairs
     /**
      * How many world ticks before ticking
      */
-    public int tickRate()
+    public int tickRate(World world)
     {
-        return this.modelBlock.tickRate();
+        return this.modelBlock.tickRate(world);
     }
 
     /**
@@ -205,7 +204,7 @@ public class BlockGlowingStairs extends BlockStairs
      */
     public void onBlockDestroyedByExplosion(World var1, int var2, int var3, int var4)
     {
-        this.modelBlock.onBlockDestroyedByExplosion(var1, var2, var3, var4);
+        this.modelBlock.onBlockDestroyedByExplosion(var1, var2, var3, var4, null);
     }
 
     /**
@@ -218,28 +217,23 @@ public class BlockGlowingStairs extends BlockStairs
 
         if (var6 == 0)
         {
-            var1.setBlockMetadataWithNotify(var2, var3, var4, 2 | var7);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, 2 | var7, 3);
         }
 
         if (var6 == 1)
         {
-            var1.setBlockMetadataWithNotify(var2, var3, var4, 1 | var7);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, 1 | var7, 3);
         }
 
         if (var6 == 2)
         {
-            var1.setBlockMetadataWithNotify(var2, var3, var4, 3 | var7);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, 3 | var7, 3);
         }
 
         if (var6 == 3)
         {
-            var1.setBlockMetadataWithNotify(var2, var3, var4, 0 | var7);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, 0 | var7, 3);
         }
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 
     public void onBlockPlaced(World var1, int var2, int var3, int var4, int var5)
@@ -247,7 +241,7 @@ public class BlockGlowingStairs extends BlockStairs
         if (var5 == 0)
         {
             int var6 = var1.getBlockMetadata(var2, var3, var4);
-            var1.setBlockMetadataWithNotify(var2, var3, var4, var6 | 4);
+            var1.setBlockMetadataWithNotify(var2, var3, var4, var6 | 4, 3);
         }
     }
 

@@ -40,6 +40,7 @@ import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import xolova.divinerpg.utils.helpers.config.ArcanaConfigHelper;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ArcanaItemHelper 
 {
@@ -89,13 +90,8 @@ public class ArcanaItemHelper
     public static Item dungeonToken;
     public static Item weakArcanaPotion;
     public static Item strongArcanaPotion;
-    public static Item arcanaMusicBox;
     public static Item orbOfLight;
     public static Item tarBucket;
-    public static Item santaHead;
-    public static Item santaBody;
-    public static Item santaLegs;
-    public static Item santaBoots;
     public static Item collectorFragments;
     public static Item arcaniumBucket;
     public static Item staffOfEnrichment;
@@ -173,6 +169,78 @@ public class ArcanaItemHelper
         vemosBody = new ItemArmorVemos(ArcanaConfigHelper.vemosBodyID, vemosRender, 1).setUnlocalizedName("vemosBody").setCreativeTab(CreativeTabHelper.tabArmor);
         vemosLegs = new ItemArmorVemos(ArcanaConfigHelper.vemosLegsID, vemosRender, 2).setUnlocalizedName("vemosLegs").setCreativeTab(CreativeTabHelper.tabArmor);
         vemosBoots = new ItemArmorVemos(ArcanaConfigHelper.vemosBootsID, vemosRender, 3).setUnlocalizedName("vemosBoots").setCreativeTab(CreativeTabHelper.tabArmor);
-        
+        addNames();
+	}
+	
+	public static void addNames()
+	{
+		LanguageRegistry.addName(oreDoorItem1, "Locked Door");
+		LanguageRegistry.addName(oreDoor2Item, "Locked Door");
+		LanguageRegistry.addName(oreDoor3Item, "Locked Door");
+		LanguageRegistry.addName(oreDoor4Item, "Locked Door");
+
+		LanguageRegistry.addName(key1, "Key");
+		LanguageRegistry.addName(key2, "Key");
+		LanguageRegistry.addName(key3, "Key");
+		LanguageRegistry.addName(key4, "Key");
+
+		LanguageRegistry.addName(fireStockItem, "Firestock");
+		LanguageRegistry.addName(fireStockSeeds, "Firestock Seeds");
+		LanguageRegistry.addName(pinFlyItem, "Pinfly");
+		LanguageRegistry.addName(pinFlySeeds, "Pinfly Seeds");
+		LanguageRegistry.addName(hitchakItem, "Hitchak");
+		LanguageRegistry.addName(hitchakSeeds, "Hitchak Seeds");
+		LanguageRegistry.addName(eucalyptusRootSeeds, "Eucalyptus Root Seeds");
+		LanguageRegistry.addName(veiloItem, "Veilo");
+		LanguageRegistry.addName(veiloSeeds, "Veilo Seeds");
+		LanguageRegistry.addName(lamonaItem, "Lamona");
+		LanguageRegistry.addName(lamonaSeeds, "Lamona Seeds");
+		LanguageRegistry.addName(aquamarineItem, "Aquamarine");
+		LanguageRegistry.addName(aquamarineSeeds, "Aquamarine Seeds");
+		LanguageRegistry.addName(marsineItem, "Marasine");
+		LanguageRegistry.addName(marsineSeeds, "Marasine Seeds");
+		
+		LanguageRegistry.addName(fyracryxSpawner, "Fyracryx Egg");
+		LanguageRegistry.addName(paratikuSpawner, "Paratiku Egg");
+		LanguageRegistry.addName(seimerSpawner, "Seimer Egg");
+		LanguageRegistry.addName(golemOfRejuvSpawner, "Golem of Rejuvination Egg");
+		
+		LanguageRegistry.addName(reflector, "Arcanium Reflector");
+		LanguageRegistry.addName(stormSword, "Storm Sword");
+		LanguageRegistry.addName(shadowSword, "Shadow Sword");
+		LanguageRegistry.addName(arcaniumSaber, "Arcanium Saber");
+		LanguageRegistry.addName(liviciaSword, "Livicia Sword");
+		LanguageRegistry.addName(staffOfStarlight, "Staff of Starlight");
+		LanguageRegistry.addName(wraithbane, "Wraithbane");
+		LanguageRegistry.addName(captiansSparkler, "Captain's Sparkler");
+		LanguageRegistry.addName(firefly, "Firefly");
+		LanguageRegistry.addName(starfall, "Starlight");
+		LanguageRegistry.addName(grenade, "Grenade");
+		LanguageRegistry.addName(grenadeLauncher, "La Vekor");
+		LanguageRegistry.addName(meriksMissile, "Merik's Missile");
+		LanguageRegistry.addName(enderScepter, "Ender Scepter");
+		LanguageRegistry.addName(orbOfLight, "Orb of Light");
+		
+		LanguageRegistry.addName(dungeonToken, "Dungeon Token");
+		LanguageRegistry.addName(arcanium, "Arcanium");
+		LanguageRegistry.addName(weakArcanaPotion, "Weak Arcana Potion");
+		LanguageRegistry.addName(strongArcanaPotion, "Strong Arcana Potion");
+		LanguageRegistry.addName(arcaniumBucket, "Arcanium Bucket");
+		LanguageRegistry.addName(tarBucket, "Arcanium Bucket of Tar");
+
+		LanguageRegistry.addName(collector, "Charge Collector");
+		LanguageRegistry.addName(collectorFragments, "Collector Fragment");
+		
+		LanguageRegistry.addName(staffOfEnrichment, "Staff of Enrichment");
+
+		LanguageRegistry.addName(kormaHead, "Korma Helmet");
+		LanguageRegistry.addName(kormaBody, "Korma Chestplate");
+		LanguageRegistry.addName(kormaLegs, "Korma Leggings");
+		LanguageRegistry.addName(kormaBoots, "Korma Boots");
+		
+		LanguageRegistry.addName(vemosHead, "Vemos Helmet");
+		LanguageRegistry.addName(vemosBody, "Vemos Chestplate");
+		LanguageRegistry.addName(vemosLegs, "Vemos Leggings");
+		LanguageRegistry.addName(vemosBoots, "Vemos Boots");
 	}
 }

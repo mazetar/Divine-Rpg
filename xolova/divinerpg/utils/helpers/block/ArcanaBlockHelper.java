@@ -49,6 +49,7 @@ import xolova.divinerpg.blocks.arcana.tileentities.TileEntityParasectaAltar;
 import xolova.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
 import xolova.divinerpg.utils.helpers.config.ArcanaConfigHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ArcanaBlockHelper 
 {
@@ -207,6 +208,7 @@ public class ArcanaBlockHelper
 		condenser = new BlockCondenser(0, 0, null);
 		
 		InitGameRegistryBlocks();
+		addNames();
 	}
 	
 	public static void InitGameRegistryBlocks()
@@ -226,7 +228,7 @@ public class ArcanaBlockHelper
         GameRegistry.registerBlock(parasectaAltar, "parasectaAltar");
         GameRegistry.registerBlock(arcaniumPower, "arcaniumpower");
         GameRegistry.registerBlock(arcaniumOre, "arcaniumOre");
-        GameRegistry.registerTileEntity(TileEntityDramixAltar.class, "Dramix Altar");
+        GameRegistry.registerTileEntity(TileEntityDramixAltar.class, "DramixAltar");
         GameRegistry.registerTileEntity(TileEntityExtractor.class, "Extractinator");
         GameRegistry.registerTileEntity(TileEntityParasectaAltar.class, "PheonixAltar");
         GameRegistry.registerBlock(starBridge, "starBridge");
@@ -244,7 +246,7 @@ public class ArcanaBlockHelper
         GameRegistry.registerBlock(fireStock, "fireStock");
         GameRegistry.registerBlock(pinFly, "pinFly");
         GameRegistry.registerBlock(veilo, "veilo");
-        GameRegistry.registerBlock(lamona, "lamon");
+        GameRegistry.registerBlock(lamona, "lamona");
         GameRegistry.registerBlock(hitchak, "hitchak");
         GameRegistry.registerBlock(marsine, "marsine");
         GameRegistry.registerBlock(aquamarine, "aquamarine");
@@ -281,7 +283,72 @@ public class ArcanaBlockHelper
         GameRegistry.registerBlock(arcanaSpawner3, "arcanaSpawner3");
         GameRegistry.registerBlock(arcanaSpawner4, "arcanaSpawner4");
         GameRegistry.registerBlock(arcanaSpawner5, "arcanaSpawner5");
-        GameRegistry.registerBlock(arcanaSpawner5, "arcanaSpawner5");
-        
+        GameRegistry.registerBlock(arcanaSpawner5, "arcanaSpawner5"); 
+	}
+	
+	public static void addNames()
+	{
+		LanguageRegistry.addName(ancientBricks, "Ancient Bricks");
+        LanguageRegistry.addName(ancientTile, "Ancient Tile");
+        LanguageRegistry.addName(ancientStone, "Ancient Stone");
+        LanguageRegistry.addName(dungeonLamp, "Dungeon Lamp");
+        LanguageRegistry.addName(arcaniteTubes, "Arcanite Tubes");
+        LanguageRegistry.addName(arcaniteMetal, "Arcanite Metal");
+        LanguageRegistry.addName(soulSludge, "Soul Sludge");
+        LanguageRegistry.addName(soulStone, "Soul Stone");
+        LanguageRegistry.addName(degradedBricks, "Degraded Bricks");
+        LanguageRegistry.addName(heatTraps, "Heat Traps");
+        LanguageRegistry.addName(extractor, "Extractor");
+        LanguageRegistry.addName(dramixAltar, "Dramix Altar");
+        LanguageRegistry.addName(parasectaAltar, "Parasecta Altar");
+        LanguageRegistry.addName(arcaniumPower, "Arcanium Power");
+        LanguageRegistry.addName(arcaniumOre, "Arcanium Ore");
+        LanguageRegistry.addName(starBridge, "Star Bridge");
+        LanguageRegistry.addName(starBridgeOn, "Star Bridge");
+        LanguageRegistry.addName(oreDoor1, "Locked Door");
+        LanguageRegistry.addName(oreDoor2, "Locked Door");
+        LanguageRegistry.addName(oreDoor3, "Locked Door");
+        LanguageRegistry.addName(oreDoor4, "Locked Door");
+        LanguageRegistry.addName(heatTrapsOn, "HeatTraps");
+        LanguageRegistry.addName(arcaniteRails, "Arcanite Rails");
+        LanguageRegistry.addName(arcanaPortal, "Arcana Portal");
+        LanguageRegistry.addName(arcanaPortalFrame, "Arcana Portal Frame");
+        LanguageRegistry.addName(arcaniteDirt, "Arcanite Dirt");
+        LanguageRegistry.addName(arcaniteGrass, "Arcanite Grass");
+        LanguageRegistry.addName(fireStock, "Firestock");
+        LanguageRegistry.addName(pinFly, "Pinfly");
+        LanguageRegistry.addName(veilo, "Veilo");
+        LanguageRegistry.addName(lamona, "Lamona");
+        LanguageRegistry.addName(hitchak, "Hitchak");
+        LanguageRegistry.addName(marsine, "Marasine");
+        LanguageRegistry.addName(aquamarine, "Aquamarine");
+        LanguageRegistry.addName(stainedGlass, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass1, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass2, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass3, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass4, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass5, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass6, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass7, "Stained Glass");
+        LanguageRegistry.addName(moltenFurnace, "Molten Furnace");
+        LanguageRegistry.addName(moltenFurnaceOn, "Molten Furnace");
+        LanguageRegistry.addName(greenlightFurnace, "Greenlight Furnace");
+        LanguageRegistry.addName(greenlightFurnaceOn, "Greenlight Furnace");
+        LanguageRegistry.addName(oceanfireFurnace, "Oceanfire Furnace");
+        LanguageRegistry.addName(oceanfireFurnaceOn, "Oceanfire Furnace");
+        LanguageRegistry.addName(moonlightFurnace, "Moonlight Furnace");
+        LanguageRegistry.addName(moonlightFurnaceOn, "Moonlight Furnace");
+        LanguageRegistry.addName(whitefireFurnace, "Whitefire Furnace");
+        LanguageRegistry.addName(whitefireFurnaceOn, "Whitefire Furnace");
+        LanguageRegistry.addName(demonFurnace, "Demon Furnace");
+        LanguageRegistry.addName(fireStock2, "Firestock");
+        LanguageRegistry.addName(pinFly2, "Pinfly");
+        LanguageRegistry.addName(arcanaSpawner, "Dungeon Spawner");
+        LanguageRegistry.addName(arcanaSpawner1, "Dungeon Spawner");
+        LanguageRegistry.addName(arcanaSpawner2, "Dungeon Spawner");
+        LanguageRegistry.addName(arcanaSpawner3, "Dungeon Spawner");
+        LanguageRegistry.addName(arcanaSpawner4, "Dungeon Spawner");
+        LanguageRegistry.addName(arcanaSpawner5, "Dungeon Spawner");
+        LanguageRegistry.addName(arcanaSpawner5, "Dungeon Spawner"); 
 	}
 }

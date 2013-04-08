@@ -25,8 +25,12 @@ import xolova.divinerpg.blocks.vethea.BlockVethea;
 import xolova.divinerpg.blocks.vethea.BlockVetheaPlant;
 import xolova.divinerpg.blocks.vethea.BlockWeedwoodVine;
 import xolova.divinerpg.blocks.vethea.BlockWreckAltar;
+import xolova.divinerpg.blocks.vethea.tileentities.TileEntityDreamLamp;
+import xolova.divinerpg.blocks.vethea.tileentities.TileEntityInfusionTable;
 import xolova.divinerpg.utils.helpers.config.VetheaConfigHelper;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class VetheaBlockHelper 
 {
@@ -175,5 +179,127 @@ public class VetheaBlockHelper
         helioticBeam = (BlockHelioticBeam) new BlockHelioticBeam(VetheaConfigHelper.helioticBeamID).setUnlocalizedName("helioticBeam").setHardness(1F).setResistance(1F).setCreativeTab(CreativeTabHelper.tabBlocks);
         karosCannon = (BlockKarosCannon) new BlockKarosCannon(VetheaConfigHelper.karosCannonID, Material.rock).setBlockUnbreakable().setUnlocalizedName("karosCannon").setHardness(1F).setResistance(1F).setCreativeTab(CreativeTabHelper.tabUtility);
         purpleFire = new BlockPurpleFire(VetheaConfigHelper.purpleFireID).setUnlocalizedName("purpleFire").setCreativeTab(CreativeTabHelper.tabBlocks);
+	
+        initGameRegistryBlocks();
+        addNames();
+	}
+    
+    public static void initGameRegistryBlocks()
+	{
+    	GameRegistry.registerBlock(vetheaPortal, "vetheaPortal");
+        GameRegistry.registerBlock(everstone, "everstone");
+        GameRegistry.registerBlock(whiteEverstone, "whiteEverstone");
+        GameRegistry.registerBlock(darkEverstone, "darkEverstone");
+        GameRegistry.registerBlock(dreamgrass, "dreamgrass");
+        GameRegistry.registerBlock(dreamdirt, "dreamdirt");
+        GameRegistry.registerBlock(dreamlampOn, "dreamlampOn");
+        GameRegistry.registerBlock(dreamlamp, "dreamlamp");
+        GameRegistry.registerBlock(firecrystal, "firecrystal");
+        GameRegistry.registerBlock(hiveWall, "hiveWall");
+        GameRegistry.registerBlock(hyrewood, "hyrewood");
+        GameRegistry.registerBlock(firewood, "firewood");
+        GameRegistry.registerBlock(mintwood, "mintwood");
+        GameRegistry.registerBlock(dreamwood, "dreamwood");
+        GameRegistry.registerBlock(hyrewoodLeaves, "hyrewoodLeaves");
+        GameRegistry.registerBlock(firewoodLeaves, "firewoodLeaves");
+        GameRegistry.registerBlock(mintwoodLeaves, "mintwoodLeaves");
+        GameRegistry.registerBlock(dreamwoodLeaves, "dreamwoodLeaves");
+        GameRegistry.registerBlock(infusionTable, "infusionTable");
+        GameRegistry.registerTileEntity(TileEntityInfusionTable.class, "TeInfusionTable");
+        GameRegistry.registerTileEntity(TileEntityDreamLamp.class, "TeDreamLamp");
+        GameRegistry.registerBlock(purpleFire, "PurpleFire");
+        GameRegistry.registerBlock(karosCannon, "karosCannon");
+        GameRegistry.registerBlock(dreambricks, "dreambricks");
+        GameRegistry.registerBlock(dreambricks2, "dreambricks2");
+        GameRegistry.registerBlock(lunastone, "lunastone");
+        GameRegistry.registerBlock(lunabricks, "lunabricks");
+        GameRegistry.registerBlock(metalCaging, "metalCaging");
+        GameRegistry.registerBlock(cryptWall, "cryptWall");
+        GameRegistry.registerBlock(smoothGlass, "smoothGlass");
+        GameRegistry.registerBlock(villageLamp, "villageLamp");
+        GameRegistry.registerBlock(cellLamp, "cellLamp");
+        GameRegistry.registerBlock(barredDoor, "barredDoor");
+        GameRegistry.registerBlock(firelight, "firelight");
+        GameRegistry.registerBlock(firewall, "firewall");
+        GameRegistry.registerBlock(karosHeatTileRed, "karosHeatTileRed");
+        GameRegistry.registerBlock(karosHeatTileGreen, "karosHeatTileGreen");
+        GameRegistry.registerBlock(helioticBeam, "helioticBeam");
+        GameRegistry.registerBlock(cryptFloor, "cryptFloor");
+        GameRegistry.registerBlock(chamberWall, "chamberWall");
+        GameRegistry.registerBlock(chamberWall1, "chamberWall1");
+        GameRegistry.registerBlock(chamberWall2, "chamberWall2");
+        
+        GameRegistry.registerBlock(wreckAltar, "wreckAltar");
+        GameRegistry.registerBlock(raglokAltar, "raglokAltar");
+        GameRegistry.registerBlock(karosAltar, "karosAltar");
+        GameRegistry.registerBlock(lunicAltar, "lunicAltar");
+        GameRegistry.registerBlock(quadroticAltar, "quadroticAltar"); 
+	}
+    
+    public static void addNames()
+	{
+    	LanguageRegistry.addName(dreamstone, "Dreamstone");
+		LanguageRegistry.addName(dreamgrass, "Dream Grass");
+		LanguageRegistry.addName(dreamdirt, "Dream Dirt");
+		LanguageRegistry.addName(dreamwood, "Dreamwod");
+		LanguageRegistry.addName(dreamwoodLeaves, "Dreamwood Leaves");
+		LanguageRegistry.addName(dreambricks, "Dreambricks");
+		LanguageRegistry.addName(dreambricks2, "Dreambricks");
+		LanguageRegistry.addName(lunastone, "Lunastone");
+		LanguageRegistry.addName(metalCaging, "Metal Caging");
+		LanguageRegistry.addName(weedwoodVine, "Weedwood Vines");
+		LanguageRegistry.addName(blossomingWeedwoodVine, "Blossoming Weedwood Vines");
+		LanguageRegistry.addName(cryptWall, "Crypt Wall");
+		LanguageRegistry.addName(smoothGlass, "Smooth Glass");
+		LanguageRegistry.addName(villageLamp, "Altar Lamps");
+		LanguageRegistry.addName(infusionTable, "Infusion Table");
+		LanguageRegistry.addName(cellLamp, "Cell Lamp");
+		LanguageRegistry.addName(barredDoor, "Barred Door");
+		LanguageRegistry.addName(firecrystal, "Firecrystal");
+		LanguageRegistry.addName(firelight, "Firelight");
+		LanguageRegistry.addName(hyrewood, "Hyrewood");
+		LanguageRegistry.addName(mintwoodLeaves, "Mintwood Leaves");
+		LanguageRegistry.addName(firewall, "Firewall");
+		LanguageRegistry.addName(karosHeatTileGreen, "Karos Heat Tile");
+		LanguageRegistry.addName(karosHeatTileRed, "Karos Heat Tile");
+		LanguageRegistry.addName(karosCannon, "Karos Cannon");
+		LanguageRegistry.addName(helioticBeam, "Heliotic Beam");
+		LanguageRegistry.addName(cryptFloor, "Crypt Floor");
+		LanguageRegistry.addName(firewood, "Firewood");
+		LanguageRegistry.addName(chamberWall, "Chamber Wall");
+		LanguageRegistry.addName(chamberWall1, "Chamber Wall");
+		LanguageRegistry.addName(chamberWall2, "Chamber Wall");
+		LanguageRegistry.addName(karosBricks, "Karos Bricks");
+		LanguageRegistry.addName(karosBricks2, "Karos Bricks");
+		LanguageRegistry.addName(bacterialAcid, "Bacterial Acid");
+		LanguageRegistry.addName(hungerstone1, "Hungerstone");
+		LanguageRegistry.addName(hungerstone2, "Hungerstone");
+		LanguageRegistry.addName(blockAcid, "Acid");
+		LanguageRegistry.addName(hallWall, "Hall Wall");
+		LanguageRegistry.addName(wreckAltar, "Wreck Altar");
+		LanguageRegistry.addName(raglokAltar, "Raglok Altar");
+		LanguageRegistry.addName(karosAltar, "Karos Altar");
+		LanguageRegistry.addName(lunicAltar, "Lunic Altar");
+		LanguageRegistry.addName(quadroticAltar, "Quadrotic Altar");
+		LanguageRegistry.addName(hiveWall, "Hive Walls");
+		LanguageRegistry.addName(darkEverstone, "Dark Everstone");
+		LanguageRegistry.addName(whiteEverstone, "White Everstone");
+		LanguageRegistry.addName(everstone, "Everstone");
+		LanguageRegistry.addName(lunicAcid, "Lunic Acid");
+		LanguageRegistry.addName(firewoodLeaves, "Firewood Leaves");
+		LanguageRegistry.addName(hyrewoodLeaves, "Hyrewood Leaves");
+		LanguageRegistry.addName(gemtopGreen, "Green Gemtops");
+		LanguageRegistry.addName(gemtopPurple, "Purple Gemtops");
+		LanguageRegistry.addName(yellowDulah, "Yellow Dulahs");
+		LanguageRegistry.addName(greenDulah, "Green Dulahs");
+		LanguageRegistry.addName(mintwood, "Mintwood");
+		LanguageRegistry.addName(lightFirewoodLeaves, "Light Firewood Leaves");
+		LanguageRegistry.addName(cracklespike, "Crackle Spikes");
+		LanguageRegistry.addName(fernite, "Fernites");
+		LanguageRegistry.addName(bulatobe, "Bulbatobes");
+		LanguageRegistry.addName(shineGrass, "Shine Grass");
+		LanguageRegistry.addName(shimmer, "Shimmers");
+		LanguageRegistry.addName(dreamglow, "Dream Glows");
+		LanguageRegistry.addName(hyrewoodVine, "Hyrewood Vines");
 	}
 }

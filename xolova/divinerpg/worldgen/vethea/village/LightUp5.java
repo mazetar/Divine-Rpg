@@ -8,6 +8,7 @@ import java.util.Random;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import xolova.divinerpg.entities.vethea.mobs.EntityHungerHungry;
 import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
 public class LightUp5 extends WorldGenerator

@@ -422,7 +422,7 @@ public class ChunkProviderTwilight implements IChunkProvider
             {
                 int var10000 = var21 - (var4 + 8);
                 var10000 = var20 - (var5 + 8);
-                this.worldObj.getPrecipitationHeight(var21, var20);
+                //this.worldObj.getPrecipitationHeight(var21, var20);
             }
         }
 

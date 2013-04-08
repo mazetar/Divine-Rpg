@@ -11,7 +11,6 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemVetheanSword extends ItemSword
 {
-
     public ItemVetheanSword(int var1, EnumToolMaterial var2)
     {
         super(var1, var2);

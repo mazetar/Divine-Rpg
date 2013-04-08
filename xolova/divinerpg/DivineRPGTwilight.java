@@ -1,6 +1,9 @@
 package xolova.divinerpg;
 
+import net.minecraft.command.CommandHandler;
+import xolova.divinerpg.commands.CommandDivineRPG;
 import xolova.divinerpg.utils.Utils;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
@@ -10,10 +13,12 @@ import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.Mod.PostInit;
 import cpw.mods.fml.common.Mod.PreInit;
+import cpw.mods.fml.common.Mod.ServerStarting;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
 
@@ -48,11 +53,20 @@ public class DivineRPGTwilight
 		TwilightBlockHelper.initBlocks();
 		
 		TwilightItemHelper.init();
+		
+		DimensionRegistry.InitDimensions();
 	}
 	
 	@PostInit
 	public void PostInit(FMLPostInitializationEvent event)
 	{
 		
+	}
+	
+	@ServerStarting
+	public void serverStarting(FMLServerStartingEvent event)
+	{		
+		CommandHandler commandManager = (CommandHandler)event.getServer().getCommandManager();
+		commandManager.registerCommand(new CommandDivineRPG());
 	}
 }

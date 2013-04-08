@@ -526,5 +526,7 @@ public class VetheaConfigHelper
         hungerstone1ID = config.getBlock("hungerstone1", 844).getInt();
         hungerstone2ID = config.getBlock("hungerstone2", 845).getInt();
         purpleFireID = config.getBlock("PurpleFire", 846).getInt();
+        
+        dreamdirtID = config.getBlock("DreamDirt", 847).getInt();
 	}
 }

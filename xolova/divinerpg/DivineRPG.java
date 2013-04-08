@@ -21,14 +21,14 @@ public class DivineRPG
 	public static DivineRPG instance;
 	
 	@SidedProxy
-	(clientSide = "xolova.divinerpg.utils.proxies.CoreProxyClient", 
-		serverSide = "xolova.divinerpg.utils.proxies.CoreProxy")
+	(clientSide = "xolova.divinerpg.utils.proxies.CoreProxyClient", serverSide = "xolova.divinerpg.utils.proxies.CoreProxy")
 	public static CoreProxy proxy;
 
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		instance = this;
+		proxy.PreInit(event);
 	}
 	
 	@Init

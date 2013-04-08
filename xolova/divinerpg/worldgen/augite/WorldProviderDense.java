@@ -12,7 +12,7 @@ public class WorldProviderDense extends WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.DraviteHills, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.serenityBiome, 0.5F, 0.5F);
     }
 
     /**

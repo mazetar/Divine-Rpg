@@ -384,6 +384,11 @@ public class VetheaItemHelper
         karosStaff = new ItemVetheanStaff(VetheaConfigHelper.karosStaffID, 21, 10).setUnlocalizedName("karosStaffItem").setCreativeTab(CreativeTabHelper.tabRanged);
         heliosisStaff = new ItemVetheanStaff(VetheaConfigHelper.heliosisStaffID, 28, 10).setUnlocalizedName("heliosisStaff").setCreativeTab(CreativeTabHelper.tabRanged);
         arksianeStaff = new ItemVetheanStaff(VetheaConfigHelper.arksianeStaffID, 36, 10).setUnlocalizedName("arksianeStaff").setCreativeTab(CreativeTabHelper.tabRanged);
-        
+        addNames();
+	}
+	
+	public static void addNames()
+	{
+		
 	}
 }

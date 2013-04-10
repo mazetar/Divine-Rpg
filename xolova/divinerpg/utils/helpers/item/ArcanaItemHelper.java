@@ -154,7 +154,7 @@ public class ArcanaItemHelper
         dungeonToken = new Item(ArcanaConfigHelper.dungeonTokenID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("dungeonToken");
         collector = new Item(ArcanaConfigHelper.collectorID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("collector");
         collectorFragments = new Item (ArcanaConfigHelper.collectorFragmentsID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("collectorFragment");
-        tarBucket = new ItemTarBucket(ArcanaConfigHelper.tarBucketID, OverworldBlockHelper.TarStill.blockID).setUnlocalizedName("tarBucket").setCreativeTab(CreativeTabHelper.tabItems);
+        tarBucket = new ItemTarBucket(ArcanaConfigHelper.tarBucketID, OverworldBlockHelper.tarStill.blockID).setUnlocalizedName("tarBucket").setCreativeTab(CreativeTabHelper.tabItems);
         arcaniumBucket = new ItemTarBucket(ArcanaConfigHelper.arcaniumBucketID, 0).setUnlocalizedName("arcaniumBucket").setCreativeTab(CreativeTabHelper.tabItems);
         staffOfEnrichment = new ItemStaffOfEnrichment(ArcanaConfigHelper.staffOfEnrichmentID).setUnlocalizedName("staffOfEnrichment").setCreativeTab(CreativeTabHelper.tabTool);
         

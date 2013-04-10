@@ -93,6 +93,8 @@ public class TwilightItemHelper
 	public static Item empoweredMeat;
 	public static Item enrichedMagicMeat;
 	public static Item cookedEmpoweredMeat;
+	public static Item purpleSeeds;
+	public static Item pinkSeeds;
 	
 	public static TwilightConfigHelper x;
 

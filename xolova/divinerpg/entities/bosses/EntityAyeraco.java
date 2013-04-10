@@ -292,7 +292,7 @@ public class EntityAyeraco extends EntityMob implements IBossDisplayData
 		
 		if (this.rand.nextInt(12) == 0)
 		{
-			this.dropItem(OverworldBlockHelper.AyeracoStatue.blockID, 1);
+			this.dropItem(OverworldBlockHelper.ayeracoStatue.blockID, 1);
 		}
 	}
 	

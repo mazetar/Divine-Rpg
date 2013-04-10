@@ -4,18 +4,23 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import xolova.divinerpg.blocks.twilight.BlockAugiteDirt;
 import xolova.divinerpg.blocks.twilight.BlockAugiteGrass;
+import xolova.divinerpg.blocks.twilight.BlockAugitePortal;
 import xolova.divinerpg.blocks.twilight.BlockAzuriteDirt;
 import xolova.divinerpg.blocks.twilight.BlockAzuriteGrass;
+import xolova.divinerpg.blocks.twilight.BlockAzuritePortal;
 import xolova.divinerpg.blocks.twilight.BlockDraviteDirt;
 import xolova.divinerpg.blocks.twilight.BlockDraviteGrass;
 import xolova.divinerpg.blocks.twilight.BlockMythilDirt;
 import xolova.divinerpg.blocks.twilight.BlockMythilGrass;
+import xolova.divinerpg.blocks.twilight.BlockMythrilPortal;
 import xolova.divinerpg.blocks.twilight.BlockTwilightLeaves;
 import xolova.divinerpg.blocks.twilight.BlockTwilightOre;
+import xolova.divinerpg.blocks.twilight.BlockTwilightPortal;
 import xolova.divinerpg.blocks.twilight.BlockTwilightStone;
 import xolova.divinerpg.blocks.twilight.BlockTwilightWood;
 import xolova.divinerpg.blocks.twilight.BlockUviteDirt;
 import xolova.divinerpg.blocks.twilight.BlockUviteGrass;
+import xolova.divinerpg.blocks.twilight.BlockUvitePortal;
 import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -31,7 +36,7 @@ public class TwilightBlockHelper
 	public static Block DraviteLogs;
 	public static Block DraviteLeaves;
 	public static Block DraviteOre;
-	public static Block DravitePortal;
+	public static BlockTwilightPortal DravitePortal;
 	public static Block DraviteBlock;
 	//-==-AZURITE-==-//
 	public static Block AzuriteGrass;
@@ -41,7 +46,7 @@ public class TwilightBlockHelper
 	public static Block AzuriteOre;
 	public static Block AzuriteVines;
 	public static Block AzuriteBlock;
-	public static Block AzuritePortal;
+	public static BlockAzuritePortal AzuritePortal;
 	//-==-Uvite-==-//
 	public static Block UviteGrass;
 	public static Block UviteDirt;
@@ -49,14 +54,14 @@ public class TwilightBlockHelper
 	public static Block UviteLeaves;
 	public static Block UviteOre;
 	public static Block UviteBlock;
-	public static Block UvitePortal;
+	public static BlockUvitePortal UvitePortal;
 	//-==-Mythril-==-//
 	public static Block MythrilGrass;
 	public static Block MythrilDirt;
 	public static Block MythrilLogs;
 	public static Block MythrilLeaves;
 	public static Block MythrilOre;
-	public static Block MytrilPortal;
+	public static BlockMythrilPortal MytrilPortal;
 	public static Block MythrilBlock;
 	//-==-Augite-==-//
 	public static Block AugiteGrass;
@@ -65,7 +70,9 @@ public class TwilightBlockHelper
 	public static Block AugiteLeaves;
 	public static Block AugiteOre;
 	public static Block AugiteBlock;
-	public static Block AugitePortal;
+	public static BlockAugitePortal AugitePortal;
+	
+	public static Block superEnchantMentTable;
 	
 	public static void initBlocks()
 	{

@@ -3,7 +3,6 @@ package xolova.divinerpg.containers;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
 class SlotBrewingStandIngredient extends Slot

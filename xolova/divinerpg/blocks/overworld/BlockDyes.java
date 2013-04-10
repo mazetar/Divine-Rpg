@@ -27,52 +27,52 @@ public class BlockDyes extends BlockDivineRPG
         switch (var1)
         {
             case 0:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 1:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 2:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 3:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 4:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 5:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 6:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 7:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 8:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 9:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 10:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 11:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 12:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 13:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             case 14:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
 
             default:
-                return OverworldBlockHelper.dyeblocks.blockID;
+                return OverworldBlockHelper.dyeBlocks.blockID;
         }
     }
 

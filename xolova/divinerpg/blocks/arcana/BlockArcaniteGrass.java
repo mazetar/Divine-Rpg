@@ -63,7 +63,7 @@ public class BlockArcaniteGrass extends BlockDivineRPG
             {
                 for (int var7 = par4 - 4; var7 <= par4 + 4; ++var7)
                 {
-                    if (par1World.getBlockId(var5, var6, var7) == OverworldBlockHelper.TarStill.blockID)
+                    if (par1World.getBlockId(var5, var6, var7) == OverworldBlockHelper.tarStill.blockID)
                     {
                         return true;
                     }

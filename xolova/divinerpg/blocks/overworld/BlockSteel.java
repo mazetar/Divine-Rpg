@@ -27,55 +27,55 @@ public class BlockSteel extends BlockDivineRPG
         switch (var1)
         {
             case 0:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 1:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 2:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 3:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 4:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 5:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 6:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 7:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 8:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 9:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 10:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 11:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 12:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 13:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 14:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             case 15:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
 
             default:
-                return OverworldBlockHelper.Steel.blockID;
+                return OverworldBlockHelper.steel.blockID;
         }
     }
 

@@ -110,7 +110,7 @@ public class ItemTarBucket extends ItemBucket
                         return par1ItemStack;
                     }
 
-                    if (par2World.getBlockMaterial(var13, var14, var15) == Material.lava && par2World.getBlockMetadata(var13, var14, var15) == 0 && par2World.getBlockId(var13, var14, var15) == OverworldBlockHelper.TarStill.blockID)
+                    if (par2World.getBlockMaterial(var13, var14, var15) == Material.lava && par2World.getBlockMetadata(var13, var14, var15) == 0 && par2World.getBlockId(var13, var14, var15) == OverworldBlockHelper.tarStill.blockID)
                     {
                         par2World.setBlock(var13, var14, var15, 0);
 

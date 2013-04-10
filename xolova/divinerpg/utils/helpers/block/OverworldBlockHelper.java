@@ -79,6 +79,11 @@ public class OverworldBlockHelper
 	public static Block krakenLamp;
 	public static Block drakenLamp;
 	
+	public static Block fenceLightoff;
+	public static Block fenceLighton;
+	public static Block fenceLightoff1;
+	public static Block fenceLighton1;
+	
 	public static void init()
 	{
         blueFire = new BlockBlueFire(578).setUnlocalizedName("fire").setCreativeTab(CreativeTabHelper.tabBlocks);

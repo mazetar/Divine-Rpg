@@ -208,6 +208,7 @@ public class VetheaItemHelper
     public static Item arksianeStaff;
     
     public static Item dreamPowder;
+    public static Item blueSeeds;
     
 	public static void init()
 	{

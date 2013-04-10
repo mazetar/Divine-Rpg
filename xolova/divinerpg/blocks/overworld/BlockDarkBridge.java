@@ -56,7 +56,7 @@ public class BlockDarkBridge extends BlockDivineRPG
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlock(var2, var3, var4, OverworldBlockHelper.lightbridge.blockID);
+                var1.setBlock(var2, var3, var4, OverworldBlockHelper.lightBridge.blockID);
             }
         }
     }
@@ -75,7 +75,7 @@ public class BlockDarkBridge extends BlockDivineRPG
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlock(var2, var3, var4, OverworldBlockHelper.lightbridge.blockID);
+                var1.setBlock(var2, var3, var4, OverworldBlockHelper.lightBridge.blockID);
             }
         }
     }
@@ -87,7 +87,7 @@ public class BlockDarkBridge extends BlockDivineRPG
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
         {
-            var1.setBlock(var2, var3, var4, OverworldBlockHelper.deadbridge.blockID);
+            var1.setBlock(var2, var3, var4, OverworldBlockHelper.darkBridge.blockID);
         }
     }
 
@@ -96,7 +96,7 @@ public class BlockDarkBridge extends BlockDivineRPG
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return OverworldBlockHelper.deadbridge.blockID;
+        return OverworldBlockHelper.darkBridge.blockID;
     }
 
     public void addCreativeItems(ArrayList var1)

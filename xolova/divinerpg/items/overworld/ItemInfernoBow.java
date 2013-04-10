@@ -106,35 +106,6 @@ public class ItemInfernoBow extends ItemBow
     		var2.spawnEntityInWorld(var9);
     	}
     }
-    public int getIconIndex(ItemStack var1, int var2, EntityPlayer var3, ItemStack var4, int var5)
-    {
-        if (var4 != null)
-        {
-            int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
-
-            if (var6 >= 30)
-            {
-                return this.iconIndex + 4;
-            }
-
-            if (var6 >= 18)
-            {
-                return this.iconIndex + 3;
-            }
-
-            if (var6 > 13)
-            {
-                return this.iconIndex + 2;
-            }
-
-            if (var6 > 0)
-            {
-                return this.iconIndex + 1;
-            }
-        }
-
-        return this.iconIndex;
-    }
 
     @SideOnly(Side.CLIENT)
 
@@ -144,11 +115,6 @@ public class ItemInfernoBow extends ItemBow
     public boolean isFull3D()
     {
         return true;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile2;
     }
 
     @Override

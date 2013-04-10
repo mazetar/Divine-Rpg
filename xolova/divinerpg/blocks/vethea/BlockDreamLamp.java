@@ -8,6 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.blocks.BlockDivineRPGContainer;
+import xolova.divinerpg.blocks.vethea.tileentities.TileEntityDreamLamp;
 import xolova.divinerpg.client.gui.GuiDreamLamp;
 import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
@@ -48,7 +49,7 @@ public class BlockDreamLamp extends BlockDivineRPGContainer
     
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return VetheaBlockHelper.dreamLamp.blockID;
+        return VetheaBlockHelper.dreamlamp.blockID;
     }
     
     public static void updateFurnaceBlockState(boolean par0, World par1World, int par2, int par3, int par4)
@@ -59,11 +60,11 @@ public class BlockDreamLamp extends BlockDivineRPGContainer
 
         if (par0)
         {
-            par1World.setBlockWithNotify(par2, par3, par4, VetheaBlockHelper.dreamLampOn.blockID);
+            par1World.setBlock(par2, par3, par4, VetheaBlockHelper.dreamlampOn.blockID);
         }
         else
         {
-            par1World.setBlockWithNotify(par2, par3, par4, VetheaBlockHelper.dreamLamp.blockID);
+            par1World.setBlock(par2, par3, par4, VetheaBlockHelper.dreamlamp.blockID);
         }
 
         keepFurnaceInventory = false;

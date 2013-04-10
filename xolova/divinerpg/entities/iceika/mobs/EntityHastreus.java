@@ -153,7 +153,7 @@ public class EntityHastreus extends EntityMob implements IRangedAttackMob
 	 */
 	 public void attackEntityWithRangedAttack(EntityLiving par1EntityLiving, float f)
 	 {
-		 EntityIce var2 = new EntityIce(this.worldObj, this, 32698);
+		 EntityIce var2 = new EntityIce(this.worldObj, this);
 		 var2.rotationPitch -= -20.0F;
 		 double var3 = par1EntityLiving.posX + par1EntityLiving.motionX - this.posX;
 		 double var5 = par1EntityLiving.posY + (double)par1EntityLiving.getEyeHeight() - 1.100000023841858D - this.posY;
@@ -162,7 +162,7 @@ public class EntityHastreus extends EntityMob implements IRangedAttackMob
 
 		 if (var9 >= 8.0F && !par1EntityLiving.isPotionActive(Potion.moveSlowdown))
 		 {
-			 var2.setPotionDamage(32698);
+			 //var2.set(32698);
 		 }
 
 		 var2.setThrowableHeading(var3, var5 + (double)(var9 * 0.2F), var7, 0.75F, 8.0F);

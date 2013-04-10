@@ -15,6 +15,7 @@ public class TwilightConfigHelper
 	public static int DraviteLeavesID;
 	public static int DraviteOreID;
 	public static int DraviteBlockID;
+	public static int DravitePortalID;
 	
 	public static int AzuriteGrassID;
 	public static int AzuriteDirtID;
@@ -60,6 +61,7 @@ public class TwilightConfigHelper
 		DraviteLeavesID = config.getBlock("Dravite Leaves", 589).getInt();
 		DraviteOreID = config.getBlock("Dravite Ore", 588).getInt();
 		DraviteBlockID = config.getBlock("Dravite Block", 579).getInt();
+		DravitePortalID = config.getBlock("Dravite Portal", 599).getInt();
 		
 		AzuriteGrassID = config.getBlock("Azurite Grass", 192).getInt();
 		AzuriteDirtID = config.getBlock("Azurite Dirt", 193).getInt();

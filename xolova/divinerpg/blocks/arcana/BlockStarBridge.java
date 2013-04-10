@@ -5,17 +5,17 @@ import java.util.Random;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class BlockStarBridge extends BlockDivineRPG
 {
     /** Whether this lamp block is the powered version. */
     private final boolean powered;
 
-    public BlockStarBridge(int par1, boolean par2)
+    public BlockStarBridge(int par1, int par3, boolean par2)
     {
-        super(par1, 211, Material.glass);
+        super(par1, par3, Material.glass);
         this.powered = par2;
 
         if (par2)
@@ -55,7 +55,7 @@ public class BlockStarBridge extends BlockDivineRPG
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+                var1.setBlock(var2, var3, var4, ArcanaBlockHelper.starBridgeOn.blockID);
             }
         }
     }
@@ -74,7 +74,7 @@ public class BlockStarBridge extends BlockDivineRPG
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+                var1.setBlock(var2, var3, var4, ArcanaBlockHelper.starBridgeOn.blockID);
             }
         }
     }
@@ -86,7 +86,7 @@ public class BlockStarBridge extends BlockDivineRPG
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
         {
-            var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlock(var2, var3, var4, ArcanaBlockHelper.starBridge.blockID);
         }
     }
 }

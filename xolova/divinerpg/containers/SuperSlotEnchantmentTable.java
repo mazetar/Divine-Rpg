@@ -9,7 +9,7 @@ public class SuperSlotEnchantmentTable extends InventoryBasic
 
     public SuperSlotEnchantmentTable(ContainerSuperEnchant containerSuperEnchant, String par2Str, int par3)
     {
-        super(par2Str, par3);
+        super(par2Str, false, par3);
         this.container = containerSuperEnchant;
     }
 

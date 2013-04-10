@@ -6,7 +6,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.entities.twilight.projectile.EntitySlicerUvite;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -37,11 +36,6 @@ public class ItemEnergySlicer extends Item
         }
 
         return var1;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile2;
     }
 
     @Override

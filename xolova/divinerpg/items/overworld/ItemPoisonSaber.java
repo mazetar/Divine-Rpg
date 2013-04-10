@@ -10,9 +10,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 
-public class ItemPoisonSaber extends ItemSwordXolovon
+public class ItemPoisonSaber extends ItemDivineRPGSword
 {
     private int weaponDamage;
     private final EnumToolMaterial field_40439_b;
@@ -107,10 +107,5 @@ public class ItemPoisonSaber extends ItemSwordXolovon
     public int getItemEnchantability()
     {
         return this.field_40439_b.getEnchantability();
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile2;
     }
 }

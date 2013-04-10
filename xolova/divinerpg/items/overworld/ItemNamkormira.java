@@ -17,7 +17,7 @@ public class ItemNamkormira extends ItemFrostkingSword
 
     public ItemNamkormira(int var1, EnumToolMaterial var2)
     {
-        super(var1, var2);
+        super(var1);
         this.field_40439_b = var2;
         this.maxStackSize = 1;
         this.setMaxDamage(540);

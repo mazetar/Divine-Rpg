@@ -12,7 +12,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
-import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -91,7 +90,7 @@ public class ItemCrystalShicaxe extends ItemTool
                     }
                     else
                     {
-                        var3.setBlockWithNotify(var4, var5, var6, var14.blockID);
+                        var3.setBlock(var4, var5, var6, var14.blockID);
                         var1.damageItem(1, var2);
                         return true;
                     }
@@ -99,12 +98,7 @@ public class ItemCrystalShicaxe extends ItemTool
             }
         }
     }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
-    }
-
+    
     @Override
     @SideOnly(Side.CLIENT)
 

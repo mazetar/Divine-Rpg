@@ -1,26 +1,17 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 import java.util.Random;
 
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockDramixStatue extends BlockContainer
+public class BlockDramixStatue extends BlockDivineRPG
 {
     public BlockDramixStatue(int par1)
     {
         super(par1, 23, Material.air);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
-    }
-
-    /**
-     * Returns a new instance of a block's tile entity class. Called on placing the block.
-     */
-    public TileEntity createNewTileEntity(World par1World)
-    {
-        return new TileEntityDramixStatue();
     }
 
     /**

@@ -1,16 +1,16 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockRedstoneBlock extends Block
+public class BlockRedstoneBlock extends BlockDivineRPG
 {
     private boolean torchActive = false;
     private static List torchUpdates = new ArrayList();
@@ -110,7 +110,7 @@ public class BlockRedstoneBlock extends Block
     private boolean isIndirectlyPowered(World var1, int var2, int var3, int var4)
     {
         int var5 = var1.getBlockMetadata(var2, var3, var4);
-        return var5 == 5 && var1.isBlockIndirectlyProvidingPowerTo(var2, var3 - 1, var4, 0) ? true : (var5 == 3 && var1.isBlockIndirectlyProvidingPowerTo(var2, var3, var4 - 1, 2) ? true : (var5 == 4 && var1.isBlockIndirectlyProvidingPowerTo(var2, var3, var4 + 1, 3) ? true : (var5 == 1 && var1.isBlockIndirectlyProvidingPowerTo(var2 - 1, var3, var4, 4) ? true : var5 == 2 && var1.isBlockIndirectlyProvidingPowerTo(var2 + 1, var3, var4, 5))));
+        return var5 == 5 && var1.getIndirectPowerLevelTo(var2, var3 - 1, var4, 0) > 0 ? true : (var5 == 3 && var1.getIndirectPowerLevelTo(var2, var3, var4 - 1, 2) > 0 ? true : (var5 == 4 && var1.getIndirectPowerLevelTo(var2, var3, var4 + 1, 3) > 0 ? true : (var5 == 1 && var1.getIndirectPowerLevelTo(var2 - 1, var3, var4, 4) > 0 ? true : var5 == 2 && var1.getIndirectPowerLevelTo(var2 + 1, var3, var4, 5) > 0)));
     }
 
     /**
@@ -231,11 +231,6 @@ public class BlockRedstoneBlock extends Block
                 }
             }
         }
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile1;
     }
 
     /**

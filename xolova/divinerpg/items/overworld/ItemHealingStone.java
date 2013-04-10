@@ -31,9 +31,4 @@ public class ItemHealingStone extends Item
 
         return var1;
     }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
-    }
 }

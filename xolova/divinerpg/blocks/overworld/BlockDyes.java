@@ -6,7 +6,6 @@ import java.util.Random;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import cpw.mods.fml.relauncher.Side;

@@ -4,6 +4,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.arcana.mobs.EntityDramix;
+import xolova.divinerpg.entities.arcana.mobs.EntityParasecta;
 import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
@@ -37,7 +39,6 @@ public class ItemWizardBook extends Item
 					EntityDramix tinkerer = new EntityDramix(var3);
 					tinkerer.setLocationAndAngles((double)var4 + 0.0D, (double)var5 + 1.0D, (double)var6 + 0.0D, 0.0F, 0.0F);
 					var3.spawnEntityInWorld(tinkerer);
-					var2.addStat(AchievementPageDivineRPG.dungeonMaster, 1);
 					return true;
 				}
 				else if (var11 == ArcanaBlockHelper.parasectaAltar.blockID && var3.isAirBlock(var4, var5 + 1, var6))
@@ -46,7 +47,6 @@ public class ItemWizardBook extends Item
 					EntityParasecta tinkerer = new EntityParasecta(var3);
 					tinkerer.setLocationAndAngles((double)var4 + 0.0D, (double)var5 + 1.0D, (double)var6 + 0.0D, 0.0F, 0.0F);
 					var3.spawnEntityInWorld(tinkerer);
-					var2.addStat(AchievementPageDivineRPG.greatBirdFire, 1);
 					return true;
 				}
 				else

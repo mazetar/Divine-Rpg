@@ -36,8 +36,8 @@ public class ItemPurpleSeeds extends Item
 
             if (var11 == this.soilBlockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, this.blockType);
-                var3.setBlockWithNotify(var4, var5 + 2, var6, DivineRPGTwilight.DivineRPGTwilight.blockID);
+                var3.setBlock(var4, var5 + 1, var6, this.blockType);
+                var3.setBlock(var4, var5 + 2, var6, DivineRPGTwilight.DivineRPGTwilight.blockID);
                 --var1.stackSize;
                 return true;
             }
@@ -50,10 +50,5 @@ public class ItemPurpleSeeds extends Item
         {
             return false;
         }
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile1;
     }
 }

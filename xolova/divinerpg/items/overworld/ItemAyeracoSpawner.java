@@ -8,6 +8,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Facing;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.entities.bosses.EntityAyeracoBlue;
+import xolova.divinerpg.entities.bosses.EntityAyeracoGreen;
+import xolova.divinerpg.entities.bosses.EntityAyeracoPurple;
+import xolova.divinerpg.entities.bosses.EntityAyeracoRed;
+import xolova.divinerpg.entities.bosses.EntityAyeracoYellow;
 
 public class ItemAyeracoSpawner extends Item
 {

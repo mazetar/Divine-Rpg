@@ -4,8 +4,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 
-public class ItemFlamingFury extends ItemSwordXolovon
+public class ItemFlamingFury extends ItemDivineRPGSword
 {
     public int weaponDamage;
 
@@ -27,15 +28,6 @@ public class ItemFlamingFury extends ItemSwordXolovon
         return true;
     }
 
-    public String getTextureFile()
-    {
-        return "/Xolovon.png";
-    }
-
-
-    /**
-     * Returns the damage against a given entity.
-     */
     public int getDamageVsEntity(Entity var1)
     {
         return weaponDamage;

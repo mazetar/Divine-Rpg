@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -8,7 +8,6 @@ import net.minecraft.block.BlockFluid;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockStationaryTar extends BlockFluid
 {
@@ -43,7 +42,7 @@ public class BlockStationaryTar extends BlockFluid
                 {
                     if (this.func_301_k(var1, var2 - 1, var3, var4) || this.func_301_k(var1, var2 + 1, var3, var4) || this.func_301_k(var1, var2, var3, var4 - 1) || this.func_301_k(var1, var2, var3, var4 + 1) || this.func_301_k(var1, var2, var3 - 1, var4) || this.func_301_k(var1, var2, var3 + 1, var4))
                     {
-                        var1.setBlockWithNotify(var2, var3, var4, Block.fire.blockID);
+                        var1.setBlock(var2, var3, var4, Block.fire.blockID);
                         return;
                     }
                 }
@@ -58,11 +57,6 @@ public class BlockStationaryTar extends BlockFluid
     private boolean func_301_k(World var1, int var2, int var3, int var4)
     {
         return var1.getBlockMaterial(var2, var3, var4).getCanBurn();
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 
     public void addCreativeItems(ArrayList var1)

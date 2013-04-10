@@ -1,19 +1,18 @@
-
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.Random;
 
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPGContainer;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockSuperEnchantmentTable extends BlockContainer
+public class BlockSuperEnchantmentTable extends BlockDivineRPGContainer
 {
     public BlockSuperEnchantmentTable(int par1)
     {
@@ -70,22 +69,6 @@ public class BlockSuperEnchantmentTable extends BlockContainer
     }
 
     /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
-    {
-        return this.getBlockTextureFromSide(par1);
-    }
-
-    /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     */
-    public int getBlockTextureFromSide(int par1)
-    {
-        return par1 == 0 ? 166 : (par1 == 1 ? 165 : 167);
-    }
-
-    /**
      * Returns a new instance of a block's tile entity class. Called on placing the block.
      */
     public TileEntity createNewTileEntity(World par1World)
@@ -116,10 +99,5 @@ public class BlockSuperEnchantmentTable extends BlockContainer
         }
 
         return false;
-    }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
     }
 }

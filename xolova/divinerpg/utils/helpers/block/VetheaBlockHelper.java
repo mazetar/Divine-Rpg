@@ -109,6 +109,8 @@ public class VetheaBlockHelper
     public static Block dreamwreckerSpawner;
     public static Block lorgaSpawner;
     public static Block purpleFire;
+    
+    public static Block moonBulbBase;
 	
     public static void initBlocks()
 	{

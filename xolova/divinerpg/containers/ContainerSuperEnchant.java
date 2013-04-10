@@ -14,7 +14,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -231,7 +231,7 @@ public class ContainerSuperEnchant extends Container
 
     public boolean canInteractWith(EntityPlayer par1EntityPlayer)
     {
-        return this.worldPointer.getBlockId(this.posX, this.posY, this.posZ) != DivineRPG.superEnchantMentTable.blockID ? false : par1EntityPlayer.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
+        return this.worldPointer.getBlockId(this.posX, this.posY, this.posZ) != TwilightBlockHelper.superEnchantMentTable.blockID ? false : par1EntityPlayer.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
     }
 
     /**

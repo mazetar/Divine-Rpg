@@ -3,23 +3,23 @@ package xolova.divinerpg.blocks.overworld;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 
-public class BlockDarkBridge extends Block
+public class BlockDarkBridge extends BlockDivineRPG
 {
     private final boolean powered;
 
-    public BlockDarkBridge(int var1, boolean var2)
+    public BlockDarkBridge(int var1, int var2, boolean var3)
     {
-        super(var1, Material.glass);
-        this.powered = var2;
+        super(var1, var2, Material.glass);
+        this.powered = var3;
 
-        if (var2)
+        if (var3)
         {
             this.setLightValue(1.0F);
         }
@@ -56,7 +56,7 @@ public class BlockDarkBridge extends Block
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+                var1.setBlock(var2, var3, var4, OverworldBlockHelper.lightbridge.blockID);
             }
         }
     }
@@ -75,7 +75,7 @@ public class BlockDarkBridge extends Block
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+                var1.setBlock(var2, var3, var4, OverworldBlockHelper.lightbridge.blockID);
             }
         }
     }
@@ -87,7 +87,7 @@ public class BlockDarkBridge extends Block
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
         {
-            var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlock(var2, var3, var4, OverworldBlockHelper.deadbridge.blockID);
         }
     }
 
@@ -96,7 +96,7 @@ public class BlockDarkBridge extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPGTwilight.DivineRPGTwilight.blockID;
+        return OverworldBlockHelper.deadbridge.blockID;
     }
 
     public void addCreativeItems(ArrayList var1)

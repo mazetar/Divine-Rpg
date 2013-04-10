@@ -24,5 +24,6 @@ public class CommandDivineRPG extends CommandBase
 			else
 				playerMP.travelToDimension(0);
 		}
+		
 	}
 }

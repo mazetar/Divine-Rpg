@@ -131,6 +131,9 @@ public class ArcanaBlockHelper
 	
 	public static Block condenser;
 	
+	public static Block DramixStatue;
+	public static Block ParasectaStatue;
+	
 	public static void init()
 	{
 		ancientBricks = new BlockDungeonBlock(ArcanaConfigHelper.ancientBricksID).setUnlocalizedName("ancientBricks");
@@ -159,22 +162,22 @@ public class ArcanaBlockHelper
 		oreDoor4 = new BlockOreDoor4(ArcanaConfigHelper.oreDoor4ID).setUnlocalizedName("oreDoor4");
 		
 		arcaniteRails = new BlockArcaniteRails(ArcanaConfigHelper.arcaniteRailsID).setUnlocalizedName("arcaniteRails");
-		starBridge = new BlockStarBridge(ArcanaConfigHelper.starBridgeID, false).setUnlocalizedName("starBridge");
-		starBridgeOn = new BlockStarBridgeOn(ArcanaConfigHelper.starBridgeOnID, true).setUnlocalizedName("starBridgeOn");
+		starBridge = new BlockStarBridge(ArcanaConfigHelper.starBridgeID, 0, false).setUnlocalizedName("starBridge");
+		starBridgeOn = new BlockStarBridgeOn(ArcanaConfigHelper.starBridgeOnID, 0, true).setUnlocalizedName("starBridgeOn");
 		arcaniteTubes = new BlockArcaniteTubes(ArcanaConfigHelper.arcaniteTubesID).setUnlocalizedName("arcaniteTubes");
 		
 		moltenFurnace = new BlockMoltenFurnace(ArcanaConfigHelper.moltenFurnaceID, false).setUnlocalizedName("moltenFurnace");
 		greenlightFurnace = new BlockGreenlightFurnace(ArcanaConfigHelper.greenlightFurnaceID, false).setUnlocalizedName("greenlightFurnace");
 		oceanfireFurnace = new BlockOceanfireFurnace(ArcanaConfigHelper.oceanfireFurnaceID, false).setUnlocalizedName("oceanfireFurnace");
 		moonlightFurnace = new BlockMoonlightFurnace(ArcanaConfigHelper.moonlightFurnaceID, false).setUnlocalizedName("moonlightFurnace");
-		whitefireFurnace = new BlockWhitefireFurnace(ArcanaConfigHelper.whitefireFurnaceID, false).setUnlocalizedName("whitefireFurnace");
+		whitefireFurnace = new BlockWhitefireFurnace(ArcanaConfigHelper.whitefireFurnaceID, 0, false).setUnlocalizedName("whitefireFurnace");
 		demonFurnace = new BlockDemonFurnace(ArcanaConfigHelper.demonFurnaceID).setUnlocalizedName("demonFurnace");
 		
 		moltenFurnace = new BlockMoltenFurnace(ArcanaConfigHelper.moltenFurnaceID, true).setUnlocalizedName("moltenFurnace");
 		greenlightFurnace = new BlockGreenlightFurnace(ArcanaConfigHelper.greenlightFurnaceID, true).setUnlocalizedName("greenlightFurnace");
 		oceanfireFurnace = new BlockOceanfireFurnace(ArcanaConfigHelper.oceanfireFurnaceID, true).setUnlocalizedName("oceanfireFurnace");
 		moonlightFurnace = new BlockMoonlightFurnace(ArcanaConfigHelper.moonlightFurnaceID, true).setUnlocalizedName("moonlightFurnace");
-		whitefireFurnace = new BlockWhitefireFurnace(ArcanaConfigHelper.whitefireFurnaceID, true).setUnlocalizedName("whitefireFurnace");
+		whitefireFurnace = new BlockWhitefireFurnace(ArcanaConfigHelper.whitefireFurnaceID, 0, true).setUnlocalizedName("whitefireFurnace");
 		
 		fireStock = new BlockFireStock(ArcanaConfigHelper.fireStockID, 44).setUnlocalizedName("fireStock");
 		fireStock2 = new BlockFireStock(ArcanaConfigHelper.fireStock2ID, 45).setUnlocalizedName("fireStock2");
@@ -182,7 +185,7 @@ public class ArcanaBlockHelper
 		pinFly2 = new BlockPinfly(ArcanaConfigHelper.pinFly2ID, 47).setUnlocalizedName("pinFly2");
 		hitchak = new BlockHitchak(ArcanaConfigHelper.hitchakID).setUnlocalizedName("hitchak");
 		eucalyptusRoot = new BlockEucalyptusRoot(ArcanaConfigHelper.eucalyptusRootID).setUnlocalizedName("eucalyptusRoot");
-		veilo = new BlockVeilo(ArcanaConfigHelper.veiloID).setUnlocalizedName("veilo");
+		veilo = new BlockVeilo(ArcanaConfigHelper.veiloID, 0).setUnlocalizedName("veilo");
 		lamona = new BlockLamona(ArcanaConfigHelper.lamonaID).setUnlocalizedName("lamona");
 		aquamarine = new BlockAquamarine(ArcanaConfigHelper.aquamarineID).setUnlocalizedName("aquamarine");
 		marsine = new BlockMarsine(ArcanaConfigHelper.marsineID).setUnlocalizedName("marsine");

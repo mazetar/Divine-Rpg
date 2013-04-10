@@ -241,7 +241,7 @@ public class EntityCori2 extends EntityMob
         }
 
         this.limbYaw += (var7 - this.limbYaw) * 0.4F;
-        this.legSwing += this.limbYaw;
+        this.limbSwing += this.limbYaw;
     }
 
     /**

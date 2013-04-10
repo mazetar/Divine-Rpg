@@ -3,7 +3,6 @@ package xolova.divinerpg.blocks.arcana;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.item.EntityItem;
@@ -14,12 +13,14 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.blocks.BlockDivineRPGContainer;
 import xolova.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockWhitefireFurnace extends BlockContainer
+public class BlockWhitefireFurnace extends BlockDivineRPGContainer
 {
     /**
      * Is the random generator used by furnace to drop the inventory contents in random directions.
@@ -35,9 +36,9 @@ public class BlockWhitefireFurnace extends BlockContainer
      */
     private static boolean keepFurnaceInventory = false;
 
-    public BlockWhitefireFurnace(int par1, boolean par2)
+    public BlockWhitefireFurnace(int par1, int par3, boolean par2)
     {
-        super(par1, Material.rock);
+        super(par1, par3, Material.rock);
         this.isActive = par2;
     }
 
@@ -46,7 +47,7 @@ public class BlockWhitefireFurnace extends BlockContainer
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return DivineRPGTwilight.DivineRPGTwilight.blockID;
+        return ArcanaBlockHelper.whitefireFurnace.blockID;
     }
 
     /**
@@ -91,37 +92,11 @@ public class BlockWhitefireFurnace extends BlockContainer
                 var9 = 4;
             }
 
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9, 0);
+            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9, 3);
         }
     }
 
-    //@SideOnly(Side.CLIENT)
-
-    /**
-     * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
-     
-    public int getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
-    {
-        if (par5 == 1)
-        {
-            return this.blockIndexInTexture + 2;
-        }
-        else if (par5 == 0)
-        {
-            return this.blockIndexInTexture + 2;
-        }
-        else
-        {
-            int var6 = par1IBlockAccess.getBlockMetadata(par2, par3, par4);
-            return par5 != var6 ? this.blockIndexInTexture : (this.isActive ? this.blockIndexInTexture + 1 : this.blockIndexInTexture - 1);
-        }
-    }*/
-
     @SideOnly(Side.CLIENT)
-
-    /**
-     * A randomly called display update to be able to add particles or other items for display
-     */
     public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
         if (this.isActive)
@@ -156,17 +131,6 @@ public class BlockWhitefireFurnace extends BlockContainer
         }
     }
 
-    /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     
-    public int getBlockTextureFromSide(int par1)
-    {
-        return par1 == 1 ? this.blockIndexInTexture + 2 : (par1 == 0 ? this.blockIndexInTexture + 2 : (par1 == 3 ? this.blockIndexInTexture - 1 : this.blockIndexInTexture));
-    }*/
-
-    /**
-     * Called upon block activation (right click on the block.)
-     */
     public boolean onBlockActivated(World par1World, int par2, int par3, int par4, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9)
     {
         if (par1World.isRemote)
@@ -179,7 +143,7 @@ public class BlockWhitefireFurnace extends BlockContainer
 
             if (var10 != null)
             {
-            	par5EntityPlayer.openGui(DivineRPGTwilight.instance, 11, par1World, par2, par3, par4);
+            	par5EntityPlayer.openGui(DivineRPG.instance, 11, par1World, par2, par3, par4);
             }
 
             return true;
@@ -197,15 +161,15 @@ public class BlockWhitefireFurnace extends BlockContainer
 
         if (par0)
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            par1World.setBlock(par2, par3, par4, ArcanaBlockHelper.whitefireFurnaceOn.blockID);
         }
         else
         {
-            par1World.setBlockWithNotify(par2, par3, par4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            par1World.setBlock(par2, par3, par4, ArcanaBlockHelper.whitefireFurnace.blockID);
         }
 
         keepFurnaceInventory = false;
-        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5, 0);
+        par1World.setBlockMetadataWithNotify(par2, par3, par4, var5, 3);
 
         if (var6 != null)
         {

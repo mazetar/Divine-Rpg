@@ -46,7 +46,6 @@ public class ItemGolemOfRejuvSpawner extends Item
 
             if (spawnCreature(par3World, par1ItemStack.getItemDamage(), (double)par4 + 0.5D, (double)par5 + var12, (double)par6 + 0.5D, par2EntityPlayer) != null && !par2EntityPlayer.capabilities.isCreativeMode)
             {
-            	par2EntityPlayer.addStat(AchievementPageDivineRPG.littleCreature, 1);
                 --par1ItemStack.stackSize;
             }
 

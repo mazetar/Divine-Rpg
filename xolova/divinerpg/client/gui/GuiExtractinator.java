@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.client.gui;
+package xolova.divinerpg.client.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -6,6 +6,7 @@ import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
 import xolova.divinerpg.containers.ContainerExtractinator;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -13,9 +14,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class GuiExtractinator extends GuiContainer
 {
-    private TileEntityExtractinator furnaceInventory;
+    private TileEntityExtractor furnaceInventory;
 
-    public GuiExtractinator(InventoryPlayer var1, TileEntityExtractinator var2)
+    public GuiExtractinator(InventoryPlayer var1, TileEntityExtractor var2)
     {
         super(new ContainerExtractinator(var1, var2));
         this.furnaceInventory = var2;
@@ -32,9 +33,8 @@ public class GuiExtractinator extends GuiContainer
      */
     protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3)
     {
-        int var4 = this.mc.renderEngine.getTexture("/gui/Extractor.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.renderEngine.bindTexture(var4);
+        this.mc.renderEngine.bindTexture("/gui/Extractor.png");
         int var5 = (this.width - this.xSize) / 2;
         int var6 = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);

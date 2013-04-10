@@ -1,11 +1,11 @@
 package xolova.divinerpg.utils.helpers.item;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class OverworldItemHelper 
 {
 	public static Item bedrockMaul;
-	public static Item enderSword;
 	public static Item soundOfMusic;
 	public static Item greenShard;
 	public static Item shuriken;
@@ -19,5 +19,18 @@ public class OverworldItemHelper
 	public static Item divinesword;
 	public static Item sandSlash;
 	public static Item blueShard;
+	public static Item iceShard;
+	public static Item yellowShard;
 	
+	public static Item divineBody;
+	public static Item divineLegs;
+	public static Item divineBoots;
+	
+	public static Item enderSword;
+	public static Item enderSwordYellow;
+	public static Item enderSwordGreen;
+	public static Item enderSwordRed;
+	public static Item enderSwordBlue;
+	
+	public static Item bluefirebow;
 }

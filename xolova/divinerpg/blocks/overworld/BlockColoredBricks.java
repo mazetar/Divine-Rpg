@@ -116,7 +116,7 @@ public class BlockColoredBricks extends BlockDivineRPG
      */
     public int getRenderColor(int par1)
     {
-        return this.getColor();
+        return this.getBlockColor();
     }
 
     @SideOnly(Side.CLIENT)

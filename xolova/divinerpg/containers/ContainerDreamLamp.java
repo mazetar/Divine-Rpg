@@ -5,6 +5,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import xolova.divinerpg.blocks.vethea.tileentities.TileEntityDreamLamp;
 
 public class ContainerDreamLamp extends Container
 {

@@ -10,7 +10,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -103,11 +102,6 @@ public class ItemSeranadeDeath extends Item
     public boolean hasEffect(ItemStack var1)
     {
         return true;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile1;
     }
 
     @Override

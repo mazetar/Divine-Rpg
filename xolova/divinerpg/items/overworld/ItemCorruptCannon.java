@@ -3,7 +3,6 @@ package xolova.divinerpg.items.overworld;
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;

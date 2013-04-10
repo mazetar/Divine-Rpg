@@ -35,10 +35,10 @@ import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.village.Village;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGIceika;
-import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import xolova.divinerpg.utils.helpers.item.IceikaItemHelper;
 import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -85,7 +85,7 @@ public class EntityWorkshopTickerer extends EntityVillager implements INpc, IMer
         this.tasks.addTask(4, new EntityAIOpenDoor(this, true));
         this.tasks.addTask(5, new EntityAIMoveTwardsRestriction(this, 0.3F));
         this.tasks.addTask(9, new EntityAIWatchClosest2(this, EntityPlayer.class, 3.0F, 1.0F));
-        this.tasks.addTask(9, new EntityAIWatchClosest2(this, EntityJackOMan.class, 5.0F, 0.02F));
+        //this.tasks.addTask(9, new EntityAIWatchClosest2(this, EntityJackOMan.class, 5.0F, 0.02F)); TODO
         this.tasks.addTask(9, new EntityAIWander(this, 0.3F));
         this.tasks.addTask(10, new EntityAIWatchClosest(this, EntityLiving.class, 8.0F));
     }
@@ -194,7 +194,6 @@ public class EntityWorkshopTickerer extends EntityVillager implements INpc, IMer
             	}
                 
                 var1.openGui(DivineRPGIceika.instance, 14, this.worldObj, this.entityId, 0, 0);
-                var1.addStat(AchievementPageDivineRPG.lilTinkerin, 1);
             }
 
             return true;
@@ -446,7 +445,7 @@ public class EntityWorkshopTickerer extends EntityVillager implements INpc, IMer
     {
         if (var2.nextFloat() < var3)
         {
-            var0.add(new MerchantRecipe(getRandomSizedStack(var1, var2), OverworldItemHelper.divineShard));
+            var0.add(new MerchantRecipe(getRandomSizedStack(var1, var2), TwilightItemHelper.DraviteShards));
         }
     }
 
@@ -471,12 +470,12 @@ public class EntityWorkshopTickerer extends EntityVillager implements INpc, IMer
 
             if (var4 < 0)
             {
-                var5 = new ItemStack(OverworldItemHelper.divineShard.itemID, 1, 0);
+                var5 = new ItemStack(TwilightItemHelper.DraviteShards.itemID, 1, 0);
                 var6 = new ItemStack(var1, -var4, 0);
             }
             else
             {
-                var5 = new ItemStack(OverworldItemHelper.divineShard.itemID, var4, 0);
+                var5 = new ItemStack(TwilightItemHelper.DraviteShards.itemID, var4, 0);
                 var6 = new ItemStack(var1, 1, 0);
             }
 

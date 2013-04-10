@@ -8,9 +8,9 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 
-public class ItemGognisahr extends ItemSwordXolovon
+public class ItemGognisahr extends ItemDivineRPGSword
 {
     private int weaponDamage;
     private final EnumToolMaterial field_40439_b;
@@ -109,10 +109,5 @@ public class ItemGognisahr extends ItemSwordXolovon
     public int getItemEnchantability()
     {
         return this.field_40439_b.getEnchantability();
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 }

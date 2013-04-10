@@ -4,6 +4,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
 class SlotBrewingStandIngredient extends Slot
 {
@@ -21,8 +22,7 @@ class SlotBrewingStandIngredient extends Slot
      */
     public boolean isItemValid(ItemStack par1ItemStack)
     {
-    	
-        return par1ItemStack != null ? par1ItemStack.itemID == DivineRPG.veiloItem.itemID : false;
+        return par1ItemStack != null ? par1ItemStack.itemID == ArcanaItemHelper.veiloItem.itemID : false;
     }
 
     /**

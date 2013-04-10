@@ -9,7 +9,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -96,36 +95,6 @@ public class ItemPoisonBow extends ItemBow
         }
     }
 
-    public int getIconIndex(ItemStack var1, int var2, EntityPlayer var3, ItemStack var4, int var5)
-    {
-        if (var4 != null)
-        {
-            int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
-
-            if (var6 >= 30)
-            {
-                return 24;
-            }
-
-            if (var6 >= 18)
-            {
-                return 21;
-            }
-
-            if (var6 > 13)
-            {
-                return 23;
-            }
-
-            if (var6 > 0)
-            {
-                return 25;
-            }
-        }
-
-        return this.iconIndex;
-    }
-
     @SideOnly(Side.CLIENT)
 
     /**
@@ -134,11 +103,6 @@ public class ItemPoisonBow extends ItemBow
     public boolean isFull3D()
     {
         return true;
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile2;
     }
 
     @Override

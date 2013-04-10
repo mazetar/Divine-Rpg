@@ -9,10 +9,11 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemFrostSword extends ItemSwordXolovon
+public class ItemFrostSword extends ItemDivineRPGSword
 {
 
 	public ItemFrostSword(int par1, EnumToolMaterial par2EnumToolMaterial) {

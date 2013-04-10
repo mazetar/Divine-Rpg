@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.client.gui;
+package xolova.divinerpg.client.gui;
 
 import java.util.Random;
 
@@ -91,9 +91,8 @@ public class GuiSuperEnchant extends GuiContainer
      */
     protected void drawGuiContainerBackgroundLayer(float par1, int par2, int par3)
     {
-        int var4 = this.mc.renderEngine.getTexture("/gui/enchant.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.renderEngine.bindTexture(var4);
+        this.mc.renderEngine.bindTexture("/gui/enchant.png");
         int var5 = (this.width - this.xSize) / 2;
         int var6 = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);
@@ -114,7 +113,7 @@ public class GuiSuperEnchant extends GuiContainer
         float var9 = 5.0F;
         GL11.glScalef(var9, var9, var9);
         GL11.glRotatef(180.0F, 0.0F, 0.0F, 1.0F);
-        this.mc.renderEngine.bindTexture(this.mc.renderEngine.getTexture("/item/book.png"));
+        this.mc.renderEngine.bindTexture("/item/book.png");
         GL11.glRotatef(20.0F, 1.0F, 0.0F, 0.0F);
         float var10 = this.field_74208_u + (this.field_74209_t - this.field_74208_u) * par1;
         GL11.glTranslatef((1.0F - var10) * 0.2F, (1.0F - var10) * 0.1F, (1.0F - var10) * 0.25F);
@@ -156,14 +155,14 @@ public class GuiSuperEnchant extends GuiContainer
         GL11.glPopMatrix();
         RenderHelper.disableStandardItemLighting();
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.renderEngine.bindTexture(var4);
+        this.mc.renderEngine.bindTexture("/gui/enchant.png");
         EnchantmentNameParts.instance.setRandSeed(this.containerEnchantment.nameSeed);
 
         for (int var13 = 0; var13 < 3; ++var13)
         {
             String var14 = EnchantmentNameParts.instance.generateRandomEnchantName();
             this.zLevel = 0.0F;
-            this.mc.renderEngine.bindTexture(var4);
+            this.mc.renderEngine.bindTexture("/gui/enchant.png");
             int var15 = this.containerEnchantment.enchantLevels[var13];
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 

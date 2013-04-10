@@ -13,7 +13,6 @@ import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
-import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -101,17 +100,17 @@ public class ItemEnderBow extends ItemBow
         {
             int var6 = var4.getMaxItemUseDuration() - var3.getItemInUseCount();
 
-            if ((float)var6 >= 40.0F * DivineRPGTwilight.increaseBowTime)
+            if ((float)var6 >= 40.0F * 1.0F)
             {
             	return 156;
             }
 
-            if ((float)var6 >= 18.0F * DivineRPGTwilight.increaseBowTime)
+            if ((float)var6 >= 18.0F * 1.0F)
             {
             	return 154;
             }
 
-            if ((float)var6 > 13.0F * DivineRPGTwilight.increaseBowTime)
+            if ((float)var6 > 13.0F * 1.0F)
             {
                 return 153;
             }

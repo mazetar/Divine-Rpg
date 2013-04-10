@@ -5,7 +5,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 
 public class ItemTomatoSeeds extends Item
 {
@@ -36,7 +35,7 @@ public class ItemTomatoSeeds extends Item
 
             if (var11 == this.soilBlockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
-                var3.setBlockWithNotify(var4, var5 + 1, var6, this.blockType);
+                var3.setBlock(var4, var5 + 1, var6, this.blockType);
                 --var1.stackSize;
                 return true;
             }
@@ -49,10 +48,5 @@ public class ItemTomatoSeeds extends Item
         {
             return false;
         }
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile2;
     }
 }

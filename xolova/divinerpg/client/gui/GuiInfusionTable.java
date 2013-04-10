@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.client.gui;
+package xolova.divinerpg.client.gui;
 
 import java.awt.Color;
 
@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.vethea.tileentities.TileEntityInfusionTable;
 import xolova.divinerpg.containers.ContainerInfusionTable;
 
 public class GuiInfusionTable extends GuiContainer
@@ -23,9 +24,8 @@ public class GuiInfusionTable extends GuiContainer
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) 
 	{
-		int k = mc.renderEngine.getTexture("/gui/InfusionTable.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.renderEngine.bindTexture(k);
+        this.mc.renderEngine.bindTexture("/gui/InfusionTable.png");
         int var5 = (this.width - this.xSize) / 2;
         int var6 = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);

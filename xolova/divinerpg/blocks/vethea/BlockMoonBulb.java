@@ -6,7 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
+import xolova.divinerpg.utils.helpers.item.VetheaItemHelper;
 
 public class BlockMoonBulb extends Block
 {
@@ -30,7 +31,7 @@ public class BlockMoonBulb extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPGTwilight.DivineRPGTwilight.itemID;
+        return VetheaItemHelper.blueSeeds.itemID;
     }
 
     /**
@@ -38,7 +39,7 @@ public class BlockMoonBulb extends Block
      */
     public int quantityDropped(Random var1)
     {
-        return this.blockID == DivineRPGTwilight.DivineRPGTwilight.blockID ? 1 : 0;
+        return this.blockID == VetheaBlockHelper.moonBulbBase.blockID ? 1 : 0;
     }
 
     /**

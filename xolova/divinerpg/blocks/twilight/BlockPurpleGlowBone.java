@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 
 public class BlockPurpleGlowBone extends Block
 {
@@ -30,7 +31,7 @@ public class BlockPurpleGlowBone extends Block
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return TwilightBlockHelper.purpleSeeds.itemID;
+        return TwilightItemHelper.purpleSeeds.itemID;
     }
 
     /**

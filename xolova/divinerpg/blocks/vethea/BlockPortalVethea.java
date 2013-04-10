@@ -16,7 +16,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.entities.particle.EntityMythrilPortalFX;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
+import xolova.divinerpg.utils.helpers.teleporters.TeleporterVethea;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -27,7 +29,7 @@ public class BlockPortalVethea extends BlockBreakable
     private int firemax = 200;
     private NBTTagCompound data;
 
-    public BlockPortalVethea(int var1, int var2)
+    public BlockPortalVethea(int var1, String var2)
     {
         super(var1, var2, Material.portal, false);
         this.firetick = 0;
@@ -143,7 +145,7 @@ public class BlockPortalVethea extends BlockBreakable
             {
                 for (var8 = 0; var8 < 3; ++var8)
                 {
-                    var1.setBlockWithNotify(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.AugiteBlock.blockID);
+                    var1.setBlock(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.AugiteBlock.blockID);
                 }
             }
 
@@ -264,9 +266,9 @@ public class BlockPortalVethea extends BlockBreakable
                     {
                     	EntityPlayer player = (EntityPlayer)var5;
                     	data = player.getEntityData().getCompoundTag(player.PERSISTED_NBT_TAG);
-                        if (var6.dimension != DivineRPGTwilight.vetheaID)
+                        if (var6.dimension != DimensionRegistry.VetheaID)
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DivineRPGTwilight.vetheaID, new TeleporterVethea(var6.mcServer.worldServerForDimension(DivineRPGTwilight.vetheaID)));
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DimensionRegistry.VetheaID, new TeleporterVethea(var6.mcServer.worldServerForDimension(DimensionRegistry.VetheaID)));
                             data.setTag("InventoryOverWorld", player.inventory.writeToNBT(new NBTTagList()));
                             player.getEntityData().setCompoundTag(player.PERSISTED_NBT_TAG, data);
                             player.inventory.clearInventory(-1, -1);

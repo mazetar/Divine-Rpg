@@ -18,24 +18,6 @@ public class BlockUviteGrass extends BlockDivineRPG
     }
 
     /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     */
-    public Icon getBlockTextureFromSideAndMetaData(int var1)
-    {
-        switch (var1)
-        {
-            case 0:
-                return texture[0];
-
-            case 1:
-                return texture[1];
-
-            default:
-                return texture[0];
-        }
-    }
-
-    /**
      * Ticks the block if it's been scheduled
      */
     public void updateTick(World var1, int var2, int var3, int var4, Random var5)

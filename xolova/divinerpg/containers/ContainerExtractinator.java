@@ -9,18 +9,19 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotFurnace;
 import net.minecraft.item.ItemStack;
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
 import xolova.divinerpg.utils.helpers.recipe.ExtractorRecipes;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ContainerExtractinator extends Container
 {
-    private TileEntityExtractinator furnace;
+    private TileEntityExtractor furnace;
     private int lastCookTime = 0;
     private int lastBurnTime = 0;
     private int lastItemBurnTime = 0;
 
-    public ContainerExtractinator(InventoryPlayer var1, TileEntityExtractinator var2)
+    public ContainerExtractinator(InventoryPlayer var1, TileEntityExtractor var2)
     {
         this.furnace = var2;
         this.addSlotToContainer(new Slot(var2, 0, 56, 17));
@@ -135,7 +136,7 @@ public class ContainerExtractinator extends Container
                         return null;
                     }
                 }
-                else if (TileEntityExtractinator.isItemFuel(var5))
+                else if (TileEntityExtractor.isItemFuel(var5))
                 {
                     if (!this.mergeItemStack(var5, 1, 2, false))
                     {

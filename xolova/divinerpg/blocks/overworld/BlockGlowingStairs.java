@@ -13,7 +13,6 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockGlowingStairs extends BlockStairs
 {

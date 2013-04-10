@@ -13,7 +13,6 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.entities.particle.EntityAzuritePortalFX;
 import xolova.divinerpg.utils.helpers.DimensionRegistry;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;

@@ -2,7 +2,6 @@ package xolova.divinerpg.items.overworld;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumToolMaterial;
-import xolova.divinerpg.DivineRPGTwilight;
 
 public class ItemPlasmaShicaxe extends ItemCrystalShicaxe
 {
@@ -17,10 +16,5 @@ public class ItemPlasmaShicaxe extends ItemCrystalShicaxe
         this.maxStackSize = 1;
         this.setMaxDamage(-1);
         this.weaponDamage = 0 + var2.getDamageVsEntity();
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 }

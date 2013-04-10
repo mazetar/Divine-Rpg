@@ -3,20 +3,21 @@ package xolova.divinerpg.blocks.arcana;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.minecraft.block.BlockFlower;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.blocks.BlockDivineRPGFlower;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockVeilo extends BlockFlower
+public class BlockVeilo extends BlockDivineRPGFlower
 {
-    public BlockVeilo(int par1)
+    public BlockVeilo(int par1, int par2)
     {
-        super(par1);
+        super(par1, par2);
         this.setTickRandomly(true);
         float var3 = 0.5F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 0.25F, 0.5F + var3);
@@ -32,7 +33,7 @@ public class BlockVeilo extends BlockFlower
      */
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
-        return par1 == DivineRPGTwilight.DivineRPGTwilight.blockID;
+        return par1 == ArcanaBlockHelper.arcaniteGrass.blockID;
     }
 
     /**
@@ -53,7 +54,7 @@ public class BlockVeilo extends BlockFlower
                 if (par5Random.nextInt((int)(25.0F / var7) + 1) == 0)
                 {
                     ++var6;
-                    par1World.setBlock(par2, par3, par4, var6);
+                    par1World.setBlockMetadataWithNotify(par2, par3, par4, var6, 3);
                 }
             }
         }
@@ -120,44 +121,14 @@ public class BlockVeilo extends BlockFlower
         return var5;
     }
 
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     
-    public int getBlockTextureFromSideAndMetadata(int par1, int par2)
-    {
-        switch (par2)
-        {
-            case 0:
-                return 72;
-
-            case 1:
-                return 73;
-
-            case 2:
-                return 74;
-
-            case 3:
-                return 75;
-
-            default:
-                return par2;
-        }
-    }*/
-
-    /**
-     * The type of render function that is called for this block
-     */
     public int getRenderType()
     {
         return 6;
     }
 
-    /**
-     * Generate a seed ItemStack for this crop.
-     */
     protected int getSeedItem()
     {
-        return DivineRPGTwilight.DivineRPGTwilight.itemID;
+        return ArcanaItemHelper.veiloSeeds.itemID;
     }
 
     /**
@@ -165,7 +136,7 @@ public class BlockVeilo extends BlockFlower
      */
     protected int getCropItem()
     {
-        return DivineRPGTwilight.DivineRPGTwilight.itemID;
+        return ArcanaItemHelper.veiloItem.itemID;
     }
 
     /**

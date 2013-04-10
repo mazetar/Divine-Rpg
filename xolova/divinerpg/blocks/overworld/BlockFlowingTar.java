@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.Random;
 
@@ -34,7 +34,7 @@ public class BlockFlowingTar extends BlockFluid
     private void updateFlow(World par1World, int par2, int par3, int par4)
     {
         int var5 = par1World.getBlockMetadata(par2, par3, par4);
-        par1World.setBlockAndMetadata(par2, par3, par4, this.blockID + 1, var5);
+        par1World.setBlock(par2, par3, par4, this.blockID + 1, var5, 3);
         par1World.markBlockRangeForRenderUpdate(par2, par3, par4, par2, par3, par4);
     }
 
@@ -107,12 +107,12 @@ public class BlockFlowingTar extends BlockFluid
 
                 if (var10 < 0)
                 {
-                    var1.setBlockWithNotify(var2, var3, var4, 0);
+                    var1.setBlock(var2, var3, var4, 0);
                 }
                 else
                 {
-                    var1.setBlockMetadataWithNotify(var2, var3, var4, var10);
-                    var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate());
+                    var1.setBlockMetadataWithNotify(var2, var3, var4, var10, 3);
+                    var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate(var1));
                     var1.notifyBlocksOfNeighborChange(var2, var3, var4, this.blockID);
                 }
             }
@@ -130,11 +130,11 @@ public class BlockFlowingTar extends BlockFluid
         {
             if (var6 >= 8)
             {
-                var1.setBlockAndMetadataWithNotify(var2, var3 - 1, var4, this.blockID, var6);
+                var1.setBlock(var2, var3 - 1, var4, this.blockID, var6, 3);
             }
             else
             {
-                var1.setBlockAndMetadataWithNotify(var2, var3 - 1, var4, this.blockID, var6 + 8);
+                var1.setBlock(var2, var3 - 1, var4, this.blockID, var6 + 8, 3);
             }
         }
         else if (var6 >= 0 && (var6 == 0 || this.blockBlocksFlow(var1, var2, var3 - 1, var4)))
@@ -192,7 +192,7 @@ public class BlockFlowingTar extends BlockFluid
                 }
             }
 
-            var1.setBlockAndMetadataWithNotify(var2, var3, var4, this.blockID, var5);
+            var1.setBlock(var2, var3, var4, this.blockID, var5, 3);
         }
     }
 
@@ -373,7 +373,7 @@ public class BlockFlowingTar extends BlockFluid
 
         if (var1.getBlockId(var2, var3, var4) == this.blockID)
         {
-            var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate());
+            var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate(var1));
         }
     }
 

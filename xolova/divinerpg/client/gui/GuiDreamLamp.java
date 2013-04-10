@@ -1,10 +1,11 @@
-package xolova.blued00r.divinerpg.client.gui;
+package xolova.divinerpg.client.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.vethea.tileentities.TileEntityDreamLamp;
 import xolova.divinerpg.containers.ContainerDreamLamp;
 
 public class GuiDreamLamp extends GuiContainer {
@@ -19,9 +20,8 @@ public class GuiDreamLamp extends GuiContainer {
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) 
 	{
-		int k = mc.renderEngine.getTexture("/gui/Lamp.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.renderEngine.bindTexture(k);
+        this.mc.renderEngine.bindTexture("/gui/Lamp.png");
         int var5 = (this.width - this.xSize) / 2;
         int var6 = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);

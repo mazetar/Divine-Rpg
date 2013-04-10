@@ -49,11 +49,6 @@ public class ItemFireThrower extends Item
         return true;
     }
 
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile1;
-    }
-
     @Override
     @SideOnly(Side.CLIENT)
 

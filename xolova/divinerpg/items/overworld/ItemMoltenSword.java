@@ -7,10 +7,11 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemMoltenSword extends ItemSwordXolovon
+public class ItemMoltenSword extends ItemDivineRPGSword
 {
 
 	public ItemMoltenSword(int par1, EnumToolMaterial par2EnumToolMaterial) {

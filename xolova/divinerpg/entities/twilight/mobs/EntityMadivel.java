@@ -14,7 +14,6 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 
 public class EntityMadivel extends EntityMob
@@ -107,7 +106,7 @@ public class EntityMadivel extends EntityMob
     protected void dropFewItems(boolean var1, int var2)
     {
         super.dropFewItems(var1, var2);
-        this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
+        this.dropItem(TwilightItemHelper.empoweredMeatRaw.itemID, 1);
     }
 
     /**

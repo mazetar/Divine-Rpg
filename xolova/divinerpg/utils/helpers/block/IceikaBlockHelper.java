@@ -1,6 +1,5 @@
 package xolova.divinerpg.utils.helpers.block;
 
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import xolova.divinerpg.blocks.BlockColoredGlass;
@@ -11,9 +10,11 @@ import xolova.divinerpg.blocks.iceika.BlockIceikaDoor;
 import xolova.divinerpg.blocks.iceika.BlockIceikaFurnace;
 import xolova.divinerpg.blocks.iceika.BlockIceikaGrass;
 import xolova.divinerpg.blocks.iceika.BlockIceikaLog;
+import xolova.divinerpg.blocks.iceika.BlockPortalIceika;
 import xolova.divinerpg.blocks.iceika.BlockXmasLights;
 import xolova.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class IceikaBlockHelper {
 	
@@ -48,7 +49,7 @@ public class IceikaBlockHelper {
 	public static Block yellowCandyCane;
 	public static Block purpleCandyCane;
 	public static Block giftBox; 
-	public static Block iceikaPortal;
+	public static BlockPortalIceika iceikaPortal;
 	
 	static IceikaConfigHelper x;
 	

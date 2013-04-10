@@ -4,15 +4,14 @@ import java.util.List;
 import java.util.Random;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.entities.overworld.projectile.EntityExplosiveArrow;
 import xolova.divinerpg.items.core.ItemDivineRPGBow;
+import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -40,7 +39,7 @@ public class ItemBlueBow extends ItemDivineRPGBow
         }
         else
         {
-            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(DivineRPGTwilight.DivineRPGTwilight.itemID))
+            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(OverworldItemHelper.bluefirebow.itemID))
             {
                 var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
             }
@@ -56,11 +55,11 @@ public class ItemBlueBow extends ItemDivineRPGBow
     {
         this.lastDamage = -1;
         int var5 = this.getMaxItemUseDuration(var1) - var4;
-        var5 = (int)((float)var5 / DivineRPGTwilight.increaseBowTime);
+        var5 = (int)((float)var5 / 1.0F);
         float var6 = (float)var5 / 20.0F;
         var6 = (var6 * var6 + var6 * 2.0F) / 3.0F;
 
-        if ((double)var6 >= 0.1D * (double)DivineRPGTwilight.increaseBowTime)
+        if ((double)var6 >= 0.1D * (double)1.0F)
         {
             boolean var7 = false;
 

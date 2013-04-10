@@ -131,7 +131,7 @@ public class BlockBlueFire extends Block
             }
         }
 
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != TwilightBlockHelper.UviteBlock.blockID || !TwilightBlockHelper.MythrilPortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != TwilightBlockHelper.UviteBlock.blockID || !TwilightBlockHelper.MytrilPortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {
@@ -143,7 +143,7 @@ public class BlockBlueFire extends Block
             }
         }
 
-        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != TwilightBlockHelper.MythilBlock.blockID || !TwilightBlockHelper.AugitePortal.tryToCreatePortal(var1, var2, var3, var4))
+        if (var1.provider.dimensionId > 0 || var1.getBlockId(var2, var3 - 1, var4) != TwilightBlockHelper.MythrilBlock.blockID || !TwilightBlockHelper.AugitePortal.tryToCreatePortal(var1, var2, var3, var4))
         {
             if (!var1.doesBlockHaveSolidTopSurface(var2, var3 - 1, var4))
             {

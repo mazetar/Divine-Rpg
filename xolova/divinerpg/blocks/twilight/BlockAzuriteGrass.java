@@ -19,24 +19,6 @@ public class BlockAzuriteGrass extends BlockDivineRPG
         this.setTickRandomly(true);
     }
 
-    /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     */
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
-    {
-        switch (par1)
-        {
-            case 0:
-                return TwilightBlockHelper.AzuriteDirt.getBlockTextureFromSide(0);
-
-            case 1:
-                return this.texture[0];
-
-            default:
-                return this.texture[1];
-        }
-    }
-
     public void updateTick(World var1, int var2, int var3, int var4, Random var5)
     {
         if (!var1.isRemote)

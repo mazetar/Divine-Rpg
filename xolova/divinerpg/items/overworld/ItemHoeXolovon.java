@@ -6,7 +6,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPGTwilight;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -19,11 +18,6 @@ public class ItemHoeXolovon extends ItemHoe
         this.maxStackSize = 1;
         this.field_40439_b = var2;
         this.setMaxDamage(var2.getMaxUses());
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 
     @Override

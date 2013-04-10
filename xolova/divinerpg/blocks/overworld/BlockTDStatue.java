@@ -1,13 +1,12 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 import java.util.Random;
 
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockTDStatue extends BlockContainer
+public class BlockTDStatue extends BlockDivineRPG
 {
     public BlockTDStatue(int par1)
     {
@@ -15,13 +14,6 @@ public class BlockTDStatue extends BlockContainer
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
     }
 
-    /**
-     * Returns a new instance of a block's tile entity class. Called on placing the block.
-     */
-    public TileEntity createNewTileEntity(World par1World)
-    {
-        return new TileEntityTDStatue();
-    }
 
     /**
      * Called upon block activation (right click on the block.)

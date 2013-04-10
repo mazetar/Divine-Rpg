@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.blocks;
+package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 
@@ -9,11 +9,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 
 public class BlockNewFence extends BlockFence
 {
-    public BlockNewFence(int var1, int var2, Material var3)
+    public BlockNewFence(int var1, String var2, Material var3)
     {
         super(var1, var2, var3);
     }
@@ -152,10 +151,5 @@ public class BlockNewFence extends BlockFence
     public void addCreativeItems(ArrayList var1)
     {
         var1.add(new ItemStack(this, 1));
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 }

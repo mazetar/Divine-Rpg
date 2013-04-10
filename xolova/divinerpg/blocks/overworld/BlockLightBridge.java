@@ -80,11 +80,6 @@ public class BlockLightBridge extends BlockDivineRPG
         return DivineRPGTwilight.DivineRPGTwilight.blockID;
     }
 
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
-    }
-
     public void addCreativeItems(ArrayList var1)
     {
         var1.add(new ItemStack(this, 1));

@@ -57,7 +57,7 @@ public class CoreProxy {
 	
 	public void registerEntity(Class<? extends Entity> clazz, String name, int modID, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates) {
 		EntityRegistry.registerGlobalEntityID(clazz, name, availableID());
-		EntityRegistry.registerModEntity(clazz, name, modID, DivineRPGIceika.instance, trackingRange, updateFrequency, sendsVelocityUpdates);
+		EntityRegistry.registerModEntity(clazz, name, modID, DivineRPG.instance, trackingRange, updateFrequency, sendsVelocityUpdates);
 	}
 	
 	public int availableID() {

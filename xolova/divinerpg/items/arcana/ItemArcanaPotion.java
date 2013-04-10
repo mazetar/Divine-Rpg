@@ -15,9 +15,7 @@ public class ItemArcanaPotion extends ItemDivineRPG
 	{
 		super(par1, par2);
 	}
-	
-	
-	
+
     /**
      * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
      */
@@ -26,14 +24,12 @@ public class ItemArcanaPotion extends ItemDivineRPG
     	if(var1.itemID == ArcanaItemHelper.weakArcanaPotion.itemID)
     	{
     		ArcanaHelper.regen(var3.username, 100);
-    		var3.addStat(AchievementPageDivineRPG.yuk, 1);
     		--var1.stackSize;
     	}
     	
     	if(var1.itemID == ArcanaItemHelper.strongArcanaPotion.itemID)
     	{
     		ArcanaHelper.regen(var3.username, 200);
-    		var3.addStat(AchievementPageDivineRPG.yuk, 1);
     		--var1.stackSize;
     	}
     	

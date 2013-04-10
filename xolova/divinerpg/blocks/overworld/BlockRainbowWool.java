@@ -2,10 +2,8 @@ package xolova.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.blocks.BlockDivineRPG;
 
 public class BlockRainbowWool extends BlockDivineRPG

@@ -10,11 +10,11 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemInfernoSword extends ItemSwordXolovon
+public class ItemInfernoSword extends ItemDivineRPGSword
 {
     private int weaponDamage;
     private final EnumToolMaterial field_40439_b;
@@ -109,11 +109,6 @@ public class ItemInfernoSword extends ItemSwordXolovon
     public int getItemEnchantability()
     {
         return this.field_40439_b.getEnchantability();
-    }
-
-    public String getTextureFile()
-    {
-        return DivineRPGTwilight.textureFile;
     }
 
     @SideOnly(Side.CLIENT)

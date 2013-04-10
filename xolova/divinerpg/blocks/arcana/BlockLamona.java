@@ -7,7 +7,6 @@ import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeDirection;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
@@ -123,26 +122,6 @@ public class BlockLamona extends BlockFlower
         return var5;
     }
 
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
-    {
-        switch (par2)
-        {
-            case 0:
-                return Icon[0];
-
-            case 1:
-                return Icon[1];
-
-            case 2:
-                return Icon[2];
-
-            default:
-                return Icon[0];
-        }
-    }
 
     /**
      * The type of render function that is called for this block

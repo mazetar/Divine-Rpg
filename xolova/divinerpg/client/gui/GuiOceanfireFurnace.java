@@ -1,4 +1,4 @@
-package xolova.blued00r.divinerpg.client.gui;
+package xolova.divinerpg.client.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -33,9 +33,8 @@ public class GuiOceanfireFurnace extends GuiContainer
      */
     protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3)
     {
-        int var4 = this.mc.renderEngine.getTexture("/gui/furnacenofuel.png");
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        this.mc.renderEngine.bindTexture(var4);
+        this.mc.renderEngine.bindTexture("/gui/furnacenofuel.png");
         int var5 = (this.width - this.xSize) / 2;
         int var6 = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);

@@ -2,14 +2,13 @@ package xolova.divinerpg.items.overworld;
 
 import java.util.List;
 
-import xolova.divinerpg.entities.overworld.projectile.EntityStromBall;
-import xolova.divinerpg.entities.overworld.projectile.EntityTwilightPhaser;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.overworld.projectile.EntityStromBall;
+import xolova.divinerpg.entities.overworld.projectile.EntityTwilightPhaser;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

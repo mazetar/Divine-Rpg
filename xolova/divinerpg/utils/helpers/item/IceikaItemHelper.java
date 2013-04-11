@@ -1,11 +1,8 @@
 package xolova.divinerpg.utils.helpers.item;
 
 import net.minecraft.item.Item;
-import net.minecraftforge.common.EnumHelper;
 import xolova.divinerpg.items.ItemDivineRPG;
-import xolova.divinerpg.items.core.ItemDivineRPGArmor;
 import xolova.divinerpg.items.core.ItemDivineRPGFood;
-import xolova.divinerpg.items.core.ItemDivineRPGRangedConsumable;
 import xolova.divinerpg.items.iceika.ItemEggNog;
 import xolova.divinerpg.items.iceika.ItemEnderice;
 import xolova.divinerpg.items.iceika.ItemFrostClawCannon;
@@ -24,7 +21,6 @@ import xolova.divinerpg.items.iceika.ItemSoundOfCarols;
 import xolova.divinerpg.items.vanilla.ItemMassivence;
 import xolova.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
-import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class IceikaItemHelper 

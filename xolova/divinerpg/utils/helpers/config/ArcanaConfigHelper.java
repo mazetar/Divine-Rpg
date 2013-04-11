@@ -47,6 +47,8 @@ public class ArcanaConfigHelper
 	public static int whitefireFurnaceID;
 	public static int demonFurnaceID;
 	
+	public static int moltenFurnaceOnID;
+	
     public static int fireStockID;
     public static int fireStock2ID;
     public static int pinFlyID;

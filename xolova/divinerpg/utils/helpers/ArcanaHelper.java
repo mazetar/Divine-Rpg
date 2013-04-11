@@ -3,9 +3,8 @@ package xolova.divinerpg.utils.helpers;
 import java.util.HashMap;
 import java.util.List;
 
-import cpw.mods.fml.common.IPlayerTracker;
-
 import net.minecraft.entity.player.EntityPlayer;
+import cpw.mods.fml.common.IPlayerTracker;
 
 public class ArcanaHelper implements IPlayerTracker {
 	

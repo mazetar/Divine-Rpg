@@ -27,10 +27,10 @@ import xolova.divinerpg.items.vethea.ItemVetheanStaff;
 import xolova.divinerpg.utils.helpers.config.VetheaConfigHelper;
 import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class VetheaItemHelper 
 {
-
     public static Item teakerSword;
     public static Item amthrimisSword;
     public static Item darvenSword;
@@ -390,6 +390,183 @@ public class VetheaItemHelper
 	
 	public static void addNames()
 	{
-		
+	    LanguageRegistry.addName(teakerSword, "");
+	    LanguageRegistry.addName(amthrimisSword, "");
+	    LanguageRegistry.addName(darvenSword, "");
+	    LanguageRegistry.addName(cermileSword, "");
+	    LanguageRegistry.addName(pardimalSword, "");
+	    LanguageRegistry.addName(quadroticSword, "");
+	    LanguageRegistry.addName(karosSword, "");
+	    LanguageRegistry.addName(heliosisSword, "");
+	    LanguageRegistry.addName(arksianeSword, "");
+	    
+	    LanguageRegistry.addName(teakerHammer, "");
+	    LanguageRegistry.addName(amthrimisHammer, "");
+	    LanguageRegistry.addName(darvenHammer, "");
+	    LanguageRegistry.addName(cermileHammer, "");
+	    LanguageRegistry.addName(pardimalHammer, "");
+	    LanguageRegistry.addName(quadroticHammer, "");
+	    LanguageRegistry.addName(karosHammer, "");
+	    LanguageRegistry.addName(heliosisHammer, "");
+	    LanguageRegistry.addName(arksianeHammer, "");
+	    
+	    LanguageRegistry.addName(teakerBow, "");
+	    LanguageRegistry.addName(amthrimisBow, "");
+	    LanguageRegistry.addName(darvenBow, "");
+	    LanguageRegistry.addName(cermileBow, "");
+	    LanguageRegistry.addName(pardimalBow, "");
+	    LanguageRegistry.addName(quadroticBow, "");
+	    LanguageRegistry.addName(karosBow, "");
+	    LanguageRegistry.addName(heliosisBow, "");
+	    LanguageRegistry.addName(arksianeBow, "");
+	    
+	    LanguageRegistry.addName(teakerCannon, "");
+	    LanguageRegistry.addName(amthrimisCannon, "");
+	    LanguageRegistry.addName(darvenCannon, "");
+	    LanguageRegistry.addName(cermileCannon, "");
+	    LanguageRegistry.addName(pardimalCannon, "");
+	    LanguageRegistry.addName(quadroticCannon, "");
+	    LanguageRegistry.addName(karosCannonItem, "");
+	    LanguageRegistry.addName(heliosisCannon, "");
+	    LanguageRegistry.addName(arksianeCannon, "");
+	    
+	    LanguageRegistry.addName(teakerClaw, "");
+	    LanguageRegistry.addName(amthrimisClaw, "");
+	    LanguageRegistry.addName(darvenClaw, "");
+	    LanguageRegistry.addName(cermileClaw, "");
+	    LanguageRegistry.addName(pardimalClaw, "");
+	    LanguageRegistry.addName(quadroticClaw, "");
+	    LanguageRegistry.addName(karosClaw, "");
+	    LanguageRegistry.addName(heliosisClaw, "");
+	    LanguageRegistry.addName(arksianeClaw, "");
+	    
+	    LanguageRegistry.addName(teakerDisk, "");
+	    LanguageRegistry.addName(amthrimisDisk, "");
+	    LanguageRegistry.addName(darvenDisk, "");
+	    LanguageRegistry.addName(cermileDisk, "");
+	    LanguageRegistry.addName(pardimalDisk, "");
+	    LanguageRegistry.addName(quadroticDisk, "");
+	    LanguageRegistry.addName(karosDisk, "");
+	    LanguageRegistry.addName(heliosisDisk, "");
+	    LanguageRegistry.addName(arksianeDisk, "");
+
+	    LanguageRegistry.addName(acidfire, "");
+	    LanguageRegistry.addName(vetheanArrow, "");
+	    LanguageRegistry.addName(vetheanArrow2, "");
+	    LanguageRegistry.addName(vetheanWarArrow, "");
+	    LanguageRegistry.addName(vetheanWrathArrow, "");
+	    
+
+	    LanguageRegistry.addName(vetheanHammerTemplate, "");
+	    LanguageRegistry.addName(vetheanBackswordTemplate, "");
+	    LanguageRegistry.addName(vetheanBowTemplate, "");
+	    LanguageRegistry.addName(vetheanCannonTemplate, "");
+	    LanguageRegistry.addName(vetheanClawTemplate, "");
+	    LanguageRegistry.addName(vetheanDiskTemplate, "");
+	    LanguageRegistry.addName(vetheanStaffTemplate, "");
+
+	    LanguageRegistry.addName(vetheanDegradedTemplate, "");
+	    LanguageRegistry.addName(vetheanFinishedTemplate, "");
+	    LanguageRegistry.addName(vetheanGlisteningTemplate, "");
+	    LanguageRegistry.addName(vetheanDemonizedTemplate, "");
+	    LanguageRegistry.addName(vetheanTormentedTemplate, "");
+	    
+	    LanguageRegistry.addName(honeysuckle, "");
+	    LanguageRegistry.addName(dreamCarrot, "");
+	    LanguageRegistry.addName(dreamMelon, "");
+	    LanguageRegistry.addName(dreamPie, "");
+	    LanguageRegistry.addName(dreamCake, "");
+	    
+	    LanguageRegistry.addName(teakerLump, "");
+	    LanguageRegistry.addName(amthrimisLump, "");
+	    LanguageRegistry.addName(darvenLump, "");
+	    LanguageRegistry.addName(cermileLump, "");
+	    LanguageRegistry.addName(pardimalLump, "");
+	    LanguageRegistry.addName(quadroticLump, "");
+	    LanguageRegistry.addName(karosLump, "");
+	    LanguageRegistry.addName(heliosisLump, "");
+	    LanguageRegistry.addName(arksianeLump, "");
+
+	    LanguageRegistry.addName(dreamSweets, "");
+	    LanguageRegistry.addName(dreamSours, "");
+	    
+
+	    LanguageRegistry.addName(degradedHelmetMelee, "");
+	    LanguageRegistry.addName(degradedHelmetRanged, "");
+	    LanguageRegistry.addName(degradedHelmetArcana, "");
+	    LanguageRegistry.addName(degradedChest, "");
+	    LanguageRegistry.addName(degradedLegs, "");
+	    LanguageRegistry.addName(degradedBoots, "");
+
+	    LanguageRegistry.addName(finishedHelmetMelee, "");
+	    LanguageRegistry.addName(finishedHelmetRanged, "");
+	    LanguageRegistry.addName(finishedHelmetArcana, "");
+	    LanguageRegistry.addName(finishedChest, "");
+	    LanguageRegistry.addName(finishedLegs, "");
+	    LanguageRegistry.addName(finishedBoots, "");
+
+	    LanguageRegistry.addName(glisteningHelmetMelee, "");
+	    LanguageRegistry.addName(glisteningHelmetRanged, "");
+	    LanguageRegistry.addName(glisteningHelmetArcana, "");
+	    LanguageRegistry.addName(glisteningChest, "");
+	    LanguageRegistry.addName(glisteningLegs, "");
+	    LanguageRegistry.addName(glisteningBoots, "");
+
+	    LanguageRegistry.addName(demonizedHelmetMelee, "");
+	    LanguageRegistry.addName(demonizedHelmetRanged, "");
+	    LanguageRegistry.addName(demonizedHelmetArcana, "");
+	    LanguageRegistry.addName(demonizedChest, "");
+	    LanguageRegistry.addName(demonizedLegs, "");
+	    LanguageRegistry.addName(demonizedBoots, "");
+
+	    LanguageRegistry.addName(tormentedHelmetMelee, "");
+	    LanguageRegistry.addName(tormentedHelmetRanged, "");
+	    LanguageRegistry.addName(tormentedHelmetArcana, "");
+	    LanguageRegistry.addName(tormentedChest, "");
+	    LanguageRegistry.addName(tormentedLegs, "");
+	    LanguageRegistry.addName(tormentedBoots, "");
+	    
+	    LanguageRegistry.addName(dirtyPearls, "");
+	    LanguageRegistry.addName(cleanPearls, "");
+	    LanguageRegistry.addName(polishedPearls, "");
+	    LanguageRegistry.addName(shinyPearls, "");
+	    
+	    LanguageRegistry.addName(honeychunk, "");
+	    LanguageRegistry.addName(rockChunks, "");
+	    LanguageRegistry.addName(fyrossom, "");
+	    LanguageRegistry.addName(heivaBelt, "");
+	    LanguageRegistry.addName(mooncloud, "");
+	    LanguageRegistry.addName(wormChunks, "");
+	    LanguageRegistry.addName(vhraakTeeth, "");
+	    
+	    LanguageRegistry.addName(dreamflint, "");
+	    LanguageRegistry.addName(moonclock, "");
+	    LanguageRegistry.addName(spinebackChunk, "");
+
+	    LanguageRegistry.addName(spinebackCannon, "");
+	    LanguageRegistry.addName(spinebackDisc, "");
+	    LanguageRegistry.addName(spinebackHammer, "");
+	    LanguageRegistry.addName(spinebackStaff, "");
+
+	    LanguageRegistry.addName(everlight, "");
+	    LanguageRegistry.addName(everbright, "");
+	    LanguageRegistry.addName(evernight, "");
+	    LanguageRegistry.addName(eversight, "");
+	    LanguageRegistry.addName(everfight, "");
+
+	    LanguageRegistry.addName(everArrow, "");
+	    
+	    LanguageRegistry.addName(teakerStaff, "");
+	    LanguageRegistry.addName(amthrimisStaff, "");
+	    LanguageRegistry.addName(darvenStaff, "");
+	    LanguageRegistry.addName(cermileStaff, "");
+	    LanguageRegistry.addName(pardimalStaff, "");
+	    LanguageRegistry.addName(quadroticStaff, "");
+	    LanguageRegistry.addName(karosStaff, "");
+	    LanguageRegistry.addName(heliosisStaff, "");
+	    LanguageRegistry.addName(arksianeStaff, "");
+	    
+	    LanguageRegistry.addName(dreamPowder, "");
+	    LanguageRegistry.addName(blueSeeds, "");
 	}
 }

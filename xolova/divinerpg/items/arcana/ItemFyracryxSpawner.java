@@ -9,7 +9,6 @@ import net.minecraft.util.Facing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import xolova.divinerpg.entities.arcana.mobs.EntityFyracryx;
-import xolova.divinerpg.utils.AchievementPageDivineRPG;
 
 public class ItemFyracryxSpawner extends Item
 {

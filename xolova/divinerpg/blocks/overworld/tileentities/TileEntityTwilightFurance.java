@@ -1,6 +1,5 @@
 package xolova.divinerpg.blocks.overworld.tileentities;
 
-import xolova.divinerpg.blocks.twilight.BlockTwilightFurnace;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,6 +15,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
+import xolova.divinerpg.blocks.twilight.BlockTwilightFurnace;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

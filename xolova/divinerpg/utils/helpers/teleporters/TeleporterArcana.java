@@ -5,7 +5,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class TeleporterArcana extends Teleporter

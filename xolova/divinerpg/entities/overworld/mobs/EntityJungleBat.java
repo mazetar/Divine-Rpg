@@ -12,7 +12,6 @@ import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 
 public class EntityJungleBat extends EntityMob

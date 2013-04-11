@@ -3,7 +3,6 @@ package xolova.divinerpg.items.core;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemSpade;
-import net.minecraft.item.ItemTool;
 import net.minecraft.util.Icon;
 import xolova.divinerpg.utils.helpers.IconHelper;
 

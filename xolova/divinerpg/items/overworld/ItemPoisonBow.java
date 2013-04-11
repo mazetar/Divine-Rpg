@@ -2,8 +2,6 @@ package xolova.divinerpg.items.overworld;
 
 import java.util.List;
 
-import xolova.divinerpg.entities.overworld.projectile.EntityPoisonArrow;
-
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.overworld.projectile.EntityPoisonArrow;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

@@ -1,7 +1,9 @@
 package xolova.divinerpg.utils.helpers.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.blocks.twilight.BlockAugiteDirt;
 import xolova.divinerpg.blocks.twilight.BlockAugiteGrass;
 import xolova.divinerpg.blocks.twilight.BlockAugitePortal;
@@ -79,12 +81,15 @@ public class TwilightBlockHelper
 	public static void initBlocks()
 	{
 		TwilightStone = new BlockTwilightStone(TwilightConfigHelper.TwilightStoneID).setUnlocalizedName("TwilightStone").setCreativeTab(CreativeTabs.tabBlock);
-
+		divineRock = new BlockDivineRPG(TwilightConfigHelper.divineRockID, 0, Material.rock).setUnlocalizedName("DivineRock").setCreativeTab(CreativeTabs.tabBlock);
+		
 		DraviteGrass = new BlockDraviteGrass(TwilightConfigHelper.DraviteGrassID).setUnlocalizedName("DraviteGrass");
 		DraviteDirt = new BlockDraviteDirt(TwilightConfigHelper.DraviteDirtID).setUnlocalizedName("DraviteDirt").setCreativeTab(CreativeTabs.tabBlock);
 		DraviteLogs = new BlockTwilightWood(TwilightConfigHelper.DraviteLogsID).setUnlocalizedName("DraviteLogs").setCreativeTab(CreativeTabs.tabBlock);
 		DraviteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.DraviteLeavesID).setUnlocalizedName("DraviteLeaves");
 		DraviteOre = new BlockTwilightOre(TwilightConfigHelper.DraviteOreID).setUnlocalizedName("DraviteOre").setCreativeTab(CreativeTabs.tabBlock);
+		DravitePortal = (BlockTwilightPortal) new BlockTwilightPortal(TwilightConfigHelper.DravitePortalID, null).setUnlocalizedName("DravitePortal").setCreativeTab(CreativeTabs.tabBlock);
+		DraviteBlock = new BlockDivineRPG(TwilightConfigHelper.DraviteBlockID, 0, Material.iron).setUnlocalizedName("DraviteBlock").setCreativeTab(CreativeTabs.tabBlock);
 		
 		AzuriteGrass = new BlockAzuriteGrass(TwilightConfigHelper.AzuriteGrassID).setUnlocalizedName("AzuriteGrass");
 		AzuriteDirt = new BlockAzuriteDirt(TwilightConfigHelper.AzuriteDirtID).setUnlocalizedName("AzuriteDirt");
@@ -122,9 +127,10 @@ public class TwilightBlockHelper
 		GameRegistry.registerBlock(DraviteLogs, "DraviteLogs");
 		GameRegistry.registerBlock(DraviteLeaves, "DraviteLeaves");
 		GameRegistry.registerBlock(DraviteOre, "DraviteOre");
+		GameRegistry.registerBlock(DravitePortal, "DravitePortal");
 		
 		GameRegistry.registerBlock(AzuriteGrass, "AzuriteGrass");
-		//GameRegistry.registerBlock(AzuriteDirt, "AzuriteDirt");
+		GameRegistry.registerBlock(AzuriteDirt, "AzuriteDirt");
 		GameRegistry.registerBlock(AzuriteLogs, "AzuriteLogs");
 		GameRegistry.registerBlock(AzuriteLeaves, "AzuriteLeaves");
 		GameRegistry.registerBlock(AzuriteOre, "AzuriteOre");
@@ -142,7 +148,7 @@ public class TwilightBlockHelper
 		GameRegistry.registerBlock(MythrilOre, "MythrilOre");
 		
 		GameRegistry.registerBlock(AugiteGrass, "AugiteGrass");
-		//GameRegistry.registerBlock(AugiteDirt, "AugiteDirt");
+		GameRegistry.registerBlock(AugiteDirt, "AugiteDirt");
 		GameRegistry.registerBlock(AugiteLogs, "AugiteLogs");
 		GameRegistry.registerBlock(AugiteLeaves, "AugiteLeaves");
 		GameRegistry.registerBlock(AugiteOre, "AugiteOre");

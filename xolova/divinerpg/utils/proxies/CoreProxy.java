@@ -6,7 +6,6 @@ import net.minecraft.entity.Entity;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import xolova.divinerpg.DivineRPG;
-import xolova.divinerpg.DivineRPGIceika;
 import xolova.divinerpg.entities.core.EntityDamageProjectile;
 import xolova.divinerpg.utils.helpers.DimensionRegistry;
 import xolova.divinerpg.utils.helpers.gui.GuiHelper;

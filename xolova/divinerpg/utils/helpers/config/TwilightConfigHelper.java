@@ -46,6 +46,8 @@ public class TwilightConfigHelper
 	public static int AugiteOreID;
 	public static int AugiteBlockID;
 	
+	public static int divineRockID;
+	
 	public static void initConfig(FMLPreInitializationEvent event)
 	{
 		File file = new File(event.getModConfigurationDirectory(), "DivineRPGTwilight.cfg");
@@ -54,6 +56,7 @@ public class TwilightConfigHelper
 		config.load();
 		
 		TwilightStoneID = config.getBlock("Twilight Stone", 189).getInt();
+		divineRockID = config.getBlock("DivineRock", 642).getInt();
 		
 		DraviteGrassID = config.getBlock("Dravite Grass", 190).getInt();
 		DraviteDirtID = config.getBlock("Dravite Dirt", 191).getInt();

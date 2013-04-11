@@ -6,7 +6,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
-import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 
 public class ItemPurpleSeeds extends Item
 {

@@ -1,11 +1,10 @@
 package xolova.divinerpg.blocks;
 
-import xolova.divinerpg.utils.helpers.IconHelper;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import xolova.divinerpg.utils.helpers.IconHelper;
 
 public class BlockDivineRPGFlower extends BlockFlower
 {

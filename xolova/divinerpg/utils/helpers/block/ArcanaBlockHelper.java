@@ -153,7 +153,7 @@ public class ArcanaBlockHelper
 		
 		heatTraps = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsID, 110).setUnlocalizedName("heatTraps");
 		heatTrapsOn = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsOnID, 109).setUnlocalizedName("heatTrapsOn");
-		blockOfLight = new BlockOfLight(ArcanaConfigHelper.heatTrapsOnID).setUnlocalizedName("heatTrapsOn");
+		blockOfLight = new BlockOfLight(ArcanaConfigHelper.blockOfLightID).setUnlocalizedName("blockOfLight");
 		
 		arcaniumOre = new BlockDungeonBlock(ArcanaConfigHelper.arcaniumOreID).setUnlocalizedName("arcaniumOre");
 		oreDoor1 = new BlockOreDoor(ArcanaConfigHelper.oreDoor1ID).setUnlocalizedName("oreDoor1");
@@ -173,7 +173,7 @@ public class ArcanaBlockHelper
 		whitefireFurnace = new BlockWhitefireFurnace(ArcanaConfigHelper.whitefireFurnaceID, 0, false).setUnlocalizedName("whitefireFurnace");
 		demonFurnace = new BlockDemonFurnace(ArcanaConfigHelper.demonFurnaceID).setUnlocalizedName("demonFurnace");
 		
-		moltenFurnace = new BlockMoltenFurnace(ArcanaConfigHelper.moltenFurnaceID, true).setUnlocalizedName("moltenFurnace");
+		moltenFurnaceOn = new BlockMoltenFurnace(ArcanaConfigHelper.moltenFurnaceOnID, true).setUnlocalizedName("moltenFurnace");
 		greenlightFurnace = new BlockGreenlightFurnace(ArcanaConfigHelper.greenlightFurnaceID, true).setUnlocalizedName("greenlightFurnace");
 		oceanfireFurnace = new BlockOceanfireFurnace(ArcanaConfigHelper.oceanfireFurnaceID, true).setUnlocalizedName("oceanfireFurnace");
 		moonlightFurnace = new BlockMoonlightFurnace(ArcanaConfigHelper.moonlightFurnaceID, true).setUnlocalizedName("moonlightFurnace");

@@ -489,7 +489,6 @@ public class ChunkProviderTwilight implements IChunkProvider
 
 	@Override
 	public boolean unloadQueuedChunks() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }

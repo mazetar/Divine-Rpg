@@ -1,5 +1,6 @@
 package xolova.divinerpg.items;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
@@ -17,6 +18,7 @@ public class ItemDivineRPG extends Item implements IItemDivineRPG
 	
 	public ItemDivineRPG(int id, int sprite) {
 		super(id - 256);
+		GameRegistry.registerItem(this, null);
 		this.index = sprite;
 	}
 	

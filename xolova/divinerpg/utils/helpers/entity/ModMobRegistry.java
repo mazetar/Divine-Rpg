@@ -2,10 +2,6 @@ package xolova.divinerpg.utils.helpers.entity;
 
 import net.minecraft.entity.Entity;
 import xolova.divinerpg.DivineRPGIceika;
-import xolova.divinerpg.entities.iceika.projectile.EntityFrostclawProjectile;
-import xolova.divinerpg.entities.iceika.projectile.EntityIce;
-import xolova.divinerpg.entities.iceika.projectile.EntityNoteProjectile;
-import xolova.divinerpg.entities.overworld.projectile.EntityCrabclawProjectile;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
 public class ModMobRegistry 

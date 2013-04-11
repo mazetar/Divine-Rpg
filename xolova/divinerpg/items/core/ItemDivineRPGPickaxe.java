@@ -4,7 +4,6 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.util.Icon;
-import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.IconHelper;
 
 public class ItemDivineRPGPickaxe extends ItemPickaxe

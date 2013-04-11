@@ -140,7 +140,7 @@ public class TwilightItemHelper
 		LanguageRegistry.addName(DraviteChest, "Dravite Chestplate");
 		LanguageRegistry.addName(DraviteSlicer, "Dravite Slicer");
 		LanguageRegistry.addName(DraviteSoul, "Dravite Soul");
-		LanguageRegistry.addName(DraviteSparkles, "Dravite Sparkles");
+		/*LanguageRegistry.addName(DraviteSparkles, "Dravite Sparkles");
 
 		LanguageRegistry.addName(AzuriteGem, "Azurite Gem");
 		LanguageRegistry.addName(AzuriteChunk, "Azurite Chunk");
@@ -209,6 +209,6 @@ public class TwilightItemHelper
 		LanguageRegistry.addName(magicMeat, "Magic Meat");
 		LanguageRegistry.addName(empoweredMeat, "Empowered Meat");
 		LanguageRegistry.addName(enrichedMagicMeat, "Enriched Magic Meat");
-		LanguageRegistry.addName(cookedEmpoweredMeat, "Cooked Empowered Meat");
+		LanguageRegistry.addName(cookedEmpoweredMeat, "Cooked Empowered Meat");*/
 	}
 }

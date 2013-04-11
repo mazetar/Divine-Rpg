@@ -6,7 +6,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
 public class ItemOrbOfLight extends Item

@@ -5,7 +5,6 @@ import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

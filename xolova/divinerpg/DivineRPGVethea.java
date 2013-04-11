@@ -1,9 +1,7 @@
 package xolova.divinerpg;
 
 import xolova.divinerpg.utils.Utils;
-import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 import xolova.divinerpg.utils.helpers.config.VetheaConfigHelper;
-import xolova.divinerpg.utils.helpers.item.VetheaItemHelper;
 import xolova.divinerpg.utils.proxies.VetheaProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;

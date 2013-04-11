@@ -3,23 +3,13 @@ package xolova.divinerpg.utils.helpers;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.DimensionManager;
-import xolova.divinerpg.worldgen.arcana.BiomeGenArcana;
-import xolova.divinerpg.worldgen.arcana.WorldProviderArcana;
 import xolova.divinerpg.worldgen.augite.BiomeGenDense;
-import xolova.divinerpg.worldgen.augite.WorldProviderDense;
 import xolova.divinerpg.worldgen.azurite.BiomeGenAzurite;
 import xolova.divinerpg.worldgen.azurite.WorldProviderAzurite;
 import xolova.divinerpg.worldgen.dravite.BiomeGenSerenity;
 import xolova.divinerpg.worldgen.dravite.WorldProviderTwilight;
-import xolova.divinerpg.worldgen.iceika.BiomeGenIceikaMountians;
-import xolova.divinerpg.worldgen.iceika.WorldProviderIceika;
 import xolova.divinerpg.worldgen.mythril.BiomeGenMythil;
-import xolova.divinerpg.worldgen.mythril.WorldProviderMythil;
 import xolova.divinerpg.worldgen.uvite.BiomeGenEnergy;
-import xolova.divinerpg.worldgen.uvite.WorldProviderEnergy;
-import xolova.divinerpg.worldgen.vethea.BiomeGenArksiane;
-import xolova.divinerpg.worldgen.vethea.BiomeGenHeliosis;
-import xolova.divinerpg.worldgen.vethea.WorldProviderVethea;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class DimensionRegistry 

@@ -5,7 +5,6 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.blocks.vethea.BlockDreamLamp;
 import xolova.divinerpg.client.gui.GuiDreamLamp;
 import xolova.divinerpg.utils.helpers.item.VetheaItemHelper;

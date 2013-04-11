@@ -10,6 +10,7 @@ import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.iceika.projectile.EntityFractiteProjectile;
 import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 
 public class EntityFractite extends EntityMob

@@ -58,6 +58,7 @@ public class OverworldBlockHelper
 
 	public static Block lapisLamp;
 	public static Block slimeLight;
+	public static Block slimeLightOn;
 	public static Block redstoneOreLamp;
 	public static Block goldLamp;
 	public static Block diamondLamp;
@@ -83,6 +84,10 @@ public class OverworldBlockHelper
 	public static Block fenceLighton;
 	public static Block fenceLightoff1;
 	public static Block fenceLighton1;
+	public static Block redstoneBlock;
+	public static Block redstoneBlockOn;
+	public static Block purpleGlowBoneTree;
+	public static Block pinkGlowBoneTree;
 	
 	public static void init()
 	{

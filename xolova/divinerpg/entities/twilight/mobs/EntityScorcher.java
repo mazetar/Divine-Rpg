@@ -9,6 +9,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.entities.twilight.projectile.EntityPurpleFireball;
+import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 
 public class EntityScorcher extends EntityMob
 {
@@ -242,7 +243,7 @@ public class EntityScorcher extends EntityMob
 
             for (int var4 = 0; var4 < var3; ++var4)
             {
-                this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
+                this.dropItem(OverworldItemHelper.purpleFire.itemID, 1);
             }
         }
     }

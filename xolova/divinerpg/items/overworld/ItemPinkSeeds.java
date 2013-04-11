@@ -5,7 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 
 public class ItemPinkSeeds extends Item
 {
@@ -37,7 +37,7 @@ public class ItemPinkSeeds extends Item
             if (var11 == this.soilBlockID && var3.isAirBlock(var4, var5 + 1, var6))
             {
                 var3.setBlock(var4, var5 + 1, var6, this.blockType);
-                var3.setBlockWithNotify(var4, var5 + 2, var6, DivineRPGTwilight.DivineRPGTwilight.blockID);
+                var3.setBlock(var4, var5 + 2, var6, OverworldBlockHelper.pinkGlowBoneTree.blockID);
                 --var1.stackSize;
                 return true;
             }

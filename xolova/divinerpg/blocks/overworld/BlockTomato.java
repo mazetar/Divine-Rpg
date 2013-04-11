@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.blocks.BlockDivineRPGFlower;
-import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
+import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 
 public class BlockTomato extends BlockDivineRPGFlower
 {
@@ -132,14 +132,14 @@ public class BlockTomato extends BlockDivineRPGFlower
 
         if (var5 == 6)
         {
-            var7.add(new ItemStack(TwilightItemHelper.tomato));
+            var7.add(new ItemStack(OverworldItemHelper.tomato));
         }
 
         for (int var8 = 0; var8 < 3 + var6; ++var8)
         {
             if (var1.rand.nextInt(15) <= var5)
             {
-                var7.add(new ItemStack(TwilightItemHelper.tomatoSeeds));
+                var7.add(new ItemStack(OverworldItemHelper.tomatoSeeds));
             }
         }
 
@@ -151,7 +151,7 @@ public class BlockTomato extends BlockDivineRPGFlower
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return var1 == 6 ? TwilightItemHelper.DivineRPGTwilight.itemID : -1;
+        return var1 == 6 ? OverworldItemHelper.tomato.itemID : -1;
     }
 
     public int setBlockBounds(Random var1)

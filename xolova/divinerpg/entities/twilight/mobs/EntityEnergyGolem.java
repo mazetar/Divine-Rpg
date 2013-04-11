@@ -109,14 +109,14 @@ public class EntityEnergyGolem extends EntityZombie
 
         for (var4 = 0; var4 < var3; ++var4)
         {
-            this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
+            this.dropItem(TwilightItemHelper.pinkSeeds.itemID, 1);
         }
 
         for (var4 = 0; var4 < var3; ++var4)
         {
-            this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
+            this.dropItem(TwilightItemHelper.purpleSeeds.itemID, 1);
         }
-        this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
+        this.dropItem(TwilightItemHelper.enrichedMagicMeat.itemID, 1);
     }
 
     /**

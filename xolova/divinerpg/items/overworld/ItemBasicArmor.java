@@ -13,7 +13,7 @@ import net.minecraftforge.common.ISpecialArmor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBasicArmor extends ItemArmor implements IArmorTextureProvider, ISpecialArmor
+public class ItemBasicArmor extends ItemArmor implements ISpecialArmor
 {
     public ItemBasicArmor(int var1, EnumArmorMaterial var2, int var3, int var4)
     {
@@ -32,10 +32,10 @@ public class ItemBasicArmor extends ItemArmor implements IArmorTextureProvider, 
 
     public void damageArmor(EntityLiving var1, ItemStack var2, DamageSource var3, int var4, int var5) 
     {
-    	if (this.durability == -1)
-    		return;
-    	else
-    		super.damageArmor();
+    	//if (this.durability == -1)
+    	//	return;
+    	//else
+    	//	super.damageArmor();
     }
 
     @Override
@@ -51,10 +51,4 @@ public class ItemBasicArmor extends ItemArmor implements IArmorTextureProvider, 
         par3List.add("Full Set: Allows Flight");
         par3List.add("Full set: Fall Damage Protection");
     }
-
-	@Override
-	public String getArmorTextureFile(ItemStack itemstack) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

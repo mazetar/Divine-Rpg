@@ -5,7 +5,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -109,7 +109,7 @@ public class BlockOreDoor extends BlockDoor
             }
             else
             {
-                if (itemstack.itemID == DivineRPGTwilight.DivineRPGTwilight.itemID)
+                if (itemstack.itemID == ArcanaItemHelper.key2.itemID)
                 {
                     if (!par5EntityPlayer.capabilities.isCreativeMode && --itemstack.stackSize <= 0)
                     {

@@ -10,10 +10,7 @@ import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class IceikaProxyClient extends IceikaProxy {
 
-	@Override
-	public void entityRegistry() {
-		super.entityRegistry();
-		
+	public void entityRegistry() {		
 		RenderBlock renderBlock = new RenderBlock();
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityNoteProjectile.class, new RenderEmpty());

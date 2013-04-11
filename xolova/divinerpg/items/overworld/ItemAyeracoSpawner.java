@@ -13,6 +13,7 @@ import xolova.divinerpg.entities.bosses.EntityAyeracoGreen;
 import xolova.divinerpg.entities.bosses.EntityAyeracoPurple;
 import xolova.divinerpg.entities.bosses.EntityAyeracoRed;
 import xolova.divinerpg.entities.bosses.EntityAyeracoYellow;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 
 public class ItemAyeracoSpawner extends Item
 {
@@ -114,12 +115,12 @@ public class ItemAyeracoSpawner extends Item
     	var4.setLocationAndAngles(par3 - 5, par4 + 4, par5 - 12, par1.rand.nextFloat() * 360.0F, 0.0F);
     	var5.setLocationAndAngles(par3 - 8, par4 + 4, par5 + 8, par1.rand.nextFloat() * 360.0F, 0.0F);
     	
-    	par1.setBlockWithNotify((int)(par3 + 15), (int)(par4),(int)(par5), DivineRPGTwilight.DivineRPGTwilight.blockID);
-    	par1.setBlockWithNotify((int)(par3 + 8), (int)(par4),(int)(par5 + 8), DivineRPGTwilight.DivineRPGTwilight.blockID);
-    	par1.setBlockWithNotify((int)(par3 + 5), (int)(par4),(int)(par5 - 12), DivineRPGTwilight.DivineRPGTwilight.blockID);
-    	par1.setBlockWithNotify((int)(par3 - 5), (int)(par4),(int)(par5 - 12), DivineRPGTwilight.DivineRPGTwilight.blockID);
-    	par1.setBlockWithNotify((int)(par3 - 8), (int)(par4),(int)(par5 + 8), DivineRPGTwilight.DivineRPGTwilight.blockID);
-
+    	par1.setBlock((int)(par3 + 15), (int)(par4),(int)(par5), OverworldBlockHelper.ayeracoBeamBlue.blockID);
+    	par1.setBlock((int)(par3 + 8), (int)(par4),(int)(par5 + 8), OverworldBlockHelper.ayeracoBeamGreen.blockID);
+    	par1.setBlock((int)(par3 + 5), (int)(par4),(int)(par5 - 12), OverworldBlockHelper.ayeracoBeamRed.blockID);
+    	par1.setBlock((int)(par3 - 5), (int)(par4),(int)(par5 - 12), OverworldBlockHelper.ayeracoBeamYellow.blockID);
+    	par1.setBlock((int)(par3 - 8), (int)(par4),(int)(par5 + 8), OverworldBlockHelper.ayeracoBeamPurple.blockID);
+    	
     	var1.initOthers(var2, var3, var4, var5);
     	var2.initOthers(var1, var3, var4, var5);
     	var3.initOthers(var1, var2, var4, var5);

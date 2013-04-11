@@ -7,7 +7,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.entities.overworld.projectile.EntityBatWing;
+import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -26,7 +27,7 @@ public class ItemScythe extends Item
     {
         boolean var7 = var3.capabilities.isCreativeMode;
 
-        if (var7 || var3.inventory.hasItem(DivineRPGTwilight.DivineRPGTwilight.itemID))
+        if (var7 || var3.inventory.hasItem(OverworldItemHelper.scythe.itemID))
         {
             var2.playSoundEffect(var3.posX, var3.posY, var3.posZ, "xolovon.deeplaugh", 5.0F, 1.0F);
             EntityBatWing var8 = new EntityBatWing(var2, var3);
@@ -35,10 +36,10 @@ public class ItemScythe extends Item
             	&& var3.inventory.armorInventory[2] != null
             	&& var3.inventory.armorInventory[3] != null)
             {
-            	if (var3.inventory.armorInventory[0].itemID == DivineRPGTwilight.DivineRPGTwilight.itemID
-                    	&& var3.inventory.armorInventory[1].itemID == DivineRPGTwilight.DivineRPGTwilight.itemID
-                    	&& var3.inventory.armorInventory[2].itemID == DivineRPGTwilight.DivineRPGTwilight.itemID
-                    	&& var3.inventory.armorInventory[3].itemID == DivineRPGTwilight.DivineRPGTwilight.itemID)
+            	if (var3.inventory.armorInventory[0].itemID == OverworldItemHelper.jackOManBoots.itemID
+                    	&& var3.inventory.armorInventory[1].itemID == OverworldItemHelper.jackOManLegs.itemID
+                    	&& var3.inventory.armorInventory[2].itemID == OverworldItemHelper.jackOManBody.itemID
+                    	&& var3.inventory.armorInventory[3].itemID == OverworldItemHelper.jackOManHead.itemID)
             	{
             		var8.damage *= 4;
             	}

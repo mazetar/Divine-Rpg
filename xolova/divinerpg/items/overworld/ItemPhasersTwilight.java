@@ -2,6 +2,9 @@ package xolova.divinerpg.items.overworld;
 
 import java.util.List;
 
+import xolova.divinerpg.entities.overworld.projectile.EntityStromBall;
+import xolova.divinerpg.entities.overworld.projectile.EntityTwilightPhaser;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;

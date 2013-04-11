@@ -5,9 +5,9 @@ import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.entities.overworld.projectile.EntityCorruptShot;
 import xolova.divinerpg.items.ItemDivineRPG;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -43,7 +43,7 @@ public class ItemCorruptCannon extends ItemDivineRPG
     	
         if (!var2.isRemote)
         {
-           if (var5 || var3.inventory.hasItem(DivineRPGTwilight.DivineRPGTwilight.itemID))
+           if (var5 || var3.inventory.hasItem(TwilightItemHelper.corruptBullet.itemID))
            {
         	   if (this.firetick == this.firemax && this.firemax != 0)
                {
@@ -54,7 +54,7 @@ public class ItemCorruptCannon extends ItemDivineRPG
                	var2.playSoundAtEntity(var3, this.firesound, 1.0F, 1.0F);
                	if (!var5)
                	{
-               		var3.inventory.consumeInventoryItem(DivineRPGTwilight.DivineRPGTwilight.itemID);
+               		var3.inventory.consumeInventoryItem(TwilightItemHelper.corruptBullet.itemID);
                	}
                	this.firetick = 0;
                }

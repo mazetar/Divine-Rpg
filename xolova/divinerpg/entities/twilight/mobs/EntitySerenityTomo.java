@@ -10,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 
 public class EntitySerenityTomo extends EntityMob
@@ -168,7 +167,7 @@ public class EntitySerenityTomo extends EntityMob
     protected void dropFewItems(boolean var1, int var2)
     {
         super.dropFewItems(var1, var2);
-        this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
+        this.dropItem(TwilightItemHelper.empoweredMeat.itemID, 1);
     }
 
     protected void dropRareDrop(int var1)

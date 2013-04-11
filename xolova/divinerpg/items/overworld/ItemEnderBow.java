@@ -3,6 +3,8 @@ package xolova.divinerpg.items.overworld;
 import java.util.List;
 import java.util.Random;
 
+import xolova.divinerpg.entities.overworld.projectile.EntityEnderArrow;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;

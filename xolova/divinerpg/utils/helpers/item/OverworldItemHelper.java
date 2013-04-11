@@ -1,7 +1,6 @@
 package xolova.divinerpg.utils.helpers.item;
 
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
 public class OverworldItemHelper 
 {
@@ -33,4 +32,16 @@ public class OverworldItemHelper
 	public static Item enderSwordBlue;
 	
 	public static Item bluefirebow;
+	public static Item rupee;
+	public static Item tomato;
+	public static Item tomatoSeeds;
+	public static Item purpleFire;
+	public static Item jackOManBoots;
+	public static Item jackOManLegs;
+	public static Item jackOManBody;
+	public static Item jackOManHead;
+	public static Item scythe;
+	public static Item purpleGlowBoneTree;
+	public static Item sharkAnchor;
+	public static Item healingStone;
 }

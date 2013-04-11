@@ -2,6 +2,8 @@ package xolova.divinerpg.items.overworld;
 
 import java.util.List;
 
+import xolova.divinerpg.entities.overworld.projectile.EntityPoisonArrow;
+
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;

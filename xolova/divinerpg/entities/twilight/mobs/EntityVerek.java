@@ -16,7 +16,7 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 
 public class EntityVerek extends EntityMob
 {
@@ -109,7 +109,7 @@ public class EntityVerek extends EntityMob
      */
     protected int getDropItemId()
     {
-        return DivineRPGTwilight.DivineRPGTwilight.itemID;
+        return TwilightItemHelper.AzuriteSoul.itemID;
     }
 
     /**
@@ -129,8 +129,8 @@ public class EntityVerek extends EntityMob
 
         for (int var4 = 0; var4 < var3; ++var4)
         {
-            this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
+            this.dropItem(TwilightItemHelper.AzuriteSoul.itemID, 1);
         }
-        this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
+        this.dropItem(TwilightItemHelper.magicMeat.itemID, 1);
     }
 }

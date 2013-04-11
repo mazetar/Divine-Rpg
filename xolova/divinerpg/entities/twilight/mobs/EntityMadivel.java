@@ -106,7 +106,7 @@ public class EntityMadivel extends EntityMob
     protected void dropFewItems(boolean var1, int var2)
     {
         super.dropFewItems(var1, var2);
-        this.dropItem(TwilightItemHelper.empoweredMeatRaw.itemID, 1);
+        this.dropItem(TwilightItemHelper.empoweredMeat.itemID, 1);
     }
 
     /**

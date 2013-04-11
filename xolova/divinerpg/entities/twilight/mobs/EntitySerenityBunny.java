@@ -27,7 +27,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.pathfinding.PathEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -342,7 +341,7 @@ public class EntitySerenityBunny extends EntityTameable
         if (!this.isTamed())
         {
         	super.dropFewItems(var1, var2);
-            this.dropItem(DivineRPGTwilight.DivineRPGTwilight.itemID, 1);
+            this.dropItem(TwilightItemHelper.empoweredMeat.itemID, 1);
         }
     }
 

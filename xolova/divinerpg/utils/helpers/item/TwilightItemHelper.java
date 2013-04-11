@@ -1,11 +1,11 @@
 package xolova.divinerpg.utils.helpers.item;
 
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.items.overworld.ItemTwilightClock;
 import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class TwilightItemHelper 
 {
@@ -24,7 +24,8 @@ public class TwilightItemHelper
 	public static Item DraviteSlicer;
 	public static Item DraviteSoul;
 	public static Item DraviteSparkles;
-
+	public static Item DraviteShards;
+	
 	public static Item AzuriteGem;
 	public static Item AzuriteChunk;
 	public static Item AzuriteFragments;
@@ -88,6 +89,7 @@ public class TwilightItemHelper
 	
 	public static Item FuryArrow;
 	public static Item TwilightClock;
+	public static Item TwilightBow;
 	public static Item blueSeeds;
 	public static Item magicMeat;
 	public static Item empoweredMeat;
@@ -95,8 +97,11 @@ public class TwilightItemHelper
 	public static Item cookedEmpoweredMeat;
 	public static Item purpleSeeds;
 	public static Item pinkSeeds;
+	public static Item corruptBullet;
 	
 	public static TwilightConfigHelper x;
+	public static Item fireThrower;
+	public static Item infernoBow;
 
 	public static void init()
 	{

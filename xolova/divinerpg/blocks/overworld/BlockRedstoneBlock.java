@@ -7,11 +7,27 @@ import java.util.Random;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 
 public class BlockRedstoneBlock extends BlockDivineRPG
 {
+	public class RedstoneUpdateInfo
+	{
+	    public int x;
+	    public int y;
+	    public int z;
+	    public long updateTime;
+
+	    public RedstoneUpdateInfo(int var1, int var2, int var3, long var4)
+	    {
+	        this.x = var1;
+	        this.y = var2;
+	        this.z = var3;
+	        this.updateTime = var4;
+	    }
+	}
+	
     private boolean torchActive = false;
     private static List torchUpdates = new ArrayList();
 
@@ -129,7 +145,7 @@ public class BlockRedstoneBlock extends BlockDivineRPG
         {
             if (var6)
             {
-                var1.setBlockAndMetadataWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID, var1.getBlockMetadata(var2, var3, var4));
+                var1.setBlock(var2, var3, var4, OverworldBlockHelper.redstoneBlock.blockID, var1.getBlockMetadata(var2, var3, var4), 3);
 
                 if (this.checkForBurnout(var1, var2, var3, var4, true))
                 {
@@ -147,9 +163,10 @@ public class BlockRedstoneBlock extends BlockDivineRPG
         }
         else if (!var6 && !this.checkForBurnout(var1, var2, var3, var4, false))
         {
-            var1.setBlockAndMetadataWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID, var1.getBlockMetadata(var2, var3, var4));
+            var1.setBlock(var2, var3, var4, OverworldBlockHelper.redstoneBlockOn.blockID, var1.getBlockMetadata(var2, var3, var4), 3);
         }
     }
+
 
     /**
      * Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are

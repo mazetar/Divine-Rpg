@@ -15,12 +15,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.entities.ai.EntityAIEnergyArrowAttack;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 
 public class EntityTwilightArcher extends EntityMob
 {
-    private static final ItemStack defaultHeldItem = new ItemStack(DivineRPGTwilight.energyBow, 1);
+    private static final ItemStack defaultHeldItem = new ItemStack(TwilightItemHelper.UviteBow, 1);
 
     public EntityTwilightArcher(World var1)
     {

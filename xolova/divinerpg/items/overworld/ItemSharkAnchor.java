@@ -8,7 +8,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.entities.overworld.projectile.EntityAnchor;
+import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -32,7 +33,7 @@ public class ItemSharkAnchor extends Item
     {
         boolean var4 = var3.capabilities.isCreativeMode;
 
-        if (!var4 && !var3.inventory.hasItem(DivineRPGTwilight.DivineRPGTwilight.itemID))
+        if (!var4 && !var3.inventory.hasItem(OverworldItemHelper.sharkAnchor.itemID))
         {
             return var1;
         }

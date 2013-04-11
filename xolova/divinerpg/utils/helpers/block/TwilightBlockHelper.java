@@ -73,6 +73,8 @@ public class TwilightBlockHelper
 	public static BlockAugitePortal AugitePortal;
 	
 	public static Block superEnchantMentTable;
+	public static Block pinkGlowBoneTreeBase;
+	public static Block purpleGlowBoneTreeBase;
 	
 	public static void initBlocks()
 	{

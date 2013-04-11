@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
-import xolova.divinerpg.DivineRPGTwilight;
 import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 
 public class BlockRupeeOre extends BlockDivineRPG
 {
@@ -19,7 +19,7 @@ public class BlockRupeeOre extends BlockDivineRPG
      */
     public int damageDropped(int var1)
     {
-        return DivineRPGTwilight.DivineRPGTwilight.itemID;
+        return OverworldItemHelper.rupee.itemID;
     }
 
     public void addCreativeItems(ArrayList var1)

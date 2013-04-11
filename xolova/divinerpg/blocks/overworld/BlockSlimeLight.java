@@ -4,8 +4,9 @@ import java.util.Random;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 
 public class BlockSlimeLight extends BlockDivineRPG
 {
@@ -15,6 +16,7 @@ public class BlockSlimeLight extends BlockDivineRPG
     {
         super(var1, var3, Material.glass);
         this.powered = var2;
+
         if (var2)
         {
             this.setLightValue(1.0F);
@@ -34,7 +36,7 @@ public class BlockSlimeLight extends BlockDivineRPG
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+                var1.setBlock(var2, var3, var4, OverworldBlockHelper.slimeLightOn.blockID);
             }
         }
     }
@@ -53,7 +55,7 @@ public class BlockSlimeLight extends BlockDivineRPG
             }
             else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
             {
-                var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+                var1.setBlock(var2, var3, var4, OverworldBlockHelper.slimeLightOn.blockID);
             }
         }
     }
@@ -65,7 +67,7 @@ public class BlockSlimeLight extends BlockDivineRPG
     {
         if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
         {
-            var1.setBlockWithNotify(var2, var3, var4, DivineRPGTwilight.DivineRPGTwilight.blockID);
+            var1.setBlock(var2, var3, var4, OverworldBlockHelper.slimeLight.blockID);
         }
     }
 
@@ -74,6 +76,6 @@ public class BlockSlimeLight extends BlockDivineRPG
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-        return DivineRPGTwilight.DivineRPGTwilight.blockID;
+        return OverworldBlockHelper.slimeLight.blockID;
     }
 }

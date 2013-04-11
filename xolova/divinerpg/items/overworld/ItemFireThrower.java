@@ -6,7 +6,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPGTwilight;
+import xolova.divinerpg.entities.overworld.projectile.EntityFireThrower;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -26,7 +27,7 @@ public class ItemFireThrower extends Item
     {
         boolean var4 = var3.capabilities.isCreativeMode;
 
-        if (!var4 && !var3.inventory.hasItem(DivineRPGTwilight.DivineRPGTwilight.itemID))
+        if (!var4 && !var3.inventory.hasItem(TwilightItemHelper.fireThrower.itemID))
         {
             return var1;
         }

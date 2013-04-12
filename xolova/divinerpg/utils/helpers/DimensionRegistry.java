@@ -80,8 +80,7 @@ public class DimensionRegistry
         //arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
         //IceikaMountains = new BiomeGenIceikaMountians(iceikaBiomeID);
         //arksianeBiome = new BiomeGenArksiane(arksianeBiomeID);
-        //heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);
-        
+        //heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);        
 	}
 	
 	public static void InitDimensionsConfig(FMLPreInitializationEvent event, Configuration config)

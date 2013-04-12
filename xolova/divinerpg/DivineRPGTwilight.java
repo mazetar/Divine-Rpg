@@ -6,7 +6,6 @@ import xolova.divinerpg.utils.Utils;
 import xolova.divinerpg.utils.helpers.DimensionRegistry;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
-import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import xolova.divinerpg.utils.proxies.TwilightProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -52,7 +51,7 @@ public class DivineRPGTwilight
 		
 		TwilightBlockHelper.initBlocks();
 		
-		TwilightItemHelper.init();
+		//TwilightItemHelper.init();
 		
 		DimensionRegistry.InitDimensions();
 	}

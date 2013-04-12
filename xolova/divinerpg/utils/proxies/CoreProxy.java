@@ -2,11 +2,9 @@ package xolova.divinerpg.utils.proxies;
 
 import java.io.File;
 
-import net.minecraft.entity.Entity;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import xolova.divinerpg.DivineRPG;
-import xolova.divinerpg.entities.core.EntityDamageProjectile;
 import xolova.divinerpg.utils.helpers.DimensionRegistry;
 import xolova.divinerpg.utils.helpers.entity.OverworldEntityHelper;
 import xolova.divinerpg.utils.helpers.gui.GuiHelper;
@@ -15,7 +13,6 @@ import xolova.divinerpg.utils.helpers.misc.core.ServerTickHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
 
@@ -26,7 +23,7 @@ public class CoreProxy {
 	public void init(FMLInitializationEvent event) {
 		entityRegistry();
 		tickRegistry();
-		eventRegistry();
+		//eventRegistry();
 		
 		NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new GuiHelper());
 	}

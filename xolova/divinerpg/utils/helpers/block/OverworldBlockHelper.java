@@ -1,8 +1,7 @@
 package xolova.divinerpg.utils.helpers.block;
 
 import net.minecraft.block.Block;
-import xolova.divinerpg.blocks.overworld.BlockBlueFire;
-import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
 public class OverworldBlockHelper 
 {
@@ -92,7 +91,89 @@ public class OverworldBlockHelper
 	
 	public static void init()
 	{
-        blueFire = new BlockBlueFire(578).setUnlocalizedName("fire").setCreativeTab(CreativeTabHelper.tabBlocks);
+		blueFire = new BlockDivineRPG(0, 0, null);
+		divineRock = new BlockDivineRPG(0, 0, null);
+		
+		acceleraunch = new BlockDivineRPG(0, 0, null);
+		acceleron = new BlockDivineRPG(0, 0, null);
+		
+		aeStatue = new BlockDivineRPG(0, 0, null);
+		ayeracoStatue = new BlockDivineRPG(0, 0, null);
+		kosStatue = new BlockDivineRPG(0, 0, null);
+		watcherStatue = new BlockDivineRPG(0, 0, null);
+		
+		ayeracoBeamBlue = new BlockDivineRPG(0, 0, null);
+		ayeracoBeamGreen = new BlockDivineRPG(0, 0, null);
+		ayeracoBeamPurple = new BlockDivineRPG(0, 0, null);
+		ayeracoBeamRed = new BlockDivineRPG(0, 0, null);
+		ayeracoBeamYellow = new BlockDivineRPG(0, 0, null);
+
+		colouredBricks = new BlockDivineRPG(0, 0, null);
+		colouredGlass = new BlockDivineRPG(0, 0, null);
+		colouredPanes = new BlockDivineRPG(0, 0, null);
+		colouredTorch = new BlockDivineRPG(0, 0, null);
+		dyeBlocks = new BlockDivineRPG(0, 0, null);
+		miniBricks = new BlockDivineRPG(0, 0, null);
+		steel = new BlockDivineRPG(0, 0, null);
+		mobPumpkins = new BlockDivineRPG(0, 0, null);
+		
+		darkBridge = new BlockDivineRPG(0, 0, null);
+		lightBridge = new BlockDivineRPG(0, 0, null);
+		glowingStairs = new BlockDivineRPG(0, 0, null);
+		lightFenceBlue = new BlockDivineRPG(0, 0, null);
+		lightFenceRed = new BlockDivineRPG(0, 0, null);
+		skeletonChest = new BlockDivineRPG(0, 0, null);
+
+		elevantium = new BlockDivineRPG(0, 0, null);
+		darkPressurePlate = new BlockDivineRPG(0, 0, null);
+		
+		tarStill = new BlockDivineRPG(0, 0, null);
+		tarFlowing = new BlockDivineRPG(0, 0, null);
+
+		bloodGem = new BlockDivineRPG(0, 0, null);
+		neteriteOre = new BlockDivineRPG(0, 0, null);
+		spikeBlock = new BlockDivineRPG(0, 0, null);
+		hotSpikes = new BlockDivineRPG(0, 0, null);
+		
+		lightstone = new BlockDivineRPG(0, 0, null);
+		rainbowWool = new BlockDivineRPG(0, 0, null);
+
+		rupeeOre = new BlockDivineRPG(0, 0, null);
+		arlemiteOre = new BlockDivineRPG(0, 0, null);
+		realmiteOre = new BlockDivineRPG(0, 0, null);
+
+		lapisLamp = new BlockDivineRPG(0, 0, null);
+		slimeLight = new BlockDivineRPG(0, 0, null);
+		slimeLightOn = new BlockDivineRPG(0, 0, null);
+		redstoneOreLamp = new BlockDivineRPG(0, 0, null);
+		goldLamp = new BlockDivineRPG(0, 0, null);
+		diamondLamp = new BlockDivineRPG(0, 0, null);
+		realmiteLamp = new BlockDivineRPG(0, 0, null);
+		netheriteLamp = new BlockDivineRPG(0, 0, null);
+		arlemiteLamp = new BlockDivineRPG(0, 0, null);
+		rupeeLamp = new BlockDivineRPG(0, 0, null);
+		icestoneLamp = new BlockDivineRPG(0, 0, null);
+		moltenstoneLamp = new BlockDivineRPG(0, 0, null);
+		junglestoneLamp = new BlockDivineRPG(0, 0, null);
+		enderstoneLamp = new BlockDivineRPG(0, 0, null);
+		bluefireLamp = new BlockDivineRPG(0, 0, null);
+		divinestoneLamp = new BlockDivineRPG(0, 0, null);
+		milkyLamp = new BlockDivineRPG(0, 0, null);
+		blazicLamp = new BlockDivineRPG(0, 0, null);
+		aquaLamp = new BlockDivineRPG(0, 0, null);
+		lavaLamp = new BlockDivineRPG(0, 0, null);
+		enderLamp = new BlockDivineRPG(0, 0, null);
+		krakenLamp = new BlockDivineRPG(0, 0, null);
+		drakenLamp = new BlockDivineRPG(0, 0, null);
+		
+		fenceLightoff = new BlockDivineRPG(0, 0, null);
+		fenceLighton = new BlockDivineRPG(0, 0, null);
+		fenceLightoff1 = new BlockDivineRPG(0, 0, null);
+		fenceLighton1 = new BlockDivineRPG(0, 0, null);
+		redstoneBlock = new BlockDivineRPG(0, 0, null);
+		redstoneBlockOn = new BlockDivineRPG(0, 0, null);
+		purpleGlowBoneTree = new BlockDivineRPG(0, 0, null);
+		pinkGlowBoneTree = new BlockDivineRPG(0, 0, null);
 	}
 	
 	public static void registerBlocks()

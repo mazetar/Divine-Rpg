@@ -376,9 +376,4 @@ public class BlockFlowingTar extends BlockFluid
             var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, this.tickRate(var1));
         }
     }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon.png";
-    }
 }

@@ -8,6 +8,89 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class OverworldConfigHelper 
 {
 	//-==-BLOCKS-==-//
+	public static int blueFireID;
+	public static int divineRockID;
+	
+	public static int acceleraunchID;
+	public static int acceleronID;
+	
+	public static int aeStatueID;
+	public static int ayeracoStatueID;
+	public static int kosStatueID;
+	public static int watcherStatueID;
+	
+	public static int ayeracoBeamBlueID;
+	public static int ayeracoBeamGreenID;
+	public static int ayeracoBeamPurpleID;
+	public static int ayeracoBeamRedID;
+	public static int ayeracoBeamYellowID;
+
+	public static int colouredBricksID;
+	public static int colouredGlassID;
+	public static int colouredPanesID;
+	public static int colouredTorchID;
+	public static int dyeBlocksID;
+	public static int miniBricksID;
+	public static int steelID;
+	public static int mobPumpkinsID;
+	
+	public static int darkBridgeID;
+	public static int lightBridgeID;
+	public static int glowingStairsID;
+	public static int lightFenceBlueID;
+	public static int lightFenceRedID;
+	public static int skeletonChestID;
+
+	public static int elevantiumID;
+	public static int darkPressurePlateID;
+	
+	public static int tarStillID;
+	public static int tarFlowingID;
+
+	public static int bloodGemID;
+	public static int neteriteOreID;
+	public static int spikeBlockID;
+	public static int hotSpikesID;
+	
+	public static int lightstoneID;
+	public static int rainbowWoolID;
+
+	public static int rupeeOreID;
+	public static int arlemiteOreID;
+	public static int realmiteOreID;
+
+	public static int lapisLampID;
+	public static int slimeLightID;
+	public static int slimeLightOnID;
+	public static int redstoneOreLampID;
+	public static int goldLampID;
+	public static int diamondLampID;
+	public static int realmiteLampID;
+	public static int netheriteLampID;
+	public static int arlemiteLampID;
+	public static int rupeeLampID;
+	public static int icestoneLampID;
+	public static int moltenstoneLampID;
+	public static int junglestoneLampID;
+	public static int enderstoneLampID;
+	public static int bluefireLampID;
+	public static int divinestoneLampID;
+	public static int milkyLampID;
+	public static int blazicLampID;
+	public static int aquaLampID;
+	public static int lavaLampID;
+	public static int enderLampID;
+	public static int krakenLampID;
+	public static int drakenLampID;
+	
+	public static int fenceLightoffID;
+	public static int fenceLightonID;
+	public static int fenceLightoff1ID;
+	public static int fenceLighton1ID;
+	public static int redstoneBlockID;
+	public static int redstoneBlockOnID;
+	public static int purpleGlowBoneTreeID;
+	public static int pinkGlowBoneTreeID;
 	
 	public static void init(FMLPreInitializationEvent event)
 	{
@@ -19,6 +102,93 @@ public class OverworldConfigHelper
 		InitConfigItems(config);
 		
 		config.save();
+	}
+	
+	public static void InitConfigBlocks(Configuration config)
+	{
+		blueFireID = config.getBlock("blueFireID", 0).getInt();
+		divineRockID = config.getBlock("divineRockID", 0).getInt();
+		
+		acceleraunchID = config.getBlock("acceleraunchID", 0).getInt();
+		acceleronID = config.getBlock("acceleronID", 0).getInt();
+		
+		aeStatueID = config.getBlock("aeStatueID", 0).getInt();
+		ayeracoStatueID = config.getBlock("ayeracoStatueID", 0).getInt();
+		kosStatueID = config.getBlock("kosStatueID", 0).getInt();
+		watcherStatueID = config.getBlock("watcherStatueID", 0).getInt();
+		
+		ayeracoBeamBlueID = config.getBlock("ayeracoBeamBlueID", 0).getInt();
+		ayeracoBeamGreenID = config.getBlock("ayeracoBeamGreenID", 0).getInt();
+		ayeracoBeamPurpleID = config.getBlock("ayeracoBeamPurpleID", 0).getInt();
+		ayeracoBeamRedID = config.getBlock("ayeracoBeamRedID", 0).getInt();
+		ayeracoBeamYellowID = config.getBlock("ayeracoBeamYellowID", 0).getInt();
+
+		colouredBricksID = config.getBlock("colouredBricksID", 0).getInt();
+		colouredGlassID = config.getBlock("colouredGlassID", 0).getInt();
+		colouredPanesID = config.getBlock("colouredPanesID", 0).getInt();
+		colouredTorchID = config.getBlock("colouredTorchID", 0).getInt();
+		dyeBlocksID = config.getBlock("dyeBlocksID", 0).getInt();
+		miniBricksID = config.getBlock("miniBricksID", 0).getInt();
+		steelID = config.getBlock("steelID", 0).getInt();
+		mobPumpkinsID = config.getBlock("mobPumpkinsID", 0).getInt();
+		
+		darkBridgeID = config.getBlock("darkBridgeID", 0).getInt();
+		lightBridgeID = config.getBlock("lightBridgeID", 0).getInt();
+		glowingStairsID = config.getBlock("glowingStairsID", 0).getInt();
+		lightFenceBlueID = config.getBlock("lightFenceBlueID", 0).getInt();
+		lightFenceRedID = config.getBlock("lightFenceRedID", 0).getInt();
+		skeletonChestID = config.getBlock("skeletonChestID", 0).getInt();
+
+		elevantiumID = config.getBlock("elevantiumID", 0).getInt();
+		darkPressurePlateID = config.getBlock("darkPressurePlateID", 0).getInt();
+		
+		tarStillID = config.getBlock("tarStillID", 0).getInt();
+		tarFlowingID = config.getBlock("tarFlowingID", 0).getInt();
+
+		bloodGemID = config.getBlock("bloodGemID", 0).getInt();
+		neteriteOreID = config.getBlock("neteriteOreID", 0).getInt();
+		spikeBlockID = config.getBlock("spikeBlockID", 0).getInt();
+		hotSpikesID = config.getBlock("hotSpikesID", 0).getInt();
+		
+		lightstoneID = config.getBlock("lightstoneID", 0).getInt();
+		rainbowWoolID = config.getBlock("rainbowWoolID", 0).getInt();
+
+		rupeeOreID = config.getBlock("", 0).getInt();
+		arlemiteOreID = config.getBlock("", 0).getInt();
+		realmiteOreID = config.getBlock("", 0).getInt();
+
+		lapisLampID = config.getBlock("", 0).getInt();
+		slimeLightID = config.getBlock("", 0).getInt();
+		slimeLightOnID = config.getBlock("", 0).getInt();
+		redstoneOreLampID = config.getBlock("", 0).getInt();
+		goldLampID = config.getBlock("", 0).getInt();
+		diamondLampID = config.getBlock("", 0).getInt();
+		realmiteLampID = config.getBlock("", 0).getInt();
+		netheriteLampID = config.getBlock("", 0).getInt();
+		arlemiteLampID = config.getBlock("", 0).getInt();
+		rupeeLampID = config.getBlock("", 0).getInt();
+		icestoneLampID = config.getBlock("", 0).getInt();
+		moltenstoneLampID = config.getBlock("", 0).getInt();
+		junglestoneLampID = config.getBlock("", 0).getInt();
+		enderstoneLampID = config.getBlock("", 0).getInt();
+		bluefireLampID = config.getBlock("", 0).getInt();
+		divinestoneLampID = config.getBlock("", 0).getInt();
+		milkyLampID = config.getBlock("", 0).getInt();
+		blazicLampID = config.getBlock("", 0).getInt();
+		aquaLampID = config.getBlock("", 0).getInt();
+		lavaLampID = config.getBlock("", 0).getInt();
+		enderLampID = config.getBlock("", 0).getInt();
+		krakenLampID = config.getBlock("", 0).getInt();
+		drakenLampID = config.getBlock("", 0).getInt();
+		
+		fenceLightoffID = config.getBlock("", 0).getInt();
+		fenceLightonID = config.getBlock("", 0).getInt();
+		fenceLightoff1ID = config.getBlock("", 0).getInt();
+		fenceLighton1ID = config.getBlock("", 0).getInt();
+		redstoneBlockID = config.getBlock("", 0).getInt();
+		redstoneBlockOnID = config.getBlock("", 0).getInt();
+		purpleGlowBoneTreeID = config.getBlock("", 0).getInt();
+		pinkGlowBoneTreeID = config.getBlock("", 0).getInt();
 	}
 	
 	public static int bedrockMaulID;

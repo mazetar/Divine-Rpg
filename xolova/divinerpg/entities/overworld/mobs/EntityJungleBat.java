@@ -283,6 +283,6 @@ public class EntityJungleBat extends EntityMob
      */
     protected int getDropItemId()
     {
-        return OverworldItemHelper.greenShard.itemID;
+        return OverworldItemHelper.jungleShard.itemID;
     }
 }

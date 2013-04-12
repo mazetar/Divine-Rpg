@@ -13,6 +13,6 @@ public class CreativeTabTool extends CreativeTabs
 
     public ItemStack getIconItemStack()
     {
-        return new ItemStack(Item.pickaxeSteel/*OverworldItemHelper.divinePickaxe*/, 1, 0);
+        return new ItemStack(Item.pickaxeIron/*OverworldItemHelper.divinePickaxe*/, 1, 0);
     }
 }

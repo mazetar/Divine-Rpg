@@ -2,6 +2,9 @@ package xolova.divinerpg.items.overworld;
 
 import java.util.Random;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import xolova.divinerpg.utils.helpers.IconHelper;
@@ -21,8 +24,10 @@ public class ItemTwilightClock extends Item
     }
     
     @Override
-    public void updateIcons(IconRegister par1IconRegister) {
-    	iconIndex = IconHelper.icons[2][(6 * 16) + 5];
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister par1IconRegister)
+    {
+    	this.itemIcon = IconHelper.icons[2][(6 * 16) + 5];
     }
     
     /*public boolean onItemUse(ItemStack var1, EntityPlayer var2, World var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10)

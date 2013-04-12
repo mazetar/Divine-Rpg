@@ -452,7 +452,7 @@ public class EntityWorkshopMerchant extends EntityVillager implements INpc, IMer
     {
         if (var2.nextFloat() < var3)
         {
-            var0.add(new MerchantRecipe(getRandomSizedStack(var1, var2), OverworldItemHelper.yellowShard));
+            var0.add(new MerchantRecipe(getRandomSizedStack(var1, var2), OverworldItemHelper.divineShard));
         }
     }
 

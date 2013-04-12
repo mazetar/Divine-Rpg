@@ -267,7 +267,7 @@ public class EntityAyeraco extends EntityMob implements IBossDisplayData
 	 */
 	protected void dropFewItems(boolean var1, int var2)
 	{
-		this.dropItem(OverworldItemHelper.yellowShard.itemID, 2 + this.rand.nextInt(2));
+		this.dropItem(OverworldItemHelper.divineShard.itemID, 2 + this.rand.nextInt(2));
 		if (this.rand.nextInt(100) < 2)
 		{
 			switch (this.rand.nextInt(2))

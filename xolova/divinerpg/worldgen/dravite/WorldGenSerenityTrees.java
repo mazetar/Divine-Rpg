@@ -199,7 +199,7 @@ public class WorldGenSerenityTrees extends WorldGenerator
                                     if (var2.nextInt(4 - var10) == 0)
                                     {
                                         var20 = var2.nextInt(3);
-                                        this.setBlockAndMetadata(var1, var3 + Direction.offsetX[Direction.footInvisibleFaceRemap[var11]], var4 + var6 - 5 + var10, var5 + Direction.offsetZ[Direction.footInvisibleFaceRemap[var11]], Block.cocoaPlant.blockID, var20 << 2 | var11);
+                                        this.setBlockAndMetadata(var1, var3 + Direction.offsetX[Direction.rotateOpposite[var11]], var4 + var6 - 5 + var10, var5 + Direction.offsetZ[Direction.rotateOpposite[var11]], Block.cocoaPlant.blockID, var20 << 2 | var11);
                                     }
                                 }
                             }

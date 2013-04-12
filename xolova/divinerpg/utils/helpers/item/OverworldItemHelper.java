@@ -9,7 +9,6 @@ public class OverworldItemHelper
 {
 	public static Item bedrockMaul;
 	public static Item soundOfMusic;
-	public static Item greenShard;
 	public static Item shuriken;
 	public static Item namkormira;
 	public static Item serenadeStriker;
@@ -20,9 +19,25 @@ public class OverworldItemHelper
 	public static Item frostSword;
 	public static Item divinesword;
 	public static Item sandSlash;
-	public static Item blueShard;
+	public static Item watcherEye;
+	public static Item infernoBow;
+	public static Item bluefirebow;
+
+	public static Item enderShard;
+	public static Item jungleShard;
 	public static Item iceShard;
-	public static Item yellowShard;
+	public static Item divineShard;
+	public static Item moltenShard;
+	public static Item corruptedShards;
+
+	public static Item enderStone;
+	public static Item jungleStone;
+	public static Item iceStone;
+	public static Item divineStone;
+	public static Item moltenStone;
+	public static Item shadowStone;
+	public static Item corruptedStone;
+	public static Item blueFireStone;
 	
 	public static Item divineHelm;
 	public static Item divineBody;
@@ -34,23 +49,32 @@ public class OverworldItemHelper
 	public static Item enderSwordGreen;
 	public static Item enderSwordRed;
 	public static Item enderSwordBlue;
-	
-	public static Item bluefirebow;
+
 	public static Item rupee;
+	public static Item arlemite;
+	public static Item realmiteIngot;
+	public static Item netheriteBar;
+	public static Item hellStoneIngot;
+
+	public static Item sharkFin;
+	public static Item whaleFin;
 	public static Item tomato;
 	public static Item tomatoSeeds;
+	public static Item whiteMushroom;
+	public static Item glowingGem;
 	public static Item purpleFire;
 	public static Item jackOManBoots;
 	public static Item jackOManLegs;
 	public static Item jackOManBody;
 	public static Item jackOManHead;
 	public static Item scythe;
+	public static Item purpleGlowBoneTree;
 	public static Item sharkAnchor;
 	public static Item healingStone;
 	
 	public static OverworldConfigHelper x;
 	
-	public static void InitItemsOverworld()
+	public static Item crabClaw;
 	{
 		bedrockMaul = new ItemDivineRPG(x.bedrockMaulID);
 		soundOfMusic = new ItemDivineRPG(x.soundOfMusicID);

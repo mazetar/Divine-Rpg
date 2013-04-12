@@ -257,7 +257,7 @@ public class BlockAzuriteVines extends Block implements IShearable
 
             var9 = var1.getBlockMetadata(var2, var3, var4);
             var10 = var1.rand.nextInt(6);
-            var11 = Direction.vineGrowth[var10];
+            var11 = Direction.facingToDirection[var10];
             int var12;
             int var13;
 

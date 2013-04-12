@@ -146,7 +146,7 @@ public class EntityConstructor extends EntityZombie
     @Override
     public boolean getCanSpawnHere()
     {
-        return this.posY < 40.0D && this.worldObj.checkIfAABBIsClear(this.boundingBox) && this.worldObj.getCollidingBoundingBoxes(this, this.boundingBox).isEmpty();
+        return this.posY < 40.0D && this.worldObj.checkNoEntityCollision(this.boundingBox) && this.worldObj.getCollidingBoundingBoxes(this, this.boundingBox).isEmpty();
     }
     
     public boolean attackEntityAsMob(Entity par1Entity)

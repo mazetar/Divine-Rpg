@@ -2,6 +2,9 @@ package xolova.divinerpg.items.core;
 
 import java.util.List;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
@@ -61,7 +64,9 @@ public class ItemDivineRPGArmor extends ItemArmor implements IArmorTextureProvid
 	}
 	
 	@Override
-	public void updateIcons(IconRegister par1IconRegister) {
+	@SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister par1IconRegister)
+    {
 		IconHelper.massLoadItemSprites(par1IconRegister);
 	}
 	

@@ -1,4 +1,4 @@
-package xolova.divinerpg.entities.twilight.projectile;
+package xolova.divinerpg.entities.overworld.projectile;
 
 import java.util.List;
 

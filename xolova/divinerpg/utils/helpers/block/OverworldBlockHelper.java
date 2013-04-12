@@ -15,6 +15,7 @@ public class OverworldBlockHelper
 	public static Block aeStatue;
 	public static Block ayeracoStatue;
 	public static Block kosStatue;
+	public static Block watcherStatue;
 	
 	public static Block ayeracoBeamBlue;
 	public static Block ayeracoBeamGreen;

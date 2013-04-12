@@ -316,7 +316,7 @@ public class BlockFlowingTar extends BlockFluid
     {
         int var5 = var1.getBlockId(var2, var3, var4);
 
-        if (var5 != Block.doorWood.blockID && var5 != Block.doorSteel.blockID && var5 != Block.signPost.blockID && var5 != Block.ladder.blockID && var5 != Block.reed.blockID)
+        if (var5 != Block.doorWood.blockID && var5 != Block.doorIron.blockID && var5 != Block.signPost.blockID && var5 != Block.ladder.blockID && var5 != Block.reed.blockID)
         {
             if (var5 == 0)
             {

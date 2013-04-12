@@ -1,5 +1,7 @@
 package xolova.divinerpg.items.iceika;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.ItemBucketMilk;
 import xolova.divinerpg.utils.helpers.IconHelper;
@@ -11,8 +13,10 @@ public class ItemEggNog extends ItemBucketMilk {
 	}
 	
 	@Override
-	public void updateIcons(IconRegister par1IconRegister) {
-		iconIndex = IconHelper.icons[3][(12 * 16 + 7)];
+	@SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister par1IconRegister)
+    {
+		this.itemIcon = IconHelper.icons[3][(12 * 16 + 7)];
 	}
 
 }

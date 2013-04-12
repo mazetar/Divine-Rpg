@@ -43,8 +43,10 @@ public class BlockDivineRPG extends Block implements IBlockDivineRPG {
 	}
 	
 	@Override
-	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
-		return IconHelper.icons[getSheet(par1, par2)][getIndex(par1, par2)];
+	@SideOnly(Side.CLIENT)
+	public Icon getBlockTexture(IBlockAccess block, int par2, int par3, int par4, int par5)
+    {
+		return IconHelper.icons[getSheet(par5, block.getBlockMetadata(par2, par3, par4))][getIndex(par5, block.getBlockMetadata(par2, par3, par4))];
 	}
 	
 	public int getTextureIndexFromSideAndMetadata(int par1, int par2) {

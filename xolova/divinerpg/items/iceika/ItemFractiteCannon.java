@@ -26,14 +26,14 @@ public class ItemFractiteCannon extends Item {
     {
     	boolean var4 = var3.capabilities.isCreativeMode;
 
-        if (!var4 && !var3.inventory.hasItem(OverworldItemHelper.blueShard.itemID))
+        if (!var4 && !var3.inventory.hasItem(OverworldItemHelper.iceShard.itemID))
         {
             return var1;
         }
         else
         {
             var2.playSoundAtEntity(var3, "xolovon.FractiteCannon", 1.0F, 1.0F);
-            var3.inventory.consumeInventoryItem(OverworldItemHelper.blueShard.itemID);
+            var3.inventory.consumeInventoryItem(OverworldItemHelper.iceShard.itemID);
             var2.spawnEntityInWorld(new EntityFractite(var2, var3));
             var1.damageItem(1, var3);
         }

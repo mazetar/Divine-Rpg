@@ -2,6 +2,9 @@ package xolova.divinerpg.items.core;
 
 import java.util.List;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -118,7 +121,9 @@ public class ItemDivineRPGBow extends ItemBow implements IItemDivineRPG {
 	}
 	
 	@Override
-	public void updateIcons(IconRegister par1IconRegister) {
+	@SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister par1IconRegister)
+    {
 		IconHelper.massLoadItemSprites(par1IconRegister);
 	}
 	

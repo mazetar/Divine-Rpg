@@ -121,7 +121,7 @@ public class TwilightItemHelper
 		DraviteSoul = new ItemDivineRPG(x.DraviteSoulID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
 		
 		TwilightClock = new ItemTwilightClock(5330).setCreativeTab(CreativeTabs.tabTools);
-		addNames();
+		//addNames();
 	}
 	
 	public static void addNames()

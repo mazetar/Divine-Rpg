@@ -3,9 +3,9 @@ package xolova.divinerpg.entities.ai;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.world.World;
+import xolova.divinerpg.entities.overworld.projectile.EntityMamormeterShot;
 import xolova.divinerpg.entities.twilight.projectile.EntityEnergyArrow;
 import xolova.divinerpg.entities.twilight.projectile.EntityFuryArrow;
-import xolova.divinerpg.entities.twilight.projectile.EntityMamormeterShot;
 
 public class EntityAIEnergyArrowAttack extends EntityAIBase
 {

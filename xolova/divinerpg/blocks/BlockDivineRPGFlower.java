@@ -1,9 +1,12 @@
 package xolova.divinerpg.blocks;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
+import net.minecraft.world.IBlockAccess;
 import xolova.divinerpg.utils.helpers.IconHelper;
 
 public class BlockDivineRPGFlower extends BlockFlower
@@ -42,8 +45,10 @@ public class BlockDivineRPGFlower extends BlockFlower
 	}
 	
 	@Override
-	public Icon getBlockTextureFromSideAndMetadata(int par1, int par2) {
-		return IconHelper.icons[getSheet(par1, par2)][getIndex(par1, par2)];
+	@SideOnly(Side.CLIENT)
+	public Icon getBlockTexture(IBlockAccess block, int par2, int par3, int par4, int par5)
+    {
+		return IconHelper.icons[getSheet(par5, block.getBlockMetadata(par2, par3, par4))][getIndex(par5, block.getBlockMetadata(par2, par3, par4))];
 	}
 	
 	public int getTextureIndexFromSideAndMetadata(int par1, int par2) {

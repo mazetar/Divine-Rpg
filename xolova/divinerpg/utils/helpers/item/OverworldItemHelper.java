@@ -71,14 +71,27 @@ public class OverworldItemHelper
 	public static Item purpleGlowBoneTree;
 	public static Item sharkAnchor;
 	public static Item healingStone;
+	public static Item purpleBlaze;
+	public static Item furyFire;
+
+	public static Item skeleManHead;
+	public static Item skeleManBody;
+	public static Item skeleManLegs;
+	public static Item skeleManBoots;
+	public static Item grimReaperHead;
+	public static Item grimReaperBody;
+	public static Item grimReaperLegs;
+	public static Item grimReaperBoots;
+
+	public static Item crabClaw;
+	public static Item aquaticPellets;
 	
 	public static OverworldConfigHelper x;
 	
-	public static Item crabClaw;
 	{
 		bedrockMaul = new ItemDivineRPG(x.bedrockMaulID);
 		soundOfMusic = new ItemDivineRPG(x.soundOfMusicID);
-		greenShard = new ItemDivineRPG(x.greenShardID);
+		jungleShard = new ItemDivineRPG(x.greenShardID);
 		shuriken = new ItemDivineRPG(x.shurikenID);
 		namkormira = new ItemDivineRPG(x.namkormiraID);
 		serenadeStriker = new ItemDivineRPG(x.serenadeStrikerID);
@@ -89,9 +102,8 @@ public class OverworldItemHelper
 		frostSword = new ItemDivineRPG(x.frostSwordID);
 		divinesword = new ItemDivineRPG(x.divineswordID);
 		sandSlash = new ItemDivineRPG(x.sandSlashID);
-		blueShard = new ItemDivineRPG(x.blueShardID);
 		iceShard = new ItemDivineRPG(x.iceShardID);
-		yellowShard = new ItemDivineRPG(x.yellowShardID);
+		divineShard = new ItemDivineRPG(x.yellowShardID);
 		
 		divineHelm = new ItemDivineRPG(x.divineHelmID);
 		divineBody = new ItemDivineRPG(x.divineBodyID);
@@ -122,7 +134,7 @@ public class OverworldItemHelper
 	{
 		LanguageRegistry.addName(bedrockMaul, "");
 		LanguageRegistry.addName(soundOfMusic, "");
-		LanguageRegistry.addName(greenShard, "");
+		LanguageRegistry.addName(jungleShard, "");
 		LanguageRegistry.addName(shuriken, "");
 		LanguageRegistry.addName(namkormira, "");
 		LanguageRegistry.addName(serenadeStriker, "");
@@ -133,9 +145,8 @@ public class OverworldItemHelper
 		LanguageRegistry.addName(frostSword, "");
 		LanguageRegistry.addName(divinesword, "");
 		LanguageRegistry.addName(sandSlash, "");
-		LanguageRegistry.addName(blueShard, "");
 		LanguageRegistry.addName(iceShard, "");
-		LanguageRegistry.addName(yellowShard, "");
+		LanguageRegistry.addName(divineShard, "");
 		
 		LanguageRegistry.addName(divineHelm, "");
 		LanguageRegistry.addName(divineBody, "");

@@ -48,6 +48,11 @@ public class ArcanaConfigHelper
 	public static int demonFurnaceID;
 	
 	public static int moltenFurnaceOnID;
+	public static int greenlightFurnaceOnID;
+	public static int oceanfireFurnaceOnID;
+	public static int moonlightFurnaceOnID;
+	public static int whitefireFurnaceOnID;
+	public static int demonFurnaceOnID;
 	
     public static int fireStockID;
     public static int fireStock2ID;
@@ -80,7 +85,7 @@ public class ArcanaConfigHelper
     
     public static void initConfig(FMLPreInitializationEvent event)
 	{
-		File file = new File(event.getModConfigurationDirectory(), "DivineRPGTwilight.cfg");
+		File file = new File(event.getModConfigurationDirectory(), "DivineRPGArcana.cfg");
 		Configuration config = new Configuration(file);
 		
 		config.load();
@@ -114,6 +119,7 @@ public class ArcanaConfigHelper
         arcanaPortalFrameID = config.getBlock("arcanaportalframe", 740).getInt();
         blockOfLightID = config.getBlock("airoflight", 751).getInt();
         arcanaSpawnerID = config.getBlock("arcanaspawner", 752).getInt();
+        fireStockID = config.getBlock("fireStock", 682).getInt();
         pinFlyID =  config.getBlock("pinFly", 683).getInt();
         hitchakID = config.getBlock("hitchak", 684).getInt();
         eucalyptusRootID = config.getBlock("eucalyptusRoot", 685).getInt();
@@ -283,6 +289,7 @@ public class ArcanaConfigHelper
         orbOfLightID = config.getItem("orboflight", 5498).getInt();
         weakArcanaPotionID = config.getItem("weakarcanapotion", 5504).getInt();
         strongArcanaPotionID = config.getItem("strongarcanapotion", 5505).getInt();
+        staffOfEnrichmentID = config.getItem("staffofenrichment", 5507).getInt();
         
 	}
 }

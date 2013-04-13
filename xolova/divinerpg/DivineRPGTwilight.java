@@ -39,21 +39,21 @@ public class DivineRPGTwilight
 	{
 		instance = this;
 		
-		proxy.preInit(event);
+		//proxy.preInit(event);
 		
-		TwilightConfigHelper.initConfig(event);
+		//TwilightConfigHelper.initConfig(event);
 	}
 	
 	@Init
 	public void Init(FMLInitializationEvent event)
 	{
-		proxy.init(event);
+		//proxy.init(event);
 		
-		TwilightBlockHelper.initBlocks();
+		//TwilightBlockHelper.initBlocks();
 		
 		//TwilightItemHelper.init();
 		
-		DimensionRegistry.InitDimensions();
+		//DimensionRegistry.InitDimensions();
 	}
 	
 	@PostInit

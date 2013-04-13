@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.entities.iceika.projectile.EntityFractite;
+import xolova.divinerpg.entities.iceika.projectile.EntityFractiteCannonShot;
 import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -34,7 +34,7 @@ public class ItemFractiteCannon extends Item {
         {
             var2.playSoundAtEntity(var3, "xolovon.FractiteCannon", 1.0F, 1.0F);
             var3.inventory.consumeInventoryItem(OverworldItemHelper.iceShard.itemID);
-            var2.spawnEntityInWorld(new EntityFractite(var2, var3));
+            var2.spawnEntityInWorld(new EntityFractiteCannonShot(var2, var3));
             var1.damageItem(1, var3);
         }
 

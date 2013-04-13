@@ -54,7 +54,7 @@ public class OverworldEntityHelper
         ModMobRegistry.registerModEntity(EntityFireArrow.class, "FireArrow", START_EID++, 64, 10, true);
         ModMobRegistry.registerModEntity(EntityExplosiveArrow.class, "ExplosiveArrow", START_EID++, 64, 10, true);
         ModMobRegistry.registerModEntity(EntityStromBall.class, "Stromball", START_EID++, 64, 10, true);
-        ModMobRegistry.registerModEntity(EntityMusicBall.class, "MusicBall", START_EID++, 64, 10, true);
+        ModMobRegistry.registerModEntity(EntityMusicBall.class, "MusicNote", START_EID++, 64, 10, true);
         ModMobRegistry.registerModEntity(EntityGhastTear.class, "GhastTear", START_EID++, 64, 10, true);
         ModMobRegistry.registerModEntity(EntityFrostShard.class, "FrostShard", START_EID++, 64, 10, true);
         ModMobRegistry.registerModEntity(EntityDeathSeranade.class, "KillSerande", START_EID++, 64, 10, true);
@@ -143,7 +143,7 @@ public class OverworldEntityHelper
         LanguageRegistry.instance().addStringLocalization("entity.divinerpg.PoisonArrow.name",  "Poison Arrow");
         LanguageRegistry.instance().addStringLocalization("entity.divinerpg.ExplodingArrow.name",  "Bluefire Bolt");
         LanguageRegistry.instance().addStringLocalization("entity.divinerpg.StromBall.name",  "Maelstrom");
-        LanguageRegistry.instance().addStringLocalization("entity.divinerpg.MusicBall.name",  "Musical Pain");
+        LanguageRegistry.instance().addStringLocalization("entity.divinerpg.MusicNote.name",  "Musical Pain");
         LanguageRegistry.instance().addStringLocalization("entity.divinerpg.GhastTear.name",  "Ghast Tear");
         LanguageRegistry.instance().addStringLocalization("entity.divinerpg.FrostShard.name",  "Frozen Bullet");
         LanguageRegistry.instance().addStringLocalization("entity.divinerpg.KillSerenade.name",  "A Power Above");

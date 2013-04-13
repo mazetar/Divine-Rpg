@@ -2,7 +2,9 @@ package xolova.divinerpg;
 
 import xolova.divinerpg.utils.Utils;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
+import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import xolova.divinerpg.utils.helpers.config.ArcanaConfigHelper;
+import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import xolova.divinerpg.utils.proxies.ArcanaProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -33,13 +35,13 @@ public class DivineRPGArcana
 	{
 		instance = this;
 		
-		ArcanaConfigHelper.initConfig(event);
+		//ArcanaConfigHelper.initConfig(event);
 	}
 	
 	@Init
 	public void Init(FMLInitializationEvent event)
 	{
-		GameRegistry.registerPlayerTracker(new ArcanaHelper());
+		//GameRegistry.registerPlayerTracker(new ArcanaHelper());
 		
 		//ArcanaBlockHelper.init();
 		

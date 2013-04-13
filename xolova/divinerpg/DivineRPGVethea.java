@@ -30,7 +30,7 @@ public class DivineRPGVethea
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		instance = this;
-		VetheaConfigHelper.initConfig(event);
+		//VetheaConfigHelper.initConfig(event);
 	}
 	
 	@Init

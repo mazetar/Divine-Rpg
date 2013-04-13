@@ -173,11 +173,12 @@ public class ArcanaBlockHelper
 		whitefireFurnace = new BlockWhitefireFurnace(ArcanaConfigHelper.whitefireFurnaceID, 0, false).setUnlocalizedName("whitefireFurnace");
 		demonFurnace = new BlockDemonFurnace(ArcanaConfigHelper.demonFurnaceID).setUnlocalizedName("demonFurnace");
 		
-		moltenFurnaceOn = new BlockMoltenFurnace(ArcanaConfigHelper.moltenFurnaceOnID, true).setUnlocalizedName("moltenFurnace");
-		greenlightFurnace = new BlockGreenlightFurnace(ArcanaConfigHelper.greenlightFurnaceID, true).setUnlocalizedName("greenlightFurnace");
-		oceanfireFurnace = new BlockOceanfireFurnace(ArcanaConfigHelper.oceanfireFurnaceID, true).setUnlocalizedName("oceanfireFurnace");
-		moonlightFurnace = new BlockMoonlightFurnace(ArcanaConfigHelper.moonlightFurnaceID, true).setUnlocalizedName("moonlightFurnace");
-		whitefireFurnace = new BlockWhitefireFurnace(ArcanaConfigHelper.whitefireFurnaceID, 0, true).setUnlocalizedName("whitefireFurnace");
+//		moltenFurnaceOn = new BlockMoltenFurnace(ArcanaConfigHelper.moltenFurnaceOnID, true).setUnlocalizedName("moltenFurnaceOn");
+//		greenlightFurnaceOn = new BlockGreenlightFurnace(ArcanaConfigHelper.greenlightFurnaceOnID, true).setUnlocalizedName("greenlightFurnaceOn");
+//		oceanfireFurnaceOn = new BlockOceanfireFurnace(ArcanaConfigHelper.oceanfireFurnaceOnID, true).setUnlocalizedName("oceanfireFurnaceOn");
+//		moonlightFurnaceOn = new BlockMoonlightFurnace(ArcanaConfigHelper.moonlightFurnaceOnID, true).setUnlocalizedName("moonlightFurnaceOn");
+//		whitefireFurnaceOn = new BlockWhitefireFurnace(ArcanaConfigHelper.whitefireFurnaceOnID, 0, true).setUnlocalizedName("whitefireFurnaceOn");
+//		demonFurnaceOn = new BlockDemonFurnace(ArcanaConfigHelper.demonFurnaceOnID).setUnlocalizedName("demonFurnaceOn");
 		
 		fireStock = new BlockFireStock(ArcanaConfigHelper.fireStockID, 44).setUnlocalizedName("fireStock");
 		fireStock2 = new BlockFireStock(ArcanaConfigHelper.fireStock2ID, 45).setUnlocalizedName("fireStock2");
@@ -208,7 +209,7 @@ public class ArcanaBlockHelper
 		arcanaSpawner4 = new BlockArcanaSpawner4(ArcanaConfigHelper.arcanaSpawner4ID).setUnlocalizedName("arcanaSpawner4");
 		arcanaSpawner5 = new BlockArcanaSpawner5(ArcanaConfigHelper.arcanaSpawner5ID).setUnlocalizedName("arcanaSpawner5");
 		
-		condenser = new BlockCondenser(0, 0, null);
+		//condenser = new BlockCondenser(0, 0, null);
 		
 		InitGameRegistryBlocks();
 		addNames();
@@ -242,9 +243,9 @@ public class ArcanaBlockHelper
         GameRegistry.registerBlock(oreDoor4, "oreDoor4");
         GameRegistry.registerBlock(heatTrapsOn, "heatTrapsOn");
         GameRegistry.registerBlock(arcaniteRails, "arcaniteRails");
-        GameRegistry.registerBlock(arcanaPortal, "arcanaPortal");
-        GameRegistry.registerBlock(arcanaPortalFrame, "arcanaPortalFrame");
-        GameRegistry.registerBlock(arcaniteDirt, "arcaniteDirt");
+        //GameRegistry.registerBlock(arcanaPortal, "arcanaPortal");
+        //GameRegistry.registerBlock(arcanaPortalFrame, "arcanaPortalFrame");
+        //GameRegistry.registerBlock(arcaniteDirt, "arcaniteDirt");
         GameRegistry.registerBlock(arcaniteGrass, "arcaniteGrass");
         GameRegistry.registerBlock(fireStock, "fireStock");
         GameRegistry.registerBlock(pinFly, "pinFly");
@@ -262,19 +263,19 @@ public class ArcanaBlockHelper
         GameRegistry.registerBlock(stainedGlass6, "stainedGlass6");
         GameRegistry.registerBlock(stainedGlass7, "stainedGlass7");
         GameRegistry.registerBlock(moltenFurnace, "moltenFurnace");
-        GameRegistry.registerBlock(moltenFurnaceOn, "moltenFurnaceOn");
+        //GameRegistry.registerBlock(moltenFurnaceOn, "moltenFurnaceOn");
         GameRegistry.registerTileEntity(TileEntityMoltenFurnace.class, "MoltenFurnaceTE");
         GameRegistry.registerBlock(greenlightFurnace, "greenlightFurnace");
-        GameRegistry.registerBlock(greenlightFurnaceOn, "greenlightFurnaceOn");
+        //GameRegistry.registerBlock(greenlightFurnaceOn, "greenlightFurnaceOn");
         GameRegistry.registerTileEntity(TileEntityGreenlightFurnace.class, "GreenlightFurnaceTE");
         GameRegistry.registerBlock(oceanfireFurnace, "oceanfireFurnace");
-        GameRegistry.registerBlock(oceanfireFurnaceOn, "oceanfireFurnaceOn");
+        //GameRegistry.registerBlock(oceanfireFurnaceOn, "oceanfireFurnaceOn");
         GameRegistry.registerTileEntity(TileEntityOceanfireFurnace.class, "OceanfireFurnaceTE");
         GameRegistry.registerBlock(moonlightFurnace, "moonlightFurnace");
-        GameRegistry.registerBlock(moonlightFurnaceOn, "moonlightFurnaceOn");
+//        GameRegistry.registerBlock(moonlightFurnaceOn, "moonlightFurnaceOn");
         GameRegistry.registerTileEntity(TileEntityMoonlightFurnace.class, "MoonlightFurnaceTE");
         GameRegistry.registerBlock(whitefireFurnace, "whitefireFurnace");
-        GameRegistry.registerBlock(whitefireFurnaceOn, "whitefireFurnaceOn");
+//        GameRegistry.registerBlock(whitefireFurnaceOn, "whitefireFurnaceOn");
         GameRegistry.registerTileEntity(TileEntityWhitefireFurnace.class, "WhitefireFurnaceTE");
         GameRegistry.registerBlock(demonFurnace, "demonFurnace");
         GameRegistry.registerTileEntity(TileEntityDemonFurnace.class, "DemonFurnaceTE");
@@ -286,7 +287,6 @@ public class ArcanaBlockHelper
         GameRegistry.registerBlock(arcanaSpawner3, "arcanaSpawner3");
         GameRegistry.registerBlock(arcanaSpawner4, "arcanaSpawner4");
         GameRegistry.registerBlock(arcanaSpawner5, "arcanaSpawner5");
-        GameRegistry.registerBlock(arcanaSpawner5, "arcanaSpawner5"); 
 	}
 	
 	public static void addNames()
@@ -314,9 +314,9 @@ public class ArcanaBlockHelper
         LanguageRegistry.addName(oreDoor4, "Locked Door");
         LanguageRegistry.addName(heatTrapsOn, "HeatTraps");
         LanguageRegistry.addName(arcaniteRails, "Arcanite Rails");
-        LanguageRegistry.addName(arcanaPortal, "Arcana Portal");
-        LanguageRegistry.addName(arcanaPortalFrame, "Arcana Portal Frame");
-        LanguageRegistry.addName(arcaniteDirt, "Arcanite Dirt");
+        //LanguageRegistry.addName(arcanaPortal, "Arcana Portal");
+        //LanguageRegistry.addName(arcanaPortalFrame, "Arcana Portal Frame");
+        //LanguageRegistry.addName(arcaniteDirt, "Arcanite Dirt");
         LanguageRegistry.addName(arcaniteGrass, "Arcanite Grass");
         LanguageRegistry.addName(fireStock, "Firestock");
         LanguageRegistry.addName(pinFly, "Pinfly");
@@ -334,15 +334,15 @@ public class ArcanaBlockHelper
         LanguageRegistry.addName(stainedGlass6, "Stained Glass");
         LanguageRegistry.addName(stainedGlass7, "Stained Glass");
         LanguageRegistry.addName(moltenFurnace, "Molten Furnace");
-        LanguageRegistry.addName(moltenFurnaceOn, "Molten Furnace");
+//        LanguageRegistry.addName(moltenFurnaceOn, "Molten Furnace");
         LanguageRegistry.addName(greenlightFurnace, "Greenlight Furnace");
-        LanguageRegistry.addName(greenlightFurnaceOn, "Greenlight Furnace");
+//        LanguageRegistry.addName(greenlightFurnaceOn, "Greenlight Furnace");
         LanguageRegistry.addName(oceanfireFurnace, "Oceanfire Furnace");
-        LanguageRegistry.addName(oceanfireFurnaceOn, "Oceanfire Furnace");
+//        LanguageRegistry.addName(oceanfireFurnaceOn, "Oceanfire Furnace");
         LanguageRegistry.addName(moonlightFurnace, "Moonlight Furnace");
-        LanguageRegistry.addName(moonlightFurnaceOn, "Moonlight Furnace");
+//        LanguageRegistry.addName(moonlightFurnaceOn, "Moonlight Furnace");
         LanguageRegistry.addName(whitefireFurnace, "Whitefire Furnace");
-        LanguageRegistry.addName(whitefireFurnaceOn, "Whitefire Furnace");
+//        LanguageRegistry.addName(whitefireFurnaceOn, "Whitefire Furnace");
         LanguageRegistry.addName(demonFurnace, "Demon Furnace");
         LanguageRegistry.addName(fireStock2, "Firestock");
         LanguageRegistry.addName(pinFly2, "Pinfly");
@@ -352,6 +352,5 @@ public class ArcanaBlockHelper
         LanguageRegistry.addName(arcanaSpawner3, "Dungeon Spawner");
         LanguageRegistry.addName(arcanaSpawner4, "Dungeon Spawner");
         LanguageRegistry.addName(arcanaSpawner5, "Dungeon Spawner");
-        LanguageRegistry.addName(arcanaSpawner5, "Dungeon Spawner"); 
 	}
 }

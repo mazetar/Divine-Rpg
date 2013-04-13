@@ -155,7 +155,7 @@ public class ArcanaItemHelper
         dungeonToken = new ItemDivineRPG(ArcanaConfigHelper.dungeonTokenID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("dungeonToken");
         collector = new ItemDivineRPG(ArcanaConfigHelper.collectorID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("collector");
         collectorFragments = new ItemDivineRPG (ArcanaConfigHelper.collectorFragmentsID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("collectorFragment");
-        tarBucket = new ItemTarBucket(ArcanaConfigHelper.tarBucketID, OverworldBlockHelper.tarStill.blockID).setUnlocalizedName("tarBucket").setCreativeTab(CreativeTabHelper.tabItems);
+        //tarBucket = new ItemTarBucket(ArcanaConfigHelper.tarBucketID, OverworldBlockHelper.tarStill.blockID).setUnlocalizedName("tarBucket").setCreativeTab(CreativeTabHelper.tabItems);
         arcaniumBucket = new ItemTarBucket(ArcanaConfigHelper.arcaniumBucketID, 0).setUnlocalizedName("arcaniumBucket").setCreativeTab(CreativeTabHelper.tabItems);
         staffOfEnrichment = new ItemStaffOfEnrichment(ArcanaConfigHelper.staffOfEnrichmentID).setUnlocalizedName("staffOfEnrichment").setCreativeTab(CreativeTabHelper.tabTool);
         
@@ -220,14 +220,14 @@ public class ArcanaItemHelper
 		LanguageRegistry.addName(grenadeLauncher, "La Vekor");
 		LanguageRegistry.addName(meriksMissile, "Merik's Missile");
 		LanguageRegistry.addName(enderScepter, "Ender Scepter");
-		LanguageRegistry.addName(orbOfLight, "Orb of Light");
+		//LanguageRegistry.addName(orbOfLight, "Orb of Light");
 		
 		LanguageRegistry.addName(dungeonToken, "Dungeon Token");
-		LanguageRegistry.addName(arcanium, "Arcanium");
-		LanguageRegistry.addName(weakArcanaPotion, "Weak Arcana Potion");
-		LanguageRegistry.addName(strongArcanaPotion, "Strong Arcana Potion");
+//		LanguageRegistry.addName(arcanium, "Arcanium");
+		//LanguageRegistry.addName(weakArcanaPotion, "Weak Arcana Potion");
+		//LanguageRegistry.addName(strongArcanaPotion, "Strong Arcana Potion");
 		LanguageRegistry.addName(arcaniumBucket, "Arcanium Bucket");
-		LanguageRegistry.addName(tarBucket, "Arcanium Bucket of Tar");
+		//LanguageRegistry.addName(tarBucket, "Arcanium Bucket of Tar");
 
 		LanguageRegistry.addName(collector, "Charge Collector");
 		LanguageRegistry.addName(collectorFragments, "Collector Fragment");

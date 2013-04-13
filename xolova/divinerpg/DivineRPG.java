@@ -28,13 +28,13 @@ public class DivineRPG
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		instance = this;
-		proxy.PreInit(event);
+		//proxy.PreInit(event);
 	}
 	
 	@Init
 	public void Init(FMLInitializationEvent event)
 	{
-		proxy.init(event);
+		//proxy.init(event);
 	}
 	
 	@PostInit

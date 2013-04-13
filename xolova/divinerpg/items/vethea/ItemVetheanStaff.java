@@ -3,15 +3,15 @@ package xolova.divinerpg.items.vethea;
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.entities.vethea.projectile.EntityBouncingProjectile;
+import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemVetheanStaff extends Item
+public class ItemVetheanStaff extends ItemDivineRPG
 {
     protected int damage;
     protected int cost;

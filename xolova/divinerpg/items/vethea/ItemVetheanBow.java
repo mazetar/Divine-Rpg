@@ -8,7 +8,6 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
@@ -19,11 +18,12 @@ import xolova.divinerpg.entities.vethea.projectile.EntityVetheanArrow;
 import xolova.divinerpg.entities.vethea.projectile.EntityVetheanArrow2;
 import xolova.divinerpg.entities.vethea.projectile.EntityVetheanWarArrow;
 import xolova.divinerpg.entities.vethea.projectile.EntityVetheanWrathArrow;
+import xolova.divinerpg.items.core.ItemDivineRPGBow;
 import xolova.divinerpg.utils.helpers.item.VetheaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemVetheanBow extends ItemBow
+public class ItemVetheanBow extends ItemDivineRPGBow
 {
 
 	private double damageModifier;
@@ -34,8 +34,8 @@ public class ItemVetheanBow extends ItemBow
     @SideOnly(Side.CLIENT)
     private Icon[] icons;
     
-	public ItemVetheanBow(int par1, double par2, Item par3, String par4) {
-		super(par1);
+	public ItemVetheanBow(int par1, double par2, Item par3, String par4, boolean unbreakable, int maxDamage, int damage) {
+		super(par1, maxDamage, damage, unbreakable);
 		this.damageModifier = par2;
 		this.arrow = par3;
 		this.setMaxDamage(-1);

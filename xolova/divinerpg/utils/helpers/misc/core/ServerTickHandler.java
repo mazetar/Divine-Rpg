@@ -49,7 +49,7 @@ public class ServerTickHandler implements ITickHandler
 
 	public void onTickInGame()
 	{
-		ArrayList var3 = (ArrayList)MinecraftServer.getServer().getConfigurationManager().playerEntityList;
+		/**ArrayList var3 = (ArrayList)MinecraftServer.getServer().getConfigurationManager().playerEntityList;
 		Iterator var4 = var3.iterator();
 
 		while (var4.hasNext())
@@ -155,12 +155,12 @@ public class ServerTickHandler implements ITickHandler
 					&& var5.getFoodStats().getFoodLevel() < 20)
 			{
 				var5.getFoodStats().addStats(1, 0);
-			}*/
+			}
 			if (bootID == IceikaItemHelper.santaHead.itemID
 					&& legID == IceikaItemHelper.santaLegs.itemID
 					&& chestID == IceikaItemHelper.santaBody.itemID
 					&& helmID == IceikaItemHelper.santaHead.itemID
-					/*&& var5.worldObj.provider.dimensionId == DivineRPG.iceikaID*/)
+					/*&& var5.worldObj.provider.dimensionId == DivineRPG.iceikaID)
 			{
 				var5.fallDistance = 0.0F;
 				if (var5.getFoodStats().getFoodLevel() < 20)
@@ -240,7 +240,7 @@ public class ServerTickHandler implements ITickHandler
 					&& helmID == DivineRPG.tormentedHelmetArcana.itemID)
 			{
 				var5.fallDistance = 0;
-			}*/
-		}
+			}
+		}*/
 	}
 }

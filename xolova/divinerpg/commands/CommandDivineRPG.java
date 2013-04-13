@@ -16,11 +16,11 @@ public class CommandDivineRPG extends CommandBase
 	@Override
 	public void processCommand(ICommandSender sender, String[] args) 
 	{
-		if(args[0].matches("Dravite"))
+		if(args[0].matches("Iceika"))
 		{
 			EntityPlayerMP playerMP = (EntityPlayerMP) sender;
 			if(playerMP.dimension == 0)
-				playerMP.travelToDimension(DimensionRegistry.DraviteID);
+				playerMP.travelToDimension(DimensionRegistry.IceikaID);
 			else
 				playerMP.travelToDimension(0);
 		}
@@ -28,7 +28,7 @@ public class CommandDivineRPG extends CommandBase
 		{
 			EntityPlayerMP playerMP = (EntityPlayerMP) sender;
 			if(playerMP.dimension == 0)
-				playerMP.travelToDimension(DimensionRegistry.DraviteID);
+				playerMP.travelToDimension(DimensionRegistry.AzuriteID);
 			else
 				playerMP.travelToDimension(0);
 		}

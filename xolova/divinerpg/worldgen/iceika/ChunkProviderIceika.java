@@ -481,8 +481,8 @@ public class ChunkProviderIceika implements IChunkProvider
             var21 = this.worldObj.getHeightValue(var19, var20);
             var17.generate(this.worldObj, this.rand, var19, var21, var20);
         }
-
-        var6.decorate(this.worldObj, this.rand, var4, var5);
+        
+        //var6.decorate(this.worldObj, this.rand, var4, var5);
         
         int k;
         int l;

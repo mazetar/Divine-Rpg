@@ -187,6 +187,7 @@ public class VetheaConfigHelper
     public static int ArcanaBarYoffset;
     
     public static int dreamPowderID;
+    public static int id = 5516;
     
     public static void initConfig(FMLPreInitializationEvent event)
 	{
@@ -195,8 +196,7 @@ public class VetheaConfigHelper
 		
 		config.load();
 		
-		int id = 5516;
-        teakerDiskID = config.getItem("TeakerDisk", id++).getInt();
+		teakerDiskID = config.getItem("TeakerDisk", id++).getInt();
         amthirmisDiskID = config.getItem("amthirmisDisk", id++).getInt();
         darvenDiskID = config.getItem("darvenDisk", id++).getInt();
         cermileDiskID = config.getItem("cermileDisk", id++).getInt();

@@ -16,6 +16,7 @@ import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.WorldGenLakes;
+import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import xolova.divinerpg.worldgen.dravite.WorldGenTwilightMineable;
 
@@ -488,7 +489,6 @@ public class ChunkProviderAzurite implements IChunkProvider
 
 	@Override
 	public boolean unloadQueuedChunks() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }

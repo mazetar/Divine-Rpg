@@ -1,11 +1,11 @@
 package xolova.divinerpg.items.vethea;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.items.ItemDivineRPG;
 
-public class ItemSpinebackChunk extends Item
+public class ItemSpinebackChunk extends ItemDivineRPG
 {
 
 	public ItemSpinebackChunk(int par1)

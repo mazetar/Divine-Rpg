@@ -5,11 +5,11 @@ import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemVetheanSword extends ItemSword
+public class ItemVetheanSword extends ItemDivineRPGSword
 {
     public ItemVetheanSword(int var1, EnumToolMaterial var2)
     {

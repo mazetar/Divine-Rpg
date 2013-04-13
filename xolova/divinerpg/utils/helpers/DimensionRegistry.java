@@ -8,9 +8,12 @@ import xolova.divinerpg.worldgen.azurite.BiomeGenAzurite;
 import xolova.divinerpg.worldgen.azurite.WorldProviderAzurite;
 import xolova.divinerpg.worldgen.dravite.BiomeGenSerenity;
 import xolova.divinerpg.worldgen.dravite.WorldProviderTwilight;
+import xolova.divinerpg.worldgen.iceika.BiomeGenIceikaMountians;
+import xolova.divinerpg.worldgen.iceika.WorldProviderIceika;
 import xolova.divinerpg.worldgen.mythril.BiomeGenMythil;
 import xolova.divinerpg.worldgen.uvite.BiomeGenEnergy;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class DimensionRegistry 
 {
@@ -55,8 +58,20 @@ public class DimensionRegistry
 	
 	public static void InitDimensions()
 	{
-        DimensionManager.registerProviderType(DraviteID, WorldProviderTwilight.class, KeepLoadedDravite);
-        DimensionManager.registerDimension(DraviteID, DraviteID);
+        GameRegistry.registerWorldGenerator(new WorldGenDivineMinable());
+
+        serenityBiome = new BiomeGenSerenity(draviteBiomeID);
+        //energyBiome = new BiomeGenEnergy(uviteBiomeID);
+        azuriteBiome = new BiomeGenAzurite(azuriteBiomeID);
+        //mythilBiome = new BiomeGenMythil(mythrilBiomeID);
+        //denseBiome = new BiomeGenDense(augiteBiomeID);
+        //arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
+        IceikaMountains = new BiomeGenIceikaMountians(iceikaBiomeID);
+        //arksianeBiome = new BiomeGenArksiane(arksianeBiomeID);
+        //heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);       
+        
+        //DimensionManager.registerProviderType(DraviteID, WorldProviderTwilight.class, KeepLoadedDravite);
+        //DimensionManager.registerDimension(DraviteID, DraviteID);
         DimensionManager.registerProviderType(AzuriteID, WorldProviderAzurite.class, KeepLoadedAzurite);
         DimensionManager.registerDimension(AzuriteID, AzuriteID);
         //DimensionManager.registerProviderType(UviteID, WorldProviderEnergy.class, KeepLoadedUvite);
@@ -67,20 +82,10 @@ public class DimensionRegistry
         //DimensionManager.registerDimension(AugiteID, AugiteID);
         //DimensionManager.registerProviderType(ArcanaID, WorldProviderArcana.class, KeepLoadedArcana);
         //DimensionManager.registerDimension(ArcanaID, ArcanaID);
-        //DimensionManager.registerProviderType(IceikaID, WorldProviderIceika.class, KeepLoadedIceika);
-        //DimensionManager.registerDimension(IceikaID, IceikaID);
+        DimensionManager.registerProviderType(IceikaID, WorldProviderIceika.class, KeepLoadedIceika);
+        DimensionManager.registerDimension(IceikaID, IceikaID);
         //DimensionManager.registerProviderType(VetheaID, WorldProviderVethea.class, KeepLoadedVethea);
-        //DimensionManager.registerDimension(VetheaID, VetheaID);
-        
-        serenityBiome = new BiomeGenSerenity(draviteBiomeID);
-        energyBiome = new BiomeGenEnergy(uviteBiomeID);
-        azuriteBiome = new BiomeGenAzurite(azuriteBiomeID);
-        mythilBiome = new BiomeGenMythil(mythrilBiomeID);
-        denseBiome = new BiomeGenDense(augiteBiomeID);
-        //arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
-        //IceikaMountains = new BiomeGenIceikaMountians(iceikaBiomeID);
-        //arksianeBiome = new BiomeGenArksiane(arksianeBiomeID);
-        //heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);        
+        //DimensionManager.registerDimension(VetheaID, VetheaID); 
 	}
 	
 	public static void InitDimensionsConfig(FMLPreInitializationEvent event, Configuration config)

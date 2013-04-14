@@ -15,7 +15,13 @@ public class ModMobRegistry
 	}
 	
 	public static void registerEntity(Class<? extends Entity> clazz, String name, int modID, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates) {
-		EntityRegistry.registerGlobalEntityID(clazz, name, availableID());
+		EntityRegistry.registerGlobalEntityID(clazz, name, availableID(), 0x000000, 0xFFFFFF);
+		EntityRegistry.registerModEntity(clazz, name, modID, DivineRPG.instance, trackingRange, updateFrequency, sendsVelocityUpdates);
+	}
+	
+	public static void registerEntity(Class<? extends Entity> clazz, String name, int modID, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates, int eggColor1, int eggColor2) 
+	{
+		EntityRegistry.registerGlobalEntityID(clazz, name, availableID(), eggColor1, eggColor2);
 		EntityRegistry.registerModEntity(clazz, name, modID, DivineRPG.instance, trackingRange, updateFrequency, sendsVelocityUpdates);
 	}
 	

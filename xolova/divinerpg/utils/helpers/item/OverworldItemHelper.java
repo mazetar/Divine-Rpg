@@ -85,6 +85,7 @@ public class OverworldItemHelper
 
 	public static Item crabClaw;
 	public static Item aquaticPellets;
+	public static Item corruptBullet;
 	
 	public static OverworldConfigHelper x;
 	

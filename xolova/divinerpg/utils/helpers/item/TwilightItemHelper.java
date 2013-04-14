@@ -1,5 +1,6 @@
 package xolova.divinerpg.utils.helpers.item;
 
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import xolova.divinerpg.items.ItemDivineRPG;
@@ -86,7 +87,7 @@ public class TwilightItemHelper
 	public static Item AugiteChest;
 	public static Item AugiteSlicer;
 	public static Item AugiteSoul;
-	
+
 	public static Item FuryArrow;
 	public static Item TwilightClock;
 	public static Item TwilightBow;
@@ -97,11 +98,20 @@ public class TwilightItemHelper
 	public static Item cookedEmpoweredMeat;
 	public static Item purpleSeeds;
 	public static Item pinkSeeds;
-	public static Item corruptBullet;
 	
 	public static TwilightConfigHelper x;
 	public static Item fireThrower;
-	public static Item infernoBow;
+	
+	public static Item HaliteBlade;
+	public static Item HalitePhaser;
+	public static Item HaliteBow;
+	public static Item HaliteSlicer;
+	
+	public static Item HaliteHelmet;
+	public static Item HaliteBoots;
+	public static Item Halitelegs;
+	public static Item HaliteChest;
+	public static Item HaliteBlitz;
 
 	public static void init()
 	{

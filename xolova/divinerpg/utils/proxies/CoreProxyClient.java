@@ -1,6 +1,6 @@
 package xolova.divinerpg.utils.proxies;
 
-import xolova.divinerpg.utils.helpers.client.misc.ClientTickHandler;
+import xolova.divinerpg.utils.handlers.ClientTickHandler;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
 

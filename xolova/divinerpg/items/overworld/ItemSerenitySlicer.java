@@ -6,7 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import xolova.divinerpg.entities.twilight.projectile.EntitySerenitySlicer;
+import xolova.divinerpg.entities.twilight.projectile.EntitySlicerDravite;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -32,7 +32,7 @@ public class ItemSerenitySlicer extends Item
 
         if (!var2.isRemote)
         {
-            var2.spawnEntityInWorld(new EntitySerenitySlicer(var2, var3));
+            var2.spawnEntityInWorld(new EntitySlicerDravite(var2, var3));
         }
 
         return var1;

@@ -1,8 +1,13 @@
 package xolova.divinerpg.utils.helpers.entity;
 
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.world.biome.BiomeGenBase;
+import cpw.mods.fml.common.registry.EntityRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import xolova.divinerpg.entities.iceika.mobs.*;
 import xolova.divinerpg.entities.iceika.projectile.*;
 import xolova.divinerpg.entities.overworld.projectile.EntityCrabclawProjectile;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 
 public class IceikaEntityHelper 
 {
@@ -21,6 +26,41 @@ public class IceikaEntityHelper
 		
 		ModMobRegistry.registerModEntity(EntityNoteProjectile.class, "noteProjectile", START_EID++, 64, 10, true);
 		ModMobRegistry.registerModEntity(EntityIce.class, "ice", START_EID++, 64, 10, true);
-		ModMobRegistry.registerModEntity(EntityFrostclawProjectile.class, "frostClaw", START_EID++, 64, 10, true);
+		ModMobRegistry.registerModEntity(EntityFrostclawProjectile.class, "frostClawProjectile", START_EID++, 64, 10, true);
+		ModMobRegistry.registerModEntity(EntityFractiteCannonShot.class, "fractiteCannonShot", START_EID++, 64, 10, true);
+		ModMobRegistry.registerModEntity(EntityFrostyShuriken.class, "frostyShuriken", START_EID++, 64, 10, true);
+		ModMobRegistry.registerModEntity(EntityFractiteProjectile.class, "fractiteProjectile", START_EID++, 64, 10, true);
+		
+		addSpawns();
+		addNames();
+	}
+	
+	public static void addSpawns()
+	{
+        EntityRegistry.addSpawn(EntityAlicanto.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
+        EntityRegistry.addSpawn(EntityFractite.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
+        EntityRegistry.addSpawn(EntityGlacide.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
+        EntityRegistry.addSpawn(EntityHastreus.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
+        EntityRegistry.addSpawn(EntityFrostArcher.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
+        EntityRegistry.addSpawn(EntityRollum.class, 2, 1, 10, EnumCreatureType.monster, new BiomeGenBase[] {DimensionRegistry.IceikaMountains});
+	}
+	
+	public static void addNames()
+	{
+        LanguageRegistry.instance().addStringLocalization("entity.alicanto.name",  "Alicanto");
+        LanguageRegistry.instance().addStringLocalization("entity.fractite.name",  "Fractite");
+        LanguageRegistry.instance().addStringLocalization("entity.glacide.name",  "Glacide");
+        LanguageRegistry.instance().addStringLocalization("entity.hastreus.name",  "Hastreus");
+        LanguageRegistry.instance().addStringLocalization("entity.frostarcher.name",  "Frost Archer");
+        LanguageRegistry.instance().addStringLocalization("entity.rollum.name",  "Rollum");
+        LanguageRegistry.instance().addStringLocalization("entity.workshoptickerer.name",  "Workshop Tickerer");
+        LanguageRegistry.instance().addStringLocalization("entity.workshopmerchant.name",  "Workshop Merchant");
+
+        LanguageRegistry.instance().addStringLocalization("entity.divinerpg.noteProjectile.name",  "Note");
+        LanguageRegistry.instance().addStringLocalization("entity.divinerpg.ice.name",  "Ice");
+        LanguageRegistry.instance().addStringLocalization("entity.divinerpg.frostClawProjectile.name",  "Frost Claw");
+        LanguageRegistry.instance().addStringLocalization("entity.divinerpg.fractiteCannonShot.name",  "Fractite Cannon");
+        LanguageRegistry.instance().addStringLocalization("entity.divinerpg.frostyShuriken.name",  "Frosty Shuriken");
+        LanguageRegistry.instance().addStringLocalization("entity.divinerpg.fractiteProjectile.name",  "Fractite");
 	}
 }

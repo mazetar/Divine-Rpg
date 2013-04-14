@@ -5,7 +5,7 @@ import xolova.divinerpg.entities.iceika.projectile.EntityIce;
 import xolova.divinerpg.entities.iceika.projectile.EntityNoteProjectile;
 import xolova.divinerpg.renders.RenderBlock;
 import xolova.divinerpg.renders.RenderEmpty;
-import xolova.divinerpg.renders.iceika.RenderFrostclawProjectile;
+import xolova.divinerpg.renders.iceika.projectile.RenderFrostclawProjectile;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class IceikaProxyClient extends IceikaProxy {

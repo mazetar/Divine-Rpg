@@ -11,6 +11,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import xolova.divinerpg.entities.overworld.projectile.EntityFireArrow;
+import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -38,7 +39,7 @@ public class ItemInfernoBow extends ItemBow
         }
         else
         {
-            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(TwilightItemHelper.infernoBow.itemID))
+            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(OverworldItemHelper.infernoBow.itemID))
             {
                 var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
             }

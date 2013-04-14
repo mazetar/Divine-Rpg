@@ -78,6 +78,12 @@ public class TwilightBlockHelper
 	public static Block pinkGlowBoneTreeBase;
 	public static Block purpleGlowBoneTreeBase;
 	
+	public static Block DensosStatue;
+	public static Block ReyvorStatue;
+	public static Block SFStatue;
+	public static Block TDStatue;
+	public static Block VamacheronStatue;
+	
 	public static void initBlocks()
 	{
 		TwilightStone = new BlockTwilightStone(TwilightConfigHelper.TwilightStoneID).setUnlocalizedName("TwilightStone").setCreativeTab(CreativeTabs.tabBlock);

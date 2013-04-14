@@ -5,11 +5,11 @@ import java.io.File;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import xolova.divinerpg.DivineRPG;
+import xolova.divinerpg.utils.handlers.ArmorEffectHandler;
+import xolova.divinerpg.utils.handlers.ServerTickHandler;
 import xolova.divinerpg.utils.helpers.DimensionRegistry;
 import xolova.divinerpg.utils.helpers.entity.OverworldEntityHelper;
 import xolova.divinerpg.utils.helpers.gui.GuiHelper;
-import xolova.divinerpg.utils.helpers.misc.core.ArmorEffectHandler;
-import xolova.divinerpg.utils.helpers.misc.core.ServerTickHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
@@ -21,7 +21,7 @@ public class CoreProxy {
 	public static int START_EID = 0;
 
 	public void init(FMLInitializationEvent event) {
-		//entityRegistry();
+		entityRegistry();
 		//tickRegistry();
 		//eventRegistry();
 		
@@ -50,7 +50,7 @@ public class CoreProxy {
 	
 	public void entityRegistry()
 	{
-		//OverworldEntityHelper.init();
+		OverworldEntityHelper.init();
 	}
 
 }

@@ -7,7 +7,7 @@ public class Utils
 	public static final String MAIN_MOD_ID = "DivineRPG";
 	public static final String MAIN_MOD_NAME = "DivineRPG";
 	
-	public static final String TWILIGHT_MOD_ID = "DivineRPG|Twilight";
+	public static final String TWILIGHT_MOD_ID = "DivineRPGTwilight";
 	public static final String TWLIGHT_MOD_NAME = "DivineRPG Twilight";
 	
 	public static final String ARCANA_MOD_ID = "DivineRPG|Arcana";

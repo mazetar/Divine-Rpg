@@ -16,9 +16,9 @@ public class BlockDyes extends BlockDivineRPG
     public static final String[] blockStepTypes = new String[0];
     private boolean blockType;
 
-    public BlockDyes(int var1, int var2, Material var3)
+    public BlockDyes(int var1, Material var3)
     {
-        super(var1, var2, Material.rock);
+        super(var1, Material.rock);
         this.setLightOpacity(255);
     }
     

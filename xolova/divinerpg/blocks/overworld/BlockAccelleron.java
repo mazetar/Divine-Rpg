@@ -8,9 +8,9 @@ public class BlockAccelleron extends BlockDivineRPG
 {
     private Icon[] texture;
 
-	public BlockAccelleron(int var1, int par2)
+	public BlockAccelleron(int var1)
     {
-        super(var1, par2, Material.rock);
+        super(var1, Material.rock);
         this.slipperiness = 1.2F;
     }
 

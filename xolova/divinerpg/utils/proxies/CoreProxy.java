@@ -22,7 +22,7 @@ public class CoreProxy {
 
 	public void init(FMLInitializationEvent event) {
 		//entityRegistry();
-		tickRegistry();
+		//tickRegistry();
 		eventRegistry();
 		
 		NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new GuiHelper());

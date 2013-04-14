@@ -16,15 +16,12 @@ public class BlockMiniBricks extends BlockDivineRPG
     public static final String[] blockStepTypes = new String[0];
     private boolean blockType;
 
-    public BlockMiniBricks(int var1, int var2, Material var3)
+    public BlockMiniBricks(int var1, Material var3)
     {
-        super(var1, var2, Material.rock);
+        super(var1, Material.rock);
         this.setLightOpacity(255);
     }
 
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
     public int getTextureIndexFromSideAndMetadata(int var1, int var2)
     {
         switch (var2)

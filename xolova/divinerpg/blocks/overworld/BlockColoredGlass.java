@@ -1,16 +1,18 @@
 package xolova.divinerpg.blocks.overworld;
 
-import net.minecraft.block.BlockGlass;
+import java.util.Random;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockColoredGlass extends BlockGlass
+public class BlockColoredGlass extends BlockDivineRPG
 {
-    public BlockColoredGlass(int var1, Material var3, boolean var4)
+    public BlockColoredGlass(int var1, Material var3, int var4)
     {
-        super(var1, var3, var4);
+        super(var1, var4, var3);
     }
 
     @SideOnly(Side.CLIENT)
@@ -25,12 +27,28 @@ public class BlockColoredGlass extends BlockGlass
     }
 
     @SideOnly(Side.CLIENT)
-
-    /**
-     * Returns which pass should this block be rendered on. 0 for solids and 1 for alpha
-     */
     public int getRenderBlockPass()
     {
         return 1;
+    }
+    
+    public int quantityDropped(Random par1Random)
+    {
+        return 0;
+    }
+
+    public boolean isOpaqueCube()
+    {
+        return false;
+    }
+
+    public boolean renderAsNormalBlock()
+    {
+        return false;
+    }
+
+    protected boolean canSilkHarvest()
+    {
+        return true;
     }
 }

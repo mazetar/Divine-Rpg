@@ -1,37 +1,31 @@
 package xolova.divinerpg.blocks;
 
-import net.minecraft.block.Block;
+import xolova.divinerpg.utils.helpers.IconHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.BlockLadder;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
-import xolova.divinerpg.api.IBlockDivineRPG;
-import xolova.divinerpg.utils.helpers.IconHelper;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDivineRPG extends Block implements IBlockDivineRPG {
-	
+public class BlockDivineRPGLadder extends BlockLadder
+{
 	int index;
 	int sheet;
 
-	public BlockDivineRPG(int id, int sprite, Material mat) {
-		super(id, mat);
-		this.index = sprite;
-	}
-	
-	public BlockDivineRPG(int id, Material mat)
+	public BlockDivineRPGLadder(int id)
 	{
-		this(id, 0, mat);
+		super(id);
 	}
 	
-	public BlockDivineRPG setIconIndex(int sheet, int index) {
+	public BlockDivineRPGLadder setIconIndex(int sheet, int index) {
 		this.sheet = sheet;
 		this.index = index;
 		return this;
 	}
 
-	public BlockDivineRPG setIconIndex(int sheet, int x, int y) {
+	public BlockDivineRPGLadder setIconIndex(int sheet, int x, int y) {
 		return setIconIndex(sheet, (x + y * 16));
 	}
 	
@@ -60,5 +54,4 @@ public class BlockDivineRPG extends Block implements IBlockDivineRPG {
 	public int getTextureIndexFromSideAndMetadata(int par1, int par2) {
 		return index;
 	}
-	
 }

@@ -6,17 +6,18 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBlueFire extends Block
+public class BlockBlueFire extends BlockDivineRPG
 {
-    public BlockBlueFire(int var1)
+    public BlockBlueFire(int var1, int var2)
     {
-        super(var1, Material.fire);
+        super(var1, var2, Material.fire);
         this.setTickRandomly(true);
     }
 

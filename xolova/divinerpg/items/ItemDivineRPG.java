@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 import xolova.divinerpg.api.IItemDivineRPG;
 import xolova.divinerpg.utils.helpers.IconHelper;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

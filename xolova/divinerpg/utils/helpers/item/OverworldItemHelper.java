@@ -133,44 +133,45 @@ public class OverworldItemHelper
 	
 	public static void AddNames()
 	{
-		LanguageRegistry.addName(bedrockMaul, "");
-		LanguageRegistry.addName(soundOfMusic, "");
-		LanguageRegistry.addName(jungleShard, "");
-		LanguageRegistry.addName(shuriken, "");
-		LanguageRegistry.addName(namkormira, "");
-		LanguageRegistry.addName(serenadeStriker, "");
-		LanguageRegistry.addName(slimeSword, "");
-		LanguageRegistry.addName(shadowBow, "");
-		LanguageRegistry.addName(crabClawCannon, "");
-		LanguageRegistry.addName(frostCannon, "");
-		LanguageRegistry.addName(frostSword, "");
-		LanguageRegistry.addName(divinesword, "");
-		LanguageRegistry.addName(sandSlash, "");
-		LanguageRegistry.addName(iceShard, "");
-		LanguageRegistry.addName(divineShard, "");
+		LanguageRegistry.addName(bedrockMaul, "Bedrock Maul");
+		LanguageRegistry.addName(soundOfMusic, "Sound of Music");
+		LanguageRegistry.addName(jungleShard, "Jungle Shards");
+		LanguageRegistry.addName(shuriken, "Shuriken");
+		LanguageRegistry.addName(namkormira, "Massivence");
+		LanguageRegistry.addName(serenadeStriker, "Serenade of Strikes");
+		LanguageRegistry.addName(slimeSword, "Slime Sword");
+		LanguageRegistry.addName(shadowBow, "Shadow Bow");
+		LanguageRegistry.addName(crabClawCannon, "Crabclaw Cannon");
+		LanguageRegistry.addName(frostCannon, "Frost Cannon");
+		LanguageRegistry.addName(frostSword, "Frost Sword");
+		LanguageRegistry.addName(divinesword, "Divine Sword");
+		LanguageRegistry.addName(sandSlash, "Sandslash");
+		LanguageRegistry.addName(iceShard, "Corrupted Shards");
+		LanguageRegistry.addName(iceShard, "Frozen Shards");
+		LanguageRegistry.addName(divineShard, "Divine Shards");
 		
-		LanguageRegistry.addName(divineHelm, "");
-		LanguageRegistry.addName(divineBody, "");
-		LanguageRegistry.addName(divineLegs, "");
-		LanguageRegistry.addName(divineBoots, "");
+		LanguageRegistry.addName(divineHelm, "Divine Helmet");
+		LanguageRegistry.addName(divineBody, "Divine Body");
+		LanguageRegistry.addName(divineLegs, "Divine Legs");
+		LanguageRegistry.addName(divineBoots, "Divine Boots");
 		
-		LanguageRegistry.addName(enderSword, "");
-		LanguageRegistry.addName(enderSwordYellow, "");
-		LanguageRegistry.addName(enderSwordGreen, "");
-		LanguageRegistry.addName(enderSwordRed, "");
-		LanguageRegistry.addName(enderSwordBlue, "");
+		LanguageRegistry.addName(enderSword, "Ender Sword");
+		LanguageRegistry.addName(enderSwordYellow, "Yellow Sword");
+		LanguageRegistry.addName(enderSwordGreen, "Green Endersword");
+		LanguageRegistry.addName(enderSwordRed, "Red Endersword");
+		LanguageRegistry.addName(enderSwordBlue, "Blue Endersword");
 		
-		LanguageRegistry.addName(bluefirebow, "");
-		LanguageRegistry.addName(rupee, "");
-		LanguageRegistry.addName(tomato, "");
-		LanguageRegistry.addName(tomatoSeeds, "");
-		LanguageRegistry.addName(purpleFire, "");
-		LanguageRegistry.addName(jackOManBoots, "");
-		LanguageRegistry.addName(jackOManLegs, "");
-		LanguageRegistry.addName(jackOManBody, "");
-		LanguageRegistry.addName(jackOManHead, "");
-		LanguageRegistry.addName(scythe, "");
-		LanguageRegistry.addName(sharkAnchor, "");
-		LanguageRegistry.addName(healingStone, "");
+		LanguageRegistry.addName(bluefirebow, "Bluefire Bow");
+		LanguageRegistry.addName(rupee, "Rupee");
+		LanguageRegistry.addName(tomato, "Tomato");
+		LanguageRegistry.addName(tomatoSeeds, "Tomato Seeds");
+		LanguageRegistry.addName(purpleFire, "Purple Blaze");
+		LanguageRegistry.addName(jackOManBoots, "Jack-O-Man Boots");
+		LanguageRegistry.addName(jackOManLegs, "Jack-O-Man Legs");
+		LanguageRegistry.addName(jackOManBody, "Jack-O-Man Body");
+		LanguageRegistry.addName(jackOManHead, "Jack-O-Man Head");
+		LanguageRegistry.addName(scythe, "Scythe");
+		LanguageRegistry.addName(sharkAnchor, "Shark Anchor");
+		LanguageRegistry.addName(healingStone, "Healing Stone");
 	}
 }

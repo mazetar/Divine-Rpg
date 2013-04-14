@@ -12,6 +12,12 @@ public abstract class BlockDivineRPGContainer extends BlockDivineRPG implements 
         isBlockContainer = true;
 	}
 	
+	public BlockDivineRPGContainer(int id, Material mat)
+	{
+		super(id, mat);
+		isBlockContainer = true;
+	}
+	
     public void onBlockAdded(World par1World, int par2, int par3, int par4)
     {
         super.onBlockAdded(par1World, par2, par3, par4);

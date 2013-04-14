@@ -1,7 +1,27 @@
 package xolova.divinerpg.utils.helpers.block;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import xolova.divinerpg.blocks.BlockDivineRPG;
+import xolova.divinerpg.blocks.overworld.BlockAEStatue;
+import xolova.divinerpg.blocks.overworld.BlockAcceleraunch;
+import xolova.divinerpg.blocks.overworld.BlockAccelleron;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoBeamBlue;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoBeamGreen;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoBeamPurple;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoBeamRed;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoBeamYellow;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoStatue;
+import xolova.divinerpg.blocks.overworld.BlockBlueFire;
+import xolova.divinerpg.blocks.overworld.BlockColoredBricks;
+import xolova.divinerpg.blocks.overworld.BlockColoredGlass;
+import xolova.divinerpg.blocks.overworld.BlockColoredPane;
+import xolova.divinerpg.blocks.overworld.BlockDyes;
+import xolova.divinerpg.blocks.overworld.BlockKOSStatue;
+import xolova.divinerpg.blocks.overworld.BlockMiniBricks;
+import xolova.divinerpg.blocks.overworld.BlockSteel;
+import xolova.divinerpg.blocks.overworld.BlockWatcherStatue;
+import xolova.divinerpg.utils.helpers.config.OverworldConfigHelper;
 
 public class OverworldBlockHelper 
 {
@@ -89,32 +109,33 @@ public class OverworldBlockHelper
 	public static Block purpleGlowBoneTree;
 	public static Block pinkGlowBoneTree;
 	
+	public static OverworldConfigHelper x;
+	
 	public static void init()
 	{
-		blueFire = new BlockDivineRPG(0, 0, null);
-		divineRock = new BlockDivineRPG(0, 0, null);
+		blueFire = new BlockBlueFire(x.blueFireID, 0).setUnlocalizedName("BlueFire");
+		divineRock = new BlockDivineRPG(x.divineRockID, Material.rock).setResistance(30).setHardness(3);
 		
-		acceleraunch = new BlockDivineRPG(0, 0, null);
-		acceleron = new BlockDivineRPG(0, 0, null);
+		acceleraunch = new BlockAcceleraunch(x.acceleraunchID);
+		acceleron = new BlockAccelleron(x.acceleronID);
 		
-		aeStatue = new BlockDivineRPG(0, 0, null);
-		ayeracoStatue = new BlockDivineRPG(0, 0, null);
-		kosStatue = new BlockDivineRPG(0, 0, null);
-		watcherStatue = new BlockDivineRPG(0, 0, null);
+		aeStatue = new BlockAEStatue(x.aeStatueID);
+		ayeracoStatue = new BlockAyeracoStatue(x.ayeracoStatueID);
+		kosStatue = new BlockKOSStatue(x.kosStatueID);
+		watcherStatue = new BlockWatcherStatue(x.watcherStatueID);
 		
-		ayeracoBeamBlue = new BlockDivineRPG(0, 0, null);
-		ayeracoBeamGreen = new BlockDivineRPG(0, 0, null);
-		ayeracoBeamPurple = new BlockDivineRPG(0, 0, null);
-		ayeracoBeamRed = new BlockDivineRPG(0, 0, null);
-		ayeracoBeamYellow = new BlockDivineRPG(0, 0, null);
+		ayeracoBeamBlue = new BlockAyeracoBeamBlue(x.ayeracoBeamBlueID);
+		ayeracoBeamGreen = new BlockAyeracoBeamGreen(x.ayeracoBeamGreenID);
+		ayeracoBeamPurple = new BlockAyeracoBeamPurple(x.ayeracoBeamPurpleID);
+		ayeracoBeamRed = new BlockAyeracoBeamRed(x.ayeracoBeamRedID);
+		ayeracoBeamYellow = new BlockAyeracoBeamYellow(x.ayeracoBeamYellowID);
 
-		colouredBricks = new BlockDivineRPG(0, 0, null);
-		colouredGlass = new BlockDivineRPG(0, 0, null);
-		colouredPanes = new BlockDivineRPG(0, 0, null);
-		colouredTorch = new BlockDivineRPG(0, 0, null);
-		dyeBlocks = new BlockDivineRPG(0, 0, null);
-		miniBricks = new BlockDivineRPG(0, 0, null);
-		steel = new BlockDivineRPG(0, 0, null);
+		colouredBricks = new BlockColoredBricks(0, 0, null);
+		colouredGlass = new BlockColoredGlass(0, null, 0);
+		colouredPanes = new BlockColoredPane(x.colouredPanesID, "", "", Material.glass, false);
+		dyeBlocks = new BlockDyes(x.dyeBlocksID, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3).setResistance(30);
+		miniBricks = new BlockMiniBricks(x.miniBricksID, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3).setResistance(30).setUnlocalizedName("MiniBricks");
+		steel = new BlockSteel(0, null);
 		mobPumpkins = new BlockDivineRPG(0, 0, null);
 		
 		darkBridge = new BlockDivineRPG(0, 0, null);
@@ -175,12 +196,7 @@ public class OverworldBlockHelper
 		purpleGlowBoneTree = new BlockDivineRPG(0, 0, null);
 		pinkGlowBoneTree = new BlockDivineRPG(0, 0, null);
 	}
-	
-	public static void registerBlocks()
-	{
-		
-	}
-	
+
 	public static void addNames()
 	{
 		

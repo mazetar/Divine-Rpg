@@ -8,9 +8,9 @@ import xolova.divinerpg.blocks.BlockDivineRPG;
 
 public class BlockAyeracoStatue extends BlockDivineRPG
 {
-    public BlockAyeracoStatue(int par1, int par2)
+    public BlockAyeracoStatue(int par1)
     {
-        super(par1, par2, Material.air);
+        super(par1, Material.air);
 		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
     }
     

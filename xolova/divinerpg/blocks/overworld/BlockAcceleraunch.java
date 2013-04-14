@@ -1,8 +1,8 @@
 package xolova.divinerpg.blocks.overworld;
 
-import net.minecraft.block.BlockLadder;
+import xolova.divinerpg.blocks.BlockDivineRPGLadder;
 
-public class BlockAcceleraunch extends BlockLadder
+public class BlockAcceleraunch extends BlockDivineRPGLadder
 {
     public BlockAcceleraunch(int var1)
     {

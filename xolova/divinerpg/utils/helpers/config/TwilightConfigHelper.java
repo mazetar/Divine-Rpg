@@ -115,6 +115,8 @@ public class TwilightConfigHelper
 	public static int DraviteChestID;
 	public static int DraviteSlicerID;
 	public static int DraviteSoulID;
+	public static int draviteSparklesID;
+	public static int DraviteShardsID;
 	
 	public static int UviteGemID;
 	public static int UviteChunkID;
@@ -145,6 +147,7 @@ public class TwilightConfigHelper
 	public static int AzuriteChestID;
 	public static int AzuriteSlicerID;
 	public static int AzuriteSoulID;
+	public static int AzuriteArrowID;
 	
 	public static int MythrilGemID;
 	public static int MythrilChunkID;
@@ -186,6 +189,18 @@ public class TwilightConfigHelper
 	public static int HaliteChestID;
 	public static int HaliteSlicerID;
 	
+	public static int FuryArrowID;
+	public static int TwilightClockID;
+	public static int TwilightBowID;
+	public static int blueSeedsID;
+	public static int magicMeatID;
+	public static int empoweredMeatID;
+	public static int enrichedMagicMeatID;
+	public static int cookedEmpoweredMeatID;
+	public static int purpleSeedsID;
+	public static int pinkSeedsID;		
+	public static int fireThrowerID;
+	
 	public static void initConfigItems(FMLPreInitializationEvent event, Configuration config)
 	{
 		DraviteGemID = config.getItem("Dravite Gem", 5459).getInt();
@@ -202,6 +217,8 @@ public class TwilightConfigHelper
 		DraviteChestID = config.getItem("Dravite Chest", 5625).getInt();
 		DraviteSlicerID = config.getItem("Dravite Slicer", 5502).getInt();
 		DraviteSoulID = config.getItem("Dravite Soul", 5551).getInt();
+		draviteSparklesID = config.getItem("Dravite Soul", 5515).getInt();
+		DraviteShardsID = config.getItem("Dravite Soul", 5180).getInt();
 		
 		AzuriteGemID = config.getItem("Azurite Gem", 5461).getInt();
 		AzuriteChunkID = config.getItem("Azurite Chunk", 5466).getInt();
@@ -217,6 +234,7 @@ public class TwilightConfigHelper
 		AzuriteChestID = config.getItem("Azurite Chest", 5629).getInt();
 		AzuriteSlicerID = config.getItem("Azurite Slicer", 5503).getInt();
 		AzuriteSoulID = config.getItem("Azurite Soul", 5553).getInt();
+		AzuriteArrowID = config.getItem("Dravite Soul", 5331).getInt();
 		
 		UviteGemID = config.getItem("Uvite Gem", 5460).getInt();
 		UviteChunkID = config.getItem("Uvite Chunk", 5465).getInt();
@@ -272,5 +290,17 @@ public class TwilightConfigHelper
 		HalitelegsID = config.getItem("Halite Legs", 5644).getInt();
 		HaliteChestID = config.getItem("Halite Chest", 5645).getInt();
 		HaliteSlicerID = config.getItem("Halite Slicer", 5507).getInt();
+		
+		FuryArrowID = config.getItem("FuryArrow", 5332).getInt();
+		TwilightClockID = config.getItem("TwilightClock", 5330).getInt();
+		TwilightBowID = config.getItem("TwilightBow", 5245).getInt();
+		blueSeedsID = config.getItem("blueSeeds", 5324).getInt();
+		magicMeatID = config.getItem("magicMeat", 5326).getInt();
+		empoweredMeatID = config.getItem("empoweredMeat", 5328).getInt();
+		enrichedMagicMeatID = config.getItem("enrichedMagicMeat", 5327).getInt();
+		cookedEmpoweredMeatID = config.getItem("cookedEmpoweredMeat", 5329).getInt();
+		purpleSeedsID = config.getItem("purpleSeeds", 5323).getInt();
+		pinkSeedsID = config.getItem("pinkSeeds", 5322).getInt();		
+		fireThrowerID = config.getItem("fireThrower", 5269).getInt();
 	}
 }

@@ -3,9 +3,8 @@ package xolova.divinerpg;
 import net.minecraft.command.CommandHandler;
 import xolova.divinerpg.commands.CommandDivineRPG;
 import xolova.divinerpg.utils.Utils;
-import xolova.divinerpg.utils.helpers.DimensionRegistry;
-import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
+import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import xolova.divinerpg.utils.proxies.TwilightProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -39,19 +38,19 @@ public class DivineRPGTwilight
 	{
 		instance = this;
 		
-		//proxy.preInit(event);
+		proxy.preInit(event);
 		
-		//TwilightConfigHelper.initConfig(event);
+		TwilightConfigHelper.initConfig(event);
 	}
 	
 	@Init
 	public void Init(FMLInitializationEvent event)
 	{
-		//proxy.init(event);
+		proxy.init(event);
 		
 		//TwilightBlockHelper.initBlocks();
 		
-		//TwilightItemHelper.init();
+		TwilightItemHelper.init();
 		
 		//DimensionRegistry.InitDimensions();
 	}

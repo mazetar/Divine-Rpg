@@ -21,9 +21,9 @@ public class CoreProxy {
 	public static int START_EID = 0;
 
 	public void init(FMLInitializationEvent event) {
-		entityRegistry();
-		//tickRegistry();
-		//eventRegistry();
+		//entityRegistry();
+		tickRegistry();
+		eventRegistry();
 		
 		NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new GuiHelper());
 	}

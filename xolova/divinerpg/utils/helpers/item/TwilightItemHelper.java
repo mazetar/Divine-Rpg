@@ -1,11 +1,9 @@
 package xolova.divinerpg.utils.helpers.item;
 
-import net.minecraft.block.Block;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import xolova.divinerpg.items.ItemDivineRPG;
-import xolova.divinerpg.items.overworld.ItemTwilightClock;
 import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
+import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class TwilightItemHelper 
@@ -97,9 +95,8 @@ public class TwilightItemHelper
 	public static Item enrichedMagicMeat;
 	public static Item cookedEmpoweredMeat;
 	public static Item purpleSeeds;
-	public static Item pinkSeeds;
+	public static Item pinkSeeds;	
 	
-	public static TwilightConfigHelper x;
 	public static Item fireThrower;
 	
 	public static Item HaliteBlade;
@@ -112,26 +109,110 @@ public class TwilightItemHelper
 	public static Item Halitelegs;
 	public static Item HaliteChest;
 	public static Item HaliteBlitz;
+	
+	public static TwilightConfigHelper x;
 
 	public static void init()
 	{
-		DraviteGem = new ItemDivineRPG(x.DraviteGemID, 2).setIconIndex(2, 11, 6).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteChunk = new ItemDivineRPG(x.DraviteChunkID, 2).setIconIndex(2, 2, 6).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteFragments = new ItemDivineRPG(x.DraviteFragmentsID, 2).setIconIndex(2, 15, 9).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteDust = new ItemDivineRPG(x.DraviteDustID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteBlade = new ItemDivineRPG(x.DraviteBladeID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		DravitePhaser = new ItemDivineRPG(x.DravitePhaserID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteBlitz = new ItemDivineRPG(x.DraviteBlitzID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteBow = new ItemDivineRPG(x.DraviteBowID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteHelmet = new ItemDivineRPG(x.DraviteHelmetID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteBoots = new ItemDivineRPG(x.DraviteBootsID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		Dravitelegs = new ItemDivineRPG(x.DravitelegsID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteChest = new ItemDivineRPG(x.DraviteChestID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteSlicer = new ItemDivineRPG(x.DraviteSlicerID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
-		DraviteSoul = new ItemDivineRPG(x.DraviteSoulID, 2).setIconIndex(2, 3).setCreativeTab(CreativeTabs.tabMisc);
+		DraviteGem = new ItemDivineRPG(x.DraviteGemID).setIconIndex(2, 11, 6).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteChunk = new ItemDivineRPG(x.DraviteChunkID).setIconIndex(2, 2, 6).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteFragments = new ItemDivineRPG(x.DraviteFragmentsID).setIconIndex(2, 15, 9).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteDust = new ItemDivineRPG(x.DraviteDustID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteBlade = new ItemDivineRPG(x.DraviteBladeID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DravitePhaser = new ItemDivineRPG(x.DravitePhaserID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteBlitz = new ItemDivineRPG(x.DraviteBlitzID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteBow = new ItemDivineRPG(x.DraviteBowID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteHelmet = new ItemDivineRPG(x.DraviteHelmetID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteBoots = new ItemDivineRPG(x.DraviteBootsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		Dravitelegs = new ItemDivineRPG(x.DravitelegsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteChest = new ItemDivineRPG(x.DraviteChestID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteSlicer = new ItemDivineRPG(x.DraviteSlicerID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteSoul = new ItemDivineRPG(x.DraviteSoulID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteSparkles = new ItemDivineRPG(x.draviteSparklesID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		DraviteShards = new ItemDivineRPG(x.DraviteShardsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
 		
-		TwilightClock = new ItemTwilightClock(5330).setCreativeTab(CreativeTabs.tabTools);
-		//addNames();
+		AzuriteGem = new ItemDivineRPG(x.AzuriteGemID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteChunk = new ItemDivineRPG(x.AzuriteChunkID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteFragments = new ItemDivineRPG(x.AzuriteFragmentsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteDust = new ItemDivineRPG(x.AzuriteDustID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteBlade = new ItemDivineRPG(x.AzuriteBladeID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuritePhaser = new ItemDivineRPG(x.AzuritePhaserID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteBlitz = new ItemDivineRPG(x.AzuriteBlitzID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteBow = new ItemDivineRPG(x.AzuriteBowID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteHelmet = new ItemDivineRPG(x.AzuriteHelmetID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteBoots = new ItemDivineRPG(x.AzuriteBootsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		Azuritelegs = new ItemDivineRPG(x.AzuritelegsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteChest = new ItemDivineRPG(x.AzuriteChestID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteSlicer = new ItemDivineRPG(x.AzuriteSlicerID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteSoul = new ItemDivineRPG(x.AzuriteSoulID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AzuriteArrow = new ItemDivineRPG(x.AzuriteArrowID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+
+		UviteGem = new ItemDivineRPG(x.UviteGemID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UviteChunk = new ItemDivineRPG(x.UviteChunkID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UviteFragments = new ItemDivineRPG(x.UviteFragmentsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UviteDust = new ItemDivineRPG(x.UviteDustID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UviteBlade = new ItemDivineRPG(x.UviteBladeID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UvitePhaser = new ItemDivineRPG(x.UvitePhaserID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UviteBlitz = new ItemDivineRPG(x.UviteBlitzID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UviteBow = new ItemDivineRPG(x.UviteBowID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UviteHelmet = new ItemDivineRPG(x.UviteHelmetID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UviteBoots = new ItemDivineRPG(x.UviteBootsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		Uvitelegs = new ItemDivineRPG(x.UvitelegsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UviteChest = new ItemDivineRPG(x.UviteChestID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UviteSlicer = new ItemDivineRPG(x.UviteSlicerID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		UviteSoul = new ItemDivineRPG(x.UviteSoulID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+
+		MythrilGem = new ItemDivineRPG(x.MythrilGemID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilChunk = new ItemDivineRPG(x.MythrilChunkID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilFragments = new ItemDivineRPG(x.MythrilFragmentsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilDust = new ItemDivineRPG(x.MythrilDustID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilBlade = new ItemDivineRPG(x.MythrilBladeID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilPhaser = new ItemDivineRPG(x.MythrilPhaserID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilBlitz = new ItemDivineRPG(x.MythrilBlitzID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilBow = new ItemDivineRPG(x.MythrilBowID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilHelmet = new ItemDivineRPG(x.MythrilHelmetID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilBoots = new ItemDivineRPG(x.MythrilBootsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		Mythrillegs = new ItemDivineRPG(x.MythrillegsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilChest = new ItemDivineRPG(x.MythrilChestID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilSlicer = new ItemDivineRPG(x.MythrilSlicerID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		MythrilSoul = new ItemDivineRPG(x.MythrilSoulID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+
+		AugiteGem = new ItemDivineRPG(x.AugiteGemID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugiteChunk = new ItemDivineRPG(x.AugiteChunkID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugiteFragments = new ItemDivineRPG(x.AugiteFragmentsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugiteDust = new ItemDivineRPG(x.AugiteDustID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugiteBlade = new ItemDivineRPG(x.AugiteBladeID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugitePhaser = new ItemDivineRPG(x.AugitePhaserID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugiteBlitz = new ItemDivineRPG(x.AugiteBlitzID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugiteBow = new ItemDivineRPG(x.AugiteBowID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugiteHelmet = new ItemDivineRPG(x.AugiteHelmetID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugiteBoots = new ItemDivineRPG(x.AugiteBootsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		Augitelegs = new ItemDivineRPG(x.AugitelegsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugiteChest = new ItemDivineRPG(x.AugiteChestID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugiteSlicer = new ItemDivineRPG(x.AugiteSlicerID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		AugiteSoul = new ItemDivineRPG(x.AugiteSoulID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+
+		FuryArrow = new ItemDivineRPG(x.FuryArrowID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		TwilightClock = new ItemDivineRPG(x.TwilightClockID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		TwilightBow = new ItemDivineRPG(x.TwilightBowID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		blueSeeds = new ItemDivineRPG(x.blueSeedsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		magicMeat = new ItemDivineRPG(x.magicMeatID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		empoweredMeat = new ItemDivineRPG(x.empoweredMeatID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		enrichedMagicMeat = new ItemDivineRPG(x.enrichedMagicMeatID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		cookedEmpoweredMeat = new ItemDivineRPG(x.cookedEmpoweredMeatID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		purpleSeeds = new ItemDivineRPG(x.purpleSeedsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		pinkSeeds = new ItemDivineRPG(x.pinkSeedsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);	
+		fireThrower = new ItemDivineRPG(x.fireThrowerID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		
+		HaliteBlade = new ItemDivineRPG(x.HaliteBladeID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		HalitePhaser = new ItemDivineRPG(x.HalitePhaserID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		HaliteBow = new ItemDivineRPG(x.HaliteBowID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		HaliteSlicer = new ItemDivineRPG(x.HaliteSlicerID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		HaliteHelmet = new ItemDivineRPG(x.HaliteHelmetID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		HaliteBoots = new ItemDivineRPG(x.HaliteBootsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		Halitelegs = new ItemDivineRPG(x.HalitelegsID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		HaliteChest = new ItemDivineRPG(x.HaliteChestID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
+		HaliteBlitz = new ItemDivineRPG(x.HaliteBlitzID).setIconIndex(0, 0).setCreativeTab(CreativeTabHelper.tabUnsorted);
 	}
 	
 	public static void addNames()

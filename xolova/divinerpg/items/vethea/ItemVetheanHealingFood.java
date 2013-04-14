@@ -6,8 +6,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.items.core.ItemDivineRPGFood;
 
-public class ItemVetheanHealingFood extends ItemFood
+public class ItemVetheanHealingFood extends ItemDivineRPGFood
 {
 	
 	private int healthGain;

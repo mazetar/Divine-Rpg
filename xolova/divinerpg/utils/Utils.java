@@ -16,7 +16,7 @@ public class Utils
 	public static final String ICEIKA_MOD_ID = "DivineRPG|Iceika";
 	public static final String ICEIKA_MOD_NAME = "DivineRPG Iceika";
 	
-	public static final String VETHEA_MOD_ID = "DivineRPG|Vethea";
+	public static final String VETHEA_MOD_ID = "DivineRPGVethea";
 	public static final String VETHEA_MOD_NAME = "DivineRPG Vethea";
 
 }

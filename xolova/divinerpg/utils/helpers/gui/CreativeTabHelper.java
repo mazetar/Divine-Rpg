@@ -12,4 +12,5 @@ public class CreativeTabHelper
     public static CreativeTabHerbs tabHerb = new CreativeTabHerbs();
     public static CreativeTabArmor tabArmor = new CreativeTabArmor();
     public static CreativeTabTool tabTool = new CreativeTabTool();
+    public static CreativeTabUnsorted tabUnsorted = new CreativeTabUnsorted();
 }

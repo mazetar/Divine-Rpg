@@ -5,8 +5,9 @@ import java.util.List;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import xolova.divinerpg.items.core.ItemDivineRPGFood;
 
-public class ItemVetheanFood extends ItemFood
+public class ItemVetheanFood extends ItemDivineRPGFood
 {
 	
 	public ItemVetheanFood(int par1, int par2, float par3, boolean par4) {

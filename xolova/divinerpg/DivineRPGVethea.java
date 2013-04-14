@@ -2,6 +2,7 @@ package xolova.divinerpg;
 
 import xolova.divinerpg.utils.Utils;
 import xolova.divinerpg.utils.helpers.config.VetheaConfigHelper;
+import xolova.divinerpg.utils.helpers.item.VetheaItemHelper;
 import xolova.divinerpg.utils.proxies.VetheaProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -30,13 +31,13 @@ public class DivineRPGVethea
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		instance = this;
-		//VetheaConfigHelper.initConfig(event);
+		VetheaConfigHelper.initConfig(event);
 	}
 	
 	@Init
 	public void Init(FMLInitializationEvent event)
 	{
-		//VetheaItemHelper.init();
+		VetheaItemHelper.init();
 		//VetheaBlockHelper.initBlocks();
 	}
 	

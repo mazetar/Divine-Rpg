@@ -39,6 +39,7 @@ public class ItemVetheanBow extends ItemDivineRPGBow
 		this.damageModifier = par2;
 		this.arrow = par3;
 		this.setMaxDamage(-1);
+		this.setUnlocalizedName(par4);
 		this.name = par4;
 		texture = new String[] {name + "_0", name + "_1", name + "_2"};
 	}

@@ -5,26 +5,24 @@ import java.util.List;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumArmorMaterial;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.ISpecialArmor;
+import xolova.divinerpg.items.core.ItemDivineRPGArmor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemVetheanArmor extends ItemArmor implements ISpecialArmor
+public class ItemVetheanArmor extends ItemDivineRPGArmor implements ISpecialArmor
 {
     private int type;
     private int reductionAmount;
     private String specialty;
 	private String ability;
-	private static EnumArmorMaterial vethea = EnumHelper.addArmorMaterial("vethea", -1, new int[]{0, 0, 0, 0}, 0);
-
-	public ItemVetheanArmor(int var1, int var3, int var4, int par2, String special, String specialAbility)
+	public ItemVetheanArmor(int var1, int var3, String ArmorName, double var4, int par2, String special, String specialAbility)
     {
-        super(var1, vethea, var3, var4);
-        this.type = var4;
+        super(var1, var3, ArmorName, var4, par2);
+        this.type = var3;
         this.reductionAmount = par2;
         this.specialty = special;
         this.ability = specialAbility;

@@ -10,6 +10,7 @@ public class ItemVetheanClaw extends ItemVetheanHammerSword
 
 	public ItemVetheanClaw(int i, String j, int k) {
 		super(i, j, k);
+		this.setUnlocalizedName(j);
 	}
 
     /**

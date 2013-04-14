@@ -1,13 +1,13 @@
 package xolova.divinerpg.items.vethea;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 
-public class ItemDreamPowder extends Item
+public class ItemDreamPowder extends ItemDivineRPG
 {
 	public ItemDreamPowder(int par1)
 	{

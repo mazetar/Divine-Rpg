@@ -192,7 +192,7 @@ public class VetheaConfigHelper
     public static void initConfig(FMLPreInitializationEvent event)
 	{
 		File file = new File(event.getModConfigurationDirectory(), "DivineRPGVethea.cfg");
-		Configuration config = new Configuration(file);
+		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		
 		config.load();
 		

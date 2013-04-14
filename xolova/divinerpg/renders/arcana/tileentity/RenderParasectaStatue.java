@@ -5,6 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityParasectaStatue;
 import xolova.divinerpg.models.arcana.mobs.ModelParasecta;
 
 public class RenderParasectaStatue extends TileEntitySpecialRenderer

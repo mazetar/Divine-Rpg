@@ -5,6 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.overworld.tileentities.TileEntityAEStatue;
 import xolova.divinerpg.models.overworld.tileentities.ModelAEStatue;
 
 public class RenderAEStatue extends TileEntitySpecialRenderer

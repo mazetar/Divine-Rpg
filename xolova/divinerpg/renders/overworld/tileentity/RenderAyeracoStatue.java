@@ -1,12 +1,12 @@
-package xolova.blued00r.divinerpg.client.render.blocks;
+package xolova.divinerpg.renders.overworld.tileentity;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
-import xolova.blued00r.divinerpg.client.models.ModelAyeracoStatue;
-import xolova.blued00r.divinerpg.entities.tileentities.TileEntityAyeracoStatue;
+import xolova.divinerpg.blocks.overworld.tileentities.TileEntityAyeracoStatue;
+import xolova.divinerpg.models.overworld.tileentities.ModelAyeracoStatue;
 
 public class RenderAyeracoStatue extends TileEntitySpecialRenderer
 {

@@ -5,6 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.overworld.tileentities.TileEntityWatcherStatue;
 import xolova.divinerpg.models.overworld.tileentities.ModelWatcherStatue;
 
 public class RenderWatcherStatue extends TileEntitySpecialRenderer

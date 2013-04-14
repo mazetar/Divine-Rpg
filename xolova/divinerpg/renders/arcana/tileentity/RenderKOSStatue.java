@@ -1,10 +1,11 @@
-package xolova.divinerpg.renders.twilight.tileentity;
+package xolova.divinerpg.renders.arcana.tileentity;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.overworld.tileentities.TileEntityKOSStatue;
 import xolova.divinerpg.models.overworld.tileentities.ModelKOSStatue;
 
 public class RenderKOSStatue extends TileEntitySpecialRenderer

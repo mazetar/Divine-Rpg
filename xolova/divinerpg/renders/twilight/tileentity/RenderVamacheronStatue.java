@@ -5,6 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.twilight.tileentities.TileEntityVamacheronStatue;
 import xolova.divinerpg.models.twilight.tileentities.ModelVamacheronStatue;
 
 public class RenderVamacheronStatue extends TileEntitySpecialRenderer

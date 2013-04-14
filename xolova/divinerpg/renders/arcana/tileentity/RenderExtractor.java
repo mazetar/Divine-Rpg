@@ -5,6 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
 import xolova.divinerpg.models.arcana.tileentities.ModelExtractor;
 
 public class RenderExtractor extends TileEntitySpecialRenderer
@@ -20,10 +21,10 @@ public class RenderExtractor extends TileEntitySpecialRenderer
     public void renderTileEntityAt(TileEntity var1, double x, double y,
             double z, float tick)
     {
-        this.renderAModelAt((TileEntityExtractinator)var1, x, y, z, tick);
+        this.renderAModelAt((TileEntityExtractor)var1, x, y, z, tick);
     }
 
-    public void renderAModelAt(TileEntityExtractinator tileentity1, double x, double y, double z, float f)
+    public void renderAModelAt(TileEntityExtractor tileentity1, double x, double y, double z, float f)
     {
         GL11.glPushMatrix();
         GL11.glTranslated((float)x + 0.5F, (float)y, (float)z + 0.5F);

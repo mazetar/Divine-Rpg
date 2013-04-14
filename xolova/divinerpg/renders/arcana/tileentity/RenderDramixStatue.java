@@ -5,6 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityDramixStatue;
 import xolova.divinerpg.models.arcana.tileentities.ModelDramixStatue;
 
 public class RenderDramixStatue extends TileEntitySpecialRenderer

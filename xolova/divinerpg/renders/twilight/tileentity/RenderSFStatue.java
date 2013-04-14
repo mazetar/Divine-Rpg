@@ -5,6 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.twilight.tileentities.TileEntitySFStatue;
 import xolova.divinerpg.models.twilight.tileentities.ModelSFStatue;
 
 public class RenderSFStatue extends TileEntitySpecialRenderer

@@ -5,14 +5,15 @@ import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.arcana.tileentities.TileEntityDramixAltar;
 import xolova.divinerpg.models.arcana.tileentities.ModelDramixAltar;
 
-public class RenderDramixAlter extends TileEntitySpecialRenderer
+public class RenderDramixAltar extends TileEntitySpecialRenderer
 {
     static final float scale = (float)(1.0 / 16.0);
     private ModelDramixAltar modelAltar;
 
-    public RenderDramixAlter()
+    public RenderDramixAltar()
     {
         modelAltar = new ModelDramixAltar(scale);
     }
@@ -20,10 +21,10 @@ public class RenderDramixAlter extends TileEntitySpecialRenderer
     public void renderTileEntityAt(TileEntity var1, double x, double y,
             double z, float tick)
     {
-        this.renderAModelAt((TileEntityDramixAlter)var1, x, y, z, tick);
+        this.renderAModelAt((TileEntityDramixAltar)var1, x, y, z, tick);
     }
 
-    public void renderAModelAt(TileEntityDramixAlter tileentity1, double x, double y, double z, float f)
+    public void renderAModelAt(TileEntityDramixAltar tileentity1, double x, double y, double z, float f)
     {
         GL11.glPushMatrix();
         GL11.glTranslated((float)x + 0.5F, (float)y - 0.6F, (float)z + 0.5F);

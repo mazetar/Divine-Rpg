@@ -7,6 +7,8 @@ import net.minecraftforge.client.IItemRenderer;
 
 import org.lwjgl.opengl.GL11;
 
+import cpw.mods.fml.client.FMLClientHandler;
+
 import xolova.divinerpg.models.arcana.tileentities.ModelDramixAltar;
 
 public class RenderItemDramixAltar implements IItemRenderer
@@ -39,15 +41,15 @@ public class RenderItemDramixAltar implements IItemRenderer
         switch (type)
         {
             case ENTITY:
-                renderCalcinator(-0.5F, 0F, -0.5F);
+                renderAltar(-0.5F, 0F, -0.5F);
                 break;
 
             case EQUIPPED:
-                renderCalcinator(0F, 0.4F, 0F);
+                renderAltar(0F, 0.4F, 0F);
                 break;
 
             case INVENTORY:
-                renderCalcinator(1F, 0.65F, 1F);
+                renderAltar(1F, 0.65F, 1F);
                 break;
 
             default:
@@ -55,10 +57,10 @@ public class RenderItemDramixAltar implements IItemRenderer
         }
     }
 
-    private void renderCalcinator(float x, float y, float z)
+    private void renderAltar(float x, float y, float z)
     {
         Tessellator tesselator = Tessellator.instance;
-        ForgeHooksClient.bindTexture("/DivineRPG/DramixSpawn.png", 0);
+        FMLClientHandler.instance().getClient().renderEngine.bindTexture("/DivineRPG/DramixSpawn.png");
         GL11.glPushMatrix(); //start
         GL11.glTranslatef(x, y - 0.7F, z); //size
         dramixAltar.render(0.0275F);

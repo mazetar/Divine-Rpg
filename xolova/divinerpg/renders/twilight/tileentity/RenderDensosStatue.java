@@ -5,6 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.blocks.twilight.tileentities.TileEntityDensosStatue;
 import xolova.divinerpg.models.twilight.tileentities.ModelDensosStatue;
 
 public class RenderDensosStatue extends TileEntitySpecialRenderer

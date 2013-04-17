@@ -453,6 +453,8 @@ public class VetheaConfigHelper
     
     public static void initConfigBlocks(FMLPreInitializationEvent event, Configuration config)
 	{
+    	dreamstoneID = config.getBlock("DreamStone", 773).getInt();
+    	dreamgrassID = config.getBlock("DreamGrass", 774).getInt();
     	vetheaPortalID = config.getBlock("vetheaPortal", 775).getInt();
         dreamwoodID = config.getBlock("dreamwood", 776).getInt();
         dreamwoodLeavesID = config.getBlock("dreamwoodLeaves", 777).getInt();
@@ -470,6 +472,7 @@ public class VetheaConfigHelper
         infusionTableID = config.getBlock("infusionTable", 789).getInt();
         cellLampID = config.getBlock("cellLamp", 790).getInt();
         barredDoorID = config.getBlock("barredDoor", 791).getInt();
+        firecrystalID = config.getBlock("firecrystal", 792).getInt();
         firelightID = config.getBlock("firelight", 793).getInt();
         hyrewoodID = config.getBlock("hyrewood", 794).getInt();
         mintwoodLeavesID = config.getBlock("mintwoodLeaves", 795).getInt();

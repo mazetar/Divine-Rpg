@@ -17,6 +17,7 @@ import xolova.divinerpg.blocks.vethea.BlockKarosHeatTileGreen;
 import xolova.divinerpg.blocks.vethea.BlockKarosHeatTileRed;
 import xolova.divinerpg.blocks.vethea.BlockLunicAcid;
 import xolova.divinerpg.blocks.vethea.BlockLunicAltar;
+import xolova.divinerpg.blocks.vethea.BlockPortalVethea;
 import xolova.divinerpg.blocks.vethea.BlockPurpleFire;
 import xolova.divinerpg.blocks.vethea.BlockRaglokAltar;
 import xolova.divinerpg.blocks.vethea.BlockShimmer;
@@ -114,6 +115,7 @@ public class VetheaBlockHelper
 	
     public static void initBlocks()
 	{
+    	vetheaPortal = new BlockPortalVethea(VetheaConfigHelper.vetheaPortalID, "Vethea").setUnlocalizedName("Vethea Portal").setCreativeTab(CreativeTabHelper.tabBlocks);
     	dreamstone = new BlockVethea(VetheaConfigHelper.dreamstoneID, 9, Material.rock).setUnlocalizedName("dreamstone").setHardness(1F).setResistance(1F).setCreativeTab(CreativeTabHelper.tabBlocks);
         dreamdirt = new BlockVethea(VetheaConfigHelper.dreamdirtID, 11, Material.ground).setUnlocalizedName("dreamdirt").setHardness(1F).setResistance(1F).setCreativeTab(CreativeTabHelper.tabBlocks);
         dreamgrass = new BlockDreamgrass(VetheaConfigHelper.dreamgrassID).setUnlocalizedName("dreamgrass").setHardness(1F).setResistance(1F).setCreativeTab(CreativeTabHelper.tabBlocks);
@@ -188,7 +190,7 @@ public class VetheaBlockHelper
     
     public static void initGameRegistryBlocks()
 	{
-    	GameRegistry.registerBlock(vetheaPortal, "vetheaPortal");
+    	GameRegistry.registerBlock((Block)vetheaPortal, "vetheaPortal");
         GameRegistry.registerBlock(everstone, "everstone");
         GameRegistry.registerBlock(whiteEverstone, "whiteEverstone");
         GameRegistry.registerBlock(darkEverstone, "darkEverstone");

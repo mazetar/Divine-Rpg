@@ -120,7 +120,7 @@ public class TwilightBlockHelper
 		AugiteLogs = new BlockTwilightWood(TwilightConfigHelper.AugiteLogsID).setUnlocalizedName("AugiteLogs").setCreativeTab(CreativeTabs.tabBlock);
 		AugiteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.AugiteLeavesID).setUnlocalizedName("AugiteLeaves");
 		AugiteOre = new BlockTwilightOre(TwilightConfigHelper.AugiteOreID).setUnlocalizedName("AugiteOre").setCreativeTab(CreativeTabs.tabBlock);
-		
+		AugiteBlock = new BlockDivineRPG(TwilightConfigHelper.AugiteBlockID, Material.rock).setUnlocalizedName("AugiteBlock");
 		InitGameRegistryBlocks();
 	}
 	
@@ -158,5 +158,6 @@ public class TwilightBlockHelper
 		GameRegistry.registerBlock(AugiteLogs, "AugiteLogs");
 		GameRegistry.registerBlock(AugiteLeaves, "AugiteLeaves");
 		GameRegistry.registerBlock(AugiteOre, "AugiteOre");
+		GameRegistry.registerBlock(AugiteBlock, "AugiteBlock");
 	}
 }

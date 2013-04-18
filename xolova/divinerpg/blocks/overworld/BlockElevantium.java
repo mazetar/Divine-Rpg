@@ -1,74 +1,114 @@
 package xolova.divinerpg.blocks.overworld;
 
+import java.util.Iterator;
+import java.util.List;
+
+import xolova.divinerpg.blocks.BlockDivineRPGPressurePlate;
+
+import net.minecraft.block.BlockBasePressurePlate;
+import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.world.IBlockAccess;
+import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockElevantium extends BlockDivineRPG
+public class BlockElevantium extends BlockDivineRPGPressurePlate
 {
-    public BlockElevantium(int var1, int var2, Material var3)
+    private EnumMobType triggerMobType;
+    
+    public BlockElevantium(int par1, int par2, String par3Str, Material par4Material)
     {
-        super(var1, var2, var3);
-        this.setTickRandomly(true);
-        float var4 = 0.0625F;
-        this.setBlockBounds(var4, 0.0F, var4, 1.0F - var4, 0.03125F, 1.0F - var4);
+        super(par1, par2, par4Material, par3Str);
+        this.setCreativeTab(CreativeTabs.tabRedstone);
     }
 
     /**
-     * Returns a bounding box from the pool of bounding boxes (this means this box can change after the pool has been
-     * cleared to be reused)
+     * How many world ticks before ticking
      */
-    public AxisAlignedBB getCollisionBoundingBoxFromPool(World var1, int var2, int var3, int var4)
+    public int tickRate(World par1World)
     {
-        return null;
+        return 10;
     }
 
     /**
-     * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
-     * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.
+     * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
      */
-    public boolean isOpaqueCube()
+    public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
     {
-        return false;
+        if (!par1World.isRemote)
+        {
+            int l = this.func_94350_c(par1World.getBlockMetadata(par2, par3, par4));
+
+            if (l == 0)
+            {
+                this.setStateIfMobInteractsWithPlate(par1World, par2, par3, par4, l);
+            }
+        }
+        
+        par5Entity.addVelocity(0, 2, 0);
     }
 
-    /**
-     * If this block doesn't render as an ordinary block it will return False (examples: signs, buttons, stairs, etc)
-     */
-    public boolean renderAsNormalBlock()
+    protected int func_94350_c(int par1)
     {
-        return false;
+        return par1;
     }
 
-    /**
-     * Called whenever an entity is walking on top of this block. Args: world, x, y, z, entity
-     */
-    public void onEntityWalking(World var1, int var2, int var3, int var4, Entity var5)
+    protected int func_94355_d(int par1)
     {
-        ++var5.motionY;
+        return par1;
     }
 
-    /**
-     * Updates the blocks bounds based on its current state. Args: world, x, y, z
-     */
-    public void setBlockBoundsBasedOnState(IBlockAccess var1, int var2, int var3, int var4)
+    protected int func_94351_d(World par1World, int par2, int par3, int par4)
     {
-        boolean var5 = var1.getBlockMetadata(var2, var3, var4) == 1;
-        float var6 = 0.0625F;
-        this.setBlockBounds(0.0625F, 0.0F, 0.0625F, 0.9375F, 0.0625F, 1.0F - var6);
+        List list = null;
+
+        if (this.triggerMobType == EnumMobType.everything)
+        {
+            list = par1World.getEntitiesWithinAABBExcludingEntity((Entity)null, this.getSensitiveAABB(par2, par3, par4));
+        }
+
+        if (this.triggerMobType == EnumMobType.mobs)
+        {
+            list = par1World.getEntitiesWithinAABB(EntityLiving.class, this.getSensitiveAABB(par2, par3, par4));
+        }
+
+        if (this.triggerMobType == EnumMobType.players)
+        {
+            list = par1World.getEntitiesWithinAABB(EntityPlayer.class, this.getSensitiveAABB(par2, par3, par4));
+        }
+
+        if (list != null && !list.isEmpty())
+        {
+            Iterator iterator = list.iterator();
+
+            while (iterator.hasNext())
+            {
+                Entity entity = (Entity)iterator.next();
+
+                if (!entity.doesEntityNotTriggerPressurePlate())
+                {
+                    return 15;
+                }
+            }
+        }
+
+        return 0;
     }
 
-    /**
-     * Sets the block's bounds for rendering it as an item
-     */
-    public void setBlockBoundsForItemRender()
-    {
-        float var1 = 0.5F;
-        float var2 = 0.125F;
-        float var3 = 0.5F;
-        this.setBlockBounds(0.5F - var1, 0.5F - var2, 0.5F - var3, 0.5F + var1, 0.5F + var2, 0.5F + var3);
-    }
+	@Override
+	protected int getPlateState(World world, int i, int j, int k) {
+		return 0;
+	}
+
+	@Override
+	protected int getPowerSupply(int i) {
+		return 0;
+	}
+
+	@Override
+	protected int getMetaFromWeight(int i) {
+		return 0;
+	}
 }

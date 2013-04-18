@@ -4,22 +4,17 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFluid;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPGFluid;
 
-public class BlockStationaryTar extends BlockFluid
+public class BlockStationaryTar extends BlockDivineRPGFluid
 {
-    public BlockStationaryTar(int var1, Material var2)
+    public BlockStationaryTar(int par1, int par2, Material par3)
     {
-        super(var1, var2);
+        super(par1, par2, par3);
         this.setTickRandomly(false);
-
-        if (var2 == Material.lava)
-        {
-            this.setTickRandomly(true);
-        }
     }
 
     /**

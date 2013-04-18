@@ -39,6 +39,8 @@ public class OverworldConfigHelper
 	public static int glowingStairsID;
 	public static int lightFenceBlueID;
 	public static int lightFenceRedID;
+	public static int lightFenceBlueOnID;
+	public static int lightFenceRedOnID;
 	public static int skeletonChestID;
 
 	public static int elevantiumID;
@@ -48,7 +50,7 @@ public class OverworldConfigHelper
 	public static int tarFlowingID;
 
 	public static int bloodGemID;
-	public static int neteriteOreID;
+	public static int netheriteOreID;
 	public static int spikeBlockID;
 	public static int hotSpikesID;
 	
@@ -146,7 +148,7 @@ public class OverworldConfigHelper
 		tarFlowingID = config.getBlock("tarFlowingID", 0).getInt();
 
 		bloodGemID = config.getBlock("bloodGemID", 0).getInt();
-		neteriteOreID = config.getBlock("neteriteOreID", 0).getInt();
+		netheriteOreID = config.getBlock("neteriteOreID", 0).getInt();
 		spikeBlockID = config.getBlock("spikeBlockID", 0).getInt();
 		hotSpikesID = config.getBlock("hotSpikesID", 0).getInt();
 		
@@ -181,10 +183,10 @@ public class OverworldConfigHelper
 		krakenLampID = config.getBlock("", 0).getInt();
 		drakenLampID = config.getBlock("", 0).getInt();
 		
-		fenceLightoffID = config.getBlock("", 0).getInt();
-		fenceLightonID = config.getBlock("", 0).getInt();
-		fenceLightoff1ID = config.getBlock("", 0).getInt();
-		fenceLighton1ID = config.getBlock("", 0).getInt();
+		lightFenceBlueID = config.getBlock("", 0).getInt();
+		lightFenceBlueOnID = config.getBlock("", 0).getInt();
+		lightFenceRedID = config.getBlock("", 0).getInt();
+		lightFenceRedOnID = config.getBlock("", 0).getInt();
 		redstoneBlockID = config.getBlock("", 0).getInt();
 		redstoneBlockOnID = config.getBlock("", 0).getInt();
 		purpleGlowBoneTreeID = config.getBlock("", 0).getInt();

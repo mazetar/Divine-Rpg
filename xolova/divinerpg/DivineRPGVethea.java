@@ -1,6 +1,7 @@
 package xolova.divinerpg;
 
 import xolova.divinerpg.utils.Utils;
+import xolova.divinerpg.utils.helpers.block.VetheaBlockHelper;
 import xolova.divinerpg.utils.helpers.config.VetheaConfigHelper;
 import xolova.divinerpg.utils.helpers.item.VetheaItemHelper;
 import xolova.divinerpg.utils.proxies.VetheaProxy;
@@ -31,14 +32,14 @@ public class DivineRPGVethea
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		instance = this;
-		//VetheaConfigHelper.initConfig(event);
+		VetheaConfigHelper.initConfig(event);
 	}
 	
 	@Init
 	public void Init(FMLInitializationEvent event)
 	{
-		//VetheaItemHelper.init();
-		//VetheaBlockHelper.initBlocks();
+		VetheaItemHelper.init();
+		VetheaBlockHelper.initBlocks();
 	}
 	
 	@PostInit

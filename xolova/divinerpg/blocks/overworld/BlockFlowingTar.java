@@ -3,20 +3,20 @@ package xolova.divinerpg.blocks.overworld;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFluid;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPGFluid;
 
-public class BlockFlowingTar extends BlockFluid
+public class BlockFlowingTar extends BlockDivineRPGFluid
 {
     int numAdjacentSources = 0;
     boolean[] isOptimalFlowDirection = new boolean[4];
     int[] flowCost = new int[4];
 
-    public BlockFlowingTar(int var1, Material var2)
+    public BlockFlowingTar(int par1, int par3, Material par2)
     {
-        super(var1, var2);
+        super(par1, par3, par2);
     }
 
     /**

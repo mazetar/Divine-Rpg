@@ -3,22 +3,22 @@ package xolova.divinerpg.blocks.overworld;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPGFence;
 import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 
-public class BlockLightFence extends BlockFence
+public class BlockLightFence extends BlockDivineRPGFence
 {
     private final boolean powered;
 
-    public BlockLightFence(int var1, boolean var2, String var4, Material var3)
+    public BlockLightFence(int par1, int par5, boolean par2, String par4, Material par3)
     {
-        super(var1, var4, var3);
-        this.powered = var2;
+        super(par1, par5, par3, par4);
+        this.powered = par2;
 
-        if (var2)
+        if (par2)
         {
             this.setLightValue(1.0F);
         }
@@ -27,14 +27,14 @@ public class BlockLightFence extends BlockFence
     /**
      * Returns true if the specified block can be connected by a fence
      */
-    public boolean canConnectFenceTo(IBlockAccess var1, int var2, int var3, int var4)
+    public boolean canConnectFenceTo(IBlockAccess par1, int par2, int par3, int par4)
     {
-        int var5 = var1.getBlockId(var2, var3, var4);
+        int par5 = par1.getBlockId(par2, par3, par4);
 
-        if (var5 != OverworldBlockHelper.fenceLightoff.blockID && var5 != Block.fenceGate.blockID && var5 != OverworldBlockHelper.fenceLighton.blockID && var5 != OverworldBlockHelper.fenceLighton1.blockID && var5 != OverworldBlockHelper.fenceLightoff1.blockID)
+        if (par5 != OverworldBlockHelper.lightFenceBlue.blockID && par5 != Block.fenceGate.blockID && par5 != OverworldBlockHelper.lightFenceBlueOn.blockID && par5 != OverworldBlockHelper.lightFenceRedOn.blockID && par5 != OverworldBlockHelper.lightFenceRed.blockID)
         {
-            Block var6 = Block.blocksList[var5];
-            return var6 != null && var6.blockMaterial.isOpaque() && var6.renderAsNormalBlock() ? var6.blockMaterial != Material.pumpkin : false;
+            Block par6 = Block.blocksList[par5];
+            return par6 != null && par6.blockMaterial.isOpaque() && par6.renderAsNormalBlock() ? par6.blockMaterial != Material.pumpkin : false;
         }
         else
         {
@@ -45,17 +45,17 @@ public class BlockLightFence extends BlockFence
     /**
      * Called whenever the block is added into the world. Args: world, x, y, z
      */
-    public void onBlockAdded(World var1, int var2, int var3, int var4)
+    public void onBlockAdded(World par1, int par2, int par3, int par4)
     {
-        if (!var1.isRemote)
+        if (!par1.isRemote)
         {
-            if (this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
+            if (this.powered && !par1.isBlockIndirectlyGettingPowered(par2, par3, par4))
             {
-                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, 4);
+                par1.scheduleBlockUpdate(par2, par3, par4, this.blockID, 4);
             }
-            else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
+            else if (!this.powered && par1.isBlockIndirectlyGettingPowered(par2, par3, par4))
             {
-                var1.setBlock(var2, var3, var4, OverworldBlockHelper.fenceLighton.blockID);
+                par1.setBlock(par2, par3, par4, OverworldBlockHelper.lightFenceBlueOn.blockID);
             }
         }
     }
@@ -64,17 +64,17 @@ public class BlockLightFence extends BlockFence
      * Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are
      * their own) Args: x, y, z, neighbor blockID
      */
-    public void onNeighborBlockChange(World var1, int var2, int var3, int var4, int var5)
+    public void onNeighborBlockChange(World par1, int par2, int par3, int par4, int par5)
     {
-        if (!var1.isRemote)
+        if (!par1.isRemote)
         {
-            if (this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
+            if (this.powered && !par1.isBlockIndirectlyGettingPowered(par2, par3, par4))
             {
-                var1.scheduleBlockUpdate(var2, var3, var4, this.blockID, 4);
+                par1.scheduleBlockUpdate(par2, par3, par4, this.blockID, 4);
             }
-            else if (!this.powered && var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
+            else if (!this.powered && par1.isBlockIndirectlyGettingPowered(par2, par3, par4))
             {
-                var1.setBlock(var2, var3, var4, OverworldBlockHelper.fenceLighton.blockID);
+                par1.setBlock(par2, par3, par4, OverworldBlockHelper.lightFenceBlueOn.blockID);
             }
         }
     }
@@ -82,19 +82,19 @@ public class BlockLightFence extends BlockFence
     /**
      * Ticks the block if it's been scheduled
      */
-    public void updateTick(World var1, int var2, int var3, int var4, Random var5)
+    public void updateTick(World par1, int par2, int par3, int par4, Random par5)
     {
-        if (!var1.isRemote && this.powered && !var1.isBlockIndirectlyGettingPowered(var2, var3, var4))
+        if (!par1.isRemote && this.powered && !par1.isBlockIndirectlyGettingPowered(par2, par3, par4))
         {
-            var1.setBlock(var2, var3, var4, OverworldBlockHelper.fenceLightoff.blockID);
+            par1.setBlock(par2, par3, par4, OverworldBlockHelper.lightFenceBlue.blockID);
         }
     }
 
     /**
      * Returns the ID of the items to drop on destruction.
      */
-    public int idDropped(int var1, Random var2, int var3)
+    public int idDropped(int par1, Random par2, int par3)
     {
-        return OverworldBlockHelper.fenceLightoff.blockID;
+        return OverworldBlockHelper.lightFenceBlue.blockID;
     }
 }

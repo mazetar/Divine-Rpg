@@ -17,9 +17,7 @@ public class BlockSlimeLight extends BlockDivineRPG
         this.powered = var2;
 
         if (var2)
-        {
             this.setLightValue(1.0F);
-        }
     }
 
     /**

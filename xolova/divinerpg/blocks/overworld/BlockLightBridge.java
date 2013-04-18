@@ -7,18 +7,19 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 
-public class BlockLightBridge extends Block
+public class BlockLightBridge extends BlockDivineRPG
 {
     private final boolean powered;
 
-    public BlockLightBridge(int var1, boolean var2, int var3)
+    public BlockLightBridge(int var1, int var2, boolean var3)
     {
-        super(var1, Material.glass);
-        this.powered = var2;
+        super(var1, var2, Material.glass);
+        this.powered = var3;
 
-        if (var2)
+        if (var3)
         {
             this.setLightValue(1.0F);
         }

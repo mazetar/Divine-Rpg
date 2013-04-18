@@ -11,9 +11,9 @@ import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 
 public class BlockGlowBone extends BlockDivineRPG
 {
-    public BlockGlowBone(int var1)
+    public BlockGlowBone(int var1, int par2)
     {
-        super(var1, 1, Material.plants);
+        super(var1, par2, Material.plants);
         this.setTickRandomly(true);
     }
 

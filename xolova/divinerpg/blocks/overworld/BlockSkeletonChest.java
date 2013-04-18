@@ -3,7 +3,6 @@ package xolova.divinerpg.blocks.overworld;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLiving;
@@ -14,16 +13,17 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPGContainer;
 import xolova.divinerpg.blocks.iceika.tileentities.TileEntitySkeletonChest;
 import xolova.divinerpg.utils.helpers.block.IPersonalBlock;
 
-public class BlockSkeletonChest extends BlockContainer implements IPersonalBlock
+public class BlockSkeletonChest extends BlockDivineRPGContainer implements IPersonalBlock
 {
     private Random random = new Random();
 
-    public BlockSkeletonChest(int var1)
+    public BlockSkeletonChest(int var1, int var2)
     {
-        super(var1, Material.wood);
+        super(var1, var2, Material.wood);
         this.setCreativeTab(CreativeTabs.tabDecorations);
     }
 

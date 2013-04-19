@@ -234,6 +234,11 @@ public class OverworldConfigHelper
 	public static int sharkAnchorID;
 	public static int healingStoneID;
 	
+	public int grimReaperHeadID;
+	public int grimReaperBodyID;
+	public int grimReaperLegsID;
+	public int grimReaperBootsID;
+	
 	public static void InitConfigItems(Configuration config)
 	{
 		int id = 6666;
@@ -278,4 +283,5 @@ public class OverworldConfigHelper
 		sharkAnchorID = config.getItem("sharkAnchor", id++).getInt();
 		healingStoneID = config.getItem("healingStone", id++).getInt();
 	}
+
 }

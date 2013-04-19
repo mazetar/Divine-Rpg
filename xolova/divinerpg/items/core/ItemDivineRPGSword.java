@@ -33,6 +33,13 @@ public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
 		dmg = par2EnumToolMaterial.getDamageVsEntity();
 	}
 	
+	public ItemDivineRPGSword(int par1, int img, EnumToolMaterial par2EnumToolMaterial, boolean unbreakable) {
+		super(par1 - 256, par2EnumToolMaterial);
+		this.unbreakable = unbreakable;
+		dmg = par2EnumToolMaterial.getDamageVsEntity();
+		this.index = img;
+	}
+	
 	int index;
 	int sheet;
 	

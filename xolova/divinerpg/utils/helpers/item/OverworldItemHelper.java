@@ -1,9 +1,13 @@
 package xolova.divinerpg.utils.helpers.item;
 
-import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.EnumHelper;
 import xolova.divinerpg.items.ItemDivineRPG;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 import xolova.divinerpg.utils.helpers.config.OverworldConfigHelper;
+import xolova.divinerpg.utils.helpers.gui.CreativeTabHelper;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class OverworldItemHelper 
 {
@@ -90,26 +94,16 @@ public class OverworldItemHelper
 	public static OverworldConfigHelper x;
 	
 	{
-		bedrockMaul = new ItemDivineRPG(x.bedrockMaulID);
-		soundOfMusic = new ItemDivineRPG(x.soundOfMusicID);
+        EnumToolMaterial BedrockMaul = EnumHelper.addToolMaterial("bedrockmaul", 1, -1, 1.5F, 19, 10);
+        bedrockMaul = new ItemDivineRPGSword(x.bedrockMaulID, 15, BedrockMaul, false).setUnlocalizedName("bedrock").setCreativeTab(CreativeTabHelper.tabSword);
 		jungleShard = new ItemDivineRPG(x.greenShardID);
-		shuriken = new ItemDivineRPG(x.shurikenID);
 		namkormira = new ItemDivineRPG(x.namkormiraID);
 		serenadeStriker = new ItemDivineRPG(x.serenadeStrikerID);
 		slimeSword = new ItemDivineRPG(x.slimeSwordID);
-		shadowBow = new ItemDivineRPG(x.shadowBowID);
 		crabClawCannon = new ItemDivineRPG(x.crabClawCannonID);
-		frostCannon = new ItemDivineRPG(x.frostCannonID);
 		frostSword = new ItemDivineRPG(x.frostSwordID);
 		divinesword = new ItemDivineRPG(x.divineswordID);
 		sandSlash = new ItemDivineRPG(x.sandSlashID);
-		iceShard = new ItemDivineRPG(x.iceShardID);
-		divineShard = new ItemDivineRPG(x.yellowShardID);
-		
-		divineHelm = new ItemDivineRPG(x.divineHelmID);
-		divineBody = new ItemDivineRPG(x.divineBodyID);
-		divineLegs = new ItemDivineRPG(x.divineLegsID);
-		divineBoots = new ItemDivineRPG(x.divineBootsID);
 		
 		enderSword = new ItemDivineRPG(x.enderSwordID);
 		enderSwordYellow = new ItemDivineRPG(x.enderSwordYellowID);
@@ -117,18 +111,37 @@ public class OverworldItemHelper
 		enderSwordRed = new ItemDivineRPG(x.enderSwordRedID);
 		enderSwordBlue = new ItemDivineRPG(x.enderSwordBlueID);
 		
+		shuriken = new ItemDivineRPG(x.shurikenID);
+		shadowBow = new ItemDivineRPG(x.shadowBowID);
+		frostCannon = new ItemDivineRPG(x.frostCannonID);
+		soundOfMusic = new ItemDivineRPG(x.soundOfMusicID);
 		bluefirebow = new ItemDivineRPG(x.bluefirebowID);
+		sharkAnchor = new ItemDivineRPG(x.sharkAnchorID);
+		scythe = new ItemDivineRPG(x.scytheID);
+		
 		rupee = new ItemDivineRPG(x.rupeeID);
 		tomato = new ItemDivineRPG(x.tomatoID);
 		tomatoSeeds = new ItemDivineRPG(x.tomatoSeedsID);
 		purpleFire = new ItemDivineRPG(x.purpleFireID);
+		healingStone = new ItemDivineRPG(x.healingStoneID);
+		
+		divineShard = new ItemDivineRPG(x.yellowShardID);
+		iceShard = new ItemDivineRPG(x.iceShardID);
+
+		divineHelm = new ItemDivineRPG(x.divineHelmID);
+		divineBody = new ItemDivineRPG(x.divineBodyID);
+		divineLegs = new ItemDivineRPG(x.divineLegsID);
+		divineBoots = new ItemDivineRPG(x.divineBootsID);
+
 		jackOManBoots = new ItemDivineRPG(x.jackOManBootsID);
 		jackOManLegs = new ItemDivineRPG(x.jackOManLegsID);
 		jackOManBody = new ItemDivineRPG(x.jackOManBodyID);
 		jackOManHead = new ItemDivineRPG(x.jackOManHeadID);
-		scythe = new ItemDivineRPG(x.scytheID);
-		sharkAnchor = new ItemDivineRPG(x.sharkAnchorID);
-		healingStone = new ItemDivineRPG(x.healingStoneID);
+
+		grimReaperHead = new ItemDivineRPG(x.grimReaperHeadID);
+		grimReaperBody = new ItemDivineRPG(x.grimReaperBodyID);
+		grimReaperLegs = new ItemDivineRPG(x.grimReaperLegsID);
+		grimReaperBoots = new ItemDivineRPG(x.grimReaperBootsID);
 	}
 	
 	public static void AddNames()

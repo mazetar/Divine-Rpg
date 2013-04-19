@@ -25,6 +25,7 @@ import xolova.divinerpg.blocks.twilight.BlockUviteGrass;
 import xolova.divinerpg.blocks.twilight.BlockUvitePortal;
 import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class TwilightBlockHelper 
 {
@@ -159,5 +160,12 @@ public class TwilightBlockHelper
 		GameRegistry.registerBlock(AugiteLeaves, "AugiteLeaves");
 		GameRegistry.registerBlock(AugiteOre, "AugiteOre");
 		GameRegistry.registerBlock(AugiteBlock, "AugiteBlock");
+		
+		initNames();
+	}
+	
+	public static void initNames()
+	{
+		LanguageRegistry.addName(DravitePortal, "Dravite Portal");
 	}
 }

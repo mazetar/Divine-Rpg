@@ -32,5 +32,13 @@ public class CommandDivineRPG extends CommandBase
 			else
 				playerMP.travelToDimension(0);
 		}
+		if(args[0].matches("Dravite"))
+		{
+			EntityPlayerMP playerMP = (EntityPlayerMP) sender;
+			if(playerMP.dimension == 0)
+				playerMP.travelToDimension(DimensionRegistry.DraviteID);
+			else
+				playerMP.travelToDimension(0);
+		}
 	}
 }

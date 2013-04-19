@@ -3,6 +3,8 @@ package xolova.divinerpg;
 import net.minecraft.command.CommandHandler;
 import xolova.divinerpg.commands.CommandDivineRPG;
 import xolova.divinerpg.utils.Utils;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
+import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import xolova.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import xolova.divinerpg.utils.proxies.TwilightProxy;
@@ -48,11 +50,11 @@ public class DivineRPGTwilight
 	{
 		proxy.init(event);
 		
-		//TwilightBlockHelper.initBlocks();
+		TwilightBlockHelper.initBlocks();
 		
 		TwilightItemHelper.init();
 		
-		//DimensionRegistry.InitDimensions();
+		DimensionRegistry.InitDimensions();
 	}
 	
 	@PostInit

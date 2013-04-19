@@ -422,7 +422,6 @@ public class ChunkProviderTwilight implements IChunkProvider
             {
                 int var10000 = var21 - (var4 + 8);
                 var10000 = var20 - (var5 + 8);
-                //this.worldObj.getPrecipitationHeight(var21, var20);
             }
         }
 
@@ -439,27 +438,18 @@ public class ChunkProviderTwilight implements IChunkProvider
         return true;
     }
 
-    /**
-     * Returns if the IChunkProvider supports saving.
-     */
     @Override
     public boolean canSave()
     {
         return true;
     }
 
-    /**
-     * Converts the instance data to a readable string.
-     */
     @Override
     public String makeString()
     {
         return "lolwhat?";
     }
 
-    /**
-     * Returns a list of creatures of the specified type that can spawn at the given location.
-     */
     @Override
     public List getPossibleCreatures(EnumCreatureType var1, int var2, int var3, int var4)
     {
@@ -467,9 +457,6 @@ public class ChunkProviderTwilight implements IChunkProvider
         return var5 == null ? null : var5.getSpawnableList(var1);
     }
 
-    /**
-     * Returns the location of the closest structure of the specified type. If not found returns null.
-     */
     @Override
     public ChunkPosition findClosestStructure(World var1, String var2, int var3, int var4, int var5)
     {
@@ -483,12 +470,11 @@ public class ChunkProviderTwilight implements IChunkProvider
     }
 
 	@Override
-	public void recreateStructures(int var1, int var2) {
-		
-	}
+	public void recreateStructures(int var1, int var2) {}
 
 	@Override
-	public boolean unloadQueuedChunks() {
+	public boolean unloadQueuedChunks()
+	{
 		return false;
 	}
 }

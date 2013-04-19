@@ -13,7 +13,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import xolova.divinerpg.entities.particle.EntityDravitePortalFX;
 import xolova.divinerpg.utils.helpers.DimensionRegistry;
-import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import xolova.divinerpg.utils.helpers.teleporters.TeleporterTwilight;
 import cpw.mods.fml.client.FMLClientHandler;
@@ -84,11 +83,12 @@ public class BlockTwilightPortal extends BlockBreakable
         byte var5 = 0;
         byte var6 = 0;
 
-        if (var1.getBlockId(var2 - 1, var3, var4) == OverworldBlockHelper.divineRock.blockID || var1.getBlockId(var2 + 1, var3, var4) == OverworldBlockHelper.divineRock.blockID)
+        if (var1.getBlockId(var2 - 1, var3, var4) == TwilightBlockHelper.divineRock.blockID || var1.getBlockId(var2 + 1, var3, var4) == TwilightBlockHelper.divineRock.blockID)
         {
             var5 = 1;
         }
-        if(var1.getBlockId(var2, var3, var4 - 1) == OverworldBlockHelper.divineRock.blockID || var1.getBlockId(var2, var3, var4 + 1) == OverworldBlockHelper.divineRock.blockID);
+
+        if (var1.getBlockId(var2, var3, var4 - 1) == TwilightBlockHelper.divineRock.blockID || var1.getBlockId(var2, var3, var4 + 1) == TwilightBlockHelper.divineRock.blockID)
         {
             var6 = 1;
         }
@@ -120,7 +120,7 @@ public class BlockTwilightPortal extends BlockBreakable
 
                         if (var9)
                         {
-                            if (var10 != OverworldBlockHelper.divineRock.blockID)
+                            if (var10 != TwilightBlockHelper.divineRock.blockID)
                             {
                                 return false;
                             }
@@ -168,7 +168,7 @@ public class BlockTwilightPortal extends BlockBreakable
             ;
         }
 
-        if (var1.getBlockId(var2, var8 - 1, var4) != OverworldBlockHelper.divineRock.blockID)
+        if (var1.getBlockId(var2, var8 - 1, var4) != TwilightBlockHelper.divineRock.blockID)
         {
             var1.setBlock(var2, var3, var4, 0);
         }
@@ -181,7 +181,7 @@ public class BlockTwilightPortal extends BlockBreakable
                 ;
             }
 
-            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == OverworldBlockHelper.divineRock.blockID)
+            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == TwilightBlockHelper.divineRock.blockID)
             {
                 boolean var10 = var1.getBlockId(var2 - 1, var3, var4) == this.blockID || var1.getBlockId(var2 + 1, var3, var4) == this.blockID;
                 boolean var11 = var1.getBlockId(var2, var3, var4 - 1) == this.blockID || var1.getBlockId(var2, var3, var4 + 1) == this.blockID;
@@ -190,7 +190,7 @@ public class BlockTwilightPortal extends BlockBreakable
                 {
                     var1.setBlock(var2, var3, var4, 0);
                 }
-                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != OverworldBlockHelper.divineRock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != OverworldBlockHelper.divineRock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
+                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.divineRock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != TwilightBlockHelper.divineRock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
                     var1.setBlock(var2, var3, var4, 0);
                 }

@@ -55,11 +55,11 @@ public class TwilightConfigHelper
 		
 		config.load();
 		
-		TwilightStoneID = config.getBlock("Twilight Stone", 189).getInt();
+		TwilightStoneID = config.getTerrainBlock("WorldGen Blocks", "TwilightStone", 189, "").getInt();
 		divineRockID = config.getBlock("DivineRock", 642).getInt();
 		
-		DraviteGrassID = config.getBlock("Dravite Grass", 190).getInt();
-		DraviteDirtID = config.getBlock("Dravite Dirt", 191).getInt();
+		DraviteGrassID = config.getTerrainBlock("WorldGen Blocks", "Dravite Grass", 190, "").getInt();
+		DraviteDirtID = config.getTerrainBlock("WorldGen Blocks", "Dravite Dirt", 191, "").getInt();
 		DraviteLogsID = config.getBlock("Dravite Logs", 649).getInt();
 		DraviteLeavesID = config.getBlock("Dravite Leaves", 589).getInt();
 		DraviteOreID = config.getBlock("Dravite Ore", 588).getInt();

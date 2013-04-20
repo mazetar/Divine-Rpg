@@ -15,6 +15,22 @@ public class BlockMythilGrass extends BlockDivineRPG
         super(var1, 1, Material.grass);
         this.setTickRandomly(true);
     }
+    
+    public int getSheet(int side, int metadata)
+    {
+    	return 2;
+    }
+    
+	@Override
+	public int getIndex(int side, int metadata)
+	{
+		if(side == super.Top)
+			return 122;
+		if(side == super.Bottom)
+			return 140;
+		else
+			return 141;
+	}
 
     /**
      * Ticks the block if it's been scheduled

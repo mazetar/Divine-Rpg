@@ -2,12 +2,12 @@ package xolova.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
-public class BlockTwilightStone extends Block
+public class BlockTwilightStone extends BlockDivineRPG
 {
     public BlockTwilightStone(int var1)
     {

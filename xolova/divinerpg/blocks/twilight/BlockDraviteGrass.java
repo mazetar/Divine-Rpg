@@ -4,18 +4,37 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.Icon;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ForgeDirection;
 import xolova.divinerpg.blocks.BlockDivineRPG;
 import xolova.divinerpg.utils.helpers.block.TwilightBlockHelper;
 
 public class BlockDraviteGrass extends BlockDivineRPG
-{
+{	
     public BlockDraviteGrass(int var1)
     {
         super(var1, 2, Material.grass);
         this.setTickRandomly(true);
     }
-
+    
+    @Override
+	public int getIndex(int side, int metadata) 
+	{
+		if(side == 0)
+			return 138;
+		else if(side == 1)
+			return 120;
+		else
+			return 139;
+	}
+	
+	@Override
+	public int getSheet(int side, int metadata)
+	{
+		return 2;
+	}
     /**
      * Ticks the block if it's been scheduled
      */

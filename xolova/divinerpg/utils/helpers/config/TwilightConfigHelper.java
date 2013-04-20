@@ -24,6 +24,7 @@ public class TwilightConfigHelper
 	public static int AzuriteOreID;
 	public static int AzuriteVinesID;
 	public static int AzuriteBlockID;
+	public static int AzuritePortalID;
 	
 	public static int UviteGrassID;
 	public static int UviteDirtID;
@@ -31,6 +32,7 @@ public class TwilightConfigHelper
 	public static int UviteLeavesID;
 	public static int UviteOreID;
 	public static int UviteBlockID;
+	public static int UvitePortalID;
 	
 	public static int MythrilGrassID;
 	public static int MythrilDirtID;
@@ -38,6 +40,7 @@ public class TwilightConfigHelper
 	public static int MythrilLeavesID;
 	public static int MythrilOreID;
 	public static int MythrilBlockID;
+	public static int MythrilPortalID;
 	
 	public static int AugiteGrassID;
 	public static int AugiteDirtID;
@@ -45,6 +48,7 @@ public class TwilightConfigHelper
 	public static int AugiteLeavesID;
 	public static int AugiteOreID;
 	public static int AugiteBlockID;
+	public static int AugitePortalID;
 	
 	public static int divineRockID;
 	
@@ -66,35 +70,38 @@ public class TwilightConfigHelper
 		DraviteBlockID = config.getBlock("Dravite Block", 579).getInt();
 		DravitePortalID = config.getBlock("Dravite Portal", 599).getInt();
 		
-		AzuriteGrassID = config.getBlock("Azurite Grass", 192).getInt();
-		AzuriteDirtID = config.getBlock("Azurite Dirt", 193).getInt();
+		AzuriteGrassID = config.getTerrainBlock("WorldGen Blocks", "Azurite Grass", 192, "").getInt();
+		AzuriteDirtID = config.getTerrainBlock("WorldGen Blocks", "Azurite Dirt", 193, "").getInt();
 		AzuriteLogsID = config.getBlock("Azurite Logs", 652).getInt();
 		AzuriteLeavesID = config.getBlock("Azurite Leaves", 591).getInt();
 		AzuriteOreID = config.getBlock("Azurite Ore", 584).getInt();
 		AzuriteVinesID = config.getBlock("Azurite Vines", 562).getInt();
 		AzuriteBlockID = config.getBlock("Azurite Block", 580).getInt();
+		AzuritePortalID = config.getBlock("Azurite Portal", 600).getInt();
 		
-		UviteGrassID = config.getBlock("Uvite Grass", 194).getInt();
-		UviteDirtID = config.getBlock("Uvite Dirt", 195).getInt();
+		UviteGrassID = config.getTerrainBlock("WorldGen Blocks", "Uvite Grass", 194, "").getInt();
+		UviteDirtID = config.getTerrainBlock("WorldGen Blocks", "Uvite Dirt", 195, "").getInt();
 		UviteLogsID = config.getBlock("Uvite Logs", 651).getInt();
 		UviteLeavesID = config.getBlock("Uvite Leaves", 590).getInt();
 		UviteOreID = config.getBlock("Uvite Ore", 585).getInt();
 		UviteBlockID = config.getBlock("Uvite Block", 581).getInt();
+		UvitePortalID = config.getBlock("Uvite Portal", 602).getInt();
 		
-		MythrilGrassID = config.getBlock("Mythril Grass", 196).getInt();
-		MythrilDirtID = config.getBlock("Mythril Dirt", 197).getInt();
+		MythrilGrassID = config.getTerrainBlock("WorldGen Blocks", "Mythril Grass", 196, "").getInt();
+		MythrilDirtID = config.getTerrainBlock("WorldGen Blocks", "Mythril Dirt", 197, "").getInt();
 		MythrilLogsID = config.getBlock("Mythril Logs", 654).getInt();
 		MythrilLeavesID = config.getBlock("Mythril Leaves", 592).getInt();
 		MythrilOreID = config.getBlock("Mythril Ore", 586).getInt();
 		MythrilBlockID = config.getBlock("Mythril Block", 582).getInt();
+		MythrilPortalID  = config.getBlock("Mythril Portal", 603).getInt();
 		
-		AugiteGrassID = config.getBlock("Augite Grass", 198).getInt();
-		AugiteDirtID = config.getBlock("Augite Dirt", 199).getInt();
+		AugiteGrassID = config.getTerrainBlock("WorldGen Blocks", "Augite Grass", 198, "").getInt();
+		AugiteDirtID = config.getTerrainBlock("WorldGen Blocks", "Augite Dirt", 199, "").getInt();
 		AugiteLogsID = config.getBlock("Augite Logs", 650).getInt();
 		AugiteLeavesID = config.getBlock("Augite Leaves", 593).getInt();
 		AugiteOreID = config.getBlock("Augite Ore", 587).getInt();
 		AugiteBlockID = config.getBlock("Augite Block", 583).getInt();
-
+		AugitePortalID = config.getBlock("Augite Portal", 604).getInt();
 		
 		initConfigItems(event, config);
 		

@@ -1,14 +1,17 @@
 package xolova.divinerpg.blocks.twilight;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPG;
 
-public class BlockTwilightWood extends Block
+public class BlockTwilightWood extends BlockDivineRPG
 {
+	public int index;
+	
     public BlockTwilightWood(int var1)
     {
         super(var1, Material.wood);
+        this.index = var1;
     }
 
     /**

@@ -502,7 +502,7 @@ public class ChunkProviderDense implements IChunkProvider
             var19 = var4 + this.hellRNG.nextInt(16);
             var20 = var5 + this.hellRNG.nextInt(16);
             var21 = this.hellRNG.nextInt(128);
-            var17.generate(this.worldObj, this.hellRNG, var19, var21, var20);
+            //var17.generate(this.worldObj, this.hellRNG, var19, var21, var20);
         }
 
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(worldObj, hellRNG, var4, var5));

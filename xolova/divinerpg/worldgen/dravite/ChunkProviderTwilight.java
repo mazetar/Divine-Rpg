@@ -411,7 +411,7 @@ public class ChunkProviderTwilight implements IChunkProvider
             var19 = var4 + this.rand.nextInt(16);
             var20 = var5 + this.rand.nextInt(16);
             var21 = this.worldObj.getHeightValue(var19, var20);
-            var17.generate(this.worldObj, this.rand, var19, var21, var20);
+            //var17.generate(this.worldObj, this.rand, var19, var21, var20);
         }
 
         SpawnerAnimals.performWorldGenSpawning(this.worldObj, var6, var4 + 8, var5 + 8, 16, 16, this.rand);

@@ -16,6 +16,11 @@ public class BlockAugiteGrass extends BlockDivineRPG
         this.setTickRandomly(true);
     }
     
+    public int getSheet(int side, int metadata)
+    {
+    	return 2;
+    }
+    
     @Override
     public int getIndex(int side, int metadata) {
     	return side == 0 ? 142 : side == 1 ? 121 : 143;

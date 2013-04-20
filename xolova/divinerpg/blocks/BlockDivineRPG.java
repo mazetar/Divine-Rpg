@@ -14,6 +14,8 @@ public class BlockDivineRPG extends Block implements IBlockDivineRPG {
 	
 	int index;
 	int sheet;
+	public static final int Top = 1;
+	public static final int Bottom = 0;
 
 	public BlockDivineRPG(int id, int sprite, Material mat) {
 		super(id, mat);
@@ -36,6 +38,7 @@ public class BlockDivineRPG extends Block implements IBlockDivineRPG {
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister) {
 		IconHelper.massLoadBlockSprites(par1IconRegister);
 	}

@@ -24,7 +24,7 @@ public class BlockAugitePortal extends BlockBreakable
     private int firetick;
     private int firemax = 1000;
 
-    public BlockAugitePortal(int var1, int var2)
+    public BlockAugitePortal(int var1)
     {
         super(var1, "DivineRPG:AugitePortal", Material.portal, false);
         this.firetick = this.firemax;

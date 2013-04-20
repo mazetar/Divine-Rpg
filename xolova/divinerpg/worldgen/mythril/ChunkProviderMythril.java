@@ -398,7 +398,7 @@ public class ChunkProviderMythril implements IChunkProvider
             var19 = var4 + this.rand.nextInt(16);
             var20 = var5 + this.rand.nextInt(16);
             var21 = this.worldObj.getTopSolidOrLiquidBlock(var19, var20);
-            var17.generate(this.worldObj, this.rand, var19, var21, var20);
+            //var17.generate(this.worldObj, this.rand, var19, var21, var20);
         }
         for (var18 = 0; var18 < 7; ++var18)
         {

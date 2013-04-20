@@ -17,6 +17,22 @@ public class BlockAzuriteGrass extends BlockDivineRPG
         this.setUnlocalizedName("AzuriteGrass");
         this.setTickRandomly(true);
     }
+	
+	public int getSheet(int side, int metadata)
+	{
+		return 2;
+	}
+	
+	@Override
+	public int getIndex(int side, int metadata)
+	{
+		if(side == super.Top)
+			return 119;
+		if(side == super.Bottom)
+			return 136;
+		else
+			return 137;
+	}
 
     public void updateTick(World var1, int var2, int var3, int var4, Random var5)
     {

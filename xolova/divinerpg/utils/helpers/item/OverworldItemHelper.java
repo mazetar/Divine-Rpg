@@ -32,7 +32,7 @@ public class OverworldItemHelper
 	public static Item iceShard;
 	public static Item divineShard;
 	public static Item moltenShard;
-	public static Item corruptedShards;
+	public static Item corruptedShard;
 
 	public static Item enderStone;
 	public static Item jungleStone;
@@ -73,6 +73,7 @@ public class OverworldItemHelper
 	public static Item jackOManHead;
 	public static Item scythe;
 	public static Item purpleGlowBoneTree;
+	public static Item pinkGlowBoneTree;
 	public static Item sharkAnchor;
 	public static Item healingStone;
 	public static Item purpleBlaze;
@@ -96,7 +97,6 @@ public class OverworldItemHelper
 	{
         EnumToolMaterial BedrockMaul = EnumHelper.addToolMaterial("bedrockmaul", 1, -1, 1.5F, 19, 10);
         bedrockMaul = new ItemDivineRPGSword(x.bedrockMaulID, 15, BedrockMaul, false).setUnlocalizedName("bedrock").setCreativeTab(CreativeTabHelper.tabSword);
-		jungleShard = new ItemDivineRPG(x.greenShardID);
 		namkormira = new ItemDivineRPG(x.namkormiraID);
 		serenadeStriker = new ItemDivineRPG(x.serenadeStrikerID);
 		slimeSword = new ItemDivineRPG(x.slimeSwordID);
@@ -122,11 +122,37 @@ public class OverworldItemHelper
 		rupee = new ItemDivineRPG(x.rupeeID);
 		tomato = new ItemDivineRPG(x.tomatoID);
 		tomatoSeeds = new ItemDivineRPG(x.tomatoSeedsID);
+		
 		purpleFire = new ItemDivineRPG(x.purpleFireID);
 		healingStone = new ItemDivineRPG(x.healingStoneID);
+		sharkFin = new ItemDivineRPG(x.healingStoneID);
+		whaleFin = new ItemDivineRPG(x.healingStoneID);
+		purpleGlowBoneTree = new ItemDivineRPG(x.healingStoneID);
+		pinkGlowBoneTree = new ItemDivineRPG(x.healingStoneID);
 		
+		sharkAnchor = new ItemDivineRPG(x.healingStoneID);
+		scythe = new ItemDivineRPG(x.healingStoneID);
+
+		rupee = new ItemDivineRPG(x.healingStoneID);
+		arlemite = new ItemDivineRPG(x.healingStoneID);
+		realmiteIngot = new ItemDivineRPG(x.healingStoneID);
+		netheriteBar = new ItemDivineRPG(x.healingStoneID);
+		hellStoneIngot = new ItemDivineRPG(x.healingStoneID);
+		
+		jungleShard = new ItemDivineRPG(x.greenShardID);
 		divineShard = new ItemDivineRPG(x.yellowShardID);
 		iceShard = new ItemDivineRPG(x.iceShardID);
+		enderShard = new ItemDivineRPG(x.iceShardID);
+		moltenShard = new ItemDivineRPG(x.iceShardID);
+		corruptedShard = new ItemDivineRPG(x.iceShardID);
+
+		jungleStone = new ItemDivineRPG(x.jungleStoneID);
+		divineStone = new ItemDivineRPG(x.divineStoneID);
+		iceStone = new ItemDivineRPG(x.iceStoneID);
+		enderStone = new ItemDivineRPG(x.enderStoneID);
+		moltenStone = new ItemDivineRPG(x.moltenStoneID);
+		corruptedStone = new ItemDivineRPG(x.corruptedStoneID);
+		blueFireStone = new ItemDivineRPG(x.blueFireStoneID);
 
 		divineHelm = new ItemDivineRPG(x.divineHelmID);
 		divineBody = new ItemDivineRPG(x.divineBodyID);

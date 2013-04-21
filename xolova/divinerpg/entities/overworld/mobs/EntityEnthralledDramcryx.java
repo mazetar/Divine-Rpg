@@ -73,14 +73,14 @@ public class EntityEnthralledDramcryx extends EntityMob
 
         for (var4 = 0; var4 < var3; ++var4)
         {
-            this.dropItem(OverworldItemHelper.corruptedShards.itemID, 1);
+            this.dropItem(OverworldItemHelper.corruptedShard.itemID, 1);
         }
 
         var3 = this.rand.nextInt(3 + par2);
 
         for (var4 = 0; var4 < var3; ++var4)
         {
-            this.dropItem(OverworldItemHelper.corruptedShards.itemID, 2);
+            this.dropItem(OverworldItemHelper.corruptedShard.itemID, 2);
         }
     }
 

@@ -26,12 +26,14 @@ public class OverworldItemHelper
 	public static Item watcherEye;
 	public static Item infernoBow;
 	public static Item bluefirebow;
+
 	public static Item enderShard;
 	public static Item jungleShard;
 	public static Item iceShard;
 	public static Item divineShard;
 	public static Item moltenShard;
-	public static Item corruptedShards;
+	public static Item corruptedShard;
+
 	public static Item enderStone;
 	public static Item jungleStone;
 	public static Item iceStone;
@@ -40,20 +42,24 @@ public class OverworldItemHelper
 	public static Item shadowStone;
 	public static Item corruptedStone;
 	public static Item blueFireStone;
+	
 	public static Item divineHelm;
 	public static Item divineBody;
 	public static Item divineLegs;
 	public static Item divineBoots;
+	
 	public static Item enderSword;
 	public static Item enderSwordYellow;
 	public static Item enderSwordGreen;
 	public static Item enderSwordRed;
 	public static Item enderSwordBlue;
+
 	public static Item rupee;
 	public static Item arlemite;
 	public static Item realmiteIngot;
 	public static Item netheriteBar;
 	public static Item hellStoneIngot;
+
 	public static Item sharkFin;
 	public static Item whaleFin;
 	public static Item tomato;
@@ -67,10 +73,12 @@ public class OverworldItemHelper
 	public static Item jackOManHead;
 	public static Item scythe;
 	public static Item purpleGlowBoneTree;
+	public static Item pinkGlowBoneTree;
 	public static Item sharkAnchor;
 	public static Item healingStone;
 	public static Item purpleBlaze;
 	public static Item furyFire;
+
 	public static Item skeleManHead;
 	public static Item skeleManBody;
 	public static Item skeleManLegs;
@@ -79,8 +87,9 @@ public class OverworldItemHelper
 	public static Item grimReaperBody;
 	public static Item grimReaperLegs;
 	public static Item grimReaperBoots;
+
 	public static Item crabClaw;
-	public static Item aquaticShards;
+	public static Item aquaticPellets;
 	public static Item corruptBullet;
 	
 	
@@ -168,11 +177,37 @@ public class OverworldItemHelper
 		rupee = new ItemDivineRPG(x.rupeeID);
 		tomato = new ItemDivineRPG(x.tomatoID);
 		tomatoSeeds = new ItemDivineRPG(x.tomatoSeedsID);
+		
 		purpleFire = new ItemDivineRPG(x.purpleFireID);
 		healingStone = new ItemDivineRPG(x.healingStoneID);
+		sharkFin = new ItemDivineRPG(x.healingStoneID);
+		whaleFin = new ItemDivineRPG(x.healingStoneID);
+		purpleGlowBoneTree = new ItemDivineRPG(x.healingStoneID);
+		pinkGlowBoneTree = new ItemDivineRPG(x.healingStoneID);
 		
+		sharkAnchor = new ItemDivineRPG(x.healingStoneID);
+		scythe = new ItemDivineRPG(x.healingStoneID);
+
+		rupee = new ItemDivineRPG(x.healingStoneID);
+		arlemite = new ItemDivineRPG(x.healingStoneID);
+		realmiteIngot = new ItemDivineRPG(x.healingStoneID);
+		netheriteBar = new ItemDivineRPG(x.healingStoneID);
+		hellStoneIngot = new ItemDivineRPG(x.healingStoneID);
+		
+		jungleShard = new ItemDivineRPG(x.greenShardID);
 		divineShard = new ItemDivineRPG(x.yellowShardID);
 		iceShard = new ItemDivineRPG(x.iceShardID);
+		enderShard = new ItemDivineRPG(x.iceShardID);
+		moltenShard = new ItemDivineRPG(x.iceShardID);
+		corruptedShard = new ItemDivineRPG(x.iceShardID);
+
+		jungleStone = new ItemDivineRPG(x.jungleStoneID);
+		divineStone = new ItemDivineRPG(x.divineStoneID);
+		iceStone = new ItemDivineRPG(x.iceStoneID);
+		enderStone = new ItemDivineRPG(x.enderStoneID);
+		moltenStone = new ItemDivineRPG(x.moltenStoneID);
+		corruptedStone = new ItemDivineRPG(x.corruptedStoneID);
+		blueFireStone = new ItemDivineRPG(x.blueFireStoneID);
 
 		divineHelm = new ItemDivineRPG(x.divineHelmID);
 		divineBody = new ItemDivineRPG(x.divineBodyID);

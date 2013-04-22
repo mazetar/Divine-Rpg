@@ -26,14 +26,12 @@ public class OverworldItemHelper
 	public static Item watcherEye;
 	public static Item infernoBow;
 	public static Item bluefirebow;
-
 	public static Item enderShard;
 	public static Item jungleShard;
 	public static Item iceShard;
 	public static Item divineShard;
 	public static Item moltenShard;
 	public static Item corruptedShards;
-
 	public static Item enderStone;
 	public static Item jungleStone;
 	public static Item iceStone;
@@ -42,24 +40,20 @@ public class OverworldItemHelper
 	public static Item shadowStone;
 	public static Item corruptedStone;
 	public static Item blueFireStone;
-	
 	public static Item divineHelm;
 	public static Item divineBody;
 	public static Item divineLegs;
 	public static Item divineBoots;
-	
 	public static Item enderSword;
 	public static Item enderSwordYellow;
 	public static Item enderSwordGreen;
 	public static Item enderSwordRed;
 	public static Item enderSwordBlue;
-
 	public static Item rupee;
 	public static Item arlemite;
 	public static Item realmiteIngot;
 	public static Item netheriteBar;
 	public static Item hellStoneIngot;
-
 	public static Item sharkFin;
 	public static Item whaleFin;
 	public static Item tomato;
@@ -77,7 +71,6 @@ public class OverworldItemHelper
 	public static Item healingStone;
 	public static Item purpleBlaze;
 	public static Item furyFire;
-
 	public static Item skeleManHead;
 	public static Item skeleManBody;
 	public static Item skeleManLegs;
@@ -86,10 +79,63 @@ public class OverworldItemHelper
 	public static Item grimReaperBody;
 	public static Item grimReaperLegs;
 	public static Item grimReaperBoots;
-
 	public static Item crabClaw;
-	public static Item aquaticPellets;
+	public static Item aquaticShards;
 	public static Item corruptBullet;
+	
+	
+	public static Item aquaticStones;
+	public static Item shadowBar;
+	public static Item netheriteChunk;
+	public static Item krakenSkin;
+	public static Item aquaticTrident;
+	public static Item aquaton;
+	public static Item hamreicher;
+	public static Item sharkSword;
+	public static Item bowheadCannon;
+	public static Item oceanKnife;
+	public static Item dualClaw;
+	public static Item daggerOfBlood;
+	public static Item clawAnchor;
+	public static Item bowheadAnchor;
+	public static Item Pavalence;
+	public static Item legendaryEnderEye;
+	public static Item infernoSword;
+	public static Item realmiteSword;
+	public static Item bedrockSword;
+	public static Item arlemiteStabber;
+	public static Item rupeeSword;
+	public static Item furyMaul;
+	
+	public static Item realmitePickaxe;
+	public static Item realmiteAxe;
+	public static Item realmiteShovel;
+	
+	public static Item bedrockPickaxe;
+	public static Item bedrockAxe;
+	public static Item bedrockShovel;
+
+	public static Item crystalPickaxe;
+	public static Item crystalAxe;
+	public static Item crystalShovel;
+	public static Item crystalHoe;
+	public static Item crystalShicaxe;
+	
+	public static Item plasmaPickaxe;
+	public static Item plasmaAxe;
+	public static Item plasmaShovel;
+	public static Item plasmaHoe;
+	public static Item plasmaShicaxe;
+	
+	public static Item blazingCrystalleSword;
+	public static Item donut;
+	public static Item pizzaDough;
+	public static Item bacon;
+	public static Item waterMelon;
+	public static Item cheese;
+	public static Item minipizza;
+	public static Item dinner;
+	public static Item boiledegg;
 	
 	public static OverworldConfigHelper x;
 	
@@ -187,4 +233,49 @@ public class OverworldItemHelper
 		LanguageRegistry.addName(sharkAnchor, "Shark Anchor");
 		LanguageRegistry.addName(healingStone, "Healing Stone");
 	}
+
+	public static Item netheriteHelmet;
+	public static Item netheriteBody;
+	public static Item netheriteLegs;
+	public static Item netheriteBoots;
+	
+	public static Item crystonalHelmet;
+	public static Item crystonalBody;
+	public static Item crystonalLegs;
+	public static Item crystonalBoots;
+	
+	public static Item krakenHelmet;
+	public static Item krakenBody;
+	public static Item krakenLegs;
+	public static Item krakenBoots;
+	
+	public static Item infernoHelmet;
+	public static Item infernoBody;
+	public static Item infernoLegs;
+	public static Item infernoBoots;
+	
+	public static Item bedrockHelmet;
+	public static Item bedrockBody;
+	public static Item bedrockLegs;
+	public static Item bedrockBoots;
+	
+	public static Item plasmaHelmet;
+	public static Item plasmaBody;
+	public static Item plasmaLegs;
+	public static Item plasmaBoots;
+	
+	public static Item realmiteHelmet;
+	public static Item realmiteBody;
+	public static Item realmiteLegs;
+	public static Item realmiteBoots;
+	
+	public static Item eliteRealmiteHelmet;
+	public static Item eliteRealmiteBody;
+	public static Item eliteRealmiteLegs;
+	public static Item eliteRealmiteBoots;
+	
+	public static Item diamondHelmet;
+	public static Item diamondBoots;
+	public static Item diamondLegs;
+	public static Item diamondChest;
 }

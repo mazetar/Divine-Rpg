@@ -7,7 +7,6 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
-import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.src.ModLoader;
 import net.minecraft.world.World;
@@ -15,18 +14,19 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import xolova.divinerpg.entities.arcana.projectile.EntityMerikMissile;
+import xolova.divinerpg.items.core.ItemDivineRPGBow;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemMeriksMissile extends ItemBow
+public class ItemMeriksMissile extends ItemDivineRPGBow
 {
     private int lastDamage = -1;
 
-    public ItemMeriksMissile(int var1)
+    public ItemMeriksMissile(int var1, int maxDamage, int damage, boolean unbreakable)
     {
-        super(var1);
+        super(var1, maxDamage, damage, unbreakable);
         this.maxStackSize = 1;
         this.setMaxDamage(-1);
     }

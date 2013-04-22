@@ -2,14 +2,14 @@ package xolova.divinerpg.items.arcana;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemStaffOfEnrichment extends Item
+public class ItemStaffOfEnrichment extends ItemDivineRPG
 {
 
 	public ItemStaffOfEnrichment(int par1)

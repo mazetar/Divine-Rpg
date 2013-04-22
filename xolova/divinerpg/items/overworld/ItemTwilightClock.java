@@ -2,12 +2,11 @@ package xolova.divinerpg.items.overworld;
 
 import java.util.Random;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 import xolova.divinerpg.utils.helpers.IconHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemTwilightClock extends Item
 {

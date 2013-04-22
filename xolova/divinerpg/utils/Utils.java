@@ -13,7 +13,7 @@ public class Utils
 	public static final String ARCANA_MOD_ID = "DivineRPG|Arcana";
 	public static final String ARCANA_MOD_NAME = "DivineRPG Arcana";
 	
-	public static final String ICEIKA_MOD_ID = "DivineRPG|Iceika";
+	public static final String ICEIKA_MOD_ID = "DivineRPGIceika";
 	public static final String ICEIKA_MOD_NAME = "DivineRPG Iceika";
 	
 	public static final String VETHEA_MOD_ID = "DivineRPGVethea";

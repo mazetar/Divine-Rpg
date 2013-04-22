@@ -170,7 +170,7 @@ public class EntityMamormeter extends EntityMob implements IBossDisplayData, IRa
     {
         int var1 = this.rand.nextInt(4);
         this.dropItem(this.getDropItemId(), 1);
-        this.dropItem(OverworldItemHelper.blueFireStone.itemID, 6);
+        this.dropItem(OverworldItemHelper.blueFireStone.itemID, 7);
 		
 		if (this.rand.nextInt(3) == 0)
 		{

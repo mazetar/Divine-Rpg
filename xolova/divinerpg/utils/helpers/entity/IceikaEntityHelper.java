@@ -2,12 +2,23 @@ package xolova.divinerpg.utils.helpers.entity;
 
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.world.biome.BiomeGenBase;
+import xolova.divinerpg.entities.iceika.mobs.EntityAlicanto;
+import xolova.divinerpg.entities.iceika.mobs.EntityFractite;
+import xolova.divinerpg.entities.iceika.mobs.EntityFrostArcher;
+import xolova.divinerpg.entities.iceika.mobs.EntityGlacide;
+import xolova.divinerpg.entities.iceika.mobs.EntityHastreus;
+import xolova.divinerpg.entities.iceika.mobs.EntityRollum;
+import xolova.divinerpg.entities.iceika.mobs.EntityWorkshopMerchant;
+import xolova.divinerpg.entities.iceika.mobs.EntityWorkshopTickerer;
+import xolova.divinerpg.entities.iceika.projectile.EntityFractiteCannonShot;
+import xolova.divinerpg.entities.iceika.projectile.EntityFractiteProjectile;
+import xolova.divinerpg.entities.iceika.projectile.EntityFrostclawProjectile;
+import xolova.divinerpg.entities.iceika.projectile.EntityFrostyShuriken;
+import xolova.divinerpg.entities.iceika.projectile.EntityIce;
+import xolova.divinerpg.entities.iceika.projectile.EntityNoteProjectile;
+import xolova.divinerpg.utils.helpers.DimensionRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import xolova.divinerpg.entities.iceika.mobs.*;
-import xolova.divinerpg.entities.iceika.projectile.*;
-import xolova.divinerpg.entities.overworld.projectile.EntityCrabclawProjectile;
-import xolova.divinerpg.utils.helpers.DimensionRegistry;
 
 public class IceikaEntityHelper 
 {

@@ -4,10 +4,8 @@ import java.util.List;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.ISpecialArmor;
 import xolova.divinerpg.items.core.ItemDivineRPGArmor;
 import cpw.mods.fml.relauncher.Side;

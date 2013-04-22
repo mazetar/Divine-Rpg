@@ -1,34 +1,32 @@
-package xolova.divinerpg.items;
+package xolova.divinerpg.items.core;
 
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemSeeds;
 import net.minecraft.util.Icon;
-import xolova.divinerpg.api.IItemDivineRPG;
 import xolova.divinerpg.utils.helpers.IconHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemDivineRPG extends Item implements IItemDivineRPG
+public class ItemDivineRPGSeeds extends ItemSeeds
 {
 	int index;
 	int sheet;
 	
-	public ItemDivineRPG(int id) {
-		this(id, 0);
+	public ItemDivineRPGSeeds(int id) {
+		this(id, 0, 0);
 	}
 	
-	public ItemDivineRPG(int id, int sprite) {
-		super(id - 256);
-		this.index = sprite;
+	public ItemDivineRPGSeeds(int id, int blockType, int SoilBlockID) {
+		super(id - 256, blockType, SoilBlockID);
 	}
 	
-	public ItemDivineRPG setIconIndex(int sheet, int index) {
+	public ItemDivineRPGSeeds setIconIndex(int sheet, int index) {
 		this.sheet = sheet;
 		this.index = index;
 		return this;
 	}
 
-	public ItemDivineRPG setIconIndex(int sheet, int x, int y) {
+	public ItemDivineRPGSeeds setIconIndex(int sheet, int x, int y) {
 		return setIconIndex(sheet, (x + y * 16));
 	}
 	

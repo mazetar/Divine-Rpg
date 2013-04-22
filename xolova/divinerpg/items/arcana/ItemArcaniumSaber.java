@@ -8,13 +8,13 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemArcaniumSaber extends ItemSword
+public class ItemArcaniumSaber extends ItemDivineRPGSword
 {
     private int weaponDamage;
 

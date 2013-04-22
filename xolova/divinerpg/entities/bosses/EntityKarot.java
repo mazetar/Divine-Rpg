@@ -9,7 +9,6 @@ import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.entities.twilight.mobs.EntityAngryBunny;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;

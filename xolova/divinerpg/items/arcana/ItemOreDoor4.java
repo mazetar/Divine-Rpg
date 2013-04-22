@@ -4,13 +4,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 
-public class ItemOreDoor4 extends Item
+public class ItemOreDoor4 extends ItemDivineRPG
 {
     private Material doorMaterial;
 

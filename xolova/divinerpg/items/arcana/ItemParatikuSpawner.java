@@ -3,14 +3,14 @@ package xolova.divinerpg.items.arcana;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Facing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import xolova.divinerpg.entities.arcana.mobs.EntityParatiku;
+import xolova.divinerpg.items.ItemDivineRPG;
 
-public class ItemParatikuSpawner extends Item
+public class ItemParatikuSpawner extends ItemDivineRPG
 {
     private World worldObj;
 

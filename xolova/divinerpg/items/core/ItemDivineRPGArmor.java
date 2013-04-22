@@ -2,9 +2,6 @@ package xolova.divinerpg.items.core;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,6 +14,8 @@ import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.IArmorTextureProvider;
 import net.minecraftforge.common.ISpecialArmor;
 import xolova.divinerpg.utils.helpers.IconHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemDivineRPGArmor extends ItemArmor implements IArmorTextureProvider, ISpecialArmor {
 	

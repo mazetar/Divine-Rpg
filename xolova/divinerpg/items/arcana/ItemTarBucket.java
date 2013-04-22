@@ -3,7 +3,6 @@ package xolova.divinerpg.items.arcana;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumMovingObjectType;
 import net.minecraft.util.MovingObjectPosition;
@@ -11,10 +10,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
+import xolova.divinerpg.items.core.ItemDivineRPGBucket;
 import xolova.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 
-public class ItemTarBucket extends ItemBucket
+public class ItemTarBucket extends ItemDivineRPGBucket
 {
 	
     /** field for checking if the bucket has been filled. */

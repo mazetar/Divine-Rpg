@@ -2,11 +2,11 @@ package xolova.divinerpg.items.arcana;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.items.ItemDivineRPG;
 
-public class ItemAquaMarine extends Item
+public class ItemAquaMarine extends ItemDivineRPG
 {
 
 	public ItemAquaMarine(int par1)

@@ -37,7 +37,6 @@ import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.village.Village;
 import net.minecraft.world.World;
 import xolova.divinerpg.DivineRPG;
-import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;

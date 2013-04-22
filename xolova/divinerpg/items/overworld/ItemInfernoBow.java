@@ -12,7 +12,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import xolova.divinerpg.entities.overworld.projectile.EntityFireArrow;
 import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
-import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

@@ -12,7 +12,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 
 public class EntityShark extends EntityWaterMob

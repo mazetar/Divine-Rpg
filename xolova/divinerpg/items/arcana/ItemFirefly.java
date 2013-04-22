@@ -4,15 +4,15 @@ import java.util.List;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.entities.arcana.projectile.EntityFirefly;
+import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemFirefly extends Item
+public class ItemFirefly extends ItemDivineRPG
 {
     public ItemFirefly(int par1)
     {

@@ -11,7 +11,6 @@ import xolova.divinerpg.blocks.arcana.BlockArcanaSpawner5;
 import xolova.divinerpg.blocks.arcana.BlockArcaniteGrass;
 import xolova.divinerpg.blocks.arcana.BlockArcaniteRails;
 import xolova.divinerpg.blocks.arcana.BlockArcaniteTubes;
-import xolova.divinerpg.blocks.arcana.BlockCondenser;
 import xolova.divinerpg.blocks.arcana.BlockDemonFurnace;
 import xolova.divinerpg.blocks.arcana.BlockDramixAltar;
 import xolova.divinerpg.blocks.arcana.BlockDungeonBlock;

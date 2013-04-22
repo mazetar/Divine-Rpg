@@ -4,15 +4,15 @@ import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import xolova.divinerpg.entities.arcana.projectile.EntityGrenade;
+import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemGrenade extends Item
+public class ItemGrenade extends ItemDivineRPG
 {
 	private int damage;
 	private int firetick;

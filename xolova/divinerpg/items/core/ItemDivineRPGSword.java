@@ -2,9 +2,6 @@ package xolova.divinerpg.items.core;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
@@ -17,6 +14,8 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import xolova.divinerpg.api.IItemDivineRPG;
 import xolova.divinerpg.utils.helpers.IconHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
 

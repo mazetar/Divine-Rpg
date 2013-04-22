@@ -4,7 +4,6 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.EntityThrowable;
-import net.minecraft.item.Item;
 import net.minecraft.util.Icon;
 
 import org.lwjgl.opengl.GL11;

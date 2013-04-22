@@ -3,7 +3,6 @@ package xolova.divinerpg.entities.overworld.projectile;
 import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.enchantment.EnchantmentThorns;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.monster.EntityEnderman;

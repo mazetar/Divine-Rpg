@@ -11,7 +11,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 import xolova.divinerpg.entities.overworld.projectile.EntityTripletProjectile;
-import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 
 public class EntityEnderTriplets extends EntityMob

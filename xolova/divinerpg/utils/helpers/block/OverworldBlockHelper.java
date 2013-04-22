@@ -1,14 +1,39 @@
 package xolova.divinerpg.utils.helpers.block;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockPressurePlate;
 import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialLiquid;
 import xolova.divinerpg.blocks.BlockDivineRPG;
-import xolova.divinerpg.blocks.BlockDivineRPGPressurePlate;
-import xolova.divinerpg.blocks.overworld.*;
+import xolova.divinerpg.blocks.overworld.BlockAEStatue;
+import xolova.divinerpg.blocks.overworld.BlockAcceleraunch;
+import xolova.divinerpg.blocks.overworld.BlockAccelleron;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoBeamBlue;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoBeamGreen;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoBeamPurple;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoBeamRed;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoBeamYellow;
+import xolova.divinerpg.blocks.overworld.BlockAyeracoStatue;
+import xolova.divinerpg.blocks.overworld.BlockBlueFire;
+import xolova.divinerpg.blocks.overworld.BlockColoredBricks;
+import xolova.divinerpg.blocks.overworld.BlockColoredGlass;
+import xolova.divinerpg.blocks.overworld.BlockColoredPane;
+import xolova.divinerpg.blocks.overworld.BlockDarkBridge;
+import xolova.divinerpg.blocks.overworld.BlockDarkPlate;
+import xolova.divinerpg.blocks.overworld.BlockDyes;
+import xolova.divinerpg.blocks.overworld.BlockElevantium;
+import xolova.divinerpg.blocks.overworld.BlockFlowingTar;
+import xolova.divinerpg.blocks.overworld.BlockKOSStatue;
+import xolova.divinerpg.blocks.overworld.BlockLightBridge;
+import xolova.divinerpg.blocks.overworld.BlockLightFence;
+import xolova.divinerpg.blocks.overworld.BlockMiniBricks;
+import xolova.divinerpg.blocks.overworld.BlockRedstoneBlock;
+import xolova.divinerpg.blocks.overworld.BlockSkeletonChest;
+import xolova.divinerpg.blocks.overworld.BlockSlimeLight;
+import xolova.divinerpg.blocks.overworld.BlockStationaryTar;
+import xolova.divinerpg.blocks.overworld.BlockSteel;
+import xolova.divinerpg.blocks.overworld.BlockWatcherStatue;
 import xolova.divinerpg.blocks.twilight.BlockGlowBone;
 import xolova.divinerpg.utils.helpers.config.OverworldConfigHelper;
 
@@ -90,11 +115,28 @@ public class OverworldBlockHelper
 	public static Block enderLamp;
 	public static Block krakenLamp;
 	public static Block drakenLamp;
-	
 	public static Block redstoneBlock;
 	public static Block redstoneBlockOn;
 	public static Block purpleGlowBoneTree;
 	public static Block pinkGlowBoneTree;
+	
+	
+	public static Block realmiteBlock;
+	public static Block milkStone;
+	public static Block darkStone;
+	public static Block obsidianBlock;
+	public static Block bedrock;
+	public static Block milkstonebricks;
+	public static Block darkbricks;
+	public static Block ironbricks;
+	public static Block goldbricks;
+	public static Block realmitebricks;
+	public static Block netheritebricks;
+	public static Block lapisbricks;
+	public static Block redstonebricks;
+	public static Block checker;
+	public static Block eucalyptusPlanks;
+	public static Block eucalyptus;
 	
 	public static OverworldConfigHelper x;
 	

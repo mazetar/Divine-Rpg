@@ -3,9 +3,6 @@ package xolova.divinerpg.blocks.overworld;
 import java.util.Iterator;
 import java.util.List;
 
-import xolova.divinerpg.blocks.BlockDivineRPGPressurePlate;
-
-import net.minecraft.block.BlockBasePressurePlate;
 import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -13,6 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
+import xolova.divinerpg.blocks.BlockDivineRPGPressurePlate;
 
 public class BlockElevantium extends BlockDivineRPGPressurePlate
 {

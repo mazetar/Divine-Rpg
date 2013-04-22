@@ -1,7 +1,6 @@
 package xolova.divinerpg.entities.iceika.projectile;
 
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.monster.EntityBlaze;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.MovingObjectPosition;

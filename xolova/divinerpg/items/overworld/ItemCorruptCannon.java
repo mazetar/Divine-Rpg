@@ -8,7 +8,6 @@ import net.minecraft.world.World;
 import xolova.divinerpg.entities.overworld.projectile.EntityCorruptShot;
 import xolova.divinerpg.items.ItemDivineRPG;
 import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
-import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

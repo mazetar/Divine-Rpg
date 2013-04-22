@@ -1,7 +1,7 @@
 package xolova.divinerpg.utils.helpers.gui;
 
-import xolova.divinerpg.utils.helpers.item.VetheaItemHelper;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class CreativeTabUnsorted extends CreativeTabs
@@ -13,6 +13,6 @@ public class CreativeTabUnsorted extends CreativeTabs
 
     public ItemStack getIconItemStack()
     {
-        return new ItemStack(VetheaItemHelper.pardimalSword);
+        return new ItemStack(Item.appleGold);
     }
 }

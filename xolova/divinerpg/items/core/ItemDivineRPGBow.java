@@ -2,9 +2,6 @@ package xolova.divinerpg.items.core;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -18,6 +15,8 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
 import xolova.divinerpg.api.IItemDivineRPG;
 import xolova.divinerpg.utils.helpers.IconHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemDivineRPGBow extends ItemBow implements IItemDivineRPG {
 

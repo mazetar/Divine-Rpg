@@ -10,7 +10,6 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import xolova.divinerpg.utils.AchievementPageDivineRPG;
 import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 
 public class EntityTheEye extends EntityMob

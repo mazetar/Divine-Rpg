@@ -85,6 +85,9 @@ public class TwilightBlockHelper
 	public static Block TDStatue;
 	public static Block VamacheronStatue;
 	
+	
+	public static Block DraviteLamp;
+	
 	public static void initBlocks()
 	{
 		TwilightStone = new BlockTwilightStone(TwilightConfigHelper.TwilightStoneID).setIconIndex(2, 128).setUnlocalizedName("TwilightStone").setCreativeTab(CreativeTabHelper.tabBlocks);

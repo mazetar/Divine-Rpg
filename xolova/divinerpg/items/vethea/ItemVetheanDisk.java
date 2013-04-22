@@ -2,11 +2,10 @@ package xolova.divinerpg.items.vethea;
 
 import java.util.List;
 
-import xolova.divinerpg.items.ItemDivineRPG;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import xolova.divinerpg.items.ItemDivineRPG;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 

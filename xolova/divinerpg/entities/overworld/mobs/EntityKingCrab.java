@@ -171,7 +171,7 @@ public class EntityKingCrab extends EntityMob
 
         for (var4 = 0; var4 < var3; ++var4)
         {
-            this.dropItem(OverworldItemHelper.aquaticPellets.itemID, 3);
+            this.dropItem(OverworldItemHelper.aquaticShards.itemID, 3);
         }
     }
 

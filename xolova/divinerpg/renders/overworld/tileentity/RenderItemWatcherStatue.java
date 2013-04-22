@@ -2,14 +2,12 @@ package xolova.divinerpg.renders.overworld.tileentity;
 
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.client.IItemRenderer;
 
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.client.FMLClientHandler;
-
 import xolova.divinerpg.models.overworld.tileentities.ModelWatcherStatue;
+import cpw.mods.fml.client.FMLClientHandler;
 
 public class RenderItemWatcherStatue implements IItemRenderer
 {

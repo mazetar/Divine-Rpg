@@ -104,12 +104,32 @@ public class TwilightItemHelper
 	public static Item HalitePhaser;
 	public static Item HaliteBow;
 	public static Item HaliteSlicer;
-	
 	public static Item HaliteHelmet;
 	public static Item HaliteBoots;
 	public static Item Halitelegs;
 	public static Item HaliteChest;
 	public static Item HaliteBlitz;
+	
+	//-==-TOOLS-==-//
+	public static Item DravitePickaxe;
+	public static Item DraviteShovel;
+	public static Item DraviteAxe;
+	
+	public static Item AzuritePickaxe;
+	public static Item AzuriteShovel;
+	public static Item AzuriteAxe;
+	
+	public static Item UvitePickaxe;
+	public static Item UviteShovel;
+	public static Item UviteAxe;
+	
+	public static Item MythrilPickaxe;
+	public static Item MythrilShovel;
+	public static Item MythrilAxe;
+	
+	public static Item AugitePickaxe;
+	public static Item AugiteShovel;
+	public static Item AugiteAxe;
 	
 	public static TwilightConfigHelper x;
 

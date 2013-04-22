@@ -1,17 +1,10 @@
 package xolova.divinerpg.utils.handlers;
 
-import java.util.ArrayList;
 import java.util.EnumSet;
-import java.util.Iterator;
 
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.server.MinecraftServer;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
-import xolova.divinerpg.utils.helpers.item.IceikaItemHelper;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
 

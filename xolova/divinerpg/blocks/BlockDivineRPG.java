@@ -4,9 +4,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
-import net.minecraft.world.IBlockAccess;
 import xolova.divinerpg.api.IBlockDivineRPG;
 import xolova.divinerpg.utils.helpers.IconHelper;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -19,6 +19,7 @@ public class BlockDivineRPG extends Block implements IBlockDivineRPG {
 
 	public BlockDivineRPG(int id, int sprite, Material mat) {
 		super(id, mat);
+		GameRegistry.registerBlock(this);
 		this.index = sprite;
 	}
 	
@@ -55,9 +56,9 @@ public class BlockDivineRPG extends Block implements IBlockDivineRPG {
 	
 	@Override
 	@SideOnly(Side.CLIENT)
-	public Icon getBlockTexture(IBlockAccess block, int par2, int par3, int par4, int par5)
+	public Icon getIcon(int side, int metadata)
     {
-		return IconHelper.icons[getSheet(par5, block.getBlockMetadata(par2, par3, par4))][getIndex(par5, block.getBlockMetadata(par2, par3, par4))];
+		return IconHelper.icons[getSheet(side, metadata)][getIndex(side, metadata)];
 	}
 	
 	public int getTextureIndexFromSideAndMetadata(int par1, int par2) {

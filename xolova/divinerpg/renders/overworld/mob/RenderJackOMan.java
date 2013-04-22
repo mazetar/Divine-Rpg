@@ -13,7 +13,6 @@ import net.minecraftforge.client.MinecraftForgeClient;
 
 import org.lwjgl.opengl.GL11;
 
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.entities.overworld.mobs.EntityJackOMan;
 
 public class RenderJackOMan extends RenderLiving

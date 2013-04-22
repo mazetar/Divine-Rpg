@@ -1,12 +1,12 @@
 package xolova.divinerpg.items.core;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.util.Icon;
 import xolova.divinerpg.utils.helpers.IconHelper;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemDivineRPGShovel extends ItemSpade
 {

@@ -4,7 +4,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
 
 public class EntityRotatick extends EntityMob
 {

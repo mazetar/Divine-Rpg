@@ -4,9 +4,6 @@ import java.util.Random;
 
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenLakes;
-import net.minecraft.world.gen.feature.WorldGenMinable;
-import xolova.divinerpg.DivineRPG;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGenDivineMinable implements IWorldGenerator

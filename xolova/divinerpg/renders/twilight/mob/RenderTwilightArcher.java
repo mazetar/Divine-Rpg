@@ -12,7 +12,6 @@ import net.minecraftforge.client.MinecraftForgeClient;
 
 import org.lwjgl.opengl.GL11;
 
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.models.twilight.mobs.ModelTwilightArcher;
 import xolova.divinerpg.utils.helpers.item.TwilightItemHelper;
 import cpw.mods.fml.relauncher.Side;

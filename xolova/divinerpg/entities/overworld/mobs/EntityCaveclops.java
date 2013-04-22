@@ -15,7 +15,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import xolova.divinerpg.DivineRPG;
 import xolova.divinerpg.entities.overworld.projectile.EntityCaveRock;
 import xolova.divinerpg.utils.helpers.item.OverworldItemHelper;
 

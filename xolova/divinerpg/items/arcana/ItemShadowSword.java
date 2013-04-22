@@ -8,15 +8,15 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
+import xolova.divinerpg.items.core.ItemDivineRPGSword;
 import xolova.divinerpg.utils.helpers.ArcanaHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemShadowSword extends ItemSword
+public class ItemShadowSword extends ItemDivineRPGSword
 {
     private int weaponDamage;
 

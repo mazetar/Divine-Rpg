@@ -92,66 +92,11 @@ public class OverworldItemHelper
 	public static Item aquaticPellets;
 	public static Item corruptBullet;
 	
-	
-	public static Item aquaticStones;
-	public static Item shadowBar;
-	public static Item netheriteChunk;
-	public static Item krakenSkin;
-	public static Item aquaticTrident;
-	public static Item aquaton;
-	public static Item hamreicher;
-	public static Item sharkSword;
-	public static Item bowheadCannon;
-	public static Item oceanKnife;
-	public static Item dualClaw;
-	public static Item daggerOfBlood;
-	public static Item clawAnchor;
-	public static Item bowheadAnchor;
-	public static Item Pavalence;
-	public static Item legendaryEnderEye;
-	public static Item infernoSword;
-	public static Item realmiteSword;
-	public static Item bedrockSword;
-	public static Item arlemiteStabber;
-	public static Item rupeeSword;
-	public static Item furyMaul;
-	
-	public static Item realmitePickaxe;
-	public static Item realmiteAxe;
-	public static Item realmiteShovel;
-	
-	public static Item bedrockPickaxe;
-	public static Item bedrockAxe;
-	public static Item bedrockShovel;
-
-	public static Item crystalPickaxe;
-	public static Item crystalAxe;
-	public static Item crystalShovel;
-	public static Item crystalHoe;
-	public static Item crystalShicaxe;
-	
-	public static Item plasmaPickaxe;
-	public static Item plasmaAxe;
-	public static Item plasmaShovel;
-	public static Item plasmaHoe;
-	public static Item plasmaShicaxe;
-	
-	public static Item blazingCrystalleSword;
-	public static Item donut;
-	public static Item pizzaDough;
-	public static Item bacon;
-	public static Item waterMelon;
-	public static Item cheese;
-	public static Item minipizza;
-	public static Item dinner;
-	public static Item boiledegg;
-	
 	public static OverworldConfigHelper x;
 	
 	{
         EnumToolMaterial BedrockMaul = EnumHelper.addToolMaterial("bedrockmaul", 1, -1, 1.5F, 19, 10);
         bedrockMaul = new ItemDivineRPGSword(x.bedrockMaulID, 15, BedrockMaul, false).setUnlocalizedName("bedrock").setCreativeTab(CreativeTabHelper.tabSword);
-		jungleShard = new ItemDivineRPG(x.greenShardID);
 		namkormira = new ItemDivineRPG(x.namkormiraID);
 		serenadeStriker = new ItemDivineRPG(x.serenadeStrikerID);
 		slimeSword = new ItemDivineRPG(x.slimeSwordID);

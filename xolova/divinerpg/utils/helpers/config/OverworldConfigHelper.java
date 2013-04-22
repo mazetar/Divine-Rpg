@@ -234,10 +234,17 @@ public class OverworldConfigHelper
 	public static int sharkAnchorID;
 	public static int healingStoneID;
 	
-	public int grimReaperHeadID;
-	public int grimReaperBodyID;
-	public int grimReaperLegsID;
-	public int grimReaperBootsID;
+	public static int grimReaperHeadID;
+	public static int grimReaperBodyID;
+	public static int grimReaperLegsID;
+	public static int grimReaperBootsID;
+	public static int jungleStoneID;
+	public static int divineStoneID;
+	public static int iceStoneID;
+	public static int enderStoneID;
+	public static int moltenStoneID;
+	public static int corruptedStoneID;
+	public static int blueFireStoneID;
 	
 	public static void InitConfigItems(Configuration config)
 	{

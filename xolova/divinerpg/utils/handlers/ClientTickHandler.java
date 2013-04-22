@@ -14,6 +14,8 @@ import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
+import xolova.divinerpg.client.misc.VersionHelper;
+
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.ITickHandler;
 import cpw.mods.fml.common.TickType;
@@ -32,12 +34,12 @@ public class ClientTickHandler implements ITickHandler
 
 	public void tickEnd(EnumSet var1, Object ... mc)
 	{
-		/*if (!var1.equals(EnumSet.of(TickType.RENDER)) && var1.equals(EnumSet.of(TickType.CLIENT)) && FMLClientHandler.instance().getClient().currentScreen == null && !initialized)
+		if (!var1.equals(EnumSet.of(TickType.RENDER)) && var1.equals(EnumSet.of(TickType.CLIENT)) && FMLClientHandler.instance().getClient().currentScreen == null && !initialized)
 		{
 			initialized = true;
-			FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage("\u00a71[DivineRPG] " + VersionHelper.getResultMessage());
+			FMLClientHandler.instance().getClient().ingameGUI.getChatGUI().printChatMessage("\u00a71[DivineRPG] " + VersionHelper.getVersionMessage());
 		}
-		else */if (var1.equals(EnumSet.of(TickType.RENDER)))
+		else if (var1.equals(EnumSet.of(TickType.RENDER)))
 		{
 			onRenderTick();
 		}

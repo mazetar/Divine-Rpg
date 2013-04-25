@@ -198,7 +198,6 @@ public class OverworldConfigHelper
 	public static int greenShardID;
 	public static int shurikenID;
 	public static int namkormiraID;
-	public static int serenadeStrikerID;
 	public static int slimeSwordID;
 	public static int shadowBowID;
 	public static int crabClawCannonID;
@@ -209,6 +208,10 @@ public class OverworldConfigHelper
 	public static int blueShardID;
 	public static int iceShardID;
 	public static int yellowShardID;
+
+	public static int serenadeStrikerID;
+	public static int serenadeOfLifeID;
+	public static int serenadeOfDeathID;
 	
 	public static int divineHelmID;
 	public static int divineBodyID;
@@ -245,6 +248,34 @@ public class OverworldConfigHelper
 	public static int moltenStoneID;
 	public static int corruptedStoneID;
 	public static int blueFireStoneID;
+
+	public static int palavenceID;
+	public static int arlemiteStabberID;
+	public static int rupeeRapierID;
+	public static int realmiteSwordID;
+	public static int poisonSaberID;
+	public static int infernoSwordID;
+	public static int bedrockSwordID;
+	public static int aquaticDaggerID;
+	public static int aquaticTridentID;
+	public static int oceanKnifeID;
+	public static int aquatonID;
+	public static int sharkSwordID;
+	public static int crabclawMaulID;
+	public static int deathBringerID;
+	public static int corruptedMaulID;
+	public static int scorchingSwordID;
+	public static int bluefireSwordID;
+	public static int divineSwordID;
+	public static int bloodgemSwordID;
+	public static int moltenSwordID;
+	public static int vileStormID;
+	public static int bowHeadAnchor;
+	public static int crabAnchorID;
+	public static int bowheadCannonID;
+	public static int maelstromID;
+	public static int ghastCannonID;
+	public static int corruptCannonID;
 	
 	public static void InitConfigItems(Configuration config)
 	{
@@ -290,5 +321,7 @@ public class OverworldConfigHelper
 		sharkAnchorID = config.getItem("sharkAnchor", id++).getInt();
 		healingStoneID = config.getItem("healingStone", id++).getInt();
 	}
+
+
 
 }

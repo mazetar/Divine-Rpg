@@ -15,7 +15,6 @@ public class OverworldItemHelper
 	public static Item soundOfMusic;
 	public static Item shuriken;
 	public static Item namkormira;
-	public static Item serenadeStriker;
 	public static Item slimeSword;
 	public static Item shadowBow;
 	public static Item crabClawCannon;
@@ -26,6 +25,34 @@ public class OverworldItemHelper
 	public static Item watcherEye;
 	public static Item infernoBow;
 	public static Item bluefirebow;
+	
+	private static Item palavence;
+	private static Item moltenSword;
+	private static Item arlemiteStabber;
+	private static Item rupeeRapier;
+	private static Item realmiteSword;
+	private static Item poisonSaber;
+	private static Item infernoSword;
+	private static Item bedrockSword;
+	private static Item aquaticDagger;
+	private static Item aquaticTrident;
+	private static Item oceanKnife;
+	private static Item aquaton;
+	private static Item sharkSword;
+	private static Item crabclawMaul;
+	private static Item deathBringer;
+	private static Item corruptedMaul;
+	private static Item scorchingSword;
+	private static Item bluefireSword;
+	private static Item divineSword;
+	private static Item bloodgemSword;
+	private static Item vileStorm;
+	private static Item bowHeadAnchor;
+	private static Item crabAnchor;
+	private static Item bowheadCannon;
+	private static Item maelstrom;
+	private static Item ghastCannon;
+	private static Item corruptCannon;
 
 	public static Item enderShard;
 	public static Item jungleShard;
@@ -92,32 +119,75 @@ public class OverworldItemHelper
 	public static Item aquaticPellets;
 	public static Item corruptBullet;
 	
+	public static Item serenadeStriker;
+	public static Item serenadeOfLife;
+	public static Item serenadeOfDeath;
+	
 	public static OverworldConfigHelper x;
 	
 	{
         EnumToolMaterial BedrockMaul = EnumHelper.addToolMaterial("bedrockmaul", 1, -1, 1.5F, 19, 10);
-        bedrockMaul = new ItemDivineRPGSword(x.bedrockMaulID, 15, BedrockMaul, false).setUnlocalizedName("bedrock").setCreativeTab(CreativeTabHelper.tabSword);
-		namkormira = new ItemDivineRPG(x.namkormiraID);
-		serenadeStriker = new ItemDivineRPG(x.serenadeStrikerID);
-		slimeSword = new ItemDivineRPG(x.slimeSwordID);
-		crabClawCannon = new ItemDivineRPG(x.crabClawCannonID);
-		frostSword = new ItemDivineRPG(x.frostSwordID);
-		divinesword = new ItemDivineRPG(x.divineswordID);
-		sandSlash = new ItemDivineRPG(x.sandSlashID);
+        
+        namkormira = new ItemDivineRPG(x.namkormiraID);
+        palavence = new ItemDivineRPG(x.palavenceID);
 		
 		enderSword = new ItemDivineRPG(x.enderSwordID);
 		enderSwordYellow = new ItemDivineRPG(x.enderSwordYellowID);
 		enderSwordGreen = new ItemDivineRPG(x.enderSwordGreenID);
 		enderSwordRed = new ItemDivineRPG(x.enderSwordRedID);
 		enderSwordBlue = new ItemDivineRPG(x.enderSwordBlueID);
+
+		bedrockMaul = new ItemDivineRPGSword(x.bedrockMaulID, 15, BedrockMaul, true).setUnlocalizedName("bedrock").setCreativeTab(CreativeTabHelper.tabSword);	
+		sandSlash = new ItemDivineRPG(x.sandSlashID);
+		frostSword = new ItemDivineRPG(x.frostSwordID);
+		divinesword = new ItemDivineRPG(x.divineswordID);
+		slimeSword = new ItemDivineRPG(x.slimeSwordID);
+		arlemiteStabber = new ItemDivineRPG(x.arlemiteStabberID);
+		rupeeRapier = new ItemDivineRPG(x.rupeeRapierID);
+		realmiteSword = new ItemDivineRPG(x.realmiteSwordID);
+		poisonSaber = new ItemDivineRPG(x.poisonSaberID);
+		infernoSword = new ItemDivineRPG(x.infernoSwordID);
+		bedrockSword = new ItemDivineRPG(x.bedrockSwordID);
 		
-		shuriken = new ItemDivineRPG(x.shurikenID);
+		aquaticDagger = new ItemDivineRPG(x.aquaticDaggerID);
+		aquaticTrident = new ItemDivineRPG(x.aquaticTridentID);
+		oceanKnife = new ItemDivineRPG(x.oceanKnifeID);
+		aquaton = new ItemDivineRPG(x.aquatonID);
+		sharkSword = new ItemDivineRPG(x.sharkSwordID);
+		crabclawMaul = new ItemDivineRPGSword(x.crabclawMaulID, 15, CrabclawMaul, true).setUnlocalizedName("bedrock").setCreativeTab(CreativeTabHelper.tabSword);	
+		
+		deathBringer = new ItemDivineRPG(x.deathBringerID);
+		corruptedMaul = new ItemDivineRPG(x.corruptedMaulID);
+		
+		scorchingSword = new ItemDivineRPG(x.scorchingSwordID);
+		bluefireSword = new ItemDivineRPG(x.bluefireSwordID);
+		divineSword = new ItemDivineRPG(x.divineSwordID);
+		bloodgemSword = new ItemDivineRPG(x.bloodgemSwordID);
+		moltenSword = new ItemDivineRPG(x.moltenSwordID);
+		
+		
+		bluefirebow = new ItemDivineRPG(x.bluefirebowID);
 		shadowBow = new ItemDivineRPG(x.shadowBowID);
+
+		shuriken = new ItemDivineRPG(x.shurikenID);
+		vileStorm = new ItemDivineRPG(x.vileStormID);
+
+		bowHeadAnchor = new ItemDivineRPG(x.bowHeadAnchor);
+		sharkAnchor = new ItemDivineRPG(x.sharkAnchorID);
+		crabAnchor = new ItemDivineRPG(x.crabAnchorID);
+		scythe = new ItemDivineRPG(x.scytheID);
 		frostCannon = new ItemDivineRPG(x.frostCannonID);
 		soundOfMusic = new ItemDivineRPG(x.soundOfMusicID);
-		bluefirebow = new ItemDivineRPG(x.bluefirebowID);
-		sharkAnchor = new ItemDivineRPG(x.sharkAnchorID);
-		scythe = new ItemDivineRPG(x.scytheID);
+		crabClawCannon = new ItemDivineRPG(x.crabClawCannonID);
+		bowheadCannon = new ItemDivineRPG(x.bowheadCannonID);
+		soundOfMusic = new ItemDivineRPG(x.soundOfMusicID);
+		maelstrom = new ItemDivineRPG(x.maelstromID);
+		ghastCannon = new ItemDivineRPG(x.ghastCannonID);
+		corruptCannon = new ItemDivineRPG(x.corruptCannonID);
+
+		serenadeStriker = new ItemDivineRPG(x.serenadeStrikerID);
+		serenadeOfLife = new ItemDivineRPG(x.serenadeOfLifeID);
+		serenadeOfDeath = new ItemDivineRPG(x.serenadeOfDeathID);
 		
 		rupee = new ItemDivineRPG(x.rupeeID);
 		tomato = new ItemDivineRPG(x.tomatoID);

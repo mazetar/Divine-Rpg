@@ -215,15 +215,15 @@ public class VetheaItemHelper
     
 	public static void init()
 	{
-        teakerDisk = new ItemTeakerDisk(x.teakerDiskID, 4).setIconIndex(4, 128).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Teaker Disk");
-        amthrimisDisk = new ItemAmthirmisDisk(x.amthirmisDiskID, 6).setIconIndex(4, 129).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Amthirmis Disk");
-        darvenDisk = new ItemDarvenDisk(x.darvenDiskID, 9).setIconIndex(4, 130).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Darven Disk");
-        cermileDisk = new ItemCermileDisk(x.cermileDiskID, 13).setIconIndex(4, 131).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Cermile Disk");
-        pardimalDisk = new ItemPardimalDisk(x.pardimalDiskID, 16).setIconIndex(4, 132).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Pardimal Disk");
-        quadroticDisk = new ItemQuadroticDisk(x.quadroticDiskID, 20).setIconIndex(4, 133).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Quadrotic Disk");
-        karosDisk = new ItemKarosDisk(x.karosDiskID, 22).setIconIndex(4, 134).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Karos Disk");
-        heliosisDisk = new ItemHeliosisDisk(x.heliosisDiskID, 29).setIconIndex(4, 135).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Heliosis Disk");
-        arksianeDisk = new ItemArksianeDisk(x.arksianeDiskID, 37).setIconIndex(4, 136).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Arksiane Disk");       
+        teakerDisk = new ItemTeakerDisk(x.teakerDiskID, 4).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Teaker Disk");
+        amthrimisDisk = new ItemAmthirmisDisk(x.amthirmisDiskID, 6).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Amthirmis Disk");
+        darvenDisk = new ItemDarvenDisk(x.darvenDiskID, 9).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Darven Disk");
+        cermileDisk = new ItemCermileDisk(x.cermileDiskID, 13).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Cermile Disk");
+        pardimalDisk = new ItemPardimalDisk(x.pardimalDiskID, 16).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Pardimal Disk");
+        quadroticDisk = new ItemQuadroticDisk(x.quadroticDiskID, 20).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Quadrotic Disk");
+        karosDisk = new ItemKarosDisk(x.karosDiskID, 22).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Karos Disk");
+        heliosisDisk = new ItemHeliosisDisk(x.heliosisDiskID, 29).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Heliosis Disk");
+        arksianeDisk = new ItemArksianeDisk(x.arksianeDiskID, 37).setCreativeTab(CreativeTabHelper.tabRanged).setUnlocalizedName("Arksiane Disk");       
         
         teakerHammer = new ItemVetheanHammerSword(x.teakerHammerID, "teakerHammer", 6).setIconIndex(4, 16).setCreativeTab(CreativeTabHelper.tabSword);
         amthrimisHammer = new ItemVetheanHammerSword(x.amthirmisHammerID, "amthirmisHammer", 8).setIconIndex(4, 17).setCreativeTab(CreativeTabHelper.tabSword);
@@ -256,11 +256,11 @@ public class VetheaItemHelper
         arksianeClaw = new ItemVetheanClaw(x.arksianeClawID, "arksianeClaw", 35).setIconIndex(4, 152).setCreativeTab(CreativeTabHelper.tabSword);
         
         acidfire = new ItemDivineRPG(x.acidfireID).setUnlocalizedName("Acidfire").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanArrow = new ItemDivineRPG(x.vetheanArrowID).setIconIndex(4, 4, 2).setUnlocalizedName("Teaker Arrow").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanArrow2 = new ItemDivineRPG(x.vetheanArrow2ID).setIconIndex(4, 4, 3).setUnlocalizedName("Darven Arrow").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanWarArrow = new ItemDivineRPG(x.vetheanWarArrowID).setIconIndex(4, 4, 4).setUnlocalizedName("Pardimal Arrow").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanWrathArrow = new ItemDivineRPG(x.vetheanWrathArrowID).setIconIndex(4, 4, 5).setUnlocalizedName("Karos Arrow").setCreativeTab(CreativeTabHelper.tabItems);
-        everArrow = new ItemDivineRPG(x.everArrowID).setIconIndex(4, 4, 5).setUnlocalizedName("Ever Arrow").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanArrow = new ItemDivineRPG(x.vetheanArrowID).setUnlocalizedName("Teaker Arrow").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanArrow2 = new ItemDivineRPG(x.vetheanArrow2ID).setUnlocalizedName("Darven Arrow").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanWarArrow = new ItemDivineRPG(x.vetheanWarArrowID).setUnlocalizedName("Pardimal Arrow").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanWrathArrow = new ItemDivineRPG(x.vetheanWrathArrowID).setUnlocalizedName("Karos Arrow").setCreativeTab(CreativeTabHelper.tabItems);
+        everArrow = new ItemDivineRPG(x.everArrowID).setUnlocalizedName("Ever Arrow").setCreativeTab(CreativeTabHelper.tabItems);
         
         teakerBow = new ItemVetheanBow(x.teakerBowID, 0.5D, vetheanArrow, "teakerBow", false, 0, 0).setIconIndex(4, 0, 2).setCreativeTab(CreativeTabHelper.tabRanged);
         amthrimisBow = new ItemVetheanBow(x.amthirmisBowID, 0.7D, vetheanArrow, "amthrimisBow", false, 0, 0).setIconIndex(4, 5, 2).setCreativeTab(CreativeTabHelper.tabRanged);
@@ -272,44 +272,44 @@ public class VetheaItemHelper
         heliosisBow = new ItemVetheanBow(x.heliosisBowID, 2.8D, vetheanWrathArrow, "heliosisBow", false, 0, 0).setIconIndex(4, 5, 5).setCreativeTab(CreativeTabHelper.tabRanged);
         arksianeBow = new ItemVetheanBow(x.arksianeBowID, 3.6D, vetheanWrathArrow, "arksianeBow", false, 0, 0).setIconIndex(4, 0, 6).setCreativeTab(CreativeTabHelper.tabRanged);
         
-        dreamPowder = new ItemDreamPowder(x.dreamPowderID).setIconIndex(2, 0, 3).setUnlocalizedName("DreamPowder").setCreativeTab(CreativeTabHelper.tabItems);
+        dreamPowder = new ItemDreamPowder(x.dreamPowderID).setUnlocalizedName("DreamPowder").setCreativeTab(CreativeTabHelper.tabItems);
         
-        vetheanHammerTemplate = new ItemDivineRPG(x.vetheanHammerTemplateID).setIconIndex(4, 240).setUnlocalizedName("vetheanHammerTemplate").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanBackswordTemplate = new ItemDivineRPG(x.vetheanBackswordTemplateID).setIconIndex(4, 241).setUnlocalizedName("vetheanBackswordTemplate").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanBowTemplate = new ItemDivineRPG(x.vetheanBowTemplateID).setIconIndex(4, 242).setUnlocalizedName("vetheanBowTemplate").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanCannonTemplate = new ItemDivineRPG(x.vetheanCannonTemplateID).setIconIndex(4, 244).setUnlocalizedName("vetheanCannonTemplate").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanClawTemplate = new ItemDivineRPG(x.vetheanClawTemplateID).setIconIndex(4, 245).setUnlocalizedName("vetheanClawTemplate").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanDiskTemplate = new ItemDivineRPG(x.vetheanDiskTemplateID).setIconIndex(4, 246).setUnlocalizedName("vetheanDiskTemplate").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanStaffTemplate = new ItemDivineRPG(x.vetheanStaffTemplateID).setIconIndex(4, 243).setUnlocalizedName("vetheanStaffTemplate").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanDegradedTemplate = new ItemDivineRPG(x.vetheanDegradedTemplateID).setIconIndex(4, 13, 11).setUnlocalizedName("vetheanDegradedTemplate").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanFinishedTemplate = new ItemDivineRPG(x.vetheanFinishedTemplateID).setIconIndex(4, 13, 12).setUnlocalizedName("vetheanFinishedTemplate").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanGlisteningTemplate = new ItemDivineRPG(x.vetheanGlisteningTemplateID).setIconIndex(4, 13, 13).setUnlocalizedName("vetheanGlisteningTemplate").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanDemonizedTemplate = new ItemDivineRPG(x.vetheanDemonizedTemplateID).setIconIndex(4, 13, 14).setUnlocalizedName("vetheanDemonizedTemplate").setCreativeTab(CreativeTabHelper.tabItems);
-        vetheanTormentedTemplate = new ItemDivineRPG(x.vetheanTormentedTemplateID).setIconIndex(4, 13, 15).setUnlocalizedName("vetheanTormentedTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanHammerTemplate = new ItemDivineRPG(x.vetheanHammerTemplateID).setUnlocalizedName("vetheanHammerTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanBackswordTemplate = new ItemDivineRPG(x.vetheanBackswordTemplateID).setUnlocalizedName("vetheanBackswordTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanBowTemplate = new ItemDivineRPG(x.vetheanBowTemplateID).setUnlocalizedName("vetheanBowTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanCannonTemplate = new ItemDivineRPG(x.vetheanCannonTemplateID).setUnlocalizedName("vetheanCannonTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanClawTemplate = new ItemDivineRPG(x.vetheanClawTemplateID).setUnlocalizedName("vetheanClawTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanDiskTemplate = new ItemDivineRPG(x.vetheanDiskTemplateID).setUnlocalizedName("vetheanDiskTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanStaffTemplate = new ItemDivineRPG(x.vetheanStaffTemplateID).setUnlocalizedName("vetheanStaffTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanDegradedTemplate = new ItemDivineRPG(x.vetheanDegradedTemplateID).setUnlocalizedName("vetheanDegradedTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanFinishedTemplate = new ItemDivineRPG(x.vetheanFinishedTemplateID).setUnlocalizedName("vetheanFinishedTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanGlisteningTemplate = new ItemDivineRPG(x.vetheanGlisteningTemplateID).setUnlocalizedName("vetheanGlisteningTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanDemonizedTemplate = new ItemDivineRPG(x.vetheanDemonizedTemplateID).setUnlocalizedName("vetheanDemonizedTemplate").setCreativeTab(CreativeTabHelper.tabItems);
+        vetheanTormentedTemplate = new ItemDivineRPG(x.vetheanTormentedTemplateID).setUnlocalizedName("vetheanTormentedTemplate").setCreativeTab(CreativeTabHelper.tabItems);
         
-        teakerLump = new ItemDivineRPG(x.teakerLumpID).setIconIndex(4, 176).setUnlocalizedName("TeakerLump").setCreativeTab(CreativeTabHelper.tabItems);
-        amthrimisLump = new ItemDivineRPG(x.amthirmisLumpID).setIconIndex(4, 177).setUnlocalizedName("AmthrimisLump").setCreativeTab(CreativeTabHelper.tabItems);
-        darvenLump = new ItemDivineRPG(x.darvenLumpID).setIconIndex(4, 178).setUnlocalizedName("DarvenLump").setCreativeTab(CreativeTabHelper.tabItems);
-        cermileLump = new ItemDivineRPG(x.cermileLumpID).setIconIndex(4, 179).setUnlocalizedName("CermileLump").setCreativeTab(CreativeTabHelper.tabItems);
-        pardimalLump = new ItemDivineRPG(x.pardimalLumpID).setIconIndex(4, 180).setUnlocalizedName("pardimalLump").setCreativeTab(CreativeTabHelper.tabItems);
-        quadroticLump = new ItemDivineRPG(x.quadroticLumpID).setIconIndex(4, 181).setUnlocalizedName("quadroticLump").setCreativeTab(CreativeTabHelper.tabItems);
-        karosLump = new ItemDivineRPG(x.karosLumpID).setIconIndex(4, 182).setUnlocalizedName("karosLump").setCreativeTab(CreativeTabHelper.tabItems);
-        heliosisLump = new ItemDivineRPG(x.heliosisLumpID).setIconIndex(4, 183).setUnlocalizedName("heliosisLump").setCreativeTab(CreativeTabHelper.tabItems);
-        arksianeLump = new ItemDivineRPG(x.arksianeLumpID).setIconIndex(4, 184).setUnlocalizedName("arksaineLump").setCreativeTab(CreativeTabHelper.tabItems);
+        teakerLump = new ItemDivineRPG(x.teakerLumpID).setUnlocalizedName("TeakerLump").setCreativeTab(CreativeTabHelper.tabItems);
+        amthrimisLump = new ItemDivineRPG(x.amthirmisLumpID).setUnlocalizedName("AmthrimisLump").setCreativeTab(CreativeTabHelper.tabItems);
+        darvenLump = new ItemDivineRPG(x.darvenLumpID).setUnlocalizedName("DarvenLump").setCreativeTab(CreativeTabHelper.tabItems);
+        cermileLump = new ItemDivineRPG(x.cermileLumpID).setUnlocalizedName("CermileLump").setCreativeTab(CreativeTabHelper.tabItems);
+        pardimalLump = new ItemDivineRPG(x.pardimalLumpID).setUnlocalizedName("pardimalLump").setCreativeTab(CreativeTabHelper.tabItems);
+        quadroticLump = new ItemDivineRPG(x.quadroticLumpID).setUnlocalizedName("quadroticLump").setCreativeTab(CreativeTabHelper.tabItems);
+        karosLump = new ItemDivineRPG(x.karosLumpID).setUnlocalizedName("karosLump").setCreativeTab(CreativeTabHelper.tabItems);
+        heliosisLump = new ItemDivineRPG(x.heliosisLumpID).setUnlocalizedName("heliosisLump").setCreativeTab(CreativeTabHelper.tabItems);
+        arksianeLump = new ItemDivineRPG(x.arksianeLumpID).setUnlocalizedName("arksaineLump").setCreativeTab(CreativeTabHelper.tabItems);
 
-        honeysuckle = new ItemVetheanFood(x.honeysuckleID, 1, 0.2F, true).setIconIndex(4, 208).setUnlocalizedName("honeysuckle").setCreativeTab(CreativeTabHelper.tabHerb);
-        dreamCarrot = new ItemVetheanFood(x.dreamCarrotID, 3, 0.4F, true).setIconIndex(4, 192).setUnlocalizedName("dreamCarrot").setCreativeTab(CreativeTabHelper.tabHerb);
-        dreamMelon = new ItemVetheanFood(x.dreamMelonID, 6, 0.6F, true).setIconIndex(4, 193).setUnlocalizedName("dreamMelon").setCreativeTab(CreativeTabHelper.tabHerb);
-        dreamPie = new ItemVetheanFood(x.dreamPieID, 4, 0.8F, true).setIconIndex(4, 194).setUnlocalizedName("dreamPie").setCreativeTab(CreativeTabHelper.tabHerb);
-        dreamCake = new ItemVetheanFood(x.dreamCakeID, 8, 0.8F, true).setIconIndex(4, 195).setUnlocalizedName("dreamCake").setCreativeTab(CreativeTabHelper.tabHerb);
+        honeysuckle = new ItemVetheanFood(x.honeysuckleID, 1, 0.2F, true).setUnlocalizedName("honeysuckle").setCreativeTab(CreativeTabHelper.tabHerb);
+        dreamCarrot = new ItemVetheanFood(x.dreamCarrotID, 3, 0.4F, true).setUnlocalizedName("dreamCarrot").setCreativeTab(CreativeTabHelper.tabHerb);
+        dreamMelon = new ItemVetheanFood(x.dreamMelonID, 6, 0.6F, true).setUnlocalizedName("dreamMelon").setCreativeTab(CreativeTabHelper.tabHerb);
+        dreamPie = new ItemVetheanFood(x.dreamPieID, 4, 0.8F, true).setUnlocalizedName("dreamPie").setCreativeTab(CreativeTabHelper.tabHerb);
+        dreamCake = new ItemVetheanFood(x.dreamCakeID, 8, 0.8F, true).setUnlocalizedName("dreamCake").setCreativeTab(CreativeTabHelper.tabHerb);
         
-        dreamSweets = new ItemVetheanHealingFood(x.dreamSweetsID, 0, 0F, false, 2).setIconIndex(4, 231).setUnlocalizedName("dreamSweets").setCreativeTab(CreativeTabHelper.tabHerb);
-        dreamSours = new ItemVetheanHealingFood(x.dreamSoursID, 0, 0F, false, 8).setIconIndex(4, 200).setUnlocalizedName("dreamSours").setCreativeTab(CreativeTabHelper.tabHerb);
+        dreamSweets = new ItemVetheanHealingFood(x.dreamSweetsID, 0, 0F, false, 2).setUnlocalizedName("dreamSweets").setCreativeTab(CreativeTabHelper.tabHerb);
+        dreamSours = new ItemVetheanHealingFood(x.dreamSoursID, 0, 0F, false, 8).setUnlocalizedName("dreamSours").setCreativeTab(CreativeTabHelper.tabHerb);
         
-        dirtyPearls = new ItemDivineRPG(x.dirtyPearlsID).setIconIndex(4, 209).setUnlocalizedName("dirtyPearls").setCreativeTab(CreativeTabHelper.tabItems);
-        cleanPearls = new ItemDivineRPG(x.cleanPearlsID).setIconIndex(4, 210).setUnlocalizedName("cleanPearls").setCreativeTab(CreativeTabHelper.tabItems);
-        polishedPearls = new ItemDivineRPG(x.polishedPearlsID).setIconIndex(4, 211).setUnlocalizedName("polishedPearls").setCreativeTab(CreativeTabHelper.tabItems);
-        shinyPearls = new ItemDivineRPG(x.shinyPearlsID).setIconIndex(4, 212).setUnlocalizedName("shinyPearls").setCreativeTab(CreativeTabHelper.tabItems);
+        dirtyPearls = new ItemDivineRPG(x.dirtyPearlsID).setUnlocalizedName("dirtyPearls").setCreativeTab(CreativeTabHelper.tabItems);
+        cleanPearls = new ItemDivineRPG(x.cleanPearlsID).setUnlocalizedName("cleanPearls").setCreativeTab(CreativeTabHelper.tabItems);
+        polishedPearls = new ItemDivineRPG(x.polishedPearlsID).setUnlocalizedName("polishedPearls").setCreativeTab(CreativeTabHelper.tabItems);
+        shinyPearls = new ItemDivineRPG(x.shinyPearlsID).setUnlocalizedName("shinyPearls").setCreativeTab(CreativeTabHelper.tabItems);
         
         honeychunk = new ItemDivineRPG(x.honeychunkID).setUnlocalizedName("honeychunk").setCreativeTab(CreativeTabHelper.tabItems);
         rockChunks = new ItemDivineRPG(x.rockChunksID).setUnlocalizedName("rockChunks").setCreativeTab(CreativeTabHelper.tabItems);
@@ -319,35 +319,35 @@ public class VetheaItemHelper
         wormChunks = new ItemDivineRPG(x.wormChunksID).setUnlocalizedName("wormChunk").setCreativeTab(CreativeTabHelper.tabItems);
         vhraakTeeth = new ItemDivineRPG(x.vhraakTeethID).setUnlocalizedName("vhraakTeeth").setCreativeTab(CreativeTabHelper.tabItems);
         
-        dreamflint = new ItemDreamflint(x.dreamflintID).setIconIndex(4, 232).setUnlocalizedName("dreamflint").setCreativeTab(CreativeTabHelper.tabSpawner);
-        moonclock = new ItemMoonclock(x.moonclockID).setIconIndex(4, 247).setUnlocalizedName("moonclock").setCreativeTab(CreativeTabHelper.tabSpawner);
-        spinebackChunk = new ItemSpinebackChunk(x.spinebackChunkID).setIconIndex(4, 213).setUnlocalizedName("spinebackChunk").setCreativeTab(CreativeTabHelper.tabSpawner);
+        dreamflint = new ItemDreamflint(x.dreamflintID).setUnlocalizedName("dreamflint").setCreativeTab(CreativeTabHelper.tabSpawner);
+        moonclock = new ItemMoonclock(x.moonclockID).setUnlocalizedName("moonclock").setCreativeTab(CreativeTabHelper.tabSpawner);
+        spinebackChunk = new ItemSpinebackChunk(x.spinebackChunkID).setUnlocalizedName("spinebackChunk").setCreativeTab(CreativeTabHelper.tabSpawner);
         
-        teakerCannon = new ItemVetheanCannon(x.teakerCannonID, 3, "TeakerCannon").setIconIndex(4, 160).setCreativeTab(CreativeTabHelper.tabRanged);
-        amthrimisCannon = new ItemVetheanCannon(x.amthirmisCannonID, 5, "amthirmisCannon").setIconIndex(4, 161).setCreativeTab(CreativeTabHelper.tabRanged);
-        darvenCannon = new ItemVetheanCannon(x.darvenCannonID, 8, "darvenCannon").setIconIndex(4, 162).setCreativeTab(CreativeTabHelper.tabRanged);
-        cermileCannon = new ItemVetheanCannon(x.cermileCannonID, 12, "cermileCannon").setIconIndex(4, 163).setCreativeTab(CreativeTabHelper.tabRanged);
-        pardimalCannon = new ItemVetheanCannon(x.pardimalCannonID, 15, "pardimalCannon").setIconIndex(4, 164).setCreativeTab(CreativeTabHelper.tabRanged);
-        quadroticCannon = new ItemVetheanCannon(x.quadroticCannonID, 19, "quadroticCannon").setIconIndex(4, 165).setCreativeTab(CreativeTabHelper.tabRanged);
-        karosCannonItem = new ItemVetheanCannon(x.karosCannonItemID, 21, "karosCannonItem").setIconIndex(4, 166).setCreativeTab(CreativeTabHelper.tabRanged);
-        heliosisCannon = new ItemVetheanCannon(x.heliosisCannonID, 28, "heliosisCannon").setIconIndex(4, 167).setCreativeTab(CreativeTabHelper.tabRanged);
-        arksianeCannon = new ItemVetheanCannon(x.arksianeCannonID, 36, "arksianeCannon").setIconIndex(4, 168).setCreativeTab(CreativeTabHelper.tabRanged);
+        teakerCannon = new ItemVetheanCannon(x.teakerCannonID, 3, "TeakerCannon").setCreativeTab(CreativeTabHelper.tabRanged);
+        amthrimisCannon = new ItemVetheanCannon(x.amthirmisCannonID, 5, "amthirmisCannon").setCreativeTab(CreativeTabHelper.tabRanged);
+        darvenCannon = new ItemVetheanCannon(x.darvenCannonID, 8, "darvenCannon").setCreativeTab(CreativeTabHelper.tabRanged);
+        cermileCannon = new ItemVetheanCannon(x.cermileCannonID, 12, "cermileCannon").setCreativeTab(CreativeTabHelper.tabRanged);
+        pardimalCannon = new ItemVetheanCannon(x.pardimalCannonID, 15, "pardimalCannon").setCreativeTab(CreativeTabHelper.tabRanged);
+        quadroticCannon = new ItemVetheanCannon(x.quadroticCannonID, 19, "quadroticCannon").setCreativeTab(CreativeTabHelper.tabRanged);
+        karosCannonItem = new ItemVetheanCannon(x.karosCannonItemID, 21, "karosCannonItem").setCreativeTab(CreativeTabHelper.tabRanged);
+        heliosisCannon = new ItemVetheanCannon(x.heliosisCannonID, 28, "heliosisCannon").setCreativeTab(CreativeTabHelper.tabRanged);
+        arksianeCannon = new ItemVetheanCannon(x.arksianeCannonID, 36, "arksianeCannon").setCreativeTab(CreativeTabHelper.tabRanged);
         
-        eversight = new ItemVetheanEversight(x.eversightID, 42, "eversight").setIconIndex(4, 7,	12).setCreativeTab(CreativeTabHelper.tabRanged);
-        everlight = new ItemVetheanHammerSword(x.everlightID, "everlight", 44).setIconIndex(4, 5, 12).setCreativeTab(CreativeTabHelper.tabSword);
-        everbright = new ItemVetheanClaw(x.everbrightID, "everbright", 42).setIconIndex(4, 6, 12).setCreativeTab(CreativeTabHelper.tabSword);
+        eversight = new ItemVetheanEversight(x.eversightID, 42, "eversight").setCreativeTab(CreativeTabHelper.tabRanged);
+        everlight = new ItemVetheanHammerSword(x.everlightID, "everlight", 44).setCreativeTab(CreativeTabHelper.tabSword);
+        everbright = new ItemVetheanClaw(x.everbrightID, "everbright", 42).setCreativeTab(CreativeTabHelper.tabSword);
         everfight = new ItemVetheanBow(x.everfightID, 4.6D, everArrow, "everfight", false, 25, 25).setIconIndex(4, 5, 6).setUnlocalizedName("everfight").setCreativeTab(CreativeTabHelper.tabRanged);
-        evernight = new ItemEvernight(x.evernightID, 115, 200).setIconIndex(4, 4, 12).setUnlocalizedName("evernight").setCreativeTab(CreativeTabHelper.tabRanged);
+        evernight = new ItemEvernight(x.evernightID, 115, 200).setUnlocalizedName("evernight").setCreativeTab(CreativeTabHelper.tabRanged);
         
-        teakerStaff = new ItemVetheanStaff(x.teakerStaffID, 3, 10).setIconIndex(4, 112).setUnlocalizedName("TeakerStaff").setCreativeTab(CreativeTabHelper.tabRanged);
-        amthrimisStaff = new ItemVetheanStaff(x.amthirmisStaffID, 5, 10).setIconIndex(4, 113).setUnlocalizedName("amthirmisStaff").setCreativeTab(CreativeTabHelper.tabRanged);
-        darvenStaff = new ItemVetheanStaff(x.darvenStaffID, 8, 10).setIconIndex(4, 114).setUnlocalizedName("darvenStaff").setCreativeTab(CreativeTabHelper.tabRanged);
-        cermileStaff = new ItemVetheanStaff(x.cermileStaffID, 12, 10).setIconIndex(4, 115).setUnlocalizedName("cermileStaff").setCreativeTab(CreativeTabHelper.tabRanged);
-        pardimalStaff = new ItemVetheanStaff(x.pardimalStaffID, 15, 10).setIconIndex(4, 116).setUnlocalizedName("pardimalStaff").setCreativeTab(CreativeTabHelper.tabRanged);
-        quadroticStaff = new ItemVetheanStaff(x.quadroticStaffID, 19, 10).setIconIndex(4, 117).setUnlocalizedName("quadroticStaff").setCreativeTab(CreativeTabHelper.tabRanged);
-        karosStaff = new ItemVetheanStaff(x.karosStaffID, 21, 10).setIconIndex(4, 118).setUnlocalizedName("karosStaffItem").setCreativeTab(CreativeTabHelper.tabRanged);
-        heliosisStaff = new ItemVetheanStaff(x.heliosisStaffID, 28, 10).setIconIndex(4, 119).setUnlocalizedName("heliosisStaff").setCreativeTab(CreativeTabHelper.tabRanged);
-        arksianeStaff = new ItemVetheanStaff(x.arksianeStaffID, 36, 10).setIconIndex(4, 120).setUnlocalizedName("arksianeStaff").setCreativeTab(CreativeTabHelper.tabRanged);
+        teakerStaff = new ItemVetheanStaff(x.teakerStaffID, 3, 10).setUnlocalizedName("TeakerStaff").setCreativeTab(CreativeTabHelper.tabRanged);
+        amthrimisStaff = new ItemVetheanStaff(x.amthirmisStaffID, 5, 10).setUnlocalizedName("amthirmisStaff").setCreativeTab(CreativeTabHelper.tabRanged);
+        darvenStaff = new ItemVetheanStaff(x.darvenStaffID, 8, 10).setUnlocalizedName("darvenStaff").setCreativeTab(CreativeTabHelper.tabRanged);
+        cermileStaff = new ItemVetheanStaff(x.cermileStaffID, 12, 10).setUnlocalizedName("cermileStaff").setCreativeTab(CreativeTabHelper.tabRanged);
+        pardimalStaff = new ItemVetheanStaff(x.pardimalStaffID, 15, 10).setUnlocalizedName("pardimalStaff").setCreativeTab(CreativeTabHelper.tabRanged);
+        quadroticStaff = new ItemVetheanStaff(x.quadroticStaffID, 19, 10).setUnlocalizedName("quadroticStaff").setCreativeTab(CreativeTabHelper.tabRanged);
+        karosStaff = new ItemVetheanStaff(x.karosStaffID, 21, 10).setUnlocalizedName("karosStaffItem").setCreativeTab(CreativeTabHelper.tabRanged);
+        heliosisStaff = new ItemVetheanStaff(x.heliosisStaffID, 28, 10).setUnlocalizedName("heliosisStaff").setCreativeTab(CreativeTabHelper.tabRanged);
+        arksianeStaff = new ItemVetheanStaff(x.arksianeStaffID, 36, 10).setUnlocalizedName("arksianeStaff").setCreativeTab(CreativeTabHelper.tabRanged);
         
         //AddArmors();
         

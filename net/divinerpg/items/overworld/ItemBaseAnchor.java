@@ -2,19 +2,17 @@ package net.divinerpg.items.overworld;
 
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.divinerpg.entities.overworld.projectile.EntityAnchor;
-import net.divinerpg.utils.helpers.IconHelper;
+import net.divinerpg.items.ItemDivineRPG;
 import net.divinerpg.utils.helpers.gui.CreativeTabHelper;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import net.divinerpg.items.ItemDivineRPG;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 public class ItemBaseAnchor extends ItemDivineRPG {
 	private int dmg;
 

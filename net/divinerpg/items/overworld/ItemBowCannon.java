@@ -3,12 +3,10 @@ package net.divinerpg.items.overworld;
 import java.util.List;
 
 import net.divinerpg.entities.overworld.projectile.EntityBowCannon;
-import net.divinerpg.utils.helpers.IconHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -91,29 +89,7 @@ public class ItemBowCannon extends Item
     {
         this.firetick = this.firemax;
     }
-    public Icon getIconFromDamage(int par1) {
-		return IconHelper.icons[getSheet(par1, 0)][getIndex(par1, 0)];
-	}
-	
-	@Override
-	public Icon getIconFromDamageForRenderPass(int par1, int par2) {
-		return getIconFromDamage(par1);
-	}
-	public int getIndex(int meta, int pass) {
-		return index;
-	}
-	public Item setIconIndex(int sheet, int x, int y) {
-		return setIconIndex(sheet, (x + y * 16));
-	}
-	public Item setIconIndex(int sheet, int index) {
-		this.sheet = sheet;
-		this.index = index;
-		return this;
-	}
-	// Meant to be overrided
-		public int getSheet(int meta, int pass) {
-			return sheet;
-		}
+    
     @SideOnly(Side.CLIENT)
 
     /**

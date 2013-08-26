@@ -17,7 +17,6 @@ public class ItemGlacierSword extends ItemDivineRPGSword {
     
     public ItemGlacierSword(int par1) {
 		super(par1, material, false);
-		setIconIndex(3, 7, 14);
     }
     
     @Override

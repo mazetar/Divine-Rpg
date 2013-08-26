@@ -17,7 +17,6 @@ public class ItemFrostkingSword extends ItemDivineRPGSword {
     
     public ItemFrostkingSword(int par1) {
 		super(par1, material, false);
-		setIconIndex(3, 13, 15);
     }
     
     @Override

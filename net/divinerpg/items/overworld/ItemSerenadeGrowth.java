@@ -1,20 +1,14 @@
 package net.divinerpg.items.overworld;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.divinerpg.items.ItemDivineRPG;
-import net.divinerpg.utils.helpers.IconHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockMushroom;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.BlockStem;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.MinecraftForge;
@@ -24,42 +18,11 @@ import net.minecraftforge.event.entity.player.BonemealEvent;
 
 public class ItemSerenadeGrowth extends Item
 {
-	private int sheet;
-	private int index;
     public ItemSerenadeGrowth(int var1)
     {
         super(var1);
         this.maxStackSize = 1;
     }
-    public int getIndex(int meta, int pass) {
-		return index;
-	}
-
-	public int getSheet(int meta, int pass) {
-		return sheet;
-	}
-    public ItemSerenadeGrowth setIconIndex(int sheet, int index) {
-		this.sheet = sheet;
-		this.index = index;
-		return this;
-	}
-
-	public ItemSerenadeGrowth setIconIndex(int sheet, int x, int y) {
-		return setIconIndex(sheet, (x + y * 16));
-	}
-	@Override
-	public Icon getIconFromDamage(int par1) {
-		return IconHelper.icons[getSheet(par1, 0)][getIndex(par1, 0)];
-	}
-	@Override
-	@SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister)
-    {
-	}
-	@Override
-	public Icon getIconFromDamageForRenderPass(int par1, int par2) {
-		return getIconFromDamage(par1);
-	}
     public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
     {
         if (!par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack))

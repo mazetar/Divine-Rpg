@@ -60,7 +60,7 @@ public class IceikaItemHelper
         icicleBane = new ItemIceicleBane(x.IcicleBaneID).setUnlocalizedName("icicleBane").setCreativeTab(CreativeTabHelper.tabSword);
         soundOfCarols = new ItemSoundOfCarols(x.SoundOfCarolsID).setUnlocalizedName("soundofCarols").setCreativeTab(CreativeTabHelper.tabRanged);
         icineSword = new ItemIceineSword(x.IcineSwordID).setUnlocalizedName("icineSword").setCreativeTab(CreativeTabHelper.tabSword);
-        frossivence = new ItemMassivence(x.FrossivenceID, 540).setIconIndex(3, 14, 15).setUnlocalizedName("frossivence").setCreativeTab(CreativeTabHelper.tabSword);
+        frossivence = new ItemMassivence(x.FrossivenceID, 540).setUnlocalizedName("frossivence").setCreativeTab(CreativeTabHelper.tabSword);
         enderice = new ItemEnderice(x.EndericeID).setUnlocalizedName("enderice").setCreativeTab(CreativeTabHelper.tabSword);
         snowSlash = new ItemSnowSlash(x.SnowslashID).setUnlocalizedName("snowSlash").setCreativeTab(CreativeTabHelper.tabSword);
         serenadeOfIce = new ItemSerenadeOfIce(x.SerenadeOfIceID).setUnlocalizedName("serenadeofIce").setCreativeTab(CreativeTabHelper.tabRanged);
@@ -73,11 +73,11 @@ public class IceikaItemHelper
         snowFlakeShuriken = new ItemSnowflakeShuriken(x.SnowflakeShurikenID).setUnlocalizedName("snowFlakeShuriken").setCreativeTab(CreativeTabHelper.tabRanged);
         icicleBow = new ItemIcicleBow(x.IcicleBowID).setUnlocalizedName("icicleBow").setCreativeTab(CreativeTabHelper.tabRanged);
         snowStormBow = new ItemSnowStormBow(x.SnowstormBowID).setUnlocalizedName("frostStormBow").setCreativeTab(CreativeTabHelper.tabRanged);
-        pepperMints = new ItemDivineRPGFood(x.PeppermintsID, 1, 0.3F, false).setIconIndex(3, 10, 15).setUnlocalizedName("pepperMints").setCreativeTab(CreativeTabHelper.tabHerb);
+        pepperMints = new ItemDivineRPGFood(x.PeppermintsID, 1, 0.3F, false).setUnlocalizedName("pepperMints").setCreativeTab(CreativeTabHelper.tabHerb);
         eggNog = new ItemEggNog(x.EggNogID).setUnlocalizedName("eggNog").setCreativeTab(CreativeTabHelper.tabHerb);
-        chocolateLog = new ItemDivineRPGFood(x.ChocolateLogID, 4, 1.0F, false).setIconIndex(3, 11, 15).setUnlocalizedName("chocolateLog").setCreativeTab(CreativeTabHelper.tabHerb);
-        snowCones = new ItemDivineRPGFood(x.SnowconesID, 2, 0.3F, false).setIconIndex(3, 8, 15).setUnlocalizedName("snowCones").setCreativeTab(CreativeTabHelper.tabHerb);
-        fruitCake = new ItemDivineRPGFood(x.FruitCakeID, 16, 2.0F, false).setIconIndex(3, 12, 15).setUnlocalizedName("fruitCake").setCreativeTab(CreativeTabHelper.tabHerb);
+        chocolateLog = new ItemDivineRPGFood(x.ChocolateLogID, 4, 1.0F, false).setUnlocalizedName("chocolateLog").setCreativeTab(CreativeTabHelper.tabHerb);
+        snowCones = new ItemDivineRPGFood(x.SnowconesID, 2, 0.3F, false).setUnlocalizedName("snowCones").setCreativeTab(CreativeTabHelper.tabHerb);
+        fruitCake = new ItemDivineRPGFood(x.FruitCakeID, 16, 2.0F, false).setUnlocalizedName("fruitCake").setCreativeTab(CreativeTabHelper.tabHerb);
                 
         santaHead = new ItemSantaArmor(x.SantaHeadID, 0).setUnlocalizedName("santaHelmet").setCreativeTab(CreativeTabHelper.tabArmor);
         santaBody = new ItemSantaArmor(x.SantaBodyID, 1).setUnlocalizedName("santaChest").setCreativeTab(CreativeTabHelper.tabArmor);

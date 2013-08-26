@@ -10,6 +10,5 @@ public class ItemSnowSlash extends ItemDivineRPGSword {
     
     public ItemSnowSlash(int par1) {
 		super(par1, material, false);
-		setIconIndex(3, 15, 14);
     }
 }

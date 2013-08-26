@@ -367,7 +367,7 @@ public class OverworldItemHelper
 		corruptCannon = new ItemDivineRPG(x.corruptCannonID);
 
 		serenadeStriker = new ItemSerenadeStriker(x.serenadeStrikerID);
-		serenadeOfLife = new ItemSerenadeGrowth(x.growthSerenadeID).setIconIndex(1,225).setUnlocalizedName("serenadeLife").setCreativeTab(CreativeTabHelper.tabHerb);
+		serenadeOfLife = new ItemSerenadeGrowth(x.growthSerenadeID).setUnlocalizedName("serenadeLife").setCreativeTab(CreativeTabHelper.tabHerb);
 		LanguageRegistry.addName(serenadeOfLife, "Serenade of Life");
 		serenadeOfDeath = new ItemSerenadeDeath(x.seranadeDeathID);
 		serenadeHealth = new ItemSerenadeHealth(x.serenadeHealthID);
@@ -392,10 +392,10 @@ public class OverworldItemHelper
 		String[] shadowDesc = {"15% Damage reduction", "Unbreakable", "Full Set: Move faster"};
 		
 		// Angelic
-		angelicBody = new ItemBasicArmor(x.angelicBodyID, angelic, 4, BODY).setDamageReduction(0.125D).setDescriptors(angelicDesc).setIconIndex(2,88).setUnlocalizedName("angelicbody").setCreativeTab(CreativeTabHelper.tabArmor);
-		angelicHelmet = new ItemBasicArmor(x.angelicHeadID, angelic, 3, HEAD).setDamageReduction(0.125D).setDescriptors(angelicDesc).setIconIndex(2, 87).setUnlocalizedName("angelichelm").setCreativeTab(CreativeTabHelper.tabArmor);
-		angelicLegs = new ItemBasicArmor(x.angelicLegsID, angelic, 3, LEGS).setDamageReduction(0.125D).setDescriptors(angelicDesc).setIconIndex(2,89).setUnlocalizedName("angelicLegs").setCreativeTab(CreativeTabHelper.tabArmor);
-		angelicBoots = new ItemBasicArmor(x.angelicBootsID, angelic, 2, BOOTS).setDamageReduction(0.125D).setDescriptors(angelicDesc).setIconIndex(2, 90).setUnlocalizedName("angelicboots").setCreativeTab(CreativeTabHelper.tabArmor);
+		angelicBody = new ItemBasicArmor(x.angelicBodyID, angelic, 4, BODY).setDamageReduction(0.125D).setDescriptors(angelicDesc).setUnlocalizedName("angelicbody").setCreativeTab(CreativeTabHelper.tabArmor);
+		angelicHelmet = new ItemBasicArmor(x.angelicHeadID, angelic, 3, HEAD).setDamageReduction(0.125D).setDescriptors(angelicDesc).setUnlocalizedName("angelichelm").setCreativeTab(CreativeTabHelper.tabArmor);
+		angelicLegs = new ItemBasicArmor(x.angelicLegsID, angelic, 3, LEGS).setDamageReduction(0.125D).setDescriptors(angelicDesc).setUnlocalizedName("angelicLegs").setCreativeTab(CreativeTabHelper.tabArmor);
+		angelicBoots = new ItemBasicArmor(x.angelicBootsID, angelic, 2, BOOTS).setDamageReduction(0.125D).setDescriptors(angelicDesc).setUnlocalizedName("angelicboots").setCreativeTab(CreativeTabHelper.tabArmor);
 		// Normal Realmite
 		//realmiteHelmet = new ItemBasicArmor(, var2, var3, var4)
 		

@@ -17,7 +17,6 @@ public class ItemFrozenMaul extends ItemDivineRPGSword {
     
     public ItemFrozenMaul(int par1) {
 		super(par1, material, true);
-		setIconIndex(3, 9, 14);
     }
     
     @Override

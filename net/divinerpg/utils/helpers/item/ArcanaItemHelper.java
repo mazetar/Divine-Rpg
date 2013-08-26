@@ -125,9 +125,9 @@ public class ArcanaItemHelper
 	    key4 = new ItemKey(x.key4ID, 15).setIconIndex(3, 155).setUnlocalizedName("key4").setCreativeTab(CreativeTabHelper.tabItems);
 	    fireStockItem = new ItemDivineRPG(x.fireStockItemID).setIconIndex(3, 85).setUnlocalizedName("fireStockItem").setCreativeTab(CreativeTabHelper.tabHerb);
         fireStockSeeds = new ItemDivineRPGSeeds(x.fireStockSeedsID, ArcanaBlockHelper.fireStock.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setIconIndex(3, 101).setUnlocalizedName("fireStockSeeds").setCreativeTab(CreativeTabHelper.tabHerb);
-        pinFlyItem = new ItemPinFly(x.pinFlyItemID, 2, 0.3F, false).setIconIndex(3, 86).setUnlocalizedName("pinflyItem").setCreativeTab(CreativeTabHelper.tabHerb);
+        pinFlyItem = new ItemPinFly(x.pinFlyItemID, 2, 0.3F, false).setUnlocalizedName("pinflyItem").setCreativeTab(CreativeTabHelper.tabHerb);
         pinFlySeeds = new ItemDivineRPGSeeds(x.pinFlySeedsID, ArcanaBlockHelper.pinFly.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setIconIndex(3, 104).setUnlocalizedName("pinFlySeeds").setCreativeTab(CreativeTabHelper.tabHerb);
-        hitchakItem = new ItemDivineRPGFood(x.hitchakItemID, 2, 3.0F, false).setIconIndex(3, 89).setUnlocalizedName("hitchakItem").setCreativeTab(CreativeTabHelper.tabHerb);
+        hitchakItem = new ItemDivineRPGFood(x.hitchakItemID, 2, 3.0F, false).setUnlocalizedName("hitchakItem").setCreativeTab(CreativeTabHelper.tabHerb);
         hitchakSeeds = new ItemDivineRPGSeeds(x.hitchakSeedsID, ArcanaBlockHelper.hitchak.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setIconIndex(3, 99).setUnlocalizedName("hitchakSeeds").setCreativeTab(CreativeTabHelper.tabHerb);
         eucalyptusRootSeeds = new ItemDivineRPGSeeds(x.eucalyptusRootSeedsID, ArcanaBlockHelper.eucalyptusRoot.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).setIconIndex(3, 100).setUnlocalizedName("eucalyptusRootSeeds").setCreativeTab(CreativeTabHelper.tabHerb);
         veiloItem = new ItemDivineRPG(x.veiloItemID).setIconIndex(3, 87).setUnlocalizedName("veiloItem").setCreativeTab(CreativeTabHelper.tabHerb);
@@ -163,7 +163,7 @@ public class ArcanaItemHelper
         collector = new ItemDivineRPG(x.collectorID).setIconIndex(14, 0).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("collector");
         collectorFragments = new ItemDivineRPG (x.collectorFragmentsID).setIconIndex(15, 0).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("collectorFragment");
         //tarBucket = new ItemTarBucket(x.tarBucketID, OverworldBlockHelper.tarStill.blockID).setUnlocalizedName("tarBucket").setCreativeTab(CreativeTabHelper.tabItems);
-        arcaniumBucket = new ItemTarBucket(x.arcaniumBucketID, 0).setIconIndex(3, 186).setUnlocalizedName("arcaniumBucket").setCreativeTab(CreativeTabHelper.tabItems);
+        arcaniumBucket = new ItemTarBucket(x.arcaniumBucketID, 0).setUnlocalizedName("arcaniumBucket").setCreativeTab(CreativeTabHelper.tabItems);
         staffOfEnrichment = new ItemStaffOfEnrichment(x.staffOfEnrichmentID).setIconIndex(3, 184).setUnlocalizedName("staffOfEnrichment").setCreativeTab(CreativeTabHelper.tabTool);
         orbOfLight = new ItemOrbOfLight(x.orbOfLightID).setIconIndex(3, 178);
         wizardBook = new ItemWizardBook(x.wizardBookID).setIconIndex(3, 182).setUnlocalizedName("WizardBook");

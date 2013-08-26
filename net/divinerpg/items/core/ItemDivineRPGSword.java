@@ -3,20 +3,13 @@ package net.divinerpg.items.core;
 import java.util.List;
 
 import net.divinerpg.api.IItemDivineRPG;
-import net.divinerpg.utils.helpers.IconHelper;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
 
@@ -53,35 +46,6 @@ public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
         return dmg;
     }
 
-	public ItemDivineRPGSword setIconIndex(int sheet, int x, int y) {
-		return setIconIndex(sheet, (x + y * 16));
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister)
-    {
-	}
-	
-	// Meant to be overrided
-	public int getIndex(int meta, int pass) {
-		return index;
-	}
-	
-	// Meant to be overrided
-	public int getSheet(int meta, int pass) {
-		return sheet;
-	}
-
-	@Override
-	public Icon getIconFromDamage(int par1) {
-		return IconHelper.icons[getSheet(par1, 0)][getIndex(par1, 0)];
-	}
-	
-	@Override
-	public Icon getIconFromDamageForRenderPass(int par1, int par2) {
-		return getIconFromDamage(par1);
-	}
 
 	@Override
     public boolean hitEntity(ItemStack par1ItemStack, EntityLivingBase par2EntityLiving, EntityLivingBase par3EntityLiving) {

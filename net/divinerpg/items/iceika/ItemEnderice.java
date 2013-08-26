@@ -10,6 +10,5 @@ public class ItemEnderice extends ItemDivineRPGSword {
     
     public ItemEnderice(int par1) {
 		super(par1, material, true);
-		setIconIndex(3, 6, 14);
     }
 }

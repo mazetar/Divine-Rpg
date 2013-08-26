@@ -3,20 +3,15 @@ package net.divinerpg.items.core;
 import java.util.List;
 
 import net.divinerpg.api.IItemDivineRPG;
-import net.divinerpg.utils.helpers.IconHelper;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemDivineRPGBow extends ItemBow implements IItemDivineRPG {
 
@@ -117,42 +112,6 @@ public class ItemDivineRPGBow extends ItemBow implements IItemDivineRPG {
 	
 	public void setArrow(int arrow) {
 		this.arrow = arrow;
-	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister)
-    {
-		
-	}
-	
-	// Meant to be overrided
-	public int getIndex(int meta, int pass) {
-		return index;
-	}
-	
-	// Meant to be overrided
-	public int getSheet(int meta, int pass) {
-		return sheet;
-	}
-
-	@Override
-	public Icon getIconFromDamage(int par1) {
-		return IconHelper.icons[getSheet(par1, 0)][getIndex(par1, 0)];
-	}
-	
-	@Override
-	public Icon getIconFromDamageForRenderPass(int par1, int par2) {
-		return getIconFromDamage(par1);
-	}
-	
-	@Override
-	public Icon getIcon(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useRemaining) {
-		return IconHelper.icons[getSheet(stack.getItemDamage(), renderPass)][getIndex(stack, renderPass, player, usingItem, getMaxItemUseDuration(stack) - player.getItemInUseCount())];
-	}
-	
-	public int getIndex(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useDuration) {
-		return getIndex(stack.getItemDamage(), renderPass);
 	}
 	
 	// helper method

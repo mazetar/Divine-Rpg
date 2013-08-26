@@ -2,8 +2,6 @@ package net.divinerpg.items.overworld;
 
 import java.util.List;
 
-import net.divinerpg.items.core.ItemDivineRPGArmor;
-import net.divinerpg.utils.helpers.IconHelper;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,7 +9,6 @@ import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Icon;
 import net.minecraftforge.common.ISpecialArmor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -40,35 +37,6 @@ public class ItemBasicArmor extends ItemArmor implements ISpecialArmor
         return var3 != 0 && var3 != 2 ? (var3 == 1 ? 4 : 2) : 3;
     }
 
-    public void damageArmor(EntityLiving var1, ItemStack var2, DamageSource var3, int var4, int var5) 
-    {
-    	return;
-    }
-    public Icon getIconFromDamage(int par1) {
-		return IconHelper.icons[getSheet(par1, 0)][getIndex(par1, 0)];
-	}
-	
-	@Override
-	public Icon getIconFromDamageForRenderPass(int par1, int par2) {
-		return getIconFromDamage(par1);
-	}
-	public int getIndex(int meta, int pass) {
-		return index;
-	}
-
-	public int getSheet(int meta, int pass) {
-		return sheet;
-	}
-    public ItemBasicArmor setIconIndex(int sheet, int index) {
-		this.sheet = sheet;
-		this.index = index;
-		return this;
-	}
-
-	public ItemBasicArmor setIconIndex(int sheet, int x, int y) {
-		return setIconIndex(sheet, (x + y * 16));
-	}
-	
 	public ItemBasicArmor setDescriptors(String[] descs) {
 		descriptors = descs;
 		return this;

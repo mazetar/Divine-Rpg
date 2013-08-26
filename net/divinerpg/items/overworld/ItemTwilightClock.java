@@ -2,18 +2,13 @@ package net.divinerpg.items.overworld;
 
 import java.util.Random;
 
-import net.divinerpg.DivineRPGTwilight;
-import net.divinerpg.utils.helpers.IconHelper;
 import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemTwilightClock extends Item
 {
@@ -27,13 +22,6 @@ public class ItemTwilightClock extends Item
     {
         super(var1);
         this.maxStackSize = 1;
-    }
-    
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerIcons(IconRegister par1IconRegister)
-    {
-    	this.itemIcon = IconHelper.icons[2][(6 * 16) + 5];
     }
     
     public boolean onItemUse(ItemStack var1, EntityPlayer var2, World var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10)

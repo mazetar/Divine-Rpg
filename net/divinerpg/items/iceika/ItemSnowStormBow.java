@@ -26,15 +26,5 @@ public class ItemSnowStormBow extends ItemDivineRPGBow {
     	super.addInformation(par1ItemStack, par2EntityPlayer, par3List, par4);
     	par3List.add("Shoots Explosive Arrows");
     }
-    
-	@Override
-	public int getSheet(int meta, int pass) {
-		return 3;
-	}
-	
-	@Override
-	public int getIndex(ItemStack stack, int renderPass, EntityPlayer player, ItemStack usingItem, int useDuration) {
-		return getIndex(0, 0) + getUseLevel(useDuration);
-	}
 
 }

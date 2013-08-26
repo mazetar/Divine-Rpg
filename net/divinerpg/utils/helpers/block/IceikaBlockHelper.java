@@ -100,16 +100,16 @@ public class IceikaBlockHelper {
 		LanguageRegistry.addName(workshopBookcase, "Workshop Bookcase");
 		LanguageRegistry.addName(workshopLamp, "Workshop Lamp");
 		LanguageRegistry.addName(frostedGlass, "Frosted Glass");
-		LanguageRegistry.addName(xmasTreeLights, "Xmas Tree Lights");
-		LanguageRegistry.addName(redXmasLights, "Red Xmas Lights");
-		LanguageRegistry.addName(greenXmasLights, "Green Xmas Lights");
-		LanguageRegistry.addName(blueXmasLights, "Blue Xmas Lights");
-		LanguageRegistry.addName(yellowXmasLights, "Yellow Xmas Lights");
-		LanguageRegistry.addName(purpleXmasLights, "Purple Xmas Lights");
-		LanguageRegistry.addName(redCandyCane, "Red Candy Cane");
-		LanguageRegistry.addName(greenCandyCane, "Green Candy Cane");
-		LanguageRegistry.addName(blueCandyCane, "Blue Candy Cane");
-		LanguageRegistry.addName(yellowCandyCane, "Yellow Candy Cane");
-		LanguageRegistry.addName(purpleCandyCane, "Purple Candy Cane");
+//		LanguageRegistry.addName(xmasTreeLights, "Xmas Tree Lights");
+//		LanguageRegistry.addName(redXmasLights, "Red Xmas Lights");
+//		LanguageRegistry.addName(greenXmasLights, "Green Xmas Lights");
+//		LanguageRegistry.addName(blueXmasLights, "Blue Xmas Lights");
+//		LanguageRegistry.addName(yellowXmasLights, "Yellow Xmas Lights");
+//		LanguageRegistry.addName(purpleXmasLights, "Purple Xmas Lights");
+//		LanguageRegistry.addName(redCandyCane, "Red Candy Cane");
+//		LanguageRegistry.addName(greenCandyCane, "Green Candy Cane");
+//		LanguageRegistry.addName(blueCandyCane, "Blue Candy Cane");
+//		LanguageRegistry.addName(yellowCandyCane, "Yellow Candy Cane");
+//		LanguageRegistry.addName(purpleCandyCane, "Purple Candy Cane");
 	}
 }

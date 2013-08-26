@@ -49,7 +49,7 @@ public class EntityWhale extends EntityWaterMob
         super.func_110147_ax();
         
         this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(800);
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(20);
+      //TODO No attackDmg for waterAnimals  this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(20);
         this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.3F);
     }
 

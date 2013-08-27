@@ -54,38 +54,38 @@ public class IceikaBlockHelper {
 	static IceikaConfigHelper x;
 	
 	public static void init() {
-		frostedStone = new BlockDivineRPG(x.FrostedStoneID, 0, Material.rock).func_111022_d("FrostedStone").setHardness(1.5F).setResistance(10F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("frostedStone").setCreativeTab(CreativeTabHelper.tabBlocks);
-		frostedDirt = new BlockDivineRPG(x.FrostedDirtID, 0, Material.grass).func_111022_d("IceGrass_Bottom").setHardness(0.6F).setStepSound(Block.soundGravelFootstep).setUnlocalizedName("frostedDirt").setCreativeTab(CreativeTabHelper.tabBlocks);
-		frostedGrass = new BlockIceikaGrass(x.FrostedGrassID).func_111022_d("IceGrass").setHardness(0.6F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("frostedGrass").setCreativeTab(CreativeTabHelper.tabBlocks);
-		frostedWood = new BlockIceikaLog(x.FrostedWoodID).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("frostedWood").setCreativeTab(CreativeTabHelper.tabBlocks);
-		frostedLeaves = new BlockDivineRPG(x.FrostedLeavesID, 0, Material.leaves).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("frostedLeaves").setCreativeTab(CreativeTabHelper.tabBlocks);
-		icyStone = new BlockDivineRPG(x.IcyStoneID, 0, Material.rock).func_111022_d("IcyStone").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("icyStone").setBlockUnbreakable().setCreativeTab(CreativeTabHelper.tabBlocks);
-		icyBricks = new BlockDivineRPG(x.IcyBricksID, 0, Material.rock).func_111022_d("IcyBrick").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("icyBricks").setBlockUnbreakable().setStepSound(Block.soundGrassFootstep).setCreativeTab(CreativeTabHelper.tabBlocks);
-		snowyBricks = new BlockDivineRPG(x.SnowyBricksID, 0, Material.snow).func_111022_d("SnowyBrick").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("snowyBricks").setCreativeTab(CreativeTabHelper.tabBlocks);
-		coalstone = new BlockDivineRPG(x.CoalstoneID, 0, Material.rock).func_111022_d("CoalStone").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("coalstone").setCreativeTab(CreativeTabHelper.tabBlocks);
-		coalstoneFurnaceActive = new BlockIceikaFurnace(x.CoalstoneFurnaceActiveID, true).func_111022_d("CoalStoneFurnace_Front_On").setUnlocalizedName("iceikaFurnace").setCreativeTab(CreativeTabHelper.tabBlocks);
-		coalstoneFurnace = new BlockIceikaFurnace(x.CoalstoneFurnaceID, false).func_111022_d("CoalStoneFurnace_Front_Off").setUnlocalizedName("iceikaFurnace").setCreativeTab(CreativeTabHelper.tabBlocks);
+		frostedStone = new BlockDivineRPG(x.FrostedStoneID, 0, Material.rock).func_111022_d("FrostedStone").setHardness(1.5F).setResistance(10F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("FrostedStone").setCreativeTab(CreativeTabHelper.tabBlocks);
+		frostedDirt = new BlockDivineRPG(x.FrostedDirtID, 0, Material.grass).func_111022_d("IceGrass_Bottom").setHardness(0.6F).setStepSound(Block.soundGravelFootstep).setUnlocalizedName("FrostedDirt").setCreativeTab(CreativeTabHelper.tabBlocks);
+		frostedGrass = new BlockIceikaGrass(x.FrostedGrassID).func_111022_d("IceGrass").setHardness(0.6F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("FrostedGrass").setCreativeTab(CreativeTabHelper.tabBlocks);
+		frostedWood = new BlockIceikaLog(x.FrostedWoodID).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("FrostedWood").setCreativeTab(CreativeTabHelper.tabBlocks);
+		frostedLeaves = new BlockDivineRPG(x.FrostedLeavesID, 0, Material.leaves).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("FrostedLeaves").setCreativeTab(CreativeTabHelper.tabBlocks);
+		icyStone = new BlockDivineRPG(x.IcyStoneID, 0, Material.rock).func_111022_d("IcyStone").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("IcyStone").setBlockUnbreakable().setCreativeTab(CreativeTabHelper.tabBlocks);
+		icyBricks = new BlockDivineRPG(x.IcyBricksID, 0, Material.rock).func_111022_d("IcyBrick").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("IcyBricks").setBlockUnbreakable().setStepSound(Block.soundGrassFootstep).setCreativeTab(CreativeTabHelper.tabBlocks);
+		snowyBricks = new BlockDivineRPG(x.SnowyBricksID, 0, Material.snow).func_111022_d("SnowyBrick").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("SnowyBricks").setCreativeTab(CreativeTabHelper.tabBlocks);
+		coalstone = new BlockDivineRPG(x.CoalstoneID, 0, Material.rock).func_111022_d("CoalStone").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("CoalStone").setCreativeTab(CreativeTabHelper.tabBlocks);
+		coalstoneFurnaceActive = new BlockIceikaFurnace(x.CoalstoneFurnaceActiveID, true).func_111022_d("CoalStoneFurnace_Front_On").setUnlocalizedName("IceikaFurnace").setCreativeTab(CreativeTabHelper.tabBlocks);
+		coalstoneFurnace = new BlockIceikaFurnace(x.CoalstoneFurnaceID, false).func_111022_d("CoalStoneFurnace_Front_Off").setUnlocalizedName("IceikaFurnace").setCreativeTab(CreativeTabHelper.tabBlocks);
 		
-		workshopCarpet = new BlockDivineRPG(x.WorkshopCarpetID, 0, Material.cloth).func_111022_d("WorkshopCarpet").setUnlocalizedName("workshopCarpet").setCreativeTab(CreativeTabHelper.tabBlocks);
-		workshopBookcase = new BlockDivineRPG(x.WorkshopBookcaseID, 0, Material.wood).func_111022_d("WorkshopBookcase").setHardness(2.0F).setResistance(5.0F).setUnlocalizedName("workshopBookcase").setCreativeTab(CreativeTabHelper.tabBlocks);
-		workshopLamp = new BlockDivineRPG(x.WorkshopLampID, 0, Material.rock).func_111022_d("WorkshopLamp").setLightValue(1.0F).setUnlocalizedName("workshopLamp").setCreativeTab(CreativeTabHelper.tabBlocks);
-		frostedGlass = new BlockColoredGlass(x.FrostedGlassID, false).func_111022_d("FrostedGlass").setUnlocalizedName("frostedGlass").setCreativeTab(CreativeTabHelper.tabBlocks);
-		steelDoor = new BlockIceikaDoor(x.SteelDoorID, Material.iron).func_111022_d("IceDoor").setHardness(2.0F).setResistance(5.0F).setBlockUnbreakable().setUnlocalizedName("steelDoor").setCreativeTab(CreativeTabHelper.tabBlocks);
-		frostedChest = new BlockIceikaChest(x.FrostedChestID).func_111022_d("FrostedChest").setHardness(2.0F).setResistance(5.0F).setUnlocalizedName("frostedChest").setCreativeTab(CreativeTabHelper.tabBlocks);
-		glacideSpawner = new BlockDivineRPGSpawner(x.GlacideSpawnerID, 0, Material.rock, "DivineRPG_glacide").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("frozenDungeonSpawner");
-		rolumSpawner = new BlockDivineRPGSpawner(x.RolumSpawnerID, 0, Material.rock, "DivineRPG_rollum").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("frozenDungeonSpawner");
+		workshopCarpet = new BlockDivineRPG(x.WorkshopCarpetID, 0, Material.cloth).func_111022_d("WorkshopCarpet").setUnlocalizedName("WorkshopCarpet").setCreativeTab(CreativeTabHelper.tabBlocks);
+		workshopBookcase = new BlockDivineRPG(x.WorkshopBookcaseID, 0, Material.wood).func_111022_d("WorkshopBookcase").setHardness(2.0F).setResistance(5.0F).setUnlocalizedName("WorkshopBookcase").setCreativeTab(CreativeTabHelper.tabBlocks);
+		workshopLamp = new BlockDivineRPG(x.WorkshopLampID, 0, Material.rock).func_111022_d("WorkshopLamp").setLightValue(1.0F).setUnlocalizedName("WorkshopLamp").setCreativeTab(CreativeTabHelper.tabBlocks);
+		frostedGlass = new BlockColoredGlass(x.FrostedGlassID, false).func_111022_d("FrostedGlass").setUnlocalizedName("FrostedGlass").setCreativeTab(CreativeTabHelper.tabBlocks);
+		steelDoor = new BlockIceikaDoor(x.SteelDoorID, Material.iron).func_111022_d("IceDoor").setHardness(2.0F).setResistance(5.0F).setBlockUnbreakable().setUnlocalizedName("SteelDoor").setCreativeTab(CreativeTabHelper.tabBlocks);
+		frostedChest = new BlockIceikaChest(x.FrostedChestID).func_111022_d("FrostedChest").setHardness(2.0F).setResistance(5.0F).setUnlocalizedName("FrostedChest").setCreativeTab(CreativeTabHelper.tabBlocks);
+		glacideSpawner = new BlockDivineRPGSpawner(x.GlacideSpawnerID, 0, Material.rock, "DivineRPG_glacide").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
+		rolumSpawner = new BlockDivineRPGSpawner(x.RolumSpawnerID, 0, Material.rock, "DivineRPG_rollum").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
 //TODO: Fix textures for xmas stuff.
-		//        xmasTreeLights = new BlockDivineRPG(x.XmasTreeLightsID, 0, Material.leaves).func_111022_d("").setHardness(0.2F).setUnlocalizedName("lightleaves").setCreativeTab(CreativeTabHelper.tabBlocks);
-//		redXmasLights = new BlockXmasLights(x.RedXmasLightsID, 0).func_111022_d("").setHardness(0.2F).setUnlocalizedName("redXmasLights").setCreativeTab(CreativeTabHelper.tabBlocks);
-//		greenXmasLights = new BlockXmasLights(x.GreenXmasLightsID, 1).func_111022_d("").setHardness(0.2F).setUnlocalizedName("greenXmasLights").setHardness(1.0F).setResistance(1.0F).setCreativeTab(CreativeTabHelper.tabBlocks);
-//		blueXmasLights = new BlockXmasLights(x.BlueXmasLightsID, 2).func_111022_d("").setHardness(0.2F).setUnlocalizedName("blueXmasLights").setCreativeTab(CreativeTabHelper.tabBlocks);
-//		yellowXmasLights = new BlockXmasLights(x.YellowXmasLightsID, 3).func_111022_d("").setHardness(0.2F).setUnlocalizedName("yellowXmasLights").setCreativeTab(CreativeTabHelper.tabBlocks);
-//		purpleXmasLights = new BlockXmasLights(x.PurpleXmasLightsID, 4).func_111022_d("").setHardness(0.2F).setUnlocalizedName("purpleXmasLights").setCreativeTab(CreativeTabHelper.tabBlocks);
-//		redCandyCane = new BlockDivineRPG(x.RedCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("redCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
-//		greenCandyCane = new BlockDivineRPG(x.GreenCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("greenCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
-//		blueCandyCane = new BlockDivineRPG(x.BlueCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("blueCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
-//		yellowCandyCane = new BlockDivineRPG(x.YellowCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("yellowCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
-//		purpleCandyCane = new BlockDivineRPG(x.PurpleCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("purpleCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
+		//        xmasTreeLights = new BlockDivineRPG(x.XmasTreeLightsID, 0, Material.leaves).func_111022_d("").setHardness(0.2F).setUnlocalizedName("LightLeaves").setCreativeTab(CreativeTabHelper.tabBlocks);
+//		redXmasLights = new BlockXmasLights(x.RedXmasLightsID, 0).func_111022_d("").setHardness(0.2F).setUnlocalizedName("RedXmasLights").setCreativeTab(CreativeTabHelper.tabBlocks);
+//		greenXmasLights = new BlockXmasLights(x.GreenXmasLightsID, 1).func_111022_d("").setHardness(0.2F).setUnlocalizedName("GreenXmasLights").setHardness(1.0F).setResistance(1.0F).setCreativeTab(CreativeTabHelper.tabBlocks);
+//		blueXmasLights = new BlockXmasLights(x.BlueXmasLightsID, 2).func_111022_d("").setHardness(0.2F).setUnlocalizedName("BlueXmasLights").setCreativeTab(CreativeTabHelper.tabBlocks);
+//		yellowXmasLights = new BlockXmasLights(x.YellowXmasLightsID, 3).func_111022_d("").setHardness(0.2F).setUnlocalizedName("YellowXmasLights").setCreativeTab(CreativeTabHelper.tabBlocks);
+//		purpleXmasLights = new BlockXmasLights(x.PurpleXmasLightsID, 4).func_111022_d("").setHardness(0.2F).setUnlocalizedName("PurpleXmasLights").setCreativeTab(CreativeTabHelper.tabBlocks);
+//		redCandyCane = new BlockDivineRPG(x.RedCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("RedCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
+//		greenCandyCane = new BlockDivineRPG(x.GreenCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("GreenCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
+//		blueCandyCane = new BlockDivineRPG(x.BlueCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("BlueCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
+//		yellowCandyCane = new BlockDivineRPG(x.YellowCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("YellowCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
+//		purpleCandyCane = new BlockDivineRPG(x.PurpleCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("PurpleCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
 //	
 		LanguageRegistry.addName(frostedStone, "Frosted Stone");
 		LanguageRegistry.addName(frostedDirt, "Frosted Dirt");

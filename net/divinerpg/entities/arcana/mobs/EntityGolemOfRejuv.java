@@ -1,6 +1,7 @@
 package net.divinerpg.entities.arcana.mobs;
 
 import net.minecraft.entity.EntityAgeable;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIFollowOwner;
 import net.minecraft.entity.ai.EntityAILookIdle;
@@ -123,7 +124,7 @@ public class EntityGolemOfRejuv extends EntityTameable
         {
             if (this.healTimer == 4)
             {
-                (this.getOwner()).heal(1);
+                ((EntityLivingBase) this.getOwner()).heal(1);  //added cast to get rid of error, not sure if needed
                 this.heal(1);
                 this.healTimer = 0;
             }

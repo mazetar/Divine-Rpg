@@ -137,75 +137,75 @@ public class ArcanaBlockHelper
 	
 	public static void init()
 	{
-	    arcanaPortal = new BlockPortalArcana(ArcanaConfigHelper.arcanaPortalID).setUnlocalizedName("portalarcana").func_111022_d("ArcanaPortal");
-	    arcanaPortalFrame = new BlockPortalArcanaFrame(ArcanaConfigHelper.arcanaPortalFrameID).setUnlocalizedName("arcanaPortalFrame").func_111022_d("ArcanaPortalBlock");
+	    arcanaPortal = new BlockPortalArcana(ArcanaConfigHelper.arcanaPortalID).setUnlocalizedName("ArcanaPortal").func_111022_d("ArcanaPortal");
+	    arcanaPortalFrame = new BlockPortalArcanaFrame(ArcanaConfigHelper.arcanaPortalFrameID).setUnlocalizedName("ArcanaPortalBlock").func_111022_d("ArcanaPortalBlock");
 	    
-		ancientBricks = new BlockDungeonBlock(ArcanaConfigHelper.ancientBricksID).setUnlocalizedName("ancientBricks").func_111022_d("AncientBricks"); //TODO wrong texture name
-		degradedBricks = new BlockDungeonBlock(ArcanaConfigHelper.degradedBricksID).setUnlocalizedName("degradedBricks").func_111022_d("DegradedBricks");
-		ancientStone = new BlockDungeonBlock(ArcanaConfigHelper.ancientStoneID).setUnlocalizedName("ancientStone").func_111022_d("AncientStone");
-		soulStone = new BlockDungeonBlock(ArcanaConfigHelper.soulStoneID).setUnlocalizedName("soulStone").func_111022_d("SoulStone");
-		soulSludge = new BlockDungeonBlock(ArcanaConfigHelper.soulSludgeID).setUnlocalizedName("soulSludge").func_111022_d("SoulSludge");
+		ancientBricks = new BlockDungeonBlock(ArcanaConfigHelper.ancientBricksID).setUnlocalizedName("AncientBricks").func_111022_d("AncientBricks"); //TODO wrong texture name
+		degradedBricks = new BlockDungeonBlock(ArcanaConfigHelper.degradedBricksID).setUnlocalizedName("DegradedBricks").func_111022_d("DegradedBricks");
+		ancientStone = new BlockDungeonBlock(ArcanaConfigHelper.ancientStoneID).setUnlocalizedName("AncientStone").func_111022_d("AncientStone");
+		soulStone = new BlockDungeonBlock(ArcanaConfigHelper.soulStoneID).setUnlocalizedName("SoulStone").func_111022_d("SoulStone");
+		soulSludge = new BlockDungeonBlock(ArcanaConfigHelper.soulSludgeID).setUnlocalizedName("SoulSludge").func_111022_d("SoulSludge");
 		
-		ancientTile = new BlockDungeonBlock(ArcanaConfigHelper.ancientTileID).setUnlocalizedName("ancientTile").func_111022_d("AncientTile");
-		arcaniteMetal = new BlockDungeonBlock(ArcanaConfigHelper.arcaniteMetalID).setUnlocalizedName("arcaniteMetal").func_111022_d("ArcaniumMetal");
-		dungeonLamp = new BlockDungeonBlock(ArcanaConfigHelper.dungeonLampID).setUnlocalizedName("dungeonLamp").setLightValue(1.0F).func_111022_d("DungeonLamp");
-		arcaniumPower = new BlockDungeonBlock(ArcanaConfigHelper.arcaniumPowerID).setUnlocalizedName("arcaniumPower").func_111022_d("ArcaniumPower");
-		extractor = new BlockExtractor(ArcanaConfigHelper.extractorID).setUnlocalizedName("extractor").func_111022_d("Extractor");
+		ancientTile = new BlockDungeonBlock(ArcanaConfigHelper.ancientTileID).setUnlocalizedName("AncientTile").func_111022_d("AncientTile");
+		arcaniteMetal = new BlockDungeonBlock(ArcanaConfigHelper.arcaniteMetalID).setUnlocalizedName("ArcaniteMetal").func_111022_d("ArcaniumMetal");
+		dungeonLamp = new BlockDungeonBlock(ArcanaConfigHelper.dungeonLampID).setUnlocalizedName("DungeonLamp").setLightValue(1.0F).func_111022_d("DungeonLamp");
+		arcaniumPower = new BlockDungeonBlock(ArcanaConfigHelper.arcaniumPowerID).setUnlocalizedName("ArcaniumPower").func_111022_d("ArcaniumPower");
+		extractor = new BlockExtractor(ArcanaConfigHelper.extractorID).setUnlocalizedName("Extractor").func_111022_d("Extractor");
 		
-		dramixAltar = new BlockDramixAltar(ArcanaConfigHelper.dramixAltarID).setUnlocalizedName("dramixAltar").func_111022_d("DramixAltar");
-		parasectaAltar = new BlockParasectaAltar(ArcanaConfigHelper.parasectaAltarID).setUnlocalizedName("parasectaAltar").func_111022_d("ParasectaAltar");
+		dramixAltar = new BlockDramixAltar(ArcanaConfigHelper.dramixAltarID).setUnlocalizedName("DramixAltar").func_111022_d("DramixAltar");
+		parasectaAltar = new BlockParasectaAltar(ArcanaConfigHelper.parasectaAltarID).setUnlocalizedName("ParasectaAltar").func_111022_d("ParasectaAltar");
 		
-		heatTraps = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsID, 110).setUnlocalizedName("heatTrap").func_111022_d("HeatTrapOff");
-		heatTrapsOn = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsOnID, 109).setUnlocalizedName("heatTrapsOn").func_111022_d("HeatTrapOn");
-		blockOfLight = new BlockOfLight(ArcanaConfigHelper.blockOfLightID).setUnlocalizedName("blockOfLight");
+		heatTraps = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsID, 110).setUnlocalizedName("HeatTrap").func_111022_d("HeatTrapOff");
+		heatTrapsOn = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsOnID, 109).setUnlocalizedName("HeatTrapsOn").func_111022_d("HeatTrapOn");
+		blockOfLight = new BlockOfLight(ArcanaConfigHelper.blockOfLightID).setUnlocalizedName("BlockOfLight");
 		
-		arcaniumOre = new BlockDungeonBlock(ArcanaConfigHelper.arcaniumOreID).setUnlocalizedName("arcaniumOre").func_111022_d("ArcaniumOre");
+		arcaniumOre = new BlockDungeonBlock(ArcanaConfigHelper.arcaniumOreID).setUnlocalizedName("ArcaniumOre").func_111022_d("ArcaniumOre");
 		oreDoor1 = new BlockOreDoor(ArcanaConfigHelper.oreDoor1ID).setUnlocalizedName("oreDoor1").func_111022_d("OreDoor1");
 		oreDoor2 = new BlockOreDoor2(ArcanaConfigHelper.oreDoor2ID).setUnlocalizedName("oreDoor2").func_111022_d("OreDoor2");;
 		oreDoor3 = new BlockOreDoor3(ArcanaConfigHelper.oreDoor3ID).setUnlocalizedName("oreDoor3").func_111022_d("OreDoor3");;
 		oreDoor4 = new BlockOreDoor4(ArcanaConfigHelper.oreDoor4ID).setUnlocalizedName("oreDoor4").func_111022_d("OreDoor4");;
 		
-		arcaniteRails = new BlockArcaniteRails(ArcanaConfigHelper.arcaniteRailsID).setUnlocalizedName("arcaniumRails").func_111022_d("ArcaniumRails");
-		starBridge = new BlockStarBridge(ArcanaConfigHelper.starBridgeID, 0, false).setUnlocalizedName("starBridge");
-		starBridgeOn = new BlockStarBridgeOn(ArcanaConfigHelper.starBridgeOnID, 0, true).setUnlocalizedName("starBridgeOn");
-		arcaniteTubes = new BlockArcaniteTubes(ArcanaConfigHelper.arcaniteTubesID).setUnlocalizedName("arcaniteTubes").func_111022_d("ArcaniteTubes");
+		arcaniteRails = new BlockArcaniteRails(ArcanaConfigHelper.arcaniteRailsID).setUnlocalizedName("ArcaniumRails").func_111022_d("ArcaniumRails");
+		starBridge = new BlockStarBridge(ArcanaConfigHelper.starBridgeID, 0, false).setUnlocalizedName("StarBridge");
+		starBridgeOn = new BlockStarBridgeOn(ArcanaConfigHelper.starBridgeOnID, 0, true).setUnlocalizedName("StarBridgeOn");
+		arcaniteTubes = new BlockArcaniteTubes(ArcanaConfigHelper.arcaniteTubesID).setUnlocalizedName("ArcaniteTubes").func_111022_d("ArcaniteTubes");
 		
-		moltenFurnace = new BlockMoltenFurnace(ArcanaConfigHelper.moltenFurnaceID, false).setUnlocalizedName("moltenFurnace");
-		greenlightFurnace = new BlockGreenlightFurnace(ArcanaConfigHelper.greenlightFurnaceID, false).setUnlocalizedName("greenlightFurnace");
-		oceanfireFurnace = new BlockOceanfireFurnace(ArcanaConfigHelper.oceanfireFurnaceID, false).setUnlocalizedName("oceanfireFurnace");
-		moonlightFurnace = new BlockMoonlightFurnace(ArcanaConfigHelper.moonlightFurnaceID, false).setUnlocalizedName("moonlightFurnace");
-		whitefireFurnace = new BlockWhitefireFurnace(ArcanaConfigHelper.whitefireFurnaceID, 0, false).setUnlocalizedName("whitefireFurnace");
-		demonFurnace = new BlockDemonFurnace(ArcanaConfigHelper.demonFurnaceID).setUnlocalizedName("demonFurnace");
+		moltenFurnace = new BlockMoltenFurnace(ArcanaConfigHelper.moltenFurnaceID, false).setUnlocalizedName("MoltenFurnace");
+		greenlightFurnace = new BlockGreenlightFurnace(ArcanaConfigHelper.greenlightFurnaceID, false).setUnlocalizedName("GreenlightFurnace");
+		oceanfireFurnace = new BlockOceanfireFurnace(ArcanaConfigHelper.oceanfireFurnaceID, false).setUnlocalizedName("OceanfireFurnace");
+		moonlightFurnace = new BlockMoonlightFurnace(ArcanaConfigHelper.moonlightFurnaceID, false).setUnlocalizedName("MoonlightFurnace");
+		whitefireFurnace = new BlockWhitefireFurnace(ArcanaConfigHelper.whitefireFurnaceID, 0, false).setUnlocalizedName("WhitefireFurnace");
+		demonFurnace = new BlockDemonFurnace(ArcanaConfigHelper.demonFurnaceID).setUnlocalizedName("DemonFurnace");
 		
-		fireStock = new BlockFireStock(ArcanaConfigHelper.fireStockID, 44).setUnlocalizedName("fireStock");
-		fireStock2 = new BlockFireStock(ArcanaConfigHelper.fireStock2ID, 45).setUnlocalizedName("fireStock2");
-		pinFly = new BlockPinfly(ArcanaConfigHelper.pinFlyID, 46).setUnlocalizedName("pinFly");
-		pinFly2 = new BlockPinfly(ArcanaConfigHelper.pinFly2ID, 47).setUnlocalizedName("pinFly2");
-		hitchak = new BlockHitchak(ArcanaConfigHelper.hitchakID).setUnlocalizedName("hitchak");
-		eucalyptusRoot = new BlockEucalyptusRoot(ArcanaConfigHelper.eucalyptusRootID).setUnlocalizedName("eucalyptusRoot");
-		veilo = new BlockVeilo(ArcanaConfigHelper.veiloID, 0).setUnlocalizedName("veilo");
-		lamona = new BlockLamona(ArcanaConfigHelper.lamonaID).setUnlocalizedName("lamona");
-		aquamarine = new BlockAquamarine(ArcanaConfigHelper.aquamarineID).setUnlocalizedName("aquamarine");
+		fireStock = new BlockFireStock(ArcanaConfigHelper.fireStockID, 44).setUnlocalizedName("FireStock");
+		fireStock2 = new BlockFireStock(ArcanaConfigHelper.fireStock2ID, 45).setUnlocalizedName("FireStock2");
+		pinFly = new BlockPinfly(ArcanaConfigHelper.pinFlyID, 46).setUnlocalizedName("PinFly");
+		pinFly2 = new BlockPinfly(ArcanaConfigHelper.pinFly2ID, 47).setUnlocalizedName("PinFly2");
+		hitchak = new BlockHitchak(ArcanaConfigHelper.hitchakID).setUnlocalizedName("Hitchak");
+		eucalyptusRoot = new BlockEucalyptusRoot(ArcanaConfigHelper.eucalyptusRootID).setUnlocalizedName("EucalyptusRoot");
+		veilo = new BlockVeilo(ArcanaConfigHelper.veiloID, 0).setUnlocalizedName("Veilo");
+		lamona = new BlockLamona(ArcanaConfigHelper.lamonaID).setUnlocalizedName("Lamona");
+		aquamarine = new BlockAquamarine(ArcanaConfigHelper.aquamarineID).setUnlocalizedName("Aquamarine");
 		marsine = new BlockMarsine(ArcanaConfigHelper.marsineID).setUnlocalizedName("marsine");
 		
-		arcaniteGrass = new BlockArcaniteGrass(ArcanaConfigHelper.arcaniteGrassID).setUnlocalizedName("arcaniteGrass").func_111022_d("ArcaniteGrass");
+		arcaniteGrass = new BlockArcaniteGrass(ArcanaConfigHelper.arcaniteGrassID).setUnlocalizedName("ArcaniteGrass").func_111022_d("ArcaniteGrass");
 		
-		stainedGlass = new BlockStainedGlass(ArcanaConfigHelper.stainedGlassID).setUnlocalizedName("stainedGlass");
-		stainedGlass1 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass1ID).setUnlocalizedName("stainedGlass1");
-		stainedGlass2 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass2ID).setUnlocalizedName("stainedGlass2");
-		stainedGlass3 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass3ID).setUnlocalizedName("stainedGlass3");
-		stainedGlass4 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass4ID).setUnlocalizedName("stainedGlass4");
-		stainedGlass5 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass5ID).setUnlocalizedName("stainedGlass5");
-		stainedGlass6 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass6ID).setUnlocalizedName("stainedGlass6");
-		stainedGlass7 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass7ID).setUnlocalizedName("stainedGlass7");
+		stainedGlass = new BlockStainedGlass(ArcanaConfigHelper.stainedGlassID).setUnlocalizedName("StainedGlass");
+		stainedGlass1 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass1ID).setUnlocalizedName("StainedGlass1");
+		stainedGlass2 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass2ID).setUnlocalizedName("StainedGlass2");
+		stainedGlass3 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass3ID).setUnlocalizedName("StainedGlass3");
+		stainedGlass4 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass4ID).setUnlocalizedName("StainedGlass4");
+		stainedGlass5 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass5ID).setUnlocalizedName("StainedGlass5");
+		stainedGlass6 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass6ID).setUnlocalizedName("StainedGlass6");
+		stainedGlass7 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass7ID).setUnlocalizedName("StainedGlass7");
 		
-		arcanaSpawner = new BlockArcanaSpawner(ArcanaConfigHelper.arcanaSpawnerID).setUnlocalizedName("arcanaSpawner").func_111022_d("ArcanaSpawner");
-		arcanaSpawner1 = new BlockArcanaSpawner1(ArcanaConfigHelper.arcanaSpawner1ID).setUnlocalizedName("arcanaSpawner1").func_111022_d("ArcanaSpawner");;
-		arcanaSpawner2 = new BlockArcanaSpawner2(ArcanaConfigHelper.arcanaSpawner2ID).setUnlocalizedName("arcanaSpawner2").func_111022_d("ArcanaSpawner");;
-		arcanaSpawner3 = new BlockArcanaSpawner3(ArcanaConfigHelper.arcanaSpawner3ID).setUnlocalizedName("arcanaSpawner3").func_111022_d("ArcanaSpawner");;
-		arcanaSpawner4 = new BlockArcanaSpawner4(ArcanaConfigHelper.arcanaSpawner4ID).setUnlocalizedName("arcanaSpawner4").func_111022_d("ArcanaSpawner");;
-		arcanaSpawner5 = new BlockArcanaSpawner5(ArcanaConfigHelper.arcanaSpawner5ID).setUnlocalizedName("arcanaSpawner5").func_111022_d("ArcanaSpawner");;
-		
+		arcanaSpawner = new BlockArcanaSpawner(ArcanaConfigHelper.arcanaSpawnerID).setUnlocalizedName("ArcanaSpawner").func_111022_d("ArcanaSpawner");
+		arcanaSpawner1 = new BlockArcanaSpawner1(ArcanaConfigHelper.arcanaSpawner1ID).setUnlocalizedName("ArcanaSpawner1").func_111022_d("ArcanaSpawner");;
+		arcanaSpawner2 = new BlockArcanaSpawner2(ArcanaConfigHelper.arcanaSpawner2ID).setUnlocalizedName("ArcanaSpawner2").func_111022_d("ArcanaSpawner");;
+		arcanaSpawner3 = new BlockArcanaSpawner3(ArcanaConfigHelper.arcanaSpawner3ID).setUnlocalizedName("ArcanaSpawner3").func_111022_d("ArcanaSpawner");;
+		arcanaSpawner4 = new BlockArcanaSpawner4(ArcanaConfigHelper.arcanaSpawner4ID).setUnlocalizedName("ArcanaSpawner4").func_111022_d("ArcanaSpawner");;
+		arcanaSpawner5 = new BlockArcanaSpawner5(ArcanaConfigHelper.arcanaSpawner5ID).setUnlocalizedName("ArcanaSpawner5").func_111022_d("ArcanaSpawner");;
+	
 		//condenser = new BlockCondenser(0, 0, null);
 		
 		InitGameRegistryBlocks();
@@ -214,76 +214,76 @@ public class ArcanaBlockHelper
 	
 	public static void InitGameRegistryBlocks()
 	{
-		GameRegistry.registerBlock(ancientBricks, "ancientBricks");
-        GameRegistry.registerBlock(ancientTile, "ancientTile");
-        GameRegistry.registerBlock(ancientStone, "ancientStone");
-        GameRegistry.registerBlock(dungeonLamp, "dungeonLamp");
-        GameRegistry.registerBlock(arcaniteTubes, "arcanitetubes");
-        GameRegistry.registerBlock(arcaniteMetal, "arcanitemetal");
-        GameRegistry.registerBlock(soulSludge, "soulSludge");
-        GameRegistry.registerBlock(soulStone, "soulstone");
-        GameRegistry.registerBlock(degradedBricks, "degradedBricks");
-        GameRegistry.registerBlock(heatTraps, "heatTraps");
-        GameRegistry.registerBlock(extractor, "extractor");
-        GameRegistry.registerBlock(dramixAltar, "dramixAltar");
-        GameRegistry.registerBlock(parasectaAltar, "parasectaAltar");
-        GameRegistry.registerBlock(arcaniumPower, "arcaniumpower");
-        GameRegistry.registerBlock(arcaniumOre, "arcaniumOre");
+		GameRegistry.registerBlock(ancientBricks, "AncientBricks");
+        GameRegistry.registerBlock(ancientTile, "AncientTile");
+        GameRegistry.registerBlock(ancientStone, "AncientStone");
+        GameRegistry.registerBlock(dungeonLamp, "AungeonLamp");
+        GameRegistry.registerBlock(arcaniteTubes, "Arcanitetubes");
+        GameRegistry.registerBlock(arcaniteMetal, "Arcanitemetal");
+        GameRegistry.registerBlock(soulSludge, "SoulSludge");
+        GameRegistry.registerBlock(soulStone, "SoulStone");
+        GameRegistry.registerBlock(degradedBricks, "DegradedBricks");
+        GameRegistry.registerBlock(heatTraps, "HeatTraps");
+        GameRegistry.registerBlock(extractor, "Extractor");
+        GameRegistry.registerBlock(dramixAltar, "DramixAltar");
+        GameRegistry.registerBlock(parasectaAltar, "ParasectaAltar");
+        GameRegistry.registerBlock(arcaniumPower, "ArcaniumPower");
+        GameRegistry.registerBlock(arcaniumOre, "ArcaniumOre");
         GameRegistry.registerTileEntity(TileEntityDramixAltar.class, "DramixAltar");
         GameRegistry.registerTileEntity(TileEntityExtractor.class, "Extractinator");
         GameRegistry.registerTileEntity(TileEntityParasectaAltar.class, "PheonixAltar");
-        GameRegistry.registerBlock(starBridge, "starBridge");
-        GameRegistry.registerBlock(starBridgeOn, "starBridgeOn");
-        GameRegistry.registerBlock(oreDoor1, "oreDoor1");
-        GameRegistry.registerBlock(oreDoor2, "oreDoor2");
-        GameRegistry.registerBlock(oreDoor3, "oreDoor3");
-        GameRegistry.registerBlock(oreDoor4, "oreDoor4");
-        GameRegistry.registerBlock(heatTrapsOn, "heatTrapsOn");
-        GameRegistry.registerBlock(arcaniteRails, "arcaniteRails");
-        GameRegistry.registerBlock(arcanaPortal, "arcanaPortal");
-        GameRegistry.registerBlock(arcanaPortalFrame, "arcanaPortalFrame");
+        GameRegistry.registerBlock(starBridge, "StarBridge");
+        GameRegistry.registerBlock(starBridgeOn, "StarBridgeOn");
+        GameRegistry.registerBlock(oreDoor1, "OreDoor1");
+        GameRegistry.registerBlock(oreDoor2, "OreDoor2");
+        GameRegistry.registerBlock(oreDoor3, "OreDoor3");
+        GameRegistry.registerBlock(oreDoor4, "OreDoor4");
+        GameRegistry.registerBlock(heatTrapsOn, "HeatTrapsOn");
+        GameRegistry.registerBlock(arcaniteRails, "ArcaniteRails");
+        GameRegistry.registerBlock(arcanaPortal, "ArcanaPortal");
+        GameRegistry.registerBlock(arcanaPortalFrame, "ArcanaPortalBlock");
         //GameRegistry.registerBlock(arcaniteDirt, "arcaniteDirt");
-        GameRegistry.registerBlock(arcaniteGrass, "arcaniteGrass");
-        GameRegistry.registerBlock(fireStock, "fireStock");
-        GameRegistry.registerBlock(pinFly, "pinFly");
-        GameRegistry.registerBlock(veilo, "veilo");
-        GameRegistry.registerBlock(lamona, "lamona");
-        GameRegistry.registerBlock(hitchak, "hitchak");
-        GameRegistry.registerBlock(marsine, "marsine");
-        GameRegistry.registerBlock(aquamarine, "aquamarine");
-        GameRegistry.registerBlock(stainedGlass, "stainedGlass");
-        GameRegistry.registerBlock(stainedGlass1, "stainedGlass1");
-        GameRegistry.registerBlock(stainedGlass2, "stainedGlass2");
-        GameRegistry.registerBlock(stainedGlass3, "stainedGlass3");
-        GameRegistry.registerBlock(stainedGlass4, "stainedGlass4");
-        GameRegistry.registerBlock(stainedGlass5, "stainedGlass5");
-        GameRegistry.registerBlock(stainedGlass6, "stainedGlass6");
-        GameRegistry.registerBlock(stainedGlass7, "stainedGlass7");
-        GameRegistry.registerBlock(moltenFurnace, "moltenFurnace");
+        GameRegistry.registerBlock(arcaniteGrass, "ArcaniteGrass");
+        GameRegistry.registerBlock(fireStock, "FireStock");
+        GameRegistry.registerBlock(pinFly, "PinFly");
+        GameRegistry.registerBlock(veilo, "Veilo");
+        GameRegistry.registerBlock(lamona, "Lamona");
+        GameRegistry.registerBlock(hitchak, "Hitchak");
+        GameRegistry.registerBlock(marsine, "Marsine");
+        GameRegistry.registerBlock(aquamarine, "Aquamarine");
+        GameRegistry.registerBlock(stainedGlass, "StainedGlass");
+        GameRegistry.registerBlock(stainedGlass1, "StainedGlass1");
+        GameRegistry.registerBlock(stainedGlass2, "StainedGlass2");
+        GameRegistry.registerBlock(stainedGlass3, "StainedGlass3");
+        GameRegistry.registerBlock(stainedGlass4, "StainedGlass4");
+        GameRegistry.registerBlock(stainedGlass5, "StainedGlass5");
+        GameRegistry.registerBlock(stainedGlass6, "StainedGlass6");
+        GameRegistry.registerBlock(stainedGlass7, "StainedGlass7");
+        GameRegistry.registerBlock(moltenFurnace, "MoltenFurnace");
         //GameRegistry.registerBlock(moltenFurnaceOn, "moltenFurnaceOn");
         GameRegistry.registerTileEntity(TileEntityMoltenFurnace.class, "MoltenFurnaceTE");
-        GameRegistry.registerBlock(greenlightFurnace, "greenlightFurnace");
+        GameRegistry.registerBlock(greenlightFurnace, "GreenlightFurnace");
         //GameRegistry.registerBlock(greenlightFurnaceOn, "greenlightFurnaceOn");
         GameRegistry.registerTileEntity(TileEntityGreenlightFurnace.class, "GreenlightFurnaceTE");
-        GameRegistry.registerBlock(oceanfireFurnace, "oceanfireFurnace");
+        GameRegistry.registerBlock(oceanfireFurnace, "OceanfireFurnace");
         //GameRegistry.registerBlock(oceanfireFurnaceOn, "oceanfireFurnaceOn");
         GameRegistry.registerTileEntity(TileEntityOceanfireFurnace.class, "OceanfireFurnaceTE");
-        GameRegistry.registerBlock(moonlightFurnace, "moonlightFurnace");
+        GameRegistry.registerBlock(moonlightFurnace, "MoonlightFurnace");
 //        GameRegistry.registerBlock(moonlightFurnaceOn, "moonlightFurnaceOn");
         GameRegistry.registerTileEntity(TileEntityMoonlightFurnace.class, "MoonlightFurnaceTE");
-        GameRegistry.registerBlock(whitefireFurnace, "whitefireFurnace");
+        GameRegistry.registerBlock(whitefireFurnace, "WhitefireFurnace");
 //        GameRegistry.registerBlock(whitefireFurnaceOn, "whitefireFurnaceOn");
         GameRegistry.registerTileEntity(TileEntityWhitefireFurnace.class, "WhitefireFurnaceTE");
-        GameRegistry.registerBlock(demonFurnace, "demonFurnace");
+        GameRegistry.registerBlock(demonFurnace, "DemonFurnace");
         GameRegistry.registerTileEntity(TileEntityDemonFurnace.class, "DemonFurnaceTE");
-        GameRegistry.registerBlock(fireStock2, "fireStock2");
-        GameRegistry.registerBlock(pinFly2, "pinFly2");
-        GameRegistry.registerBlock(arcanaSpawner, "arcanaSpawner");
-        GameRegistry.registerBlock(arcanaSpawner1, "arcanaSpawner1");
-        GameRegistry.registerBlock(arcanaSpawner2, "arcanaSpawner2");
-        GameRegistry.registerBlock(arcanaSpawner3, "arcanaSpawner3");
-        GameRegistry.registerBlock(arcanaSpawner4, "arcanaSpawner4");
-        GameRegistry.registerBlock(arcanaSpawner5, "arcanaSpawner5");
+        GameRegistry.registerBlock(fireStock2, "FireStock2");
+        GameRegistry.registerBlock(pinFly2, "PinFly2");
+        GameRegistry.registerBlock(arcanaSpawner, "ArcanaSpawner");
+        GameRegistry.registerBlock(arcanaSpawner1, "ArcanaSpawner1");
+        GameRegistry.registerBlock(arcanaSpawner2, "ArcanaSpawner2");
+        GameRegistry.registerBlock(arcanaSpawner3, "ArcanaSpawner3");
+        GameRegistry.registerBlock(arcanaSpawner4, "ArcanaSpawner4");
+        GameRegistry.registerBlock(arcanaSpawner5, "ArcanaSpawner5");
 	}
 	
 	public static void addNames()

@@ -10,12 +10,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockDivineRPGFlower extends BlockFlower
 {
-	int index;
-	int sheet;
-	
 	public BlockDivineRPGFlower(int id, int sprite) {
 		super(id, Material.plants);
-		this.index = sprite;
 	}
 	   
     @Override
@@ -27,9 +23,5 @@ public class BlockDivineRPGFlower extends BlockFlower
     
     public void setTextureName(String name) {
         func_111022_d(name);
-    }
-    @Override
-    public Block setUnlocalizedName(String name) {
-        return super.setUnlocalizedName(name);
     }
 }

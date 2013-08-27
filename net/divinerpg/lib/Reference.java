@@ -23,6 +23,6 @@ public class Reference
     public static final String MOD_CLIENT_PROXY = "net.divinerpg.helper.proxy.ClientProxyDivineRPG";
 
     public static final String PATH_RESOURCES = MAIN_MOD_ID;
-    public static final String PATH_TEXTURES = PATH_RESOURCES + ":";
+    public static final String PATH_TEXTURES = MAIN_MOD_ID + ":";
 
 }

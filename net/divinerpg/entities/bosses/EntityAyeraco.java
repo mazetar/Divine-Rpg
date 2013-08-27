@@ -28,6 +28,10 @@ public class EntityAyeraco extends EntityDivineMob implements IBossDisplayData
 	private double moveZ;
 	private boolean halfHp;
 
+	public EntityAyeraco(World world) {
+	    this(world, "blue"); // All entities must have world constructor in order to work, therfore I made one and set the default to blue. --Maz
+	}
+	
 	public EntityAyeraco(World var1, String par3)
 	{
 		super(var1, 0.25F, 1000, 28, 128.0F);

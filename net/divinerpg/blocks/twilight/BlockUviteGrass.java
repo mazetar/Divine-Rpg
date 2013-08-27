@@ -23,9 +23,9 @@ public class BlockUviteGrass extends BlockDivineRPG
     
     public int getIndex(int side, int metadata)
     {
-    	if(side == super.Top)
+    	if(side == 1)
     		return 118;
-    	else if (side == super.Bottom)
+    	else if (side == 0)
     		return 134;
     	else
     		return 135;

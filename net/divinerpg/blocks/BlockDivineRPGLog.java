@@ -60,7 +60,7 @@ public abstract class BlockDivineRPGLog extends BlockDivineRPG {
     public boolean isWood(World world, int x, int y, int z) {
         return true;
     }
-    
+
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {

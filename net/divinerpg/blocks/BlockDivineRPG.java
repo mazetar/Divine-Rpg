@@ -9,15 +9,9 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockDivineRPG extends Block implements IBlockDivineRPG {
-	
-	int index;
-	int sheet;
-	public static final int Top = 1;
-	public static final int Bottom = 0;
 
 	public BlockDivineRPG(int id, int sprite, Material mat) {
 		super(id, mat);
-		this.index = sprite;
 	}
 	
 	public BlockDivineRPG(int id, Material mat)
@@ -33,11 +27,6 @@ public class BlockDivineRPG extends Block implements IBlockDivineRPG {
 	
 	public void setTextureName(String name) {
         func_111022_d(name);
-	}
-	
-	@Override
-	public Block setUnlocalizedName(String name) {
-	    return super.setUnlocalizedName(name);
 	}
 	
 }

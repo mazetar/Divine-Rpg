@@ -92,29 +92,29 @@ public class TwilightBlockHelper
 	
 	public static void initBlocks()
 	{
-		TwilightStone = new BlockTwilightStone(TwilightConfigHelper.TwilightStoneID).setUnlocalizedName("TwilightStone").setCreativeTab(CreativeTabHelper.tabBlocks);
-		divineRock = new BlockDivineRPG(TwilightConfigHelper.divineRockID, 0, Material.rock).setUnlocalizedName("DivineRock").setCreativeTab(CreativeTabHelper.tabBlocks);
+		TwilightStone = new BlockTwilightStone(TwilightConfigHelper.TwilightStoneID).setTextureName("TwilightStone").setUnlocalizedName("TwilightStone").setCreativeTab(CreativeTabHelper.tabBlocks);
+		divineRock = new BlockDivineRPG(TwilightConfigHelper.divineRockID, 0, Material.rock).setTextureName("DivineRock").setUnlocalizedName("DivineRock").setCreativeTab(CreativeTabHelper.tabBlocks);
 		
-		DraviteGrass = new BlockDraviteGrass(TwilightConfigHelper.DraviteGrassID).setUnlocalizedName("DraviteGrass");
-		DraviteDirt = new BlockDraviteDirt(TwilightConfigHelper.DraviteDirtID).setUnlocalizedName("DraviteDirt").setCreativeTab(CreativeTabHelper.tabBlocks);
-		DraviteLogs = new BlockTwilightWood(TwilightConfigHelper.DraviteLogsID).setUnlocalizedName("DraviteLogs").setCreativeTab(CreativeTabHelper.tabBlocks);
-		DraviteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.DraviteLeavesID).setUnlocalizedName("DraviteLeaves");
-		DraviteOre = new BlockTwilightOre(TwilightConfigHelper.DraviteOreID).setUnlocalizedName("DraviteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
-		DravitePortal = (BlockTwilightPortal) new BlockTwilightPortal(TwilightConfigHelper.DravitePortalID, null).setUnlocalizedName("DravitePortal").setCreativeTab(CreativeTabHelper.tabBlocks);
-		DraviteBlock = new BlockDivineRPG(TwilightConfigHelper.DraviteBlockID, 0, Material.iron).setUnlocalizedName("DraviteBlock").setCreativeTab(CreativeTabHelper.tabBlocks);
+		DraviteGrass = new BlockDraviteGrass(TwilightConfigHelper.DraviteGrassID).setTextureName("DraviteGrass").setUnlocalizedName("DraviteGrass");
+		DraviteDirt = new BlockDraviteDirt(TwilightConfigHelper.DraviteDirtID).setTextureName("DraviteDirt").setUnlocalizedName("DraviteDirt").setCreativeTab(CreativeTabHelper.tabBlocks);
+		DraviteLogs = new BlockTwilightWood(TwilightConfigHelper.DraviteLogsID).setTextureName("DraviteLogs").setUnlocalizedName("DraviteLogs").setCreativeTab(CreativeTabHelper.tabBlocks);
+		DraviteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.DraviteLeavesID).setTextureName("DraviteLeaves").setUnlocalizedName("DraviteLeaves");
+		DraviteOre = new BlockTwilightOre(TwilightConfigHelper.DraviteOreID).setTextureName("DraviteOre").setUnlocalizedName("DraviteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
+		DravitePortal = (BlockTwilightPortal) new BlockTwilightPortal(TwilightConfigHelper.DravitePortalID, null).setTextureName("DravitePortal").setUnlocalizedName("DravitePortal").setCreativeTab(CreativeTabHelper.tabBlocks);
+		DraviteBlock = new BlockDivineRPG(TwilightConfigHelper.DraviteBlockID, 0, Material.iron).setTextureName("DraviteBlock").setUnlocalizedName("DraviteBlock").setCreativeTab(CreativeTabHelper.tabBlocks);
 		
-		AzuriteGrass = new BlockAzuriteGrass(TwilightConfigHelper.AzuriteGrassID).setUnlocalizedName("AzuriteGrass");
-		AzuriteDirt = new BlockAzuriteDirt(TwilightConfigHelper.AzuriteDirtID).setUnlocalizedName("AzuriteDirt");
-		AzuriteLogs = new BlockTwilightWood(TwilightConfigHelper.AzuriteLogsID).setUnlocalizedName("AzuriteLogs").setCreativeTab(CreativeTabHelper.tabBlocks);
-		AzuriteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.AzuriteLeavesID).setUnlocalizedName("AzuriteLeaves");
-		AzuriteOre = new BlockTwilightOre(TwilightConfigHelper.AzuriteOreID).setUnlocalizedName("AzuriteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
+		AzuriteGrass = new BlockAzuriteGrass(TwilightConfigHelper.AzuriteGrassID).setTextureName("AzuriteGrass").setUnlocalizedName("AzuriteGrass");
+		AzuriteDirt = new BlockAzuriteDirt(TwilightConfigHelper.AzuriteDirtID).setTextureName("AzuriteDirt").setUnlocalizedName("AzuriteDirt");
+		AzuriteLogs = new BlockTwilightWood(TwilightConfigHelper.AzuriteLogsID).setTextureName("AzuriteLogs").setUnlocalizedName("AzuriteLogs").setCreativeTab(CreativeTabHelper.tabBlocks);
+		AzuriteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.AzuriteLeavesID).setTextureName("AzuriteLeaves").setUnlocalizedName("AzuriteLeaves");
+		AzuriteOre = new BlockTwilightOre(TwilightConfigHelper.AzuriteOreID).setTextureName("AzuriteOre").setUnlocalizedName("AzuriteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
 		AzuritePortal = (BlockAzuritePortal) new BlockAzuritePortal(TwilightConfigHelper.AzuritePortalID).setUnlocalizedName("AzuritePortal");
 		
-		UviteGrass = new BlockUviteGrass(TwilightConfigHelper.UviteGrassID).setUnlocalizedName("UviteGrass");
-		UviteDirt = new BlockUviteDirt(TwilightConfigHelper.UviteDirtID).setUnlocalizedName("UviteDirt").setCreativeTab(CreativeTabHelper.tabBlocks);
-		UviteLogs = new BlockTwilightWood(TwilightConfigHelper.UviteLogsID).setUnlocalizedName("UviteLogs").setCreativeTab(CreativeTabHelper.tabBlocks);
-		UviteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.UviteLeavesID).setUnlocalizedName("UviteLeaves");
-		UviteOre = new BlockTwilightOre(TwilightConfigHelper.UviteOreID).setUnlocalizedName("UviteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
+		UviteGrass = new BlockUviteGrass(TwilightConfigHelper.UviteGrassID).setTextureName("UviteGrass").setUnlocalizedName("UviteGrass");
+		UviteDirt = new BlockUviteDirt(TwilightConfigHelper.UviteDirtID).setTextureName("UviteDirt").setUnlocalizedName("UviteDirt").setCreativeTab(CreativeTabHelper.tabBlocks);
+		UviteLogs = new BlockTwilightWood(TwilightConfigHelper.UviteLogsID).setTextureName("UviteLogs").setUnlocalizedName("UviteLogs").setCreativeTab(CreativeTabHelper.tabBlocks);
+		UviteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.UviteLeavesID).setTextureName("UviteLeaves").setUnlocalizedName("UviteLeaves");
+		UviteOre = new BlockTwilightOre(TwilightConfigHelper.UviteOreID).setTextureName("UviteOre").setUnlocalizedName("UviteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
 		UvitePortal = (BlockUvitePortal) new BlockUvitePortal(TwilightConfigHelper.UvitePortalID, "").setUnlocalizedName("UvitePortal").setCreativeTab(CreativeTabHelper.tabBlocks);
 		
 		MythrilGrass = new BlockMythilGrass(TwilightConfigHelper.MythrilGrassID).setUnlocalizedName("MythrilGrass");

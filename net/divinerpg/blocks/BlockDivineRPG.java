@@ -25,8 +25,9 @@ public class BlockDivineRPG extends Block implements IBlockDivineRPG {
 	    this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E());
 	}
 	
-	public void setTextureName(String name) {
+	public BlockDivineRPG setTextureName(String name) {
         func_111022_d(name);
+        return this;
 	}
 	
 }

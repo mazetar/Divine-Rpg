@@ -3,6 +3,7 @@ package net.divinerpg.blocks.twilight;
 import java.util.Random;
 
 import net.divinerpg.entities.particle.EntityAzuritePortalFX;
+import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.divinerpg.utils.helpers.teleporters.TeleporterAzurite;
@@ -32,6 +33,7 @@ public class BlockAzuritePortal extends BlockBreakable
         this.firetick = 0;
         this.setUnlocalizedName("AzuritePortal");
     }
+    
 
     /**
      * Returns a bounding box from the pool of bounding boxes (this means this box can change after the pool has been

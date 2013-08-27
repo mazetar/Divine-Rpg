@@ -62,7 +62,7 @@ public class IceikaBlockHelper {
 		icyStone = new BlockDivineRPG(x.IcyStoneID, 0, Material.rock).func_111022_d("IcyStone").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("IcyStone").setBlockUnbreakable().setCreativeTab(CreativeTabHelper.tabBlocks);
 		icyBricks = new BlockDivineRPG(x.IcyBricksID, 0, Material.rock).func_111022_d("IcyBrick").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("IcyBricks").setBlockUnbreakable().setStepSound(Block.soundGrassFootstep).setCreativeTab(CreativeTabHelper.tabBlocks);
 		snowyBricks = new BlockDivineRPG(x.SnowyBricksID, 0, Material.snow).func_111022_d("SnowyBrick").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("SnowyBricks").setCreativeTab(CreativeTabHelper.tabBlocks);
-		coalstone = new BlockDivineRPG(x.CoalstoneID, 0, Material.rock).func_111022_d("CoalStone").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("CoalStone").setCreativeTab(CreativeTabHelper.tabBlocks);
+		coalstone = new BlockDivineRPG(x.CoalstoneID, 0, Material.rock).setTextureName("CoalStone").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("CoalStone").setCreativeTab(CreativeTabHelper.tabBlocks);
 		coalstoneFurnaceActive = new BlockIceikaFurnace(x.CoalstoneFurnaceActiveID, true).func_111022_d("CoalStoneFurnace_Front_On").setUnlocalizedName("IceikaFurnace").setCreativeTab(CreativeTabHelper.tabBlocks);
 		coalstoneFurnace = new BlockIceikaFurnace(x.CoalstoneFurnaceID, false).func_111022_d("CoalStoneFurnace_Front_Off").setUnlocalizedName("IceikaFurnace").setCreativeTab(CreativeTabHelper.tabBlocks);
 		

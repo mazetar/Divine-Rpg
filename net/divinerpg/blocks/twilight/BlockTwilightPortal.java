@@ -2,12 +2,15 @@ package net.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
+import net.divinerpg.blocks.BlockDivineRPGLeaves;
 import net.divinerpg.entities.particle.EntityDravitePortalFX;
+import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.divinerpg.utils.helpers.teleporters.TeleporterTwilight;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -29,6 +32,17 @@ public class BlockTwilightPortal extends BlockBreakable
         super(var1, var2, Material.portal, false);
         this.firetick = this.firemax;
     }
+    
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister) {
+	    this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E());
+	}
+	
+	public BlockTwilightPortal setTextureName(String name){
+		func_111022_d(name);
+		return this;
+	}
 
     /**
      * Returns a bounding box from the pool of bounding boxes (this means this box can change after the pool has been

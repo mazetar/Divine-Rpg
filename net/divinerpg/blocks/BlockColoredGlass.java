@@ -17,7 +17,7 @@ public class BlockColoredGlass extends BlockGlass implements IBlockDivineRPG {
 	
 	public BlockColoredGlass(int par1, boolean par3) {
 		super(par1, Material.glass, par3);
-		GameRegistry.registerBlock(this);
+		GameRegistry.registerBlock(this, this.getUnlocalizedName());
 	}
 	
 	@Override

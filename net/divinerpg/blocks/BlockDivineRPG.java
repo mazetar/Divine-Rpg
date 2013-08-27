@@ -28,7 +28,7 @@ public class BlockDivineRPG extends Block implements IBlockDivineRPG {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister) {
-	    this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E()); 
+	    this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E());
 	}
 	
 	public void setTextureName(String name) {

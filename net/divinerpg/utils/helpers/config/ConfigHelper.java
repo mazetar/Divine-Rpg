@@ -1220,52 +1220,58 @@ public class ConfigHelper {
     		Configuration cfg = new Configuration(file);
     		
     		cfg.load();
-        twilightStoneID = cfg.getTerrainBlock("Dimension Gen", "twilightstone", 189, "").getInt();
-        draviteGrassID = cfg.getTerrainBlock("Dimension Gen", "dravitegrass", 190, "").getInt();
-        draviteDirtID = cfg.getTerrainBlock("Dimension Gen", "dravitedirt", 191, "").getInt();
-        azuriteGrassID = cfg.getTerrainBlock("Dimension Gen", "azuritegrass", 192, "").getInt();
-        azuriteDirtID = cfg.getTerrainBlock("Dimension Gen", "azuritedirt", 193, "").getInt();
-        uviteGrassID = cfg.getTerrainBlock("Dimension Gen", "uvitegrass", 194, "").getInt();
-        uviteDirtID = cfg.getTerrainBlock("Dimension Gen", "uvitedirt", 195, "").getInt();
-        mythrilGrassID = cfg.getTerrainBlock("Dimension Gen", "mythrilgrass", 196, "").getInt();
-        mythrilDirtID = cfg.getTerrainBlock("Dimension Gen", "mythrildirt", 197, "").getInt();
-        augiteGrassID = cfg.getTerrainBlock("Dimension Gen", "augitegrass", 198, "").getInt();
-        augiteDirtID = cfg.getTerrainBlock("Dimension Gen", "augitedirt", 199, "").getInt();
-        iceikaDirtID = cfg.getTerrainBlock("Dimension Gen", "iceikadirt", 200, "").getInt();
-        iceikaGrassID = cfg.getTerrainBlock("Dimension Gen", "iceikagrass", 201, "").getInt();
-        iceikaStoneID = cfg.getTerrainBlock("Dimension Gen", "iceikastone", 203, "").getInt();
-        bloodGemOreID = cfg.getTerrainBlock("Dimension Gen", "bloodgemore", 202, "").getInt();
-        realmiteoreID = cfg.getTerrainBlock("Dimension Gen", "realmiteore", 228, "").getInt();
-        arlemiteoreID = cfg.getTerrainBlock("Dimension Gen", "arlemiteore", 218, "").getInt();
-        rupeeoreID = cfg.getTerrainBlock("Dimension Gen", "rupeeore", 219, "").getInt();
+    		int id1 = 189;
+        twilightStoneID = cfg.getTerrainBlock("Dimension Gen", "twilightstone", id1, "").getInt();
+        draviteGrassID = cfg.getTerrainBlock("Dimension Gen", "dravitegrass", id1++, "").getInt();
+        draviteDirtID = cfg.getTerrainBlock("Dimension Gen", "dravitedirt", id1++, "").getInt();
+        azuriteGrassID = cfg.getTerrainBlock("Dimension Gen", "azuritegrass", id1++, "").getInt();
+        azuriteDirtID = cfg.getTerrainBlock("Dimension Gen", "azuritedirt", id1++, "").getInt();
+        uviteGrassID = cfg.getTerrainBlock("Dimension Gen", "uvitegrass", id1++, "").getInt();
+        uviteDirtID = cfg.getTerrainBlock("Dimension Gen", "uvitedirt", id1++, "").getInt();
+        mythrilGrassID = cfg.getTerrainBlock("Dimension Gen", "mythrilgrass", id1++, "").getInt();
+        mythrilDirtID = cfg.getTerrainBlock("Dimension Gen", "mythrildirt", id1++, "").getInt();
+        augiteGrassID = cfg.getTerrainBlock("Dimension Gen", "augitegrass", id1++, "").getInt();
+        augiteDirtID = cfg.getTerrainBlock("Dimension Gen", "augitedirt", id1++, "").getInt();
+        iceikaDirtID = cfg.getTerrainBlock("Dimension Gen", "iceikadirt", id1++, "").getInt();
+        iceikaGrassID = cfg.getTerrainBlock("Dimension Gen", "iceikagrass", id1++, "").getInt();
+        bloodGemOreID = cfg.getTerrainBlock("Dimension Gen", "bloodgemore", id1++, "").getInt();
+        iceikaStoneID = cfg.getTerrainBlock("Dimension Gen", "iceikastone", id1++, "").getInt(); //ID = 203
+
+        	int id2 = 218;
+        arlemiteoreID = cfg.getTerrainBlock("Dimension Gen", "arlemiteore", id2, "").getInt();
+        rupeeoreID = cfg.getTerrainBlock("Dimension Gen", "rupeeore", id2++, "").getInt();
         /*
          * 1.3 World Gen
          */
-        dreamstoneID = cfg.getTerrainBlock("Vethea Gen", "dreamstone", 220, "").getInt();
-        dreamgrassID = cfg.getTerrainBlock("Vethea Gen", "dreamgrass", 221, "").getInt();
-        dreamdirtID = cfg.getTerrainBlock("Vethea Gen", "dreamdirt", 222, "").getInt();
-        firecrystalID = cfg.getTerrainBlock("Vethea Gen", "firecrystalID", 223, "").getInt();
+        dreamstoneID = cfg.getTerrainBlock("Vethea Gen", "dreamstone", id2++, "").getInt();
+        dreamgrassID = cfg.getTerrainBlock("Vethea Gen", "dreamgrass", id2++, "").getInt();
+        dreamdirtID = cfg.getTerrainBlock("Vethea Gen", "dreamdirt", id2++, "").getInt();
+        firecrystalID = cfg.getTerrainBlock("Vethea Gen", "firecrystalID", id2++, "").getInt();  //ID = 223
+        
+        realmiteoreID = cfg.getTerrainBlock("Dimension Gen", "realmiteore", 228, "").getInt();
         /*
          * Pre-1.3 Blocks
          */
-        dungeonLightID = cfg.getBlock("dungeonlight", 657).getInt();
-        arcaniteTubesID = cfg.getBlock("arcaanitetubes", 658).getInt();
-        arcaniteMetalID = cfg.getBlock("arcanitemetal", 659).getInt();
-        arcaniumSoulSludgeID = cfg.getBlock("arcaniumsoulsludge", 660).getInt();
-        soulStoneID = cfg.getBlock("soulstone", 661).getInt();
-        dungeonBricksID = cfg.getBlock("dungeonbricks", 662).getInt();
-        heatTrapsID = cfg.getBlock("heattraps", 663).getInt();
-        extractinatorID = cfg.getBlock("extractinator", 664).getInt();
-        dramixAlterID = cfg.getBlock("dramixaltar", 665).getInt();
-        pheonixAlterID = cfg.getBlock("phoenixaltar", 667).getInt();
-        arcanaOreID = cfg.getBlock("arcanaore", 668).getInt();
-        arcanaPowerID = cfg.getBlock("arcanapower", 669).getInt();
-        oreDoor1ID = cfg.getBlock("oredoor1", 670).getInt();
-        oreDoor2ID = cfg.getBlock("oredoor2", 671).getInt();
-        oreDoor3ID = cfg.getBlock("oredoor3", 672).getInt();
-        oreDoor4ID = cfg.getBlock("oredoor4", 673).getInt();
-        ancientbricksID = cfg.getBlock("ancientbricks", 674).getInt();
-        ancienttileID = cfg.getBlock("ancienttile", 675).getInt();
+        	int id3 = 657;
+        dungeonLightID = cfg.getBlock("dungeonlight", id3).getInt();
+        arcaniteTubesID = cfg.getBlock("arcaanitetubes", id3++).getInt();
+        arcaniteMetalID = cfg.getBlock("arcanitemetal",  id3++).getInt();
+        arcaniumSoulSludgeID = cfg.getBlock("arcaniumsoulsludge",  id3++).getInt();
+        soulStoneID = cfg.getBlock("soulstone",  id3++).getInt();
+        dungeonBricksID = cfg.getBlock("dungeonbricks",  id3++).getInt();
+        heatTrapsID = cfg.getBlock("heattraps",  id3++).getInt();
+        extractinatorID = cfg.getBlock("extractinator",  id3++).getInt();
+        dramixAlterID = cfg.getBlock("dramixaltar",  id3++).getInt();
+        pheonixAlterID = cfg.getBlock("phoenixaltar",  id3++).getInt();
+        arcanaOreID = cfg.getBlock("arcanaore", id3++).getInt();
+        arcanaPowerID = cfg.getBlock("arcanapower", id3++).getInt();
+        oreDoor1ID = cfg.getBlock("oredoor1",  id3++).getInt();
+        oreDoor2ID = cfg.getBlock("oredoor2",  id3++).getInt();
+        oreDoor3ID = cfg.getBlock("oredoor3",  id3++).getInt();
+        oreDoor4ID = cfg.getBlock("oredoor4",  id3++).getInt();
+        ancientbricksID = cfg.getBlock("ancientbricks",  id3++).getInt();
+        ancienttileID = cfg.getBlock("ancienttile",  id3++).getInt(); //ID = 675
+        
         ancientstoneID = cfg.getBlock("ancientstone", 717).getInt();
         iceikaLeavesID = cfg.getBlock("iceiksleaves", 718).getInt();
         iceikaStoneBricksID = cfg.getBlock("iceikastonbricks", 719).getInt();

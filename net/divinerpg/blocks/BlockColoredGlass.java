@@ -11,15 +11,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockColoredGlass extends BlockGlass implements IBlockDivineRPG {
 
-	int index;
-	int sheet;
-	
 	public BlockColoredGlass(int par1, boolean par3) {
 		super(par1, Material.glass, par3);
-<<<<<<< HEAD
-=======
-		GameRegistry.registerBlock(this, this.getUnlocalizedName());
->>>>>>> refs/remotes/origin/master
 	}
 	
 	

@@ -108,29 +108,29 @@ public class TwilightBlockHelper
 		AzuriteLogs = new BlockTwilightWood(TwilightConfigHelper.AzuriteLogsID).setTextureName("AzuriteLog").setUnlocalizedName("AzuriteLogs").setCreativeTab(CreativeTabHelper.tabBlocks);
 		AzuriteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.AzuriteLeavesID).setTextureName("AzuriteLeaves").setUnlocalizedName("AzuriteLeaves");
 		AzuriteOre = new BlockTwilightOre(TwilightConfigHelper.AzuriteOreID).setTextureName("AzuriteOre").setUnlocalizedName("AzuriteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
-		AzuritePortal = (BlockAzuritePortal) new BlockAzuritePortal(TwilightConfigHelper.AzuritePortalID).setUnlocalizedName("AzuritePortal");
+		AzuritePortal = (BlockAzuritePortal) new BlockAzuritePortal(TwilightConfigHelper.AzuritePortalID).func_111022_d("AzuritePortal").setUnlocalizedName("AzuritePortal");
 		
 		UviteGrass = new BlockUviteGrass(TwilightConfigHelper.UviteGrassID).setTextureName("UviteGrass").setUnlocalizedName("UviteGrass");
 		UviteDirt = new BlockUviteDirt(TwilightConfigHelper.UviteDirtID).setTextureName("UviteGrass_Bottom").setUnlocalizedName("UviteDirt").setCreativeTab(CreativeTabHelper.tabBlocks);
 		UviteLogs = new BlockTwilightWood(TwilightConfigHelper.UviteLogsID).setTextureName("UviteLog").setUnlocalizedName("UviteLogs").setCreativeTab(CreativeTabHelper.tabBlocks);
 		UviteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.UviteLeavesID).setTextureName("UviteLeaves").setUnlocalizedName("UviteLeaves");
 		UviteOre = new BlockTwilightOre(TwilightConfigHelper.UviteOreID).setTextureName("UviteOre").setUnlocalizedName("UviteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
-		UvitePortal = (BlockUvitePortal) new BlockUvitePortal(TwilightConfigHelper.UvitePortalID, "").setUnlocalizedName("UvitePortal").setCreativeTab(CreativeTabHelper.tabBlocks);
+		UvitePortal = (BlockUvitePortal) new BlockUvitePortal(TwilightConfigHelper.UvitePortalID, "").func_111022_d("UvitePortal").setUnlocalizedName("UvitePortal").setCreativeTab(CreativeTabHelper.tabBlocks);
 		
-		MythrilGrass = new BlockMythilGrass(TwilightConfigHelper.MythrilGrassID).setUnlocalizedName("MythrilGrass");
-		MythrilDirt = new BlockMythilDirt(TwilightConfigHelper.MythrilDirtID).setUnlocalizedName("MythrilGrass_Bottom").setCreativeTab(CreativeTabHelper.tabBlocks);
-		MythrilLogs = new BlockTwilightWood(TwilightConfigHelper.MythrilLogsID).setUnlocalizedName("MythrilLog").setCreativeTab(CreativeTabHelper.tabBlocks);
-		MythrilLeaves = new BlockTwilightLeaves(TwilightConfigHelper.MythrilLeavesID).setUnlocalizedName("MythrilLeaves");
-		MythrilOre = new BlockTwilightOre(TwilightConfigHelper.MythrilOreID).setUnlocalizedName("MythrilOre").setCreativeTab(CreativeTabHelper.tabBlocks);
-		MythrilPortal = (BlockMythrilPortal) new BlockMythrilPortal(TwilightConfigHelper.MythrilPortalID, "").setUnlocalizedName("MythrilPortal").setCreativeTab(CreativeTabHelper.tabBlocks);
+		MythrilGrass = new BlockMythilGrass(TwilightConfigHelper.MythrilGrassID).func_111022_d("MythrilGrass").setUnlocalizedName("MythrilGrass");
+		MythrilDirt = new BlockMythilDirt(TwilightConfigHelper.MythrilDirtID).func_111022_d("MythrilGrass_Bottom").setUnlocalizedName("MythrilDirt").setCreativeTab(CreativeTabHelper.tabBlocks);
+		MythrilLogs = new BlockTwilightWood(TwilightConfigHelper.MythrilLogsID).func_111022_d("MythrilLog").setUnlocalizedName("MythrilLog").setCreativeTab(CreativeTabHelper.tabBlocks);
+		MythrilLeaves = new BlockTwilightLeaves(TwilightConfigHelper.MythrilLeavesID).func_111022_d("MythrilLeaves").setUnlocalizedName("MythrilLeaves");
+		MythrilOre = new BlockTwilightOre(TwilightConfigHelper.MythrilOreID).func_111022_d("MythrilOre").setUnlocalizedName("MythrilOre").setCreativeTab(CreativeTabHelper.tabBlocks);
+		MythrilPortal = (BlockMythrilPortal) new BlockMythrilPortal(TwilightConfigHelper.MythrilPortalID, "").func_111022_d("MythrilPortal").setUnlocalizedName("MythrilPortal").setCreativeTab(CreativeTabHelper.tabBlocks);
 		
-		AugiteGrass = new BlockAugiteGrass(TwilightConfigHelper.AugiteGrassID).setUnlocalizedName("AugiteGrass");
-		AugiteDirt = new BlockAugiteDirt(TwilightConfigHelper.AugiteDirtID).setUnlocalizedName("AugiteGrass_Bottom").setCreativeTab(CreativeTabHelper.tabBlocks);
-		AugiteLogs = new BlockTwilightWood(TwilightConfigHelper.AugiteLogsID).setUnlocalizedName("AugiteLog").setCreativeTab(CreativeTabHelper.tabBlocks);
-		AugiteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.AugiteLeavesID).setUnlocalizedName("AugiteLeaves");
-		AugiteOre = new BlockTwilightOre(TwilightConfigHelper.AugiteOreID).setUnlocalizedName("AugiteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
-		AugiteBlock = new BlockDivineRPG(TwilightConfigHelper.AugiteBlockID, Material.rock).setUnlocalizedName("AugiteBlock");
-		AugitePortal = (BlockAugitePortal) new BlockAugitePortal(TwilightConfigHelper.AugitePortalID).setUnlocalizedName("AugitePortal").setCreativeTab(CreativeTabHelper.tabBlocks);
+		AugiteGrass = new BlockAugiteGrass(TwilightConfigHelper.AugiteGrassID).func_111022_d("AugiteGrass").setUnlocalizedName("AugiteGrass");
+		AugiteDirt = new BlockAugiteDirt(TwilightConfigHelper.AugiteDirtID).func_111022_d("AugiteGrass_Bottom").setUnlocalizedName("AugiteDirt").setCreativeTab(CreativeTabHelper.tabBlocks);
+		AugiteLogs = new BlockTwilightWood(TwilightConfigHelper.AugiteLogsID).func_111022_d("AugiteLog").setUnlocalizedName("AugiteLog").setCreativeTab(CreativeTabHelper.tabBlocks);
+		AugiteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.AugiteLeavesID).func_111022_d("AugiteLeaves").setUnlocalizedName("AugiteLeaves");
+		AugiteOre = new BlockTwilightOre(TwilightConfigHelper.AugiteOreID).func_111022_d("AugiteOre").setUnlocalizedName("AugiteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
+		AugiteBlock = new BlockDivineRPG(TwilightConfigHelper.AugiteBlockID, Material.rock).func_111022_d("AugiteBlock").setUnlocalizedName("AugiteBlock");
+		AugitePortal = (BlockAugitePortal) new BlockAugitePortal(TwilightConfigHelper.AugitePortalID).func_111022_d("AugitePortal").setUnlocalizedName("AugitePortal").setCreativeTab(CreativeTabHelper.tabBlocks);
 		
 		InitGameRegistryBlocks();
 	}

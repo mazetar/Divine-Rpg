@@ -3,12 +3,13 @@ package net.divinerpg.blocks.iceika;
 import java.util.Random;
 
 import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivineRPGGrass;
 import net.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import net.minecraft.block.material.Material;
 
-public class BlockIceikaGrass extends BlockDivineRPG {
-    public BlockIceikaGrass(int var1) {
-        super(var1, 0, Material.grass);
+public class BlockIceikaGrass extends BlockDivineRPGGrass {
+    public BlockIceikaGrass(int id) {
+        super(id);
     }
 
     @Override

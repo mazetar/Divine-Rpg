@@ -2,17 +2,21 @@ package net.divinerpg.blocks;
 
 import java.util.Random;
 
-import net.minecraft.block.material.Material;
+import net.divinerpg.lib.Reference;
+import net.minecraft.block.BlockMobSpawner;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityMobSpawner;
 import net.minecraft.world.World;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDivineRPGSpawner extends BlockDivineRPGContainer {
+public class BlockDivineRPGSpawner extends BlockMobSpawner {
 
 	String mobName;
 	
-	public BlockDivineRPGSpawner(int id, int sprite, Material mat, String mobName) {
-		super(id, sprite, mat);
+	public BlockDivineRPGSpawner(int id, String mobName) {
+		super(id);
 		this.mobName = mobName;
 	}
 
@@ -23,6 +27,18 @@ public class BlockDivineRPGSpawner extends BlockDivineRPGContainer {
 
 		return spawner;
 	}
+	
+	   @Override
+	    @SideOnly(Side.CLIENT)
+	    public void registerIcons(IconRegister par1IconRegister) {
+	        this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E());
+	    }
+	    
+	    public BlockDivineRPGSpawner setTextureName(String name) {
+	        func_111022_d(name);
+	        return this;
+	    }
+	
 	
 	@Override
     public int idDropped(int par1, Random par2Random, int par3) {

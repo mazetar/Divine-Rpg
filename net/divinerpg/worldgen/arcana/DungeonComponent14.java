@@ -490,7 +490,7 @@ public class DungeonComponent14 extends DungeonComponentBase
         world.setBlockIDWithMetadata(i + 8, j + 0, k + 5, soulStone, 0);
         world.setBlockIDWithMetadata(i + 8, j + 0, k + 6, soulStone, 0);
         world.setBlockIDWithMetadata(i + 8, j + 0, k + 7, soulStone, 0);
-        world.setBlockIDWithMetadata(i + 8, j + 0, k + 8, ArcanaBlockHelper.arcanaSpawner2.blockID, 0);
+        world.setBlockIDWithMetadata(i + 8, j + 0, k + 8, ArcanaBlockHelper.spawnerDeathhound.blockID, 0);
         world.setBlockIDWithMetadata(i + 8, j + 0, k + 9, soulStone, 0);
         world.setBlockIDWithMetadata(i + 8, j + 0, k + 10, soulStone, 0);
         world.setBlockIDWithMetadata(i + 8, j + 0, k + 11, soulStone, 0);

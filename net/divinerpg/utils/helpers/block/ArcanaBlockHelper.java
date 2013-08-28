@@ -1,12 +1,7 @@
 package net.divinerpg.utils.helpers.block;
 
+import net.divinerpg.blocks.BlockDivineRPGSpawner;
 import net.divinerpg.blocks.arcana.BlockAquamarine;
-import net.divinerpg.blocks.arcana.BlockArcanaSpawner;
-import net.divinerpg.blocks.arcana.BlockArcanaSpawner1;
-import net.divinerpg.blocks.arcana.BlockArcanaSpawner2;
-import net.divinerpg.blocks.arcana.BlockArcanaSpawner3;
-import net.divinerpg.blocks.arcana.BlockArcanaSpawner4;
-import net.divinerpg.blocks.arcana.BlockArcanaSpawner5;
 import net.divinerpg.blocks.arcana.BlockArcaniteGrass;
 import net.divinerpg.blocks.arcana.BlockArcaniteRails;
 import net.divinerpg.blocks.arcana.BlockArcaniteTubes;
@@ -119,12 +114,12 @@ public class ArcanaBlockHelper
     public static Block stainedGlass6;
     public static Block stainedGlass7;
 
-    public static Block arcanaSpawner;
-    public static Block arcanaSpawner1;
-    public static Block arcanaSpawner2;
-    public static Block arcanaSpawner3;
-    public static Block arcanaSpawner4;
-    public static Block arcanaSpawner5;
+    public static Block spawnerRoamer;
+    public static Block spawnerDeathcryx;
+    public static Block spawnerDeathhound;
+    public static Block spawnerRazorback;
+    public static Block spawnerLivingstatue;
+    public static Block spawnerDungeonPrisoner;
 
 	public static Block arcanaPortal;
 	public static Block arcanaPortalFrame;
@@ -199,12 +194,12 @@ public class ArcanaBlockHelper
 		stainedGlass6 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass6ID).setUnlocalizedName("StainedGlass6");
 		stainedGlass7 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass7ID).setUnlocalizedName("StainedGlass7");
 		
-		arcanaSpawner = new BlockArcanaSpawner(ArcanaConfigHelper.arcanaSpawnerID).setUnlocalizedName("ArcanaSpawner").func_111022_d("ArcanaSpawner");
-		arcanaSpawner1 = new BlockArcanaSpawner1(ArcanaConfigHelper.arcanaSpawner1ID).setUnlocalizedName("ArcanaSpawner1").func_111022_d("ArcanaSpawner");;
-		arcanaSpawner2 = new BlockArcanaSpawner2(ArcanaConfigHelper.arcanaSpawner2ID).setUnlocalizedName("ArcanaSpawner2").func_111022_d("ArcanaSpawner");;
-		arcanaSpawner3 = new BlockArcanaSpawner3(ArcanaConfigHelper.arcanaSpawner3ID).setUnlocalizedName("ArcanaSpawner3").func_111022_d("ArcanaSpawner");;
-		arcanaSpawner4 = new BlockArcanaSpawner4(ArcanaConfigHelper.arcanaSpawner4ID).setUnlocalizedName("ArcanaSpawner4").func_111022_d("ArcanaSpawner");;
-		arcanaSpawner5 = new BlockArcanaSpawner5(ArcanaConfigHelper.arcanaSpawner5ID).setUnlocalizedName("ArcanaSpawner5").func_111022_d("ArcanaSpawner");;
+		spawnerRoamer = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawnerID, "Roamer").setUnlocalizedName("ArcanaSpawner").func_111022_d("ArcanaSpawner");
+		spawnerDeathcryx = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawner1ID, "Deathcryx").setUnlocalizedName("ArcanaSpawner1").func_111022_d("ArcanaSpawner");;
+		spawnerDeathhound = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawner2ID, "Deathound").setUnlocalizedName("ArcanaSpawner2").func_111022_d("ArcanaSpawner");;
+		spawnerRazorback = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawner3ID, "Razorback").setUnlocalizedName("ArcanaSpawner3").func_111022_d("ArcanaSpawner");;
+		spawnerLivingstatue = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawner4ID, "Living Statue").setUnlocalizedName("ArcanaSpawner4").func_111022_d("ArcanaSpawner");;
+		spawnerDungeonPrisoner = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawner5ID, "Dungeon Prisoner").setUnlocalizedName("ArcanaSpawner5").func_111022_d("ArcanaSpawner");;
 	
 		//condenser = new BlockCondenser(0, 0, null);
 		
@@ -278,12 +273,12 @@ public class ArcanaBlockHelper
         GameRegistry.registerTileEntity(TileEntityDemonFurnace.class, "DemonFurnaceTE");
         GameRegistry.registerBlock(fireStock2, "FireStock2");
         GameRegistry.registerBlock(pinFly2, "PinFly2");
-        GameRegistry.registerBlock(arcanaSpawner, "ArcanaSpawner");
-        GameRegistry.registerBlock(arcanaSpawner1, "ArcanaSpawner1");
-        GameRegistry.registerBlock(arcanaSpawner2, "ArcanaSpawner2");
-        GameRegistry.registerBlock(arcanaSpawner3, "ArcanaSpawner3");
-        GameRegistry.registerBlock(arcanaSpawner4, "ArcanaSpawner4");
-        GameRegistry.registerBlock(arcanaSpawner5, "ArcanaSpawner5");
+        GameRegistry.registerBlock(spawnerRoamer, "ArcanaSpawner");
+        GameRegistry.registerBlock(spawnerDeathcryx, "ArcanaSpawner1");
+        GameRegistry.registerBlock(spawnerDeathhound, "ArcanaSpawner2");
+        GameRegistry.registerBlock(spawnerRazorback, "ArcanaSpawner3");
+        GameRegistry.registerBlock(spawnerLivingstatue, "ArcanaSpawner4");
+        GameRegistry.registerBlock(spawnerDungeonPrisoner, "ArcanaSpawner5");
 	}
 	
 	public static void addNames()
@@ -343,11 +338,11 @@ public class ArcanaBlockHelper
         LanguageRegistry.addName(demonFurnace, "Demon Furnace");
         LanguageRegistry.addName(fireStock2, "Firestock");
         LanguageRegistry.addName(pinFly2, "Pinfly");
-        LanguageRegistry.addName(arcanaSpawner, "Dungeon Spawner");
-        LanguageRegistry.addName(arcanaSpawner1, "Dungeon Spawner");
-        LanguageRegistry.addName(arcanaSpawner2, "Dungeon Spawner");
-        LanguageRegistry.addName(arcanaSpawner3, "Dungeon Spawner");
-        LanguageRegistry.addName(arcanaSpawner4, "Dungeon Spawner");
-        LanguageRegistry.addName(arcanaSpawner5, "Dungeon Spawner");
+        LanguageRegistry.addName(spawnerRoamer, "Dungeon Spawner");
+        LanguageRegistry.addName(spawnerDeathcryx, "Dungeon Spawner");
+        LanguageRegistry.addName(spawnerDeathhound, "Dungeon Spawner");
+        LanguageRegistry.addName(spawnerRazorback, "Dungeon Spawner");
+        LanguageRegistry.addName(spawnerLivingstatue, "Dungeon Spawner");
+        LanguageRegistry.addName(spawnerDungeonPrisoner, "Dungeon Spawner");
 	}
 }

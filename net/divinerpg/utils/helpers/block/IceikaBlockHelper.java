@@ -72,8 +72,8 @@ public class IceikaBlockHelper {
 		frostedGlass = new BlockColoredGlass(cfg.FrostedGlassID, false).func_111022_d("FrostedGlass").setUnlocalizedName("FrostedGlass").setCreativeTab(CreativeTabHelper.tabBlocks);
 		steelDoor = new BlockIceikaDoor(cfg.SteelDoorID, Material.iron).func_111022_d("IceDoor").setHardness(2.0F).setResistance(5.0F).setBlockUnbreakable().setUnlocalizedName("SteelDoor").setCreativeTab(CreativeTabHelper.tabBlocks);
 		frostedChest = new BlockIceikaChest(cfg.FrostedChestID).func_111022_d("FrostedChest").setHardness(2.0F).setResistance(5.0F).setUnlocalizedName("FrostedChest").setCreativeTab(CreativeTabHelper.tabBlocks);
-		glacideSpawner = new BlockDivineRPGSpawner(cfg.GlacideSpawnerID, 0, Material.rock, "DivineRPG_glacide").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
-		rolumSpawner = new BlockDivineRPGSpawner(cfg.RolumSpawnerID, 0, Material.rock, "DivineRPG_rollum").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
+		glacideSpawner = new BlockDivineRPGSpawner(cfg.GlacideSpawnerID, "Glacide").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
+		rolumSpawner = new BlockDivineRPGSpawner(cfg.RolumSpawnerID, "Rollum").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
 //TODO: Fix textures for xmas stuff.
 		//        xmasTreeLights = new BlockDivineRPG(x.XmasTreeLightsID, 0, Material.leaves).func_111022_d("").setHardness(0.2F).setUnlocalizedName("LightLeaves").setCreativeTab(CreativeTabHelper.tabBlocks);
 //		redXmasLights = new BlockXmasLights(x.RedXmasLightsID, 0).func_111022_d("").setHardness(0.2F).setUnlocalizedName("RedXmasLights").setCreativeTab(CreativeTabHelper.tabBlocks);

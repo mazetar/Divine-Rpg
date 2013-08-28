@@ -2,19 +2,18 @@ package net.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivineRPGGrass;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 
-public class BlockAzuriteGrass extends BlockDivineRPG
+public class BlockAzuriteGrass extends BlockDivineRPGGrass
 {
 
 	public BlockAzuriteGrass(int var1)
     {
-        super(var1, 2, Material.grass);
-        this.setUnlocalizedName("AzuriteGrass");
+        super(var1);
         this.setTickRandomly(true);
     }
 	

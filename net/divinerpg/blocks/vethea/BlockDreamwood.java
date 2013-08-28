@@ -2,23 +2,16 @@ package net.divinerpg.blocks.vethea;
 
 import java.util.Random;
 
+import net.divinerpg.blocks.BlockDivineRPGLog;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.util.Icon;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDreamwood extends Block
+public class BlockDreamwood extends BlockDivineRPGLog
 {
-
-    private Icon[] texture;
-	private String name;
 
 	public BlockDreamwood(int par1)
     {
-        super(par1, Material.wood);
+        super(par1);
     }
 
     /**
@@ -91,14 +84,6 @@ public class BlockDreamwood extends Block
         return var10 | var11;
     }
 
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
-    {
-        int var3 = par2 & 12;
-        return var3 == 0 && (par1 == 1 || par1 == 0) ? this.texture[1] : (var3 == 4 && (par1 == 5 || par1 == 4) ? this.texture[1]  : (var3 == 8 && (par1 == 2 || par1 == 3) ? this.texture[1]  : this.texture[0] ));
-    }
 
     /**
      * Determines the damage on the item the block drops. Used in cloth and wood.
@@ -108,14 +93,6 @@ public class BlockDreamwood extends Block
         return par1 & 3;
     }
 
-    /**
-     * Sets the unlocalized name of the block to the string passed as a parameter, prefixed by "tile."
-     */
-    public Block setUnlocalizedName(String par1Str)
-    {
-        this.name = par1Str;
-        return super.setUnlocalizedName(par1Str);
-    }
 
     @Override
     public boolean canSustainLeaves(World world, int x, int y, int z)
@@ -127,16 +104,5 @@ public class BlockDreamwood extends Block
     public boolean isWood(World world, int x, int y, int z)
     {
         return true;
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void func_94332_a(IconRegister par1IconRegister)
-    {
-        this.texture = new Icon[2];
-
-        for (int i = 0; i < this.texture.length; ++i)
-        {
-            this.texture[i] = par1IconRegister.registerIcon(this.name + "_" + i);
-        }
     }
 }

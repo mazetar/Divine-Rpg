@@ -276,9 +276,9 @@ public class OverworldBlockHelper
 		lightstone = new BlockDivineRPG(cfg.lightstoneID, 0, Material.glass).setUnlocalizedName("LightStone");
 		rainbowWool = new BlockDivineRPG(cfg.rainbowWoolID, 0, Material.cloth).setUnlocalizedName("RainbowWool");
 
-		rupeeOre = new BlockDivineRPG(cfg.rupeeOreID, 0, Material.rock).setUnlocalizedName("RupeeOre");
-		arlemiteOre = new BlockDivineRPG(cfg.arlemiteOreID, 0, Material.rock).setUnlocalizedName("ArlemiteOre");
-		realmiteOre = new BlockDivineRPG(cfg.realmiteOreID, 0, Material.rock).setUnlocalizedName("RealmiteOre");
+		rupeeOre = new BlockDivineRPG(cfg.rupeeOreID, 0, Material.rock).setUnlocalizedName("RupeeOre").func_111022_d("RupeeOre");
+		arlemiteOre = new BlockDivineRPG(cfg.arlemiteOreID, 0, Material.rock).setUnlocalizedName("ArlemiteOre").func_111022_d("ArlemiteOre");
+		realmiteOre = new BlockDivineRPG(cfg.realmiteOreID, 0, Material.rock).setUnlocalizedName("RealmiteOre").func_111022_d("RealmiteOre");
 
 		lapisLamp = new BlockDivineRPG(cfg.lapisLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("LapisLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
 		slimeLight = new BlockSlimeLight(cfg.slimeLightID, false, 0).setUnlocalizedName("SlimeLight").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);

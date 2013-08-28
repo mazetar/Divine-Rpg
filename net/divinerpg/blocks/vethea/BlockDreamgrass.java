@@ -2,9 +2,8 @@ package net.divinerpg.blocks.vethea;
 
 import java.util.Random;
 
+import net.divinerpg.blocks.BlockDivineRPGGrass;
 import net.divinerpg.utils.helpers.block.VetheaBlockHelper;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
@@ -12,13 +11,13 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDreamgrass extends Block
+public class BlockDreamgrass extends BlockDivineRPGGrass
 {
     private Icon[] texture;
 
 	public BlockDreamgrass(int par1)
     {
-        super(par1, Material.grass);
+        super(par1);
         this.setTickRandomly(true);
     }
 

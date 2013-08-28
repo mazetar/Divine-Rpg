@@ -1,17 +1,13 @@
 package net.divinerpg.blocks.twilight;
 
-import net.divinerpg.blocks.BlockDivineRPG;
-import net.minecraft.block.material.Material;
+import net.divinerpg.blocks.BlockDivineRPGLog;
 import net.minecraft.world.World;
 
-public class BlockTwilightWood extends BlockDivineRPG
+public class BlockTwilightWood extends BlockDivineRPGLog
 {
-	public int index;
-	
     public BlockTwilightWood(int var1)
     {
-        super(var1, Material.wood);
-        this.index = var1;
+        super(var1);
     }
 
     /**
@@ -59,46 +55,6 @@ public class BlockTwilightWood extends BlockDivineRPG
         return true;
     }
 
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    /*public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
-    {
-        int var3 = par2 & 12;
-        int var4 = par2 & 3;
-
-        if (this.blockID == DivineRPG.yellowWood.blockID)
-        {
-            return var3 == 0 && (par1 == 1 || par1 == 0) ? 166 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 166 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 166 : 165));
-        }
-
-        if (this.blockID == DivineRPG.redWood.blockID)
-        {
-            return var3 == 0 && (par1 == 1 || par1 == 0) ? 168 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 168 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 168 : 167));
-        }
-
-        if (this.blockID == DivineRPG.purpleWood.blockID)
-        {
-            return var3 == 0 && (par1 == 1 || par1 == 0) ? 182 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 182 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 182 : 181));
-        }
-
-        if (this.blockID == DivineRPG.blueWood.blockID)
-        {
-            return var3 == 0 && (par1 == 1 || par1 == 0) ? 184 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 184 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 184 : 183));
-        }
-
-        if (this.blockID == DivineRPG.greenWood.blockID)
-        {
-            return var3 == 0 && (par1 == 1 || par1 == 0) ? 186 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 186 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 186 : 185));
-        }
-
-        if (this.blockID == DivineRPG.whiteWood.blockID)
-        {
-            return var3 == 0 && (par1 == 1 || par1 == 0) ? 188 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 188 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 188 : 187));
-        }
-
-        return var3 == 0 && (par1 == 1 || par1 == 0) ? 21 : (var3 == 4 && (par1 == 5 || par1 == 4) ? 21 : (var3 == 8 && (par1 == 2 || par1 == 3) ? 21 : (var4 == 1 ? 116 : (var4 == 2 ? 117 : (var4 == 3 ? 153 : 20)))));
-    }*/
 
     public int damageDropped(int var1)
     {

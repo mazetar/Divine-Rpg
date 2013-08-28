@@ -28,11 +28,6 @@ public class BlockColoredBricks extends BlockDivineRPG
     {
     	return 0;
     }
-	
-	// Meant to be overrided
-	public int getSheet(int side, int metadata) {
-		return 0;
-	}
 
     /**
      * Return the color for the specified armor ItemStack.

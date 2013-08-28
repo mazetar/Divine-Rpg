@@ -395,18 +395,19 @@ public class EntityWorkshopMerchant extends EntityVillager implements INpc, IMer
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 1, 0), new ItemStack(IceikaItemHelper.chocolateLog.itemID, 5, 0)));
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 1, 0), new ItemStack(IceikaItemHelper.pepperMints.itemID, 15, 0)));
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 1, 0), new ItemStack(IceikaItemHelper.fruitCake.itemID, 3, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.blueXmasLights.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.greenXmasLights.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.redXmasLights.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.yellowXmasLights.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.purpleXmasLights.blockID, 4, 0)));
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 15, 0), new ItemStack(IceikaItemHelper.icicleBane.itemID, 1, 0)));
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 3, 0), new ItemStack(IceikaBlockHelper.giftBox.blockID, 1, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.redCandyCane.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.greenCandyCane.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.blueCandyCane.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 1), new ItemStack(IceikaBlockHelper.yellowCandyCane.blockID, 4, 0)));
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 1), new ItemStack(IceikaBlockHelper.purpleCandyCane.blockID, 4, 0)));
+                //TODO: Xmas lights and candy canes removed untill we get them working --Maz
+//                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.blueXmasLights.blockID, 4, 0)));
+//                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.greenXmasLights.blockID, 4, 0)));
+//                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.redXmasLights.blockID, 4, 0)));
+//                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.yellowXmasLights.blockID, 4, 0)));
+//                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.purpleXmasLights.blockID, 4, 0)));
+//                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.redCandyCane.blockID, 4, 0)));
+//                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.greenCandyCane.blockID, 4, 0)));
+//                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 0), new ItemStack(IceikaBlockHelper.blueCandyCane.blockID, 4, 0)));
+//                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 1), new ItemStack(IceikaBlockHelper.yellowCandyCane.blockID, 4, 0)));
+//                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 2, 1), new ItemStack(IceikaBlockHelper.purpleCandyCane.blockID, 4, 0)));
                 
                 if (this.buyingList == null)
                 {

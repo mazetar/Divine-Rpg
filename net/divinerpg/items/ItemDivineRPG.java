@@ -10,22 +10,22 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemDivineRPG extends Item implements IItemDivineRPG
 {
-	protected int index;
-	protected int sheet;
 	
 	public ItemDivineRPG(int id) {
 		this(id, 0);
 	}
 	
+	@Override
+	public Item func_111206_d(String par1Str) {
+	    return super.func_111206_d(par1Str);
+	}
+	
 	public ItemDivineRPG(int id, int sprite) {
 		super(id - 256);
-		this.index = sprite;
 	}
 	
 	@Deprecated
 	public ItemDivineRPG setIconIndex(int sheet, int index) {
-		this.sheet = sheet;
-		this.index = index;
 		return this;
 	}
 

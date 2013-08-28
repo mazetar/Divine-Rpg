@@ -22,42 +22,6 @@ public class BlockMiniBricks extends BlockDivineRPG
         this.setLightOpacity(255);
     }
 
-    public int getTextureIndexFromSideAndMetadata(int var1, int var2)
-    {
-        switch (var2)
-        {
-            case 0:
-                return 205;
-
-            case 1:
-                return 206;
-
-            case 2:
-                return 207;
-
-            case 3:
-                return 218;
-
-            case 4:
-                return 219;
-
-            case 5:
-                return 220;
-
-            case 6:
-                return 221;
-
-            case 7:
-                return 222;
-
-            case 8:
-                return 223;
-
-            default:
-                return var2;
-        }
-    }
-
     /**
      * Returns the ID of the items to drop on destruction.
      */
@@ -171,13 +135,6 @@ public class BlockMiniBricks extends BlockDivineRPG
                 return 0;
         }
     }
-
-    public int getSheet()
-    {
-        return 1;
-    }
-
-    @SideOnly(Side.CLIENT)
 
     /**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)

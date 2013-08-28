@@ -135,7 +135,6 @@ public class OverworldBlockHelper
 	public static Block eucalyptusPlanks;
 	public static Block eucalyptus;
 	
-	public static OverworldConfigHelper x;
 	public static Block spikes;
 	public static Block spiderPumpkin;
 	public static Block enderPumpkin;
@@ -222,89 +221,91 @@ public class OverworldBlockHelper
 	public static Block stainedGlass5;
 	public static Block stainedGlass6;
 	public static Block stainedGlass7;
+	
+    public static OverworldConfigHelper cfg;
 
 	public static void init()
 	{
-		blueFire = new BlockBlueFire(x.blueFireID, 0).setUnlocalizedName("BlueFire");
-		divineRock = new BlockDivineRPG(x.divineRockID, Material.rock).setResistance(30).setHardness(3).setUnlocalizedName("DivineRock");
+		blueFire = new BlockBlueFire(cfg.blueFireID, 0).setUnlocalizedName("BlueFire");
+		divineRock = new BlockDivineRPG(cfg.divineRockID, Material.rock).func_111022_d("DivineRock").setResistance(30).setHardness(3).setUnlocalizedName("DivineRock");
 		
-		acceleraunch = new BlockAcceleraunch(x.acceleraunchID).setUnlocalizedName("Acceleraunch");
-		acceleron = new BlockAccelleron(x.acceleronID).setUnlocalizedName("Acceleron");
+		acceleraunch = new BlockAcceleraunch(cfg.acceleraunchID).setUnlocalizedName("Acceleraunch");
+		acceleron = new BlockAccelleron(cfg.acceleronID).setUnlocalizedName("Acceleron");
 		
-		aeStatue = new BlockAEStatue(x.aeStatueID).setUnlocalizedName("aeStatue");
-		ayeracoStatue = new BlockAyeracoStatue(x.ayeracoStatueID).setUnlocalizedName("AyeracoStatue");
-		kosStatue = new BlockKOSStatue(x.kosStatueID).setUnlocalizedName("kosStatue");
-		watcherStatue = new BlockWatcherStatue(x.watcherStatueID).setUnlocalizedName("WatcherStatue");
+		aeStatue = new BlockAEStatue(cfg.aeStatueID).setUnlocalizedName("aeStatue");
+		ayeracoStatue = new BlockAyeracoStatue(cfg.ayeracoStatueID).setUnlocalizedName("AyeracoStatue");
+		kosStatue = new BlockKOSStatue(cfg.kosStatueID).setUnlocalizedName("kosStatue");
+		watcherStatue = new BlockWatcherStatue(cfg.watcherStatueID).setUnlocalizedName("WatcherStatue");
 		
-		ayeracoBeamBlue = new BlockAyeracoBeamBlue(x.ayeracoBeamBlueID).setUnlocalizedName("AyeracoBeamBlue");
-		ayeracoBeamGreen = new BlockAyeracoBeamGreen(x.ayeracoBeamGreenID).setUnlocalizedName("AyeracoBeamGreen");
-		ayeracoBeamPurple = new BlockAyeracoBeamPurple(x.ayeracoBeamPurpleID).setUnlocalizedName("AyeracoBeamPurple");
-		ayeracoBeamRed = new BlockAyeracoBeamRed(x.ayeracoBeamRedID).setUnlocalizedName("AyeracoBeamRed");
-		ayeracoBeamYellow = new BlockAyeracoBeamYellow(x.ayeracoBeamYellowID).setUnlocalizedName("AyeracoBeamYellow");
+		ayeracoBeamBlue = new BlockAyeracoBeamBlue(cfg.ayeracoBeamBlueID).setUnlocalizedName("AyeracoBeamBlue");
+		ayeracoBeamGreen = new BlockAyeracoBeamGreen(cfg.ayeracoBeamGreenID).setUnlocalizedName("AyeracoBeamGreen");
+		ayeracoBeamPurple = new BlockAyeracoBeamPurple(cfg.ayeracoBeamPurpleID).setUnlocalizedName("AyeracoBeamPurple");
+		ayeracoBeamRed = new BlockAyeracoBeamRed(cfg.ayeracoBeamRedID).setUnlocalizedName("AyeracoBeamRed");
+		ayeracoBeamYellow = new BlockAyeracoBeamYellow(cfg.ayeracoBeamYellowID).setUnlocalizedName("AyeracoBeamYellow");
 
-		colouredBricks = new BlockColoredBricks(x.colouredBricksID, 0, Material.rock).setUnlocalizedName("ColouredBricks");
-		colouredGlass = new BlockColoredGlass(x.colouredGlassID, Material.glass, 0).setUnlocalizedName("ColouredGlass");
-		colouredPanes = new BlockColoredPane(x.colouredPanesID, "", "", Material.glass, false).setUnlocalizedName("ColouredPanes");
-		dyeBlocks = new BlockDyes(x.dyeBlocksID, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3).setResistance(30).setUnlocalizedName("DyeBlocks");
-		miniBricks = new BlockMiniBricks(x.miniBricksID, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3).setResistance(30).setUnlocalizedName("MiniBricks");
-		steel = new BlockSteel(x.steelID, Material.iron).setUnlocalizedName("Steel");
-		mobPumpkins = new BlockDivineRPG(x.mobPumpkinsID, 0, Material.pumpkin).setUnlocalizedName("MobPumpkins");
+		colouredBricks = new BlockColoredBricks(cfg.colouredBricksID, 0, Material.rock).setUnlocalizedName("ColouredBricks");
+		colouredGlass = new BlockColoredGlass(cfg.colouredGlassID, Material.glass, 0).setUnlocalizedName("ColouredGlass");
+		colouredPanes = new BlockColoredPane(cfg.colouredPanesID, "", "", Material.glass, false).setUnlocalizedName("ColouredPanes");
+		dyeBlocks = new BlockDyes(cfg.dyeBlocksID, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3).setResistance(30).setUnlocalizedName("DyeBlocks");
+		miniBricks = new BlockMiniBricks(cfg.miniBricksID, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3).setResistance(30).setUnlocalizedName("MiniBricks");
+		steel = new BlockSteel(cfg.steelID, Material.iron).setUnlocalizedName("Steel");
+		mobPumpkins = new BlockDivineRPG(cfg.mobPumpkinsID, 0, Material.pumpkin).setUnlocalizedName("MobPumpkins");
 		
-		darkBridge = new BlockLightBridge(x.darkBridgeID, 0, true).setUnlocalizedName("DarkBridge");
-		lightBridge = new BlockDarkBridge(x.lightBridgeID, 0, false).setUnlocalizedName("LightBridge");
-		glowingStairs = new BlockDivineRPG(x.glowingStairsID, 0, Material.glass).setUnlocalizedName("GlowingStairs");
-		lightFenceBlue = new BlockLightFence(x.lightFenceBlueID, 0, false, "", Material.glass).setUnlocalizedName("LightFenceBlue");
-		lightFenceBlueOn = new BlockLightFence(x.lightFenceBlueOnID, 0, false, "", Material.glass).setUnlocalizedName("LightFenceBlueOnID");
-		lightFenceRed = new BlockLightFence(x.lightFenceRedID, 0, false, "", Material.glass).setUnlocalizedName("LightFenceRed");
-		lightFenceRedOn = new BlockLightFence(x.lightFenceRedOnID, 0, false, "", Material.glass).setUnlocalizedName("LightFenceRedOnID");
-		skeletonChest = new BlockSkeletonChest(x.skeletonChestID, 0).setUnlocalizedName("SkeletonChest");
+		darkBridge = new BlockDarkBridge(cfg.darkBridgeID, 0, true).setUnlocalizedName("DarkBridge");
+		lightBridge = new BlockLightBridge(cfg.lightBridgeID, 0, false).setUnlocalizedName("LightBridge");
+		glowingStairs = new BlockDivineRPG(cfg.glowingStairsID, 0, Material.glass).setUnlocalizedName("GlowingStairs");
+		lightFenceBlue = new BlockLightFence(cfg.lightFenceBlueID, 0, false, "", Material.glass).setUnlocalizedName("LightFenceBlue");
+		lightFenceBlueOn = new BlockLightFence(cfg.lightFenceBlueOnID, 0, false, "", Material.glass).setUnlocalizedName("LightFenceBlueOnID");
+		lightFenceRed = new BlockLightFence(cfg.lightFenceRedID, 0, false, "", Material.glass).setUnlocalizedName("LightFenceRed");
+		lightFenceRedOn = new BlockLightFence(cfg.lightFenceRedOnID, 0, false, "", Material.glass).setUnlocalizedName("LightFenceRedOnID");
+		skeletonChest = new BlockSkeletonChest(cfg.skeletonChestID, 0).setUnlocalizedName("SkeletonChest");
 
-		elevantium = new BlockElevantium(x.elevantiumID, 0, "Elevantium", Material.rock);
-		darkPressurePlate = new BlockDarkPlate(x.darkPressurePlateID, "DarkPlate", Material.rock, EnumMobType.players, 0).setUnlocalizedName("DarkPressurePlate");
+		elevantium = new BlockElevantium(cfg.elevantiumID, 0, "Elevantium", Material.rock);
+		darkPressurePlate = new BlockDarkPlate(cfg.darkPressurePlateID, "DarkPlate", Material.rock, EnumMobType.players, 0).setUnlocalizedName("DarkPressurePlate");
 		
-		MaterialLiquid tarMaterial = new MaterialLiquid(MapColor.ironColor);
+		MaterialLiquid tarMaterial = new MaterialLiquid(MapColor.ironColor); //TODO: Should be moved to different location!
 		
-		tarStill = new BlockStationaryTar(x.tarStillID, 0, tarMaterial).setUnlocalizedName("TarStill");
-		tarFlowing = new BlockFlowingTar(x.tarFlowingID, 0, tarMaterial).setUnlocalizedName("TarFlowing");
+		tarStill = new BlockStationaryTar(cfg.tarStillID, 0, tarMaterial).setUnlocalizedName("TarStill");
+		tarFlowing = new BlockFlowingTar(cfg.tarFlowingID, 0, tarMaterial).setUnlocalizedName("TarFlowing");
 
-		bloodGemOre = new BlockDivineRPG(x.bloodGemID, 0, Material.rock).setUnlocalizedName("BloodGemOre");
-		netheriteOre = new BlockDivineRPG(x.netheriteOreID, 0, Material.rock).setUnlocalizedName("NetheriteOre");
-		spikeBlock = new BlockDivineRPG(x.spikeBlockID, 0, Material.rock).setUnlocalizedName("SpikeBlock");
-		hotSpikes = new BlockDivineRPG(x.hotSpikesID, 0, Material.rock).setUnlocalizedName("HotSpikes");
+		bloodGemOre = new BlockDivineRPG(cfg.bloodGemID, 0, Material.rock).setUnlocalizedName("BloodGemOre").func_111022_d("BloodGemOre");
+		netheriteOre = new BlockDivineRPG(cfg.netheriteOreID, 0, Material.rock).setUnlocalizedName("NetheriteOre").func_111022_d("NetheriteOre");
+		spikeBlock = new BlockDivineRPG(cfg.spikeBlockID, 0, Material.rock).setUnlocalizedName("SpikeBlock").func_111022_d("SpikeBlock");
+		hotSpikes = new BlockDivineRPG(cfg.hotSpikesID, 0, Material.rock).setUnlocalizedName("HotSpikes").func_111022_d("HotSpikes");
 		
-		lightstone = new BlockDivineRPG(x.lightstoneID, 0, Material.glass).setUnlocalizedName("LightStone");
-		rainbowWool = new BlockDivineRPG(x.rainbowWoolID, 0, Material.cloth).setUnlocalizedName("RainbowWool");
+		lightstone = new BlockDivineRPG(cfg.lightstoneID, 0, Material.glass).setUnlocalizedName("LightStone");
+		rainbowWool = new BlockDivineRPG(cfg.rainbowWoolID, 0, Material.cloth).setUnlocalizedName("RainbowWool");
 
-		rupeeOre = new BlockDivineRPG(x.rupeeOreID, 0, Material.rock).setUnlocalizedName("RupeeOre");
-		arlemiteOre = new BlockDivineRPG(x.arlemiteOreID, 0, Material.rock).setUnlocalizedName("ArlemiteOre");
-		realmiteOre = new BlockDivineRPG(x.realmiteOreID, 0, Material.rock).setUnlocalizedName("RealmiteOre");
+		rupeeOre = new BlockDivineRPG(cfg.rupeeOreID, 0, Material.rock).setUnlocalizedName("RupeeOre");
+		arlemiteOre = new BlockDivineRPG(cfg.arlemiteOreID, 0, Material.rock).setUnlocalizedName("ArlemiteOre");
+		realmiteOre = new BlockDivineRPG(cfg.realmiteOreID, 0, Material.rock).setUnlocalizedName("RealmiteOre");
 
-		lapisLamp = new BlockDivineRPG(x.lapisLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("LapisLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		slimeLight = new BlockSlimeLight(x.slimeLightID, false, 0).setUnlocalizedName("SlimeLight").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		slimeLightOn = new BlockSlimeLight(x.slimeLightOnID, true, 0).setUnlocalizedName("SlimeLightOn").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		redstoneOreLamp = new BlockDivineRPG(x.redstoneOreLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("RedstoneOreLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		goldLamp = new BlockDivineRPG(x.goldLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("GoldLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		diamondLamp = new BlockDivineRPG(x.diamondLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("DiamondLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		realmiteLamp = new BlockDivineRPG(x.realmiteLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("RealmiteLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		netheriteLamp = new BlockDivineRPG(x.netheriteLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("NetheriteLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		arlemiteLamp = new BlockDivineRPG(x.arlemiteLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("ArlemiteLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		rupeeLamp = new BlockDivineRPG(x.rupeeLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("RupeeLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		iceStoneLamp = new BlockDivineRPG(x.icestoneLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("IcestoneLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		moltenStoneLamp = new BlockDivineRPG(x.moltenstoneLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("MoltenstoneLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		jungleStoneLamp = new BlockDivineRPG(x.junglestoneLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("JunglestoneLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		enderStoneLamp = new BlockDivineRPG(x.enderstoneLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("EnderstoneLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		bluefireLamp = new BlockDivineRPG(x.bluefireLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("BluefireLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		divineStoneLamp = new BlockDivineRPG(x.divinestoneLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("DivinestoneLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		milkyLamp = new BlockDivineRPG(x.milkyLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("MilkyLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		blazicLamp = new BlockDivineRPG(x.blazicLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("BlazicLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		aquaLamp = new BlockDivineRPG(x.aquaLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("AquaLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		lavaLamp = new BlockDivineRPG(x.lavaLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("LavaLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		enderLamp = new BlockDivineRPG(x.enderLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("EnderLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		krakenLamp = new BlockDivineRPG(x.krakenLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("KrakenLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
-		drakenLamp = new BlockDivineRPG(x.drakenLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("DrakenLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		lapisLamp = new BlockDivineRPG(cfg.lapisLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("LapisLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		slimeLight = new BlockSlimeLight(cfg.slimeLightID, false, 0).setUnlocalizedName("SlimeLight").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		slimeLightOn = new BlockSlimeLight(cfg.slimeLightOnID, true, 0).setUnlocalizedName("SlimeLightOn").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		redstoneOreLamp = new BlockDivineRPG(cfg.redstoneOreLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("RedstoneOreLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		goldLamp = new BlockDivineRPG(cfg.goldLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("GoldLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		diamondLamp = new BlockDivineRPG(cfg.diamondLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("DiamondLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		realmiteLamp = new BlockDivineRPG(cfg.realmiteLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("RealmiteLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		netheriteLamp = new BlockDivineRPG(cfg.netheriteLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("NetheriteLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		arlemiteLamp = new BlockDivineRPG(cfg.arlemiteLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("ArlemiteLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		rupeeLamp = new BlockDivineRPG(cfg.rupeeLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("RupeeLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		iceStoneLamp = new BlockDivineRPG(cfg.icestoneLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("IcestoneLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		moltenStoneLamp = new BlockDivineRPG(cfg.moltenstoneLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("MoltenstoneLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		jungleStoneLamp = new BlockDivineRPG(cfg.junglestoneLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("JunglestoneLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		enderStoneLamp = new BlockDivineRPG(cfg.enderstoneLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("EnderstoneLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		bluefireLamp = new BlockDivineRPG(cfg.bluefireLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("BluefireLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		divineStoneLamp = new BlockDivineRPG(cfg.divinestoneLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("DivinestoneLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		milkyLamp = new BlockDivineRPG(cfg.milkyLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("MilkyLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		blazicLamp = new BlockDivineRPG(cfg.blazicLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("BlazicLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		aquaLamp = new BlockDivineRPG(cfg.aquaLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("AquaLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		lavaLamp = new BlockDivineRPG(cfg.lavaLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("LavaLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		enderLamp = new BlockDivineRPG(cfg.enderLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("EnderLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		krakenLamp = new BlockDivineRPG(cfg.krakenLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("KrakenLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
+		drakenLamp = new BlockDivineRPG(cfg.drakenLampID, 0, Material.glass).setLightValue(1.0F).setUnlocalizedName("DrakenLamp").setHardness(0.3F).setStepSound(Block.soundGlassFootstep);
 		
-		purpleGlowBoneTree = new BlockGlowBone(x.purpleGlowBoneTreeID, 0).setUnlocalizedName("PurpleGlowBoneTree");
-		pinkGlowBoneTree = new BlockGlowBone(x.pinkGlowBoneTreeID, 0).setUnlocalizedName("PinkGlowBoneTree");
+		purpleGlowBoneTree = new BlockGlowBone(cfg.purpleGlowBoneTreeID, 0).setUnlocalizedName("PurpleGlowBoneTree");
+		pinkGlowBoneTree = new BlockGlowBone(cfg.pinkGlowBoneTreeID, 0).setUnlocalizedName("PinkGlowBoneTree");
 	}
 
 	public static void addNames()

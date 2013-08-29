@@ -13,7 +13,7 @@ public class ModMobRegistry
     public static int NEXT_MOD_ENTITY_ID = 100;
     
 	public static void registerModEntity(Class<? extends Entity> clazz, String name, int modID, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates) {
-	    EntityRegistry.registerModEntity(clazz, name, NEXT_MOD_ENTITY_ID++, DivineRPG.instance, trackingRange, updateFrequency, sendsVelocityUpdates);
+		EntityRegistry.registerModEntity(clazz, name, NEXT_MOD_ENTITY_ID++, DivineRPG.instance, trackingRange, updateFrequency, sendsVelocityUpdates);
 	}
 	
 	public static void registerEntity(Class<? extends Entity> clazz, String name, int modID, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates) {
@@ -37,7 +37,7 @@ public class ModMobRegistry
 	
 	   public static void registerModEntity(Class<? extends Entity> clazz, String name, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates) {
 	        EntityRegistry.registerModEntity(clazz, name, NEXT_MOD_ENTITY_ID++, DivineRPG.instance, trackingRange, updateFrequency, sendsVelocityUpdates);
-	    }
+	   }
 	    
 	    public static void registerEntity(Class<? extends Entity> clazz, String name, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates) {
 	        EntityRegistry.registerModEntity(clazz, name, NEXT_MOD_ENTITY_ID++, DivineRPG.instance, trackingRange, updateFrequency, sendsVelocityUpdates);

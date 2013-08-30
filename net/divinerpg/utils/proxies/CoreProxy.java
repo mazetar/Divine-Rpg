@@ -3,11 +3,11 @@ package net.divinerpg.utils.proxies;
 import java.io.File;
 
 import net.divinerpg.DivineRPG;
+import net.divinerpg.utils.debug.EntityNameRenderer;
 import net.divinerpg.utils.handlers.ArmorEffectHandler;
 import net.divinerpg.utils.handlers.ServerTickHandler;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.config.ConfigHelper;
-import net.divinerpg.utils.helpers.config.OverworldConfigHelper;
 import net.divinerpg.utils.helpers.entity.OverworldEntityHelper;
 import net.divinerpg.utils.helpers.gui.GuiHelper;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
@@ -25,7 +25,7 @@ public class CoreProxy {
 	public static int START_EID = 0;
 
 	public void init(FMLInitializationEvent event) {
-		entityRegistry();
+		entityInit();
 		tickRegistry();
 		eventRegistry();
 		//recipeRegistry();
@@ -51,9 +51,11 @@ public class CoreProxy {
 	
 	public void eventRegistry() {
 		MinecraftForge.EVENT_BUS.register(new ArmorEffectHandler());
+
+        MinecraftForge.EVENT_BUS.register(new EntityNameRenderer());
 	}
 	
-	public void entityRegistry()
+	public void entityInit()
 	{
 		OverworldEntityHelper.init();
 	}

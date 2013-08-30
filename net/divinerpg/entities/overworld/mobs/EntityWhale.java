@@ -208,6 +208,6 @@ public class EntityWhale extends EntityWaterMob
     
     public void onCollideWithPlayer(EntityPlayer par1EntityPlayer)
     {
-    	par1EntityPlayer.attackEntityFrom(DamageSource.causeMobDamage(par1EntityPlayer), (int) this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111126_e());
+    	par1EntityPlayer.attackEntityFrom(DamageSource.causeMobDamage(par1EntityPlayer), 10); //TODO Damage here instead of 10.
     }
 }

@@ -8,7 +8,6 @@ import net.divinerpg.entities.overworld.mobs.EntityCaveclops;
 import net.divinerpg.entities.overworld.mobs.EntityCrab;
 import net.divinerpg.entities.overworld.mobs.EntityCyclops;
 import net.divinerpg.entities.overworld.mobs.EntityDesertCrawler;
-import net.divinerpg.entities.overworld.mobs.EntityEnderSpider;
 import net.divinerpg.entities.overworld.mobs.EntityEnderTriplets;
 import net.divinerpg.entities.overworld.mobs.EntityEnderWatcher;
 import net.divinerpg.entities.overworld.mobs.EntityEnthralledDramcryx;
@@ -76,13 +75,13 @@ public class OverworldEntityHelper
         ModMobRegistry.registerEntity(EntityFrost.class, "Frost", START_EID++, 64, 10, true);
         ModMobRegistry.registerEntity(EntityNetherWatcher.class, "Watcher", START_EID++, 64, 10, true);
         ModMobRegistry.registerEntity(EntityEnderWatcher.class, "Ender Watcher", START_EID++, 64, 10, true);
-       // ModMobRegistry.registerEntity(EntityHellPig.class, "Hell Pig", START_EID++, 64, 10, true);
+        ModMobRegistry.registerEntity(EntityHellPig.class, "Hell Pig", START_EID++, 64, 10, true);
         ModMobRegistry.registerEntity(EntityMiner.class, "Miner", START_EID++, 64, 10, true);
         ModMobRegistry.registerEntity(EntityAncient.class, "Ancient", START_EID++, 64, 10, true);
         ModMobRegistry.registerEntity(EntityMamormeter.class, "mamormeter", START_EID++, 64, 10, true);
         ModMobRegistry.registerEntity(EntityCrab.class, "crab", START_EID++, 64, 10, true);
-      //  ModMobRegistry.registerEntity(EntityShark.class, "shark", START_EID++, 64, 10, true);
-      //  ModMobRegistry.registerEntity(EntityWhale.class, "whale", START_EID++, 64, 10, true);
+        ModMobRegistry.registerEntity(EntityShark.class, "shark", START_EID++, 64, 10, true);
+        ModMobRegistry.registerEntity(EntityWhale.class, "whale", START_EID++, 64, 10, true);
         ModMobRegistry.registerEntity(EntityKingCrab.class, "kingcrab", START_EID++, 64, 10, true);
         ModMobRegistry.registerEntity(EntityJackOMan.class, "jackoman", START_EID++, 64, 10, true);
         
@@ -133,13 +132,13 @@ public class OverworldEntityHelper
         EntityRegistry.addSpawn(EntityCyclops.class, 1, 1, 1, EnumCreatureType.monster, overworldBiomes);
         EntityRegistry.addSpawn(EntityMiner.class, 1, 1, 1, EnumCreatureType.monster, overworldBiomes);
         EntityRegistry.addSpawn(EntityJackOMan.class, 1, 1, 1, EnumCreatureType.creature, overworldBiomes);
-       // EntityRegistry.addSpawn(EntityHellPig.class, 25, 4, 4, EnumCreatureType.creature, new BiomeGenBase[] {BiomeGenBase.hell});
+        EntityRegistry.addSpawn(EntityHellPig.class, 25, 4, 4, EnumCreatureType.creature, new BiomeGenBase[] {BiomeGenBase.hell});
         EntityRegistry.addSpawn(EntityEnderWatcher.class, 10, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.sky});
         EntityRegistry.addSpawn(EntityCrab.class, 15, 4, 4, EnumCreatureType.creature, new BiomeGenBase[] {BiomeGenBase.beach});
-      //  EntityRegistry.addSpawn(EntityCrab.class, 15, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.beach});
+        EntityRegistry.addSpawn(EntityCrab.class, 15, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.beach});
         EntityRegistry.addSpawn(EntityKingCrab.class, 5, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.beach});
-      //  EntityRegistry.addSpawn(EntityWhale.class, 50, 1, 1, EnumCreatureType.waterCreature, new BiomeGenBase[] {BiomeGenBase.ocean});
-      //  EntityRegistry.addSpawn(EntityShark.class, 50, 1, 1, EnumCreatureType.waterCreature, new BiomeGenBase[] {BiomeGenBase.ocean});
+        EntityRegistry.addSpawn(EntityWhale.class, 50, 1, 1, EnumCreatureType.waterCreature, new BiomeGenBase[] {BiomeGenBase.ocean});
+        EntityRegistry.addSpawn(EntityShark.class, 50, 1, 1, EnumCreatureType.waterCreature, new BiomeGenBase[] {BiomeGenBase.ocean});
         EntityRegistry.addSpawn(EntityCaveCrawler.class, 20, 2, 3, EnumCreatureType.monster, overworldBiomes);
         EntityRegistry.addSpawn(EntityDesertCrawler.class, 3, 1, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.desert, BiomeGenBase.desertHills});
         EntityRegistry.addSpawn(EntityAridWarrior.class, 3, 1, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.desert, BiomeGenBase.desertHills});
@@ -151,7 +150,7 @@ public class OverworldEntityHelper
         EntityRegistry.addSpawn(EntityJungleBat.class, 20, 1, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.jungle, BiomeGenBase.jungleHills});
         EntityRegistry.addSpawn(EntityCaveclops.class, 20, 1, 4, EnumCreatureType.monster, overworldBiomes);
         
-		EntityRegistry.addSpawn(EntityEnderSpider.class, 2, 1, 4, EnumCreatureType.monster, overworldBiomes);
+		//EntityRegistry.addSpawn(EntityEnderSpider.class, 2, 1, 4, EnumCreatureType.monster, overworldBiomes); TODO: Add registration for this one.
         EntityRegistry.addSpawn(EntityRainbour.class, 2, 1, 1, EnumCreatureType.creature, overworldBiomes);
         EntityRegistry.addSpawn(EntityWildFire.class, 50, 1, 1, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.hell});
 	}
@@ -167,13 +166,13 @@ public class OverworldEntityHelper
         LanguageRegistry.instance().addStringLocalization("entity.Scorcher.name",  "Scorcher");
         LanguageRegistry.instance().addStringLocalization("entity.Watcher.name",  "Watcher");
         LanguageRegistry.instance().addStringLocalization("entity.Ender Watcher.name",  "Ender Watcher");
-      //  LanguageRegistry.instance().addStringLocalization("entity.Hell Pig.name",  "Hell Pig");
+        LanguageRegistry.instance().addStringLocalization("entity.Hell Pig.name",  "Hell Pig");
         LanguageRegistry.instance().addStringLocalization("entity.Miner.name",  "Undead Miner");
         LanguageRegistry.instance().addStringLocalization("entity.Ancient.name",  "Ancient Boss");
         LanguageRegistry.instance().addStringLocalization("entity.mamormeter.name", "King of Scorchers");
         LanguageRegistry.instance().addStringLocalization("entity.crab.name", "Crab");
-     //   LanguageRegistry.instance().addStringLocalization("entity.shark.name", "Shark");
-     //   LanguageRegistry.instance().addStringLocalization("entity.whale.name", "Whale");
+        LanguageRegistry.instance().addStringLocalization("entity.shark.name", "Shark");
+        LanguageRegistry.instance().addStringLocalization("entity.whale.name", "Whale");
         LanguageRegistry.instance().addStringLocalization("entity.kingcrab.name", "King Crab");
         LanguageRegistry.instance().addStringLocalization("entity.desertcrawler.name",  "Desert Crawler");
         LanguageRegistry.instance().addStringLocalization("entity.cavecrawler.name",  "Cave Crawler");

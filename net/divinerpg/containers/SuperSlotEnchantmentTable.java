@@ -17,6 +17,7 @@ public class SuperSlotEnchantmentTable extends InventoryBasic
      * Returns the maximum stack size for a inventory slot. Seems to always be 64, possibly will be extended. *Isn't
      * this more of a set than a get?*
      */
+    @Override
     public int getInventoryStackLimit()
     {
         return 1;
@@ -25,6 +26,7 @@ public class SuperSlotEnchantmentTable extends InventoryBasic
     /**
      * Called when an the contents of an Inventory change, usually
      */
+    @Override
     public void onInventoryChanged()
     {
         super.onInventoryChanged();

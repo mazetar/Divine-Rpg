@@ -22,8 +22,18 @@ import cpw.mods.fml.relauncher.Side;
 
 public class CoreProxy {
 
-	public static int START_EID = 0;
+	public void PreInit(FMLPreInitializationEvent event)
+    {
+        File file = new File(event.getModConfigurationDirectory(), "DivineRPGCore.cfg");
+        Configuration config = new Configuration(file);
+        config.load();
+        
+        DimensionRegistry.InitDimensionsConfig(event, config);
+        ConfigHelper.initConfig(event);
 
+        config.save();
+    }
+	
 	public void init(FMLInitializationEvent event) {
 		entityInit();
 		tickRegistry();
@@ -33,17 +43,7 @@ public class CoreProxy {
 		NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new GuiHelper());
 	}
 	
-	public void PreInit(FMLPreInitializationEvent event)
-	{
-		File file = new File(event.getModConfigurationDirectory(), "DivineRPGCore.cfg");
-		Configuration config = new Configuration(file);
-		config.load();
-		
-		DimensionRegistry.InitDimensionsConfig(event, config);
-		ConfigHelper.initConfig(event);
-
-		config.save();
-	}
+	
 	
 	public void tickRegistry() {
 		TickRegistry.registerTickHandler(new ServerTickHandler(), Side.SERVER);	

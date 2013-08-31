@@ -50,6 +50,7 @@ public class ContainerDivineMerchant extends Container
         return this.merchantInventory;
     }
 
+    @Override
     public void addCraftingToCrafters(ICrafting var1)
     {
         super.addCraftingToCrafters(var1);
@@ -66,6 +67,7 @@ public class ContainerDivineMerchant extends Container
     /**
      * Callback for when the crafting matrix is changed.
      */
+    @Override
     public void onCraftMatrixChanged(IInventory var1)
     {
         this.merchantInventory.resetRecipeAndSlots();
@@ -77,9 +79,11 @@ public class ContainerDivineMerchant extends Container
         this.merchantInventory.setCurrentRecipeIndex(var1);
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(int var1, int var2) {}
 
+    @Override
     public boolean canInteractWith(EntityPlayer var1)
     {
         return this.theMerchant.getCustomer() == var1;

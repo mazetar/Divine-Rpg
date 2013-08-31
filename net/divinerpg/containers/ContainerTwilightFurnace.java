@@ -44,6 +44,7 @@ public class ContainerTwilightFurnace extends Container
         }
     }
 
+    @Override
     public void addCraftingToCrafters(ICrafting var1)
     {
         super.addCraftingToCrafters(var1);
@@ -85,6 +86,7 @@ public class ContainerTwilightFurnace extends Container
         this.lastItemBurnTime = this.furnace.currentItemBurnTime;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(int var1, int var2)
     {
@@ -104,6 +106,7 @@ public class ContainerTwilightFurnace extends Container
         }
     }
 
+    @Override
     public boolean canInteractWith(EntityPlayer var1)
     {
         return this.furnace.isUseableByPlayer(var1);

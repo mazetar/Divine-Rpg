@@ -40,6 +40,7 @@ public class ContainerCondenser extends Container
         }
     }
 
+    @Override
     public void addCraftingToCrafters(ICrafting par1ICrafting)
     {
         super.addCraftingToCrafters(par1ICrafting);
@@ -66,6 +67,7 @@ public class ContainerCondenser extends Container
         this.brewTime = this.tileBrewingStand.getBrewTime();
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(int par1, int par2)
     {
@@ -75,6 +77,7 @@ public class ContainerCondenser extends Container
         }
     }
 
+    @Override
     public boolean canInteractWith(EntityPlayer par1EntityPlayer)
     {
         return this.tileBrewingStand.isUseableByPlayer(par1EntityPlayer);
@@ -83,6 +86,7 @@ public class ContainerCondenser extends Container
     /**
      * Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
      */
+    @Override
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
     {
         ItemStack var3 = null;

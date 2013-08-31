@@ -19,6 +19,7 @@ class SlotBrewingStandIngredient extends Slot
     /**
      * Check if the stack is a valid item for this slot. Always true beside for the armor slots.
      */
+    @Override
     public boolean isItemValid(ItemStack par1ItemStack)
     {
         return par1ItemStack != null ? par1ItemStack.itemID == ArcanaItemHelper.veiloItem.itemID : false;
@@ -28,6 +29,7 @@ class SlotBrewingStandIngredient extends Slot
      * Returns the maximum stack size for a given slot (usually the same as getInventoryStackLimit(), but 1 in the case
      * of armor slots)
      */
+    @Override
     public int getSlotStackLimit()
     {
         return 64;

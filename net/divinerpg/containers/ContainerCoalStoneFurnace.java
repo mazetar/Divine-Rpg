@@ -43,6 +43,7 @@ public class ContainerCoalStoneFurnace extends Container
         }
     }
 
+    @Override
     public void addCraftingToCrafters(ICrafting var1)
     {
         super.addCraftingToCrafters(var1);
@@ -83,6 +84,7 @@ public class ContainerCoalStoneFurnace extends Container
         this.lastItemBurnTime = this.furnace.currentItemBurnTime;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(int var1, int var2)
     {
@@ -102,11 +104,13 @@ public class ContainerCoalStoneFurnace extends Container
         }
     }
 
+    @Override
     public boolean canInteractWith(EntityPlayer var1)
     {
         return this.furnace.isUseableByPlayer(var1);
     }
 
+    @Override
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
     {
         ItemStack var3 = null;

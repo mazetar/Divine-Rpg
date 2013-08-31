@@ -9,6 +9,8 @@ import net.divinerpg.entities.iceika.mobs.EntityRollum;
 import net.divinerpg.entities.iceika.mobs.EntityWorkshopMerchant;
 import net.divinerpg.entities.iceika.mobs.EntityWorkshopTickerer;
 import net.divinerpg.entities.iceika.projectile.EntityFractiteProjectile;
+import net.divinerpg.entities.iceika.projectile.EntityFrostclawProjectile;
+import net.divinerpg.entities.iceika.projectile.EntityIce;
 import net.divinerpg.entities.iceika.projectile.EntityNoteProjectile;
 import net.divinerpg.entities.overworld.projectile.EntityCrabclawProjectile;
 import net.divinerpg.lib.EntityResourceLocs;
@@ -19,8 +21,10 @@ import net.divinerpg.models.iceika.mobs.ModelHastreus;
 import net.divinerpg.models.iceika.mobs.ModelRollum;
 import net.divinerpg.models.iceika.mobs.ModelWorkshop;
 import net.divinerpg.renders.RenderDivineEntity;
+import net.divinerpg.renders.RenderEmpty;
 import net.divinerpg.renders.RenderIconProjectile;
 import net.divinerpg.renders.iceika.mob.RenderFrostArcher;
+import net.divinerpg.renders.iceika.projectile.RenderFrostclawProjectile;
 import net.minecraft.client.model.ModelBiped;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -44,5 +48,6 @@ public class IceikaRenderHelper
         RenderingRegistry.registerEntityRenderingHandler(EntityFractiteProjectile.class, new RenderIconProjectile(EntityResourceLocs.FRACTITE_PROJECTILE));
         RenderingRegistry.registerEntityRenderingHandler(EntityCrabclawProjectile.class, new RenderIconProjectile(EntityResourceLocs.FRACTITE_PROJECTILE));
         RenderingRegistry.registerEntityRenderingHandler(EntityNoteProjectile.class, new RenderIconProjectile(EntityResourceLocs.MUSIC_BALL));
+
 	}
 }

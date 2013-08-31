@@ -8,7 +8,7 @@ import net.divinerpg.blocks.iceika.tileentities.TileEntityCoalStoneFurnace;
 import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -34,35 +34,35 @@ public class BlockIceikaFurnace extends BlockDivineRPGContainer {
         this.setDefaultDirection(par1World, par2, par3, par4);
     }
 
-    private void setDefaultDirection(World par1World, int par2, int par3, int par4) {
-        if (!par1World.isRemote) {
-            int var5 = par1World.getBlockId(par2, par3, par4 - 1);
-            int var6 = par1World.getBlockId(par2, par3, par4 + 1);
-            int var7 = par1World.getBlockId(par2 - 1, par3, par4);
-            int var8 = par1World.getBlockId(par2 + 1, par3, par4);
-            byte var9 = 3;
+    private void setDefaultDirection(World world, int x, int y, int z) {
+        if (!world.isRemote) {
+            int blockNegZ = world.getBlockId(x, y, z - 1);
+            int blockPosZ = world.getBlockId(x, y, z + 1);
+            int blockNegX = world.getBlockId(x - 1, y, z);
+            int blockPosX = world.getBlockId(x + 1, y, z);
+            byte meta = 3;
 
-            if (Block.opaqueCubeLookup[var5] && !Block.opaqueCubeLookup[var6])
+            if (Block.opaqueCubeLookup[blockNegZ] && !Block.opaqueCubeLookup[blockPosZ])
             {
-                var9 = 3;
+                meta = 3;
             }
 
-            if (Block.opaqueCubeLookup[var6] && !Block.opaqueCubeLookup[var5])
+            if (Block.opaqueCubeLookup[blockPosZ] && !Block.opaqueCubeLookup[blockNegZ])
             {
-                var9 = 2;
+                meta = 2;
             }
 
-            if (Block.opaqueCubeLookup[var7] && !Block.opaqueCubeLookup[var8])
+            if (Block.opaqueCubeLookup[blockNegX] && !Block.opaqueCubeLookup[blockPosX])
             {
-                var9 = 5;
+                meta = 5;
             }
 
-            if (Block.opaqueCubeLookup[var8] && !Block.opaqueCubeLookup[var7])
+            if (Block.opaqueCubeLookup[blockPosX] && !Block.opaqueCubeLookup[blockNegX])
             {
-                var9 = 4;
+                meta = 4;
             }
 
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, var9, 2);
+            world.setBlockMetadataWithNotify(x, y, z, meta, 2);
         }
     }
 
@@ -156,32 +156,33 @@ public class BlockIceikaFurnace extends BlockDivineRPGContainer {
     {
         return new TileEntityCoalStoneFurnace();
     }
-
+    
     /**
      * Called when the block is placed in the world.
      */
-    public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLiving par5EntityLiving)
+    @Override
+    public void onBlockPlacedBy(World w, int x, int y, int z, EntityLivingBase entity, ItemStack itemStack)
     {
-        int var6 = MathHelper.floor_double((double)(par5EntityLiving.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+        int dir = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
 
-        if (var6 == 0)
+        if (dir == 0)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 2, 2);
+            w.setBlockMetadataWithNotify(x, y, z, 2, 2);
         }
 
-        if (var6 == 1)
+        if (dir == 1)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 5, 2);
+            w.setBlockMetadataWithNotify(x, y, z, 5, 2);
         }
 
-        if (var6 == 2)
+        if (dir == 2)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 3, 2);
+            w.setBlockMetadataWithNotify(x, y, z, 3, 2);
         }
 
-        if (var6 == 3)
+        if (dir == 3)
         {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 4, 2);
+            w.setBlockMetadataWithNotify(x, y, z, 4, 2);
         }
     }
 

@@ -59,6 +59,7 @@ public class ContainerSuperEnchant extends Container
         }
     }
 
+    @Override
     public void addCraftingToCrafters(ICrafting par1ICrafting)
     {
         super.addCraftingToCrafters(par1ICrafting);
@@ -83,6 +84,7 @@ public class ContainerSuperEnchant extends Container
         }
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(int par1, int par2)
     {
@@ -99,6 +101,7 @@ public class ContainerSuperEnchant extends Container
     /**
      * Callback for when the crafting matrix is changed.
      */
+    @Override
     public void onCraftMatrixChanged(IInventory par1IInventory)
     {
         if (par1IInventory == this.tableInventory)
@@ -178,6 +181,7 @@ public class ContainerSuperEnchant extends Container
     /**
      * enchants the item on the table using the specified slot; also deducts XP from player
      */
+    @Override
     public boolean enchantItem(EntityPlayer par1EntityPlayer, int par2)
     {
         ItemStack var3 = this.tableInventory.getStackInSlot(0);
@@ -229,6 +233,7 @@ public class ContainerSuperEnchant extends Container
         }
     }
 
+    @Override
     public boolean canInteractWith(EntityPlayer par1EntityPlayer)
     {
         return this.worldPointer.getBlockId(this.posX, this.posY, this.posZ) != TwilightBlockHelper.superEnchantMentTable.blockID ? false : par1EntityPlayer.getDistanceSq((double)this.posX + 0.5D, (double)this.posY + 0.5D, (double)this.posZ + 0.5D) <= 64.0D;
@@ -237,6 +242,7 @@ public class ContainerSuperEnchant extends Container
     /**
      * Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
      */
+    @Override
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
     {
         ItemStack var3 = null;

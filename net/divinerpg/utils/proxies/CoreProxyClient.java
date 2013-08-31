@@ -1,6 +1,5 @@
 package net.divinerpg.utils.proxies;
 
-import net.divinerpg.client.misc.VersionHelper;
 import net.divinerpg.utils.handlers.ClientTickHandler;
 import net.divinerpg.utils.helpers.render.OverworldRenderHelper;
 import cpw.mods.fml.common.registry.TickRegistry;

@@ -1,6 +1,5 @@
 package net.divinerpg.lib;
 
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.util.ResourceLocation;
 
 public class EntityResourceLocs {

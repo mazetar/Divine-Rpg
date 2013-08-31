@@ -31,6 +31,8 @@ public class DivineRPGVethea
 	{
 		instance = this;
 		VetheaConfigHelper.initConfig(event);
+
+       // proxy.preInit(event);
 	}
 	
 	@EventHandler
@@ -38,6 +40,8 @@ public class DivineRPGVethea
 	{
 		VetheaItemHelper.init();
 		VetheaBlockHelper.initBlocks();
+
+      //  proxy.init(event);
 	}
 	
 	@EventHandler

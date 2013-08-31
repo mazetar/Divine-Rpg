@@ -1,7 +1,5 @@
 package net.divinerpg.renders;
 
-import net.divinerpg.lib.ResourceGuiLoc;
-import net.divinerpg.lib.ResourceLocs;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.texture.TextureMap;

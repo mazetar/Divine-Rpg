@@ -66,6 +66,7 @@ public class BlockDivineRPGLeaves extends BlockLeavesBase implements IShearable{
     /**
      * Returns the quantity of items to drop on block destruction.
      */
+    @Override
     public int quantityDropped(Random par1Random)
     {
         return 0;
@@ -105,6 +106,7 @@ public class BlockDivineRPGLeaves extends BlockLeavesBase implements IShearable{
     /**
      * Drops the block items with a specified chance of dropping the specified items
      */
+    @Override
     public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7)
     {
     	if(canAppleDrop){
@@ -138,6 +140,7 @@ public class BlockDivineRPGLeaves extends BlockLeavesBase implements IShearable{
      * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
      * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.
      */
+    @Override
     public boolean isOpaqueCube()
     {
         return !this.graphicsLevel;

@@ -15,6 +15,7 @@ public class ContainerWorkshopMerchant extends ContainerMerchant
         super(var1, var2, var3);
     }
 
+    @Override
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2)
     {
         ItemStack var3 = null;

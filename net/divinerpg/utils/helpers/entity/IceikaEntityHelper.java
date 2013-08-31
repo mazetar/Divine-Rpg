@@ -24,7 +24,7 @@ public class IceikaEntityHelper
 {
 	public static int START_EID = 275;
 	
-	public static void entityRegistry()
+	public static void init()
 	{
 		ModMobRegistry.registerEntity(EntityAlicanto.class, "alicanto", START_EID++, 120, 5, true);
         ModMobRegistry.registerEntity(EntityFractite.class, "fractite", START_EID++, 120, 5, true);

@@ -7,10 +7,7 @@ import net.divinerpg.utils.helpers.item.IceikaItemHelper;
 import net.divinerpg.utils.proxies.IceikaProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.Mod.PostInit;
-import cpw.mods.fml.common.Mod.PreInit;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -34,12 +31,14 @@ public class DivineRPGIceika
 	{
 		instance = this;		
 		IceikaConfigHelper.initConfig(event);
+
+      //  proxy.preInit(event);
 	}
 	
 	@EventHandler
 	public void Init(FMLInitializationEvent event)
 	{
-		proxy.init(event);
+		// proxy.init(event);
 		
 		IceikaBlockHelper.init();
 		IceikaItemHelper.init();

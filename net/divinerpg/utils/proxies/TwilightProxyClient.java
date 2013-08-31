@@ -5,8 +5,8 @@ import net.divinerpg.utils.helpers.render.TwilightRenderHelper;
 public class TwilightProxyClient extends TwilightProxy{
 
     @Override
-    public void initEntityRenderers() {
-        super.initEntityRenderers();
+    public void initEntities() {
+        super.initEntities();
         TwilightRenderHelper.init();
     }
 }

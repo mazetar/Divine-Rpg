@@ -1,13 +1,11 @@
 package net.divinerpg.utils.helpers.recipe;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import net.divinerpg.DivineRPG;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.divinerpg.utils.helpers.item.TwilightItemHelper;
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.registry.GameRegistry;
 public class TwilightRecipeHelper {
 	public static void init() {
 		initBlocks();

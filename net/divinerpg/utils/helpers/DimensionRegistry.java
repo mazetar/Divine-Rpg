@@ -68,7 +68,8 @@ public class DimensionRegistry
         azuriteBiome = new BiomeGenAzurite(azuriteBiomeID);
         mythilBiome = new BiomeGenMythil(mythrilBiomeID);
         denseBiome = new BiomeGenDense(augiteBiomeID);
-        arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
+        
+        //arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
         //IceikaMountains = new BiomeGenIceikaMountians(iceikaBiomeID);
         //arksianeBiome = new BiomeGenArksiane(arksianeBiomeID);
         //heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);       
@@ -83,8 +84,9 @@ public class DimensionRegistry
         DimensionManager.registerDimension(MythrilID, MythrilID);
         DimensionManager.registerProviderType(AugiteID, WorldProviderDense.class, KeepLoadedAugite);
         DimensionManager.registerDimension(AugiteID, AugiteID);
-        DimensionManager.registerProviderType(ArcanaID, WorldProviderArcana.class, KeepLoadedArcana);
-        DimensionManager.registerDimension(ArcanaID, ArcanaID);
+        
+      //  DimensionManager.registerProviderType(ArcanaID, WorldProviderArcana.class, KeepLoadedArcana);
+   //     DimensionManager.registerDimension(ArcanaID, ArcanaID);
         //DimensionManager.registerProviderType(IceikaID, WorldProviderIceika.class, KeepLoadedIceika);
         //DimensionManager.registerDimension(IceikaID, IceikaID);
         //DimensionManager.registerProviderType(VetheaID, WorldProviderVethea.class, KeepLoadedVethea);

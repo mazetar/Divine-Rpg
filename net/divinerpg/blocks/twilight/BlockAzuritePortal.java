@@ -3,7 +3,6 @@ package net.divinerpg.blocks.twilight;
 import java.util.Random;
 
 import net.divinerpg.entities.particle.EntityAzuritePortalFX;
-import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.divinerpg.utils.helpers.teleporters.TeleporterAzurite;

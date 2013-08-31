@@ -359,6 +359,7 @@ public class ConfigHelper {
     public static int infernoBowID;
     public static int poisonBowID;
     public static int bluefirebowID;
+    public static int infernobowID;
     public static int seranadeDeathID;
     public static int sandSlashID;
     public static int donutID;
@@ -1222,16 +1223,16 @@ public class ConfigHelper {
     		cfg.load();
     		int id1 = 189;
         twilightStoneID = cfg.getTerrainBlock("Dimension Gen", "twilightstone", id1, "").getInt();
-        draviteGrassID = cfg.getTerrainBlock("Dimension Gen", "dravitegrass", id1++, "").getInt();
-        draviteDirtID = cfg.getTerrainBlock("Dimension Gen", "dravitedirt", id1++, "").getInt();
-        azuriteGrassID = cfg.getTerrainBlock("Dimension Gen", "azuritegrass", id1++, "").getInt();
-        azuriteDirtID = cfg.getTerrainBlock("Dimension Gen", "azuritedirt", id1++, "").getInt();
-        uviteGrassID = cfg.getTerrainBlock("Dimension Gen", "uvitegrass", id1++, "").getInt();
-        uviteDirtID = cfg.getTerrainBlock("Dimension Gen", "uvitedirt", id1++, "").getInt();
-        mythrilGrassID = cfg.getTerrainBlock("Dimension Gen", "mythrilgrass", id1++, "").getInt();
-        mythrilDirtID = cfg.getTerrainBlock("Dimension Gen", "mythrildirt", id1++, "").getInt();
-        augiteGrassID = cfg.getTerrainBlock("Dimension Gen", "augitegrass", id1++, "").getInt();
-        augiteDirtID = cfg.getTerrainBlock("Dimension Gen", "augitedirt", id1++, "").getInt();
+        draviteGrassID = cfg.getTerrainBlock("Dimension Gen", "dravitegrass", id1++, "").getInt(); // BIOMEGEN BLOCK
+        draviteDirtID = cfg.getTerrainBlock("Dimension Gen", "dravitedirt", id1++, "").getInt();  // BIOMEGEN BLOCK
+        azuriteGrassID = cfg.getTerrainBlock("Dimension Gen", "azuritegrass", id1++, "").getInt();  // BIOMEGEN BLOCK
+        azuriteDirtID = cfg.getTerrainBlock("Dimension Gen", "azuritedirt", id1++, "").getInt(); // BIOMEGEN BLOCK
+        uviteGrassID = cfg.getTerrainBlock("Dimension Gen", "uvitegrass", id1++, "").getInt(); // BIOMEGEN BLOCK
+        uviteDirtID = cfg.getTerrainBlock("Dimension Gen", "uvitedirt", id1++, "").getInt(); // BIOMEGEN BLOCK
+        mythrilGrassID = cfg.getTerrainBlock("Dimension Gen", "mythrilgrass", id1++, "").getInt(); // BIOMEGEN BLOCK
+        mythrilDirtID = cfg.getTerrainBlock("Dimension Gen", "mythrildirt", id1++, "").getInt(); // BIOMEGEN BLOCK
+        augiteGrassID = cfg.getTerrainBlock("Dimension Gen", "augitegrass", id1++, "").getInt(); // BIOMEGEN BLOCK
+        augiteDirtID = cfg.getTerrainBlock("Dimension Gen", "augitedirt", id1++, "").getInt(); // BIOMEGEN BLOCK
         iceikaDirtID = cfg.getTerrainBlock("Dimension Gen", "iceikadirt", id1++, "").getInt();
         iceikaGrassID = cfg.getTerrainBlock("Dimension Gen", "iceikagrass", id1++, "").getInt();
         bloodGemOreID = cfg.getTerrainBlock("Dimension Gen", "bloodgemore", id1++, "").getInt();
@@ -2327,6 +2328,7 @@ public class ConfigHelper {
         karosStaffID = cfg.getItem("karosStaff", id++).getInt();
         heliosisStaffID = cfg.getItem("heliosisStaff", id++).getInt();
         arksianeStaffID = cfg.getItem("arksianeStaff", id++).getInt();
+        infernobowID = cfg.getItem("infernoBow", id++).getInt();
 
     }
 }

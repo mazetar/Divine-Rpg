@@ -15,6 +15,7 @@ import net.divinerpg.utils.helpers.recipe.RecipeHelper;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
@@ -35,12 +36,15 @@ public class CoreProxy {
     }
 	
 	public void init(FMLInitializationEvent event) {
-		entityInit();
 		tickRegistry();
 		eventRegistry();
 		//recipeRegistry();
 		OverworldItemHelper.init();
 		NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new GuiHelper());
+	}
+	
+	public void postInit(FMLPostInitializationEvent event) {
+        entityInit();
 	}
 	
 	

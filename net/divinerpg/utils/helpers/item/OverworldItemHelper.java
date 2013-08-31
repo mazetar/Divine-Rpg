@@ -347,6 +347,7 @@ public class OverworldItemHelper
 		divineSword = new ItemDivineRPGSword(x.divineswordID, EnumHelper.addToolMaterial("divinesword", 0, -1, 0, 29, E), true);
 		moltenSword = new ItemMoltenSword(x.moltenSwordID, EnumHelper.addToolMaterial("moltensword", 0, 5000, 0, 10, E));
 		
+		infernoBow = new ItemInfernoBow(x.infernobowID);
 		bluefirebow = new ItemBlueBow(x.bluefirebowID);
 		shadowBow = new ItemShadowBow(x.shadowBowID);
 

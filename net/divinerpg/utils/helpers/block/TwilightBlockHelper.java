@@ -90,7 +90,7 @@ public class TwilightBlockHelper
 	public static Block draviteChest;
 	public static Block uviteRail;
 	
-	public static void initBlocks()
+	public static void init()
 	{
 		TwilightStone = new BlockTwilightStone(TwilightConfigHelper.TwilightStoneID).setTextureName("TwilightStone").setUnlocalizedName("TwilightStone").setCreativeTab(CreativeTabHelper.tabBlocks);
 		divineRock = new BlockDivineRPG(TwilightConfigHelper.divineRockID, 0, Material.rock).setTextureName("DivineRock").setUnlocalizedName("DivineRock").setCreativeTab(CreativeTabHelper.tabBlocks);

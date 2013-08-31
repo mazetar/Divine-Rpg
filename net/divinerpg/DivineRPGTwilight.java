@@ -2,10 +2,6 @@ package net.divinerpg;
 
 import net.divinerpg.commands.CommandDivineRPG;
 import net.divinerpg.lib.Reference;
-import net.divinerpg.utils.helpers.DimensionRegistry;
-import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
-import net.divinerpg.utils.helpers.config.TwilightConfigHelper;
-import net.divinerpg.utils.helpers.item.TwilightItemHelper;
 import net.divinerpg.utils.proxies.TwilightProxy;
 import net.minecraft.command.CommandHandler;
 import cpw.mods.fml.common.Mod;
@@ -20,7 +16,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 
 
 
-@Mod(modid = Reference.TWILIGHT_MOD_ID, version = Reference.MOD_VERSION, name = Reference.TWILIGHT_MOD_ID)
+@Mod(modid = Reference.TWILIGHT_MOD_ID, version = Reference.MOD_VERSION, name = Reference.TWILIGHT_MOD_ID, dependencies="required-after:" + Reference.MAIN_MOD_ID)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class DivineRPGTwilight
 {	
@@ -37,27 +33,21 @@ public class DivineRPGTwilight
 	{
 		instance = this;
 		
-		// proxy.preInit(event);
+		 proxy.preInit(event);
 		
-		TwilightConfigHelper.initConfig(event);
 	}
 	
 	@EventHandler
 	public void Init(FMLInitializationEvent event)
 	{
-		// proxy.init(event);
+		 proxy.init(event);
 		
-		TwilightBlockHelper.initBlocks();
-		
-		TwilightItemHelper.init();
-		
-		DimensionRegistry.InitDimensions();
 	}
 	
 	@EventHandler
 	public void PostInit(FMLPostInitializationEvent event)
 	{
-		
+		proxy.postInit(event);
 	}
 	
 	@EventHandler

@@ -7,12 +7,12 @@ import net.minecraft.util.Icon;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDivineRPGGrass extends BlockDivineRPG {
+public class BlockDivineGrass extends BlockDivine {
 
     public Icon topIcon;
     public Icon bottomIcon;
     
-    public BlockDivineRPGGrass(int id) {
+    public BlockDivineGrass(int id) {
         super(id, Material.grass);
     }
     

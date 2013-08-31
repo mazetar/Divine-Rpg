@@ -2,8 +2,8 @@ package net.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
-import net.divinerpg.blocks.BlockDivineRPGGrass;
+import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.blocks.BlockDivineGrass;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.block.OverworldBlockHelper;
@@ -17,7 +17,7 @@ import net.minecraftforge.common.IPlantable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockArcaniteGrass extends BlockDivineRPGGrass
+public class BlockArcaniteGrass extends BlockDivineGrass
 {
     public Icon topIcon;
     public Icon bottomIcon;

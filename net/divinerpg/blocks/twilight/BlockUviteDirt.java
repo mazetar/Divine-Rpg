@@ -1,10 +1,10 @@
 package net.divinerpg.blocks.twilight;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.minecraft.block.material.Material;
 
-public class BlockUviteDirt extends BlockDivineRPG
+public class BlockUviteDirt extends BlockDivine
 {
     public BlockUviteDirt(int var1)
     {

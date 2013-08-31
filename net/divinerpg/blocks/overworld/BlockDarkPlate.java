@@ -3,7 +3,7 @@ package net.divinerpg.blocks.overworld;
 import java.util.Iterator;
 import java.util.List;
 
-import net.divinerpg.blocks.BlockDivineRPGPressurePlate;
+import net.divinerpg.blocks.BlockDivinePressurePlate;
 import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -11,7 +11,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class BlockDarkPlate extends BlockDivineRPGPressurePlate
+public class BlockDarkPlate extends BlockDivinePressurePlate
 {
     /** The mob type that can trigger this pressure plate. */
     private EnumMobType triggerMobType;

@@ -1,10 +1,10 @@
 package net.divinerpg.blocks.overworld;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.Icon;
 
-public class BlockAccelleron extends BlockDivineRPG
+public class BlockAccelleron extends BlockDivine
 {
     private Icon[] texture;
 

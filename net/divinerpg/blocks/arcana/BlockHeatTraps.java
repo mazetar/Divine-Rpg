@@ -2,7 +2,7 @@ package net.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockHeatTraps extends BlockDivineRPG
+public class BlockHeatTraps extends BlockDivine
 {
     public BlockHeatTraps(int var1, int var2)
     {

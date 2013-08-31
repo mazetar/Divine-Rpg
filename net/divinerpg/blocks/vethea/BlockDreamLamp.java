@@ -3,7 +3,7 @@ package net.divinerpg.blocks.vethea;
 import java.util.Random;
 
 import net.divinerpg.DivineRPGTwilight;
-import net.divinerpg.blocks.BlockDivineRPGContainer;
+import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.vethea.tileentities.TileEntityDreamLamp;
 import net.divinerpg.client.gui.GuiDreamLamp;
 import net.divinerpg.utils.helpers.block.VetheaBlockHelper;
@@ -12,7 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockDreamLamp extends BlockDivineRPGContainer
+public class BlockDreamLamp extends BlockDivineContainer
 {
 	private GuiDreamLamp gui;
 	private TileEntityDreamLamp te;

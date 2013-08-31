@@ -2,7 +2,7 @@ package net.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.block.material.Material;
@@ -13,7 +13,7 @@ import net.minecraftforge.common.IPlantable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockPinfly extends BlockDivineRPG implements IPlantable
+public class BlockPinfly extends BlockDivine implements IPlantable
 {
 	public BlockPinfly(int par1, int par2)
 	{

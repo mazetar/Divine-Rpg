@@ -1,6 +1,6 @@
 package net.divinerpg.blocks.overworld;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.ItemStack;
@@ -10,7 +10,7 @@ import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockColoredBricks extends BlockDivineRPG
+public class BlockColoredBricks extends BlockDivine
 {
     public static final String[] blockStepTypes = new String[0];
     private boolean blockType;

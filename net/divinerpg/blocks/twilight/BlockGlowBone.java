@@ -2,14 +2,14 @@ package net.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.divinerpg.utils.helpers.item.TwilightItemHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
-public class BlockGlowBone extends BlockDivineRPG
+public class BlockGlowBone extends BlockDivine
 {
     public BlockGlowBone(int var1, int par2)
     {

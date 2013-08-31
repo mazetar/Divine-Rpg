@@ -2,12 +2,12 @@ package net.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 
-public class BlockRupeeOre extends BlockDivineRPG
+public class BlockRupeeOre extends BlockDivine
 {
     public BlockRupeeOre(int var1, int var2)
     {

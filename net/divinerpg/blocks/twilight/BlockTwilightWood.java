@@ -1,9 +1,9 @@
 package net.divinerpg.blocks.twilight;
 
-import net.divinerpg.blocks.BlockDivineRPGLog;
+import net.divinerpg.blocks.BlockDivineLog;
 import net.minecraft.world.World;
 
-public class BlockTwilightWood extends BlockDivineRPGLog
+public class BlockTwilightWood extends BlockDivineLog
 {
     public BlockTwilightWood(int var1)
     {

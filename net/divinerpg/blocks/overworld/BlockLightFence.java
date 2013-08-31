@@ -2,14 +2,14 @@ package net.divinerpg.blocks.overworld;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGFence;
+import net.divinerpg.blocks.BlockDivineFence;
 import net.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockLightFence extends BlockDivineRPGFence
+public class BlockLightFence extends BlockDivineFence
 {
     private final boolean powered;
 

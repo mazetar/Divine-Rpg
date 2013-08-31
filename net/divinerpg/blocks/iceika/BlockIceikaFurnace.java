@@ -3,7 +3,7 @@ package net.divinerpg.blocks.iceika;
 import java.util.Random;
 
 import net.divinerpg.DivineRPGTwilight;
-import net.divinerpg.blocks.BlockDivineRPGContainer;
+import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.iceika.tileentities.TileEntityCoalStoneFurnace;
 import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import net.minecraft.block.Block;
@@ -17,7 +17,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BlockIceikaFurnace extends BlockDivineRPGContainer {
+public class BlockIceikaFurnace extends BlockDivineContainer {
 
     private Random furnaceRand = new Random();
     private final boolean isActive;

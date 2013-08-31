@@ -3,7 +3,7 @@ package net.divinerpg.blocks.overworld;
 import java.util.Iterator;
 import java.util.List;
 
-import net.divinerpg.blocks.BlockDivineRPGPressurePlate;
+import net.divinerpg.blocks.BlockDivinePressurePlate;
 import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -12,7 +12,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class BlockElevantium extends BlockDivineRPGPressurePlate
+public class BlockElevantium extends BlockDivinePressurePlate
 {
     private EnumMobType triggerMobType;
     

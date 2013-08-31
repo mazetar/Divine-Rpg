@@ -3,7 +3,7 @@ package net.divinerpg.blocks.overworld;
 import java.util.Random;
 
 import net.divinerpg.DivineRPGTwilight;
-import net.divinerpg.blocks.BlockDivineRPGContainer;
+import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.overworld.tileentities.TileEntitySuperEnchantmentTable;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockSuperEnchantmentTable extends BlockDivineRPGContainer
+public class BlockSuperEnchantmentTable extends BlockDivineContainer
 {
     public BlockSuperEnchantmentTable(int par1)
     {

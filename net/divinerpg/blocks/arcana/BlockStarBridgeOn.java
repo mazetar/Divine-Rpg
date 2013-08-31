@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockStarBridgeOn extends BlockDivineRPG
+public class BlockStarBridgeOn extends BlockDivine
 {
     /** Whether this lamp block is the powered version. */
     private boolean powered;

@@ -1,6 +1,6 @@
 package net.divinerpg.utils.helpers.block;
 
-import net.divinerpg.blocks.BlockDivineRPGSpawner;
+import net.divinerpg.blocks.BlockDivineSpawner;
 import net.divinerpg.blocks.arcana.BlockAquamarine;
 import net.divinerpg.blocks.arcana.BlockArcaniteGrass;
 import net.divinerpg.blocks.arcana.BlockArcaniteRails;
@@ -194,12 +194,12 @@ public class ArcanaBlockHelper
 		stainedGlass6 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass6ID).setUnlocalizedName("StainedGlass6");
 		stainedGlass7 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass7ID).setUnlocalizedName("StainedGlass7");
 		
-		spawnerRoamer = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawnerID, "Roamer").setUnlocalizedName("ArcanaSpawner").func_111022_d("ArcanaSpawner");
-		spawnerDeathcryx = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawner1ID, "Deathcryx").setUnlocalizedName("ArcanaSpawner1").func_111022_d("ArcanaSpawner");;
-		spawnerDeathhound = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawner2ID, "Deathound").setUnlocalizedName("ArcanaSpawner2").func_111022_d("ArcanaSpawner");;
-		spawnerRazorback = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawner3ID, "Razorback").setUnlocalizedName("ArcanaSpawner3").func_111022_d("ArcanaSpawner");;
-		spawnerLivingstatue = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawner4ID, "Living Statue").setUnlocalizedName("ArcanaSpawner4").func_111022_d("ArcanaSpawner");;
-		spawnerDungeonPrisoner = new BlockDivineRPGSpawner(ArcanaConfigHelper.arcanaSpawner5ID, "Dungeon Prisoner").setUnlocalizedName("ArcanaSpawner5").func_111022_d("ArcanaSpawner");;
+		spawnerRoamer = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawnerID, "Roamer").setUnlocalizedName("ArcanaSpawner").func_111022_d("ArcanaSpawner");
+		spawnerDeathcryx = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawner1ID, "Deathcryx").setUnlocalizedName("ArcanaSpawner1").func_111022_d("ArcanaSpawner");;
+		spawnerDeathhound = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawner2ID, "Deathound").setUnlocalizedName("ArcanaSpawner2").func_111022_d("ArcanaSpawner");;
+		spawnerRazorback = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawner3ID, "Razorback").setUnlocalizedName("ArcanaSpawner3").func_111022_d("ArcanaSpawner");;
+		spawnerLivingstatue = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawner4ID, "Living Statue").setUnlocalizedName("ArcanaSpawner4").func_111022_d("ArcanaSpawner");;
+		spawnerDungeonPrisoner = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawner5ID, "Dungeon Prisoner").setUnlocalizedName("ArcanaSpawner5").func_111022_d("ArcanaSpawner");;
 	
 		//condenser = new BlockCondenser(0, 0, null);
 		

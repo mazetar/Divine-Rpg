@@ -3,7 +3,7 @@ package net.divinerpg.blocks.arcana;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.block.material.Material;
@@ -16,7 +16,7 @@ import net.minecraftforge.common.IPlantable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockHitchak extends BlockDivineRPG implements IPlantable
+public class BlockHitchak extends BlockDivine implements IPlantable
 {
     public BlockHitchak(int par1)
     {

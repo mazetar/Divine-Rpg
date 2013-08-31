@@ -3,7 +3,7 @@ package net.divinerpg.blocks.overworld;
 import java.util.List;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockSteel extends BlockDivineRPG
+public class BlockSteel extends BlockDivine
 {
     public static final String[] blockStepTypes = new String[0];
     private boolean blockType;

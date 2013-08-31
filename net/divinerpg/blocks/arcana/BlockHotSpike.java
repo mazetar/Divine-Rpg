@@ -1,6 +1,6 @@
 package net.divinerpg.blocks.arcana;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.AxisAlignedBB;
@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockHotSpike extends BlockDivineRPG
+public class BlockHotSpike extends BlockDivine
 {
     public BlockHotSpike(int var1)
     {

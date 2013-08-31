@@ -3,7 +3,7 @@ package net.divinerpg.blocks.arcana;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGFlower;
+import net.divinerpg.blocks.BlockDivineFlower;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.creativetab.CreativeTabs;
@@ -13,7 +13,7 @@ import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockVeilo extends BlockDivineRPGFlower
+public class BlockVeilo extends BlockDivineFlower
 {
     public BlockVeilo(int par1, int par2)
     {

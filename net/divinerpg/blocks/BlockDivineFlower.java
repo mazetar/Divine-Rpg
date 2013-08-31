@@ -7,9 +7,9 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDivineRPGFlower extends BlockFlower
+public class BlockDivineFlower extends BlockFlower
 {
-	public BlockDivineRPGFlower(int id, int sprite) {
+	public BlockDivineFlower(int id, int sprite) {
 		super(id, Material.plants);
 	}
 	   

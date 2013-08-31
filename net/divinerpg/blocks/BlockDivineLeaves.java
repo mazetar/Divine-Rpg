@@ -19,7 +19,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 /*
  * BlockDreamwoodLeaves used as template for this class, FYI in case of error
  */
-public class BlockDivineRPGLeaves extends BlockLeavesBase implements IShearable{
+public class BlockDivineLeaves extends BlockLeavesBase implements IShearable{
 	protected int[] adjacentTreeBlocks;
 	protected boolean canAppleDrop = false;
 
@@ -27,7 +27,7 @@ public class BlockDivineRPGLeaves extends BlockLeavesBase implements IShearable{
 	 * when overridden, if you want it to tick randomly, you must set it, it has not been done
 	 * set canAppleDrop to true if you wish, there is no method for it yet, just do 'this.can...'
 	 */
-	public BlockDivineRPGLeaves(int par1) {
+	public BlockDivineLeaves(int par1) {
 
 		super(par1, Material.leaves, false);
 		
@@ -39,7 +39,7 @@ public class BlockDivineRPGLeaves extends BlockLeavesBase implements IShearable{
 	    this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E());
 	}
 	
-	public BlockDivineRPGLeaves setTextureName(String name){
+	public BlockDivineLeaves setTextureName(String name){
 		func_111022_d(name);
 		return this;
 	}

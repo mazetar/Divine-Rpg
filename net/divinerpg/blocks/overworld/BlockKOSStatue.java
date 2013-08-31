@@ -1,12 +1,12 @@
 package net.divinerpg.blocks.overworld;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class BlockKOSStatue extends BlockDivineRPG
+public class BlockKOSStatue extends BlockDivine
 {
     public BlockKOSStatue(int par1)
     {

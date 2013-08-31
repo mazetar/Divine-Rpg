@@ -2,12 +2,12 @@ package net.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGGrass;
+import net.divinerpg.blocks.BlockDivineGrass;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 
-public class BlockMythilGrass extends BlockDivineRPGGrass
+public class BlockMythilGrass extends BlockDivineGrass
 {
     public BlockMythilGrass(int var1)
     {

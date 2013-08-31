@@ -1,9 +1,9 @@
 package net.divinerpg.blocks.overworld;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 
-public class BlockLightStone1 extends BlockDivineRPG
+public class BlockLightStone1 extends BlockDivine
 {
     public BlockLightStone1(int var1, int var2)
     {

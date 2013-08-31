@@ -1,7 +1,7 @@
 package net.divinerpg.blocks.overworld;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGContainer;
+import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.overworld.tileentities.TileEntityAyeracoBeamYellow;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockAyeracoBeamYellow extends BlockDivineRPGContainer
+public class BlockAyeracoBeamYellow extends BlockDivineContainer
 {
 	
     public BlockAyeracoBeamYellow(int par1)

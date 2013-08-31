@@ -2,11 +2,11 @@ package net.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 
-public class BlockRainbowWool extends BlockDivineRPG
+public class BlockRainbowWool extends BlockDivine
 {
     public BlockRainbowWool(int var1, int var2)
     {

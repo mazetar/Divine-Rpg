@@ -3,13 +3,13 @@ package net.divinerpg.blocks.overworld;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGFluid;
+import net.divinerpg.blocks.BlockDivineFluid;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class BlockStationaryTar extends BlockDivineRPGFluid
+public class BlockStationaryTar extends BlockDivineFluid
 {
     public BlockStationaryTar(int par1, int par2, Material par3)
     {

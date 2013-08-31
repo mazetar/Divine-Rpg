@@ -11,11 +11,11 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDivineRPGSpawner extends BlockMobSpawner {
+public class BlockDivineSpawner extends BlockMobSpawner {
 
 	String mobName;
 	
-	public BlockDivineRPGSpawner(int id, String mobName) {
+	public BlockDivineSpawner(int id, String mobName) {
 		super(id);
 		this.mobName = mobName;
 	}
@@ -34,7 +34,7 @@ public class BlockDivineRPGSpawner extends BlockMobSpawner {
 	        this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E());
 	    }
 	    
-	    public BlockDivineRPGSpawner setTextureName(String name) {
+	    public BlockDivineSpawner setTextureName(String name) {
 	        func_111022_d(name);
 	        return this;
 	    }

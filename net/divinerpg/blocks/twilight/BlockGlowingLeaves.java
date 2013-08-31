@@ -3,7 +3,7 @@ package net.divinerpg.blocks.twilight;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGLeaves;
+import net.divinerpg.blocks.BlockDivineLeaves;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -12,7 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class BlockGlowingLeaves extends BlockDivineRPGLeaves
+public class BlockGlowingLeaves extends BlockDivineLeaves
 {
     int[] adjacentTreeBlocks;
 

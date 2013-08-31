@@ -2,11 +2,11 @@ package net.divinerpg.blocks.vethea;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGLog;
+import net.divinerpg.blocks.BlockDivineLog;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 
-public class BlockDreamwood extends BlockDivineRPGLog
+public class BlockDreamwood extends BlockDivineLog
 {
 
 	public BlockDreamwood(int par1)

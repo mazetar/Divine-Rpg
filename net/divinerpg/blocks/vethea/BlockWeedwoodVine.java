@@ -3,7 +3,7 @@ package net.divinerpg.blocks.vethea;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;
@@ -15,7 +15,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
 
-public class BlockWeedwoodVine extends BlockDivineRPG implements IShearable
+public class BlockWeedwoodVine extends BlockDivine implements IShearable
 {
 	public BlockWeedwoodVine(int par1, int par2)
 	{

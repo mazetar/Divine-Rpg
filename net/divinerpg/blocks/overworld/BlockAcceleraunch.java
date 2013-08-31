@@ -1,8 +1,8 @@
 package net.divinerpg.blocks.overworld;
 
-import net.divinerpg.blocks.BlockDivineRPGLadder;
+import net.divinerpg.blocks.BlockDivineLadder;
 
-public class BlockAcceleraunch extends BlockDivineRPGLadder
+public class BlockAcceleraunch extends BlockDivineLadder
 {
     public BlockAcceleraunch(int var1)
     {

@@ -3,7 +3,7 @@ package net.divinerpg.blocks.iceika;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGContainer;
+import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.iceika.tileentities.TileEntityIceikaChest;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.item.IceikaItemHelper;
@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockIceikaChest extends BlockDivineRPGContainer
+public class BlockIceikaChest extends BlockDivineContainer
 {
 	private Random random = new Random();
     private Icon frontIcon;

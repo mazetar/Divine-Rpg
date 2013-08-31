@@ -12,11 +12,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Logs from the mod should extend this class.
  */
-public abstract class BlockDivineRPGLog extends BlockDivineRPG {
+public abstract class BlockDivineLog extends BlockDivine {
 	
     Icon insideIcon;
     
-    public BlockDivineRPGLog(int var1) {
+    public BlockDivineLog(int var1) {
         super(var1, 0, Material.wood);
         this.setCreativeTab(CreativeTabHelper.tabBlocks);
     }

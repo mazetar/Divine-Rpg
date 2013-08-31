@@ -3,7 +3,7 @@ package net.divinerpg.blocks.arcana;
 import java.util.Random;
 
 import net.divinerpg.DivineRPGTwilight;
-import net.divinerpg.blocks.BlockDivineRPGContainer;
+import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.material.Material;
@@ -14,7 +14,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockExtractor extends BlockDivineRPGContainer
+public class BlockExtractor extends BlockDivineContainer
 {	
     /**
      * Is the random generator used by furnace to drop the inventory contents in random directions.

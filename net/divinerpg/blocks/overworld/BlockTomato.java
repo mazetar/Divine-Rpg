@@ -3,7 +3,7 @@ package net.divinerpg.blocks.overworld;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGFlower;
+import net.divinerpg.blocks.BlockDivineFlower;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,7 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class BlockTomato extends BlockDivineRPGFlower
+public class BlockTomato extends BlockDivineFlower
 {
     public BlockTomato(int var1, int var2)
     {

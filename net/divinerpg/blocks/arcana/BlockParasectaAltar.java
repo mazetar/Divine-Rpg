@@ -1,12 +1,12 @@
 package net.divinerpg.blocks.arcana;
 
-import net.divinerpg.blocks.BlockDivineRPGContainer;
+import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityParasectaAltar;
 import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public class BlockParasectaAltar extends BlockDivineRPGContainer
+public class BlockParasectaAltar extends BlockDivineContainer
 {
     public BlockParasectaAltar(int id)
     {

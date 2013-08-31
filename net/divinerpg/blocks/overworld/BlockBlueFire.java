@@ -2,7 +2,7 @@ package net.divinerpg.blocks.overworld;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import net.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockBlueFire extends BlockDivineRPG
+public class BlockBlueFire extends BlockDivine
 {
     public BlockBlueFire(int var1, int var2)
     {

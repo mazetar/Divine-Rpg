@@ -2,12 +2,12 @@ package net.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
-public class BlockOfLight extends BlockDivineRPG
+public class BlockOfLight extends BlockDivine
 {
     public BlockOfLight(int par1)
     {

@@ -5,14 +5,14 @@ import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
-public abstract class BlockDivineRPGContainer extends BlockDivineRPG implements ITileEntityProvider {
+public abstract class BlockDivineContainer extends BlockDivine implements ITileEntityProvider {
 
-	public BlockDivineRPGContainer(int id, int sprite, Material mat) {
+	public BlockDivineContainer(int id, int sprite, Material mat) {
 		super(id, sprite, mat);
         isBlockContainer = true;
 	}
 	
-	public BlockDivineRPGContainer(int id, Material mat)
+	public BlockDivineContainer(int id, Material mat)
 	{
 		super(id, mat);
 		isBlockContainer = true;

@@ -3,14 +3,14 @@ package net.divinerpg.blocks.overworld;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
-public class BlockDarkBridge extends BlockDivineRPG
+public class BlockDarkBridge extends BlockDivine
 {
     private final boolean powered;
 

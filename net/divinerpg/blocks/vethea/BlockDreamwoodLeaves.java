@@ -3,7 +3,7 @@ package net.divinerpg.blocks.vethea;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGLeaves;
+import net.divinerpg.blocks.BlockDivineLeaves;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,7 +14,7 @@ import net.minecraftforge.common.IShearable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDreamwoodLeaves extends BlockDivineRPGLeaves
+public class BlockDreamwoodLeaves extends BlockDivineLeaves
 {
     int[] adjacentTreeBlocks;
 

@@ -2,11 +2,11 @@ package net.divinerpg.blocks.arcana;
 
 import java.util.ArrayList;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;
 
-public class BlockEucalyptus extends BlockDivineRPG
+public class BlockEucalyptus extends BlockDivine
 {
     public BlockEucalyptus(int var1, int var2)
     {

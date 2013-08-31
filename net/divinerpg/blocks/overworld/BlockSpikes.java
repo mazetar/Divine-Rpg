@@ -2,7 +2,7 @@ package net.divinerpg.blocks.overworld;
 
 import java.util.ArrayList;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockSpikes extends BlockDivineRPG
+public class BlockSpikes extends BlockDivine
 {
     public BlockSpikes(int var1, int var2)
     {

@@ -1,12 +1,12 @@
 package net.divinerpg.blocks.overworld;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class BlockParasectaStatue extends BlockDivineRPG
+public class BlockParasectaStatue extends BlockDivine
 {
     public BlockParasectaStatue(int par1)
     {

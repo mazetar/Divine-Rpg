@@ -2,13 +2,13 @@ package net.divinerpg.blocks.overworld;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockColoredGlass extends BlockDivineRPG
+public class BlockColoredGlass extends BlockDivine
 {
     public BlockColoredGlass(int var1, Material var3, int var4)
     {

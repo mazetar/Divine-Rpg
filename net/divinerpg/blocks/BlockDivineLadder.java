@@ -1,32 +1,35 @@
 package net.divinerpg.blocks;
 
-import net.divinerpg.api.IBlockDivineRPG;
 import net.divinerpg.lib.Reference;
-import net.minecraft.block.BlockFence;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.BlockLadder;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDivineRPGFence extends BlockFence implements IBlockDivineRPG {
+public class BlockDivineLadder extends BlockLadder
+{
 
-	public BlockDivineRPGFence(int id, int sprite, Material mat, String par4) {
-		super(id, par4, mat);
-	}
-	
-	public BlockDivineRPGFence(int id, Material mat, String par4)
+	public BlockDivineLadder(int id)
 	{
-		this(id, 0, mat, par4);
+		super(id);
 	}
-	
+    
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister par1IconRegister) {
         this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E()); 
     }
+
     
     public void setTextureName(String name) {
         func_111022_d(name);
     }
-	
+    
+    @Override
+    public boolean isLadder(World world, int x, int y, int z,
+            EntityLivingBase entity) {
+        return true;
+    }
 }

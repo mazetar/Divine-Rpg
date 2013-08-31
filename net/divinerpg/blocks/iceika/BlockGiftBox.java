@@ -2,7 +2,7 @@ package net.divinerpg.blocks.iceika;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGContainer;
+import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.core.tileentities.TileSingularChest;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockGiftBox extends BlockDivineRPGContainer {
+public class BlockGiftBox extends BlockDivineContainer {
 
 	public BlockGiftBox(int var1) {
 		super(var1, 198, Material.wood);

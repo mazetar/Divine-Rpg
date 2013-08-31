@@ -1,9 +1,9 @@
 package net.divinerpg.blocks.arcana;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.minecraft.block.material.Material;
 
-public class BlockEucalyptusPlanks extends BlockDivineRPG
+public class BlockEucalyptusPlanks extends BlockDivine
 {
     public BlockEucalyptusPlanks(int var1, int var2)
     {

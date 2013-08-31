@@ -2,7 +2,7 @@ package net.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGLeaves;
+import net.divinerpg.blocks.BlockDivineLeaves;
 import net.divinerpg.entities.particle.EntityDravitePortalFX;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;

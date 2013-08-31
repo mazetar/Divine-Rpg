@@ -30,7 +30,7 @@ import cpw.mods.fml.relauncher.SideOnly;
  * @author Mazetar
  *
  */
-public class BlockDivineRPGPortal extends BlockBreakable {
+public class BlockDivinePortal extends BlockBreakable {
    
 
     private int firetick;
@@ -43,7 +43,7 @@ public class BlockDivineRPGPortal extends BlockBreakable {
     EntityFXPortalBase portalEntityFX;
     
     
-    public BlockDivineRPGPortal(int id) {
+    public BlockDivinePortal(int id) {
         super(id, "notUsed", Material.portal, false);
     }
 
@@ -58,7 +58,7 @@ public class BlockDivineRPGPortal extends BlockBreakable {
      * @param fxEntity - The particles from the portal.
      * @return 
      */
-    public BlockDivineRPGPortal setPortalVariables (Block frame, Block ignitionBlock, int dimID, String sound, EntityFXPortalBase fxEntity) {
+    public BlockDivinePortal setPortalVariables (Block frame, Block ignitionBlock, int dimID, String sound, EntityFXPortalBase fxEntity) {
         this.frameBlock = frame;
         this.ingitionBlock = ignitionBlock;
         this.dimensionID = dimID;
@@ -288,7 +288,7 @@ public class BlockDivineRPGPortal extends BlockBreakable {
         this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E());
     }
     
-    public BlockDivineRPGPortal setTextureName(String name) {
+    public BlockDivinePortal setTextureName(String name) {
         func_111022_d(name);
         return this;
     }

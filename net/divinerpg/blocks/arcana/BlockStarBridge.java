@@ -2,13 +2,13 @@ package net.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 
-public class BlockStarBridge extends BlockDivineRPG
+public class BlockStarBridge extends BlockDivine
 {
     /** Whether this lamp block is the powered version. */
     private final boolean powered;

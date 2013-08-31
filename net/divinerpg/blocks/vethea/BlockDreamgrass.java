@@ -2,7 +2,7 @@ package net.divinerpg.blocks.vethea;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineRPGGrass;
+import net.divinerpg.blocks.BlockDivineGrass;
 import net.divinerpg.utils.helpers.block.VetheaBlockHelper;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDreamgrass extends BlockDivineRPGGrass
+public class BlockDreamgrass extends BlockDivineGrass
 {
     private Icon[] texture;
 

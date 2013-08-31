@@ -1,7 +1,7 @@
 package net.divinerpg.blocks.arcana;
 
 import net.divinerpg.DivineRPG;
-import net.divinerpg.blocks.BlockDivineRPGContainer;
+import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityCondenser;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,7 +9,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 
-public class BlockCondenser extends BlockDivineRPGContainer
+public class BlockCondenser extends BlockDivineContainer
 {
 
 	private Icon[] texture;

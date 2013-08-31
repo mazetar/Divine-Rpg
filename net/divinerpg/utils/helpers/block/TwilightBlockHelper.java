@@ -1,9 +1,9 @@
 package net.divinerpg.utils.helpers.block;
 
 import net.divinerpg.blocks.BlockDivineRPG;
+import net.divinerpg.blocks.BlockDivineRPGPortal;
 import net.divinerpg.blocks.twilight.BlockAugiteDirt;
 import net.divinerpg.blocks.twilight.BlockAugiteGrass;
-import net.divinerpg.blocks.twilight.BlockAugitePortal;
 import net.divinerpg.blocks.twilight.BlockAzuriteDirt;
 import net.divinerpg.blocks.twilight.BlockAzuriteGrass;
 import net.divinerpg.blocks.twilight.BlockAzuritePortal;
@@ -20,6 +20,8 @@ import net.divinerpg.blocks.twilight.BlockTwilightWood;
 import net.divinerpg.blocks.twilight.BlockUviteDirt;
 import net.divinerpg.blocks.twilight.BlockUviteGrass;
 import net.divinerpg.blocks.twilight.BlockUvitePortal;
+import net.divinerpg.entities.particle.EntityAugitePortalFX;
+import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import net.divinerpg.utils.helpers.gui.CreativeTabHelper;
 import net.minecraft.block.Block;
@@ -73,7 +75,7 @@ public class TwilightBlockHelper
 	public static Block AugiteLeaves;
 	public static Block AugiteOre;
 	public static Block AugiteBlock;
-	public static BlockAugitePortal AugitePortal;
+	public static BlockDivineRPGPortal AugitePortal;
 	
 	public static Block superEnchantMentTable;
 	public static Block pinkGlowBoneTreeBase;
@@ -130,7 +132,9 @@ public class TwilightBlockHelper
 		AugiteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.AugiteLeavesID).func_111022_d("AugiteLeaves").setUnlocalizedName("AugiteLeaves");
 		AugiteOre = new BlockTwilightOre(TwilightConfigHelper.AugiteOreID).func_111022_d("AugiteOre").setUnlocalizedName("AugiteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
 		AugiteBlock = new BlockDivineRPG(TwilightConfigHelper.AugiteBlockID, Material.rock).func_111022_d("AugiteBlock").setUnlocalizedName("AugiteBlock");
-		AugitePortal = (BlockAugitePortal) new BlockAugitePortal(TwilightConfigHelper.AugitePortalID).func_111022_d("AugitePortal").setUnlocalizedName("AugitePortal").setCreativeTab(CreativeTabHelper.tabBlocks);
+		AugitePortal = ((BlockDivineRPGPortal) new BlockDivineRPGPortal(TwilightConfigHelper.AugitePortalID).func_111022_d("AugitePortal").setUnlocalizedName("AugitePortal").setCreativeTab(CreativeTabHelper.tabBlocks))
+		        .setPortalVariables(MythrilBlock, blueFire, DimensionRegistry.AugiteID, "xolovon.AugitePortal",
+		                new EntityAugitePortalFX(null, 1, 2, 3, 4, 5, 6));
 		
 		InitGameRegistryBlocks();
 	}

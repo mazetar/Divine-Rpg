@@ -1,13 +1,12 @@
 package net.divinerpg.entities.particle;
 
-import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class EntityMythrilPortalFX extends EntityFX
+public class EntityMythrilPortalFX extends EntityFXPortalBase
 {
     private float portalParticleScale;
     private double portalPosX;
@@ -28,6 +27,11 @@ public class EntityMythrilPortalFX extends EntityFX
         this.particleMaxAge = (int)(Math.random() * 10.0D) + 40;
         this.noClip = true;
         this.setParticleTextureIndex((int)(Math.random() * 8.0D));
+    }
+    @Override
+    public EntityFXPortalBase getNewFX(World w, double var2, double var3,
+            double var4, double var5, double var6, double var7) {
+        return new EntityMythrilPortalFX(w, var2, var3, var4, var5, var6, var7);
     }
 
     public void renderParticle(Tessellator var1, float var2, float var3, float var4, float var5, float var6, float var7)

@@ -24,44 +24,44 @@ public class ItemTwilightClock extends Item
         this.maxStackSize = 1;
     }
     
-    public boolean onItemUse(ItemStack var1, EntityPlayer var2, World var3, int var4, int var5, int var6, int var7, float var8, float var9, float var10)
+    public boolean onItemUse(ItemStack item, EntityPlayer player, World world, int x, int y, int z, int var7, float var8, float var9, float var10)
     {
         if (var7 != 1)
         {
             return false;
         }
-        else if (var2.canPlayerEdit(var4, var5, var6, var7, var1) && var2.canPlayerEdit(var4, var5 + 1, var6, var7, var1))
+        else if (player.canPlayerEdit(x, y, z, var7, item) && player.canPlayerEdit(x, y + 1, z, var7, item))
         {
-            int var11 = var3.getBlockId(var4, var5, var6);
+            int var11 = world.getBlockId(x, y, z);
 
-            if (var11 == TwilightBlockHelper.divineRock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            if (var11 == TwilightBlockHelper.divineRock.blockID && world.isAirBlock(x, y + 1, z))
             {
-                var3.setBlock(var4, var5 + 1, var6, TwilightBlockHelper.DravitePortal.blockID);
+                TwilightBlockHelper.DravitePortal.tryToCreatePortal(world, x, y+1, z);
                 return true;
             }
-            else if (var11 == TwilightBlockHelper.DraviteBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == TwilightBlockHelper.DraviteBlock.blockID && world.isAirBlock(x, y + 1, z))
             {
-                var3.setBlock(var4, var5 + 1, var6, TwilightBlockHelper.AugitePortal.blockID);
+                TwilightBlockHelper.AzuritePortal.tryToCreatePortal(world, x, y+1, z);
                 return true;
             }
-            else if (var11 == TwilightBlockHelper.AzuriteBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == TwilightBlockHelper.AzuriteBlock.blockID && world.isAirBlock(x, y + 1, z))
             {
-                var3.setBlock(var4, var5 + 1, var6, TwilightBlockHelper.UvitePortal.blockID);
+                TwilightBlockHelper.UvitePortal.tryToCreatePortal(world, x, y+1, z);
                 return true;
             }
-            else if (var11 == TwilightBlockHelper.UviteBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == TwilightBlockHelper.UviteBlock.blockID && world.isAirBlock(x, y + 1, z))
             {
-                var3.setBlock(var4, var5 + 1, var6, TwilightBlockHelper.MythrilPortal.blockID);
+                TwilightBlockHelper.MythrilPortal.tryToCreatePortal(world, x, y+1, z);
                 return true;
             }
-            else if (var11 == TwilightBlockHelper.MythrilBlock.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == TwilightBlockHelper.MythrilBlock.blockID && world.isAirBlock(x, y + 1, z))
             {
-                var3.setBlock(var4, var5 + 1, var6, TwilightBlockHelper.AugitePortal.blockID);
+                TwilightBlockHelper.AugitePortal.tryToCreatePortal(world, x, y+1, z);
                 return true;
             }
-            else if (var11 == Block.blockSnow.blockID && var3.isAirBlock(var4, var5 + 1, var6))
+            else if (var11 == Block.blockSnow.blockID && world.isAirBlock(x, y + 1, z))
             {
-                var3.setBlock(var4, var5 + 1, var6, IceikaBlockHelper.iceikaPortal.blockID);
+                world.setBlock(x, y, z, IceikaBlockHelper.iceikaPortal.blockID);
                 return true;
             }
             else

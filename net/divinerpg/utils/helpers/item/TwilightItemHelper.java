@@ -1,10 +1,10 @@
 package net.divinerpg.utils.helpers.item;
 
 import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.overworld.ItemTwilightClock;
 import net.divinerpg.items.twilight.ItemBlizDravite;
 import net.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import net.divinerpg.utils.helpers.gui.CreativeTabHelper;
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -224,7 +224,7 @@ public class TwilightItemHelper
 		AugiteSoul = new ItemDivineRPG(x.AugiteSoulID).setIconIndex(1, 238).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("AugiteSoul");
 
 		FuryArrow = new ItemDivineRPG(x.FuryArrowID).setIconIndex(2, 255).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("FuryArrow");
-		TwilightClock = new ItemDivineRPG(x.TwilightClockID).setIconIndex(2, 103).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("TwilightClock");
+		TwilightClock = new ItemTwilightClock(x.TwilightClockID).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("TwilightClock").func_111206_d("TwilightClock");
 		blueSeeds = new ItemDivineRPG(x.blueSeedsID).setIconIndex(1, 51).setCreativeTab(CreativeTabHelper.tabHerb).setUnlocalizedName("blueSeeds");
 		magicMeat = new ItemDivineRPG(x.magicMeatID).setIconIndex(2, 50).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("magicMeat");
 		empoweredMeat = new ItemDivineRPG(x.empoweredMeatID).setIconIndex(2, 110).setCreativeTab(CreativeTabHelper.tabItems).setUnlocalizedName("empoweredMeat");

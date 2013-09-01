@@ -114,55 +114,57 @@ public class BlockDivinePortal extends BlockBreakable {
     @Override
     public void onNeighborBlockChange(World w, int x, int y, int z, int neighborBlockID)
     {
-        byte sideFlag1 = 0;
-        byte sideFlag2 = 1;
-
-        if (w.getBlockId(x - 1, y, z) == this.blockID || w.getBlockId(x + 1, y, z) == this.blockID)
-        {
-            sideFlag1 = 1;
-            sideFlag2 = 0;
-        }
-
-        int var8;
-
-        for (var8 = y; w.getBlockId(x, var8 - 1, z) == this.blockID; --var8)
-        {
-            ;
-        }
-
-        if (w.getBlockId(x, var8 - 1, z) != this.frameBlock.blockID)
-        {
-            w.setBlockToAir(x, y, z);
-        }
-        else
-        {
-            int var9;
-
-            for (var9 = 1; var9 < 4 && w.getBlockId(x, var8 + var9, z) == this.blockID; ++var9)
-            {
-                ;
-            }
-
-            if (var9 == 3 && w.getBlockId(x, var8 + var9, z) == this.frameBlock.blockID)
-            {
-                boolean var10 = w.getBlockId(x - 1, y, z) == this.blockID || w.getBlockId(x + 1, y, z) == this.blockID;
-                boolean var11 = w.getBlockId(x, y, z - 1) == this.blockID || w.getBlockId(x, y, z + 1) == this.blockID;
-
-                if (var10 && var11)
-                {
-                    w.setBlockToAir(x, y, z);
-                }
-                else if ((w.getBlockId(x + sideFlag1, y, z + sideFlag2) != this.frameBlock.blockID || w.getBlockId(x - sideFlag1, y, z - sideFlag2) != this.blockID) 
-                        && (w.getBlockId(x - sideFlag1, y, z - sideFlag2) != this.frameBlock.blockID || w.getBlockId(x + sideFlag1, y, z + sideFlag2) != this.blockID))
-                {
-                    w.setBlockToAir(x, y, z);
-                }
-            }
-            else
-            {
-                w.setBlockToAir(x, y, z);
-            }
-        }
+        return;
+//        
+//        byte sideFlag1 = 0;
+//        byte sideFlag2 = 1;
+//
+//        if (w.getBlockId(x - 1, y, z) == this.blockID || w.getBlockId(x + 1, y, z) == this.blockID)
+//        {
+//            sideFlag1 = 1;
+//            sideFlag2 = 0;
+//        }
+//
+//        int var8;
+//
+//        for (var8 = y; w.getBlockId(x, var8 - 1, z) == this.blockID; --var8)
+//        {
+//            ;
+//        }
+//
+//        if (w.getBlockId(x, var8 - 1, z) != this.frameBlock.blockID)
+//        {
+//            w.setBlockToAir(x, y, z);
+//        }
+//        else
+//        {
+//            int var9;
+//
+//            for (var9 = 1; var9 < 4 && w.getBlockId(x, var8 + var9, z) == this.blockID; ++var9)
+//            {
+//                ;
+//            }
+//
+//            if (var9 == 3 && w.getBlockId(x, var8 + var9, z) == this.frameBlock.blockID)
+//            {
+//                boolean var10 = w.getBlockId(x - 1, y, z) == this.blockID || w.getBlockId(x + 1, y, z) == this.blockID;
+//                boolean var11 = w.getBlockId(x, y, z - 1) == this.blockID || w.getBlockId(x, y, z + 1) == this.blockID;
+//
+//                if (var10 && var11)
+//                {
+//                    w.setBlockToAir(x, y, z);
+//                }
+//                else if ((w.getBlockId(x + sideFlag1, y, z + sideFlag2) != this.frameBlock.blockID || w.getBlockId(x - sideFlag1, y, z - sideFlag2) != this.blockID) 
+//                        && (w.getBlockId(x - sideFlag1, y, z - sideFlag2) != this.frameBlock.blockID || w.getBlockId(x + sideFlag1, y, z + sideFlag2) != this.blockID))
+//                {
+//                    w.setBlockToAir(x, y, z);
+//                }
+//            }
+//            else
+//            {
+//                w.setBlockToAir(x, y, z);
+//            }
+//        }
     }
 
     

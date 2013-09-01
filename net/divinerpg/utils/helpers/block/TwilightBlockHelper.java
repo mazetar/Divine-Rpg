@@ -139,7 +139,7 @@ public class TwilightBlockHelper
 		AugiteLogs = new BlockTwilightWood(TwilightConfigHelper.AugiteLogsID).func_111022_d("AugiteLog").setUnlocalizedName("AugiteLog").setCreativeTab(CreativeTabHelper.tabBlocks);
 		AugiteLeaves = new BlockTwilightLeaves(TwilightConfigHelper.AugiteLeavesID).func_111022_d("AugiteLeaves").setUnlocalizedName("AugiteLeaves");
 		AugiteOre = new BlockTwilightOre(TwilightConfigHelper.AugiteOreID).func_111022_d("AugiteOre").setUnlocalizedName("AugiteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
-		AugiteBlock = new BlockDivine(TwilightConfigHelper.AugiteBlockID, Material.rock).func_111022_d("AugiteBlock").setUnlocalizedName("AugiteBlock");
+		AugiteBlock = new BlockDivine(TwilightConfigHelper.AugiteBlockID, Material.rock).func_111022_d("AugiteBlock").setUnlocalizedName("AugiteBlock").setCreativeTab(CreativeTabHelper.tabBlocks);
 		AugitePortal = ((BlockDivinePortal) new BlockDivinePortal(TwilightConfigHelper.AugitePortalID).func_111022_d("AugitePortal").setUnlocalizedName("AugitePortal").setCreativeTab(CreativeTabHelper.tabBlocks))
 		        .setPortalVariables(MythrilBlock, blueFire, DimensionRegistry.AugiteID, "xolovon.AugitePortal",
 		                new EntityAugitePortalFX(null, 1, 2, 3, 4, 5, 6), TwilightStone);
@@ -150,12 +150,14 @@ public class TwilightBlockHelper
 	public static void InitGameRegistryBlocks()
 	{
 		GameRegistry.registerBlock(TwilightStone, "TwilightStone");
+		GameRegistry.registerBlock(divineRock, "DivineRock");
 		
 		GameRegistry.registerBlock(DraviteGrass, "DraviteGrass");
 		GameRegistry.registerBlock(DraviteDirt, "DraviteDirt");
 		GameRegistry.registerBlock(DraviteLogs, "DraviteLogs");
 		GameRegistry.registerBlock(DraviteLeaves, "DraviteLeaves");
 		GameRegistry.registerBlock(DraviteOre, "DraviteOre");
+        GameRegistry.registerBlock(DraviteBlock, "DraviteBlock");
 		GameRegistry.registerBlock(DravitePortal, "DravitePortal");
 		
 		GameRegistry.registerBlock(AzuriteGrass, "AzuriteGrass");
@@ -163,6 +165,7 @@ public class TwilightBlockHelper
 		GameRegistry.registerBlock(AzuriteLogs, "AzuriteLogs");
 		GameRegistry.registerBlock(AzuriteLeaves, "AzuriteLeaves");
 		GameRegistry.registerBlock(AzuriteOre, "AzuriteOre");
+        GameRegistry.registerBlock(AzuriteBlock, "AzuriteBlock");
 		GameRegistry.registerBlock(AzuritePortal, "AzuritePortal");
 
 		GameRegistry.registerBlock(UviteGrass, "UviteGrass");
@@ -170,6 +173,7 @@ public class TwilightBlockHelper
 		GameRegistry.registerBlock(UviteLogs, "UviteLogs");
 		GameRegistry.registerBlock(UviteLeaves, "UviteLeaves");
 		GameRegistry.registerBlock(UviteOre, "UviteOre");
+        GameRegistry.registerBlock(UviteBlock, "UviteBlock");
 		GameRegistry.registerBlock(UvitePortal, "UvitePortal");
 		
 		GameRegistry.registerBlock(MythrilGrass, "MythrilGrass");
@@ -177,6 +181,7 @@ public class TwilightBlockHelper
 		GameRegistry.registerBlock(MythrilLogs, "MythrilLogs");
 		GameRegistry.registerBlock(MythrilLeaves, "MythrilLeaves");
 		GameRegistry.registerBlock(MythrilOre, "MythrilOre");
+        GameRegistry.registerBlock(MythrilBlock, "MythrilBlock");
 		GameRegistry.registerBlock(MythrilPortal, "MythrilPortal");
 		
 		GameRegistry.registerBlock(AugiteGrass, "AugiteGrass");
@@ -211,7 +216,7 @@ public class TwilightBlockHelper
 		LanguageRegistry.addName(AzuriteLeaves, "Azurite Leaves");
 		LanguageRegistry.addName(AzuriteOre, "Azurite Ore");
 		//LanguageRegistry.addName(AzuriteVines, "Azurite Vines");
-		//LanguageRegistry.addName(AzuriteBlock, "Azurite Block");
+		LanguageRegistry.addName(AzuriteBlock, "Azurite Block");
 		LanguageRegistry.addName(AzuritePortal, "Azurite Portal");
 		//-==-Uvite-==-//
 		LanguageRegistry.addName(UviteGrass, "Uvite Grass");
@@ -219,7 +224,7 @@ public class TwilightBlockHelper
 		LanguageRegistry.addName(UviteLogs, "Uvite Logs");
 		LanguageRegistry.addName(UviteLeaves, "Uvite Leaves");
 		LanguageRegistry.addName(UviteOre, "Uvite Ore");
-		//LanguageRegistry.addName(UviteBlock, "Uvite Block");
+		LanguageRegistry.addName(UviteBlock, "Uvite Block");
 		LanguageRegistry.addName(UvitePortal, "Uvite Portal");
 		//-==-Mythril-==-//
 		LanguageRegistry.addName(MythrilGrass, "Mythril Grass");
@@ -228,14 +233,14 @@ public class TwilightBlockHelper
 		LanguageRegistry.addName(MythrilLeaves, "Mythril Leaves");
 		LanguageRegistry.addName(MythrilOre, "Mythril Ore");
 		LanguageRegistry.addName(MythrilPortal, "Mytril Portal");
-		//LanguageRegistry.addName(MythrilBlock, "Mythril Block");
+		LanguageRegistry.addName(MythrilBlock, "Mythril Block");
 		
 		LanguageRegistry.addName(AugiteGrass, "Augite Grass");
 		LanguageRegistry.addName(AugiteDirt, "Augite Dirt");
 		LanguageRegistry.addName(AugiteLogs, "Augite Logs");
 		LanguageRegistry.addName(AugiteLeaves, "Augite Leaves");
 		LanguageRegistry.addName(AugiteOre, "Augite Ore");
-		//LanguageRegistry.addName(AugiteBlock, "Augite Block");
+		LanguageRegistry.addName(AugiteBlock, "Augite Block");
 		LanguageRegistry.addName(AugitePortal, "Augite Portal");
 		
 		//LanguageRegistry.addName(superEnchantMentTable, "superEnchantMentTable");

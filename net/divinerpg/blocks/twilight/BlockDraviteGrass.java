@@ -3,16 +3,17 @@ package net.divinerpg.blocks.twilight;
 import java.util.Random;
 
 import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.blocks.BlockDivineGrass;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 
-public class BlockDraviteGrass extends BlockDivine
+public class BlockDraviteGrass extends BlockDivineGrass
 {	
-    public BlockDraviteGrass(int var1)
+    public BlockDraviteGrass(int id)
     {
-        super(var1, 2, Material.grass);
+        super(id);
         this.setTickRandomly(true);
     }
 

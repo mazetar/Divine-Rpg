@@ -68,7 +68,7 @@ public class EntitySerenityBunny extends EntityTameable
         super.func_110147_ax();
         
         this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a( this.isTamed() ? 30 : 10);
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(0);
+      //  this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(0);
         this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.3F);
     }
     public double getMoveSpeed() {

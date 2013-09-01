@@ -2,10 +2,10 @@ package net.divinerpg.blocks;
 
 import java.util.Random;
 
-import net.divinerpg.entities.particle.EntityAzuritePortalFX;
 import net.divinerpg.entities.particle.EntityFXPortalBase;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.teleporters.TeleporterAzurite;
+import net.divinerpg.utils.helpers.teleporters.TeleporterDivine;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
@@ -38,6 +38,7 @@ public class BlockDivinePortal extends BlockBreakable {
     
     public Block frameBlock;
     public Block ingitionBlock;
+    public Block platformBlock;
     public int dimensionID;
     public String portalSound = "";
     EntityFXPortalBase portalEntityFX;
@@ -56,14 +57,16 @@ public class BlockDivinePortal extends BlockBreakable {
      * @param dimID - Dimension ID of the destination dimension.
      * @param sound - the sound the portal makes 
      * @param fxEntity - The particles from the portal.
+     * @param platformBlock  - The block to be used to build a platform for the block if it's in mid air.
      * @return 
      */
-    public BlockDivinePortal setPortalVariables (Block frame, Block ignitionBlock, int dimID, String sound, EntityFXPortalBase fxEntity) {
+    public BlockDivinePortal setPortalVariables (Block frame, Block ignitionBlock, int dimID, String sound, EntityFXPortalBase fxEntity, Block platformBlock) {
         this.frameBlock = frame;
         this.ingitionBlock = ignitionBlock;
         this.dimensionID = dimID;
         this.portalSound = sound;
         this.portalEntityFX = fxEntity;
+        this.platformBlock = platformBlock;
         return this;
     }
     
@@ -189,7 +192,7 @@ public class BlockDivinePortal extends BlockBreakable {
                         }
                         else
                         {
-                            player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new TeleporterAzurite(player.mcServer.worldServerForDimension(0)));
+                            player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new TeleporterDivine(player.mcServer.worldServerForDimension(0), this.frameBlock, this, this.platformBlock));
                         }
                     }
                 }

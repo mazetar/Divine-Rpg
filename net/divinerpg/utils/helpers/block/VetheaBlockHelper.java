@@ -21,6 +21,7 @@ import net.divinerpg.blocks.vethea.BlockRaglokAltar;
 import net.divinerpg.blocks.vethea.BlockShimmer;
 import net.divinerpg.blocks.vethea.BlockSmoothGlass;
 import net.divinerpg.blocks.vethea.BlockVethea;
+import net.divinerpg.blocks.vethea.BlockVetheaMetalCage;
 import net.divinerpg.blocks.vethea.BlockVetheaPlant;
 import net.divinerpg.blocks.vethea.BlockWeedwoodVine;
 import net.divinerpg.blocks.vethea.BlockWreckAltar;
@@ -125,7 +126,7 @@ public class VetheaBlockHelper
         dreambricks2 = new BlockVethea(VetheaConfigHelper.dreambricks2ID, 26, Material.rock).func_111022_d("DreamBricks2").setUnlocalizedName("dreambricks").setHardness(1F).setResistance(1F).setCreativeTab(CreativeTabHelper.tabBlocks);
         lunastone = new BlockVethea(VetheaConfigHelper.lunastoneID, 27, Material.rock).setBlockUnbreakable().setUnlocalizedName("lunastone").setHardness(1F).setResistance(1F).setCreativeTab(CreativeTabHelper.tabBlocks);
         lunabricks = new BlockVethea(VetheaConfigHelper.lunabricksID, 28, Material.rock).func_111022_d("LunaBrick").setBlockUnbreakable().setUnlocalizedName("lunabricks").setHardness(1F).setResistance(1F).setCreativeTab(CreativeTabHelper.tabBlocks);
-        metalCaging = new BlockVethea(VetheaConfigHelper.metalCagingID, 29, Material.rock).func_111022_d("MetalCaging").setUnlocalizedName("metalCaging").setHardness(1F).setResistance(1F).setCreativeTab(CreativeTabHelper.tabBlocks);
+        metalCaging = new BlockVetheaMetalCage(VetheaConfigHelper.metalCagingID, 29, Material.rock).func_111022_d("MetalCaging").setUnlocalizedName("metalCaging").setHardness(1F).setResistance(1F).setCreativeTab(CreativeTabHelper.tabBlocks);
         dreamlampOn = new BlockDreamLamp(VetheaConfigHelper.dreamlampOnID, 30, Material.glass, true).func_111022_d("DreamLamp_On").setBlockUnbreakable().setUnlocalizedName("dreamlampOn").setHardness(1F).setResistance(1F);
         dreamlamp = new BlockDreamLamp(VetheaConfigHelper.dreamlampID, 31, Material.glass, false).func_111022_d("DreamLamp_Off").setBlockUnbreakable().setUnlocalizedName("dreamlamp").setHardness(1F).setStepSound(Block.soundGlassFootstep).setResistance(1F).setCreativeTab(CreativeTabHelper.tabBlocks);
         weedwoodVine = new BlockWeedwoodVine(VetheaConfigHelper.weedwoodVineID, 41).func_111022_d("WeedWoodVine").setUnlocalizedName("weedwoodVine").setHardness(1F).setResistance(1F).setCreativeTab(CreativeTabHelper.tabBlocks);

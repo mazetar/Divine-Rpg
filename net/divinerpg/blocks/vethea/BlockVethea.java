@@ -9,9 +9,4 @@ public class BlockVethea extends BlockDivine
 	{
 		super(par1, par2, par3);
 	}
-	
-	// Meant to be overrided
-	public int getSheet(int side, int metadata) {
-		return 4;
-	}
 }

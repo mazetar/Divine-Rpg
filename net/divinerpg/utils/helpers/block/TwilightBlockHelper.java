@@ -17,6 +17,8 @@ import net.divinerpg.blocks.twilight.BlockTwilightWood;
 import net.divinerpg.blocks.twilight.BlockUviteDirt;
 import net.divinerpg.blocks.twilight.BlockUviteGrass;
 import net.divinerpg.entities.particle.EntityAugitePortalFX;
+import net.divinerpg.entities.particle.EntityAzuritePortalFX;
+import net.divinerpg.entities.particle.EntityDravitePortalFX;
 import net.divinerpg.entities.particle.EntityMythrilPortalFX;
 import net.divinerpg.entities.particle.EntityRedPortalFX;
 import net.divinerpg.utils.helpers.DimensionRegistry;
@@ -103,7 +105,7 @@ public class TwilightBlockHelper
 		DraviteOre = new BlockTwilightOre(TwilightConfigHelper.DraviteOreID).setTextureName("DraviteOre").setUnlocalizedName("DraviteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
 		DraviteBlock = new BlockDivine(TwilightConfigHelper.DraviteBlockID, 0, Material.iron).setTextureName("DraviteBlock").setUnlocalizedName("DraviteBlock").setCreativeTab(CreativeTabHelper.tabBlocks);
         DravitePortal = ((BlockDivinePortal) new BlockDivinePortal(TwilightConfigHelper.DravitePortalID).setTextureName("DravitePortal").setUnlocalizedName("DravitePortal").setCreativeTab(CreativeTabHelper.tabBlocks))
-                .setPortalVariables(divineRock, blueFire, DimensionRegistry.DraviteID, "", new EntityMythrilPortalFX(null, 1, 2, 3, 4, 5, 6), TwilightStone);
+                .setPortalVariables(divineRock, blueFire, DimensionRegistry.DraviteID, "", new EntityDravitePortalFX(null, 1, 2, 3, 4, 5, 6), TwilightStone);
 		
 		AzuriteGrass = new BlockAzuriteGrass(TwilightConfigHelper.AzuriteGrassID).setTextureName("AzuriteGrass").setUnlocalizedName("AzuriteGrass");
 		AzuriteDirt = new BlockAzuriteDirt(TwilightConfigHelper.AzuriteDirtID).setTextureName("AzuriteGrass_Bottom").setUnlocalizedName("AzuriteDirt");
@@ -112,7 +114,7 @@ public class TwilightBlockHelper
 		AzuriteOre = new BlockTwilightOre(TwilightConfigHelper.AzuriteOreID).setTextureName("AzuriteOre").setUnlocalizedName("AzuriteOre").setCreativeTab(CreativeTabHelper.tabBlocks);
 		AzuriteBlock = new BlockDivine(TwilightConfigHelper.AzuriteBlockID, 0, Material.iron).setTextureName("AzuriteBlock").setUnlocalizedName("AzuriteBlock").setCreativeTab(CreativeTabHelper.tabBlocks);
         AzuritePortal = ((BlockDivinePortal) new BlockDivinePortal(TwilightConfigHelper.AzuritePortalID).func_111022_d("AzuritePortal").setUnlocalizedName("AzuritePortal").setCreativeTab(CreativeTabHelper.tabBlocks))
-		        .setPortalVariables(DraviteBlock, blueFire, DimensionRegistry.AzuriteID, "", new EntityMythrilPortalFX(null, 1, 2, 3, 4, 5, 6), TwilightStone);
+		        .setPortalVariables(DraviteBlock, blueFire, DimensionRegistry.AzuriteID, "", new EntityAzuritePortalFX(null, 1, 2, 3, 4, 5, 6), TwilightStone);
 		
 		UviteGrass = new BlockUviteGrass(TwilightConfigHelper.UviteGrassID).setTextureName("UviteGrass").setUnlocalizedName("UviteGrass");
 		UviteDirt = new BlockUviteDirt(TwilightConfigHelper.UviteDirtID).setTextureName("UviteGrass_Bottom").setUnlocalizedName("UviteDirt").setCreativeTab(CreativeTabHelper.tabBlocks);

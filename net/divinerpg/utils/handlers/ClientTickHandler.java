@@ -35,7 +35,7 @@ public class ClientTickHandler implements ITickHandler
 
 	public void tickStart(EnumSet var1, Object ... mc)
 	{
-		onTickInGame();
+		//onTickInGame();
 	}
 
 	public void tickEnd(EnumSet var1, Object ... mc)

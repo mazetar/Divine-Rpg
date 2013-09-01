@@ -47,7 +47,7 @@ public class ClientTickHandler implements ITickHandler
 		}
 		else if (var1.equals(EnumSet.of(TickType.RENDER)))
 		{
-			onRenderTick();
+			//onRenderTick();
 		}
 	}
 

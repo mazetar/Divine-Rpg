@@ -7,7 +7,6 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraftforge.common.ForgeDirection;
 
 public class TeleporterDivine extends Teleporter
 {

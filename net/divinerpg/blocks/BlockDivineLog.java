@@ -53,6 +53,7 @@ public abstract class BlockDivineLog extends BlockDivine {
         return j1 | b0;
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
 
     /**

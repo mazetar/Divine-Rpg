@@ -4,7 +4,6 @@ import java.util.Random;
 
 import net.divinerpg.entities.particle.EntityFXPortalBase;
 import net.divinerpg.lib.Reference;
-import net.divinerpg.utils.helpers.teleporters.TeleporterAzurite;
 import net.divinerpg.utils.helpers.teleporters.TeleporterDivine;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
@@ -70,6 +69,7 @@ public class BlockDivinePortal extends BlockBreakable {
         return this;
     }
     
+    @Override
     @SideOnly(Side.CLIENT)
 
     /**

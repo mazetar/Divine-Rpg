@@ -79,32 +79,39 @@ public class TeleporterDivine extends Teleporter
             double yPosNew = (double)y + 0.5D;
             zPosNew = (double)z + 0.5D;
 
+            //TODO: Change this to take initial rotation when entering portal into account to decide which direction to exit from and to face. --Maz
+            int newRot = 0;
             if (this.isBlockPortal(this.myWorld, x - 1, y, z))
             {
                 xPosNew -= 0.5D;
                 zPosNew--;
+                newRot = 180;
             }
 
             if (this.isBlockPortal(this.myWorld, x + 1, y, z))
             {
                 xPosNew += 0.5D;
                 zPosNew--;
+                newRot = 180;
             }
 
             if (this.isBlockPortal(this.myWorld, x, y, z - 1))
             {
                 zPosNew -= 0.5D;
                 xPosNew++;
+                newRot = 270;
+                
             }
 
             if (this.isBlockPortal(this.myWorld, x, y, z + 1))
             {
                 zPosNew += 0.5D;
                 xPosNew++;
+                newRot = 270;
             }
                 
             
-            entity.setLocationAndAngles(xPosNew, yPosNew, zPosNew, entity.rotationYaw, 0.0F);
+            entity.setLocationAndAngles(xPosNew, yPosNew, zPosNew, newRot, 0.0F);
             entity.motionX = entity.motionY = entity.motionZ = 0.0D;
             return true;
         }

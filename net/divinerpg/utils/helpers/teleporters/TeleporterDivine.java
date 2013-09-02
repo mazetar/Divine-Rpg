@@ -14,15 +14,13 @@ public class TeleporterDivine extends Teleporter
 
     protected Block frameBlock;
     protected Block portalBlock;
-    protected Block platformBlock = TwilightBlockHelper.divineRock;
     
-    public TeleporterDivine(WorldServer worldServer, Block frame, Block portal, Block platform)
+    public TeleporterDivine(WorldServer worldServer, Block frame, Block portal)
     {
         super(worldServer);
         this.myWorld = worldServer;
         frameBlock = frame;
         portalBlock = portal;
-        platformBlock = platform;
     }
 
     /**

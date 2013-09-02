@@ -59,13 +59,12 @@ public class BlockDivinePortal extends BlockBreakable {
      * @param platformBlock  - The block to be used to build a platform for the block if it's in mid air.
      * @return 
      */
-    public BlockDivinePortal setPortalVariables (Block frame, Block ignitionBlock, int dimID, String sound, EntityFXPortalBase fxEntity, Block platformBlock) {
+    public BlockDivinePortal setPortalVariables (Block frame, Block ignitionBlock, int dimID, String sound, EntityFXPortalBase fxEntity) {
         this.frameBlock = frame;
         this.ingitionBlock = ignitionBlock;
         this.dimensionID = dimID;
         this.portalSound = sound;
         this.portalEntityFX = fxEntity;
-        this.platformBlock = platformBlock;
         return this;
     }
     
@@ -190,11 +189,11 @@ public class BlockDivinePortal extends BlockBreakable {
                         if (player.dimension != this.dimensionID)
                         {
                             player.mcServer.getConfigurationManager().transferPlayerToDimension(player, dimensionID,
-                                    new TeleporterDivine(player.mcServer.worldServerForDimension(dimensionID), this.frameBlock, this, this.platformBlock));
+                                    new TeleporterDivine(player.mcServer.worldServerForDimension(dimensionID), this.frameBlock, this));
                         }
                         else
                         {
-                            player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new TeleporterDivine(player.mcServer.worldServerForDimension(0), this.frameBlock, this, this.platformBlock));
+                            player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new TeleporterDivine(player.mcServer.worldServerForDimension(0), this.frameBlock, this));
                         }
                     }
                 }

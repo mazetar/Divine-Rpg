@@ -190,7 +190,7 @@ public class BlockDivinePortal extends BlockBreakable {
                         if (player.dimension != this.dimensionID)
                         {
                             player.mcServer.getConfigurationManager().transferPlayerToDimension(player, dimensionID,
-                                    new TeleporterAzurite(player.mcServer.worldServerForDimension(dimensionID)));
+                                    new TeleporterDivine(player.mcServer.worldServerForDimension(dimensionID), this.frameBlock, this, this.platformBlock));
                         }
                         else
                         {

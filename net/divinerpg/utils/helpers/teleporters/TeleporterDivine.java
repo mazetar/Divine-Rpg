@@ -7,6 +7,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.common.ForgeDirection;
 
 public class TeleporterDivine extends Teleporter
 {
@@ -28,16 +29,17 @@ public class TeleporterDivine extends Teleporter
     /**
      * Place an entity in a nearby portal which already exists.
      */
+    @Override
     public boolean placeInExistingPortal(Entity entity, double posX, double posY, double posZ, float rotationYaw)
     {
         short var9 = 200;
         double var10 = -1.0D;
-        int var12 = 0;
-        int var13 = 0;
-        int var14 = 0;
+        int x = 0;
+        int y = 0;
+        int z = 0;
         int var15 = MathHelper.floor_double(entity.posX);
         int var16 = MathHelper.floor_double(entity.posZ);
-        double var24;
+        double zPosNew;
 
         for (int var17 = var15 - var9; var17 <= var15 + var9; ++var17)
         {
@@ -56,15 +58,15 @@ public class TeleporterDivine extends Teleporter
                             --var23;
                         }
 
-                        var24 = (double)var23 + 0.5D - entity.posY;
-                        double var26 = var18 * var18 + var24 * var24 + var21 * var21;
+                        zPosNew = (double)var23 + 0.5D - entity.posY;
+                        double var26 = var18 * var18 + zPosNew * zPosNew + var21 * var21;
 
                         if (var10 < 0.0D || var26 < var10)
                         {
                             var10 = var26;
-                            var12 = var17;
-                            var13 = var23;
-                            var14 = var20;
+                            x = var17;
+                            y = var23;
+                            z = var20;
                         }
                     }
                 }
@@ -73,31 +75,36 @@ public class TeleporterDivine extends Teleporter
 
         if (var10 >= 0.0D)
         {
-            double var28 = (double)var12 + 0.5D;
-            double var22 = (double)var13 + 0.5D;
-            var24 = (double)var14 + 0.5D;
+            double xPosNew = (double)x + 0.5D;
+            double yPosNew = (double)y + 0.5D;
+            zPosNew = (double)z + 0.5D;
 
-            if (this.isBlockPortal(this.myWorld, var12 - 1, var13, var14))
+            if (this.isBlockPortal(this.myWorld, x - 1, y, z))
             {
-                var28 -= 0.5D;
+                xPosNew -= 0.5D;
+                zPosNew--;
             }
 
-            if (this.isBlockPortal(this.myWorld, var12 + 1, var13, var14))
+            if (this.isBlockPortal(this.myWorld, x + 1, y, z))
             {
-                var28 += 0.5D;
+                xPosNew += 0.5D;
+                zPosNew--;
             }
 
-            if (this.isBlockPortal(this.myWorld, var12, var13, var14 - 1))
+            if (this.isBlockPortal(this.myWorld, x, y, z - 1))
             {
-                var24 -= 0.5D;
+                zPosNew -= 0.5D;
+                xPosNew++;
             }
 
-            if (this.isBlockPortal(this.myWorld, var12, var13, var14 + 1))
+            if (this.isBlockPortal(this.myWorld, x, y, z + 1))
             {
-                var24 += 0.5D;
+                zPosNew += 0.5D;
+                xPosNew++;
             }
-
-            entity.setLocationAndAngles(var28, var22 + 1.0D, var24 + 1.0D, entity.rotationYaw, 0.0F);
+                
+            
+            entity.setLocationAndAngles(xPosNew, yPosNew, zPosNew, entity.rotationYaw, 0.0F);
             entity.motionX = entity.motionY = entity.motionZ = 0.0D;
             return true;
         }
@@ -107,6 +114,7 @@ public class TeleporterDivine extends Teleporter
         }
     }
 
+    
     public boolean isBlockPortal(World var1, int var2, int var3, int var4)
     {
         return var1.getBlockId(var2, var3, var4) == this.portalBlock.blockID;
@@ -294,14 +302,14 @@ public class TeleporterDivine extends Teleporter
 
         --y;
 
-        world.setBlock(x + 0, y + 0, z + 1, this.platformBlock.blockID);
-        world.setBlock(x + 1, y + 0, z + 1, this.platformBlock.blockID);
-        world.setBlock(x + 2, y + 0, z + 1, this.platformBlock.blockID);
-        world.setBlock(x - 1, y + 0, z + 1, this.platformBlock.blockID);
-        world.setBlock(x + 0, y + 0, z + 2, this.platformBlock.blockID);
-        world.setBlock(x + 1, y + 0, z + 2, this.platformBlock.blockID);
-        world.setBlock(x + 0, y + 0, z + 0, this.platformBlock.blockID);
-        world.setBlock(x + 1, y + 0, z + 0, this.platformBlock.blockID);
+        world.setBlock(x + 0, y + 0, z + 1, this.frameBlock.blockID);
+        world.setBlock(x + 1, y + 0, z + 1, this.frameBlock.blockID);
+        world.setBlock(x + 2, y + 0, z + 1, this.frameBlock.blockID);
+        world.setBlock(x - 1, y + 0, z + 1, this.frameBlock.blockID);
+        world.setBlock(x + 0, y + 0, z + 2, this.frameBlock.blockID);
+        world.setBlock(x + 1, y + 0, z + 2, this.frameBlock.blockID);
+        world.setBlock(x + 0, y + 0, z + 0, this.frameBlock.blockID);
+        world.setBlock(x + 1, y + 0, z + 0, this.frameBlock.blockID);
 
         for (int var5 = -1; var5 <= 2; ++var5)
         {
@@ -320,15 +328,15 @@ public class TeleporterDivine extends Teleporter
         world.setBlock(x + 1, y + 2, z + 1, this.portalBlock.blockID);
         world.setBlock(x + 0, y + 3, z + 1, this.portalBlock.blockID);
         world.setBlock(x + 1, y + 3, z + 1, this.portalBlock.blockID);
-        world.setBlock(x - 1, y + 1, z + 1, this.platformBlock.blockID);
-        world.setBlock(x + 2, y + 1, z + 1, this.platformBlock.blockID);
-        world.setBlock(x - 1, y + 2, z + 1, this.platformBlock.blockID);
-        world.setBlock(x + 2, y + 2, z + 1, this.platformBlock.blockID);
-        world.setBlock(x - 1, y + 3, z + 1, this.platformBlock.blockID);
-        world.setBlock(x + 2, y + 3, z + 1, this.platformBlock.blockID);
-        world.setBlock(x + 0, y + 4, z + 1, this.platformBlock.blockID);
-        world.setBlock(x + 1, y + 4, z + 1, this.platformBlock.blockID);
-        world.setBlock(x + 2, y + 4, z + 1, this.platformBlock.blockID);
-        world.setBlock(x - 1, y + 4, z + 1, this.platformBlock.blockID);
+        world.setBlock(x - 1, y + 1, z + 1, this.frameBlock.blockID);
+        world.setBlock(x + 2, y + 1, z + 1, this.frameBlock.blockID);
+        world.setBlock(x - 1, y + 2, z + 1, this.frameBlock.blockID);
+        world.setBlock(x + 2, y + 2, z + 1, this.frameBlock.blockID);
+        world.setBlock(x - 1, y + 3, z + 1, this.frameBlock.blockID);
+        world.setBlock(x + 2, y + 3, z + 1, this.frameBlock.blockID);
+        world.setBlock(x + 0, y + 4, z + 1, this.frameBlock.blockID);
+        world.setBlock(x + 1, y + 4, z + 1, this.frameBlock.blockID);
+        world.setBlock(x + 2, y + 4, z + 1, this.frameBlock.blockID);
+        world.setBlock(x - 1, y + 4, z + 1, this.frameBlock.blockID);
     }
 }

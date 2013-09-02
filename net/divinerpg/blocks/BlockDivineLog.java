@@ -84,14 +84,6 @@ public abstract class BlockDivineLog extends BlockDivine {
         this.insideIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E() + "_Top"); 
     }
     
-    
-//    @Override
-//    public Icon getIcon(int side, int meta) {
-//        int var3 = meta & 12;
-//
-//        return var3 == 0 && (side == 1 || side == 0) ? insideTexture() : (var3 == 4 && (side == 5 || side == 4) ? sideTexture() : (var3 == 8 && (side == 2 || side == 3) ? sideTexture() : insideTexture()));
-//    }
-    
     public Icon sideTexture() {
         return this.blockIcon;
     }

@@ -250,7 +250,9 @@ public class BlockPortalVethea extends BlockBreakable
     /**
      * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
      */
-    public void onEntityCollidedWithBlock(World var1, int var2, int var3, int var4, Entity var5)
+
+    @SuppressWarnings({"static-access", "unused"})
+	public void onEntityCollidedWithBlock(World var1, int var2, int var3, int var4, Entity var5)
     {
         if (!var1.isRemote)
         {
@@ -258,7 +260,8 @@ public class BlockPortalVethea extends BlockBreakable
             {
                 if (var5 instanceof EntityPlayerMP)
                 {
-                    WorldServer worldServer = (WorldServer)var1;
+                    
+					WorldServer worldServer = (WorldServer)var1;
                     EntityPlayerMP var6 = (EntityPlayerMP)var5;
 
                     if (var5.ridingEntity == null && var5.riddenByEntity == null && var5 instanceof EntityPlayer)

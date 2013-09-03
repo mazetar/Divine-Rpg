@@ -43,6 +43,7 @@ public class BlockDreamgrass extends BlockDivineGrass
     /**
      * Ticks the block if it's been scheduled
      */
+    @SuppressWarnings("unused")
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
         if (!par1World.isRemote)
@@ -58,7 +59,7 @@ public class BlockDreamgrass extends BlockDivineGrass
                     int var7 = par2 + par5Random.nextInt(3) - 1;
                     int var8 = par3 + par5Random.nextInt(5) - 3;
                     int var9 = par4 + par5Random.nextInt(3) - 1;
-                    int var10 = par1World.getBlockId(var7, var8 + 1, var9);
+					int var10 = par1World.getBlockId(var7, var8 + 1, var9);
 
                     if (par1World.getBlockId(var7, var8, var9) == VetheaBlockHelper.dreamdirt.blockID && par1World.getBlockLightValue(var7, var8 + 1, var9) >= 4 && par1World.getBlockLightOpacity(var7, var8 + 1, var9) <= 2)
                     {

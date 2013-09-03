@@ -172,6 +172,7 @@ public class BlockDivinePortal extends BlockBreakable {
      * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
      */
     @Override
+    @SuppressWarnings("unused")
     public void onEntityCollidedWithBlock(World w, int x, int y, int z, Entity entity)
     {
         if (!w.isRemote)

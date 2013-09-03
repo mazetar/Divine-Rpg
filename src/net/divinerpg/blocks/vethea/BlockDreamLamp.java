@@ -5,7 +5,6 @@ import java.util.Random;
 import net.divinerpg.DivineRPGTwilight;
 import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.vethea.tileentities.TileEntityDreamLamp;
-import net.divinerpg.client.gui.GuiDreamLamp;
 import net.divinerpg.utils.helpers.block.VetheaBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,10 +13,6 @@ import net.minecraft.world.World;
 
 public class BlockDreamLamp extends BlockDivineContainer
 {
-	private GuiDreamLamp gui;
-	private TileEntityDreamLamp te;
-    private static boolean keepFurnaceInventory = false;
-
 	public BlockDreamLamp(int par1, int i, Material par2Material, boolean k) 
 	{
 		super(par1, i, par2Material);
@@ -56,8 +51,6 @@ public class BlockDreamLamp extends BlockDivineContainer
     {
         int var5 = par1World.getBlockMetadata(par2, par3, par4);
         TileEntity var6 = par1World.getBlockTileEntity(par2, par3, par4);
-        keepFurnaceInventory = true;
-
         if (par0)
         {
             par1World.setBlock(par2, par3, par4, VetheaBlockHelper.dreamlampOn.blockID);
@@ -67,7 +60,6 @@ public class BlockDreamLamp extends BlockDivineContainer
             par1World.setBlock(par2, par3, par4, VetheaBlockHelper.dreamlamp.blockID);
         }
 
-        keepFurnaceInventory = false;
         par1World.setBlock(par2, par3, par4, var5);
 
         if (var6 != null)

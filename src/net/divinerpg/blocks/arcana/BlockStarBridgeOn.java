@@ -32,7 +32,8 @@ public class BlockStarBridgeOn extends BlockDivine
     }
 
     private boolean wiresProvidePower = true;
-    private Set blocksNeedingUpdate = new HashSet();
+    @SuppressWarnings("rawtypes")
+	private Set blocksNeedingUpdate = new HashSet();
 
     /**
      * Checks to see if its valid to put this block at the specified coordinates. Args: world, x, y, z
@@ -46,10 +47,11 @@ public class BlockStarBridgeOn extends BlockDivine
      * Sets the strength of the wire current (0-15) for this block based on neighboring blocks and propagates to
      * neighboring redstone wires
      */
+    @SuppressWarnings({"unchecked", "rawtypes"})
     private void updateAndPropagateCurrentStrength(World par1World, int par2, int par3, int par4)
     {
         this.calculateCurrentChanges(par1World, par2, par3, par4, par2, par3, par4);
-        ArrayList var5 = new ArrayList(this.blocksNeedingUpdate);
+		ArrayList var5 = new ArrayList(this.blocksNeedingUpdate);
         this.blocksNeedingUpdate.clear();
         Iterator var6 = var5.iterator();
 
@@ -60,6 +62,7 @@ public class BlockStarBridgeOn extends BlockDivine
         }
     }
 
+    @SuppressWarnings({ "unused", "unchecked" })
     private void calculateCurrentChanges(World par1World, int par2, int par3, int par4, int par5, int par6, int par7)
     {
         int var8 = par1World.getBlockMetadata(par2, par3, par4);
@@ -166,7 +169,7 @@ public class BlockStarBridgeOn extends BlockDivine
                     var14 += 2;
                 }
 
-                boolean var15 = false;
+				boolean var15 = false;
                 int var16 = this.getMaxCurrentStrength(par1World, var12, par3, var13, -1);
                 var9 = par1World.getBlockMetadata(par2, par3, par4);
 

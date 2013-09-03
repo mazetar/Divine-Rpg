@@ -1,18 +1,8 @@
 package net.divinerpg.blocks.vethea;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import net.divinerpg.blocks.BlockDivineLeaves;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraftforge.common.IShearable;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockDreamwoodLeaves extends BlockDivineLeaves
 {

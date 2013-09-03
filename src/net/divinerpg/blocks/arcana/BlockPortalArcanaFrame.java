@@ -47,6 +47,7 @@ public class BlockPortalArcanaFrame extends Block
     /**
      * if the specified block is in the given AABB, add its collision bounding box to the given list
      */
+    @SuppressWarnings("rawtypes")
     public void addCollidingBlockToList(World par1World, int par2, int par3, int par4, AxisAlignedBB par5AxisAlignedBB, List par6List, Entity par7Entity)
     {
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.8125F, 1.0F);

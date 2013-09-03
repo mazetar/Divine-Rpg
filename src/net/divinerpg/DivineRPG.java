@@ -30,7 +30,6 @@ public class DivineRPG
 		instance = this;
 		OverworldConfigHelper.initConfig(event);
 		proxy.PreInit(event);
-
 		
 	}
 	

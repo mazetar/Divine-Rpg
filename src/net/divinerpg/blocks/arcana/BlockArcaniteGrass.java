@@ -2,13 +2,11 @@ package net.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.blocks.BlockDivineGrass;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
 import net.minecraft.world.World;
@@ -54,7 +52,8 @@ public class BlockArcaniteGrass extends BlockDivineGrass
     /**
      * returns true if there is at least one cropblock nearby (x-1 to x+1, y+1, z-1 to z+1)
      */
-    private boolean isCropsNearby(World par1World, int par2, int par3, int par4)
+    @SuppressWarnings("unused")
+	private boolean isCropsNearby(World par1World, int par2, int par3, int par4)
     {
         byte var5 = 0;
 
@@ -78,7 +77,8 @@ public class BlockArcaniteGrass extends BlockDivineGrass
     /**
      * returns true if there's water nearby (x-4 to x+4, y to y+1, k-4 to k+4)
      */
-    private boolean isWaterNearby(World par1World, int par2, int par3, int par4)
+    @SuppressWarnings("unused")
+	private boolean isWaterNearby(World par1World, int par2, int par3, int par4)
     {
         for (int var5 = par2 - 4; var5 <= par2 + 4; ++var5)
         {

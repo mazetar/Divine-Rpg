@@ -77,7 +77,9 @@ public class BlockKarosHeatTileGreen extends Block
         return VetheaBlockHelper.karosHeatTileGreen.blockID;
     }
 
-    public void addCreativeItems(ArrayList par1)
+    
+    @SuppressWarnings({"unchecked","rawtypes"})
+	public void addCreativeItems(ArrayList par1)
     {
         par1.add(new ItemStack(this, 1));
     }

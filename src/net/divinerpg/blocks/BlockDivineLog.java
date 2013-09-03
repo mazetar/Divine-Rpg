@@ -59,10 +59,11 @@ public abstract class BlockDivineLog extends BlockDivine {
     /**
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
+    @SuppressWarnings("unused")
     public Icon getIcon(int par1, int par2)
     { // Modified vanilla method
         int k = par2 & 12;
-        int l = par2 & 3;
+		int l = par2 & 3;
         return k == 0 && (par1 == 1 || par1 == 0) ? this.insideTexture() : (k == 4 && (par1 == 5 || par1 == 4) ? this.insideTexture() : (k == 8 && (par1 == 2 || par1 == 3) ? this.insideTexture() : this.sideTexture()));
     }
     

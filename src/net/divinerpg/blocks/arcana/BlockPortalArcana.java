@@ -5,9 +5,7 @@ import java.util.Random;
 
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;
-import net.divinerpg.utils.helpers.gui.CreativeTabHelper;
 import net.divinerpg.utils.helpers.teleporters.TeleporterArcana;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -53,6 +51,7 @@ public class BlockPortalArcana extends BlockBreakable
 	/**
 	 * if the specified block is in the given AABB, add its collision bounding box to the given list
 	 */
+	@SuppressWarnings("rawtypes")
 	public void addCollidingBlockToList(World par1World, int par2, int par3, int par4, AxisAlignedBB par5AxisAlignedBB, List par6List, Entity par7Entity) {}
 
 	/**

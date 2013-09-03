@@ -5,7 +5,6 @@ import java.util.Random;
 import net.divinerpg.blocks.BlockDivineGrass;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.world.World;
 
 public class BlockAugiteGrass extends BlockDivineGrass

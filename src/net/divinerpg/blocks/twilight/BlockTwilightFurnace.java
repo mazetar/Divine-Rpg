@@ -83,7 +83,8 @@ public class BlockTwilightFurnace extends BlockDivineContainer
         }
     }
 
-    @SideOnly(Side.CLIENT)
+    @SuppressWarnings("unused")
+	@SideOnly(Side.CLIENT)
 
     /**
      * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side

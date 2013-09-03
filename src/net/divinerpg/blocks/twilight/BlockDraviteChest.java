@@ -43,7 +43,8 @@ public class BlockDraviteChest extends BlockContainer
         this.setDefaultDirection(var1, var2, var3, var4);
     }
 
-    @SideOnly(Side.CLIENT)
+    @SuppressWarnings("unused")
+	@SideOnly(Side.CLIENT)
 
     public Icon getBlockTexture(IBlockAccess var1, int var2, int var3, int var4, int var5)
     {

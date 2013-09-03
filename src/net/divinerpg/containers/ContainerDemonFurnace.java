@@ -55,7 +55,8 @@ public class ContainerDemonFurnace extends Container
     /**
      * Updates crafting matrix; called from onCraftMatrixChanged. Args: none
      */
-    public void updateCraftingResults()
+    @SuppressWarnings("rawtypes")
+	public void updateCraftingResults()
     {
         
         Iterator var1 = this.crafters.iterator();

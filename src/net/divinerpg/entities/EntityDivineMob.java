@@ -5,6 +5,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.world.World;
 
+@SuppressWarnings("unused")
 public class EntityDivineMob extends EntityMob
 {
     private static final double spawnLayer = 1;

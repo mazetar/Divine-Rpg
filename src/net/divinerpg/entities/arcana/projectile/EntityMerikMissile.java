@@ -20,6 +20,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("unused")
 public class EntityMerikMissile extends EntityThrowable implements IProjectile
 {
     private int xTile = -1;
@@ -165,7 +166,8 @@ public class EntityMerikMissile extends EntityThrowable implements IProjectile
     /**
      * Called to update the entity's position/logic.
      */
-    public void onUpdate()
+    @SuppressWarnings("rawtypes")
+	public void onUpdate()
     {
     	if (this.age-- <= 0)
     	{
@@ -424,7 +426,8 @@ public class EntityMerikMissile extends EntityThrowable implements IProjectile
     }
 
 
-    private EntityLiving getNewTarget()
+    @SuppressWarnings("rawtypes")
+	private EntityLiving getNewTarget()
     {
         double par1 = this.posX;
         double par3 = this.posY;

@@ -17,6 +17,7 @@ public class KarosMadhouse extends WorldGenerator
 
 	public KarosMadhouse() { }
 
+	@SuppressWarnings("static-access")
 	public boolean generate(World world, Random rand, int i, int j, int k) {
 
 		world.setBlock(i + 0, j + 0, k + 2, VetheaBlockHelper.karosBricks2.blockID);

@@ -181,7 +181,8 @@ public class ContainerSuperEnchant extends Container
     /**
      * enchants the item on the table using the specified slot; also deducts XP from player
      */
-    @Override
+    @SuppressWarnings("rawtypes")
+	@Override
     public boolean enchantItem(EntityPlayer par1EntityPlayer, int par2)
     {
         ItemStack var3 = this.tableInventory.getStackInSlot(0);

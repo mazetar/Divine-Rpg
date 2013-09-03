@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
+@SuppressWarnings("unused")
 public class TileEntityInfusionTable extends TileEntity implements IInventory
 {
 	private ItemStack[] inventory;
@@ -34,6 +35,7 @@ public class TileEntityInfusionTable extends TileEntity implements IInventory
         return inventory[i];
 	}
 
+	@SuppressWarnings("static-access")
 	public void updateEntity()
 	{
 		if(inventory[2] == null)

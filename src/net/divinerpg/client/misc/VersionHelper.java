@@ -18,6 +18,7 @@ public class VersionHelper {
 	public static final byte CONNECTION_ERROR = 3;
 	public static final byte FILE_PARSE_ERROR = 4;
 
+	@SuppressWarnings("unused")
 	private static final String VERSION_CHECK_DISABLED = "version.check_disabled";
 	private static final String VERSION_CHECK_INIT_LOG_MESSAGE = "version.init_log_message";
 	private static final String UNINITIALIZED_MESSAGE = "version.uninitialized";

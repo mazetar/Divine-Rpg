@@ -5,10 +5,8 @@ import java.util.Random;
 
 import net.divinerpg.blocks.BlockDivineLeaves;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
@@ -69,7 +67,8 @@ public class BlockGlowingLeaves extends BlockDivineLeaves
 
 
 
-    public void addCreativeItems(ArrayList var1)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public void addCreativeItems(ArrayList var1)
     {
         var1.add(new ItemStack(this, 1));
     }

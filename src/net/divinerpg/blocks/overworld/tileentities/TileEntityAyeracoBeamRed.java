@@ -7,6 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("unused")
 public class TileEntityAyeracoBeamRed extends TileEntity
 {
     /** List of effects that Beacon can apply */

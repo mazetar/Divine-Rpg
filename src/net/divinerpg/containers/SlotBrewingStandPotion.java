@@ -6,6 +6,7 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+@SuppressWarnings("unused")
 public class SlotBrewingStandPotion extends Slot
 {
     /** The player that has this container open. */

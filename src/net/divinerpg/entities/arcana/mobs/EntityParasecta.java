@@ -22,6 +22,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
+@SuppressWarnings({"unused", "rawtypes"})
 public class EntityParasecta extends EntityDivineMob implements IBossDisplayData
 {
 	private ChunkCoordinates currentFlightTarget;

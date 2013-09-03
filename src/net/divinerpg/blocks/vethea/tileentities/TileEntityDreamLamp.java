@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
+@SuppressWarnings("unused")
 public class TileEntityDreamLamp extends TileEntity implements IInventory
 {
 	private ItemStack[] inventory;
@@ -35,7 +36,8 @@ public class TileEntityDreamLamp extends TileEntity implements IInventory
         return inventory[i];
 	}
 	
- 	public void updateEntity()
+ 	@SuppressWarnings("static-access")
+	public void updateEntity()
  	{
 		if(coalDuration > 0)
 		{

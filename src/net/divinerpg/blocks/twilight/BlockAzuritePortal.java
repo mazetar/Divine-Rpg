@@ -249,7 +249,8 @@ public class BlockAzuritePortal extends BlockBreakable
     /**
      * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
      */
-    public void onEntityCollidedWithBlock(World var1, int var2, int var3, int var4, Entity var5)
+    @SuppressWarnings("unused")
+	public void onEntityCollidedWithBlock(World var1, int var2, int var3, int var4, Entity var5)
     {
         if (!var1.isRemote)
         {

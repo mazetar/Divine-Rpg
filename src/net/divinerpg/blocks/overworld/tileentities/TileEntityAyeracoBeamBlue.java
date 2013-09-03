@@ -7,6 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("unused")
 public class TileEntityAyeracoBeamBlue extends TileEntity
 {
     /** List of effects that Beacon can apply */
@@ -14,7 +15,7 @@ public class TileEntityAyeracoBeamBlue extends TileEntity
     private long field_82137_b;
     @SideOnly(Side.CLIENT)
     private float field_82138_c;
-    private boolean field_82135_d;
+	private boolean field_82135_d;
 
     @SideOnly(Side.CLIENT)
     public float func_82125_v_()

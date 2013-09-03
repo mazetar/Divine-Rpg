@@ -2,7 +2,6 @@ package net.divinerpg.blocks.twilight;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineLeaves;
 import net.divinerpg.entities.particle.EntityDravitePortalFX;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;
@@ -257,7 +256,8 @@ public class BlockTwilightPortal extends BlockBreakable
     /**
      * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
      */
-    public void onEntityCollidedWithBlock(World var1, int var2, int var3, int var4, Entity var5)
+    @SuppressWarnings("unused")
+	public void onEntityCollidedWithBlock(World var1, int var2, int var3, int var4, Entity var5)
     {
         if (!var1.isRemote)
         {

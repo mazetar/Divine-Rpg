@@ -143,7 +143,8 @@ public class EntityFirefly extends EntityThrowable implements IProjectile
     /**
      * Called to update the entity's position/logic.
      */
-    public void onUpdate()
+    @SuppressWarnings("rawtypes")
+	public void onUpdate()
     {
         this.lastTickPosX = this.posX;
         this.lastTickPosY = this.posY;
@@ -423,7 +424,8 @@ public class EntityFirefly extends EntityThrowable implements IProjectile
 
 
 
-    private EntityLiving getNewTarget()
+    @SuppressWarnings("rawtypes")
+	private EntityLiving getNewTarget()
     {
         double par1 = this.posX;
         double par3 = this.posY;

@@ -154,6 +154,7 @@ public class TileEntityCondenser extends TileEntity implements IInventory
      * Returns the number of ticks that the supplied fuel item will keep the furnace burning, or 0 if the item isn't
      * fuel
      */
+    @SuppressWarnings("unused")
     public static int getItemBurnTime(ItemStack par0ItemStack)
     {
         if (par0ItemStack == null)
@@ -163,7 +164,8 @@ public class TileEntityCondenser extends TileEntity implements IInventory
         else
         {
             int var1 = par0ItemStack.getItem().itemID;
-            Item var2 = par0ItemStack.getItem();
+
+			Item var2 = par0ItemStack.getItem();
 
             if (var1 == ArcanaItemHelper.veiloItem.itemID)
             {

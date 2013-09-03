@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("unused")
 public class BlockMiniBricks extends BlockDivine
 {
     public static final String[] blockStepTypes = new String[0];
@@ -139,7 +140,8 @@ public class BlockMiniBricks extends BlockDivine
     /**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
      */
-    public void getSubBlocks(int var1, CreativeTabs var2, List var3)
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	public void getSubBlocks(int var1, CreativeTabs var2, List var3)
     {
         var3.add(new ItemStack(var1, 1, 0));
         var3.add(new ItemStack(var1, 1, 1));

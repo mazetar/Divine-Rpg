@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("unused")
 public class BlockColoredVane extends BlockDivine
 {
     public static final String[] blockStepTypes = new String[0];
@@ -97,7 +98,8 @@ public class BlockColoredVane extends BlockDivine
         }
     }
 
-    @SideOnly(Side.CLIENT)
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	@SideOnly(Side.CLIENT)
     public void getSubBlocks(int var1, CreativeTabs var2, List var3)
     {
         var3.add(new ItemStack(var1, 1, 0));

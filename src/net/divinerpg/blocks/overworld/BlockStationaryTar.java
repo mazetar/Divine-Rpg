@@ -54,7 +54,8 @@ public class BlockStationaryTar extends BlockDivineFluid
         return var1.getBlockMaterial(var2, var3, var4).getCanBurn();
     }
 
-    public void addCreativeItems(ArrayList var1)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public void addCreativeItems(ArrayList var1)
     {
         var1.add(new ItemStack(this, 1));
     }

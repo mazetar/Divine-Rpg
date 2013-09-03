@@ -42,7 +42,8 @@ public class BlockDarkPlate extends BlockDivinePressurePlate
      * Returns the current state of the pressure plate. Returns a value between 0 and 15 based on the number of items on
      * it.
      */
-    protected int getPlateState(World par1World, int par2, int par3, int par4)
+    @SuppressWarnings("rawtypes")
+	protected int getPlateState(World par1World, int par2, int par3, int par4)
     {
         List list = null;
 

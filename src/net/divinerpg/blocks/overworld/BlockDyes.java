@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("unused")
 public class BlockDyes extends BlockDivine
 {
     public static final String[] blockStepTypes = new String[0];
@@ -187,7 +188,8 @@ public class BlockDyes extends BlockDivine
         }
     }
 
-    @SideOnly(Side.CLIENT)
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	@SideOnly(Side.CLIENT)
 
     /**
      * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)

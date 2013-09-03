@@ -126,7 +126,8 @@ public class BlockTomato extends BlockDivineFlower
         return 6;
     }
 
-    public ArrayList getBlockDropped(World var1, int var2, int var3, int var4, int var5, int var6)
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	public ArrayList getBlockDropped(World var1, int var2, int var3, int var4, int var5, int var6)
     {
         ArrayList var7 = new ArrayList();
 

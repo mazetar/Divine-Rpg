@@ -99,7 +99,8 @@ public class BlockDarkBridge extends BlockDivine
         return OverworldBlockHelper.darkBridge.blockID;
     }
 
-    public void addCreativeItems(ArrayList var1)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public void addCreativeItems(ArrayList var1)
     {
         var1.add(new ItemStack(this, 1));
     }

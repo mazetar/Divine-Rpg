@@ -22,7 +22,8 @@ public class BlockRupeeOre extends BlockDivine
         return OverworldItemHelper.rupeeIngot.itemID;
     }
 
-    public void addCreativeItems(ArrayList var1)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public void addCreativeItems(ArrayList var1)
     {
         var1.add(new ItemStack(this, 1));
     }

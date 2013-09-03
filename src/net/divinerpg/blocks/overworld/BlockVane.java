@@ -18,7 +18,8 @@ public class BlockVane extends BlockDivine
         return var1;
     }
 
-    public void addCreativeItems(ArrayList var1)
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public void addCreativeItems(ArrayList var1)
     {
         var1.add(new ItemStack(this, 1));
     }

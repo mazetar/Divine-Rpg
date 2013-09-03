@@ -3,9 +3,10 @@ package net.divinerpg.blocks.overworld;
 import net.minecraft.block.BlockPane;
 import net.minecraft.block.material.Material;
 
+@SuppressWarnings("unused")
 public class BlockColoredPane extends BlockPane
 {
-    private final boolean canDropItself;
+	private final boolean canDropItself;
 
     public BlockColoredPane(int var1, String var2, String var3, Material var4, boolean var5)
     {

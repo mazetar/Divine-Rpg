@@ -151,7 +151,8 @@ public class BlockSkeletonChest extends BlockDivineContainer implements IPersona
     /**
      * Called upon block activation (right click on the block.)
      */
-    public boolean onBlockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5, int var6, float var7, float var8, float var9)
+    @SuppressWarnings("unused")
+	public boolean onBlockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5, int var6, float var7, float var8, float var9)
     {
     	TileEntitySkeletonChest var10 = (TileEntitySkeletonChest)var1.getBlockTileEntity(var2, var3, var4);
 

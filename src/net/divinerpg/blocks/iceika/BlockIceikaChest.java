@@ -17,6 +17,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("unused")
 public class BlockIceikaChest extends BlockDivineContainer
 {
 	private Random random = new Random();

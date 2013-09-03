@@ -58,7 +58,8 @@ public class BlockElevantium extends BlockDivinePressurePlate
         return par1;
     }
 
-    protected int func_94351_d(World par1World, int par2, int par3, int par4)
+    @SuppressWarnings("rawtypes")
+	protected int func_94351_d(World par1World, int par2, int par3, int par4)
     {
         List list = null;
 

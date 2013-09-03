@@ -10,10 +10,12 @@ import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("unused")
 public class BlockColoredBricks extends BlockDivine
 {
     public static final String[] blockStepTypes = new String[0];
-    private boolean blockType;
+
+	private boolean blockType;
 
     public BlockColoredBricks(int var1, int var2, Material var3)
     {

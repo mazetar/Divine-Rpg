@@ -178,7 +178,8 @@ public class TileEntityIceikaChest extends TileEntity implements IInventory
         return true;
     }
 
-    public List getNetworkedField()
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+	public List getNetworkedField()
     {
         Vector var1 = new Vector(1);
         var1.add("owner");

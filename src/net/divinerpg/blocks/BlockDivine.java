@@ -12,6 +12,7 @@ public class BlockDivine extends Block implements IBlockDivineRPG {
 
 	public BlockDivine(int id, int sprite, Material mat) {
 		super(id, mat);
+		// TEST GIT SYSTEM
 	}
 	
 	public BlockDivine(int id, Material mat)

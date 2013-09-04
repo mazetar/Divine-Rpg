@@ -4,6 +4,7 @@ import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 
+@SuppressWarnings("unused")
 public class EntityAyeracoGreen extends EntityAyeraco
 {
 	private EntityAyeraco aBlue;

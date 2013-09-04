@@ -18,9 +18,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.world.World;
 
+@SuppressWarnings("unused")
 public class EntityVamacheron extends EntityDivineMob implements IBossDisplayData
 {
-    private ChunkCoordinates chargeTarget;
+	private ChunkCoordinates chargeTarget;
 	private int waitTick;
 
 	public EntityVamacheron(World var1)

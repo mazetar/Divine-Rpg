@@ -3,6 +3,7 @@ package net.divinerpg.blocks.vethea;
 import java.util.Random;
 
 import net.divinerpg.entities.vethea.projectile.EntityZoragonBomb;
+import net.divinerpg.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -132,14 +133,10 @@ public class BlockHelioticBeam extends Block
         return true;
     }
 
-    @SideOnly(Side.CLIENT)
-    public void func_94332_a(IconRegister par1IconRegister)
-    {
-        this.texture = new Icon[2];
 
-        for (int i = 0; i < this.texture.length; ++i)
-        {
-            this.texture[i] = par1IconRegister.registerIcon("helioticBeam_" + i);
-        }
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister) {
+	    this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E());
+	}
 }

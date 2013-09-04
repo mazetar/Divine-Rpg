@@ -75,7 +75,6 @@ public class BiomeDecoratorArksiane extends BiomeDecorator
     
     private final WorldGenerator layer1Gen;
     
-    //TODO
     private final WorldGenerator ceilingTexture;
     private final WorldGenerator pillar;
     private final WorldGenerator cracklespikes;

@@ -1,17 +1,19 @@
-package net.divinerpg.blocks.twilight;
+package net.divinerpg.utils.unused;
 
 import java.util.Random;
 
-import net.divinerpg.entities.particle.EntityAugitePortalFX;
+import net.divinerpg.entities.particle.EntityAzuritePortalFX;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
-import net.divinerpg.utils.helpers.teleporters.TeleporterAugite;
+import net.divinerpg.utils.helpers.teleporters.TeleporterAzurite;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -19,16 +21,18 @@ import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockAugitePortal extends BlockBreakable
+public class BlockAzuritePortal extends BlockBreakable
 {
     private int firetick;
-    private int firemax = 1000;
+    private int firemax = 100;
 
-    public BlockAugitePortal(int var1)
+    public BlockAzuritePortal(int var1)
     {
-        super(var1, "DivineRPG:AugitePortal", Material.portal, false);
-        this.firetick = this.firemax;
+    	super(var1, "DivineRPG:azuritePortal", Material.portal, false);
+        this.firetick = 0;
+        this.setUnlocalizedName("AzuritePortal");
     }
+    
 
     /**
      * Returns a bounding box from the pool of bounding boxes (this means this box can change after the pool has been
@@ -83,12 +87,12 @@ public class BlockAugitePortal extends BlockBreakable
         byte var5 = 0;
         byte var6 = 0;
 
-        if (var1.getBlockId(var2 - 1, var3, var4) == TwilightBlockHelper.MythrilBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == TwilightBlockHelper.MythrilBlock.blockID)
+        if (var1.getBlockId(var2 - 1, var3, var4) == TwilightBlockHelper.DraviteBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == TwilightBlockHelper.DraviteBlock.blockID)
         {
             var5 = 1;
         }
 
-        if (var1.getBlockId(var2, var3, var4 - 1) == TwilightBlockHelper.MythrilBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == TwilightBlockHelper.MythrilBlock.blockID)
+        if (var1.getBlockId(var2, var3, var4 - 1) == TwilightBlockHelper.DraviteBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == TwilightBlockHelper.DraviteBlock.blockID)
         {
             var6 = 1;
         }
@@ -120,7 +124,7 @@ public class BlockAugitePortal extends BlockBreakable
 
                         if (var9)
                         {
-                            if (var10 != TwilightBlockHelper.MythrilBlock.blockID)
+                            if (var10 != TwilightBlockHelper.DraviteBlock.blockID)
                             {
                                 return false;
                             }
@@ -133,13 +137,17 @@ public class BlockAugitePortal extends BlockBreakable
                 }
             }
 
+            var1.scheduledUpdatesAreImmediate = true;
+
             for (var7 = 0; var7 < 2; ++var7)
             {
                 for (var8 = 0; var8 < 3; ++var8)
                 {
-                    var1.setBlock(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.AugitePortal.blockID);
+                    var1.setBlock(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.AzuritePortal.blockID);
                 }
             }
+
+            var1.scheduledUpdatesAreImmediate = false;
             return true;
         }
     }
@@ -166,7 +174,7 @@ public class BlockAugitePortal extends BlockBreakable
             ;
         }
 
-        if (var1.getBlockId(var2, var8 - 1, var4) != TwilightBlockHelper.MythrilBlock.blockID)
+        if (var1.getBlockId(var2, var8 - 1, var4) != TwilightBlockHelper.DraviteBlock.blockID)
         {
             var1.setBlockToAir(var2, var3, var4);
         }
@@ -179,23 +187,23 @@ public class BlockAugitePortal extends BlockBreakable
                 ;
             }
 
-            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == TwilightBlockHelper.AugitePortal.blockID)
+            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == TwilightBlockHelper.DraviteBlock.blockID)
             {
                 boolean var10 = var1.getBlockId(var2 - 1, var3, var4) == this.blockID || var1.getBlockId(var2 + 1, var3, var4) == this.blockID;
                 boolean var11 = var1.getBlockId(var2, var3, var4 - 1) == this.blockID || var1.getBlockId(var2, var3, var4 + 1) == this.blockID;
 
                 if (var10 && var11)
                 {
-                    var1.setBlock(var2, var3, var4, 0);
+                    var1.setBlockToAir(var2, var3, var4);
                 }
-                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.MythrilBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != TwilightBlockHelper.MythrilBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
+                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.DraviteBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != TwilightBlockHelper.DraviteBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
-                    var1.setBlock(var2, var3, var4, 0);
+                    var1.setBlockToAir(var2, var3, var4);
                 }
             }
             else
             {
-                var1.setBlock(var2, var3, var4, 0);
+                var1.setBlockToAir(var2, var3, var4);
             }
         }
     }
@@ -255,16 +263,14 @@ public class BlockAugitePortal extends BlockBreakable
 
                     if (var5.ridingEntity == null && var5.riddenByEntity == null && var5 instanceof EntityPlayer)
                     {
-                    	
-                    	//var6.addStat(AchievementPageDivineRPG.possibilities, 1); TODO
-                        var1.playSound((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "xolovon.AugitePortal", 0.5F, ((EntityPlayerMP) var5).getRNG().nextFloat() * 0.4F + 0.8F, false);
-                        if (var6.dimension != DimensionRegistry.AugiteID)
+                        var1.playSound((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "xolovon.AzuritePortal", 0.5F, ((EntityPlayerMP) var5).getRNG().nextFloat() * 0.4F + 0.8F, false);
+                        if (var6.dimension != DimensionRegistry.AzuriteID)
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DimensionRegistry.AugiteID, new TeleporterAugite(var6.mcServer.worldServerForDimension(DimensionRegistry.AugiteID)));
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DimensionRegistry.AzuriteID, new TeleporterAzurite(var6.mcServer.worldServerForDimension(DimensionRegistry.AzuriteID)));
                         }
                         else
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, 0, new TeleporterAugite(var6.mcServer.worldServerForDimension(0)));
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, 0, new TeleporterAzurite(var6.mcServer.worldServerForDimension(0)));
                         }
                     }
                 }
@@ -310,8 +316,22 @@ public class BlockAugitePortal extends BlockBreakable
                 var17 = (double)(var5.nextFloat() * 2.0F * (float)var19);
             }
 
-            EntityAugitePortalFX var20 = new EntityAugitePortalFX(var1, var7, var9, var11, var13, var15, var17);
+            EntityAzuritePortalFX var20 = new EntityAzuritePortalFX(var1, var7, var9, var11, var13, var15, var17);
             FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
+        }
+    }
+    
+    public Icon[] texture;
+    public String name = this.getUnlocalizedName();
+    
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister par1IconRegister)
+    {
+        this.texture = new Icon[2];
+
+        for (int i = 0; i < this.texture.length; ++i)
+        {
+            this.texture[i] = par1IconRegister.registerIcon(this.name + "_" + i);
         }
     }
 }

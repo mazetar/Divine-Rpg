@@ -1,4 +1,4 @@
-package net.divinerpg.utils.helpers.config;
+package net.divinerpg.utils.unused;
 import java.io.File;
 
 import net.minecraftforge.common.Configuration;

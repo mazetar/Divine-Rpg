@@ -1,19 +1,16 @@
-package net.divinerpg.blocks.vethea;
+package net.divinerpg.utils.unused;
 
 import java.util.Random;
 
-import net.divinerpg.entities.particle.EntityMythrilPortalFX;
+import net.divinerpg.entities.particle.EntityAugitePortalFX;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
-import net.divinerpg.utils.helpers.teleporters.TeleporterVethea;
-import net.minecraft.block.Block;
+import net.divinerpg.utils.helpers.teleporters.TeleporterAugite;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -22,16 +19,15 @@ import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockPortalVethea extends BlockBreakable
+public class BlockAugitePortal extends BlockBreakable
 {
     private int firetick;
-    private int firemax = 200;
-    private NBTTagCompound data;
+    private int firemax = 1000;
 
-    public BlockPortalVethea(int var1, String var2)
+    public BlockAugitePortal(int var1)
     {
-        super(var1, var2, Material.portal, false);
-        this.firetick = 0;
+        super(var1, "DivineRPG:AugitePortal", Material.portal, false);
+        this.firetick = this.firemax;
     }
 
     /**
@@ -87,13 +83,12 @@ public class BlockPortalVethea extends BlockBreakable
         byte var5 = 0;
         byte var6 = 0;
 
-        if (var1.getBlockId(var2 - 1, var3, var4) == Block.blockSnow.blockID || var1.getBlockId(var2 + 1, var3, var4) == Block.blockSnow.blockID)
+        if (var1.getBlockId(var2 - 1, var3, var4) == TwilightBlockHelper.MythrilBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == TwilightBlockHelper.MythrilBlock.blockID)
         {
             var5 = 1;
-            
         }
 
-        if (var1.getBlockId(var2, var3, var4 - 1) == Block.blockSnow.blockID || var1.getBlockId(var2, var3, var4 + 1) == Block.blockSnow.blockID)
+        if (var1.getBlockId(var2, var3, var4 - 1) == TwilightBlockHelper.MythrilBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == TwilightBlockHelper.MythrilBlock.blockID)
         {
             var6 = 1;
         }
@@ -125,12 +120,12 @@ public class BlockPortalVethea extends BlockBreakable
 
                         if (var9)
                         {
-                            if (var10 != Block.blockSnow.blockID)
+                            if (var10 != TwilightBlockHelper.MythrilBlock.blockID)
                             {
                                 return false;
                             }
                         }
-                        else if (var10 != 0 && var10 != TwilightBlockHelper.AugiteBlock.blockID)
+                        else if (var10 != 0 && var10 != TwilightBlockHelper.blueFire.blockID)
                         {
                             return false;
                         }
@@ -138,17 +133,13 @@ public class BlockPortalVethea extends BlockBreakable
                 }
             }
 
-            var1.scheduledUpdatesAreImmediate = true;
-
             for (var7 = 0; var7 < 2; ++var7)
             {
                 for (var8 = 0; var8 < 3; ++var8)
                 {
-                    var1.setBlock(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.AugiteBlock.blockID);
+                    var1.setBlock(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.AugitePortal.blockID);
                 }
             }
-
-            var1.scheduledUpdatesAreImmediate = false;
             return true;
         }
     }
@@ -175,9 +166,9 @@ public class BlockPortalVethea extends BlockBreakable
             ;
         }
 
-        if (var1.getBlockId(var2, var8 - 1, var4) != Block.blockSnow.blockID)
+        if (var1.getBlockId(var2, var8 - 1, var4) != TwilightBlockHelper.MythrilBlock.blockID)
         {
-            var1.setBlock(var2, var3, var4, 0);
+            var1.setBlockToAir(var2, var3, var4);
         }
         else
         {
@@ -188,7 +179,7 @@ public class BlockPortalVethea extends BlockBreakable
                 ;
             }
 
-            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == Block.blockSnow.blockID)
+            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == TwilightBlockHelper.AugitePortal.blockID)
             {
                 boolean var10 = var1.getBlockId(var2 - 1, var3, var4) == this.blockID || var1.getBlockId(var2 + 1, var3, var4) == this.blockID;
                 boolean var11 = var1.getBlockId(var2, var3, var4 - 1) == this.blockID || var1.getBlockId(var2, var3, var4 + 1) == this.blockID;
@@ -197,7 +188,7 @@ public class BlockPortalVethea extends BlockBreakable
                 {
                     var1.setBlock(var2, var3, var4, 0);
                 }
-                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != Block.blockSnow.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != Block.blockSnow.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
+                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.MythrilBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != TwilightBlockHelper.MythrilBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
                     var1.setBlock(var2, var3, var4, 0);
                 }
@@ -250,8 +241,7 @@ public class BlockPortalVethea extends BlockBreakable
     /**
      * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
      */
-
-    @SuppressWarnings({"static-access", "unused"})
+    @SuppressWarnings("unused")
 	public void onEntityCollidedWithBlock(World var1, int var2, int var3, int var4, Entity var5)
     {
         if (!var1.isRemote)
@@ -260,31 +250,21 @@ public class BlockPortalVethea extends BlockBreakable
             {
                 if (var5 instanceof EntityPlayerMP)
                 {
-                    
-					WorldServer worldServer = (WorldServer)var1;
+                    WorldServer worldServer = (WorldServer)var1;
                     EntityPlayerMP var6 = (EntityPlayerMP)var5;
 
                     if (var5.ridingEntity == null && var5.riddenByEntity == null && var5 instanceof EntityPlayer)
                     {
-                    	EntityPlayer player = (EntityPlayer)var5;
-                    	data = player.getEntityData().getCompoundTag(player.PERSISTED_NBT_TAG);
-                        if (var6.dimension != DimensionRegistry.VetheaID)
+                    	
+                    	//var6.addStat(AchievementPageDivineRPG.possibilities, 1); TODO
+                        var1.playSound((double)var2 + 0.5D, (double)var3 + 0.5D, (double)var4 + 0.5D, "xolovon.AugitePortal", 0.5F, ((EntityPlayerMP) var5).getRNG().nextFloat() * 0.4F + 0.8F, false);
+                        if (var6.dimension != DimensionRegistry.AugiteID)
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DimensionRegistry.VetheaID, new TeleporterVethea(var6.mcServer.worldServerForDimension(DimensionRegistry.VetheaID)));
-                            data.setTag("InventoryOverWorld", player.inventory.writeToNBT(new NBTTagList()));
-                            player.getEntityData().setCompoundTag(player.PERSISTED_NBT_TAG, data);
-                            player.inventory.clearInventory(-1, -1);
-                            NBTTagList x = data.getTagList("InventoryVethea");
-                            player.inventory.readFromNBT(x);
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DimensionRegistry.AugiteID, new TeleporterAugite(var6.mcServer.worldServerForDimension(DimensionRegistry.AugiteID)));
                         }
                         else
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, 0, new TeleporterVethea(var6.mcServer.worldServerForDimension(0)));
-                            data.setTag("InventoryVethea", player.inventory.writeToNBT(new NBTTagList()));
-                            player.getEntityData().setCompoundTag(player.PERSISTED_NBT_TAG, data);
-                            player.inventory.clearInventory(-1, -1);
-                            NBTTagList y = data.getTagList("InventoryOverWorld");
-                            player.inventory.readFromNBT(y);
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, 0, new TeleporterAugite(var6.mcServer.worldServerForDimension(0)));
                         }
                     }
                 }
@@ -330,7 +310,7 @@ public class BlockPortalVethea extends BlockBreakable
                 var17 = (double)(var5.nextFloat() * 2.0F * (float)var19);
             }
 
-            EntityMythrilPortalFX var20 = new EntityMythrilPortalFX(var1, var7, var9, var11, var13, var15, var17);
+            EntityAugitePortalFX var20 = new EntityAugitePortalFX(var1, var7, var9, var11, var13, var15, var17);
             FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
         }
     }

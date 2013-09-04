@@ -1,17 +1,19 @@
-package net.divinerpg.blocks.twilight;
+package net.divinerpg.utils.unused;
 
 import java.util.Random;
 
 import net.divinerpg.entities.particle.EntityMythrilPortalFX;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
-import net.divinerpg.utils.helpers.teleporters.TeleporterMythril;
+import net.divinerpg.utils.helpers.teleporters.TeleporterVethea;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -20,12 +22,13 @@ import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMythrilPortal extends BlockBreakable
+public class BlockPortalVethea extends BlockBreakable
 {
     private int firetick;
-    private int firemax = 1000;
+    private int firemax = 200;
+    private NBTTagCompound data;
 
-    public BlockMythrilPortal(int var1, String var2)
+    public BlockPortalVethea(int var1, String var2)
     {
         super(var1, var2, Material.portal, false);
         this.firetick = 0;
@@ -84,12 +87,13 @@ public class BlockMythrilPortal extends BlockBreakable
         byte var5 = 0;
         byte var6 = 0;
 
-        if (var1.getBlockId(var2 - 1, var3, var4) == TwilightBlockHelper.UviteBlock.blockID || var1.getBlockId(var2 + 1, var3, var4) == TwilightBlockHelper.UviteBlock.blockID)
+        if (var1.getBlockId(var2 - 1, var3, var4) == Block.blockSnow.blockID || var1.getBlockId(var2 + 1, var3, var4) == Block.blockSnow.blockID)
         {
             var5 = 1;
+            
         }
 
-        if (var1.getBlockId(var2, var3, var4 - 1) == TwilightBlockHelper.UviteBlock.blockID || var1.getBlockId(var2, var3, var4 + 1) == TwilightBlockHelper.UviteBlock.blockID)
+        if (var1.getBlockId(var2, var3, var4 - 1) == Block.blockSnow.blockID || var1.getBlockId(var2, var3, var4 + 1) == Block.blockSnow.blockID)
         {
             var6 = 1;
         }
@@ -121,12 +125,12 @@ public class BlockMythrilPortal extends BlockBreakable
 
                         if (var9)
                         {
-                            if (var10 != TwilightBlockHelper.UviteBlock.blockID)
+                            if (var10 != Block.blockSnow.blockID)
                             {
                                 return false;
                             }
                         }
-                        else if (var10 != 0 && var10 != TwilightBlockHelper.blueFire.blockID)
+                        else if (var10 != 0 && var10 != TwilightBlockHelper.AugiteBlock.blockID)
                         {
                             return false;
                         }
@@ -134,15 +138,17 @@ public class BlockMythrilPortal extends BlockBreakable
                 }
             }
 
+            var1.scheduledUpdatesAreImmediate = true;
 
             for (var7 = 0; var7 < 2; ++var7)
             {
                 for (var8 = 0; var8 < 3; ++var8)
                 {
-                    var1.setBlock(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.MythrilPortal.blockID);
+                    var1.setBlock(var2 + var5 * var7, var3 + var8, var4 + var6 * var7, TwilightBlockHelper.AugiteBlock.blockID);
                 }
             }
 
+            var1.scheduledUpdatesAreImmediate = false;
             return true;
         }
     }
@@ -169,7 +175,7 @@ public class BlockMythrilPortal extends BlockBreakable
             ;
         }
 
-        if (var1.getBlockId(var2, var8 - 1, var4) != TwilightBlockHelper.UviteBlock.blockID)
+        if (var1.getBlockId(var2, var8 - 1, var4) != Block.blockSnow.blockID)
         {
             var1.setBlock(var2, var3, var4, 0);
         }
@@ -182,7 +188,7 @@ public class BlockMythrilPortal extends BlockBreakable
                 ;
             }
 
-            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == TwilightBlockHelper.UviteBlock.blockID)
+            if (var9 == 3 && var1.getBlockId(var2, var8 + var9, var4) == Block.blockSnow.blockID)
             {
                 boolean var10 = var1.getBlockId(var2 - 1, var3, var4) == this.blockID || var1.getBlockId(var2 + 1, var3, var4) == this.blockID;
                 boolean var11 = var1.getBlockId(var2, var3, var4 - 1) == this.blockID || var1.getBlockId(var2, var3, var4 + 1) == this.blockID;
@@ -191,7 +197,7 @@ public class BlockMythrilPortal extends BlockBreakable
                 {
                     var1.setBlock(var2, var3, var4, 0);
                 }
-                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != TwilightBlockHelper.UviteBlock.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != TwilightBlockHelper.UviteBlock.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
+                else if ((var1.getBlockId(var2 + var6, var3, var4 + var7) != Block.blockSnow.blockID || var1.getBlockId(var2 - var6, var3, var4 - var7) != this.blockID) && (var1.getBlockId(var2 - var6, var3, var4 - var7) != Block.blockSnow.blockID || var1.getBlockId(var2 + var6, var3, var4 + var7) != this.blockID))
                 {
                     var1.setBlock(var2, var3, var4, 0);
                 }
@@ -244,27 +250,41 @@ public class BlockMythrilPortal extends BlockBreakable
     /**
      * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
      */
-    @SuppressWarnings("unused")
+
+    @SuppressWarnings({"static-access", "unused"})
 	public void onEntityCollidedWithBlock(World var1, int var2, int var3, int var4, Entity var5)
     {
-        if (!var1.isRemote && var5 instanceof EntityLiving)
+        if (!var1.isRemote)
         {
             if (this.firetick == this.firemax && this.firemax != 0)
             {
                 if (var5 instanceof EntityPlayerMP)
                 {
-                    WorldServer worldServer = (WorldServer)var1;
+                    
+					WorldServer worldServer = (WorldServer)var1;
                     EntityPlayerMP var6 = (EntityPlayerMP)var5;
 
                     if (var5.ridingEntity == null && var5.riddenByEntity == null && var5 instanceof EntityPlayer)
                     {
-                        if (var6.dimension != DimensionRegistry.MythrilID)
+                    	EntityPlayer player = (EntityPlayer)var5;
+                    	data = player.getEntityData().getCompoundTag(player.PERSISTED_NBT_TAG);
+                        if (var6.dimension != DimensionRegistry.VetheaID)
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DimensionRegistry.MythrilID, new TeleporterMythril(var6.mcServer.worldServerForDimension(DimensionRegistry.MythrilID)));
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DimensionRegistry.VetheaID, new TeleporterVethea(var6.mcServer.worldServerForDimension(DimensionRegistry.VetheaID)));
+                            data.setTag("InventoryOverWorld", player.inventory.writeToNBT(new NBTTagList()));
+                            player.getEntityData().setCompoundTag(player.PERSISTED_NBT_TAG, data);
+                            player.inventory.clearInventory(-1, -1);
+                            NBTTagList x = data.getTagList("InventoryVethea");
+                            player.inventory.readFromNBT(x);
                         }
                         else
                         {
-                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, 0, new TeleporterMythril(var6.mcServer.worldServerForDimension(0)));
+                            var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, 0, new TeleporterVethea(var6.mcServer.worldServerForDimension(0)));
+                            data.setTag("InventoryVethea", player.inventory.writeToNBT(new NBTTagList()));
+                            player.getEntityData().setCompoundTag(player.PERSISTED_NBT_TAG, data);
+                            player.inventory.clearInventory(-1, -1);
+                            NBTTagList y = data.getTagList("InventoryOverWorld");
+                            player.inventory.readFromNBT(y);
                         }
                     }
                 }

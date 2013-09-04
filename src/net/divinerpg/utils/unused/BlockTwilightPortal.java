@@ -1,4 +1,4 @@
-package net.divinerpg.blocks.twilight;
+package net.divinerpg.utils.unused;
 
 import java.util.Random;
 

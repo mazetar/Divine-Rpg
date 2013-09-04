@@ -61,7 +61,8 @@ public class ItemTwilightClock extends Item
             }
             else if (var11 == Block.blockSnow.blockID && world.isAirBlock(x, y + 1, z))
             {
-                world.setBlock(x, y, z, IceikaBlockHelper.iceikaPortal.blockID);
+
+                IceikaBlockHelper.iceikaPortal.tryToCreatePortal(world, x, y+1, z);
                 return true;
             }
             else

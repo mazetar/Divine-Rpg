@@ -1,26 +1,41 @@
 package net.divinerpg.utils.proxies;
 
 import net.divinerpg.utils.handlers.ExplosiveArrowHitHandler;
-import net.divinerpg.utils.helpers.entity.ArcanaEntityHelper;
+import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
+import net.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import net.divinerpg.utils.helpers.entity.IceikaEntityHelper;
+import net.divinerpg.utils.helpers.item.IceikaItemHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class IceikaProxy {
  
     public void preInit(FMLPreInitializationEvent event) {
-        // NO-OP
+
+        IceikaConfigHelper.initConfig(event);
     }
     
     public void init(FMLInitializationEvent event) {
 
+
+        IceikaBlockHelper.init();
+        IceikaItemHelper.init();
+        
+        // IceikaRecipeHelper call here (NYI). --MAZ
+        
         MinecraftForge.EVENT_BUS.register(new ExplosiveArrowHitHandler());
-        initEntityRenderers();
+        
     }
     
+
+    public void postInit(FMLPostInitializationEvent event) {
+        initEntityRenderers();
+    }
     public void initEntityRenderers() {
         IceikaEntityHelper.init();
     }
+
 	
 }

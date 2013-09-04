@@ -94,11 +94,15 @@ public class OverworldConfigHelper
 	
 	public static void initConfig(FMLPreInitializationEvent event)
 	{
-		File file = new File(event.getModConfigurationDirectory(), "DivineRPGOverworld.cfg");
-		Configuration config = new Configuration(file);
+//		File file = new File(event.getModConfigurationDirectory(), "DivineRPGOverworld2.cfg");
+//		Configuration config = new Configuration(file);
+//		
+	//	File file = new File(event.getModConfigurationDirectory(), "DivineRPG.cfg");
+        Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		
 		config.load();
-		
+
+        InitConfigBlocks(config);
 		InitConfigItems(config);
 		
 		config.save();
@@ -106,87 +110,76 @@ public class OverworldConfigHelper
 	
 	public static void InitConfigBlocks(Configuration config)
 	{
-		blueFireID = config.getBlock("blueFireID", 0).getInt();
-		divineRockID = config.getBlock("divineRockID", 0).getInt();
-		
-		acceleraunchID = config.getBlock("acceleraunchID", 0).getInt();
-		acceleronID = config.getBlock("acceleronID", 0).getInt();
-		
-		aeStatueID = config.getBlock("aeStatueID", 0).getInt();
-		ayeracoStatueID = config.getBlock("ayeracoStatueID", 0).getInt();
-		kosStatueID = config.getBlock("kosStatueID", 0).getInt();
-		watcherStatueID = config.getBlock("watcherStatueID", 0).getInt();
-		
-		ayeracoBeamBlueID = config.getBlock("ayeracoBeamBlueID", 0).getInt();
-		ayeracoBeamGreenID = config.getBlock("ayeracoBeamGreenID", 0).getInt();
-		ayeracoBeamPurpleID = config.getBlock("ayeracoBeamPurpleID", 0).getInt();
-		ayeracoBeamRedID = config.getBlock("ayeracoBeamRedID", 0).getInt();
-		ayeracoBeamYellowID = config.getBlock("ayeracoBeamYellowID", 0).getInt();
-
-		colouredBricksID = config.getBlock("colouredBricksID", 0).getInt();
-		colouredGlassID = config.getBlock("colouredGlassID", 0).getInt();
-		colouredPanesID = config.getBlock("colouredPanesID", 0).getInt();
-		colouredTorchID = config.getBlock("colouredTorchID", 0).getInt();
-		dyeBlocksID = config.getBlock("dyeBlocksID", 0).getInt();
-		miniBricksID = config.getBlock("miniBricksID", 0).getInt();
-		steelID = config.getBlock("steelID", 0).getInt();
-		mobPumpkinsID = config.getBlock("mobPumpkinsID", 0).getInt();
-		
-		darkBridgeID = config.getBlock("darkBridgeID", 0).getInt();
-		lightBridgeID = config.getBlock("lightBridgeID", 0).getInt();
-		glowingStairsID = config.getBlock("glowingStairsID", 0).getInt();
-		lightFenceBlueID = config.getBlock("lightFenceBlueID", 0).getInt();
-		lightFenceRedID = config.getBlock("lightFenceRedID", 0).getInt();
-		skeletonChestID = config.getBlock("skeletonChestID", 0).getInt();
-
-		elevantiumID = config.getBlock("elevantiumID", 0).getInt();
-		darkPressurePlateID = config.getBlock("darkPressurePlateID", 0).getInt();
-		
-		tarStillID = config.getBlock("tarStillID", 0).getInt();
-		tarFlowingID = config.getBlock("tarFlowingID", 0).getInt();
-
-		bloodGemID = config.getBlock("bloodGemID", 0).getInt();
-		netheriteOreID = config.getBlock("neteriteOreID", 0).getInt();
-		spikeBlockID = config.getBlock("spikeBlockID", 0).getInt();
-		hotSpikesID = config.getBlock("hotSpikesID", 0).getInt();
-		
-		lightstoneID = config.getBlock("lightstoneID", 0).getInt();
-		rainbowWoolID = config.getBlock("rainbowWoolID", 0).getInt();
-
-		rupeeOreID = config.getBlock("", 0).getInt();
-		arlemiteOreID = config.getBlock("", 0).getInt();
-		realmiteOreID = config.getBlock("", 0).getInt();
-
-		lapisLampID = config.getBlock("", 0).getInt();
-		slimeLightID = config.getBlock("", 0).getInt();
-		slimeLightOnID = config.getBlock("", 0).getInt();
-		redstoneOreLampID = config.getBlock("", 0).getInt();
-		goldLampID = config.getBlock("", 0).getInt();
-		diamondLampID = config.getBlock("", 0).getInt();
-		realmiteLampID = config.getBlock("", 0).getInt();
-		netheriteLampID = config.getBlock("", 0).getInt();
-		arlemiteLampID = config.getBlock("", 0).getInt();
-		rupeeLampID = config.getBlock("", 0).getInt();
-		icestoneLampID = config.getBlock("", 0).getInt();
-		moltenstoneLampID = config.getBlock("", 0).getInt();
-		junglestoneLampID = config.getBlock("", 0).getInt();
-		enderstoneLampID = config.getBlock("", 0).getInt();
-		bluefireLampID = config.getBlock("", 0).getInt();
-		divinestoneLampID = config.getBlock("", 0).getInt();
-		milkyLampID = config.getBlock("", 0).getInt();
-		blazicLampID = config.getBlock("", 0).getInt();
-		aquaLampID = config.getBlock("", 0).getInt();
-		lavaLampID = config.getBlock("", 0).getInt();
-		enderLampID = config.getBlock("", 0).getInt();
-		krakenLampID = config.getBlock("", 0).getInt();
-		drakenLampID = config.getBlock("", 0).getInt();
-		
-		lightFenceBlueID = config.getBlock("", 0).getInt();
-		lightFenceBlueOnID = config.getBlock("", 0).getInt();
-		lightFenceRedID = config.getBlock("", 0).getInt();
-		lightFenceRedOnID = config.getBlock("", 0).getInt();
-		purpleGlowBoneTreeID = config.getBlock("", 0).getInt();
-		pinkGlowBoneTreeID = config.getBlock("", 0).getInt();
+	    int id = 500;
+		blueFireID = config.getBlock("blueFireID", ++id).getInt();
+		divineRockID = config.getBlock("divineRockID", ++id).getInt();
+		acceleraunchID = config.getBlock("acceleraunchID", ++id).getInt();
+		acceleronID = config.getBlock("acceleronID", ++id).getInt();
+		aeStatueID = config.getBlock("aeStatueID", ++id).getInt();
+		ayeracoStatueID = config.getBlock("ayeracoStatueID", ++id).getInt();
+		kosStatueID = config.getBlock("kosStatueID", ++id).getInt();
+		watcherStatueID = config.getBlock("watcherStatueID", ++id).getInt();
+		ayeracoBeamBlueID = config.getBlock("ayeracoBeamBlueID", ++id).getInt();
+		ayeracoBeamGreenID = config.getBlock("ayeracoBeamGreenID", ++id).getInt();
+		ayeracoBeamPurpleID = config.getBlock("ayeracoBeamPurpleID", ++id).getInt();
+		ayeracoBeamRedID = config.getBlock("ayeracoBeamRedID", ++id).getInt();
+		ayeracoBeamYellowID = config.getBlock("ayeracoBeamYellowID", ++id).getInt();
+		colouredBricksID = config.getBlock("colouredBricksID", ++id).getInt();
+		colouredGlassID = config.getBlock("colouredGlassID", ++id).getInt();
+		colouredPanesID = config.getBlock("colouredPanesID", ++id).getInt();
+		colouredTorchID = config.getBlock("colouredTorchID", ++id).getInt();
+		dyeBlocksID = config.getBlock("dyeBlocksID", ++id).getInt();
+		miniBricksID = config.getBlock("miniBricksID", ++id).getInt();
+		steelID = config.getBlock("steelID", ++id).getInt();
+		mobPumpkinsID = config.getBlock("mobPumpkinsID", ++id).getInt();
+		darkBridgeID = config.getBlock("darkBridgeID", ++id).getInt();
+		lightBridgeID = config.getBlock("lightBridgeID", ++id).getInt();
+		glowingStairsID = config.getBlock("glowingStairsID", ++id).getInt();
+		lightFenceBlueID = config.getBlock("lightFenceBlueID", ++id).getInt();
+		lightFenceRedID = config.getBlock("lightFenceRedID", ++id).getInt();
+		skeletonChestID = config.getBlock("skeletonChestID", ++id).getInt();
+		elevantiumID = config.getBlock("elevantiumID", ++id).getInt();
+		darkPressurePlateID = config.getBlock("darkPressurePlateID", ++id).getInt();
+		tarStillID = config.getBlock("tarStillID", ++id).getInt();
+		tarFlowingID = config.getBlock("tarFlowingID", ++id).getInt();
+		bloodGemID = config.getBlock("bloodGemID", ++id).getInt();
+		netheriteOreID = config.getBlock("neteriteOreID", ++id).getInt();
+		spikeBlockID = config.getBlock("spikeBlockID", ++id).getInt();
+		hotSpikesID = config.getBlock("hotSpikesID", ++id).getInt();
+		lightstoneID = config.getBlock("lightstoneID", ++id).getInt();
+		rainbowWoolID = config.getBlock("rainbowWoolID", ++id).getInt();
+		rupeeOreID = config.getBlock("rupeeOreID", ++id).getInt();
+		arlemiteOreID = config.getBlock("arlemiteOreID", ++id).getInt();
+		realmiteOreID = config.getBlock("realmiteOreID", ++id).getInt();
+		lapisLampID = config.getBlock("lapisLampID", ++id).getInt();
+		slimeLightID = config.getBlock("slimeLightID", ++id).getInt();
+		slimeLightOnID = config.getBlock("slimeLightOnID", ++id).getInt();
+		redstoneOreLampID = config.getBlock("redstoneOreLampID", ++id).getInt();
+		goldLampID = config.getBlock("goldLampID", ++id).getInt();
+		diamondLampID = config.getBlock("diamondLampID", ++id).getInt();
+		realmiteLampID = config.getBlock("realmiteLampID", ++id).getInt();
+		netheriteLampID = config.getBlock("netheriteLampID", ++id).getInt();
+		arlemiteLampID = config.getBlock("arlemiteLampID", ++id).getInt();
+		rupeeLampID = config.getBlock("rupeeLampID", ++id).getInt();
+		icestoneLampID = config.getBlock("icestoneLampID", ++id).getInt();
+		moltenstoneLampID = config.getBlock("moltenstoneLampID", ++id).getInt();
+		junglestoneLampID = config.getBlock("junglestoneLampID", ++id).getInt();
+		enderstoneLampID = config.getBlock("enderstoneLampID", ++id).getInt();
+		bluefireLampID = config.getBlock("bluefireLampID", ++id).getInt();
+		divinestoneLampID = config.getBlock("divinestoneLampID", ++id).getInt();
+		milkyLampID = config.getBlock("milkyLampID", ++id).getInt();
+		blazicLampID = config.getBlock("blazicLampID", ++id).getInt();
+		aquaLampID = config.getBlock("aquaLampID", ++id).getInt();
+		lavaLampID = config.getBlock("lavaLampID", ++id).getInt();
+		enderLampID = config.getBlock("enderLampID", ++id).getInt();
+		krakenLampID = config.getBlock("krakenLampID", ++id).getInt();
+		drakenLampID = config.getBlock("drakenLampID", ++id).getInt();
+		lightFenceBlueID = config.getBlock("lightFenceBlueID", ++id).getInt();
+		lightFenceBlueOnID = config.getBlock("lightFenceBlueOnID", ++id).getInt();
+		lightFenceRedID = config.getBlock("lightFenceRedID", ++id).getInt();
+		lightFenceRedOnID = config.getBlock("lightFenceRedOnID", ++id).getInt();
+		purpleGlowBoneTreeID = config.getBlock("purpleGlowBoneTreeID", ++id).getInt();
+		pinkGlowBoneTreeID = config.getBlock("pinkGlowBoneTreeID", ++id).getInt(); // 568.
 	}
 	
 	public static int bedrockMaulID;

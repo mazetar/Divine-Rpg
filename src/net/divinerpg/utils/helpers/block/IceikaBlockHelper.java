@@ -2,15 +2,17 @@ package net.divinerpg.utils.helpers.block;
 
 import net.divinerpg.blocks.BlockColoredGlass;
 import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.blocks.BlockDivinePortal;
 import net.divinerpg.blocks.BlockDivineSpawner;
 import net.divinerpg.blocks.iceika.BlockIceikaChest;
 import net.divinerpg.blocks.iceika.BlockIceikaDoor;
 import net.divinerpg.blocks.iceika.BlockIceikaFurnace;
 import net.divinerpg.blocks.iceika.BlockIceikaGrass;
 import net.divinerpg.blocks.iceika.BlockIceikaLog;
-import net.divinerpg.blocks.iceika.BlockPortalIceika;
-import net.divinerpg.blocks.iceika.BlockXmasLights;
+import net.divinerpg.entities.particle.EntityDravitePortalFX;
+import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.config.IceikaConfigHelper;
+import net.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import net.divinerpg.utils.helpers.gui.CreativeTabHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -49,7 +51,7 @@ public class IceikaBlockHelper {
 //	public static Block yellowCandyCane;
 //	public static Block purpleCandyCane;
 	public static Block giftBox; 
-	public static BlockPortalIceika iceikaPortal;
+	public static BlockDivinePortal iceikaPortal;
 	
 	static IceikaConfigHelper cfg;
 	
@@ -74,6 +76,10 @@ public class IceikaBlockHelper {
 		frostedChest = new BlockIceikaChest(cfg.FrostedChestID).func_111022_d("FrostedChest").setHardness(2.0F).setResistance(5.0F).setUnlocalizedName("FrostedChest").setCreativeTab(CreativeTabHelper.tabBlocks);
 		glacideSpawner = new BlockDivineSpawner(cfg.GlacideSpawnerID, "Glacide").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
 		rolumSpawner = new BlockDivineSpawner(cfg.RolumSpawnerID, "Rollum").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
+		
+		iceikaPortal = ((BlockDivinePortal) new BlockDivinePortal(IceikaConfigHelper.IceikaPortalID).func_111022_d("IceikaPortal").setUnlocalizedName("IceikaPortal").setCreativeTab(CreativeTabHelper.tabBlocks))
+                .setPortalVariables(Block.blockSnow, glacideSpawner/* aka. nothing */, DimensionRegistry.IceikaID, "", new EntityDravitePortalFX(null, 1, 2, 3, 4, 5, 6));
+        
 //TODO: Fix textures for xmas stuff.
 		//        xmasTreeLights = new BlockDivineRPG(x.XmasTreeLightsID, 0, Material.leaves).func_111022_d("").setHardness(0.2F).setUnlocalizedName("LightLeaves").setCreativeTab(CreativeTabHelper.tabBlocks);
 //		redXmasLights = new BlockXmasLights(x.RedXmasLightsID, 0).func_111022_d("").setHardness(0.2F).setUnlocalizedName("RedXmasLights").setCreativeTab(CreativeTabHelper.tabBlocks);

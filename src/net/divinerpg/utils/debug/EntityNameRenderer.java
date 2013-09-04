@@ -11,6 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.Timer;
 import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.event.ForgeSubscribe;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import org.lwjgl.opengl.GL11;
 
@@ -120,4 +121,6 @@ public class EntityNameRenderer {
         GL11.glEnable(GL11.GL_TEXTURE_2D);
         GL11.glEnable(GL11.GL_LIGHTING);
     }
+    
+    
 }

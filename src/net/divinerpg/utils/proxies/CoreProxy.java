@@ -1,19 +1,16 @@
 package net.divinerpg.utils.proxies;
 
-import java.io.File;
-
 import net.divinerpg.DivineRPG;
 import net.divinerpg.utils.debug.EntityNameRenderer;
 import net.divinerpg.utils.handlers.ArmorEffectHandler;
 import net.divinerpg.utils.handlers.ServerTickHandler;
 import net.divinerpg.utils.helpers.DimensionRegistry;
-import net.divinerpg.utils.helpers.config.ConfigHelper;
 import net.divinerpg.utils.helpers.entity.OverworldEntityHelper;
 import net.divinerpg.utils.helpers.gui.GuiHelper;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.divinerpg.utils.helpers.recipe.RecipeHelper;
-import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.MinecraftForge;
+import net.divinerpg.utils.helpers.config.OverworldConfigHelper;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -25,14 +22,10 @@ public class CoreProxy {
 
 	public void PreInit(FMLPreInitializationEvent event)
     {
-        File file = new File(event.getModConfigurationDirectory(), "DivineRPGCore.cfg");
-        Configuration config = new Configuration(file);
-        config.load();
+	    OverworldConfigHelper.initConfig(event);
         
-        DimensionRegistry.InitDimensionsConfig(event, config);
-        ConfigHelper.initConfig(event);
-
-        config.save();
+        DimensionRegistry.InitDimensionsConfig(event);
+        // ConfigHelper.initConfig(event);  TODO: Other config system.
     }
 	
 	public void init(FMLInitializationEvent event) {

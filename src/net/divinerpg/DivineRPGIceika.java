@@ -27,26 +27,25 @@ public class DivineRPGIceika
 	public static IceikaProxy proxy;
 	
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
-		instance = this;		
-		IceikaConfigHelper.initConfig(event);
+    public void preInit(FMLPreInitializationEvent event)
+    {
+        instance = this;
+         proxy.preInit(event);
+        
+    }
+    
+    @EventHandler
+    public void Init(FMLInitializationEvent event)
+    {
+         proxy.init(event);
 
-      //  proxy.preInit(event);
-	}
+    }
+    
+    @EventHandler
+    public void PostInit(FMLPostInitializationEvent event)
+    {
+        proxy.postInit(event);
+    }
 	
-	@EventHandler
-	public void Init(FMLInitializationEvent event)
-	{
-		// proxy.init(event);
-		
-		IceikaBlockHelper.init();
-		IceikaItemHelper.init();
-	}
 	
-	@EventHandler
-	public void PostInit(FMLPostInitializationEvent event)
-	{
-		
-	}
 }

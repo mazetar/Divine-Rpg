@@ -55,53 +55,55 @@ public class TwilightConfigHelper
 	public static void initConfig(FMLPreInitializationEvent event)
 	{
 		File file = new File(event.getModConfigurationDirectory(), "DivineRPGTwilight.cfg");
-		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+		Configuration config = new Configuration(file);
 		
 		config.load();
 		
-		TwilightStoneID = config.getTerrainBlock("WorldGen Blocks", "TwilightStone", 189, "").getInt();
-		divineRockID = config.getBlock("DivineRock", 642).getInt();
+		int id = 569;
 		
-		DraviteGrassID = config.getTerrainBlock("WorldGen Blocks", "Dravite Grass", 190, "").getInt();
-		DraviteDirtID = config.getTerrainBlock("WorldGen Blocks", "Dravite Dirt", 191, "").getInt();
-		DraviteLogsID = config.getBlock("Dravite Logs", 649).getInt();
-		DraviteLeavesID = config.getBlock("Dravite Leaves", 589).getInt();
-		DraviteOreID = config.getBlock("Dravite Ore", 588).getInt();
-		DraviteBlockID = config.getBlock("Dravite Block", 579).getInt();
-		DravitePortalID = config.getBlock("Dravite Portal", 599).getInt();
+		TwilightStoneID = config.getTerrainBlock("WorldGen Blocks", "TwilightStone", 191, "").getInt();
+		divineRockID = config.getBlock("DivineRock", ++id).getInt();
+
+		DraviteGrassID = config.getTerrainBlock("WorldGen Blocks", "Dravite Grass", 192, "").getInt();
+		DraviteDirtID = config.getTerrainBlock("WorldGen Blocks", "Dravite Dirt", 193, "").getInt();
+		DraviteLogsID = config.getBlock("Dravite Logs", ++id).getInt();
+		DraviteLeavesID = config.getBlock("Dravite Leaves", ++id).getInt();
+		DraviteOreID = config.getBlock("Dravite Ore", ++id).getInt();
+		DraviteBlockID = config.getBlock("Dravite Block", ++id).getInt();
+		DravitePortalID = config.getBlock("Dravite Portal", ++id).getInt();
 		
-		AzuriteGrassID = config.getTerrainBlock("WorldGen Blocks", "Azurite Grass", 192, "").getInt();
-		AzuriteDirtID = config.getTerrainBlock("WorldGen Blocks", "Azurite Dirt", 193, "").getInt();
-		AzuriteLogsID = config.getBlock("Azurite Logs", 652).getInt();
-		AzuriteLeavesID = config.getBlock("Azurite Leaves", 591).getInt();
-		AzuriteOreID = config.getBlock("Azurite Ore", 584).getInt();
-		AzuriteVinesID = config.getBlock("Azurite Vines", 562).getInt();
-		AzuriteBlockID = config.getBlock("Azurite Block", 580).getInt();
-		AzuritePortalID = config.getBlock("Azurite Portal", 600).getInt();
+		AzuriteGrassID = config.getTerrainBlock("WorldGen Blocks", "Azurite Grass", 194, "").getInt();
+		AzuriteDirtID = config.getTerrainBlock("WorldGen Blocks", "Azurite Dirt", 195, "").getInt();
+		AzuriteLogsID = config.getBlock("Azurite Logs", ++id).getInt();
+		AzuriteLeavesID = config.getBlock("Azurite Leaves", ++id).getInt();
+		AzuriteOreID = config.getBlock("Azurite Ore", ++id).getInt();
+		AzuriteVinesID = config.getBlock("Azurite Vines", ++id).getInt();
+		AzuriteBlockID = config.getBlock("Azurite Block", ++id).getInt();
+		AzuritePortalID = config.getBlock("Azurite Portal", ++id).getInt();
 		
-		UviteGrassID = config.getTerrainBlock("WorldGen Blocks", "Uvite Grass", 194, "").getInt();
-		UviteDirtID = config.getTerrainBlock("WorldGen Blocks", "Uvite Dirt", 195, "").getInt();
-		UviteLogsID = config.getBlock("Uvite Logs", 651).getInt();
-		UviteLeavesID = config.getBlock("Uvite Leaves", 590).getInt();
-		UviteOreID = config.getBlock("Uvite Ore", 585).getInt();
-		UviteBlockID = config.getBlock("Uvite Block", 581).getInt();
-		UvitePortalID = config.getBlock("Uvite Portal", 602).getInt();
+		UviteGrassID = config.getTerrainBlock("WorldGen Blocks", "Uvite Grass", 196, "").getInt();
+		UviteDirtID = config.getTerrainBlock("WorldGen Blocks", "Uvite Dirt", 197, "").getInt();
+		UviteLogsID = config.getBlock("Uvite Logs", ++id).getInt();
+		UviteLeavesID = config.getBlock("Uvite Leaves", ++id).getInt();
+		UviteOreID = config.getBlock("Uvite Ore", ++id).getInt();
+		UviteBlockID = config.getBlock("Uvite Block", ++id).getInt();
+		UvitePortalID = config.getBlock("Uvite Portal", ++id).getInt();
 		
-		MythrilGrassID = config.getTerrainBlock("WorldGen Blocks", "Mythril Grass", 196, "").getInt();
-		MythrilDirtID = config.getTerrainBlock("WorldGen Blocks", "Mythril Dirt", 197, "").getInt();
-		MythrilLogsID = config.getBlock("Mythril Logs", 654).getInt();
-		MythrilLeavesID = config.getBlock("Mythril Leaves", 592).getInt();
-		MythrilOreID = config.getBlock("Mythril Ore", 586).getInt();
-		MythrilBlockID = config.getBlock("Mythril Block", 582).getInt();
-		MythrilPortalID  = config.getBlock("Mythril Portal", 603).getInt();
+		MythrilGrassID = config.getTerrainBlock("WorldGen Blocks", "Mythril Grass", 198, "").getInt();
+		MythrilDirtID = config.getTerrainBlock("WorldGen Blocks", "Mythril Dirt", 199, "").getInt();
+		MythrilLogsID = config.getBlock("Mythril Logs", ++id).getInt();
+		MythrilLeavesID = config.getBlock("Mythril Leaves", ++id).getInt();
+		MythrilOreID = config.getBlock("Mythril Ore", ++id).getInt();
+		MythrilBlockID = config.getBlock("Mythril Block", ++id).getInt();
+		MythrilPortalID  = config.getBlock("Mythril Portal", ++id).getInt();
 		
-		AugiteGrassID = config.getTerrainBlock("WorldGen Blocks", "Augite Grass", 198, "").getInt();
-		AugiteDirtID = config.getTerrainBlock("WorldGen Blocks", "Augite Dirt", 199, "").getInt();
-		AugiteLogsID = config.getBlock("Augite Logs", 650).getInt();
-		AugiteLeavesID = config.getBlock("Augite Leaves", 593).getInt();
-		AugiteOreID = config.getBlock("Augite Ore", 587).getInt();
-		AugiteBlockID = config.getBlock("Augite Block", 583).getInt();
-		AugitePortalID = config.getBlock("Augite Portal", 604).getInt();
+		AugiteGrassID = config.getTerrainBlock("WorldGen Blocks", "Augite Grass", 200, "").getInt();
+		AugiteDirtID = config.getTerrainBlock("WorldGen Blocks", "Augite Dirt", 201, "").getInt();
+		AugiteLogsID = config.getBlock("Augite Logs", ++id).getInt();
+		AugiteLeavesID = config.getBlock("Augite Leaves", ++id).getInt();
+		AugiteOreID = config.getBlock("Augite Ore", ++id).getInt();
+		AugiteBlockID = config.getBlock("Augite Block", ++id).getInt();
+		AugitePortalID = config.getBlock("Augite Portal", ++id).getInt();
 		
 		initConfigItems(event, config);
 		

@@ -192,9 +192,12 @@ public class VetheaConfigHelper
     public static void initConfig(FMLPreInitializationEvent event)
 	{
 		File file = new File(event.getModConfigurationDirectory(), "DivineRPGVethea.cfg");
-		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+		Configuration config = new Configuration(file);
 		
 		config.load();
+		
+
+        initConfigBlocks(event, config);
 		
 		teakerDiskID = config.getItem("TeakerDisk", id++).getInt();
         amthirmisDiskID = config.getItem("amthirmisDisk", id++).getInt();
@@ -370,7 +373,6 @@ public class VetheaConfigHelper
         arksianeStaffID = config.getItem("arksianeStaff", id++).getInt();
         dreamPowderID = config.getItem("DreamPowder", id++).getInt();
 		
-		initConfigBlocks(event, config);
 		
 		config.save();
 	}
@@ -453,83 +455,85 @@ public class VetheaConfigHelper
     
     public static void initConfigBlocks(FMLPreInitializationEvent event, Configuration config)
 	{
-    	dreamstoneID = config.getBlock("DreamStone", 773).getInt();
-    	dreamgrassID = config.getBlock("DreamGrass", 774).getInt();
-    	vetheaPortalID = config.getBlock("vetheaPortal", 775).getInt();
-        dreamwoodID = config.getBlock("dreamwood", 776).getInt();
-        dreamwoodLeavesID = config.getBlock("dreamwoodLeaves", 777).getInt();
-        dreambricksID = config.getBlock("dreambricks", 778).getInt();
-        lunastoneID = config.getBlock("lunastone", 779).getInt();
-        lunabricksID = config.getBlock("lunabricks", 780).getInt();
-        metalCagingID = config.getBlock("metalCaging", 781).getInt();
-        dreamlampID = config.getBlock("dreamlamp", 782).getInt();
-        dreamlampOnID = config.getBlock("dreamlampOn", 783).getInt();
-        weedwoodVineID = config.getBlock("weedwoodVine", 784).getInt();
-        blossomingWeedwoodVineID = config.getBlock("blossomingWeedwoodVine", 785).getInt();
-        cryptWallID = config.getBlock("cryptWall", 786).getInt();
-        smoothGlassID = config.getBlock("smoothGlass", 787).getInt();
-        villageLampID = config.getBlock("villageLamp", 788).getInt();
-        infusionTableID = config.getBlock("infusionTable", 789).getInt();
-        cellLampID = config.getBlock("cellLamp", 790).getInt();
-        barredDoorID = config.getBlock("barredDoor", 791).getInt();
-        firecrystalID = config.getBlock("firecrystal", 792).getInt();
-        firelightID = config.getBlock("firelight", 793).getInt();
-        hyrewoodID = config.getBlock("hyrewood", 794).getInt();
-        mintwoodLeavesID = config.getBlock("mintwoodLeaves", 795).getInt();
-        firewallID = config.getBlock("firewall", 796).getInt();
-        karosHeatTileRedID = config.getBlock("karosHeatTileRed", 797).getInt();
-        karosHeatTileGreenID = config.getBlock("karosHeatTileGreen", 798).getInt();
-        karosCannonID = config.getBlock("karosCannon", 799).getInt();
-        helioticBeamID = config.getBlock("helioticBeam", 800).getInt();
-        cryptFloorID = config.getBlock("cryptFloor", 801).getInt();
-        firewoodID = config.getBlock("firewood", 802).getInt();
-        chamberWallID = config.getBlock("chamberWall", 803).getInt();
-        chamberWall1ID = config.getBlock("chamberWall1", 804).getInt();
-        chamberWall2ID = config.getBlock("chamberWall2", 805).getInt();
-        bacterialAcidID = config.getBlock("bacterialAcid", 806).getInt();
-        gemtopPurpleID = config.getBlock("gemtops", 807).getInt();
-        yellowDulahID = config.getBlock("yellowDulah", 808).getInt();
-        blockAcidID = config.getBlock("acidBlock", 809).getInt();
-        hallWallID = config.getBlock("hallWall", 810).getInt();
-        wreckAltarID = config.getBlock("wreckAltar", 811).getInt();
-        raglokAltarID = config.getBlock("raglokAltar", 812).getInt();
-        karosAltarID = config.getBlock("karosAltar", 813).getInt();
-        lunicAltarID = config.getBlock("lunicAltar", 814).getInt();
-        hiveWallID = config.getBlock("hiveWall", 815).getInt();
-        quadroticAltarID = config.getBlock("quadroticAltar", 816).getInt();
-        everstoneID = config.getBlock("everstone", 817).getInt();
-        lunicAcidID = config.getBlock("lunicAcid", 818).getInt();
-        firewoodLeavesID = config.getBlock("firewoodLeaves", 819).getInt();
-        hyrewoodLeavesID = config.getBlock("hyrewoodLeaves", 820).getInt();
-        gemtopGreenID = config.getBlock("gemtopsGreen", 821).getInt();
-        greenDulahID = config.getBlock("greenDulah", 822).getInt();
-        mintwoodID = config.getBlock("mintwood", 823).getInt();
-        lightFirewoodLeavesID = config.getBlock("lightFirerwoodLeaves", 824).getInt();
-        cracklespikeID = config.getBlock("cracklespike", 825).getInt();
-        ferniteID = config.getBlock("fernite", 826).getInt();
-        bulatobeID = config.getBlock("bulatobe", 827).getInt();
-        shineGrassID = config.getBlock("shineGrass", 828).getInt();
-        shimmerID = config.getBlock("shimmer", 829).getInt();
-        dreamglowID = config.getBlock("dreamglow", 830).getInt();
-        hyrewoodVineID = config.getBlock("hyrewoodVine", 831).getInt();
-        dreambricks2ID = config.getBlock("dreambricks2", 832).getInt();
-        whiteEverstoneID = config.getBlock("whiteEverstone", 833).getInt();
-        darkEverstoneID = config.getBlock("darkEverstone", 834).getInt();
-        karosBricksID = config.getBlock("karosBricks", 835).getInt();
-        karosBricks2ID = config.getBlock("karosBricks2", 836).getInt();
+        int id = 695;
+        
+    	dreamstoneID = config.getBlock("DreamStone", ++id).getInt();
+    	dreamgrassID = config.getBlock("DreamGrass", ++id).getInt();
+    	vetheaPortalID = config.getBlock("vetheaPortal", ++id).getInt();
+        dreamwoodID = config.getBlock("dreamwood", ++id).getInt();
+        dreamwoodLeavesID = config.getBlock("dreamwoodLeaves", ++id).getInt();
+        dreambricksID = config.getBlock("dreambricks", ++id).getInt();
+        lunastoneID = config.getBlock("lunastone", ++id).getInt();
+        lunabricksID = config.getBlock("lunabricks", ++id).getInt();
+        metalCagingID = config.getBlock("metalCaging", ++id).getInt();
+        dreamlampID = config.getBlock("dreamlamp", ++id).getInt();
+        dreamlampOnID = config.getBlock("dreamlampOn", ++id).getInt();
+        weedwoodVineID = config.getBlock("weedwoodVine", ++id).getInt();
+        blossomingWeedwoodVineID = config.getBlock("blossomingWeedwoodVine", ++id).getInt();
+        cryptWallID = config.getBlock("cryptWall", ++id).getInt();
+        smoothGlassID = config.getBlock("smoothGlass", ++id).getInt();
+        villageLampID = config.getBlock("villageLamp", ++id).getInt();
+        infusionTableID = config.getBlock("infusionTable", ++id).getInt();
+        cellLampID = config.getBlock("cellLamp", ++id).getInt();
+        barredDoorID = config.getBlock("barredDoor", ++id).getInt();
+        firecrystalID = config.getBlock("firecrystal", ++id).getInt();
+        firelightID = config.getBlock("firelight", ++id).getInt();
+        hyrewoodID = config.getBlock("hyrewood", ++id).getInt();
+        mintwoodLeavesID = config.getBlock("mintwoodLeaves", ++id).getInt();
+        firewallID = config.getBlock("firewall", ++id).getInt();
+        karosHeatTileRedID = config.getBlock("karosHeatTileRed", ++id).getInt();
+        karosHeatTileGreenID = config.getBlock("karosHeatTileGreen", ++id).getInt();
+        karosCannonID = config.getBlock("karosCannon", ++id).getInt();
+        helioticBeamID = config.getBlock("helioticBeam", ++id).getInt();
+        cryptFloorID = config.getBlock("cryptFloor", ++id).getInt();
+        firewoodID = config.getBlock("firewood", ++id).getInt();
+        chamberWallID = config.getBlock("chamberWall", ++id).getInt();
+        chamberWall1ID = config.getBlock("chamberWall1", ++id).getInt();
+        chamberWall2ID = config.getBlock("chamberWall2", ++id).getInt();
+        bacterialAcidID = config.getBlock("bacterialAcid", ++id).getInt();
+        gemtopPurpleID = config.getBlock("gemtops", ++id).getInt();
+        yellowDulahID = config.getBlock("yellowDulah", ++id).getInt();
+        blockAcidID = config.getBlock("acidBlock", ++id).getInt();
+        hallWallID = config.getBlock("hallWall", ++id).getInt();
+        wreckAltarID = config.getBlock("wreckAltar", ++id).getInt();
+        raglokAltarID = config.getBlock("raglokAltar", ++id).getInt();
+        karosAltarID = config.getBlock("karosAltar", ++id).getInt();
+        lunicAltarID = config.getBlock("lunicAltar", ++id).getInt();
+        hiveWallID = config.getBlock("hiveWall", ++id).getInt();
+        quadroticAltarID = config.getBlock("quadroticAltar", ++id).getInt();
+        everstoneID = config.getBlock("everstone", ++id).getInt();
+        lunicAcidID = config.getBlock("lunicAcid", ++id).getInt();
+        firewoodLeavesID = config.getBlock("firewoodLeaves", ++id).getInt();
+        hyrewoodLeavesID = config.getBlock("hyrewoodLeaves", ++id).getInt();
+        gemtopGreenID = config.getBlock("gemtopsGreen", ++id).getInt();
+        greenDulahID = config.getBlock("greenDulah", ++id).getInt();
+        mintwoodID = config.getBlock("mintwood", ++id).getInt();
+        lightFirewoodLeavesID = config.getBlock("lightFirerwoodLeaves", ++id).getInt();
+        cracklespikeID = config.getBlock("cracklespike", ++id).getInt();
+        ferniteID = config.getBlock("fernite", ++id).getInt();
+        bulatobeID = config.getBlock("bulatobe", ++id).getInt();
+        shineGrassID = config.getBlock("shineGrass", ++id).getInt();
+        shimmerID = config.getBlock("shimmer", ++id).getInt();
+        dreamglowID = config.getBlock("dreamglow", ++id).getInt();
+        hyrewoodVineID = config.getBlock("hyrewoodVine", ++id).getInt();
+        dreambricks2ID = config.getBlock("dreambricks2", ++id).getInt();
+        whiteEverstoneID = config.getBlock("whiteEverstone", ++id).getInt();
+        darkEverstoneID = config.getBlock("darkEverstone", ++id).getInt();
+        karosBricksID = config.getBlock("karosBricks", ++id).getInt();
+        karosBricks2ID = config.getBlock("karosBricks2", ++id).getInt();
         
 
-        biphronSpawnerID = config.getBlock("briphronSpawner", 837).getInt();
-        gorgosionSpawnerID = config.getBlock("gorgosionSpawner", 838).getInt();
-        twinsSpawnerID = config.getBlock("twinsSpawner", 839).getInt();
-        duoSpawnerID = config.getBlock("duoSpawner", 840).getInt();
-        vermenousSpawnerID = config.getBlock("vermenousSpawner", 841).getInt();
-        dreamwreckerSpawnerID = config.getBlock("dreamwreckerSpawner", 842).getInt();
-        lorgaSpawnerID = config.getBlock("lorgaSpawner", 843).getInt();
-        hungerstone1ID = config.getBlock("hungerstone1", 844).getInt();
-        hungerstone2ID = config.getBlock("hungerstone2", 845).getInt();
-        purpleFireID = config.getBlock("PurpleFire", 846).getInt();
+        biphronSpawnerID = config.getBlock("briphronSpawner", ++id).getInt();
+        gorgosionSpawnerID = config.getBlock("gorgosionSpawner", ++id).getInt();
+        twinsSpawnerID = config.getBlock("twinsSpawner", ++id).getInt();
+        duoSpawnerID = config.getBlock("duoSpawner", ++id).getInt();
+        vermenousSpawnerID = config.getBlock("vermenousSpawner", ++id).getInt();
+        dreamwreckerSpawnerID = config.getBlock("dreamwreckerSpawner", ++id).getInt();
+        lorgaSpawnerID = config.getBlock("lorgaSpawner", ++id).getInt();
+        hungerstone1ID = config.getBlock("hungerstone1", ++id).getInt();
+        hungerstone2ID = config.getBlock("hungerstone2", ++id).getInt();
+        purpleFireID = config.getBlock("PurpleFire", ++id).getInt();
         
-        dreamdirtID = config.getBlock("DreamDirt", 847).getInt();
+        dreamdirtID = config.getBlock("DreamDirt", ++id).getInt();
 	}
 }

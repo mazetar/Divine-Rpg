@@ -39,44 +39,48 @@ public class IceikaConfigHelper
 	public static int YellowCandyCaneID;
 	public static int PurpleCandyCaneID;
 	
+	public static int IceikaPortalID;
+	
 	public static void initConfig(FMLPreInitializationEvent event)
 	{
 		File file = new File(event.getModConfigurationDirectory(), "DivineRPGIceika.cfg");
-		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+		Configuration config = new Configuration(file);
 		
 		config.load();
+		int id = 608;
+		FrostedStoneID = config.getTerrainBlock("WorldGen Blocks", "Frosted Stone", 202, "").getInt(); // Gen Block ? TODO: Check if it's a gen block --Maz
+		FrostedDirtID = config.getTerrainBlock("WorldGen Blocks", "Frosted Dirt", 203, "").getInt(); // Gen Block
+		FrostedGrassID = config.getTerrainBlock("WorldGen Blocks", "Frosted Grass", 204, "").getInt(); // Gen Block
+		FrostedWoodID = config.getBlock("Frosted Wood", ++id).getInt();
+		FrostedLeavesID = config.getBlock("Frosted Leaves", ++id).getInt();
+		IcyStoneID = config.getBlock("Icy Stone", ++id).getInt();
+		IcyBricksID = config.getBlock("Icy Bricks", ++id).getInt();
+		SnowyBricksID = config.getBlock("Snowy Bricks", ++id).getInt();
+		CoalstoneID = config.getBlock("Coalstone", ++id).getInt();
+		CoalstoneFurnaceID = config.getBlock("Coalstone Furnace", ++id).getInt();
+		CoalstoneFurnaceActiveID = config.getBlock("Coalstone Furnace Active", ++id).getInt();
+		WorkshopCarpetID = config.getBlock("Workshop Carpet", ++id).getInt();
+		WorkshopBookcaseID = config.getBlock("Workshop Bookcase", ++id).getInt();
+		WorkshopLampID = config.getBlock("Workshop Lamp", ++id).getInt();
+		FrostedGlassID = config.getBlock("Frosted Glass", ++id).getInt();
+		SteelDoorID = config.getBlock("Steel Door", ++id).getInt();
+		FrostedChestID = config.getBlock("Frosted Chest", ++id).getInt();
+		XmasTreeLightsID = config.getBlock("Xmas Light Leaves", ++id).getInt();
+		GlacideSpawnerID = config.getBlock("Glacide Spawner", ++id).getInt();
+		RolumSpawnerID = config.getBlock("Rollum Spawner", ++id).getInt();
+		RedXmasLightsID = config.getBlock("Red Xmas Lights", ++id).getInt();
+		GreenXmasLightsID = config.getBlock("Green Xmas Lights", ++id).getInt();
+		BlueXmasLightsID = config.getBlock("Blue Xmas Lights", ++id).getInt();
+		YellowXmasLightsID = config.getBlock("Yellow Xmas Lights", ++id).getInt();
+		PurpleXmasLightsID = config.getBlock("Purple Xmas Lights", ++id).getInt();
+		RedCandyCaneID = config.getBlock("Red Candy Cane", ++id).getInt();
+		GreenCandyCaneID = config.getBlock("Green Candy Cane", ++id).getInt();
+		BlueCandyCaneID = config.getBlock("Blue Candy Cane", ++id).getInt();
+		YellowCandyCaneID = config.getBlock("Yellow Candy Cane", ++id).getInt();
+		PurpleCandyCaneID = config.getBlock("Purple Candy Cane", ++id).getInt();
 		
-		FrostedStoneID = config.getBlock("Frosted Stone", 203).getInt();
-		FrostedDirtID = config.getBlock("Frosted Dirt", 200).getInt();
-		FrostedGrassID = config.getBlock("Frosted Grass", 201).getInt();
-		FrostedWoodID = config.getBlock("Frosted Wood", 720).getInt();
-		FrostedLeavesID = config.getBlock("Frosted Leaves", 718).getInt();
-		IcyStoneID = config.getBlock("Icy Stone", 721).getInt();
-		IcyBricksID = config.getBlock("Icy Bricks", 719).getInt();
-		SnowyBricksID = config.getBlock("Snowy Bricks", 719).getInt();
-		CoalstoneID = config.getBlock("Coalstone", 731).getInt();
-		CoalstoneFurnaceID = config.getBlock("Coalstone Furnace", 727).getInt();
-		CoalstoneFurnaceActiveID = config.getBlock("Coalstone Furnace Active", 716).getInt();
-		WorkshopCarpetID = config.getBlock("Workshop Carpet", 730).getInt();
-		WorkshopBookcaseID = config.getBlock("Workshop Bookcase", 723).getInt();
-		WorkshopLampID = config.getBlock("Workshop Lamp", 729).getInt();
-		FrostedGlassID = config.getBlock("Frosted Glass", 726).getInt();
-		SteelDoorID = config.getBlock("Steel Door", 725).getInt();
-		FrostedChestID = config.getBlock("Frosted Chest", 728).getInt();
-		XmasTreeLightsID = config.getBlock("Xmas Light Leaves", 732).getInt();
-		GlacideSpawnerID = config.getBlock("Glacide Spawner", 749).getInt();
-		RolumSpawnerID = config.getBlock("Rollum Spawner", 750).getInt();
-		RedXmasLightsID = config.getBlock("Red Xmas Lights", 743).getInt();
-		GreenXmasLightsID = config.getBlock("Green Xmas Lights", 744).getInt();
-		BlueXmasLightsID = config.getBlock("Blue Xmas Lights", 745).getInt();
-		YellowXmasLightsID = config.getBlock("Yellow Xmas Lights", 746).getInt();
-		PurpleXmasLightsID = config.getBlock("Purple Xmas Lights", 747).getInt();
-		RedCandyCaneID = config.getBlock("Red Candy Cane", 700).getInt();
-		GreenCandyCaneID = config.getBlock("Green Candy Cane", 701).getInt();
-		BlueCandyCaneID = config.getBlock("Blue Candy Cane", 702).getInt();
-		YellowCandyCaneID = config.getBlock("Yellow Candy Cane", 703).getInt();
-		PurpleCandyCaneID = config.getBlock("Purple Candy Cane", 704).getInt();
-
+		IceikaPortalID = config.getBlock("Iceika Portal", ++id).getInt();
+		
 		initConfigItems(event, config);
 		
 		config.save();

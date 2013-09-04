@@ -1,5 +1,7 @@
 package net.divinerpg.utils.helpers;
 
+import java.io.File;
+
 import net.divinerpg.worldgen.arcana.BiomeGenArcana;
 import net.divinerpg.worldgen.arcana.WorldProviderArcana;
 import net.divinerpg.worldgen.augite.BiomeGenDense;
@@ -8,6 +10,8 @@ import net.divinerpg.worldgen.azurite.BiomeGenAzurite;
 import net.divinerpg.worldgen.azurite.WorldProviderAzurite;
 import net.divinerpg.worldgen.dravite.BiomeGenSerenity;
 import net.divinerpg.worldgen.dravite.WorldProviderTwilight;
+import net.divinerpg.worldgen.iceika.BiomeGenIceikaMountians;
+import net.divinerpg.worldgen.iceika.WorldProviderIceika;
 import net.divinerpg.worldgen.mythril.BiomeGenMythil;
 import net.divinerpg.worldgen.mythril.WorldProviderMythil;
 import net.divinerpg.worldgen.uvite.BiomeGenEnergy;
@@ -70,7 +74,7 @@ public class DimensionRegistry
         denseBiome = new BiomeGenDense(augiteBiomeID);
         
         //arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
-        //IceikaMountains = new BiomeGenIceikaMountians(iceikaBiomeID);
+        IceikaMountains = new BiomeGenIceikaMountians(iceikaBiomeID);
         //arksianeBiome = new BiomeGenArksiane(arksianeBiomeID);
         //heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);       
         
@@ -87,14 +91,19 @@ public class DimensionRegistry
         
       //  DimensionManager.registerProviderType(ArcanaID, WorldProviderArcana.class, KeepLoadedArcana);
    //     DimensionManager.registerDimension(ArcanaID, ArcanaID);
-        //DimensionManager.registerProviderType(IceikaID, WorldProviderIceika.class, KeepLoadedIceika);
-        //DimensionManager.registerDimension(IceikaID, IceikaID);
+        DimensionManager.registerProviderType(IceikaID, WorldProviderIceika.class, KeepLoadedIceika);
+        DimensionManager.registerDimension(IceikaID, IceikaID);
         //DimensionManager.registerProviderType(VetheaID, WorldProviderVethea.class, KeepLoadedVethea);
         //DimensionManager.registerDimension(VetheaID, VetheaID); 
 	}
 	
-	public static void InitDimensionsConfig(FMLPreInitializationEvent event, Configuration config)
+	public static void InitDimensionsConfig(FMLPreInitializationEvent event)
 	{
+	    File file = new File(event.getModConfigurationDirectory(), "DivineRPG - Dimensions.cfg");
+        Configuration config = new Configuration(file);
+        
+        config.load();
+	    
 		KeepLoadedDravite = config.get("Dimensions", "KeepLoaded Dravite", true).getBoolean(true);
 		KeepLoadedAzurite = config.get("Dimensions", "KeepLoaded Azurite", true).getBoolean(true);
 		KeepLoadedArcana = config.get("Dimensions", "KeepLoaded Arcana", true).getBoolean(true);
@@ -122,5 +131,7 @@ public class DimensionRegistry
 		iceikaBiomeID  = config.get("Dimensions", "ID Biome Iceika", 29).getInt();
 		arksianeBiomeID  = config.get("Dimensions", "ID Biome Arksaine", 30).getInt(); 
 		heliosisBiomeID  = config.get("Dimensions", "ID Biome Heliosis", 31).getInt();
+		
+		config.save();
 	}
 }

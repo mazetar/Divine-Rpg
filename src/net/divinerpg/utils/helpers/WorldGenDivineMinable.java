@@ -4,6 +4,9 @@ import java.util.Random;
 
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.feature.WorldGenLakes;
+import net.minecraft.world.gen.feature.WorldGenMinable;
+import net.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGenDivineMinable implements IWorldGenerator
@@ -12,6 +15,7 @@ public class WorldGenDivineMinable implements IWorldGenerator
     {
         switch (var4.provider.dimensionId)
         {
+        
             case -1:
                 this.generateNether(var4, var1, var2 * 16, var3 * 16);
 
@@ -41,7 +45,7 @@ public class WorldGenDivineMinable implements IWorldGenerator
             var6 = var3 + var2.nextInt(16);
             var7 = var2.nextInt(20);
             var8 = var4 + var2.nextInt(16);
-           //(new WorldGenMinable(DivineRPG.realmiteore.blockID, 5)).generate(var1, var2, var6, var7, var8);
+       //    (new WorldGenMinable(OverworldBlockHelper.realmiteOre.blockID, 5)).generate(var1, var2, var6, var7, var8);
         }
 
         for (var5 = 0; var5 < 2; ++var5)
@@ -49,7 +53,7 @@ public class WorldGenDivineMinable implements IWorldGenerator
             var6 = var3 + var2.nextInt(16);
             var7 = var2.nextInt(15);
             var8 = var4 + var2.nextInt(16);
-            //(new WorldGenMinable(DivineRPG.arlemiteore.blockID, 3)).generate(var1, var2, var6, var7, var8);
+        //    (new WorldGenMinable(OverworldBlockHelper.arlemiteOre.blockID, 3)).generate(var1, var2, var6, var7, var8);
         }
 
         for (var5 = 0; var5 < 2; ++var5)
@@ -57,7 +61,7 @@ public class WorldGenDivineMinable implements IWorldGenerator
             var6 = var3 + var2.nextInt(16);
             var7 = var2.nextInt(15);
             var8 = var4 + var2.nextInt(16);
-            //(new WorldGenMinable(DivineRPG.rupeeore.blockID, 3)).generate(var1, var2, var6, var7, var8);
+         //   (new WorldGenMinable(OverworldBlockHelper.rupeeOre.blockID, 3)).generate(var1, var2, var6, var7, var8);
         }
 
         if (var2.nextInt(8) == 0)
@@ -68,7 +72,7 @@ public class WorldGenDivineMinable implements IWorldGenerator
 
             if (var6 < 63 || var2.nextInt(10) == 0)
             {
-                //(new WorldGenLakes(DivineRPG.tarStill.blockID)).generate(var1, var2, var5, var6, var7);
+               // (new WorldGenLakes(OverworldBlockHelper.tarStill.blockID)).generate(var1, var2, var5, var6, var7);
             }
         }
     }

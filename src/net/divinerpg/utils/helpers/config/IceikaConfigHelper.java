@@ -114,30 +114,35 @@ public class IceikaConfigHelper
 	
 	public static void initConfigItems(FMLPreInitializationEvent event, Configuration config)
 	{
-		SnowflakeShurikenID = config.getItem("Snowflake Shuriken", 5751).getInt();
-		FrossivenceID = config.getItem("Frossivence", 5742).getInt();
-		SerenadeOfIceID = config.getItem("Serenade Of Ice", 5745).getInt();
-		GlacierSwordID = config.getItem("Glacier Sword", 5490).getInt();
-		IcicleBowID = config.getItem("Icicle Bow", 5752).getInt();
-		IcicleBaneID = config.getItem("Icicle Bane", 5483).getInt();
-		FrostclawCannonID = config.getItem("Frostclaw Cannon", 5749).getInt();
-		FractiteCannonID = config.getItem("Fractite Cannon", 5750).getInt();
-		FrostkingSwordID = config.getItem("Frostking Sword", 5747).getInt();
-		SoundOfCarolsID = config.getItem("Sound of Carols", 5740).getInt();
-		EndericeID = config.getItem("Enderice", 5743).getInt();
-		SnowstormBowID = config.getItem("Snowstorm Bow", 5753).getInt();
-		IcineSwordID = config.getItem("Icine Sword", 5741).getInt();
-		FrozenMaulID = config.getItem("Frozen Maul", 5748).getInt();
-		SnowslashID = config.getItem("Snowslash", 5744).getInt();
-		PeppermintsID = config.getItem("Peppermints", 5755).getInt();
-		EggNogID = config.getItem("Egg Nog", 5756).getInt();
-		ChocolateLogID = config.getItem("Chocolate Log", 5757).getInt();
-		SnowconesID = config.getItem("Snowcones", 5758).getInt();
-		FruitCakeID = config.getItem("Fruit Cake", 5759).getInt();
-		SnowflakeID = config.getItem("Snowflake", 5482).getInt();
-		SantaHeadID = config.getItem("Santa Head", 5466).getInt();
-		SantaBodyID = config.getItem("Santa Body", 5467).getInt();
-		SantaLegsID = config.getItem("Santa Legs", 5468).getInt();
-		SantaBootsID = config.getItem("Santa Boots", 5469).getInt();
+
+        int id = OverworldConfigHelper.nextItemID;
+		SnowflakeShurikenID = config.getItem("Snowflake Shuriken", id++).getInt();
+		FrossivenceID = config.getItem("Frossivence", id++).getInt();
+		SerenadeOfIceID = config.getItem("Serenade Of Ice", id++).getInt();
+		GlacierSwordID = config.getItem("Glacier Sword", id++).getInt();
+		IcicleBowID = config.getItem("Icicle Bow", id++).getInt();
+		IcicleBaneID = config.getItem("Icicle Bane", id++).getInt();
+		FrostclawCannonID = config.getItem("Frostclaw Cannon", id++).getInt();
+		FractiteCannonID = config.getItem("Fractite Cannon", id++).getInt();
+		FrostkingSwordID = config.getItem("Frostking Sword", id++).getInt();
+		SoundOfCarolsID = config.getItem("Sound of Carols", id++).getInt();
+		EndericeID = config.getItem("Enderice", id++).getInt();
+		SnowstormBowID = config.getItem("Snowstorm Bow", id++).getInt();
+		IcineSwordID = config.getItem("Icine Sword", id++).getInt();
+		FrozenMaulID = config.getItem("Frozen Maul", id++).getInt();
+		SnowslashID = config.getItem("Snowslash", id++).getInt();
+		PeppermintsID = config.getItem("Peppermints", id++).getInt();
+		EggNogID = config.getItem("Egg Nog", id++).getInt();
+		ChocolateLogID = config.getItem("Chocolate Log", id++).getInt();
+		SnowconesID = config.getItem("Snowcones", id++).getInt();
+		FruitCakeID = config.getItem("Fruit Cake", id++).getInt();
+		SnowflakeID = config.getItem("Snowflake", id++).getInt();
+		SantaHeadID = config.getItem("Santa Head", id++).getInt();
+		SantaBodyID = config.getItem("Santa Body", id++).getInt();
+		SantaLegsID = config.getItem("Santa Legs", id++).getInt();
+		SantaBootsID = config.getItem("Santa Boots", id++).getInt();
+		
+
+        OverworldConfigHelper.nextItemID = id;
 	}
 }

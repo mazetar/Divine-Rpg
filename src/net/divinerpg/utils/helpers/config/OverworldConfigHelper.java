@@ -275,81 +275,6 @@ public class OverworldConfigHelper
     public static int crabClawMaulID;
     public static int rupeeSwordID;
     public static int passivenceID;
-    
-	public static int twilightClockID;
-	public static void InitConfigItems(Configuration config)
-	{
-		int id = 6666;
-		bedrockMaulID = config.getItem("bedrockMaul", id++).getInt();
-		soundOfMusicID = config.getItem("soundOfMusic", id++).getInt();
-		greenShardID = config.getItem("greenShard", id++).getInt();
-		shurikenID = config.getItem("shuriken", id++).getInt();
-		namkormiraID = config.getItem("namkormira", id++).getInt();
-		serenadeStrikerID = config.getItem("serenadeStriker", id++).getInt();
-		slimeSwordID = config.getItem("slimeSword", id++).getInt();
-		shadowBowID = config.getItem("shadowBow", id++).getInt();
-		crabClawCannonID = config.getItem("crabClawCannon", id++).getInt();
-		frostCannonID = config.getItem("frostCannon", id++).getInt();
-		frostSwordID = config.getItem("frostSword", id++).getInt();
-		divineswordID = config.getItem("divinesword", id++).getInt();
-		sandSlashID = config.getItem("sandSlash", id++).getInt();
-		blueShardID = config.getItem("blueShard", id++).getInt();
-		iceShardID = config.getItem("iceShard", id++).getInt();
-		yellowShardID = config.getItem("yellowShard", id++).getInt();
-		
-		divineHelmID = config.getItem("divineHelm", id++).getInt();
-		divineBodyID = config.getItem("divineBody", id++).getInt();
-		divineLegsID = config.getItem("divineLegs", id++).getInt();
-		divineBootsID = config.getItem("divineBoots", id++).getInt();
-        divineHeadID = config.getItem("divineHeadID", id++).getInt();
-		
-		enderSwordID = config.getItem("enderSword", id++).getInt();
-
-	
-		bluefirebowID = config.getItem("bluefirebow", id++).getInt();
-		rupeeID = config.getItem("rupee", id++).getInt();
-		tomatoID = config.getItem("tomato", id++).getInt();
-		tomatoSeedsID = config.getItem("tomatoSeeds", id++).getInt();
-		purpleFireID = config.getItem("purpleFire", id++).getInt();
-		jackOManBootsID = config.getItem("jackOManBoots", id++).getInt();
-		jackOManLegsID = config.getItem("jackOManLegs", id++).getInt();
-		jackOManBodyID = config.getItem("jackOManBody", id++).getInt();
-		jackOManHeadID = config.getItem("jackOManHead", id++).getInt();
-		scytheID = config.getItem("scythe", id++).getInt();
-		sharkAnchorID = config.getItem("sharkAnchor", id++).getInt();
-		healingStoneID = config.getItem("healingStone", id++).getInt();
-		
-		massivenceID = config.getItem("massivence", id++).getInt();
-		palavenceID = config.getItem("passivence", id++).getInt();
-		arlemiteStabberID = config.getItem("arlemiteStabber", id++).getInt();
-		rupeeRapierID = config.getItem("rupeeRapier", id++).getInt();
-		realmiteSwordID = config.getItem("realmiteSword", id++).getInt();
-		poisonSaberID = config.getItem("poisonSaber", id++).getInt();
-		twilightClockID = config.getItem("twilightClock", id++).getInt();
-		
-
-		seranadeDeathID = config.getItem("seranadeDeathID", id++).getInt();
-		serenadeHealthID = config.getItem("serenadeHealthID", id++).getInt();
-		growthSerenadeID = config.getItem("growthSerenadeID", id++).getInt();
-		mailStromID = config.getItem("mailStromID", id++).getInt();
-        clawAnchorID = config.getItem("clawAnchorID", id++).getInt();
-        bowheadAnchorID = config.getItem("bowheadAnchorID", id++).getInt();
-        bowheadAnchorID = config.getItem("bowheadAnchorID", id++).getInt();
-        crabClawMaulID = config.getItem("crabClawMaulID", id++).getInt();
-        rupeeSwordID = config.getItem("clawAnchorID", id++).getInt();
-        passivenceID = config.getItem("passivenceID", id++).getInt();
-
-        angelicBodyID = config.getItem("angelicBodyID", id++).getInt();
-        angelicHeadID = config.getItem("angelicHeadID", id++).getInt();
-        angelicLegsID = config.getItem("angelicLegsID", id++).getInt();
-        angelicBootsID = config.getItem("angelicBootsID", id++).getInt();
-        purpleShardID = config.getItem("purpleShardID", id++).getInt();
-        redShardID = config.getItem("redShardID", id++).getInt();
-        corruptedShardsID = config.getItem("corruptedShardsID", id++).getInt();
-        
-        moltenSwordID = config.getItem("MoltenSword", id++).getInt();
-	}
-
     public static int angelicBodyID;
     public static int angelicHeadID;
     public static int angelicLegsID;
@@ -358,6 +283,85 @@ public class OverworldConfigHelper
     public static int purpleShardID;
     public static int redShardID;
     public static int corruptedShardsID;
+    
+	public static int twilightClockID;
+	
+	public static int nextItemID = 6666;
+	public static void InitConfigItems(Configuration config)
+	{
+		
+		bedrockMaulID = config.getItem("bedrockMaul", nextItemID++).getInt();
+		soundOfMusicID = config.getItem("soundOfMusic", nextItemID++).getInt();
+		greenShardID = config.getItem("greenShard", nextItemID++).getInt();
+		shurikenID = config.getItem("shuriken", nextItemID++).getInt();
+		namkormiraID = config.getItem("namkormira", nextItemID++).getInt();
+		serenadeStrikerID = config.getItem("serenadeStriker", nextItemID++).getInt();
+		slimeSwordID = config.getItem("slimeSword", nextItemID++).getInt();
+		shadowBowID = config.getItem("shadowBow", nextItemID++).getInt();
+		crabClawCannonID = config.getItem("crabClawCannon", nextItemID++).getInt();
+		frostCannonID = config.getItem("frostCannon", nextItemID++).getInt();
+		frostSwordID = config.getItem("frostSword", nextItemID++).getInt();
+		divineswordID = config.getItem("divinesword", nextItemID++).getInt();
+		sandSlashID = config.getItem("sandSlash", nextItemID++).getInt();
+		blueShardID = config.getItem("blueShard", nextItemID++).getInt();
+		iceShardID = config.getItem("iceShard", nextItemID++).getInt();
+		yellowShardID = config.getItem("yellowShard", nextItemID++).getInt();
+		
+		divineHelmID = config.getItem("divineHelm", nextItemID++).getInt();
+		divineBodyID = config.getItem("divineBody", nextItemID++).getInt();
+		divineLegsID = config.getItem("divineLegs", nextItemID++).getInt();
+		divineBootsID = config.getItem("divineBoots", nextItemID++).getInt();
+        divineHeadID = config.getItem("divineHeadID", nextItemID++).getInt();
+		
+		enderSwordID = config.getItem("enderSword", nextItemID++).getInt();
+
+	
+		bluefirebowID = config.getItem("bluefirebow", nextItemID++).getInt();
+		rupeeID = config.getItem("rupee", nextItemID++).getInt();
+		tomatoID = config.getItem("tomato", nextItemID++).getInt();
+		tomatoSeedsID = config.getItem("tomatoSeeds", nextItemID++).getInt();
+		purpleFireID = config.getItem("purpleFire", nextItemID++).getInt();
+		jackOManBootsID = config.getItem("jackOManBoots", nextItemID++).getInt();
+		jackOManLegsID = config.getItem("jackOManLegs", nextItemID++).getInt();
+		jackOManBodyID = config.getItem("jackOManBody", nextItemID++).getInt();
+		jackOManHeadID = config.getItem("jackOManHead", nextItemID++).getInt();
+		scytheID = config.getItem("scythe", nextItemID++).getInt();
+		sharkAnchorID = config.getItem("sharkAnchor", nextItemID++).getInt();
+		healingStoneID = config.getItem("healingStone", nextItemID++).getInt();
+		
+		massivenceID = config.getItem("massivence", nextItemID++).getInt();
+		palavenceID = config.getItem("passivence", nextItemID++).getInt();
+		arlemiteStabberID = config.getItem("arlemiteStabber", nextItemID++).getInt();
+		rupeeRapierID = config.getItem("rupeeRapier", nextItemID++).getInt();
+		realmiteSwordID = config.getItem("realmiteSword", nextItemID++).getInt();
+		poisonSaberID = config.getItem("poisonSaber", nextItemID++).getInt();
+		twilightClockID = config.getItem("twilightClock", nextItemID++).getInt();
+		
+
+		seranadeDeathID = config.getItem("seranadeDeathID", nextItemID++).getInt();
+		serenadeHealthID = config.getItem("serenadeHealthID", nextItemID++).getInt();
+		growthSerenadeID = config.getItem("growthSerenadeID", nextItemID++).getInt();
+		mailStromID = config.getItem("mailStromID", nextItemID++).getInt();
+        clawAnchorID = config.getItem("clawAnchorID", nextItemID++).getInt();
+        bowheadAnchorID = config.getItem("bowheadAnchorID", nextItemID++).getInt();
+        bowheadAnchorID = config.getItem("bowheadAnchorID", nextItemID++).getInt();
+        crabClawMaulID = config.getItem("crabClawMaulID", nextItemID++).getInt();
+        rupeeSwordID = config.getItem("clawAnchorID", nextItemID++).getInt();
+        passivenceID = config.getItem("passivenceID", nextItemID++).getInt();
+
+        angelicBodyID = config.getItem("angelicBodyID", nextItemID++).getInt();
+        angelicHeadID = config.getItem("angelicHeadID", nextItemID++).getInt();
+        angelicLegsID = config.getItem("angelicLegsID", nextItemID++).getInt();
+        angelicBootsID = config.getItem("angelicBootsID", nextItemID++).getInt();
+        purpleShardID = config.getItem("purpleShardID", nextItemID++).getInt();
+        redShardID = config.getItem("redShardID", nextItemID++).getInt();
+        corruptedShardsID = config.getItem("corruptedShardsID", nextItemID++).getInt();
+        
+        moltenSwordID = config.getItem("MoltenSword", nextItemID++).getInt();
+        
+        
+	}
+
 
     
 

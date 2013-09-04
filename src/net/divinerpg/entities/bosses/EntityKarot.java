@@ -152,7 +152,8 @@ public class EntityKarot extends EntityZombie implements IBossDisplayData
         return TwilightItemHelper.HalitePhaser.itemID;
     }
 
-    public void dropFewItems(boolean par1, int par2)
+    @SuppressWarnings("unused")
+	public void dropFewItems(boolean par1, int par2)
     {
         int var1 = this.rand.nextInt(4);
         this.dropItem(this.getDropItemId(),1);

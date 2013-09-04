@@ -3,12 +3,14 @@ package net.divinerpg.blocks.vethea;
 import java.util.Random;
 
 import net.divinerpg.entities.particle.EntityMythrilPortalFX;
+import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.divinerpg.utils.helpers.teleporters.TeleporterVethea;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -334,4 +336,9 @@ public class BlockPortalVethea extends BlockBreakable
             FMLClientHandler.instance().getClient().effectRenderer.addEffect(var20);
         }
     }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister) {
+	    this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E());
+	}
 }

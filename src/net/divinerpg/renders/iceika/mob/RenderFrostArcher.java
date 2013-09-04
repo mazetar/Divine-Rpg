@@ -30,6 +30,7 @@ public class RenderFrostArcher extends RenderLiving
     {
         this(var1, var2, 1.0F, loc);
         this.modelBipedMain = var1;
+        texture = loc;
     }
 
     public RenderFrostArcher(ModelBiped var1, float var2, float var3, ResourceLocation loc)

@@ -7,7 +7,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class OverworldConfigHelper 
 {
-	//-==-BLOCKS-==-//
+    //-==-BLOCKS-==-//
 	public static int blueFireID;
 	public static int divineRockID;
 	
@@ -94,11 +94,8 @@ public class OverworldConfigHelper
 	
 	public static void initConfig(FMLPreInitializationEvent event)
 	{
-//		File file = new File(event.getModConfigurationDirectory(), "DivineRPGOverworld2.cfg");
-//		Configuration config = new Configuration(file);
-//		
-	//	File file = new File(event.getModConfigurationDirectory(), "DivineRPG.cfg");
-        Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+		File file = new File(event.getModConfigurationDirectory(), "DivineRPGOverworld.cfg");
+        Configuration config = new Configuration(file);
 		
 		config.load();
 
@@ -267,6 +264,19 @@ public class OverworldConfigHelper
 	public static int corruptCannonID;
 
 	public static int massivenceID;
+    public static int seranadeDeathID;
+    public static int serenadeHealthID;
+    public static int growthSerenadeID;
+    public static int mailStromID;
+    public static int clawAnchorID;
+    public static int bowheadAnchorID;
+    public static int vialStormID;
+    public static int infernobowID;
+    public static int crabClawMaulID;
+    public static int rupeeSwordID;
+    public static int passivenceID;
+    
+	public static int twilightClockID;
 	public static void InitConfigItems(Configuration config)
 	{
 		int id = 6666;
@@ -291,6 +301,7 @@ public class OverworldConfigHelper
 		divineBodyID = config.getItem("divineBody", id++).getInt();
 		divineLegsID = config.getItem("divineLegs", id++).getInt();
 		divineBootsID = config.getItem("divineBoots", id++).getInt();
+        divineHeadID = config.getItem("divineHeadID", id++).getInt();
 		
 		enderSwordID = config.getItem("enderSword", id++).getInt();
 
@@ -314,8 +325,41 @@ public class OverworldConfigHelper
 		rupeeRapierID = config.getItem("rupeeRapier", id++).getInt();
 		realmiteSwordID = config.getItem("realmiteSword", id++).getInt();
 		poisonSaberID = config.getItem("poisonSaber", id++).getInt();
+		twilightClockID = config.getItem("twilightClock", id++).getInt();
+		
+
+		seranadeDeathID = config.getItem("seranadeDeathID", id++).getInt();
+		serenadeHealthID = config.getItem("serenadeHealthID", id++).getInt();
+		growthSerenadeID = config.getItem("growthSerenadeID", id++).getInt();
+		mailStromID = config.getItem("mailStromID", id++).getInt();
+        clawAnchorID = config.getItem("clawAnchorID", id++).getInt();
+        bowheadAnchorID = config.getItem("bowheadAnchorID", id++).getInt();
+        bowheadAnchorID = config.getItem("bowheadAnchorID", id++).getInt();
+        crabClawMaulID = config.getItem("crabClawMaulID", id++).getInt();
+        rupeeSwordID = config.getItem("clawAnchorID", id++).getInt();
+        passivenceID = config.getItem("passivenceID", id++).getInt();
+
+        angelicBodyID = config.getItem("angelicBodyID", id++).getInt();
+        angelicHeadID = config.getItem("angelicHeadID", id++).getInt();
+        angelicLegsID = config.getItem("angelicLegsID", id++).getInt();
+        angelicBootsID = config.getItem("angelicBootsID", id++).getInt();
+        purpleShardID = config.getItem("purpleShardID", id++).getInt();
+        redShardID = config.getItem("redShardID", id++).getInt();
+        corruptedShardsID = config.getItem("corruptedShardsID", id++).getInt();
+        
+        moltenSwordID = config.getItem("MoltenSword", id++).getInt();
 	}
 
+    public static int angelicBodyID;
+    public static int angelicHeadID;
+    public static int angelicLegsID;
+    public static int angelicBootsID;
+    public static int divineHeadID;
+    public static int purpleShardID;
+    public static int redShardID;
+    public static int corruptedShardsID;
+
+    
 
 
 

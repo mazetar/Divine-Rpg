@@ -1,6 +1,7 @@
 package net.divinerpg.utils.proxies;
 
 import net.divinerpg.DivineRPG;
+import net.divinerpg.blocks.iceika.tileentities.TileEntityIceikaChest;
 import net.divinerpg.utils.debug.EntityNameRenderer;
 import net.divinerpg.utils.handlers.ArmorEffectHandler;
 import net.divinerpg.utils.handlers.ServerTickHandler;
@@ -15,6 +16,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.TickRegistry;
 import cpw.mods.fml.relauncher.Side;
 
@@ -25,6 +27,9 @@ public class CoreProxy {
 	    OverworldConfigHelper.initConfig(event);
         
         DimensionRegistry.InitDimensionsConfig(event);
+        
+        registerTileEntities();
+        
         // ConfigHelper.initConfig(event);  TODO: Other config system.
     }
 	
@@ -59,6 +64,9 @@ public class CoreProxy {
 
 	public void recipeRegistry() {
 		RecipeHelper.init();
+	}
+	
+	public void registerTileEntities() {
 	}
 
 }

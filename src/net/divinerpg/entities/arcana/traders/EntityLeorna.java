@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("unused")
 public class EntityLeorna extends EntityVillager implements INpc, IMerchant
 {
     private int randomTickDivider;
@@ -65,7 +66,8 @@ public class EntityLeorna extends EntityVillager implements INpc, IMerchant
     /**
      * main AI tick function, replaces updateEntityActionState
      */
-    protected void updateAITick()
+    @SuppressWarnings("rawtypes")
+	protected void updateAITick()
     {
         if (!this.isTrading() && this.timeUntilReset > 0)
         {
@@ -256,7 +258,8 @@ public class EntityLeorna extends EntityVillager implements INpc, IMerchant
         return var2 > 0.9F ? 0.9F - (var2 - 0.9F) : var2;
     }
 
-    private void addDefaultEquipmentAndRecipies(int var1)
+    @SuppressWarnings("unchecked")
+	private void addDefaultEquipmentAndRecipies(int var1)
     {
         if (this.buyingList != null)
         {

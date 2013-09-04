@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
+@SuppressWarnings("unused")
 public class EntityCaptianMerik extends EntityVillager implements INpc, IMerchant
 {
 	private int randomTickDivider;
@@ -65,6 +66,7 @@ public class EntityCaptianMerik extends EntityVillager implements INpc, IMerchan
 	/**
 	 * main AI tick function, replaces updateEntityActionState
 	 */
+	@SuppressWarnings("rawtypes")
 	protected void updateAITick()
 	{
 		if (!this.isTrading() && this.timeUntilReset > 0)
@@ -259,6 +261,7 @@ public class EntityCaptianMerik extends EntityVillager implements INpc, IMerchan
 		return var2 > 0.9F ? 0.9F - (var2 - 0.9F) : var2;
 	}
 
+	@SuppressWarnings("unchecked")
 	private void addDefaultEquipmentAndRecipies(int var1)
 	{
 		if (this.buyingList != null)

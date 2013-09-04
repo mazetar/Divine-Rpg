@@ -2,11 +2,17 @@ package net.divinerpg.items.core;
 
 import java.util.List;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import net.divinerpg.api.IItemDivineRPG;
+import net.divinerpg.lib.Reference;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
@@ -72,4 +78,17 @@ public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
         par3List.add(((ItemSword) par1ItemStack.getItem()).func_82803_g() + " Melee Damage");
         par3List.add(!unbreakable ? (par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses Remaining") : "Unlimited Uses");
     }
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister) {
+	   this.itemIcon = par1IconRegister.registerIcon(Reference.MAIN_MOD_ID + ":" + this.func_111208_A());
+	}
+	
+	@Override
+	public Item setUnlocalizedName(String name) {
+	    func_111206_d(name);
+	    return super.setUnlocalizedName(name);
+	}
+	
 }

@@ -3,11 +3,16 @@ package net.divinerpg.blocks.vethea;
 import java.util.ArrayList;
 import java.util.Random;
 
+import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.block.VetheaBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockKarosHeatTileGreen extends Block
 {
@@ -83,4 +88,11 @@ public class BlockKarosHeatTileGreen extends Block
     {
         par1.add(new ItemStack(this, 1));
     }
+    
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister) {
+	    this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E());
+	}
+	
 }

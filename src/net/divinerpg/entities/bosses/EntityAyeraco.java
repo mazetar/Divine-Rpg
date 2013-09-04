@@ -18,6 +18,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
+@SuppressWarnings("unused")
 public class EntityAyeraco extends EntityDivineMob implements IBossDisplayData
 {
 	private String colour;

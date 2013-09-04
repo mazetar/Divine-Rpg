@@ -47,4 +47,6 @@ public class DivineRPG
         DimensionRegistry.InitDimensions();
         proxy.postInit(event);
 	}
+	
+	//Still in dev :)
 }

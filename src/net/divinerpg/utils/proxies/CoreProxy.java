@@ -31,8 +31,6 @@ public class CoreProxy {
         DimensionRegistry.InitDimensionsConfig(event);
         
         registerTileEntities();
-        
-        // ConfigHelper.initConfig(event);  TODO: Other config system.
     }
 	
 	public void init(FMLInitializationEvent event) {
@@ -69,9 +67,8 @@ public class CoreProxy {
 	}
 	
 	public void registerTileEntities() {
-	    GameRegistry.registerTileEntity(TileEntitySerenityChest.class, "Serenity Chest");
+		GameRegistry.registerTileEntity(TileEntitySerenityChest.class, "Serenity Chest");
         GameRegistry.registerTileEntity(TileSingularChest.class, "Singular Chest");
-	    
         GameRegistry.registerTileEntity(TileEntityAEStatue.class, "AE Statue");
         GameRegistry.registerTileEntity(TileEntityAyeracoBeamBlue.class, "AyeracoBeamBlue");
         GameRegistry.registerTileEntity(TileEntityAyeracoBeamGreen.class, "AyeracoBeamGreen");

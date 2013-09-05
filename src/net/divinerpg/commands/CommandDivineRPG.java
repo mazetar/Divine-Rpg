@@ -27,10 +27,7 @@ public class CommandDivineRPG extends CommandBase
 		if(args[0].matches("Azurite"))
 		{
 			EntityPlayerMP playerMP = (EntityPlayerMP) sender;
-			if(playerMP.dimension == 0)
 				playerMP.travelToDimension(DimensionRegistry.AzuriteID);
-			else
-				playerMP.travelToDimension(0);
 		}
 		if(args[0].matches("Dravite"))
 		{

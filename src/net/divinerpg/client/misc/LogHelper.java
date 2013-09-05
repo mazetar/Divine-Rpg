@@ -6,17 +6,17 @@ import cpw.mods.fml.common.FMLLog;
 
 public class LogHelper
 {
-    private static Logger eeLogger = Logger.getLogger("DivineRPG");
+    private static Logger logger = Logger.getLogger("DivineRPG");
 
 
     public static void init()
     {
-        eeLogger.setParent(FMLLog.getLogger());
+        logger.setParent(FMLLog.getLogger());
     }
 
 
     public static void log(Level var0, String var1)
     {
-        eeLogger.log(var0, var1);
+        logger.log(var0, var1);
     }
 }

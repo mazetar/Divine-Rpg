@@ -1,6 +1,5 @@
 package net.divinerpg.containers;
 
-import net.divinerpg.blocks.overworld.tileentities.DivineInventory;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;

@@ -55,7 +55,7 @@ public class EntityReyvor extends EntityDivineMob implements IBossDisplayData, I
     protected void entityInit()
     {
         super.entityInit();
-        this.dataWatcher.addObject(16, new Integer(this.getMaxHealth()));
+        this.dataWatcher.addObject(16, new Integer(5000));
     }
 
 

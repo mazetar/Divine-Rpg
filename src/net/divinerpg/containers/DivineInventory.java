@@ -1,4 +1,4 @@
-package net.divinerpg.blocks.overworld.tileentities;
+package net.divinerpg.containers;
 
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.EntityPlayer;

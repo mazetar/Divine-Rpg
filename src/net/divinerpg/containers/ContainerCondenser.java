@@ -39,6 +39,10 @@ public class ContainerCondenser extends Container
             this.addSlotToContainer(new Slot(par1InventoryPlayer, var3, 8 + var3 * 18, 142));
         }
     }
+    
+    public TileEntityCondenser getTileEntity() {
+        return tileBrewingStand;
+    }
 
     @Override
     public void addCraftingToCrafters(ICrafting par1ICrafting)

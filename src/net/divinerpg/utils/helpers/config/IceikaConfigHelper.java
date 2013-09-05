@@ -39,6 +39,7 @@ public class IceikaConfigHelper
 	public static int YellowCandyCaneID;
 	public static int PurpleCandyCaneID;
 	
+	
 	public static int IceikaPortalID;
 	
 	public static void initConfig(FMLPreInitializationEvent event)
@@ -48,9 +49,9 @@ public class IceikaConfigHelper
 		
 		config.load();
 		int id = 608;
-		FrostedStoneID = config.getTerrainBlock("WorldGen Blocks", "Frosted Stone", 202, "").getInt(); // Gen Block ? TODO: Check if it's a gen block --Maz
-		FrostedDirtID = config.getTerrainBlock("WorldGen Blocks", "Frosted Dirt", 203, "").getInt(); // Gen Block
-		FrostedGrassID = config.getTerrainBlock("WorldGen Blocks", "Frosted Grass", 204, "").getInt(); // Gen Block
+		FrostedStoneID = config.getTerrainBlock("WorldGen Blocks", "Frosted Stone", 202, "Iceika Filler").getInt(); // Gen Block ? TODO: Check if it's a gen block --Maz
+		FrostedDirtID = config.getTerrainBlock("WorldGen Blocks", "Frosted Dirt", 203, "Iceika Filler").getInt(); // Gen Block
+		FrostedGrassID = config.getTerrainBlock("WorldGen Blocks", "Frosted Grass", 204, "Iceika Top").getInt(); // Gen Block
 		FrostedWoodID = config.getBlock("Frosted Wood", ++id).getInt();
 		FrostedLeavesID = config.getBlock("Frosted Leaves", ++id).getInt();
 		IcyStoneID = config.getBlock("Icy Stone", ++id).getInt();

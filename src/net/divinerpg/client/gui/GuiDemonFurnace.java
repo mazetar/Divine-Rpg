@@ -17,10 +17,10 @@ public class GuiDemonFurnace extends GuiContainer
 {
     private TileEntityDemonFurnace furnaceInventory;
 
-    public GuiDemonFurnace(InventoryPlayer var1, TileEntityDemonFurnace var2)
+    public GuiDemonFurnace(ContainerDemonFurnace container)
     {
-        super(new ContainerDemonFurnace(var1, var2));
-        this.furnaceInventory = var2;
+        super(container);
+        this.furnaceInventory = container.getTileEntity();
     }
 
     protected void drawGuiContainerForegroundLayer(int par1, int par2)

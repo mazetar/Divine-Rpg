@@ -43,6 +43,10 @@ public class ContainerDemonFurnace extends Container
         }
     }
 
+    public TileEntityDemonFurnace getTileEntity() {
+        return furnace;
+    }
+    
     @Override
     public void addCraftingToCrafters(ICrafting var1)
     {

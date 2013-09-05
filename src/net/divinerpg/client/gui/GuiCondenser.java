@@ -17,10 +17,10 @@ public class GuiCondenser extends GuiContainer
 {
     private TileEntityCondenser brewingStand;
 
-    public GuiCondenser(InventoryPlayer par1InventoryPlayer, TileEntityCondenser par2TileEntityBrewingStand)
+    public GuiCondenser(ContainerCondenser container)
     {
-        super(new ContainerCondenser(par1InventoryPlayer, par2TileEntityBrewingStand));
-        this.brewingStand = par2TileEntityBrewingStand;
+        super(container);
+        this.brewingStand = container.getTileEntity();
     }
 
     /**

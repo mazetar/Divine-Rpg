@@ -1,5 +1,6 @@
-package net.divinerpg.utils.handlers;
+package net.divinerpg.utils.handlers.gui;
 
+import net.divinerpg.client.gui.GuiCaptainMerik;
 import net.divinerpg.lib.GuiRef;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;

@@ -100,7 +100,7 @@ public class IceikaItemHelper
         LanguageRegistry.addName(frostKingSword, "Frostking Sword");
         LanguageRegistry.addName(frozenMaul, "Frozen Maul");
         LanguageRegistry.addName(frostClawCannon, "Frostclaw Cannon");
-        //LanguageRegistry.addName(fractiteCannon, "Fractite Cannon");
+        LanguageRegistry.addName(fractiteCannon, "Fractite Cannon");
         LanguageRegistry.addName(snowFlakeShuriken, "Snowflake Shuriken");
         LanguageRegistry.addName(icicleBow, "Icicle Bow");
         LanguageRegistry.addName(snowStormBow, "Snowstorm Bow");

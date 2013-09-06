@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Random;
 
 import net.divinerpg.DivineRPGVethea;
+import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.block.VetheaBlockHelper;
 import net.divinerpg.utils.helpers.item.VetheaItemHelper;
 import net.minecraft.block.Block;
@@ -199,7 +200,7 @@ public class EntityHungerHungry extends EntityVillager implements INpc, IMerchan
 	            		break;
 	            	}
 	                
-	                var1.openGui(DivineRPGVethea.instance, 20, this.worldObj, this.entityId, 0, 0);
+	                var1.openGui(DivineRPGVethea.instance, GuiRef.HUNGER, this.worldObj, this.entityId, 0, 0);
 	            }
 
 	            return true;

@@ -32,10 +32,10 @@ public class GuiTinkerer extends GuiContainer
     private GuiButtonMerchant previousRecipeButtonIndex;
     private int currentRecipeIndex = 0;
 
-    public GuiTinkerer(InventoryPlayer var1, IMerchant var2, World var3)
+    public GuiTinkerer(ContainerTinkerer container)
     {
-        super(new ContainerTinkerer(var1, var2, var3));
-        this.theIMerchant = var2;
+        super(container);
+        this.theIMerchant = container.getMerchant();
     }
 
     /**

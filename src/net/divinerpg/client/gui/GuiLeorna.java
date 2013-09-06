@@ -32,10 +32,10 @@ public class GuiLeorna extends GuiContainer
     private GuiButtonMerchant previousRecipeButtonIndex;
     private int currentRecipeIndex = 0;
 
-    public GuiLeorna(InventoryPlayer var1, IMerchant var2, World var3)
+    public GuiLeorna(ContainerLeorna container)
     {
-        super(new ContainerLeorna(var1, var2, var3));
-        this.theIMerchant = var2;
+        super(container);
+        this.theIMerchant = container.getMerchant();
     }
 
     /**

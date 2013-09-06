@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Random;
 
 import net.divinerpg.DivineRPGIceika;
+import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.divinerpg.utils.helpers.item.IceikaItemHelper;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
@@ -44,7 +45,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EntityWorkshopTickerer extends EntityVillager implements INpc, IMerchant, IMob
+public class EntityWorkshopTinkerer extends EntityVillager implements INpc, IMerchant, IMob
 {
     private int randomTickDivider;
     private boolean isMating;
@@ -61,12 +62,12 @@ public class EntityWorkshopTickerer extends EntityVillager implements INpc, IMer
     public static final Map villagerStockList = new HashMap();
     public static final Map blacksmithSellingList = new HashMap();
 
-    public EntityWorkshopTickerer(World var1)
+    public EntityWorkshopTinkerer(World var1)
     {
         this(var1, 0);
     }
 
-    public EntityWorkshopTickerer(World var1, int var2)
+    public EntityWorkshopTinkerer(World var1, int var2)
     {
         super(var1);
         this.randomTickDivider = 0;
@@ -203,7 +204,7 @@ public class EntityWorkshopTickerer extends EntityVillager implements INpc, IMer
             		break;
             	}
                 
-                var1.openGui(DivineRPGIceika.instance, 14, this.worldObj, this.entityId, 0, 0);
+                var1.openGui(DivineRPGIceika.instance, GuiRef.TINKERER, this.worldObj, this.entityId, 0, 0);
             }
 
             return true;

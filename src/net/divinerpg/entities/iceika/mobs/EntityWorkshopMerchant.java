@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Random;
 
 import net.divinerpg.DivineRPGIceika;
+import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.divinerpg.utils.helpers.item.IceikaItemHelper;
@@ -203,7 +204,7 @@ public class EntityWorkshopMerchant extends EntityVillager implements INpc, IMer
             		break;
             	}
                 
-                var1.openGui(DivineRPGIceika.instance, 15, this.worldObj, this.entityId, 0, 0);
+                var1.openGui(DivineRPGIceika.instance, GuiRef.WORKSHOP_MERCHANT, this.worldObj, this.entityId, 0, 0);
             }
 
             return true;

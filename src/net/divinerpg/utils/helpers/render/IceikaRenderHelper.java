@@ -7,7 +7,7 @@ import net.divinerpg.entities.iceika.mobs.EntityGlacide;
 import net.divinerpg.entities.iceika.mobs.EntityHastreus;
 import net.divinerpg.entities.iceika.mobs.EntityRollum;
 import net.divinerpg.entities.iceika.mobs.EntityWorkshopMerchant;
-import net.divinerpg.entities.iceika.mobs.EntityWorkshopTickerer;
+import net.divinerpg.entities.iceika.mobs.EntityWorkshopTinkerer;
 import net.divinerpg.entities.iceika.projectile.EntityFractiteProjectile;
 import net.divinerpg.entities.iceika.projectile.EntityFrostclawProjectile;
 import net.divinerpg.entities.iceika.projectile.EntityIce;
@@ -42,7 +42,7 @@ public class IceikaRenderHelper
         
         RenderingRegistry.registerEntityRenderingHandler(EntityFrostArcher.class, new RenderFrostArcher(new ModelBiped(), 0.0F, EntityResourceLocs.FROZEN_ARCHER));
         RenderingRegistry.registerEntityRenderingHandler(EntityRollum.class, new RenderDivineEntity(new ModelRollum(), 0.0F, EntityResourceLocs.ROLLUM));
-        RenderingRegistry.registerEntityRenderingHandler(EntityWorkshopTickerer.class, new RenderDivineEntity(new ModelWorkshop(), 0.0F, EntityResourceLocs.WORKSHOP_TINKER));
+        RenderingRegistry.registerEntityRenderingHandler(EntityWorkshopTinkerer.class, new RenderDivineEntity(new ModelWorkshop(), 0.0F, EntityResourceLocs.WORKSHOP_TINKER));
         RenderingRegistry.registerEntityRenderingHandler(EntityWorkshopMerchant.class, new RenderDivineEntity(new ModelWorkshop(), 0.0F, EntityResourceLocs.WORKSHOP_MERCHANT));
         
         RenderingRegistry.registerEntityRenderingHandler(EntityFractiteProjectile.class, new RenderIconProjectile(EntityResourceLocs.FRACTITE_PROJECTILE));

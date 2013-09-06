@@ -29,10 +29,10 @@ public class GuiHungerHungry  extends GuiContainer
     private GuiButtonMerchant previousRecipeButtonIndex;
     private int currentRecipeIndex = 0;
 
-    public GuiHungerHungry(InventoryPlayer var1, IMerchant var2, World var3)
+    public GuiHungerHungry(ContainerHungerHungry container)
     {
-        super(new ContainerHungerHungry(var1, var2, var3));
-        this.theIMerchant = var2;
+        super(container);
+        this.theIMerchant = container.getMerchant();
     }
 
     /**

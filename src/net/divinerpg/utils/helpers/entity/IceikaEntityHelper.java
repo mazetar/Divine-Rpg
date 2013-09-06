@@ -7,7 +7,7 @@ import net.divinerpg.entities.iceika.mobs.EntityGlacide;
 import net.divinerpg.entities.iceika.mobs.EntityHastreus;
 import net.divinerpg.entities.iceika.mobs.EntityRollum;
 import net.divinerpg.entities.iceika.mobs.EntityWorkshopMerchant;
-import net.divinerpg.entities.iceika.mobs.EntityWorkshopTickerer;
+import net.divinerpg.entities.iceika.mobs.EntityWorkshopTinkerer;
 import net.divinerpg.entities.iceika.projectile.EntityFractiteCannonShot;
 import net.divinerpg.entities.iceika.projectile.EntityFractiteProjectile;
 import net.divinerpg.entities.iceika.projectile.EntityFrostclawProjectile;
@@ -32,7 +32,7 @@ public class IceikaEntityHelper
         ModMobRegistry.registerEntity(EntityHastreus.class, "hastreus", START_EID++, 120, 5, true);
         ModMobRegistry.registerEntity(EntityFrostArcher.class, "frostarcher", START_EID++, 120, 5, true);
         ModMobRegistry.registerEntity(EntityRollum.class, "rollum", START_EID++, 120, 5, true);
-        ModMobRegistry.registerEntity(EntityWorkshopTickerer.class, "workshoptickerer", START_EID++, 120, 5, true);
+        ModMobRegistry.registerEntity(EntityWorkshopTinkerer.class, "workshoptickerer", START_EID++, 120, 5, true);
         ModMobRegistry.registerEntity(EntityWorkshopMerchant.class, "workshopmerchant", START_EID++, 120, 5, true);
 		
 		ModMobRegistry.registerModEntity(EntityNoteProjectile.class, "noteProjectile", START_EID++, 64, 10, true);

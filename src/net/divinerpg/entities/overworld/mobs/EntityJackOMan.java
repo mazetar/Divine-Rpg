@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Random;
 
 import net.divinerpg.DivineRPG;
+import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLiving;
@@ -200,7 +201,7 @@ public class EntityJackOMan extends EntityVillager implements INpc, IMerchant
             		break;
             	}
                 
-                var1.openGui(DivineRPG.instance, 9, this.worldObj, this.entityId, 0, 0);
+                var1.openGui(DivineRPG.instance, GuiRef.JACKOMAN, this.worldObj, this.entityId, 0, 0);
                 //var1.addStat(AchievementPageDivineRPG.halloweenSpirit, 1); //TODO when achivements
             }
 

@@ -32,10 +32,10 @@ public class GuiVatticus extends GuiContainer
     private GuiButtonMerchant previousRecipeButtonIndex;
     private int currentRecipeIndex = 0;
 
-    public GuiVatticus(InventoryPlayer var1, IMerchant var2, World var3)
+    public GuiVatticus(ContainerVatticus container)
     {
-        super(new ContainerVatticus(var1, var2, var3));
-        this.theIMerchant = var2;
+        super(container);
+        this.theIMerchant = container.getMerchant();
     }
 
     /**

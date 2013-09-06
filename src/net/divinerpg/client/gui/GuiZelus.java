@@ -32,10 +32,10 @@ public class GuiZelus extends GuiContainer
     private GuiButtonMerchant previousRecipeButtonIndex;
     private int currentRecipeIndex = 0;
 
-    public GuiZelus(InventoryPlayer var1, IMerchant var2, World var3)
+    public GuiZelus(ContainerZelus container)
     {
-        super(new ContainerZelus(var1, var2, var3));
-        this.theIMerchant = var2;
+        super(container);
+        this.theIMerchant = container.getMerchant();
     }
 
     /**

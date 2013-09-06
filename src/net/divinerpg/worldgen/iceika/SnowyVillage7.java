@@ -6,7 +6,7 @@ package net.divinerpg.worldgen.iceika;
 import java.util.Random;
 
 import net.divinerpg.entities.iceika.mobs.EntityWorkshopMerchant;
-import net.divinerpg.entities.iceika.mobs.EntityWorkshopTickerer;
+import net.divinerpg.entities.iceika.mobs.EntityWorkshopTinkerer;
 import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import net.divinerpg.worldgen.vethea.WorldAddition;
 import net.minecraft.block.Block;
@@ -713,7 +713,7 @@ public class SnowyVillage7 extends WorldGenerator
 		world.setBlock(i + 13, j + 4, k + 12, IceikaBlockHelper.snowyBricks.blockID);
 		world.setBlock(i + 13, j + 4, k + 13, IceikaBlockHelper.snowyBricks.blockID);
 		
-        EntityWorkshopTickerer tinkerer = new EntityWorkshopTickerer(world);
+        EntityWorkshopTinkerer tinkerer = new EntityWorkshopTinkerer(world);
         tinkerer.setLocationAndAngles((double)i + 3.0D, (double)j + 1.0D, (double)k + 3.0D, 0.0F, 0.0F);
         world.spawnEntityInWorld(tinkerer);
         

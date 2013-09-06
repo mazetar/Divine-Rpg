@@ -3,6 +3,7 @@ package net.divinerpg.entities.arcana.traders;
 import java.util.Iterator;
 
 import net.divinerpg.DivineRPGArcana;
+import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.IMerchant;
@@ -133,7 +134,7 @@ public class EntityVatticus extends EntityVillager implements INpc, IMerchant
             		break;
             	}
 
-				var1.openGui(DivineRPGArcana.instance, 3, this.worldObj, this.entityId, 0, 0);
+				var1.openGui(DivineRPGArcana.instance, GuiRef.VATTICUS, this.worldObj, this.entityId, 0, 0);
 			}
 
 			return true;

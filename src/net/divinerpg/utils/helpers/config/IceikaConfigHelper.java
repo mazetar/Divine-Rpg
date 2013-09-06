@@ -38,6 +38,8 @@ public class IceikaConfigHelper
 	public static int BlueCandyCaneID;
 	public static int YellowCandyCaneID;
 	public static int PurpleCandyCaneID;
+	public static int GiftBoxID;
+	
 	
 	
 	public static int IceikaPortalID;
@@ -48,7 +50,7 @@ public class IceikaConfigHelper
 		Configuration config = new Configuration(file);
 		
 		config.load();
-		int id = 608;
+		int id = OverworldConfigHelper.BLOCKID_NEXT;
 		FrostedStoneID = config.getTerrainBlock("WorldGen Blocks", "Frosted Stone", 202, "Iceika Filler").getInt(); // Gen Block ? TODO: Check if it's a gen block --Maz
 		FrostedDirtID = config.getTerrainBlock("WorldGen Blocks", "Frosted Dirt", 203, "Iceika Filler").getInt(); // Gen Block
 		FrostedGrassID = config.getTerrainBlock("WorldGen Blocks", "Frosted Grass", 204, "Iceika Top").getInt(); // Gen Block
@@ -79,8 +81,11 @@ public class IceikaConfigHelper
 		BlueCandyCaneID = config.getBlock("Blue Candy Cane", ++id).getInt();
 		YellowCandyCaneID = config.getBlock("Yellow Candy Cane", ++id).getInt();
 		PurpleCandyCaneID = config.getBlock("Purple Candy Cane", ++id).getInt();
+		GiftBoxID = config.getBlock("Gift Box", ++id).getInt();
 		
 		IceikaPortalID = config.getBlock("Iceika Portal", ++id).getInt();
+		
+		OverworldConfigHelper.BLOCKID_NEXT = id;
 		
 		initConfigItems(event, config);
 		
@@ -113,6 +118,9 @@ public class IceikaConfigHelper
 	public static int SantaLegsID;
 	public static int SantaBootsID;
 	
+	public static int BlueFireBowID;
+	public static int fractiteCannonID;
+	
 	public static void initConfigItems(FMLPreInitializationEvent event, Configuration config)
 	{
 
@@ -142,8 +150,9 @@ public class IceikaConfigHelper
 		SantaBodyID = config.getItem("Santa Body", id++).getInt();
 		SantaLegsID = config.getItem("Santa Legs", id++).getInt();
 		SantaBootsID = config.getItem("Santa Boots", id++).getInt();
+		BlueFireBowID = config.getItem("BlueFire Bow", id++).getInt();
+		fractiteCannonID = config.getItem("Fractite Cannon", id++).getInt();
 		
-
         OverworldConfigHelper.nextItemID = id;
 	}
 }

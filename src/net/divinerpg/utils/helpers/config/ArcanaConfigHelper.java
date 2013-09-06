@@ -90,7 +90,7 @@ public class ArcanaConfigHelper
 		
 		config.load();
 		
-		int id = 637;
+		int id = OverworldConfigHelper.BLOCKID_NEXT;
 		
 		dungeonLampID = config.getBlock("dungeonlight", ++id).getInt();
         arcaniteTubesID = config.getBlock("arcaanitetubes", ++id).getInt();
@@ -151,7 +151,8 @@ public class ArcanaConfigHelper
         arcanaSpawner4ID = config.getBlock("arcanaSpawner4", ++id).getInt();
         arcanaSpawner5ID = config.getBlock("arcanaSpawner5", ++id).getInt();
         
-		
+        OverworldConfigHelper.BLOCKID_NEXT = id;
+        
 		initConfigItems(event, config);
 		
 		config.save();

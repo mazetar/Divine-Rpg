@@ -456,7 +456,7 @@ public class VetheaConfigHelper
     public static void initConfigBlocks(FMLPreInitializationEvent event, Configuration config)
 	{
         
-        int id = 695;
+        int id = OverworldConfigHelper.BLOCKID_NEXT;
         
     	dreamstoneID = config.getBlock("DreamStone", ++id).getInt();
     	dreamgrassID = config.getBlock("DreamGrass", ++id).getInt();
@@ -537,5 +537,6 @@ public class VetheaConfigHelper
         
         dreamdirtID = config.getBlock("DreamDirt", ++id).getInt();
         
+        OverworldConfigHelper.BLOCKID_NEXT = id;
 	}
 }

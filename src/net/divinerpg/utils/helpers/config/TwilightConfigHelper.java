@@ -59,7 +59,7 @@ public class TwilightConfigHelper
 		
 		config.load();
 		
-		int id = 569;
+		int id = OverworldConfigHelper.BLOCKID_NEXT;
 		
 		TwilightStoneID = config.getTerrainBlock("WorldGen Blocks", "TwilightStone", 191, "").getInt();
 		divineRockID = config.getBlock("DivineRock", ++id).getInt();
@@ -104,6 +104,8 @@ public class TwilightConfigHelper
 		AugiteOreID = config.getBlock("Augite Ore", ++id).getInt();
 		AugiteBlockID = config.getBlock("Augite Block", ++id).getInt();
 		AugitePortalID = config.getBlock("Augite Portal", ++id).getInt();
+		
+		OverworldConfigHelper.BLOCKID_NEXT = id;
 		
 		initConfigItems(event, config);
 		

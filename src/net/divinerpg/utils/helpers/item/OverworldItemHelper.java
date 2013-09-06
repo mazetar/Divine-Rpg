@@ -36,6 +36,7 @@ import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemNameTag;
 import net.minecraftforge.common.EnumHelper;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -398,6 +399,8 @@ public class OverworldItemHelper
 		LanguageRegistry.addName(serenadeOfLife, "Serenade of Life");
 		serenadeOfDeath = new ItemSerenadeDeath(cfg.seranadeDeathID);
 		serenadeHealth = new ItemSerenadeHealth(cfg.serenadeHealthID);
+		
+		namkormira = new ItemMassivence(cfg.namkormiraID);
 		
 		
 	}

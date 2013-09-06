@@ -4,6 +4,7 @@ import net.divinerpg.blocks.BlockColoredGlass;
 import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.blocks.BlockDivinePortal;
 import net.divinerpg.blocks.BlockDivineSpawner;
+import net.divinerpg.blocks.iceika.BlockGiftBox;
 import net.divinerpg.blocks.iceika.BlockIceikaChest;
 import net.divinerpg.blocks.iceika.BlockIceikaDoor;
 import net.divinerpg.blocks.iceika.BlockIceikaFurnace;
@@ -80,6 +81,8 @@ public class IceikaBlockHelper {
 		iceikaPortal = ((BlockDivinePortal) new BlockDivinePortal(IceikaConfigHelper.IceikaPortalID).func_111022_d("IceikaPortal").setUnlocalizedName("IceikaPortal").setCreativeTab(CreativeTabHelper.tabBlocks))
                 .setPortalVariables(Block.blockSnow, glacideSpawner/* aka. nothing */, DimensionRegistry.IceikaID, "", new EntityDravitePortalFX(null, 1, 2, 3, 4, 5, 6));
         
+		giftBox = new BlockGiftBox(cfg.GiftBoxID).func_111022_d("GiftBox").setUnlocalizedName("GiftBox");
+		
 //TODO: Fix textures for xmas stuff.
 		//        xmasTreeLights = new BlockDivineRPG(x.XmasTreeLightsID, 0, Material.leaves).func_111022_d("").setHardness(0.2F).setUnlocalizedName("LightLeaves").setCreativeTab(CreativeTabHelper.tabBlocks);
 //		redXmasLights = new BlockXmasLights(x.RedXmasLightsID, 0).func_111022_d("").setHardness(0.2F).setUnlocalizedName("RedXmasLights").setCreativeTab(CreativeTabHelper.tabBlocks);

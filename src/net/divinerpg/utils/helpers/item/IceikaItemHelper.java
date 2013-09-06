@@ -4,6 +4,7 @@ import net.divinerpg.items.ItemDivineRPG;
 import net.divinerpg.items.core.ItemDivineRPGFood;
 import net.divinerpg.items.iceika.ItemEggNog;
 import net.divinerpg.items.iceika.ItemEnderice;
+import net.divinerpg.items.iceika.ItemFractiteCannon;
 import net.divinerpg.items.iceika.ItemFrostClawCannon;
 import net.divinerpg.items.iceika.ItemFrostkingSword;
 import net.divinerpg.items.iceika.ItemFrozenMaul;
@@ -17,6 +18,7 @@ import net.divinerpg.items.iceika.ItemSnowSlash;
 import net.divinerpg.items.iceika.ItemSnowStormBow;
 import net.divinerpg.items.iceika.ItemSnowflakeShuriken;
 import net.divinerpg.items.iceika.ItemSoundOfCarols;
+import net.divinerpg.items.overworld.ItemBlueBow;
 import net.divinerpg.items.overworld.ItemMassivence;
 import net.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import net.divinerpg.utils.helpers.gui.CreativeTabHelper;
@@ -69,7 +71,7 @@ public class IceikaItemHelper
         frozenMaul = new ItemFrozenMaul(x.FrozenMaulID).setUnlocalizedName("frozenMaul").setCreativeTab(CreativeTabHelper.tabSword);
         
         frostClawCannon = new ItemFrostClawCannon(x.FrostclawCannonID).setUnlocalizedName("frostClawCannon").setCreativeTab(CreativeTabHelper.tabRanged);
-        //fractiteCannon = new ItemFractiteCannon(IceikaConfigHelper.fractiteCannonID).setUnlocalizedName("fractiteCannon").setCreativeTab(CreativeTabHelper.tabRanged);
+        fractiteCannon = new ItemFractiteCannon(IceikaConfigHelper.fractiteCannonID).setUnlocalizedName("fractiteCannon").setCreativeTab(CreativeTabHelper.tabRanged);
         snowFlakeShuriken = new ItemSnowflakeShuriken(x.SnowflakeShurikenID).setUnlocalizedName("snowFlakeShuriken").setCreativeTab(CreativeTabHelper.tabRanged);
         icicleBow = new ItemIcicleBow(x.IcicleBowID).setUnlocalizedName("icicleBow").setCreativeTab(CreativeTabHelper.tabRanged);
         snowStormBow = new ItemSnowStormBow(x.SnowstormBowID).setUnlocalizedName("frostStormBow").setCreativeTab(CreativeTabHelper.tabRanged);
@@ -78,7 +80,9 @@ public class IceikaItemHelper
         chocolateLog = new ItemDivineRPGFood(x.ChocolateLogID, 4, 1.0F, false).setUnlocalizedName("chocolateLog").setCreativeTab(CreativeTabHelper.tabHerb);
         snowCones = new ItemDivineRPGFood(x.SnowconesID, 2, 0.3F, false).setUnlocalizedName("snowCones").setCreativeTab(CreativeTabHelper.tabHerb);
         fruitCake = new ItemDivineRPGFood(x.FruitCakeID, 16, 2.0F, false).setUnlocalizedName("fruitCake").setCreativeTab(CreativeTabHelper.tabHerb);
-                
+        
+        bluefireBow = new ItemBlueBow(x.BlueFireBowID);
+        
         santaHead = new ItemSantaArmor(x.SantaHeadID, 0).setUnlocalizedName("santaHelmet").setCreativeTab(CreativeTabHelper.tabArmor);
         santaBody = new ItemSantaArmor(x.SantaBodyID, 1).setUnlocalizedName("santaChest").setCreativeTab(CreativeTabHelper.tabArmor);
         santaLegs = new ItemSantaArmor(x.SantaLegsID, 2).setUnlocalizedName("santaLegs").setCreativeTab(CreativeTabHelper.tabArmor);

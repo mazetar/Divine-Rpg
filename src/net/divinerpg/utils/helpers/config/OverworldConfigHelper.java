@@ -7,6 +7,8 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class OverworldConfigHelper 
 {
+    public static int BLOCKID_NEXT = 500;
+    
     //-==-BLOCKS-==-//
 	public static int blueFireID;
 	public static int divineRockID;
@@ -107,7 +109,7 @@ public class OverworldConfigHelper
 	
 	public static void InitConfigBlocks(Configuration config)
 	{
-	    int id = 500;
+	    int id = BLOCKID_NEXT;
 		blueFireID = config.getBlock("blueFireID", ++id).getInt();
 		divineRockID = config.getBlock("divineRockID", ++id).getInt();
 		acceleraunchID = config.getBlock("acceleraunchID", ++id).getInt();
@@ -177,6 +179,8 @@ public class OverworldConfigHelper
 		lightFenceRedOnID = config.getBlock("lightFenceRedOnID", ++id).getInt();
 		purpleGlowBoneTreeID = config.getBlock("purpleGlowBoneTreeID", ++id).getInt();
 		pinkGlowBoneTreeID = config.getBlock("pinkGlowBoneTreeID", ++id).getInt(); // 568.
+		
+		BLOCKID_NEXT = id;
 	}
 	
 	public static int bedrockMaulID;

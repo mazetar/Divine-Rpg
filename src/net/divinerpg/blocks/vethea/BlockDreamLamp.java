@@ -3,8 +3,10 @@ package net.divinerpg.blocks.vethea;
 import java.util.Random;
 
 import net.divinerpg.DivineRPGTwilight;
+import net.divinerpg.DivineRPGVethea;
 import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.vethea.tileentities.TileEntityDreamLamp;
+import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.block.VetheaBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -38,7 +40,7 @@ public class BlockDreamLamp extends BlockDivineContainer
 		{
 			return false;
 		}
-		par5EntityPlayer.openGui(DivineRPGTwilight.instance, 19, world, x, y, z);
+		par5EntityPlayer.openGui(DivineRPGVethea.instance, GuiRef.DREAMLAMP, world, x, y, z);
 		return true;
     }
     

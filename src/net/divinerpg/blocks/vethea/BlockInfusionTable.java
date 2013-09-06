@@ -1,7 +1,9 @@
 package net.divinerpg.blocks.vethea;
 
 import net.divinerpg.DivineRPGTwilight;
+import net.divinerpg.DivineRPGVethea;
 import net.divinerpg.blocks.vethea.tileentities.TileEntityInfusionTable;
+import net.divinerpg.lib.GuiRef;
 import net.divinerpg.lib.Reference;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -43,7 +45,7 @@ public class BlockInfusionTable extends BlockContainer
                 {
                         return false;
                 }
-                par5EntityPlayer.openGui(DivineRPGTwilight.instance, 18, world, x, y, z);
+                par5EntityPlayer.openGui(DivineRPGVethea.instance, GuiRef.INFUSIONTABLE, world, x, y, z);
                 return true;
         
     }

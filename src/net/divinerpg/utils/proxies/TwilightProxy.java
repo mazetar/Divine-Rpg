@@ -1,5 +1,7 @@
 package net.divinerpg.utils.proxies;
 
+import net.divinerpg.DivineRPGTwilight;
+import net.divinerpg.utils.handlers.gui.TwilightGuiHandler;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import net.divinerpg.utils.helpers.entity.TwilightEntityHelper;
@@ -8,6 +10,7 @@ import net.divinerpg.blocks.twilight.tileentities.*;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class TwilightProxy 
@@ -24,6 +27,7 @@ public class TwilightProxy
         TwilightBlockHelper.init();
         TwilightItemHelper.init();
 
+        NetworkRegistry.instance().registerGuiHandler(DivineRPGTwilight.instance, new TwilightGuiHandler());
     //    TwilightRecipeHelper.init();
 
 	}

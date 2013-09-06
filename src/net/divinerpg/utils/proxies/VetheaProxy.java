@@ -1,9 +1,12 @@
 package net.divinerpg.utils.proxies;
 
+import net.divinerpg.DivineRPGVethea;
 import net.divinerpg.blocks.vethea.tileentities.*;
+import net.divinerpg.utils.handlers.gui.VetheaGuiHandler;
 import net.divinerpg.utils.helpers.entity.VetheaEntityHelper;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class VetheaProxy {
@@ -14,6 +17,7 @@ public class VetheaProxy {
     
     public void init(FMLInitializationEvent event) {
         initEntityRenderers();
+        NetworkRegistry.instance().registerGuiHandler(DivineRPGVethea.instance, new VetheaGuiHandler());
     }
     
     public void initEntityRenderers() {

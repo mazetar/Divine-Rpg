@@ -32,7 +32,6 @@ public class OverworldGuiHandler implements IGuiHandler {
             if (te instanceof TileEntitySuperEnchantmentTable)
             return new ContainerSuperEnchant(player.inventory, world, x, y, z);
         }
-            
             return null;
     }
 

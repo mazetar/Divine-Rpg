@@ -39,7 +39,7 @@ public class CoreProxy {
 		eventRegistry();
 		//recipeRegistry();
 		OverworldItemHelper.init();
-		NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new OverworldGuiHandler());
+        NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new OverworldGuiHandler());
 	}
 	
 	public void postInit(FMLPostInitializationEvent event) {

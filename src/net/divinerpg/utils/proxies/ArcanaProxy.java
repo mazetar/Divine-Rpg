@@ -1,5 +1,7 @@
 package net.divinerpg.utils.proxies;
 
+import net.divinerpg.DivineRPGArcana;
+import net.divinerpg.utils.handlers.gui.ArcanaGuiHandler;
 import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
 import net.divinerpg.utils.helpers.entity.ArcanaEntityHelper;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityCondenser;
@@ -17,6 +19,7 @@ import net.divinerpg.blocks.arcana.tileentities.TileEntityReyvorStatue;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ArcanaProxy {
@@ -31,6 +34,7 @@ public class ArcanaProxy {
     
     public void init(FMLInitializationEvent event) {
         initEntityRenderers();
+        NetworkRegistry.instance().registerGuiHandler(DivineRPGArcana.instance, new ArcanaGuiHandler());
     }
     
     public void initEntityRenderers() {

@@ -18,7 +18,7 @@ public class OverworldGuiHandler implements IGuiHandler {
         else if (id == GuiRef.DATTICON) {
             
         }
-        else if (id == GuiRef.DEMONFURNACE) {
+        else if (id == GuiRef.DEMON_FURNACE) {
             
         }
         else if (id == GuiRef.DREAMLAMP) {
@@ -51,7 +51,7 @@ public class OverworldGuiHandler implements IGuiHandler {
         else if (id == GuiRef.MERIK) {
             
         }
-        else if (id == GuiRef.MOLTENFURNACE) {
+        else if (id == GuiRef.MOLTEN_FURNACE) {
             
         }
         else if (id == GuiRef.TINKERER) {
@@ -79,7 +79,7 @@ public class OverworldGuiHandler implements IGuiHandler {
         else if (id == GuiRef.DATTICON) {
             
         }
-        else if (id == GuiRef.DEMONFURNACE) {
+        else if (id == GuiRef.DEMON_FURNACE) {
             
         }
         else if (id == GuiRef.DREAMLAMP) {
@@ -112,7 +112,7 @@ public class OverworldGuiHandler implements IGuiHandler {
         else if (id == GuiRef.MERIK) {
             
         }
-        else if (id == GuiRef.MOLTENFURNACE) {
+        else if (id == GuiRef.MOLTEN_FURNACE) {
             
         }
         else if (id == GuiRef.TINKERER) {

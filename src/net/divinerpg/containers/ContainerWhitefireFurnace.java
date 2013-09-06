@@ -2,6 +2,7 @@ package net.divinerpg.containers;
 
 import java.util.Iterator;
 
+import net.divinerpg.blocks.arcana.tileentities.TileEntityGreenlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -41,6 +42,10 @@ public class ContainerWhitefireFurnace extends Container
         {
             this.addSlotToContainer(new Slot(var1, var3, 8 + var3 * 18, 142));
         }
+    }
+    
+    public TileEntityWhitefireFurnace getTileEntity() {
+        return furnace;
     }
 
     @Override

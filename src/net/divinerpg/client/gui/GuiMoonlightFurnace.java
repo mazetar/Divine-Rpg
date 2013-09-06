@@ -17,10 +17,10 @@ public class GuiMoonlightFurnace extends GuiContainer
 {
     private TileEntityMoonlightFurnace furnaceInventory;
 
-    public GuiMoonlightFurnace(InventoryPlayer var1, TileEntityMoonlightFurnace var2)
+    public GuiMoonlightFurnace(ContainerMoonlightFurnace container)
     {
-        super(new ContainerMoonlightFurnace(var1, var2));
-        this.furnaceInventory = var2;
+        super(container);
+        this.furnaceInventory = container.getTileEntity();
     }
 
     protected void drawGuiContainerForegroundLayer(int par1, int par2)

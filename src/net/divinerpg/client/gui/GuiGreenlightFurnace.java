@@ -2,6 +2,7 @@ package net.divinerpg.client.gui;
 
 import net.divinerpg.blocks.arcana.tileentities.TileEntityGreenlightFurnace;
 import net.divinerpg.containers.ContainerGreenlightFurnace;
+import net.divinerpg.containers.ContainerMoltenFurnace;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -17,10 +18,10 @@ public class GuiGreenlightFurnace extends GuiContainer
 {
     private TileEntityGreenlightFurnace furnaceInventory;
 
-    public GuiGreenlightFurnace(InventoryPlayer var1, TileEntityGreenlightFurnace var2)
+    public GuiGreenlightFurnace(ContainerGreenlightFurnace container)
     {
-        super(new ContainerGreenlightFurnace(var1, var2));
-        this.furnaceInventory = var2;
+        super(container);
+        this.furnaceInventory = container.getTileEntity();
     }
 
     protected void drawGuiContainerForegroundLayer(int par1, int par2)

@@ -17,10 +17,10 @@ public class GuiOceanfireFurnace extends GuiContainer
 {
     private TileEntityOceanfireFurnace furnaceInventory;
 
-    public GuiOceanfireFurnace(InventoryPlayer var1, TileEntityOceanfireFurnace var2)
+    public GuiOceanfireFurnace(ContainerOceanfireFurnace container)
     {
-        super(new ContainerOceanfireFurnace(var1, var2));
-        this.furnaceInventory = var2;
+        super(container);
+        this.furnaceInventory = container.getTileEntity();
     }
 
     protected void drawGuiContainerForegroundLayer(int par1, int par2)

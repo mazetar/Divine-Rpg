@@ -3,6 +3,7 @@ package net.divinerpg.containers;
 import java.util.Iterator;
 
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityOceanfireFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -41,6 +42,10 @@ public class ContainerMoonlightFurnace extends Container
         {
             this.addSlotToContainer(new Slot(var1, var3, 8 + var3 * 18, 142));
         }
+    }
+    
+    public TileEntityMoonlightFurnace getTileEntity() {
+        return furnace;
     }
 
     @Override

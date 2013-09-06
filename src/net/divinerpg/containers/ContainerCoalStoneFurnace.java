@@ -42,6 +42,10 @@ public class ContainerCoalStoneFurnace extends Container
             this.addSlotToContainer(new Slot(var1, var3, 8 + var3 * 18, 142));
         }
     }
+    
+    public TileEntityCoalStoneFurnace getTileEntity() {
+        return furnace;
+    }
 
     @Override
     public void addCraftingToCrafters(ICrafting var1)

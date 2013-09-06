@@ -4,13 +4,14 @@ import net.divinerpg.DivineRPG;
 import net.divinerpg.blocks.core.tileentities.TileEntitySerenityChest;
 import net.divinerpg.blocks.core.tileentities.TileSingularChest;
 import net.divinerpg.blocks.overworld.tileentities.*;
+import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
 import net.divinerpg.utils.debug.EntityNameRenderer;
 import net.divinerpg.utils.handlers.ArmorEffectHandler;
 import net.divinerpg.utils.handlers.ServerTickHandler;
+import net.divinerpg.utils.handlers.gui.OverworldGuiHandler;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.config.OverworldConfigHelper;
 import net.divinerpg.utils.helpers.entity.OverworldEntityHelper;
-import net.divinerpg.utils.helpers.gui.GuiHelper;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.divinerpg.utils.helpers.recipe.RecipeHelper;
 import net.minecraftforge.common.MinecraftForge;
@@ -38,7 +39,7 @@ public class CoreProxy {
 		eventRegistry();
 		//recipeRegistry();
 		OverworldItemHelper.init();
-		NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new GuiHelper());
+		NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new OverworldGuiHandler());
 	}
 	
 	public void postInit(FMLPostInitializationEvent event) {

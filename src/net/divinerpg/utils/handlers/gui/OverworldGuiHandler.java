@@ -1,8 +1,15 @@
 package net.divinerpg.utils.handlers.gui;
 
+import net.divinerpg.blocks.overworld.tileentities.TileEntitySuperEnchantmentTable;
+import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
 import net.divinerpg.client.gui.GuiCaptainMerik;
+import net.divinerpg.client.gui.GuiSuperEnchant;
+import net.divinerpg.client.gui.GuiTwilightFurnace;
+import net.divinerpg.containers.ContainerSuperEnchant;
+import net.divinerpg.containers.ContainerTwilightFurnace;
 import net.divinerpg.lib.GuiRef;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;
 
@@ -11,60 +18,11 @@ public class OverworldGuiHandler implements IGuiHandler {
     @Override
     public Object getServerGuiElement(int id, EntityPlayer player, World world,
                     int x, int y, int z) {
-        
-        if (id == GuiRef.CONDENSER) {
-            
-        }
-        else if (id == GuiRef.DATTICON) {
-            
-        }
-        else if (id == GuiRef.DEMON_FURNACE) {
-            
-        }
-        else if (id == GuiRef.DREAMLAMP) {
-            
-        }
-        else if (id == GuiRef.ENCHANT) {
-            
-        }
-        else if (id == GuiRef.EXTRACTOR) {
-            
-        }
-        else if (id == GuiRef.FURNACE) {
-            
-        }
-        else if (id == GuiRef.HUNGER) {
-            
-        }
-        else if (id == GuiRef.INFUSIONTABLE) {
-            
-        }
-        else if (id == GuiRef.ITEM_BOOK) {
-            
-        }
-        else if (id == GuiRef.JACKOMAN) {
-            
-        }
-        else if (id == GuiRef.LEORNA) {
-            
-        }
-        else if (id == GuiRef.MERIK) {
-            
-        }
-        else if (id == GuiRef.MOLTEN_FURNACE) {
-            
-        }
-        else if (id == GuiRef.TINKERER) {
-            
-        }
-        else if (id == GuiRef.TRADING) {
-            
-        }
-        else if (id == GuiRef.VATTICUS) {
-            
-        }
-        else if (id == GuiRef.ZELUS) {
-            
+
+        if (id == GuiRef.SUPER_ENCHANTMENT_TABLE) {
+            TileEntity te = world.getBlockTileEntity(x, y, z);
+            if (te instanceof TileEntitySuperEnchantmentTable)
+            return new ContainerSuperEnchant(player.inventory, world, x, y, z);
         }
             
             return null;
@@ -73,64 +31,10 @@ public class OverworldGuiHandler implements IGuiHandler {
     @Override
     public Object getClientGuiElement(int id, EntityPlayer player, World world,
                     int x, int y, int z) {
-        if (id == GuiRef.CONDENSER) {
-            
+
+        if (id == GuiRef.SUPER_ENCHANTMENT_TABLE) {
+            return new GuiSuperEnchant((ContainerSuperEnchant)this.getServerGuiElement(id, player, world, x, y, z));
         }
-        else if (id == GuiRef.DATTICON) {
-            
-        }
-        else if (id == GuiRef.DEMON_FURNACE) {
-            
-        }
-        else if (id == GuiRef.DREAMLAMP) {
-            
-        }
-        else if (id == GuiRef.ENCHANT) {
-            
-        }
-        else if (id == GuiRef.EXTRACTOR) {
-            
-        }
-        else if (id == GuiRef.FURNACE) {
-            
-        }
-        else if (id == GuiRef.HUNGER) {
-            
-        }
-        else if (id == GuiRef.INFUSIONTABLE) {
-            
-        }
-        else if (id == GuiRef.ITEM_BOOK) {
-            
-        }
-        else if (id == GuiRef.JACKOMAN) {
-            
-        }
-        else if (id == GuiRef.LEORNA) {
-            
-        }
-        else if (id == GuiRef.MERIK) {
-            
-        }
-        else if (id == GuiRef.MOLTEN_FURNACE) {
-            
-        }
-        else if (id == GuiRef.TINKERER) {
-            
-        }
-        else if (id == GuiRef.TRADING) {
-            
-        }
-        else if (id == GuiRef.VATTICUS) {
-            
-        }
-        else if (id == GuiRef.ZELUS) {
-            
-        }
-                
-            
-            
-    
         
         return null;
 

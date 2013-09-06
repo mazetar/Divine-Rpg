@@ -1,7 +1,7 @@
 package net.divinerpg.client.gui;
 
 import net.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
-import net.divinerpg.containers.ContainerExtractinator;
+import net.divinerpg.containers.ContainerExtractor;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -13,14 +13,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class GuiExtractinator extends GuiContainer
+public class GuiExtractor extends GuiContainer
 {
     private TileEntityExtractor furnaceInventory;
 
-    public GuiExtractinator(InventoryPlayer var1, TileEntityExtractor var2)
+    public GuiExtractor(ContainerExtractor container)
     {
-        super(new ContainerExtractinator(var1, var2));
-        this.furnaceInventory = var2;
+        super(container);
+        this.furnaceInventory = container.getTileEntity();
     }
 
     protected void drawGuiContainerForegroundLayer(int par1, int par2)

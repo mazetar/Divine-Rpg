@@ -16,10 +16,10 @@ public class GuiInfusionTable extends GuiContainer
 {
 	private TileEntityInfusionTable TeInfusionTable;
 
-	public GuiInfusionTable(InventoryPlayer inventory, TileEntityInfusionTable var7) 
+	public GuiInfusionTable(ContainerInfusionTable container) 
 	{
-		super(new ContainerInfusionTable(inventory, var7));
-		this.TeInfusionTable = var7;
+		super(container);
+		this.TeInfusionTable = container.tileentity;
 	}
 
 	@Override

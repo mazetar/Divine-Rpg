@@ -3,8 +3,10 @@ package net.divinerpg.blocks.arcana;
 import java.util.Random;
 
 import net.divinerpg.DivineRPG;
+import net.divinerpg.DivineRPGArcana;
 import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
+import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -143,7 +145,7 @@ public class BlockWhitefireFurnace extends BlockDivineContainer
 
             if (var10 != null)
             {
-            	par5EntityPlayer.openGui(DivineRPG.instance, 11, par1World, par2, par3, par4);
+            	par5EntityPlayer.openGui(DivineRPGArcana.instance, GuiRef.WHITEFIRE_FURNACE, par1World, par2, par3, par4);
             }
 
             return true;

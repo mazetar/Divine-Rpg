@@ -16,10 +16,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class GuiStoneFurnace extends GuiContainer {
     private TileEntityCoalStoneFurnace furnaceInventory;
 
-    public GuiStoneFurnace(InventoryPlayer var1, TileEntityCoalStoneFurnace var2)
+    public GuiStoneFurnace(ContainerCoalStoneFurnace container)
     {
-        super(new ContainerCoalStoneFurnace(var1, var2));
-        this.furnaceInventory = var2;
+        super(container);
+        this.furnaceInventory = container.getTileEntity();
     }
 
     protected void drawGuiContainerForegroundLayer(int par1, int par2)

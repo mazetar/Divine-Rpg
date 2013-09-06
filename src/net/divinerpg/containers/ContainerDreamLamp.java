@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerDreamLamp extends Container
 {
-	private TileEntityDreamLamp tile_entity;
+	public TileEntityDreamLamp tile_entity;
 	public ContainerDreamLamp(InventoryPlayer inventory, TileEntityDreamLamp var7) 
 	{
 		this.tile_entity = var7;

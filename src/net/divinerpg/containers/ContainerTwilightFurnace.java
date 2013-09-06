@@ -2,7 +2,7 @@ package net.divinerpg.containers;
 
 import java.util.Iterator;
 
-import net.divinerpg.blocks.overworld.tileentities.TileEntityTwilightFurance;
+import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -42,6 +42,10 @@ public class ContainerTwilightFurnace extends Container
         {
             this.addSlotToContainer(new Slot(var1, var3, 8 + var3 * 18, 142));
         }
+    }
+    
+    public TileEntityTwilightFurance getTileEntity() {
+        return furnace;
     }
 
     @Override

@@ -1,6 +1,6 @@
 package net.divinerpg.client.gui;
 
-import net.divinerpg.blocks.overworld.tileentities.TileEntityTwilightFurance;
+import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
 import net.divinerpg.containers.ContainerTwilightFurnace;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -17,10 +17,10 @@ public class GuiTwilightFurnace extends GuiContainer
 {
     private TileEntityTwilightFurance furnaceInventory;
 
-    public GuiTwilightFurnace(InventoryPlayer var1, TileEntityTwilightFurance var2)
+    public GuiTwilightFurnace(ContainerTwilightFurnace container)
     {
-        super(new ContainerTwilightFurnace(var1, var2));
-        this.furnaceInventory = var2;
+        super(container);
+        this.furnaceInventory = container.getTileEntity();
     }
 
     protected void drawGuiContainerForegroundLayer()

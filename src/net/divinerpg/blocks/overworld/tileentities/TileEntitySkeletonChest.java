@@ -1,4 +1,4 @@
-package net.divinerpg.blocks.iceika.tileentities;
+package net.divinerpg.blocks.overworld.tileentities;
 
 import java.util.List;
 import java.util.Vector;

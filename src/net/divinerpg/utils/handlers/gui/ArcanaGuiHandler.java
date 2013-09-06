@@ -2,6 +2,7 @@ package net.divinerpg.utils.handlers.gui;
 
 import net.divinerpg.blocks.arcana.tileentities.TileEntityCondenser;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityDemonFurnace;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityGreenlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
@@ -10,6 +11,7 @@ import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
 import net.divinerpg.client.gui.GuiCaptainMerik;
 import net.divinerpg.client.gui.GuiCondenser;
 import net.divinerpg.client.gui.GuiDemonFurnace;
+import net.divinerpg.client.gui.GuiExtractor;
 import net.divinerpg.client.gui.GuiGreenlightFurnace;
 import net.divinerpg.client.gui.GuiMoltenFurnace;
 import net.divinerpg.client.gui.GuiMoonlightFurnace;
@@ -17,6 +19,7 @@ import net.divinerpg.client.gui.GuiOceanfireFurnace;
 import net.divinerpg.client.gui.GuiWhitefireFurnace;
 import net.divinerpg.containers.ContainerCondenser;
 import net.divinerpg.containers.ContainerDemonFurnace;
+import net.divinerpg.containers.ContainerExtractor;
 import net.divinerpg.containers.ContainerGreenlightFurnace;
 import net.divinerpg.containers.ContainerMerik;
 import net.divinerpg.containers.ContainerMoltenFurnace;
@@ -25,7 +28,6 @@ import net.divinerpg.containers.ContainerOceanfireFurnace;
 import net.divinerpg.containers.ContainerWhitefireFurnace;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.DivineUtil;
-
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -77,6 +79,11 @@ public class ArcanaGuiHandler implements IGuiHandler {
             if (te instanceof TileEntityMoonlightFurnace)
                 return new ContainerMoonlightFurnace(player.inventory, (TileEntityMoonlightFurnace)te);
         }
+        else if (id == GuiRef.EXTRACTOR) {
+            TileEntity te = world.getBlockTileEntity(var1, var2, var3);
+            if (te instanceof TileEntityExtractor)
+                return new ContainerExtractor(player.inventory, (TileEntityExtractor)te);
+        }
         
         return null;
     }
@@ -107,6 +114,9 @@ public class ArcanaGuiHandler implements IGuiHandler {
         }
         else if (id == GuiRef.MOONLIGHT_FURNACE) {
             return new GuiMoonlightFurnace((ContainerMoonlightFurnace)this.getServerGuiElement(id, player, world, var1, var2, var3));
+        }
+        else if (id == GuiRef.EXTRACTOR) {
+            return new GuiExtractor((ContainerExtractor)this.getServerGuiElement(id, player, world, var1, var2, var3));
         }
         
         

@@ -1,6 +1,7 @@
 package net.divinerpg.utils.proxies;
 
 import net.divinerpg.blocks.iceika.tileentities.*;
+import net.divinerpg.blocks.overworld.tileentities.TileEntitySkeletonChest;
 import net.divinerpg.utils.handlers.ExplosiveArrowHitHandler;
 import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import net.divinerpg.utils.helpers.config.IceikaConfigHelper;

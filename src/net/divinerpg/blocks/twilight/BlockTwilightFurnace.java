@@ -4,7 +4,8 @@ import java.util.Random;
 
 import net.divinerpg.DivineRPGTwilight;
 import net.divinerpg.blocks.BlockDivineContainer;
-import net.divinerpg.blocks.overworld.tileentities.TileEntityTwilightFurance;
+import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
+import net.divinerpg.lib.GuiRef;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLiving;
@@ -158,7 +159,7 @@ public class BlockTwilightFurnace extends BlockDivineContainer
 
             if (var10 != null)
             {
-                var5.openGui(DivineRPGTwilight.instance, 0, var1, var2, var3, var4);
+                var5.openGui(DivineRPGTwilight.instance, GuiRef.TWILIGHT_FURNACE, var1, var2, var3, var4);
                 return true;
             }
             else

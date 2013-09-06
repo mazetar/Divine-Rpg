@@ -5,7 +5,7 @@
 package net.divinerpg.worldgen.iceika;
 import java.util.Random;
 
-import net.divinerpg.blocks.iceika.tileentities.TileEntitySkeletonChest;
+import net.divinerpg.blocks.overworld.tileentities.TileEntitySkeletonChest;
 import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import net.divinerpg.utils.helpers.item.IceikaItemHelper;
 import net.minecraft.block.Block;

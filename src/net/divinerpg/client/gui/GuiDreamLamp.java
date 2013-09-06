@@ -12,10 +12,10 @@ import org.lwjgl.opengl.GL11;
 public class GuiDreamLamp extends GuiContainer {
 	
 	TileEntityDreamLamp TeDreamLamp;
-	public GuiDreamLamp(InventoryPlayer inventory, TileEntityDreamLamp var7) 
+	public GuiDreamLamp(ContainerDreamLamp container) 
 	{
-		super(new ContainerDreamLamp(inventory, var7));
-		this.TeDreamLamp = var7;
+		super(container);
+		this.TeDreamLamp = container.tile_entity;
 	}
 
 	@Override

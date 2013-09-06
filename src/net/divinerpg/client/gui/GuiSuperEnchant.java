@@ -42,9 +42,9 @@ public class GuiSuperEnchant extends GuiContainer
     public float field_74208_u;
     ItemStack theItemStack;
 
-    public GuiSuperEnchant(InventoryPlayer par1InventoryPlayer, World par2World, int par3, int par4, int par5)
+    public GuiSuperEnchant(ContainerSuperEnchant container)
     {
-        super(new ContainerSuperEnchant(par1InventoryPlayer, par2World, par3, par4, par5));
+        super(container);
         this.containerEnchantment = (ContainerSuperEnchant)this.inventorySlots;
     }
 

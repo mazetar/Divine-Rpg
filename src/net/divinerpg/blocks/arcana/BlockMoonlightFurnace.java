@@ -2,8 +2,10 @@ package net.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
+import net.divinerpg.DivineRPGArcana;
 import net.divinerpg.DivineRPGTwilight;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
+import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
@@ -146,7 +148,7 @@ public class BlockMoonlightFurnace extends BlockContainer
 
             if (var10 != null)
             {
-            	par5EntityPlayer.openGui(DivineRPGTwilight.instance, 10, par1World, par2, par3, par4);
+            	par5EntityPlayer.openGui(DivineRPGArcana.instance, GuiRef.MOONLIGHT_FURNACE, par1World, par2, par3, par4);
             }
 
             return true;

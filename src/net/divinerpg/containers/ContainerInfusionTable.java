@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerInfusionTable extends Container
 {
-	protected TileEntityInfusionTable tileentity;
+	public TileEntityInfusionTable tileentity;
 	Slot slot;
 	public ContainerInfusionTable(InventoryPlayer player_inventory, TileEntityInfusionTable tile_entity)
 	{

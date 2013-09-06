@@ -14,14 +14,14 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ContainerExtractinator extends Container
+public class ContainerExtractor extends Container
 {
     private TileEntityExtractor furnace;
     private int lastCookTime = 0;
     private int lastBurnTime = 0;
     private int lastItemBurnTime = 0;
 
-    public ContainerExtractinator(InventoryPlayer var1, TileEntityExtractor var2)
+    public ContainerExtractor(InventoryPlayer var1, TileEntityExtractor var2)
     {
         this.furnace = var2;
         this.addSlotToContainer(new Slot(var2, 0, 56, 17));
@@ -41,6 +41,10 @@ public class ContainerExtractinator extends Container
         {
             this.addSlotToContainer(new Slot(var1, var3, 8 + var3 * 18, 142));
         }
+    }
+    
+    public TileEntityExtractor getTileEntity() {
+        return furnace;
     }
 
     @Override

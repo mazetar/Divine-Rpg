@@ -1,8 +1,10 @@
 package net.divinerpg.blocks.arcana;
 
 import net.divinerpg.DivineRPG;
+import net.divinerpg.DivineRPGArcana;
 import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityCondenser;
+import net.divinerpg.lib.GuiRef;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -48,7 +50,7 @@ public class BlockCondenser extends BlockDivineContainer
 
             if (var10 != null)
             {
-                par5EntityPlayer.openGui(DivineRPG.instance, 13, par1World, par2, par3, par4);
+                par5EntityPlayer.openGui(DivineRPGArcana.instance, GuiRef.CONDENSER, par1World, par2, par3, par4);
             }
 
             return true;

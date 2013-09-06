@@ -1,4 +1,4 @@
-package net.divinerpg.blocks.overworld.tileentities;
+package net.divinerpg.blocks.twilight.tileentities;
 
 import net.divinerpg.blocks.twilight.BlockTwilightFurnace;
 import net.minecraft.block.Block;

@@ -2,9 +2,11 @@ package net.divinerpg.blocks.overworld;
 
 import java.util.Random;
 
+import net.divinerpg.DivineRPG;
 import net.divinerpg.DivineRPGTwilight;
 import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.overworld.tileentities.TileEntitySuperEnchantmentTable;
+import net.divinerpg.lib.GuiRef;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -94,7 +96,7 @@ public class BlockSuperEnchantmentTable extends BlockDivineContainer
         {
             if (!par5EntityPlayer.isSneaking())
             {
-                par5EntityPlayer.openGui(DivineRPGTwilight.instance, 0, par1World, par2, par3, par4);
+                par5EntityPlayer.openGui(DivineRPG.instance, GuiRef.SUPER_ENCHANTMENT_TABLE, par1World, par2, par3, par4);
                 return true;
             }
         }

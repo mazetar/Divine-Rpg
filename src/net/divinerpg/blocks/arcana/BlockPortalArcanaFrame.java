@@ -3,6 +3,7 @@ package net.divinerpg.blocks.arcana;
 import java.util.List;
 import java.util.Random;
 
+import net.divinerpg.blocks.BlockDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -12,7 +13,7 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BlockPortalArcanaFrame extends Block
+public class BlockPortalArcanaFrame extends BlockDivine
 {
     public BlockPortalArcanaFrame(int par1)
     {
@@ -33,7 +34,7 @@ public class BlockPortalArcanaFrame extends Block
      */
     public int getRenderType()
     {
-        return 26;
+        return 0;
     }
 
     /**
@@ -99,15 +100,17 @@ public class BlockPortalArcanaFrame extends Block
                 && var1.getBlockId(var2 + 1, var3, var4 - 1) == this.blockID && var1.getBlockId(var2 + 2, var3, var4 - 1) == this.blockID
                 && var1.getBlockId(var2 + 3, var3, var4 - 1) == this.blockID)
         {
-            var1.setBlock(var2 + 1, var3, var4, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-            var1.setBlock(var2 + 2, var3, var4, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-            var1.setBlock(var2 + 3, var3, var4, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-            var1.setBlock(var2 + 1, var3, var4 + 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-            var1.setBlock(var2 + 2, var3, var4 + 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-            var1.setBlock(var2 + 3, var3, var4 + 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-            var1.setBlock(var2 + 1, var3, var4 + 2, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-            var1.setBlock(var2 + 2, var3, var4 + 2, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-            var1.setBlock(var2 + 3, var3, var4 + 2, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+            var1.setBlock(var2 + 1, var3, var4, ArcanaBlockHelper.arcanaPortal.blockID);
+            var1.setBlock(var2 + 2, var3, var4, ArcanaBlockHelper.arcanaPortal.blockID);
+            var1.setBlock(var2 + 3, var3, var4, ArcanaBlockHelper.arcanaPortal.blockID);
+            var1.setBlock(var2 + 1, var3, var4 + 1, ArcanaBlockHelper.arcanaPortal.blockID);
+            var1.setBlock(var2 + 2, var3, var4 + 1, ArcanaBlockHelper.arcanaPortal.blockID);
+            var1.setBlock(var2 + 3, var3, var4 + 1, ArcanaBlockHelper.arcanaPortal.blockID);
+            var1.setBlock(var2 + 1, var3, var4 + 2, ArcanaBlockHelper.arcanaPortal.blockID);
+            var1.setBlock(var2 + 2, var3, var4 + 2, ArcanaBlockHelper.arcanaPortal.blockID);
+            var1.setBlock(var2 + 3, var3, var4 + 2, ArcanaBlockHelper.arcanaPortal.blockID);
         }
     }
+    
+    
 }

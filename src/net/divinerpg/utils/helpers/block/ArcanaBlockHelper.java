@@ -44,6 +44,7 @@ import net.divinerpg.blocks.arcana.tileentities.TileEntityParasectaAltar;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
 import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -133,7 +134,7 @@ public class ArcanaBlockHelper
 	public static void init()
 	{
 	    arcanaPortal = new BlockPortalArcana(ArcanaConfigHelper.arcanaPortalID).setUnlocalizedName("ArcanaPortal").func_111022_d("ArcanaPortal");
-	    arcanaPortalFrame = new BlockPortalArcanaFrame(ArcanaConfigHelper.arcanaPortalFrameID).setUnlocalizedName("ArcanaPortalBlock").func_111022_d("ArcanaPortalBlock");
+	    arcanaPortalFrame = new BlockPortalArcanaFrame(ArcanaConfigHelper.arcanaPortalFrameID).setUnlocalizedName("ArcanaPortalBlock").func_111022_d("ArcanaPortalBlock").setCreativeTab(CreativeTabs.tabBlock);
 	    
 		ancientBricks = new BlockDungeonBlock(ArcanaConfigHelper.ancientBricksID).setUnlocalizedName("AncientBricks").func_111022_d("AncientBricks"); //TODO wrong texture name
 		degradedBricks = new BlockDungeonBlock(ArcanaConfigHelper.degradedBricksID).setUnlocalizedName("DegradedBricks").func_111022_d("DegradedBricks");

@@ -3,6 +3,7 @@ package net.divinerpg.blocks.arcana;
 import java.util.List;
 import java.util.Random;
 
+import net.divinerpg.blocks.BlockDivinePortal;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.teleporters.TeleporterArcana;
@@ -17,15 +18,15 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockPortalArcana extends BlockBreakable
+public class BlockPortalArcana extends BlockDivinePortal
 {
-
+//  onNeighborBlockChange() & tryToCreatePortal()
 	private int firetick;
 	private int firemax = 200;
 
 	public BlockPortalArcana(int id)
 	{
-		super(id, Reference.MAIN_MOD_ID +":" + "arcanaportal", Material.portal, false);
+		super(id);
 		this.setLightValue(1.0F);
 		this.setCreativeTab(CreativeTabs.tabRedstone);
 	}
@@ -65,6 +66,7 @@ public class BlockPortalArcana extends BlockBreakable
 	/**
 	 * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
 	 */
+	@Override
 	public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
 	{
 		if (this.firetick == this.firemax && this.firemax != 0)
@@ -96,6 +98,7 @@ public class BlockPortalArcana extends BlockBreakable
 		}
 	}
 
+	@Override
 	@SideOnly(Side.CLIENT)
 
 	/**
@@ -122,9 +125,15 @@ public class BlockPortalArcana extends BlockBreakable
 	{
 		return 0;
 	}
-
-	public String getTextureFile()
-	{
-		return "/Xolovon3.png";
+	
+	@Override
+	    public void onNeighborBlockChange(World w, int x, int y, int z,
+	            int neighborBlockID) {
+	    //TODO Make portal break if frame or other portal is broken.
+	    }
+	
+	@Override
+	public boolean tryToCreatePortal(World w, int x, int y, int z) {
+	    return true;
 	}
 }

@@ -18,6 +18,7 @@ import net.divinerpg.blocks.arcana.tileentities.TileEntityPheonixAltar;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityReyvorStatue;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -33,7 +34,6 @@ public class ArcanaProxy {
     }
     
     public void init(FMLInitializationEvent event) {
-        initEntityRenderers();
         NetworkRegistry.instance().registerGuiHandler(DivineRPGArcana.instance, new ArcanaGuiHandler());
     }
     
@@ -56,6 +56,12 @@ public class ArcanaProxy {
         GameRegistry.registerTileEntity(TileEntityReyvorStatue.class, "Revyor Statue");
         GameRegistry.registerTileEntity(TileEntityWhitefireFurnace.class, "Whitefire Furnace");
 
+    }
+
+    public void post(FMLPostInitializationEvent event) {
+
+        initEntityRenderers();
+        
     }
     
 	

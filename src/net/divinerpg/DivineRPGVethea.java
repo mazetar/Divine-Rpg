@@ -32,7 +32,7 @@ public class DivineRPGVethea
 		instance = this;
 		VetheaConfigHelper.initConfig(event);
 
-       // proxy.preInit(event);
+        proxy.preInit(event);
 	}
 	
 	@EventHandler
@@ -41,12 +41,13 @@ public class DivineRPGVethea
 		VetheaItemHelper.init();
 		VetheaBlockHelper.initBlocks();
 
-      //  proxy.init(event);
+        proxy.init(event);
 	}
 	
 	@EventHandler
 	public void PostInit(FMLPostInitializationEvent event)
 	{
+	    proxy.post(event);
 		
 	}
 }

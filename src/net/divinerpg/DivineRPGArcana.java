@@ -34,7 +34,7 @@ public class DivineRPGArcana
 	@EventHandler
 	public void Init(FMLInitializationEvent event)
 	{
-		//proxy.init(event);
+		proxy.init(event);
 		ArcanaBlockHelper.init();
 		
 		ArcanaItemHelper.init();
@@ -44,6 +44,6 @@ public class DivineRPGArcana
 	@EventHandler
 	public void PostInit(FMLPostInitializationEvent event)
 	{
-		
+		proxy.post(event);
 	}
 }

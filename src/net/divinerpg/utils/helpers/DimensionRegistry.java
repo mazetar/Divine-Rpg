@@ -16,6 +16,9 @@ import net.divinerpg.worldgen.mythril.BiomeGenMythil;
 import net.divinerpg.worldgen.mythril.WorldProviderMythil;
 import net.divinerpg.worldgen.uvite.BiomeGenEnergy;
 import net.divinerpg.worldgen.uvite.WorldProviderEnergy;
+import net.divinerpg.worldgen.vethea.BiomeGenArksiane;
+import net.divinerpg.worldgen.vethea.BiomeGenHeliosis;
+import net.divinerpg.worldgen.vethea.WorldProviderVethea;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.DimensionManager;
@@ -73,10 +76,10 @@ public class DimensionRegistry
         mythilBiome = new BiomeGenMythil(mythrilBiomeID);
         denseBiome = new BiomeGenDense(augiteBiomeID);
         
-        //arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
+        arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
         IceikaMountains = new BiomeGenIceikaMountians(iceikaBiomeID);
-        //arksianeBiome = new BiomeGenArksiane(arksianeBiomeID);
-        //heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);       
+        arksianeBiome = new BiomeGenArksiane(arksianeBiomeID);
+        heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);       
         
         DimensionManager.registerProviderType(DraviteID, WorldProviderTwilight.class, KeepLoadedDravite);
         DimensionManager.registerDimension(DraviteID, DraviteID);
@@ -89,12 +92,12 @@ public class DimensionRegistry
         DimensionManager.registerProviderType(AugiteID, WorldProviderDense.class, KeepLoadedAugite);
         DimensionManager.registerDimension(AugiteID, AugiteID);
         
-      //  DimensionManager.registerProviderType(ArcanaID, WorldProviderArcana.class, KeepLoadedArcana);
-   //     DimensionManager.registerDimension(ArcanaID, ArcanaID);
+        DimensionManager.registerProviderType(ArcanaID, WorldProviderArcana.class, KeepLoadedArcana);
+        DimensionManager.registerDimension(ArcanaID, ArcanaID);
         DimensionManager.registerProviderType(IceikaID, WorldProviderIceika.class, KeepLoadedIceika);
         DimensionManager.registerDimension(IceikaID, IceikaID);
-        //DimensionManager.registerProviderType(VetheaID, WorldProviderVethea.class, KeepLoadedVethea);
-        //DimensionManager.registerDimension(VetheaID, VetheaID); 
+        DimensionManager.registerProviderType(VetheaID, WorldProviderVethea.class, KeepLoadedVethea);
+        DimensionManager.registerDimension(VetheaID, VetheaID); 
 	}
 	
 	public static void InitDimensionsConfig(FMLPreInitializationEvent event)

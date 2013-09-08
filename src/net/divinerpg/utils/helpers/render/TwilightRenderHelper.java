@@ -48,12 +48,7 @@ import net.divinerpg.entities.twilight.projectile.EntityPhaserHalite;
 import net.divinerpg.entities.twilight.projectile.EntityPhaserMythril;
 import net.divinerpg.entities.twilight.projectile.EntityPhaserUvite;
 import net.divinerpg.entities.twilight.projectile.EntitySerenityArrow;
-import net.divinerpg.entities.twilight.projectile.EntitySlicerAugite;
-import net.divinerpg.entities.twilight.projectile.EntitySlicerAzurite;
-import net.divinerpg.entities.twilight.projectile.EntitySlicerDravite;
-import net.divinerpg.entities.twilight.projectile.EntitySlicerHalite;
-import net.divinerpg.entities.twilight.projectile.EntitySlicerMythril;
-import net.divinerpg.entities.twilight.projectile.EntitySlicerUvite;
+import net.divinerpg.entities.twilight.projectile.EntitySlicer;
 import net.divinerpg.lib.EntityResourceLocs;
 import net.divinerpg.models.twilight.mobs.ModelAngryBunny;
 import net.divinerpg.models.twilight.mobs.ModelBasalisk;
@@ -106,12 +101,12 @@ public class TwilightRenderHelper
         RenderingRegistry.registerEntityRenderingHandler(EntityFuryArrow.class, new RenderBasicArrow(new ResourceLocation("DivineRPG:furyArrow.png")));
         
 
-        RenderingRegistry.registerEntityRenderingHandler(EntitySlicerDravite.class, new RenderDivineDisc(TwilightItemHelper.DraviteSlicer));
-        RenderingRegistry.registerEntityRenderingHandler(EntitySlicerAzurite.class, new RenderDivineDisc(TwilightItemHelper.AzuriteSlicer));
-        RenderingRegistry.registerEntityRenderingHandler(EntitySlicerUvite.class, new RenderDivineDisc(TwilightItemHelper.UviteSlicer));
-        RenderingRegistry.registerEntityRenderingHandler(EntitySlicerMythril.class, new RenderDivineDisc(TwilightItemHelper.MythrilSlicer));
-        RenderingRegistry.registerEntityRenderingHandler(EntitySlicerAugite.class, new RenderDivineDisc(TwilightItemHelper.AugiteSlicer));
-        RenderingRegistry.registerEntityRenderingHandler(EntitySlicerHalite.class, new RenderDivineDisc(TwilightItemHelper.HaliteSlicer));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySlicer.class, new RenderDivineDisc(TwilightItemHelper.DraviteSlicer));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySlicer.class, new RenderDivineDisc(TwilightItemHelper.AzuriteSlicer));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySlicer.class, new RenderDivineDisc(TwilightItemHelper.UviteSlicer));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySlicer.class, new RenderDivineDisc(TwilightItemHelper.MythrilSlicer));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySlicer.class, new RenderDivineDisc(TwilightItemHelper.AugiteSlicer));
+        RenderingRegistry.registerEntityRenderingHandler(EntitySlicer.class, new RenderDivineDisc(TwilightItemHelper.HaliteSlicer));
 
         RenderingRegistry.registerEntityRenderingHandler(EntityBlitzDravite.class, new RenderBasicProjectile(EntityResourceLocs.BLITZ_DRAVITE));
         RenderingRegistry.registerEntityRenderingHandler(EntityBlitzAzurite.class, new RenderBasicProjectile(EntityResourceLocs.BLITZ_AZURITE));

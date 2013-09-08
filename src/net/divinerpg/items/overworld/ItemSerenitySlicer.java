@@ -2,11 +2,11 @@ package net.divinerpg.items.overworld;
 
 import java.util.List;
 
-import net.divinerpg.entities.twilight.projectile.EntitySlicerDravite;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.divinerpg.entities.twilight.projectile.EntitySlicer;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -32,7 +32,7 @@ public class ItemSerenitySlicer extends Item
 
         if (!var2.isRemote)
         {
-            var2.spawnEntityInWorld(new EntitySlicerDravite(var2, var3));
+            var2.spawnEntityInWorld(new EntitySlicer(var2, var3, 12));
         }
 
         return var1;

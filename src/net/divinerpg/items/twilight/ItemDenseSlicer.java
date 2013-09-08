@@ -2,7 +2,7 @@ package net.divinerpg.items.twilight;
 
 import java.util.List;
 
-import net.divinerpg.entities.twilight.projectile.EntitySlicerAugite;
+import net.divinerpg.entities.twilight.projectile.EntitySlicer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -32,7 +32,7 @@ public class ItemDenseSlicer extends Item
 
         if (!var2.isRemote)
         {
-            var2.spawnEntityInWorld(new EntitySlicerAugite(var2, var3));
+            var2.spawnEntityInWorld(new EntitySlicer(var2, var3, 36));
         }
 
         return var1;

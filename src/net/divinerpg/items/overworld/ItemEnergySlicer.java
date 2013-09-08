@@ -2,7 +2,7 @@ package net.divinerpg.items.overworld;
 
 import java.util.List;
 
-import net.divinerpg.entities.twilight.projectile.EntitySlicerUvite;
+import net.divinerpg.entities.twilight.projectile.EntitySlicer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -12,9 +12,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemEnergySlicer extends Item
 {
-    public ItemEnergySlicer(int var1)
+    int baseDmg = 5;
+    public ItemEnergySlicer(int id, int dmg)
     {
-        super(var1);
+        super(id);
         this.maxStackSize = 64;
     }
 
@@ -32,7 +33,7 @@ public class ItemEnergySlicer extends Item
 
         if (!var2.isRemote)
         {
-            var2.spawnEntityInWorld(new EntitySlicerUvite(var2, var3));
+            var2.spawnEntityInWorld(new EntitySlicer(var2, var3, baseDmg));
         }
 
         return var1;

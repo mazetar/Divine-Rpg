@@ -2,6 +2,7 @@ package net.divinerpg.blocks;
 
 import net.divinerpg.api.IBlockDivineRPG;
 import net.divinerpg.lib.Reference;
+import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -21,6 +22,12 @@ public class BlockDivine extends Block implements IBlockDivineRPG {
 	{
 		this(id, 0, mat);
 	}
+	
+   public BlockDivine(int id)
+    {
+       super(id, Material.rock);
+       this.setCreativeTab(DivineTabs.tabUnsorted);
+    }
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister) {

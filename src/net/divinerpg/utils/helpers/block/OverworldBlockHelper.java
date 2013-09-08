@@ -1,33 +1,8 @@
 package net.divinerpg.utils.helpers.block;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.divinerpg.blocks.BlockDivine;
-import net.divinerpg.blocks.overworld.BlockAEStatue;
-import net.divinerpg.blocks.overworld.BlockAcceleraunch;
-import net.divinerpg.blocks.overworld.BlockAccelleron;
-import net.divinerpg.blocks.overworld.BlockAyeracoBeamBlue;
-import net.divinerpg.blocks.overworld.BlockAyeracoBeamGreen;
-import net.divinerpg.blocks.overworld.BlockAyeracoBeamPurple;
-import net.divinerpg.blocks.overworld.BlockAyeracoBeamRed;
-import net.divinerpg.blocks.overworld.BlockAyeracoBeamYellow;
-import net.divinerpg.blocks.overworld.BlockAyeracoStatue;
-import net.divinerpg.blocks.overworld.BlockBlueFire;
-import net.divinerpg.blocks.overworld.BlockColoredBricks;
-import net.divinerpg.blocks.overworld.BlockColoredGlass;
-import net.divinerpg.blocks.overworld.BlockColoredPane;
-import net.divinerpg.blocks.overworld.BlockDarkBridge;
-import net.divinerpg.blocks.overworld.BlockDarkPlate;
-import net.divinerpg.blocks.overworld.BlockDyes;
-import net.divinerpg.blocks.overworld.BlockElevantium;
-import net.divinerpg.blocks.overworld.BlockFlowingTar;
-import net.divinerpg.blocks.overworld.BlockKOSStatue;
-import net.divinerpg.blocks.overworld.BlockLightBridge;
-import net.divinerpg.blocks.overworld.BlockLightFence;
-import net.divinerpg.blocks.overworld.BlockMiniBricks;
-import net.divinerpg.blocks.overworld.BlockSkeletonChest;
-import net.divinerpg.blocks.overworld.BlockSlimeLight;
-import net.divinerpg.blocks.overworld.BlockStationaryTar;
-import net.divinerpg.blocks.overworld.BlockSteel;
-import net.divinerpg.blocks.overworld.BlockWatcherStatue;
+import net.divinerpg.blocks.overworld.*;
 import net.divinerpg.blocks.twilight.BlockGlowBone;
 import net.divinerpg.utils.helpers.config.OverworldConfigHelper;
 import net.minecraft.block.Block;
@@ -306,10 +281,319 @@ public class OverworldBlockHelper
 		
 		purpleGlowBoneTree = new BlockGlowBone(cfg.purpleGlowBoneTreeID, 0).setUnlocalizedName("PurpleGlowBoneTree");
 		pinkGlowBoneTree = new BlockGlowBone(cfg.pinkGlowBoneTreeID, 0).setUnlocalizedName("PinkGlowBoneTree");
+		
+		
+		/*
+		 *    THE FOLLOWING BLOCKS WHERE MISSING FROM THE FILE 
+		 *    
+		 *    They are added but just as regular BlockDivine!
+		 */
+
+        
+        deadBridge = new BlockDivine(cfg.deadBridgeID).func_111022_d("DeadBridge");
+        skullTorch = new BlockDivine(cfg.skullTorchID).func_111022_d("SkullTorch");
+        hotSpike = new BlockDivine(cfg.hotSpikeID).func_111022_d("HotSpike");
+        corruptedAlter = new BlockDivine(cfg.corruptedAlterID).func_111022_d("CorruptedAlter");
+        
+		colouredTorch = new BlockDivine(cfg.colouredTorchID).func_111022_d("ColouredTorch");
+	    realmiteBlock = new BlockDivine(cfg.realmiteBlockID).func_111022_d("RealmiteBlock");
+	    milkStone = new BlockDivine(cfg.milkStoneID).func_111022_d("MilkStone");
+	    darkStone = new BlockDivine(cfg.darkStoneID).func_111022_d("DarkStone");
+	    obsidianBlock = new BlockDivine(cfg.obsidianBlock).func_111022_d("ObsidianBlock");
+	    bedrock = new BlockDivine(cfg.bedRockID).func_111022_d("Bedrock");
+	    darkPlate = new BlockDivine(cfg.darkPlateID).func_111022_d("DarkPlate");
+	    milkStoneBrick = new BlockDivine(cfg.milkyStoneBrickID).func_111022_d("MilkStoneBrick");
+	    darkBrick = new BlockDivine(cfg.darkBrickID).func_111022_d("DarkBrick");
+	    ironBrick = new BlockDivine(cfg.ironBrickID).func_111022_d("IronBrick");
+	    goldBrick = new BlockDivine(cfg.goldBrickID).func_111022_d("GoldBrick");
+	    realmiteBrick = new BlockDivine(cfg.RealmiteBrickID).func_111022_d("RealmiteBrick");
+	    netheriteBrick = new BlockDivine(cfg.NetheriteBrickID).func_111022_d("NetheriteBrick");
+	    lapisBrick = new BlockDivine(cfg.LapisBrickID).func_111022_d("LapisBrick");
+	    redstoneBrick = new BlockDivine(cfg.RedstoneBrickID).func_111022_d("RedstoneBrick");
+	    checker = new BlockDivine(cfg.CheckerID).func_111022_d("Checker");
+	    eucalyptusPlanks = new BlockDivine(cfg.EucalyptusPlanksID).func_111022_d("EucalyptusPlanks");
+	    eucalyptus = new BlockDivine(cfg.EucalyptusID).func_111022_d("Eucalyptus");
+	    
+	    spikes = new BlockDivine(cfg.spikesID).func_111022_d("Spikes");
+	    spiderPumpkin = new BlockDivine(cfg.spiderPumpkinID).func_111022_d("SpiderPumpkin");
+	    enderPumpkin = new BlockDivine(cfg.enderPumpkinID).func_111022_d("EnderPumpkin");
+	    creeperPumpkin = new BlockDivine(cfg.creeperPumpkinID).func_111022_d("CreeperPumpkin");
+	    skeletonPumpkin = new BlockDivine(cfg.skeletonPumpkinID).func_111022_d("SkeletonPumpkin");
+	    blazePumpkin = new BlockDivine(cfg.blazePumpkinID).func_111022_d("BlazePumpkin");
+	    lavaBrick = new BlockDivine(cfg.lavaBrickID).func_111022_d("LavaBrick");
+	    darkStairs = new BlockDivine(cfg.darkStairsID).func_111022_d("DarkStairs");
+	    arlemiteStairs = new BlockDivine(cfg.arlemiteStairsID).func_111022_d("ArlemiteStairs");
+	    ironStairs = new BlockDivine(cfg.ironStairsID).func_111022_d("IronStairs");
+	    goldStairs = new BlockDivine(cfg.goldStairsID).func_111022_d("GoldStairs");
+	    sandStairs = new BlockDivine(cfg.sandStairsID).func_111022_d("SandStairs");
+	    redstoneStairs = new BlockDivine(cfg.redstoneStairsID).func_111022_d("RedstoneStairs");
+	    milkstoneStairs = new BlockDivine(cfg.milkstoneStairsID).func_111022_d("MilkstoneStairs");
+	    milkstoneBricksStairs = new BlockDivine(cfg.milkstoneBricksStairsID).func_111022_d("MilkstoneBricksStairs");
+	    lapisStairs = new BlockDivine(cfg.lapisStairsID).func_111022_d("LapisStairs");
+	    
+	    arlemiteBrick = new BlockDivine(cfg.arlemiteBrickID).func_111022_d("arlemiteBrick");
+	    milkstoneBrickStairs = new BlockDivine(cfg.milkstoneBrickStairsID).func_111022_d("milkstoneBrickStairs");
+	    redWood = new BlockDivine(cfg.redWoodID).func_111022_d("redWood");
+	    purpleWood = new BlockDivine(cfg.purpleWoodID).func_111022_d("purpleWood");
+	    greenWood = new BlockDivine(cfg.greenWoodID).func_111022_d("greenWood");
+	    yellowWood = new BlockDivine(cfg.yellowWoodID).func_111022_d("yellowWood");
+	    blueWood = new BlockDivine(cfg.blueWoodID).func_111022_d("blueWood");
+	    whiteWood = new BlockDivine(cfg.whiteWoodID).func_111022_d("whiteWood");
+	    stoneFence = new BlockDivine(cfg.stoneFenceID).func_111022_d("stoneFence");
+	    woodFence = new BlockDivine(cfg.woodFenceID).func_111022_d("woodFence");
+	    lightStone = new BlockDivine(cfg.lightStoneID).func_111022_d("lightStone");
+	    purplestone = new BlockDivine(cfg.purplestoneID).func_111022_d("purplestone");
+	    netheriteBlock = new BlockDivine(cfg.netheriteBlockID).func_111022_d("netheriteBlock");
+	    arlemiteBlock = new BlockDivine(cfg.arlemiteBlockID).func_111022_d("arlemiteBlock");
+	    rupeeBlock = new BlockDivine(cfg.rupeeBlockID).func_111022_d("rupeeBlock");
+	    diamondBrick = new BlockDivine(cfg.diamondBrickID).func_111022_d("diamondBrick");
+	    enderBrick = new BlockDivine(cfg.enderBrickID).func_111022_d("enderBrick");
+	    
+	    zombiePumpkin = new BlockDivine(cfg.zombiePumpkinID).func_111022_d("ZombiePumpkin");
+	    iceManPumpkin = new BlockDivine(cfg.iceManPumpkinID).func_111022_d("IceManPumpkin");
+	    cyclopsPumpkin = new BlockDivine(cfg.cyclopsPumpkinID).func_111022_d("CyclopsPumpkin");
+	    frostPumpkin = new BlockDivine(cfg.frostPumpkinID).func_111022_d("FrostPumpkin");
+	    ghastPumpkin = new BlockDivine(cfg.ghastPumpkinID).func_111022_d("GhastPumpkin");
+	    jungleSpiderPumpkin = new BlockDivine(cfg.jungleSpiderPumpkinID).func_111022_d("JungleSpiderPumpkin");
+	    enderWatcherPumpkin = new BlockDivine(cfg.enderWatcherPumpkinID).func_111022_d("EnderWatcherPumpkin");
+	    hellSpiderPumpkin = new BlockDivine(cfg.hellSpiderPumpkinID).func_111022_d("HellSpiderPumpkin");
+	    
+	    glassWhite = new BlockDivine(cfg.glassWhiteID).func_111022_d("GlassWhite");
+	    glassOrange = new BlockDivine(cfg.glassOrangeID).func_111022_d("GlassOrange");
+	    glassLightPurple = new BlockDivine(cfg.glassLightPurpleID).func_111022_d("GlassLightPurple");
+	    glassLightBlue = new BlockDivine(cfg.glassLightBlueID).func_111022_d("GlassLightBlue");
+	    glassYellow = new BlockDivine(cfg.glassYellowID).func_111022_d("GlassYellow");
+	    glassLimeGreen = new BlockDivine(cfg.glassLimeGreenID).func_111022_d("GlassLimeGreen");
+	    glassPink = new BlockDivine(cfg.glassPinkID).func_111022_d("GlassPink");
+	    glassGray = new BlockDivine(cfg.glassGrayID).func_111022_d("GlassGray");
+	    glassLightGray = new BlockDivine(cfg.glassLightGrayID).func_111022_d("GlassLightGray");
+	    glassTeal = new BlockDivine(cfg.glassTealID).func_111022_d("GlassTeal");
+	    glassBlue = new BlockDivine(cfg.glassBlueID).func_111022_d("GlassBlue");
+	    glassPurple = new BlockDivine(cfg.glassPurpleID).func_111022_d("GlassPurple");
+	    glassDirtyGreen = new BlockDivine(cfg.glassDirtyGreenID).func_111022_d("GlassDirtyGreen");
+	    glassBrown = new BlockDivine(cfg.glassBrownID).func_111022_d("GlassBrown");
+	    glassRed = new BlockDivine(cfg.glassRedID).func_111022_d("GlassRed");
+	    glassBlack = new BlockDivine(cfg.glassBlackID).func_111022_d("GlassBlack");
+	    
+	    paneBlack = new BlockDivine(cfg.paneBlackID).func_111022_d("PaneBlack");
+	    paneRed = new BlockDivine(cfg.paneRedID).func_111022_d("PaneRed");
+	    paneDirtyGreen = new BlockDivine(cfg.paneDirtyGreenID).func_111022_d("PaneDirtyGreen");
+	    paneBrown = new BlockDivine(cfg.paneBrownID).func_111022_d("PaneBrown");
+	    paneBlue = new BlockDivine(cfg.paneBlueID).func_111022_d("PaneBlue");
+	    panePurple = new BlockDivine(cfg.panePurpleID).func_111022_d("PanePurple");
+	    paneTeal = new BlockDivine(cfg.paneTealID).func_111022_d("PaneTeal");
+	    paneLightGray = new BlockDivine(cfg.paneLightGrayID).func_111022_d("PaneLightGray");
+	    paneGray = new BlockDivine(cfg.paneGrayID).func_111022_d("PaneGray");
+	    panePink = new BlockDivine(cfg.panePinkID).func_111022_d("PanePink");
+	    paneYellow = new BlockDivine(cfg.paneYellowID).func_111022_d("PaneYellow");
+	    paneLimeGreen = new BlockDivine(cfg.paneLimeGreenID).func_111022_d("PaneLimeGreen");
+	    paneLightBlue = new BlockDivine(cfg.paneLightBlueID).func_111022_d("PaneLightBlue");
+	    paneLightPurple = new BlockDivine(cfg.paneLightPurpleID).func_111022_d("PaneLightPurple");
+	    paneWhite = new BlockDivine(cfg.paneWhiteID).func_111022_d("PaneWhite");
+	    paneOrange = new BlockDivine(cfg.paneOrangeID).func_111022_d("PaneOrange");
+	    
+	    stainedGlass = new BlockDivine(cfg.stainedGlassID).func_111022_d("StainedGlass");
+	    stainedGlass1 = new BlockDivine(cfg.stainedGlass1ID).func_111022_d("StainedGlass1");
+	    stainedGlass2 = new BlockDivine(cfg.stainedGlass2ID).func_111022_d("StainedGlass2");
+	    stainedGlass3 = new BlockDivine(cfg.stainedGlass3ID).func_111022_d("StainedGlass3");
+	    stainedGlass4 = new BlockDivine(cfg.stainedGlass4ID).func_111022_d("StainedGlass4");
+	    stainedGlass5 = new BlockDivine(cfg.stainedGlass5ID).func_111022_d("StainedGlass5");
+	    stainedGlass6 = new BlockDivine(cfg.stainedGlass6ID).func_111022_d("StainedGlass6");
+	    stainedGlass7 = new BlockDivine(cfg.stainedGlass7ID).func_111022_d("StainedGlass7");
+		
+		registerBlocks();
 	}
 
 	public static void addNames()
 	{
 		
+	}
+	
+	public static void registerBlocks() {
+	    GameRegistry.registerBlock(blueFire, "blueFire");
+	    GameRegistry.registerBlock(divineRock, "divineRock");
+	    
+	    GameRegistry.registerBlock(acceleraunch, "acceleraunch");
+	    GameRegistry.registerBlock(acceleron, "acceleron");
+	    
+	    GameRegistry.registerBlock(aeStatue, "aeStatue");
+	    GameRegistry.registerBlock(ayeracoStatue, "ayeracoStatue");
+	    GameRegistry.registerBlock(kosStatue, "kosStatue");
+	    GameRegistry.registerBlock(watcherStatue, "watcherStatue");
+	    
+	    GameRegistry.registerBlock(ayeracoBeamBlue, "ayeracoBeamBlue");
+	    GameRegistry.registerBlock(ayeracoBeamGreen, "ayeracoBeamGreen");
+	    GameRegistry.registerBlock(ayeracoBeamPurple, "ayeracoBeamPurple");
+	    GameRegistry.registerBlock(ayeracoBeamRed, "ayeracoBeamRed");
+	    GameRegistry.registerBlock(ayeracoBeamYellow, "ayeracoBeamYellow");
+
+	    GameRegistry.registerBlock(colouredBricks, "colouredBricks");
+	    GameRegistry.registerBlock(colouredGlass, "colouredGlass");
+	    GameRegistry.registerBlock(colouredPanes, "colouredPanes");
+	    GameRegistry.registerBlock(colouredTorch, "colouredTorch");
+	    GameRegistry.registerBlock(dyeBlocks, "dyeBlocks");
+	    GameRegistry.registerBlock(miniBricks, "miniBricks");
+	    GameRegistry.registerBlock(steel, "steel");
+	    GameRegistry.registerBlock(mobPumpkins, "mobPumpkins");
+	    
+	    GameRegistry.registerBlock(darkBridge, "darkBridge");
+	    GameRegistry.registerBlock(lightBridge, "lightBridge");
+	    GameRegistry.registerBlock(glowingStairs, "glowingStairs");
+	    GameRegistry.registerBlock(lightFenceBlue, "lightFenceBlue");
+	    GameRegistry.registerBlock(lightFenceRed, "lightFenceRed");
+	    GameRegistry.registerBlock(lightFenceBlueOn, "lightFenceBlueOn");
+	    GameRegistry.registerBlock(lightFenceRedOn, "lightFenceRedOn");
+	    GameRegistry.registerBlock(skeletonChest, "skeletonChest");
+
+	    GameRegistry.registerBlock(elevantium, "elevantium");
+	    GameRegistry.registerBlock(darkPressurePlate, "darkPressurePlate");
+	    
+	    GameRegistry.registerBlock(tarStill, "tarStill");
+	    GameRegistry.registerBlock(tarFlowing, "tarFlowing");
+
+	    GameRegistry.registerBlock(bloodGemOre, "bloodGemOre");
+	    GameRegistry.registerBlock(netheriteOre, "netheriteOre");
+	    GameRegistry.registerBlock(spikeBlock, "spikeBlock");
+	    GameRegistry.registerBlock(hotSpikes, "hotSpikes");
+	    
+	    GameRegistry.registerBlock(lightstone, "lightstone");
+	    GameRegistry.registerBlock(rainbowWool, "rainbowWool");
+
+	    GameRegistry.registerBlock(rupeeOre, "rupeeOre");
+	    GameRegistry.registerBlock(arlemiteOre, "arlemiteOre");
+	    GameRegistry.registerBlock(realmiteOre, "realmiteOre");
+
+	    GameRegistry.registerBlock(lapisLamp, "lapisLamp");
+	    GameRegistry.registerBlock(slimeLight, "slimeLight");
+	    GameRegistry.registerBlock(slimeLightOn, "slimeLightOn");
+	    GameRegistry.registerBlock(redstoneOreLamp, "redstoneOreLamp");
+	    GameRegistry.registerBlock(goldLamp, "goldLamp");
+	    GameRegistry.registerBlock(diamondLamp, "diamondLamp");
+	    GameRegistry.registerBlock(realmiteLamp, "realmiteLamp");
+	    GameRegistry.registerBlock(netheriteLamp, "netheriteLamp");
+	    GameRegistry.registerBlock(arlemiteLamp, "arlemiteLamp");
+	    GameRegistry.registerBlock(rupeeLamp, "rupeeLamp");
+	    GameRegistry.registerBlock(iceStoneLamp, "iceStoneLamp");
+	    GameRegistry.registerBlock(moltenStoneLamp, "moltenStoneLamp");
+	    GameRegistry.registerBlock(jungleStoneLamp, "jungleStoneLamp");
+	    GameRegistry.registerBlock(enderStoneLamp, "enderStoneLamp");
+	    GameRegistry.registerBlock(bluefireLamp, "bluefireLamp");
+	    GameRegistry.registerBlock(divineStoneLamp, "divineStoneLamp");
+	    GameRegistry.registerBlock(milkyLamp, "milkyLamp");
+	    GameRegistry.registerBlock(blazicLamp, "blazicLamp");
+	    GameRegistry.registerBlock(aquaLamp, "aquaLamp");
+	    GameRegistry.registerBlock(lavaLamp, "lavaLamp");
+	    GameRegistry.registerBlock(enderLamp, "enderLamp");
+	    GameRegistry.registerBlock(krakenLamp, "krakenLamp");
+	    GameRegistry.registerBlock(drakenLamp, "drakenLamp");
+	    GameRegistry.registerBlock(purpleGlowBoneTree, "purpleGlowBoneTree");
+	    GameRegistry.registerBlock(pinkGlowBoneTree, "pinkGlowBoneTree");
+	    
+	    
+	    GameRegistry.registerBlock(realmiteBlock, "realmiteBlock");
+	    GameRegistry.registerBlock(milkStone, "milkStone");
+	    GameRegistry.registerBlock(darkStone, "darkStone");
+	    GameRegistry.registerBlock(obsidianBlock, "obsidianBlock");
+	    GameRegistry.registerBlock(bedrock, "bedrock");
+	    GameRegistry.registerBlock(milkStoneBrick, "milkStoneBrick");
+	    GameRegistry.registerBlock(darkBrick, "darkBrick");
+	    GameRegistry.registerBlock(ironBrick, "ironBrick");
+	    GameRegistry.registerBlock(goldBrick, "goldBrick");
+	    GameRegistry.registerBlock(realmiteBrick, "realmiteBrick");
+	    GameRegistry.registerBlock(netheriteBrick, "netheriteBrick");
+	    GameRegistry.registerBlock(lapisBrick, "lapisBrick");
+	    GameRegistry.registerBlock(redstoneBrick, "redstoneBrick");
+	    GameRegistry.registerBlock(checker, "checker");
+	    GameRegistry.registerBlock(eucalyptusPlanks, "eucalyptusPlanks");
+	    GameRegistry.registerBlock(eucalyptus, "eucalyptus");
+	    
+	    GameRegistry.registerBlock(spikes, "spikes");
+	    GameRegistry.registerBlock(spiderPumpkin, "spiderPumpkin");
+	    GameRegistry.registerBlock(enderPumpkin, "enderPumpkin");
+	    GameRegistry.registerBlock(creeperPumpkin, "creeperPumpkin");
+	    GameRegistry.registerBlock(skeletonPumpkin, "skeletonPumpkin");
+	    GameRegistry.registerBlock(blazePumpkin, "blazePumpkin");
+	    GameRegistry.registerBlock(lavaBrick, "lavaBrick");
+	    GameRegistry.registerBlock(darkStairs, "darkStairs");
+	    GameRegistry.registerBlock(arlemiteStairs, "arlemiteStairs");
+	    GameRegistry.registerBlock(ironStairs, "ironStairs");
+	    GameRegistry.registerBlock(goldStairs, "goldStairs");
+	    GameRegistry.registerBlock(sandStairs, "sandStairs");
+	    GameRegistry.registerBlock(redstoneStairs, "redstoneStairs");
+	    GameRegistry.registerBlock(milkstoneStairs, "milkstoneStairs");
+	    GameRegistry.registerBlock(milkstoneBricksStairs, "milkstoneBricksStairs");
+	    GameRegistry.registerBlock(lapisStairs, "lapisStairs");
+	    GameRegistry.registerBlock(arlemiteBrick, "arlemiteBrick");
+	    GameRegistry.registerBlock(darkPlate, "darkPlate");
+	    GameRegistry.registerBlock(milkstoneBrickStairs, "milkstoneBrickStairs");
+	    GameRegistry.registerBlock(redWood, "redWood");
+	    GameRegistry.registerBlock(purpleWood, "purpleWood");
+	    GameRegistry.registerBlock(greenWood, "greenWood");
+	    GameRegistry.registerBlock(yellowWood, "yellowWood");
+	    GameRegistry.registerBlock(blueWood, "blueWood");
+	    GameRegistry.registerBlock(whiteWood, "whiteWood");
+	    GameRegistry.registerBlock(stoneFence, "stoneFence");
+	    GameRegistry.registerBlock(woodFence, "woodFence");
+	    GameRegistry.registerBlock(lightStone, "lightStone");
+	    GameRegistry.registerBlock(purplestone, "purplestone");
+	    GameRegistry.registerBlock(netheriteBlock, "netheriteBlock");
+	    GameRegistry.registerBlock(arlemiteBlock, "arlemiteBlock");
+	    GameRegistry.registerBlock(rupeeBlock, "rupeeBlock");
+	    GameRegistry.registerBlock(diamondBrick, "diamondBrick");
+	    GameRegistry.registerBlock(enderBrick, "enderBrick");
+
+        GameRegistry.registerBlock(deadBridge, "deadBridge");
+        GameRegistry.registerBlock(skullTorch, "skullTorch");
+        GameRegistry.registerBlock(hotSpike, "hotSpike");
+        GameRegistry.registerBlock(corruptedAlter, "corruptedAlter");
+	    
+	    GameRegistry.registerBlock(zombiePumpkin, "zombiePumpkin");
+	    GameRegistry.registerBlock(iceManPumpkin, "iceManPumpkin");
+	    GameRegistry.registerBlock(cyclopsPumpkin, "cyclopsPumpkin");
+	    GameRegistry.registerBlock(frostPumpkin, "frostPumpkin");
+	    GameRegistry.registerBlock(ghastPumpkin, "ghastPumpkin");
+	    GameRegistry.registerBlock(jungleSpiderPumpkin, "jungleSpiderPumpkin");
+	    GameRegistry.registerBlock(enderWatcherPumpkin, "enderWatcherPumpkin");
+	    GameRegistry.registerBlock(hellSpiderPumpkin, "hellSpiderPumpkin");
+	    GameRegistry.registerBlock(glassWhite, "glassWhite");
+	    GameRegistry.registerBlock(glassOrange, "glassOrange");
+	    GameRegistry.registerBlock(glassLightPurple, "glassLightPurple");
+	    GameRegistry.registerBlock(glassLightBlue, "glassLightBlue");
+	    GameRegistry.registerBlock(glassYellow, "glassYellow");
+	    GameRegistry.registerBlock(glassLimeGreen, "glassLimeGreen");
+	    GameRegistry.registerBlock(glassPink, "glassPink");
+	    GameRegistry.registerBlock(glassGray, "glassGray");
+	    GameRegistry.registerBlock(glassLightGray, "glassLightGray");
+	    GameRegistry.registerBlock(glassTeal, "glassTeal");
+	    GameRegistry.registerBlock(glassBlue, "glassBlue");
+	    GameRegistry.registerBlock(glassPurple, "glassPurple");
+	    GameRegistry.registerBlock(glassDirtyGreen, "glassDirtyGreen");
+	    GameRegistry.registerBlock(glassBrown, "glassBrown");
+	    GameRegistry.registerBlock(glassRed, "glassRed");
+	    GameRegistry.registerBlock(glassBlack, "glassBlack");
+	    GameRegistry.registerBlock(paneBlack, "paneBlack");
+	    GameRegistry.registerBlock(paneRed, "paneRed");
+	    GameRegistry.registerBlock(paneDirtyGreen, "paneDirtyGreen");
+	    GameRegistry.registerBlock(paneBrown, "paneBrown");
+	    GameRegistry.registerBlock(paneBlue, "paneBlue");
+	    GameRegistry.registerBlock(panePurple, "panePurple");
+	    GameRegistry.registerBlock(paneTeal, "paneTeal");
+	    GameRegistry.registerBlock(paneLightGray, "paneLightGray");
+	    GameRegistry.registerBlock(paneGray, "paneGray");
+	    GameRegistry.registerBlock(panePink, "panePink");
+	    GameRegistry.registerBlock(paneYellow, "paneYellow");
+	    GameRegistry.registerBlock(paneLimeGreen, "paneLimeGreen");
+	    GameRegistry.registerBlock(paneLightBlue, "paneLightBlue");
+	    GameRegistry.registerBlock(paneLightPurple, "paneLightPurple");
+	    GameRegistry.registerBlock(paneWhite, "paneWhite");
+	    GameRegistry.registerBlock(paneOrange, "paneOrange");
+	    GameRegistry.registerBlock(stainedGlass, "stainedGlass");
+	    GameRegistry.registerBlock(stainedGlass1, "stainedGlass1");
+	    GameRegistry.registerBlock(stainedGlass2, "stainedGlass2");
+	    GameRegistry.registerBlock(stainedGlass3, "stainedGlass3");
+	    GameRegistry.registerBlock(stainedGlass4, "stainedGlass4");
+	    GameRegistry.registerBlock(stainedGlass5, "stainedGlass5");
+	    GameRegistry.registerBlock(stainedGlass6, "stainedGlass6");
+	    GameRegistry.registerBlock(stainedGlass7, "stainedGlass7");
 	}
 }

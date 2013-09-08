@@ -10,8 +10,10 @@ import net.divinerpg.utils.handlers.ArmorEffectHandler;
 import net.divinerpg.utils.handlers.ServerTickHandler;
 import net.divinerpg.utils.handlers.gui.OverworldGuiHandler;
 import net.divinerpg.utils.helpers.DimensionRegistry;
+import net.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import net.divinerpg.utils.helpers.config.OverworldConfigHelper;
 import net.divinerpg.utils.helpers.entity.OverworldEntityHelper;
+import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.divinerpg.utils.helpers.recipe.RecipeHelper;
 import net.minecraftforge.common.MinecraftForge;
@@ -30,15 +32,17 @@ public class CoreProxy {
 	    OverworldConfigHelper.initConfig(event);
         
         DimensionRegistry.InitDimensionsConfig(event);
-        
+
+        DivineTabs.init();
         registerTileEntities();
     }
 	
 	public void init(FMLInitializationEvent event) {
 		tickRegistry();
 		eventRegistry();
+        OverworldItemHelper.init();
+        OverworldBlockHelper.init();
 		//recipeRegistry();
-		OverworldItemHelper.init();
         NetworkRegistry.instance().registerGuiHandler(DivineRPG.instance, new OverworldGuiHandler());
 	}
 	

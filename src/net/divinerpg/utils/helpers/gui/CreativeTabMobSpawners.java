@@ -13,6 +13,6 @@ public class CreativeTabMobSpawners extends CreativeTabs
 
     public ItemStack getIconItemStack()
     {
-        return new ItemStack(Block.mobSpawner/*OverworldItemHelper.watcherSpawn*/, 1, 0);
+        return new ItemStack(Block.mobSpawner, 1);
     }
 }

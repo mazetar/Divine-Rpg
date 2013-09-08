@@ -2,6 +2,7 @@ package net.divinerpg.utils.helpers.item;
 
 
 import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.core.ItemDivineRPGPickaxe;
 import net.divinerpg.items.core.ItemDivineRPGSword;
 import net.divinerpg.items.overworld.ItemBaseAnchor;
 import net.divinerpg.items.overworld.ItemBasicArmor;
@@ -344,6 +345,7 @@ public class OverworldItemHelper
 		initArmors();
 	}
 	public static void initWeaponsAndTools() {
+	    
 		massivence = new ItemMassivence(cfg.massivenceID).func_111206_d("Massivence");
 		palavence = new ItemPalavence(cfg.passivenceID).func_111206_d("Passivence");
 		

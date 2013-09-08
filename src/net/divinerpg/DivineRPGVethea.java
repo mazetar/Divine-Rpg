@@ -26,9 +26,15 @@ public class DivineRPGVethea
 		serverSide = "net.divinerpg.utils.proxies.VetheaProxy")
 	public static VetheaProxy proxy;
 	
+	/*** Set to false in order to disable everything related to Vethea for now -- MAZ  */
+	public static boolean loadVethea = false;
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+	    if (!loadVethea)
+	        return;
+	    
 		instance = this;
 		VetheaConfigHelper.initConfig(event);
 
@@ -38,6 +44,9 @@ public class DivineRPGVethea
 	@EventHandler
 	public void Init(FMLInitializationEvent event)
 	{
+	    if (!loadVethea)
+	        return;
+	    
 		VetheaItemHelper.init();
 		VetheaBlockHelper.initBlocks();
 
@@ -47,6 +56,9 @@ public class DivineRPGVethea
 	@EventHandler
 	public void PostInit(FMLPostInitializationEvent event)
 	{
+	    if (!loadVethea)
+	        return;
+	    
 	    proxy.post(event);
 		
 	}

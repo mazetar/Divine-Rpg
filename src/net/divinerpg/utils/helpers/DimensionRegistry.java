@@ -2,6 +2,7 @@ package net.divinerpg.utils.helpers;
 
 import java.io.File;
 
+import net.divinerpg.DivineRPGVethea;
 import net.divinerpg.worldgen.arcana.BiomeGenArcana;
 import net.divinerpg.worldgen.arcana.WorldProviderArcana;
 import net.divinerpg.worldgen.augite.BiomeGenDense;
@@ -78,8 +79,11 @@ public class DimensionRegistry
         
         arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
         IceikaMountains = new BiomeGenIceikaMountians(iceikaBiomeID);
-        arksianeBiome = new BiomeGenArksiane(arksianeBiomeID);
-        heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);       
+        
+        if (DivineRPGVethea.loadVethea) {
+            arksianeBiome = new BiomeGenArksiane(arksianeBiomeID);
+            heliosisBiome = new BiomeGenHeliosis(heliosisBiomeID);  
+        }
         
         DimensionManager.registerProviderType(DraviteID, WorldProviderTwilight.class, KeepLoadedDravite);
         DimensionManager.registerDimension(DraviteID, DraviteID);
@@ -92,12 +96,17 @@ public class DimensionRegistry
         DimensionManager.registerProviderType(AugiteID, WorldProviderDense.class, KeepLoadedAugite);
         DimensionManager.registerDimension(AugiteID, AugiteID);
         
+        
         DimensionManager.registerProviderType(ArcanaID, WorldProviderArcana.class, KeepLoadedArcana);
         DimensionManager.registerDimension(ArcanaID, ArcanaID);
+        
         DimensionManager.registerProviderType(IceikaID, WorldProviderIceika.class, KeepLoadedIceika);
         DimensionManager.registerDimension(IceikaID, IceikaID);
-        DimensionManager.registerProviderType(VetheaID, WorldProviderVethea.class, KeepLoadedVethea);
-        DimensionManager.registerDimension(VetheaID, VetheaID); 
+        
+        if (DivineRPGVethea.loadVethea) {
+            DimensionManager.registerProviderType(VetheaID, WorldProviderVethea.class, KeepLoadedVethea);
+            DimensionManager.registerDimension(VetheaID, VetheaID); 
+        }
 	}
 	
 	public static void InitDimensionsConfig(FMLPreInitializationEvent event)

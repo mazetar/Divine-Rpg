@@ -20,54 +20,56 @@ public class TeleporterArcana extends Teleporter
     /**
      * Place an entity in a nearby portal which already exists.
      */
-    public boolean placeInExistingPortal(Entity var1, double var2, double var4, double var6, float var8)
+    @Override
+    public boolean placeInExistingPortal(Entity entity, double notUsed_entityX, double notUsed_entityY, double notUsed_entityZ, float notUsed_entityRotation)
     {
-        short var9 = 200;
+        short searchRange = 200;
         double var10 = -1.0D;
         int var12 = 0;
         int var13 = 0;
         int var14 = 0;
-        int var15 = MathHelper.floor_double(var1.posX);
-        int var16 = MathHelper.floor_double(var1.posZ);
+        int entityPosX_floored = MathHelper.floor_double(entity.posX);
+        int entityPosY = MathHelper.floor_double(entity.posZ);
         double var24;
 
-        for (int var17 = var15 - var9; var17 <= var15 + var9; ++var17)
+        // Searches for an already made portal in the destination dimension:
+        for (int searchX = entityPosX_floored - searchRange; searchX <= entityPosX_floored + searchRange; ++searchX)
         {
-            double var18 = (double)var17 + 0.5D - var1.posX;
+            double var18 = searchX + 0.5D - entity.posX;
 
-            for (int var20 = var16 - var9; var20 <= var16 + var9; ++var20)
+            for (int searchZ = entityPosY - searchRange; searchZ <= entityPosY + searchRange; ++searchZ)
             {
-                double var21 = (double)var20 + 0.5D - var1.posZ;
+                double var21 = searchZ + 0.5D - entity.posZ;
 
-                for (int var23 = 128 - 1; var23 >= 0; --var23)
+                for (int searchY = 128 - 1; searchY >= 0; --searchY)
                 {
-                    if (this.isBlockPortal(this.myWorld, var17, var23, var20))
+                    if (this.isBlockPortal(this.myWorld, searchX, searchY, searchZ))
                     {
-                        while (this.isBlockPortal(this.myWorld, var17, var23 - 1, var20))
+                        while (this.isBlockPortal(this.myWorld, searchX, searchY - 1, searchZ))
                         {
-                            --var23;
+                            --searchY;
                         }
 
-                        var24 = (double)var23 + 0.5D - var1.posY;
+                        var24 = searchY + 0.5D - entity.posY;
                         double var26 = var18 * var18 + var24 * var24 + var21 * var21;
 
                         if (var10 < 0.0D || var26 < var10)
                         {
                             var10 = var26;
-                            var12 = var17;
-                            var13 = var23;
-                            var14 = var20;
+                            var12 = searchX;
+                            var13 = searchY;
+                            var14 = searchZ;
                         }
                     }
                 }
             }
         }
 
-        if (var10 >= 0.0D)
+        if (var10 >= 0.0D) // If portal found, adjust player for portal direction.
         {
-            double var28 = (double)var12 + 0.5D;
-            double var22 = (double)var13 + 0.5D;
-            var24 = (double)var14 + 0.5D;
+            double var28 = var12 + 0.5D;
+            double var22 = var13 + 0.5D;
+            var24 = var14 + 0.5D;
 
             if (this.isBlockPortal(this.myWorld, var12 - 1, var13, var14))
             {
@@ -89,14 +91,11 @@ public class TeleporterArcana extends Teleporter
                 var24 += 0.5D;
             }
 
-            var1.setLocationAndAngles(var28, var22 + 1.0D, var24 + 1.0D, var1.rotationYaw, 0.0F);
-            var1.motionX = var1.motionY = var1.motionZ = 0.0D;
+            entity.setLocationAndAngles(var28, var22 + 1.0D, var24 + 1.0D, entity.rotationYaw, 0.0F);
+            entity.motionX = entity.motionY = entity.motionZ = 0.0D;
             return true;
-        }
-        else
-        {
+        } else 
             return false;
-        }
     }
 
     public boolean isBlockPortal(World var1, int var2, int var3, int var4)
@@ -104,14 +103,14 @@ public class TeleporterArcana extends Teleporter
         return var1.getBlockId(var2, var3, var4) == ArcanaBlockHelper.arcanaPortal.blockID;
     }
 
-    public boolean func_85188_a(Entity var1)
+    public boolean func_85188_a(Entity entity)
     {
         double var2 = this.myWorld.provider.dimensionId == 0 ? 2.0D : 0.5D;
         byte var4 = 16;
         double var5 = -1.0D;
-        int var7 = MathHelper.floor_double(var1.posX);
-        int var8 = MathHelper.floor_double(var1.posY * var2);
-        int var9 = MathHelper.floor_double(var1.posZ);
+        int var7 = MathHelper.floor_double(entity.posX);
+        int var8 = MathHelper.floor_double(entity.posY * var2);
+        int var9 = MathHelper.floor_double(entity.posZ);
         int var10 = var7;
         int var11 = var8;
         int var12 = var9;
@@ -135,78 +134,12 @@ public class TeleporterArcana extends Teleporter
 
         for (var15 = var7 - var4; var15 <= var7 + var4; ++var15)
         {
-            var16 = (double)var15 + 0.5D - var1.posX;
+            var16 = var15 + 0.5D - entity.posX;
 
             for (var18 = var9 - var4; var18 <= var9 + var4; ++var18)
             {
-                var19 = (double)var18 + 0.5D - var1.posZ;
+                var19 = var18 + 0.5D - entity.posZ;
                 label178:
-
-                for (var21 = 127; var21 >= 0; --var21)
-                {
-                    if (this.myWorld.isAirBlock(var15, var21, var18))
-                    {
-                        while (var21 > 0 && this.myWorld.isAirBlock(var15, var21 - 1, var18))
-                        {
-                            --var21;
-                        }
-
-                        for (var22 = var14; var22 < var14 + 4; ++var22)
-                        {
-                            var23 = var22 % 2;
-                            var24 = 1 - var23;
-
-                            if (var22 % 4 >= 2)
-                            {
-                                var23 = -var23;
-                                var24 = -var24;
-                            }
-
-                            for (var25 = 0; var25 < 3; ++var25)
-                            {
-                                for (var26 = 0; var26 < 4; ++var26)
-                                {
-                                    for (var27 = -1; var27 < 4; ++var27)
-                                    {
-                                        var28 = var15 + (var26 - 1) * var23 + var25 * var24;
-                                        var29 = var21 + var27;
-                                        int var30 = var18 + (var26 - 1) * var24 - var25 * var23;
-
-                                        if (var27 < 0 && !this.myWorld.getBlockMaterial(var28, var29, var30).isSolid() || var27 >= 0 && !this.myWorld.isAirBlock(var28, var29, var30))
-                                        {
-                                            continue label178;
-                                        }
-                                    }
-                                }
-                            }
-
-                            var32 = (double)var21 + 0.5D - var1.posY * var2;
-                            var33 = var16 * var16 + var32 * var32 + var19 * var19;
-
-                            if (var5 < 0.0D || var33 < var5)
-                            {
-                                var5 = var33;
-                                var10 = var15;
-                                var11 = var21;
-                                var12 = var18;
-                                var13 = var22 % 4;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        if (var5 < 0.0D)
-        {
-            for (var15 = var7 - var4; var15 <= var7 + var4; ++var15)
-            {
-                var16 = (double)var15 + 0.5D - var1.posX;
-
-                for (var18 = var9 - var4; var18 <= var9 + var4; ++var18)
-                {
-                    var19 = (double)var18 + 0.5D - var1.posZ;
-                    label126:
 
                     for (var21 = 127; var21 >= 0; --var21)
                     {
@@ -217,27 +150,36 @@ public class TeleporterArcana extends Teleporter
                                 --var21;
                             }
 
-                            for (var22 = var14; var22 < var14 + 2; ++var22)
+                            for (var22 = var14; var22 < var14 + 4; ++var22)
                             {
                                 var23 = var22 % 2;
                                 var24 = 1 - var23;
 
-                                for (var25 = 0; var25 < 4; ++var25)
+                                if (var22 % 4 >= 2)
                                 {
-                                    for (var26 = -1; var26 < 4; ++var26)
-                                    {
-                                        var27 = var15 + (var25 - 1) * var23;
-                                        var28 = var21 + var26;
-                                        var29 = var18 + (var25 - 1) * var24;
+                                    var23 = -var23;
+                                    var24 = -var24;
+                                }
 
-                                        if (var26 < 0 && !this.myWorld.getBlockMaterial(var27, var28, var29).isSolid() || var26 >= 0 && !this.myWorld.isAirBlock(var27, var28, var29))
+                                for (var25 = 0; var25 < 3; ++var25)
+                                {
+                                    for (var26 = 0; var26 < 4; ++var26)
+                                    {
+                                        for (var27 = -1; var27 < 4; ++var27)
                                         {
-                                            continue label126;
+                                            var28 = var15 + (var26 - 1) * var23 + var25 * var24;
+                                            var29 = var21 + var27;
+                                            int var30 = var18 + (var26 - 1) * var24 - var25 * var23;
+
+                                            if (var27 < 0 && !this.myWorld.getBlockMaterial(var28, var29, var30).isSolid() || var27 >= 0 && !this.myWorld.isAirBlock(var28, var29, var30))
+                                            {
+                                                continue label178;
+                                            }
                                         }
                                     }
                                 }
 
-                                var32 = (double)var21 + 0.5D - var1.posY * var2;
+                                var32 = var21 + 0.5D - entity.posY * var2;
                                 var33 = var16 * var16 + var32 * var32 + var19 * var19;
 
                                 if (var5 < 0.0D || var33 < var5)
@@ -246,11 +188,68 @@ public class TeleporterArcana extends Teleporter
                                     var10 = var15;
                                     var11 = var21;
                                     var12 = var18;
-                                    var13 = var22 % 2;
+                                    var13 = var22 % 4;
                                 }
                             }
                         }
                     }
+            }
+        }
+
+        if (var5 < 0.0D)
+        {
+            for (var15 = var7 - var4; var15 <= var7 + var4; ++var15)
+            {
+                var16 = var15 + 0.5D - entity.posX;
+
+                for (var18 = var9 - var4; var18 <= var9 + var4; ++var18)
+                {
+                    var19 = var18 + 0.5D - entity.posZ;
+                    label126:
+
+                        for (var21 = 127; var21 >= 0; --var21)
+                        {
+                            if (this.myWorld.isAirBlock(var15, var21, var18))
+                            {
+                                while (var21 > 0 && this.myWorld.isAirBlock(var15, var21 - 1, var18))
+                                {
+                                    --var21;
+                                }
+
+                                for (var22 = var14; var22 < var14 + 2; ++var22)
+                                {
+                                    var23 = var22 % 2;
+                                    var24 = 1 - var23;
+
+                                    for (var25 = 0; var25 < 4; ++var25)
+                                    {
+                                        for (var26 = -1; var26 < 4; ++var26)
+                                        {
+                                            var27 = var15 + (var25 - 1) * var23;
+                                            var28 = var21 + var26;
+                                            var29 = var18 + (var25 - 1) * var24;
+
+                                            if (var26 < 0 && !this.myWorld.getBlockMaterial(var27, var28, var29).isSolid() || var26 >= 0 && !this.myWorld.isAirBlock(var27, var28, var29))
+                                            {
+                                                continue label126;
+                                            }
+                                        }
+                                    }
+
+                                    var32 = var21 + 0.5D - entity.posY * var2;
+                                    var33 = var16 * var16 + var32 * var32 + var19 * var19;
+
+                                    if (var5 < 0.0D || var33 < var5)
+                                    {
+                                        var5 = var33;
+                                        var10 = var15;
+                                        var11 = var21;
+                                        var12 = var18;
+                                        var13 = var22 % 2;
+                                    }
+                                }
+                            }
+                        }
                 }
             }
         }
@@ -268,45 +267,45 @@ public class TeleporterArcana extends Teleporter
         return true;
     }
 
-    private void makePortalAt(World var1, int var2, int var3, int var4)
+    private void makePortalAt(World world, int x, int y, int z)
     {
-        if (var3 < 30)
+        if (y < 30)
         {
-            var3 = 30;
+            y = 30;
         }
 
-        var1.getClass();
+        world.getClass();
 
-        if (var3 > 118)
+        if (y > 118)
         {
-            var1.getClass();
-            var3 = 118;
+            world.getClass();
+            y = 118;
         }
 
-        --var3;
-        
-        var1.setBlock(var2, var3, var4, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        var1.setBlock(var2, var3, var4 + 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        var1.setBlock(var2, var3, var4 + 2, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        var1.setBlock(var2 + 1, var3, var4 + 3, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        var1.setBlock(var2 + 2, var3, var4 + 3, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        var1.setBlock(var2 + 3, var3, var4 + 3, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        var1.setBlock(var2 + 4, var3, var4, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        var1.setBlock(var2 + 4, var3, var4 + 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        var1.setBlock(var2 + 4, var3, var4 + 2, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        var1.setBlock(var2 + 1, var3, var4 - 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        var1.setBlock(var2 + 2, var3, var4 - 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        var1.setBlock(var2 + 3, var3, var4 - 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
-        
-        
-        var1.setBlock(var2 + 1, var3, var4, ArcanaBlockHelper.arcanaPortal.blockID);
-        var1.setBlock(var2 + 2, var3, var4, ArcanaBlockHelper.arcanaPortal.blockID);
-        var1.setBlock(var2 + 3, var3, var4, ArcanaBlockHelper.arcanaPortal.blockID);
-        var1.setBlock(var2 + 1, var3, var4 + 1, ArcanaBlockHelper.arcanaPortal.blockID);
-        var1.setBlock(var2 + 2, var3, var4 + 1, ArcanaBlockHelper.arcanaPortal.blockID);
-        var1.setBlock(var2 + 3, var3, var4 + 1, ArcanaBlockHelper.arcanaPortal.blockID);
-        var1.setBlock(var2 + 1, var3, var4 + 2, ArcanaBlockHelper.arcanaPortal.blockID);
-        var1.setBlock(var2 + 2, var3, var4 + 2, ArcanaBlockHelper.arcanaPortal.blockID);
-        var1.setBlock(var2 + 3, var3, var4 + 2, ArcanaBlockHelper.arcanaPortal.blockID);
+        --y;
+
+        world.setBlock(x, y, z, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+        world.setBlock(x, y, z + 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+        world.setBlock(x, y, z + 2, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+        world.setBlock(x + 1, y, z + 3, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+        world.setBlock(x + 2, y, z + 3, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+        world.setBlock(x + 3, y, z + 3, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+        world.setBlock(x + 4, y, z, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+        world.setBlock(x + 4, y, z + 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+        world.setBlock(x + 4, y, z + 2, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+        world.setBlock(x + 1, y, z - 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+        world.setBlock(x + 2, y, z - 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+        world.setBlock(x + 3, y, z - 1, ArcanaBlockHelper.arcanaPortalFrame.blockID);
+
+
+        world.setBlock(x + 1, y, z, ArcanaBlockHelper.arcanaPortal.blockID);
+        world.setBlock(x + 2, y, z, ArcanaBlockHelper.arcanaPortal.blockID);
+        world.setBlock(x + 3, y, z, ArcanaBlockHelper.arcanaPortal.blockID);
+        world.setBlock(x + 1, y, z + 1, ArcanaBlockHelper.arcanaPortal.blockID);
+        world.setBlock(x + 2, y, z + 1, ArcanaBlockHelper.arcanaPortal.blockID);
+        world.setBlock(x + 3, y, z + 1, ArcanaBlockHelper.arcanaPortal.blockID);
+        world.setBlock(x + 1, y, z + 2, ArcanaBlockHelper.arcanaPortal.blockID);
+        world.setBlock(x + 2, y, z + 2, ArcanaBlockHelper.arcanaPortal.blockID);
+        world.setBlock(x + 3, y, z + 2, ArcanaBlockHelper.arcanaPortal.blockID);
     }
 }

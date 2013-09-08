@@ -6,6 +6,7 @@ import java.util.Random;
 import net.divinerpg.blocks.BlockDivinePortal;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;
+import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.teleporters.TeleporterArcana;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
@@ -45,8 +46,15 @@ public class BlockPortalArcana extends BlockDivinePortal
 	 */
 	public void setBlockBoundsBasedOnState(IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
 	{
-		float var5 = 0.0625F;
-		this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, var5, 1.0F);
+	    float offsetY = 0.05F;
+		float height = 0.0625F;
+		this.setBlockBounds(0.0F, offsetY, 0.0F, 1.0F, offsetY + height, 1.0F);
+	}
+	
+	@Override
+	public boolean shouldSideBeRendered(IBlockAccess blockAccess, int x, int y,
+	        int z, int side) {
+	    return true;
 	}
 
 	/**
@@ -76,16 +84,16 @@ public class BlockPortalArcana extends BlockDivinePortal
 			{
 				if (par5Entity.ridingEntity == null && par5Entity.riddenByEntity == null && !par1World.isRemote)
 				{
-					EntityPlayerMP var6 = (EntityPlayerMP)par5Entity;
+					EntityPlayerMP player = (EntityPlayerMP)par5Entity;
 
                     par1World.playSound((double)par2 + 0.5D, (double)par3 + 0.5D, (double)par4 + 0.5D, "xolovon.ArcanaPortal", 0.5F, ((EntityPlayerMP) par5Entity).getRNG().nextFloat() * 0.4F + 0.8F, false);
-					if (var6.dimension != 10)
+					if (player.dimension != DimensionRegistry.ArcanaID)
 					{
-						var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, DimensionRegistry.ArcanaID, new TeleporterArcana(var6.mcServer.worldServerForDimension(DimensionRegistry.ArcanaID)));
+						//player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DimensionRegistry.ArcanaID, new TeleporterArcana(player.mcServer.worldServerForDimension(DimensionRegistry.ArcanaID)));
 					}
 					else
 					{
-						var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, 0, new TeleporterArcana(var6.mcServer.worldServerForDimension(0)));
+						//player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new TeleporterArcana(player.mcServer.worldServerForDimension(0)));
 					}
 				}
 			}
@@ -133,7 +141,8 @@ public class BlockPortalArcana extends BlockDivinePortal
 	    }
 	
 	@Override
+	
 	public boolean tryToCreatePortal(World w, int x, int y, int z) {
-	    return true;
+	    return ((BlockPortalArcanaFrame)ArcanaBlockHelper.arcanaPortalFrame).tryCreatePortal(w, x, y, z);
 	}
 }

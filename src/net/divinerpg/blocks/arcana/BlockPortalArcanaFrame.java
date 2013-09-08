@@ -90,26 +90,101 @@ public class BlockPortalArcanaFrame extends BlockDivine
     }
 
     @Override
-    public void onBlockAdded(World var1, int var2, int var3, int var4)
+    public void onBlockAdded(World w, int x, int y, int z)
     {
-        if (var1.getBlockId(var2, var3, var4) == this.blockID && var1.getBlockId(var2, var3, var4 + 1) == this.blockID
-                && var1.getBlockId(var2, var3, var4 + 2) == this.blockID && var1.getBlockId(var2 + 1, var3, var4 + 3) == this.blockID
-                && var1.getBlockId(var2 + 2, var3, var4 + 3) == this.blockID && var1.getBlockId(var2 + 3, var3, var4 + 3) == this.blockID
-                && var1.getBlockId(var2 + 4, var3, var4) == this.blockID && var1.getBlockId(var2 + 4, var3, var4 + 1) == this.blockID
-                && var1.getBlockId(var2 + 4, var3, var4 + 2) == this.blockID
-                && var1.getBlockId(var2 + 1, var3, var4 - 1) == this.blockID && var1.getBlockId(var2 + 2, var3, var4 - 1) == this.blockID
-                && var1.getBlockId(var2 + 3, var3, var4 - 1) == this.blockID)
-        {
-            var1.setBlock(var2 + 1, var3, var4, ArcanaBlockHelper.arcanaPortal.blockID);
-            var1.setBlock(var2 + 2, var3, var4, ArcanaBlockHelper.arcanaPortal.blockID);
-            var1.setBlock(var2 + 3, var3, var4, ArcanaBlockHelper.arcanaPortal.blockID);
-            var1.setBlock(var2 + 1, var3, var4 + 1, ArcanaBlockHelper.arcanaPortal.blockID);
-            var1.setBlock(var2 + 2, var3, var4 + 1, ArcanaBlockHelper.arcanaPortal.blockID);
-            var1.setBlock(var2 + 3, var3, var4 + 1, ArcanaBlockHelper.arcanaPortal.blockID);
-            var1.setBlock(var2 + 1, var3, var4 + 2, ArcanaBlockHelper.arcanaPortal.blockID);
-            var1.setBlock(var2 + 2, var3, var4 + 2, ArcanaBlockHelper.arcanaPortal.blockID);
-            var1.setBlock(var2 + 3, var3, var4 + 2, ArcanaBlockHelper.arcanaPortal.blockID);
+        tryCreatePortal(w, x, y, z);
+    }
+    
+    /***
+     * Checks the portal and creates it if possible.
+     * 
+     * @return true if portal was made.
+     * 
+     * @author Mazetar
+     */
+    public boolean tryCreatePortal(World w, int x, int y, int z) {
+        // This could be made simpler by the use of ForgeDirection and by the use of a for loop in the end --Maz
+        
+        // Figure out which side we are on (N, S, E, W)
+        byte side = 0;
+        if (w.getBlockId(x, y, z - 4) == this.blockID) 
+            side = 3; // South
+        else if (w.getBlockId(x, y, z + 4) == this.blockID) 
+            side = 2; // North
+        else if (w.getBlockId(x - 4, y, z) == this.blockID) 
+            side = 5; // East
+        else if (w.getBlockId(x + 4, y, z) == this.blockID) 
+            side = 4; // West
+        
+        if (side == 0)
+            return false;
+
+        if (side == 5 || side == 4) {
+            if (w.getBlockId(x, y, z - 1) == this.blockID) { // Makes Z align to the north edge of west/east line.
+                z--;
+                if (w.getBlockId(x, y, z - 1) == this.blockID)
+                    z--;
+            }
+            
+            if (side == 5)
+                x -= 4; // Aligns us to the top block of west line.
+            
+            // Move from west side's northmost block, to north side's western most block.
+            z--;
+            x++;
+            
+            // We are now in the westernmost block of the north row.
+            
         }
+        
+        if (side == 3 || side == 2) // north or south
+        {
+            if (w.getBlockId(x - 1, y, z) == this.blockID) { // Makes X align to the west edge.
+                x--;
+                if (w.getBlockId(x - 1, y, z) == this.blockID)
+                    x--;
+            }
+            
+            if (side == 3) // if we are on south side, 
+                z -= 4;   //   change our pos to the westernmost block of the north side.
+            
+        }
+        
+        boolean createPortal = false;
+        // step 3. Check portal frame.
+        // We are now in the west most block of the northern side.
+        
+        if (w.getBlockId(x + 1, y, z) == this.blockID && w.getBlockId(x + 2, y, z) == this.blockID) // is North okay.
+            if (w.getBlockId(x + 1, y, z + 4) == this.blockID && 
+                w.getBlockId(x + 2, y, z + 4) == this.blockID && w.getBlockId(x, y, z + 4) == this.blockID) // is South okay
+            {
+                // North and South okay, check East
+                if (w.getBlockId(x + 3, y, z + 1) == this.blockID && 
+                        w.getBlockId(x + 3, y, z + 2) == this.blockID && w.getBlockId(x + 3, y, z + 3) == this.blockID) // is East okay
+                { // Check west side
+                    if (w.getBlockId(x - 1, y, z + 1) == this.blockID && 
+                            w.getBlockId(x - 1, y, z + 2) == this.blockID && w.getBlockId(x - 1, y, z + 3) == this.blockID)
+                        createPortal = true; // East, West, North & South sides verified.
+                }
+            }
+        
+        if (createPortal) {
+            w.setBlock(x, y, z+1, ArcanaBlockHelper.arcanaPortal.blockID);
+            w.setBlock(x+1, y, z+1, ArcanaBlockHelper.arcanaPortal.blockID);
+            w.setBlock(x+2, y, z+1, ArcanaBlockHelper.arcanaPortal.blockID);
+            
+            w.setBlock(x, y, z+2, ArcanaBlockHelper.arcanaPortal.blockID);
+            w.setBlock(x+1, y, z+2, ArcanaBlockHelper.arcanaPortal.blockID);
+            w.setBlock(x+2, y, z+2, ArcanaBlockHelper.arcanaPortal.blockID);
+            
+            w.setBlock(x, y, z+3, ArcanaBlockHelper.arcanaPortal.blockID);
+            w.setBlock(x+1, y, z+3, ArcanaBlockHelper.arcanaPortal.blockID);
+            w.setBlock(x+2, y, z+3, ArcanaBlockHelper.arcanaPortal.blockID);
+            
+            return true;
+        }
+        
+        return false;
     }
     
     

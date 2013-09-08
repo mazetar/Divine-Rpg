@@ -264,7 +264,7 @@ public class ArmorEffectHandler  {
 		if (bootID == IceikaItemHelper.santaBoots.itemID
 				&& legID == IceikaItemHelper.santaLegs.itemID
 				&& chestID == IceikaItemHelper.santaBody.itemID
-				&& helmID == IceikaItemHelper.santaHead.itemID)
+				&& helmID == IceikaItemHelper.santaHelmet.itemID)
 		{
 			/*if (e.entityLiving.worldObj.provider.dimensionId == DivineRPG.iceikaID)
 			{

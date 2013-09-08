@@ -274,11 +274,11 @@ public class EntityVatticus extends EntityVillager implements INpc, IMerchant
 		MerchantRecipeList var2 = new MerchantRecipeList();
 
 		var2.add(new MerchantRecipe(new ItemStack(ArcanaItemHelper.collectorFragments.itemID, 16, 0), new ItemStack(ArcanaItemHelper.collector.itemID, 1, 0)));
-        var2.add(new MerchantRecipe(new ItemStack(ArcanaItemHelper.arcanium.itemID, 6, 0), new ItemStack(ArcanaItemHelper.kormaHead.itemID, 1, 0)));
+        var2.add(new MerchantRecipe(new ItemStack(ArcanaItemHelper.arcanium.itemID, 6, 0), new ItemStack(ArcanaItemHelper.kormaHelmet.itemID, 1, 0)));
         var2.add(new MerchantRecipe(new ItemStack(ArcanaItemHelper.arcanium.itemID, 6, 0), new ItemStack(ArcanaItemHelper.kormaBody.itemID, 1, 0)));
         var2.add(new MerchantRecipe(new ItemStack(ArcanaItemHelper.arcanium.itemID, 6, 0), new ItemStack(ArcanaItemHelper.kormaLegs.itemID, 1, 0)));
         var2.add(new MerchantRecipe(new ItemStack(ArcanaItemHelper.arcanium.itemID, 6, 0), new ItemStack(ArcanaItemHelper.kormaBoots.itemID, 1, 0)));
-        var2.add(new MerchantRecipe(new ItemStack(ArcanaItemHelper.arcanium.itemID, 8, 0), new ItemStack(ArcanaItemHelper.vemosHead.itemID, 1, 0)));
+        var2.add(new MerchantRecipe(new ItemStack(ArcanaItemHelper.arcanium.itemID, 8, 0), new ItemStack(ArcanaItemHelper.vemosHelmet.itemID, 1, 0)));
         var2.add(new MerchantRecipe(new ItemStack(ArcanaItemHelper.arcanium.itemID, 8, 0), new ItemStack(ArcanaItemHelper.vemosBody.itemID, 1, 0)));
         var2.add(new MerchantRecipe(new ItemStack(ArcanaItemHelper.arcanium.itemID, 8, 0), new ItemStack(ArcanaItemHelper.vemosLegs.itemID, 1, 0)));
         var2.add(new MerchantRecipe(new ItemStack(ArcanaItemHelper.arcanium.itemID, 8, 0), new ItemStack(ArcanaItemHelper.vemosBoots.itemID, 1, 0)));

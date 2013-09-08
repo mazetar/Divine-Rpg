@@ -388,7 +388,7 @@ public class EntityWorkshopMerchant extends EntityVillager implements INpc, IMer
         switch (this.getProfession())
         {
             default:
-                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 4, 0), new ItemStack(IceikaItemHelper.santaHead.itemID, 1, 0)));
+                var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 4, 0), new ItemStack(IceikaItemHelper.santaHelmet.itemID, 1, 0)));
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 4, 0), new ItemStack(IceikaItemHelper.santaBody.itemID, 1, 0)));
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 4, 0), new ItemStack(IceikaItemHelper.santaLegs.itemID, 1, 0)));
                 var2.add(new MerchantRecipe(new ItemStack(IceikaItemHelper.snowFlake.itemID, 4, 0), new ItemStack(IceikaItemHelper.santaBoots.itemID, 1, 0)));

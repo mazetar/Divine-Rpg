@@ -3,6 +3,7 @@ package net.divinerpg.items.overworld;
 import java.util.List;
 import java.util.Random;
 
+import net.divinerpg.items.core.DivineBow;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,14 +17,13 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemShadowBow extends ItemBow
+public class ItemShadowBow extends DivineBow
 {
     private int lastDamage = -1;
 
     public ItemShadowBow(int var1)
     {
-        super(var1);
-        this.setMaxDamage(10000);
+        super(var1, 10000, 1, true);
     }
 
     /**

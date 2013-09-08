@@ -5,7 +5,7 @@ import java.util.Random;
 import net.divinerpg.entities.particle.EntityMythrilPortalFX;
 import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
-import net.divinerpg.utils.helpers.gui.CreativeTabHelper;
+import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.divinerpg.utils.helpers.teleporters.TeleporterIceika;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBreakable;
@@ -30,7 +30,7 @@ public class BlockPortalIceika extends BlockBreakable
     {
         super(var1, var2, Material.portal, false);
         this.firetick = this.firemax;
-        this.setCreativeTab(CreativeTabHelper.tabSword);
+        this.setCreativeTab(DivineTabs.tabSword);
     }
 
     /**

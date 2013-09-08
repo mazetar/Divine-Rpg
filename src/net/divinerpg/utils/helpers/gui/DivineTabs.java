@@ -1,6 +1,6 @@
 package net.divinerpg.utils.helpers.gui;
 
-public class CreativeTabHelper
+public class DivineTabs
 {
     public static CreativeTabTwilight tabSword = new CreativeTabTwilight();
     public static CreativeTabDivineBlock tabBlocks = new CreativeTabDivineBlock();

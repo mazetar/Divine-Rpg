@@ -134,7 +134,6 @@ public class OverworldRecipeHelper {
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.shadowBow, 1), new Object[] {" xy", "x y", " xy", 'x', OverworldItemHelper.shadowBar, 'y', Item.silk});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.infernoBow, 1), new Object[] {" xy", "x y", " xy", 'x', OverworldItemHelper.moltenStone, 'y', Item.blazePowder});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.poisonBow, 1), new Object[] {" xy", "x y", " xy", 'x', OverworldItemHelper.jungleStone, 'y', Item.silk});
-        GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.bluefirebow, 1), new Object[] {" xy", "x y", " xy", 'x', Item.silk, 'y', OverworldItemHelper.blueFireStone});
         
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.serenadeStriker, 1), new Object[] {"y  ", "yyy", "  y", 'y', Item.diamond});
         GameRegistry.addRecipe(new ItemStack(OverworldItemHelper.serenadeHealth, 1), new Object[] {"y  ", "yyy", "  y", 'y', OverworldItemHelper.netheriteChunk});

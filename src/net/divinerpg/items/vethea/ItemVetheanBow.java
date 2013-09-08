@@ -6,7 +6,7 @@ import net.divinerpg.entities.vethea.projectile.EntityVetheanArrow;
 import net.divinerpg.entities.vethea.projectile.EntityVetheanArrow2;
 import net.divinerpg.entities.vethea.projectile.EntityVetheanWarArrow;
 import net.divinerpg.entities.vethea.projectile.EntityVetheanWrathArrow;
-import net.divinerpg.items.core.ItemDivineRPGBow;
+import net.divinerpg.items.core.DivineBow;
 import net.divinerpg.utils.helpers.item.VetheaItemHelper;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.enchantment.Enchantment;
@@ -23,14 +23,13 @@ import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemVetheanBow extends ItemDivineRPGBow
+public class ItemVetheanBow extends DivineBow
 {
 
 	private double damageModifier;
 	private Item arrow;
     private int lastDamage = -1;
     private String name;
-    public final String[] texture;
     @SideOnly(Side.CLIENT)
     private Icon[] icons;
     
@@ -41,7 +40,6 @@ public class ItemVetheanBow extends ItemDivineRPGBow
 		this.setMaxDamage(-1);
 		this.setUnlocalizedName(par4);
 		this.name = par4;
-		texture = new String[] {name + "_0", name + "_1", name + "_2"};
 	}
 
     /**
@@ -194,22 +192,5 @@ public class ItemVetheanBow extends ItemDivineRPGBow
         	par3List.add("Infinite Uses");
         }
         par3List.add("\u00a72Vethean");
-    }
-
-    @SideOnly(Side.CLIENT)
-    public void updateIcons(IconRegister par1IconRegister)
-    {
-        this.icons = new Icon[texture.length];
-
-        for (int i = 0; i < this.icons.length; ++i)
-        {
-            this.icons[i] = par1IconRegister.registerIcon(texture[i]);
-        }
-    }
-
-    @SideOnly(Side.CLIENT)
-    public Icon func_94599_c(int par1)
-    {
-        return this.icons[par1];
     }
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import net.divinerpg.entities.overworld.projectile.EntityAnchor;
 import net.divinerpg.items.ItemDivineRPG;
-import net.divinerpg.utils.helpers.gui.CreativeTabHelper;
+import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,7 +20,7 @@ public class ItemBaseAnchor extends ItemDivineRPG {
 		super(id);
 		this.dmg = damage;
 		this.maxStackSize = 1;
-		this.setCreativeTab(CreativeTabHelper.tabRanged);
+		this.setCreativeTab(DivineTabs.tabRanged);
 	}
 	
 	@SideOnly(Side.CLIENT)

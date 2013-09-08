@@ -31,7 +31,7 @@ public class IceikaProxy {
         IceikaItemHelper.init();
         NetworkRegistry.instance().registerGuiHandler(DivineRPGIceika.instance, new IceikaGuiHandler());
 
-        // IceikaRecipeHelper call here (NYI). --MAZ
+        // IceikaRecipeHelper call here (NYI). --MAZ //IceikaRecipeHelper.init();
         
         MinecraftForge.EVENT_BUS.register(new ExplosiveArrowHitHandler());
         

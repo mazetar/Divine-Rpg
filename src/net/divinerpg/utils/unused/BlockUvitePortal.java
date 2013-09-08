@@ -4,7 +4,7 @@ import java.util.Random;
 
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
-import net.divinerpg.utils.helpers.gui.CreativeTabHelper;
+import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.divinerpg.utils.helpers.teleporters.TeleporterUvite;
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
@@ -27,7 +27,7 @@ public class BlockUvitePortal extends BlockBreakable
     {
         super(var1, var2, Material.portal, false);
         this.firetick = this.firemax;
-        this.setCreativeTab(CreativeTabHelper.tabUnsorted);
+        this.setCreativeTab(DivineTabs.tabUnsorted);
     }
 
     /**

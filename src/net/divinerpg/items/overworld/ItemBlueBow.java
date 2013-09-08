@@ -4,7 +4,8 @@ import java.util.List;
 import java.util.Random;
 
 import net.divinerpg.entities.overworld.projectile.EntityExplosiveArrow;
-import net.divinerpg.items.core.ItemDivineRPGBow;
+import net.divinerpg.items.core.DivineBow;
+import net.divinerpg.utils.helpers.item.IceikaItemHelper;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -15,7 +16,7 @@ import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBlueBow extends ItemDivineRPGBow
+public class ItemBlueBow extends DivineBow
 {
     private int lastDamage = -1;
 
@@ -39,7 +40,7 @@ public class ItemBlueBow extends ItemDivineRPGBow
         }
         else
         {
-            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(OverworldItemHelper.bluefirebow.itemID))
+            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(IceikaItemHelper.bluefireBow.itemID))
             {
                 var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
             }

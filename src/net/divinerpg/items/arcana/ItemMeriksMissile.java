@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.divinerpg.entities.arcana.projectile.EntityMerikMissile;
-import net.divinerpg.items.core.ItemDivineRPGBow;
+import net.divinerpg.items.core.DivineBow;
 import net.divinerpg.utils.helpers.ArcanaHelper;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.enchantment.Enchantment;
@@ -20,7 +20,7 @@ import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemMeriksMissile extends ItemDivineRPGBow
+public class ItemMeriksMissile extends DivineBow
 {
     private int lastDamage = -1;
 

@@ -3,11 +3,11 @@ package net.divinerpg.items.overworld;
 import java.util.List;
 
 import net.divinerpg.entities.overworld.projectile.EntityFireArrow;
+import net.divinerpg.items.core.DivineBow;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,13 +15,12 @@ import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemInfernoBow extends ItemBow
+public class ItemInfernoBow extends DivineBow
 {
-    public ItemInfernoBow(int var1)
+    public ItemInfernoBow(int id)
     {
-        super(var1);
+        super(id, 10000, 1, true);
         this.maxStackSize = 1;
-        this.setMaxDamage(10000);
     }
 
     /**

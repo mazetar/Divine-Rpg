@@ -1,7 +1,7 @@
 package net.divinerpg.blocks;
 
 import net.divinerpg.lib.Reference;
-import net.divinerpg.utils.helpers.gui.CreativeTabHelper;
+import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
@@ -18,7 +18,7 @@ public abstract class BlockDivineLog extends BlockDivine {
     
     public BlockDivineLog(int var1) {
         super(var1, 0, Material.wood);
-        this.setCreativeTab(CreativeTabHelper.tabBlocks);
+        this.setCreativeTab(DivineTabs.tabBlocks);
     }
 
     @Override

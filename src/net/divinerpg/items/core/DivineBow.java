@@ -2,51 +2,77 @@ package net.divinerpg.items.core;
 
 import java.util.List;
 
-import net.divinerpg.api.IItemDivineRPG;
+import net.divinerpg.utils.helpers.gui.DivineTabs;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemDivineRPGBow extends ItemBow implements IItemDivineRPG {
-
+/***
+ *  Base class for all Divine Bows.
+ *  It expects a call to func_111206_d(textureName) aka. setItemTextureName(String textureName)
+ *  The string should be the bow's name. and it will expect to find the following textures for the bow inside assets:
+ *  "textureName_0", "textureName_1", "textureName_2" "textureName_3"
+ * @author Mazetar
+ *
+ */
+public class DivineBow extends ItemBow {
+    
 	public static final int DEFAULT_MAX_USE_DURACTION = 72000;
+    @SideOnly(Side.CLIENT)
+    private Icon[] iconArray;
 	
 	int damage;
 	int maxUseDuraction;
 	boolean unbreakable;
 	
-	int sheet;
-	int index;
+	int arrowID;
 	
-	int arrow;
-	
-	public ItemDivineRPGBow(int par1, int maxDamage, int damage, boolean unbreakable) {
-		this(par1, maxDamage, damage, DEFAULT_MAX_USE_DURACTION, unbreakable);
+	public DivineBow(int id, int maxDamage, int damage, boolean unbreakable) {
+		this(id, maxDamage, damage, DEFAULT_MAX_USE_DURACTION, unbreakable);
 	}
 	
-	public ItemDivineRPGBow(int par1, int maxDamage, int damage, int maxUseDuraction, boolean unbreakable) {
-		super(par1 - 256);
+	public DivineBow(int id, int maxDamage, int damage, int maxUseDuraction, boolean unbreakable) {
+		super(id - 256);
 		setMaxDamage(maxDamage);
 		this.damage = damage;
 		this.maxUseDuraction = maxUseDuraction;
 		this.unbreakable = unbreakable;
+        this.maxStackSize = 1;
+		this.setCreativeTab(DivineTabs.tabRanged);
 	}
 	
-	public ItemDivineRPGBow setIconIndex(int sheet, int index) {
-		this.sheet = sheet;
-		this.index = index;
-		return this;
-	}
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IconRegister par1IconRegister)
+    {
+        this.itemIcon = par1IconRegister.registerIcon(this.func_111208_A() + "_0");
+        this.iconArray = new Icon[3];
 
-	public ItemDivineRPGBow setIconIndex(int sheet, int x, int y) {
-		return setIconIndex(sheet, (x + y * 16));
-	}
+        this.iconArray[0] = par1IconRegister.registerIcon(this.func_111208_A() + "_1");
+        this.iconArray[1] = par1IconRegister.registerIcon(this.func_111208_A() + "_2");
+        this.iconArray[2] = par1IconRegister.registerIcon(this.func_111208_A() + "_3");
+        
+    }    
+    
+    @SideOnly(Side.CLIENT)
+    @Override
+    /**
+     * used to cycle through icons based on their used duration, i.e. for the bow
+     */
+    public Icon getItemIconForUseDuration(int par1)
+    {
+        return this.iconArray[par1];
+    }
 	
 	@Override
 	public void onPlayerStoppedUsing(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer, int par4) {
@@ -60,7 +86,7 @@ public class ItemDivineRPGBow extends ItemBow implements IItemDivineRPG {
 
         boolean flag = par3EntityPlayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, par1ItemStack) > 0;
 
-        if (flag || par3EntityPlayer.inventory.hasItem(arrow)){
+        if (flag || par3EntityPlayer.inventory.hasItem(arrowID)){
             float f = (float)j / 20.0F;
             f = (f * f + f * 2.0F) / 3.0F;
             
@@ -95,7 +121,7 @@ public class ItemDivineRPGBow extends ItemBow implements IItemDivineRPG {
 
             if (flag)
                 entityarrow.canBePickedUp = 2;
-            else par3EntityPlayer.inventory.consumeInventoryItem(arrow);
+            else par3EntityPlayer.inventory.consumeInventoryItem(arrowID);
 
             if (!par2World.isRemote)
                 par2World.spawnEntityInWorld(entityarrow);
@@ -111,7 +137,7 @@ public class ItemDivineRPGBow extends ItemBow implements IItemDivineRPG {
 	}
 	
 	public void setArrow(int arrow) {
-		this.arrow = arrow;
+		this.arrowID = arrow;
 	}
 	
 	// helper method

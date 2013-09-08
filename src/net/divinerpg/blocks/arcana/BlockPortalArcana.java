@@ -89,11 +89,11 @@ public class BlockPortalArcana extends BlockDivinePortal
                     par1World.playSound((double)par2 + 0.5D, (double)par3 + 0.5D, (double)par4 + 0.5D, "xolovon.ArcanaPortal", 0.5F, ((EntityPlayerMP) par5Entity).getRNG().nextFloat() * 0.4F + 0.8F, false);
 					if (player.dimension != DimensionRegistry.ArcanaID)
 					{
-						//player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DimensionRegistry.ArcanaID, new TeleporterArcana(player.mcServer.worldServerForDimension(DimensionRegistry.ArcanaID)));
+						player.mcServer.getConfigurationManager().transferPlayerToDimension(player, DimensionRegistry.ArcanaID, new TeleporterArcana(player.mcServer.worldServerForDimension(DimensionRegistry.ArcanaID)));
 					}
 					else
 					{
-						//player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new TeleporterArcana(player.mcServer.worldServerForDimension(0)));
+						player.mcServer.getConfigurationManager().transferPlayerToDimension(player, 0, new TeleporterArcana(player.mcServer.worldServerForDimension(0)));
 					}
 				}
 			}

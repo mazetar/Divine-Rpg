@@ -25,12 +25,12 @@ public class TeleporterArcana extends Teleporter
     {
         short searchRange = 200;
         double var10 = -1.0D;
-        int var12 = 0;
-        int var13 = 0;
-        int var14 = 0;
+        int portalX = 0;
+        int portalY = 0;
+        int portalZ = 0;
         int entityPosX_floored = MathHelper.floor_double(entity.posX);
         int entityPosY = MathHelper.floor_double(entity.posZ);
-        double var24;
+        double newZ;
 
         // Searches for an already made portal in the destination dimension:
         for (int searchX = entityPosX_floored - searchRange; searchX <= entityPosX_floored + searchRange; ++searchX)
@@ -50,15 +50,15 @@ public class TeleporterArcana extends Teleporter
                             --searchY;
                         }
 
-                        var24 = searchY + 0.5D - entity.posY;
-                        double var26 = var18 * var18 + var24 * var24 + var21 * var21;
+                        newZ = searchY + 0.5D - entity.posY;
+                        double var26 = var18 * var18 + newZ * newZ + var21 * var21;
 
                         if (var10 < 0.0D || var26 < var10)
                         {
                             var10 = var26;
-                            var12 = searchX;
-                            var13 = searchY;
-                            var14 = searchZ;
+                            portalX = searchX;
+                            portalY = searchY;
+                            portalZ = searchZ;
                         }
                     }
                 }
@@ -67,31 +67,35 @@ public class TeleporterArcana extends Teleporter
 
         if (var10 >= 0.0D) // If portal found, adjust player for portal direction.
         {
-            double var28 = var12 + 0.5D;
-            double var22 = var13 + 0.5D;
-            var24 = var14 + 0.5D;
+            double newX = portalX + 0.5D;
+            double newY = portalY + 0.5D;
+            newZ = portalZ + 0.5D;
 
-            if (this.isBlockPortal(this.myWorld, var12 - 1, var13, var14))
+            if (this.isBlockPortal(this.myWorld, portalX - 1, portalY, portalZ))
             {
-                var28 -= 0.5D;
+                newX -= 0.5D;
+                newZ += 3;
             }
 
-            if (this.isBlockPortal(this.myWorld, var12 + 1, var13, var14))
+            if (this.isBlockPortal(this.myWorld, portalX + 1, portalY, portalZ))
             {
-                var28 += 0.5D;
+                newX += 0.5D;
+                newZ += 3;
             }
 
-            if (this.isBlockPortal(this.myWorld, var12, var13, var14 - 1))
+            if (this.isBlockPortal(this.myWorld, portalX, portalY, portalZ - 1))
             {
-                var24 -= 0.5D;
+                newZ -= 0.5D;
+                newX += 3;
             }
 
-            if (this.isBlockPortal(this.myWorld, var12, var13, var14 + 1))
+            if (this.isBlockPortal(this.myWorld, portalX, portalY, portalZ + 1))
             {
-                var24 += 0.5D;
+                newZ += 0.5D;
+                newX += 3;
             }
-
-            entity.setLocationAndAngles(var28, var22 + 1.0D, var24 + 1.0D, entity.rotationYaw, 0.0F);
+            
+            entity.setLocationAndAngles(newX, newY + 1.0D, newZ + 1.0D, entity.rotationYaw, 0.0F);
             entity.motionX = entity.motionY = entity.motionZ = 0.0D;
             return true;
         } else 
@@ -102,8 +106,9 @@ public class TeleporterArcana extends Teleporter
     {
         return var1.getBlockId(var2, var3, var4) == ArcanaBlockHelper.arcanaPortal.blockID;
     }
-
-    public boolean func_85188_a(Entity entity)
+    
+    @Override
+    public boolean makePortal(Entity entity)
     {
         double var2 = this.myWorld.provider.dimensionId == 0 ? 2.0D : 0.5D;
         byte var4 = 16;
@@ -269,17 +274,17 @@ public class TeleporterArcana extends Teleporter
 
     private void makePortalAt(World world, int x, int y, int z)
     {
-        if (y < 30)
+        if (y < 15)
         {
-            y = 30;
+            y = 15;
         }
 
         world.getClass();
 
-        if (y > 118)
+        if (y > 34)
         {
             world.getClass();
-            y = 118;
+            y = 34;
         }
 
         --y;

@@ -1,7 +1,8 @@
-
 The MIT License (MIT)
 
-Copyright (c) [2013] [Mazetar & The Divine RPG dev team] (From 1.6+)
+Copyright (c) [2013] [Mazetar & The DivineRPG Update team] (From 1.6+)
+The current update group contains the following coders:
+BossLetsPlays, Mazetar & Zodsmar
 
 Created by XolovA and released October 2012.
 

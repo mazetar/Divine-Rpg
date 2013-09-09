@@ -44,7 +44,7 @@ public class ContainerDivineMerchant extends Container
         }
     }
     
-    public IMerchant getMerchang() {
+    public IMerchant getMerchant() {
         return theMerchant;
     }
 

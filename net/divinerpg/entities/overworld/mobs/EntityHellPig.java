@@ -70,7 +70,7 @@ public class EntityHellPig extends EntityTameable
         super.func_110147_ax();
         
         this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(60);
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(16);
+//        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(16); TODO: Leads to NPE
         this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(16.0F);
         this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.3F);
     }

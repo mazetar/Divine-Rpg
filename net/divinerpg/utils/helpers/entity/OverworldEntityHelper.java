@@ -67,8 +67,11 @@ public class OverworldEntityHelper
 	{
 		ModMobRegistry.registerEntity(EntityDamageProjectile.class, "DivineRPG_projectile", START_EID++, 64, 10, true);
 		
-		
+
+        ModMobRegistry.registerEntity(EntityWildFire.class, "WildFire", 64, 10, true, 0xFFCC00, 0xFF6600);
+        ModMobRegistry.registerEntity(EntityRainbour.class, "Rainbour", 64, 10, true, 0xFFCC00, 0xFF6600);
         ModMobRegistry.registerEntity(EntityHellSpider.class, "HellSpider", START_EID++, 64, 10, true);
+        ModMobRegistry.registerEntity(EntityScorcher.class, "Scorcher", 64, 10, true, 0xFFCC00, 0xFF6600);
         ModMobRegistry.registerEntity(EntityJungleSpider.class, "JungleSpider", START_EID++, 64, 10, true);
         ModMobRegistry.registerEntity(EntityCyclops.class, "Cyclops", START_EID++, 64, 10, true);
         ModMobRegistry.registerEntity(EntityIceMan.class, "Ice Man", START_EID++, 64, 10, true);
@@ -118,6 +121,7 @@ public class OverworldEntityHelper
         ModMobRegistry.registerModEntity(EntityEnderArrow.class, "Ender Arrow", START_EID++, 64, 10, true);
         ModMobRegistry.registerModEntity(EntityCorruptShot.class, "Corrupted Shot", START_EID++, 64, 10, true);
         
+        
         addNames();
         addSpawns();
 	}
@@ -135,7 +139,6 @@ public class OverworldEntityHelper
         EntityRegistry.addSpawn(EntityHellPig.class, 25, 4, 4, EnumCreatureType.creature, new BiomeGenBase[] {BiomeGenBase.hell});
         EntityRegistry.addSpawn(EntityEnderWatcher.class, 10, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.sky});
         EntityRegistry.addSpawn(EntityCrab.class, 15, 4, 4, EnumCreatureType.creature, new BiomeGenBase[] {BiomeGenBase.beach});
-        EntityRegistry.addSpawn(EntityCrab.class, 15, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.beach});
         EntityRegistry.addSpawn(EntityKingCrab.class, 5, 4, 4, EnumCreatureType.monster, new BiomeGenBase[] {BiomeGenBase.beach});
         EntityRegistry.addSpawn(EntityWhale.class, 50, 1, 1, EnumCreatureType.waterCreature, new BiomeGenBase[] {BiomeGenBase.ocean});
         EntityRegistry.addSpawn(EntityShark.class, 50, 1, 1, EnumCreatureType.waterCreature, new BiomeGenBase[] {BiomeGenBase.ocean});

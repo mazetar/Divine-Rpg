@@ -74,15 +74,7 @@ public class EntityLadyLuna extends EntityDivineMob implements IBossDisplayData
     	}
     }
 
-	@SideOnly(Side.CLIENT)
 
-	/**
-	 * Returns the texture's file path as a String.
-	 */
-	public String getTexture()
-	{
-		return this.getProtectionType() == 1 ? "/mob/LadyLunaArcanic.png" : (this.getProtectionType() == 2 ? "/mob/LadyLunaRanged.png" : (this.getProtectionType() == 3 ? "/mob/LadyLunaMelee.png" : super.getTexture()));
-	}
 
     /**
      * Gets the username of the entity.

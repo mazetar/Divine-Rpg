@@ -11,7 +11,7 @@ public class EntityDivineMob extends EntityMob
     private static final double spawnLayer = 1;
 
     private float moveSpeed;
-    private float maxHealth;
+    private double maxHealth;
     private float attackDmg;
     private float followRange;
     public EntityDivineMob(World world, float moveSPEED, float maxHP, float attackDMG)
@@ -98,14 +98,7 @@ public class EntityDivineMob extends EntityMob
         return true;
     }
 
-    /**
-     * Returns the texture's file path as a String.
-     */
-    @Deprecated
-    public String getTexture()
-    {
-        return "";
-    }
+
 
 
     /**

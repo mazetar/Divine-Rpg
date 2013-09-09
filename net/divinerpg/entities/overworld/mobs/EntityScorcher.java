@@ -26,7 +26,6 @@ public class EntityScorcher extends EntityDivineMob
     protected void entityInit()
     {
         super.entityInit();
-        this.dataWatcher.addObject(16, new Byte((byte)0));
     }
 
     /**
@@ -150,7 +149,6 @@ public class EntityScorcher extends EntityDivineMob
                 if (this.field_40152_d == 1)
                 {
                     this.attackTime = 0;
-                    this.func_40150_a(true);
                 }
                 else if (this.field_40152_d <= 4)
                 {
@@ -160,7 +158,6 @@ public class EntityScorcher extends EntityDivineMob
                 {
                     this.attackTime = 0;
                     this.field_40152_d = 0;
-                    this.func_40150_a(false);
                 }
 
                 if (this.field_40152_d > 1)
@@ -237,25 +234,10 @@ public class EntityScorcher extends EntityDivineMob
 
     public boolean func_40151_ac()
     {
-        return (this.dataWatcher.getWatchableObjectByte(16) & 1) != 0;
+        return false;
     }
 
-    public void func_40150_a(boolean var1)
-    {
-        byte var2 = this.dataWatcher.getWatchableObjectByte(16);
-
-        if (var1)
-        {
-            var2 = (byte)(var2 | 1);
-        }
-        else
-        {
-            var2 &= -2;
-        }
-
-        this.dataWatcher.updateObject(16, Byte.valueOf(var2));
-    }
-
+    
     /**
      * Checks to make sure the light is not too bright where the mob is spawning
      */

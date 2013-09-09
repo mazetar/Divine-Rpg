@@ -43,6 +43,10 @@ public class ContainerDivineMerchant extends Container
             this.addSlotToContainer(new Slot(var1, var4, 8 + var4 * 18, 142));
         }
     }
+    
+    public IMerchant getMerchang() {
+        return theMerchant;
+    }
 
     public InventoryMerchant getMerchantInventory()
     {

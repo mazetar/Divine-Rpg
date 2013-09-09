@@ -1,0 +1,53 @@
+
+The MIT License (MIT)
+
+Copyright (c) [2013] [Mazetar & The Divine RPG dev team] (From 1.6+)
+
+Created by XolovA and released October 2012.
+
+The Original release thread features the following credits text:
+XolovA - Founder, Art Director, Developer
+The_Slayer - Lead Developer
+Mazetar- Developer
+TLHPoE (aka deathman12e3)- Developer
+DrumMaster4- Developer
+Ringoster - Sound Designer/ Music Composer
+
+Insanity414all - Wiki Developer
+Swgeek11 - Wiki Developer
+
+Special Thanks To:
+
+Majorsir for the name of the mod.
+Terraria for some resources.
+Aginsun- Ex Developer
+Hologuardian - Ex Developer
+Vazkii- Ex Developer
+Sheenrox82- Ex Developer
+Vattic for some block textures, featured in a version of the faithful32 pack found here.
+Vanilla MC for some textures.
+Reika for ore textures.
+blued00r for assistance.
+XL biomes for tree style.
+
+End of original credits text.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+        
+          

@@ -1,9 +1,9 @@
 package net.divinerpg.utils.proxies;
 
+import net.divinerpg.client.renders.RenderBlock;
+import net.divinerpg.client.renders.iceika.projectile.RenderFrostclawProjectile;
 import net.divinerpg.entities.iceika.projectile.EntityFrostclawProjectile;
 import net.divinerpg.entities.iceika.projectile.EntityIce;
-import net.divinerpg.renders.RenderBlock;
-import net.divinerpg.renders.iceika.projectile.RenderFrostclawProjectile;
 import net.divinerpg.utils.helpers.render.IceikaRenderHelper;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 

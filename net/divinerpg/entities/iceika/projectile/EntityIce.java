@@ -1,7 +1,7 @@
 package net.divinerpg.entities.iceika.projectile;
 
+import net.divinerpg.client.renders.RenderBlock.IBlockRender;
 import net.divinerpg.entities.core.EntityDamageProjectile;
-import net.divinerpg.renders.RenderBlock.IBlockRender;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;

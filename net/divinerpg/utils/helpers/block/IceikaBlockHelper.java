@@ -17,6 +17,7 @@ import net.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class IceikaBlockHelper {
@@ -57,6 +58,13 @@ public class IceikaBlockHelper {
 	static IceikaConfigHelper cfg;
 	
 	public static void init() {
+	    initBlocks();
+	    registerBlocks();
+	    addNames();
+	    
+	}
+	
+	private static void initBlocks() {
 		frostedStone = new BlockDivine(cfg.FrostedStoneID, 0, Material.rock).func_111022_d("FrostedStone").setHardness(1.5F).setResistance(10F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("FrostedStone").setCreativeTab(DivineTabs.tabBlocks);
 		frostedDirt = new BlockDivine(cfg.FrostedDirtID, 0, Material.grass).func_111022_d("IceGrass_Bottom").setHardness(0.6F).setStepSound(Block.soundGravelFootstep).setUnlocalizedName("FrostedDirt").setCreativeTab(DivineTabs.tabBlocks);
 		frostedGrass = new BlockIceikaGrass(cfg.FrostedGrassID).func_111022_d("IceGrass").setHardness(0.6F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("FrostedGrass").setCreativeTab(DivineTabs.tabBlocks);
@@ -96,29 +104,59 @@ public class IceikaBlockHelper {
 //		yellowCandyCane = new BlockDivineRPG(x.YellowCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("YellowCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
 //		purpleCandyCane = new BlockDivineRPG(x.PurpleCandyCaneID, 0, Material.rock).func_111022_d("").setHardness(1.0F).setResistance(1.0F).setUnlocalizedName("PurpleCandyCane").setCreativeTab(CreativeTabHelper.tabBlocks);
 //	
-		LanguageRegistry.addName(frostedStone, "Frosted Stone");
-		LanguageRegistry.addName(frostedDirt, "Frosted Dirt");
-		LanguageRegistry.addName(frostedGrass, "Frosted Grass");
-		LanguageRegistry.addName(frostedWood, "Frosted Wood");
-		LanguageRegistry.addName(frostedLeaves, "Frosted Leaves");
-		LanguageRegistry.addName(icyStone, "Icy Stone");
-		LanguageRegistry.addName(icyBricks, "Icy Bricks");
-		LanguageRegistry.addName(coalstone, "Coalstone");
-		LanguageRegistry.addName(coalstoneFurnace, "Coalstone Funace");
-		LanguageRegistry.addName(workshopCarpet, "Workshop Carpet");
-		LanguageRegistry.addName(workshopBookcase, "Workshop Bookcase");
-		LanguageRegistry.addName(workshopLamp, "Workshop Lamp");
-		LanguageRegistry.addName(frostedGlass, "Frosted Glass");
-//		LanguageRegistry.addName(xmasTreeLights, "Xmas Tree Lights");
-//		LanguageRegistry.addName(redXmasLights, "Red Xmas Lights");
-//		LanguageRegistry.addName(greenXmasLights, "Green Xmas Lights");
-//		LanguageRegistry.addName(blueXmasLights, "Blue Xmas Lights");
-//		LanguageRegistry.addName(yellowXmasLights, "Yellow Xmas Lights");
-//		LanguageRegistry.addName(purpleXmasLights, "Purple Xmas Lights");
-//		LanguageRegistry.addName(redCandyCane, "Red Candy Cane");
-//		LanguageRegistry.addName(greenCandyCane, "Green Candy Cane");
-//		LanguageRegistry.addName(blueCandyCane, "Blue Candy Cane");
-//		LanguageRegistry.addName(yellowCandyCane, "Yellow Candy Cane");
-//		LanguageRegistry.addName(purpleCandyCane, "Purple Candy Cane");
+	}
+	
+	private static void registerBlocks() {
+	    GameRegistry.registerBlock(frostedStone, "frostedStone");
+	    GameRegistry.registerBlock(frostedDirt, "frostedDirt"); 
+	    GameRegistry.registerBlock(frostedGrass, "frostedGrass"); 
+	    GameRegistry.registerBlock(frostedWood, "frostedWood");
+	    GameRegistry.registerBlock(frostedLeaves, "frostedLeaves"); 
+	    GameRegistry.registerBlock(icyStone, "icyStone");
+	    GameRegistry.registerBlock(icyBricks, "icyBricks");
+	    GameRegistry.registerBlock(snowyBricks, "snowyBricks"); 
+	    GameRegistry.registerBlock(coalstone, "coalstone");
+	    GameRegistry.registerBlock(coalstoneFurnaceActive, "coalstoneFurnaceActive");
+	    GameRegistry.registerBlock(coalstoneFurnace, "coalstoneFurnace"); 
+	    
+	    GameRegistry.registerBlock(workshopCarpet, "workshopCarpet");
+	    GameRegistry.registerBlock(workshopBookcase, "workshopBookcase");
+	    GameRegistry.registerBlock(workshopLamp, "workshopLamp");
+	    GameRegistry.registerBlock(frostedGlass, "frostedGlass");
+	    GameRegistry.registerBlock(steelDoor, "steelDoor");
+	    GameRegistry.registerBlock(frostedChest, "frostedChest");
+	    GameRegistry.registerBlock(glacideSpawner, "glacideSpawner"); 
+	    GameRegistry.registerBlock(rolumSpawner, "rolumSpawner"); 
+	    GameRegistry.registerBlock(iceikaPortal, "iceikaPortal");
+	    GameRegistry.registerBlock(giftBox, "giftBox");
+	}
+	
+	private static void addNames() {
+
+        LanguageRegistry.addName(frostedStone, "Frosted Stone");
+        LanguageRegistry.addName(frostedDirt, "Frosted Dirt");
+        LanguageRegistry.addName(frostedGrass, "Frosted Grass");
+        LanguageRegistry.addName(frostedWood, "Frosted Wood");
+        LanguageRegistry.addName(frostedLeaves, "Frosted Leaves");
+        LanguageRegistry.addName(icyStone, "Icy Stone");
+        LanguageRegistry.addName(icyBricks, "Icy Bricks");
+        LanguageRegistry.addName(coalstone, "Coalstone");
+        LanguageRegistry.addName(coalstoneFurnace, "Coalstone Funace");
+        LanguageRegistry.addName(workshopCarpet, "Workshop Carpet");
+        LanguageRegistry.addName(workshopBookcase, "Workshop Bookcase");
+        LanguageRegistry.addName(workshopLamp, "Workshop Lamp");
+        LanguageRegistry.addName(frostedGlass, "Frosted Glass");
+        LanguageRegistry.addName(giftBox, "Gift");
+//      LanguageRegistry.addName(xmasTreeLights, "Xmas Tree Lights");
+//      LanguageRegistry.addName(redXmasLights, "Red Xmas Lights");
+//      LanguageRegistry.addName(greenXmasLights, "Green Xmas Lights");
+//      LanguageRegistry.addName(blueXmasLights, "Blue Xmas Lights");
+//      LanguageRegistry.addName(yellowXmasLights, "Yellow Xmas Lights");
+//      LanguageRegistry.addName(purpleXmasLights, "Purple Xmas Lights");
+//      LanguageRegistry.addName(redCandyCane, "Red Candy Cane");
+//      LanguageRegistry.addName(greenCandyCane, "Green Candy Cane");
+//      LanguageRegistry.addName(blueCandyCane, "Blue Candy Cane");
+//      LanguageRegistry.addName(yellowCandyCane, "Yellow Candy Cane");
+//      LanguageRegistry.addName(purpleCandyCane, "Purple Candy Cane");
 	}
 }

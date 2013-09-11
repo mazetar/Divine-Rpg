@@ -7,7 +7,7 @@ None of the current coders of this project worked on the earlier dev team though
 
 
 To do list
-====
+===
 
 Write some documentation on how we want stuff to be organized and where to find stuff.
 Write information about the project.

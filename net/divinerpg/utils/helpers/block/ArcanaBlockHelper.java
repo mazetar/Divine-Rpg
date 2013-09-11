@@ -43,6 +43,7 @@ import net.divinerpg.blocks.arcana.tileentities.TileEntityOceanfireFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityParasectaAltar;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
 import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
+import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -146,7 +147,7 @@ public class ArcanaBlockHelper
 		arcaniteMetal = new BlockDungeonBlock(ArcanaConfigHelper.arcaniteMetalID).setUnlocalizedName("ArcaniteMetal").func_111022_d("ArcaniumMetal");
 		dungeonLamp = new BlockDungeonBlock(ArcanaConfigHelper.dungeonLampID).setUnlocalizedName("DungeonLamp").setLightValue(1.0F).func_111022_d("DungeonLamp");
 		arcaniumPower = new BlockDungeonBlock(ArcanaConfigHelper.arcaniumPowerID).setUnlocalizedName("ArcaniumPower").func_111022_d("ArcaniumPower");
-		extractor = new BlockExtractor(ArcanaConfigHelper.extractorID).setUnlocalizedName("Extractor").func_111022_d("Extractor");
+		extractor = new BlockExtractor(ArcanaConfigHelper.extractorID).setUnlocalizedName("Extractor").func_111022_d("Extractor").setCreativeTab(DivineTabs.tabBlocks);
 		
 		dramixAltar = new BlockDramixAltar(ArcanaConfigHelper.dramixAltarID).setUnlocalizedName("DramixAltar").func_111022_d("DramixAltar");
 		parasectaAltar = new BlockParasectaAltar(ArcanaConfigHelper.parasectaAltarID).setUnlocalizedName("ParasectaAltar").func_111022_d("ParasectaAltar");
@@ -225,9 +226,6 @@ public class ArcanaBlockHelper
         GameRegistry.registerBlock(parasectaAltar, "ParasectaAltar");
         GameRegistry.registerBlock(arcaniumPower, "ArcaniumPower");
         GameRegistry.registerBlock(arcaniumOre, "ArcaniumOre");
-        GameRegistry.registerTileEntity(TileEntityDramixAltar.class, "DramixAltar");
-        GameRegistry.registerTileEntity(TileEntityExtractor.class, "Extractinator");
-        GameRegistry.registerTileEntity(TileEntityParasectaAltar.class, "PheonixAltar");
         GameRegistry.registerBlock(starBridge, "StarBridge");
         GameRegistry.registerBlock(starBridgeOn, "StarBridgeOn");
         GameRegistry.registerBlock(oreDoor1, "OreDoor1");
@@ -257,21 +255,15 @@ public class ArcanaBlockHelper
         GameRegistry.registerBlock(stainedGlass7, "StainedGlass7");
         GameRegistry.registerBlock(moltenFurnace, "MoltenFurnace");
         //GameRegistry.registerBlock(moltenFurnaceOn, "moltenFurnaceOn");
-        GameRegistry.registerTileEntity(TileEntityMoltenFurnace.class, "MoltenFurnaceTE");
         GameRegistry.registerBlock(greenlightFurnace, "GreenlightFurnace");
         //GameRegistry.registerBlock(greenlightFurnaceOn, "greenlightFurnaceOn");
-        GameRegistry.registerTileEntity(TileEntityGreenlightFurnace.class, "GreenlightFurnaceTE");
         GameRegistry.registerBlock(oceanfireFurnace, "OceanfireFurnace");
         //GameRegistry.registerBlock(oceanfireFurnaceOn, "oceanfireFurnaceOn");
-        GameRegistry.registerTileEntity(TileEntityOceanfireFurnace.class, "OceanfireFurnaceTE");
         GameRegistry.registerBlock(moonlightFurnace, "MoonlightFurnace");
 //        GameRegistry.registerBlock(moonlightFurnaceOn, "moonlightFurnaceOn");
-        GameRegistry.registerTileEntity(TileEntityMoonlightFurnace.class, "MoonlightFurnaceTE");
         GameRegistry.registerBlock(whitefireFurnace, "WhitefireFurnace");
 //        GameRegistry.registerBlock(whitefireFurnaceOn, "whitefireFurnaceOn");
-        GameRegistry.registerTileEntity(TileEntityWhitefireFurnace.class, "WhitefireFurnaceTE");
         GameRegistry.registerBlock(demonFurnace, "DemonFurnace");
-        GameRegistry.registerTileEntity(TileEntityDemonFurnace.class, "DemonFurnaceTE");
         GameRegistry.registerBlock(fireStock2, "FireStock2");
         GameRegistry.registerBlock(pinFly2, "PinFly2");
         GameRegistry.registerBlock(spawnerRoamer, "ArcanaSpawner");

@@ -1,13 +1,25 @@
 package net.divinerpg.utils.helpers.render;
 
+import net.divinerpg.blocks.arcana.tileentities.TileEntityDemonFurnace;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityDramixAltar;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityDramixStatue;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityPheonixAltar;
 import net.divinerpg.entities.arcana.mobs.*;
 import net.divinerpg.entities.arcana.projectile.*;
 import net.divinerpg.entities.arcana.traders.*;
 import net.divinerpg.lib.EntityResourceLocs;
+import net.divinerpg.lib.ResourceLocs;
 import net.divinerpg.models.arcana.mobs.*;
+import net.divinerpg.models.arcana.tileentities.ModelDemonFurnace;
+import net.divinerpg.models.arcana.tileentities.ModelDramixAltar;
+import net.divinerpg.models.arcana.tileentities.ModelDramixStatue;
+import net.divinerpg.models.arcana.tileentities.ModelExtractor;
+import net.divinerpg.models.arcana.tileentities.ModelPhoenixAltar;
 import net.divinerpg.models.twilight.mobs.ModelSamek;
 import net.divinerpg.models.twilight.mobs.ModelTwilightGolem;
 import net.divinerpg.renders.RenderBasicProjectile;
+import net.divinerpg.renders.RenderDivineBlock;
 import net.divinerpg.renders.RenderDivineEntity;
 import net.divinerpg.renders.RenderIconProjectile;
 import net.divinerpg.renders.arcana.mob.*;
@@ -15,6 +27,7 @@ import net.divinerpg.renders.arcana.projectile.RenderStarfall;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.RenderBiped;
+import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -22,8 +35,15 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class ArcanaRenderHelper 
 {
-	public static void init()
+    public static void init() {
+        registerEntityRendering();
+        registerTileEntityRenderers();
+    }
+    
+	public static void registerEntityRendering()
 	{
+	    
+	    
         RenderingRegistry.registerEntityRenderingHandler(EntitySparkler.class, new RenderBasicProjectile(EntityResourceLocs.SPARKLER));
         RenderingRegistry.registerEntityRenderingHandler(EntityReflector.class, new RenderBasicProjectile(EntityResourceLocs.REFLECTOR));
         RenderingRegistry.registerEntityRenderingHandler(EntityGrenade.class, new RenderIconProjectile(EntityResourceLocs.GRENADE));
@@ -55,4 +75,18 @@ public class ArcanaRenderHelper
         RenderingRegistry.registerEntityRenderingHandler(EntityDramix.class, new RenderDramix(new ModelDramix(), 1.0F, 1.0F, EntityResourceLocs.DRAMIX)); // BOSS
         RenderingRegistry.registerEntityRenderingHandler(EntityParasecta.class, new RenderParasecta(new ModelParasecta(), 1.0F, 1.0F, EntityResourceLocs.PARASECTA));  // BOSS
 	}
+	
+	public static void registerTileEntityRenderers () {
+	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDramixAltar.class, new RenderDivineBlock (new ModelDramixAltar(1F), ResourceLocs.BLOCK_DRAMIX_ALTAR));
+	    
+	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDramixStatue.class, new RenderDivineBlock (new ModelDramixStatue(), ResourceLocs.BLOCK_DRAMIX_STATUE));
+	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDemonFurnace.class, new RenderDivineBlock (new ModelDemonFurnace(1F), ResourceLocs.BLOCK_DEMON_FURNACE));
+	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPheonixAltar.class, new RenderDivineBlock (new ModelPhoenixAltar(1F), ResourceLocs.BLOCK_PHOENIX_ALTAR));
+	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityExtractor.class, new RenderDivineBlock (new ModelExtractor(1F), ResourceLocs.BLOCK_EXTRACTOR));
+	    
+        
+        
+	
+	}
+	
 }

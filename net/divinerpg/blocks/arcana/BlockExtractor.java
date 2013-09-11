@@ -2,6 +2,9 @@ package net.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import net.divinerpg.DivineRPGArcana;
 import net.divinerpg.DivineRPGTwilight;
 import net.divinerpg.blocks.BlockDivineContainer;
@@ -9,6 +12,7 @@ import net.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -18,6 +22,8 @@ import net.minecraft.world.World;
 
 public class BlockExtractor extends BlockDivineContainer
 {	
+    
+    
     /**
      * Is the random generator used by furnace to drop the inventory contents in random directions.
      */
@@ -33,6 +39,12 @@ public class BlockExtractor extends BlockDivineContainer
     {
         super(id, 0, Material.rock);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.5F, 1.0F);
+    }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister par1IconRegister) {
+        // Not registrating any icons as it's not a normal block. It will use a ISBRH or TESR for rendering.
     }
 
     public TileEntity createNewTileEntity(World var1)

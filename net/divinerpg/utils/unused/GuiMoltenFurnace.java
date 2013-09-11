@@ -1,10 +1,9 @@
-package net.divinerpg.client.gui;
+package net.divinerpg.utils.unused;
 
-import net.divinerpg.blocks.arcana.tileentities.TileEntityOceanfireFurnace;
-import net.divinerpg.containers.ContainerOceanfireFurnace;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
+import net.divinerpg.containers.ContainerDivineFurnace;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
@@ -13,19 +12,20 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class GuiOceanfireFurnace extends GuiContainer
+@Deprecated
+public class GuiMoltenFurnace extends GuiContainer
 {
-    private TileEntityOceanfireFurnace furnaceInventory;
+    private TileEntityMoltenFurnace furnaceInventory;
 
-    public GuiOceanfireFurnace(ContainerOceanfireFurnace container)
+    public GuiMoltenFurnace(ContainerDivineFurnace container)
     {
         super(container);
-        this.furnaceInventory = container.getTileEntity();
+        //this.furnaceInventory = container.getTileEntity();
     }
 
     protected void drawGuiContainerForegroundLayer(int par1, int par2)
     {
-        this.fontRenderer.drawString("Oceanfire Furnace", 50, 6, 4210752);
+        this.fontRenderer.drawString("Molten Furnace", 50, 6, 4210752);
         this.fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
     }
 

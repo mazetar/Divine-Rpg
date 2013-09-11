@@ -1,10 +1,9 @@
-package net.divinerpg.client.gui;
+package net.divinerpg.utils.unused;
 
-import net.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
-import net.divinerpg.containers.ContainerMoltenFurnace;
+import net.divinerpg.containers.ContainerDivineFurnace;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
@@ -13,19 +12,20 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class GuiMoltenFurnace extends GuiContainer
+@Deprecated
+public class GuiDemonFurnace extends GuiContainer
 {
-    private TileEntityMoltenFurnace furnaceInventory;
+    private TileEntityFurnace furnaceInventory;
 
-    public GuiMoltenFurnace(ContainerMoltenFurnace container)
+    public GuiDemonFurnace(ContainerDivineFurnace container)
     {
         super(container);
-        this.furnaceInventory = container.getTileEntity();
+   //     this.furnaceInventory = container.getTileEntity();
     }
 
     protected void drawGuiContainerForegroundLayer(int par1, int par2)
     {
-        this.fontRenderer.drawString("Molten Furnace", 50, 6, 4210752);
+        this.fontRenderer.drawString("Demon Furnace", 50, 6, 4210752);
         this.fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
     }
 
@@ -35,7 +35,7 @@ public class GuiMoltenFurnace extends GuiContainer
     protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3)
     {
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.func_110434_K().func_110577_a(ResourceGuiLoc.GUI_MOLTENFURNACE);
+        mc.func_110434_K().func_110577_a(ResourceGuiLoc.GUI_DEMONFURNACE);
         int var5 = (this.width - this.xSize) / 2;
         int var6 = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(var5, var6, 0, 0, this.xSize, this.ySize);

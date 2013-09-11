@@ -2,8 +2,6 @@ package net.divinerpg;
 
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;
-import net.divinerpg.utils.helpers.config.OverworldConfigHelper;
-import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.divinerpg.utils.proxies.CoreProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;

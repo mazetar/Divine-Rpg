@@ -4,7 +4,6 @@ import net.divinerpg.blocks.vethea.tileentities.TileEntityDreamLamp;
 import net.divinerpg.containers.ContainerDreamLamp;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.entity.player.InventoryPlayer;
 
 import org.lwjgl.opengl.GL11;
 

@@ -1,13 +1,14 @@
 package net.divinerpg.utils.handlers.gui;
 
 import net.divinerpg.blocks.iceika.tileentities.TileEntityCoalStoneFurnace;
-import net.divinerpg.client.gui.GuiStoneFurnace;
+import net.divinerpg.client.gui.GuiDivineFurnace;
 import net.divinerpg.client.gui.GuiTinkerer;
 import net.divinerpg.client.gui.GuiWorkshopMerchant;
-import net.divinerpg.containers.ContainerCoalStoneFurnace;
+import net.divinerpg.containers.ContainerDivineFurnace;
 import net.divinerpg.containers.ContainerDivineMerchant;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.DivineUtil;
+import net.divinerpg.utils.unused.GuiStoneFurnace;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -29,7 +30,7 @@ public class IceikaGuiHandler  implements IGuiHandler {
         else if (id == GuiRef.COALSTONE_FURNACE) {
             TileEntity te = world.getBlockTileEntity(var1, var2, var3);
             if (te instanceof TileEntityCoalStoneFurnace) {
-                return new ContainerCoalStoneFurnace(player.inventory, (TileEntityCoalStoneFurnace)te);
+                return new ContainerDivineFurnace(player.inventory, (TileEntityCoalStoneFurnace)te);
             }
         }
         
@@ -47,7 +48,7 @@ public class IceikaGuiHandler  implements IGuiHandler {
         }
         
         else if (id == GuiRef.COALSTONE_FURNACE) {
-            return new GuiStoneFurnace((ContainerCoalStoneFurnace)this.getServerGuiElement(id, player, world, var1, var2, var3));
+            return new GuiDivineFurnace((ContainerDivineFurnace)this.getServerGuiElement(id, player, world, var1, var2, var3));
         }
         
         

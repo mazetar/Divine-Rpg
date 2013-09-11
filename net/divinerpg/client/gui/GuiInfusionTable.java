@@ -6,7 +6,6 @@ import net.divinerpg.blocks.vethea.tileentities.TileEntityInfusionTable;
 import net.divinerpg.containers.ContainerInfusionTable;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 
 import org.lwjgl.opengl.GL11;

@@ -1,6 +1,8 @@
 package net.divinerpg.blocks.arcana.tileentities;
 
 import net.divinerpg.blocks.arcana.BlockWhitefireFurnace;
+import net.divinerpg.blocks.overworld.tileentities.TileDivineFurnace;
+import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -8,10 +10,11 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.util.ResourceLocation;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityWhitefireFurnace extends TileEntityFurnace implements IInventory
+public class TileEntityWhitefireFurnace extends TileDivineFurnace implements IInventory
 {
     /**
      * The ItemStacks that hold the items currently being used in the furnace
@@ -356,6 +359,11 @@ public class TileEntityWhitefireFurnace extends TileEntityFurnace implements IIn
     public void openChest() {}
 
     public void closeChest() {}
+
+    @Override
+    public ResourceLocation getGuiTexture() {
+        return ResourceGuiLoc.GUI_FURNACE;
+    }
 
 //    @Override
 //    public int getStartInventorySide(ForgeDirection side)

@@ -1,19 +1,14 @@
 package net.divinerpg.utils.handlers.gui;
 
 import net.divinerpg.blocks.overworld.tileentities.TileEntitySuperEnchantmentTable;
-import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
-import net.divinerpg.client.gui.GuiCaptainMerik;
 import net.divinerpg.client.gui.GuiJackOMan;
 import net.divinerpg.client.gui.GuiSuperEnchant;
-import net.divinerpg.client.gui.GuiTwilightFurnace;
 import net.divinerpg.containers.ContainerDivineMerchant;
 import net.divinerpg.containers.ContainerSuperEnchant;
-import net.divinerpg.containers.ContainerTwilightFurnace;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.DivineUtil;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.ContainerMerchant;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import cpw.mods.fml.common.network.IGuiHandler;

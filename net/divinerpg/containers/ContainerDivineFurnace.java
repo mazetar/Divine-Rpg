@@ -2,7 +2,9 @@ package net.divinerpg.containers;
 
 import java.util.Iterator;
 
-import net.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityOceanfireFurnace;
+import net.divinerpg.blocks.overworld.tileentities.TileDivineFurnace;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -11,17 +13,18 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotFurnace;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
+import net.minecraft.tileentity.TileEntityFurnace;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ContainerMoltenFurnace extends Container
+public class ContainerDivineFurnace extends Container
 {
-    private TileEntityMoltenFurnace furnace;
+    private TileDivineFurnace furnace;
     private int lastCookTime = 0;
     private int lastBurnTime = 0;
     private int lastItemBurnTime = 0;
 
-    public ContainerMoltenFurnace(InventoryPlayer var1, TileEntityMoltenFurnace var2)
+    public ContainerDivineFurnace(InventoryPlayer var1, TileDivineFurnace var2)
     {
         this.furnace = var2;
         this.addSlotToContainer(new Slot(var2, 0, 56, 17));
@@ -43,7 +46,7 @@ public class ContainerMoltenFurnace extends Container
         }
     }
     
-    public TileEntityMoltenFurnace getTileEntity() {
+    public TileDivineFurnace getFurnace () {
         return furnace;
     }
 
@@ -145,7 +148,7 @@ public class ContainerMoltenFurnace extends Container
                         return null;
                     }
                 }
-                else if (TileEntityMoltenFurnace.isItemFuel(var5))
+                else if (furnace.isItemFuel(var5))
                 {
                     if (!this.mergeItemStack(var5, 1, 2, false))
                     {

@@ -1,10 +1,9 @@
-package net.divinerpg.client.gui;
+package net.divinerpg.utils.unused;
 
 import net.divinerpg.blocks.iceika.tileentities.TileEntityCoalStoneFurnace;
-import net.divinerpg.containers.ContainerCoalStoneFurnace;
+import net.divinerpg.containers.ContainerDivineFurnace;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
@@ -13,13 +12,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
+@Deprecated
 public class GuiStoneFurnace extends GuiContainer {
     private TileEntityCoalStoneFurnace furnaceInventory;
 
-    public GuiStoneFurnace(ContainerCoalStoneFurnace container)
+    public GuiStoneFurnace(ContainerDivineFurnace container)
     {
         super(container);
-        this.furnaceInventory = container.getTileEntity();
+    //    this.furnaceInventory = (TileEntityCoalStoneFurnace)container.getTileEntity();
     }
 
     protected void drawGuiContainerForegroundLayer(int par1, int par2)

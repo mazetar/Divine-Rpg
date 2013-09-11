@@ -1,6 +1,9 @@
 package net.divinerpg.blocks.twilight.tileentities;
 
+import net.divinerpg.blocks.overworld.tileentities.TileDivineFurnace;
 import net.divinerpg.blocks.twilight.BlockTwilightFurnace;
+import net.divinerpg.lib.GuiRef;
+import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,12 +18,14 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityTwilightFurance extends TileEntity implements IInventory
+public class TileEntityTwilightFurance extends TileDivineFurnace implements IInventory
 {
     private ItemStack[] furnaceItemStacks = new ItemStack[3];
     public int furnaceBurnTime = 0;
@@ -382,5 +387,10 @@ public class TileEntityTwilightFurance extends TileEntity implements IInventory
     public boolean isItemValidForSlot(int i, ItemStack itemstack) {
         // TODO Auto-generated method stub
         return true;
+    }
+
+    @Override
+    public ResourceLocation getGuiTexture() {
+        return ResourceGuiLoc.GUI_FURNACE;
     }
 }

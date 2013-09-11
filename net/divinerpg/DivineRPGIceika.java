@@ -1,9 +1,6 @@
 package net.divinerpg;
 
 import net.divinerpg.lib.Reference;
-import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
-import net.divinerpg.utils.helpers.config.IceikaConfigHelper;
-import net.divinerpg.utils.helpers.item.IceikaItemHelper;
 import net.divinerpg.utils.proxies.IceikaProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;

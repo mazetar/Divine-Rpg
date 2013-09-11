@@ -1,12 +1,9 @@
 package net.divinerpg.utils.handlers.gui;
 
 import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
-import net.divinerpg.client.gui.GuiCaptainMerik;
-import net.divinerpg.client.gui.GuiTwilightFurnace;
-import net.divinerpg.containers.ContainerTwilightFurnace;
+import net.divinerpg.client.gui.GuiDivineFurnace;
+import net.divinerpg.containers.ContainerDivineFurnace;
 import net.divinerpg.lib.GuiRef;
-import net.divinerpg.utils.DivineUtil;
-import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -20,7 +17,7 @@ public class TwilightGuiHandler implements IGuiHandler {
         if (id == GuiRef.TWILIGHT_FURNACE) {
             TileEntity te = world.getBlockTileEntity(x, y, z);
             if (te instanceof TileEntityTwilightFurance)
-            return new ContainerTwilightFurnace(player.inventory, (TileEntityTwilightFurance)te);
+            return new ContainerDivineFurnace(player.inventory, (TileEntityTwilightFurance)te);
         }
         
         return null;
@@ -31,7 +28,7 @@ public class TwilightGuiHandler implements IGuiHandler {
             int x, int y, int z) {
 
         if (id == GuiRef.TWILIGHT_FURNACE) {
-            return new GuiTwilightFurnace((ContainerTwilightFurnace)this.getServerGuiElement(id, player, world, x, y, z));
+            return new GuiDivineFurnace((ContainerDivineFurnace)this.getServerGuiElement(id, player, world, x, y, z));
         }
         
         return null;

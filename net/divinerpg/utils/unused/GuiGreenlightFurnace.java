@@ -1,10 +1,9 @@
-package net.divinerpg.client.gui;
+package net.divinerpg.utils.unused;
 
-import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
-import net.divinerpg.containers.ContainerTwilightFurnace;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityGreenlightFurnace;
+import net.divinerpg.containers.ContainerDivineFurnace;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.StatCollector;
 
 import org.lwjgl.opengl.GL11;
@@ -13,19 +12,20 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class GuiTwilightFurnace extends GuiContainer
+@Deprecated
+public class GuiGreenlightFurnace extends GuiContainer
 {
-    private TileEntityTwilightFurance furnaceInventory;
+    private TileEntityGreenlightFurnace furnaceInventory;
 
-    public GuiTwilightFurnace(ContainerTwilightFurnace container)
+    public GuiGreenlightFurnace(ContainerDivineFurnace container)
     {
         super(container);
-        this.furnaceInventory = container.getTileEntity();
+     //   this.furnaceInventory = container.getTileEntity();
     }
 
-    protected void drawGuiContainerForegroundLayer()
+    protected void drawGuiContainerForegroundLayer(int par1, int par2)
     {
-        this.fontRenderer.drawString(StatCollector.translateToLocal("container.twlightfurnace"), 60, 6, 4210752);
+        this.fontRenderer.drawString("Greenlight Furnace", 50, 6, 4210752);
         this.fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
     }
 

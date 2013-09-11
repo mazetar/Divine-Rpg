@@ -6,6 +6,7 @@ import net.divinerpg.client.gui.GuiCaptainMerik;
 import net.divinerpg.client.gui.GuiJackOMan;
 import net.divinerpg.client.gui.GuiSuperEnchant;
 import net.divinerpg.client.gui.GuiTwilightFurnace;
+import net.divinerpg.containers.ContainerDivineMerchant;
 import net.divinerpg.containers.ContainerSuperEnchant;
 import net.divinerpg.containers.ContainerTwilightFurnace;
 import net.divinerpg.lib.GuiRef;
@@ -24,7 +25,7 @@ public class OverworldGuiHandler implements IGuiHandler {
                     int x, int y, int z) {
             
         if (id == GuiRef.JACKOMAN) {
-            return new ContainerMerchant(player.inventory, (IMerchant)DivineUtil.getEntityByID(x, world), world);
+            return new ContainerDivineMerchant(player.inventory, (IMerchant)DivineUtil.getEntityByID(x, world), world);
         }
         
         else if (id == GuiRef.SUPER_ENCHANTMENT_TABLE) {
@@ -39,7 +40,7 @@ public class OverworldGuiHandler implements IGuiHandler {
     public Object getClientGuiElement(int id, EntityPlayer player, World world,
                     int x, int y, int z) {
         if (id == GuiRef.JACKOMAN) {
-            return new GuiJackOMan((ContainerMerchant)this.getServerGuiElement(id, player, world, x, y, z));
+            return new GuiJackOMan((ContainerDivineMerchant)this.getServerGuiElement(id, player, world, x, y, z));
         }
         if (id == GuiRef.SUPER_ENCHANTMENT_TABLE) {
             return new GuiSuperEnchant((ContainerSuperEnchant)this.getServerGuiElement(id, player, world, x, y, z));

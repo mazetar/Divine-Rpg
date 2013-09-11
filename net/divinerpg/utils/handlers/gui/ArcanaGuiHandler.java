@@ -22,18 +22,14 @@ import net.divinerpg.client.gui.GuiVatticus;
 import net.divinerpg.client.gui.GuiWhitefireFurnace;
 import net.divinerpg.client.gui.GuiZelus;
 import net.divinerpg.containers.ContainerCondenser;
-import net.divinerpg.containers.ContainerDatticon;
 import net.divinerpg.containers.ContainerDemonFurnace;
+import net.divinerpg.containers.ContainerDivineMerchant;
 import net.divinerpg.containers.ContainerExtractor;
 import net.divinerpg.containers.ContainerGreenlightFurnace;
-import net.divinerpg.containers.ContainerLeorna;
-import net.divinerpg.containers.ContainerMerik;
 import net.divinerpg.containers.ContainerMoltenFurnace;
 import net.divinerpg.containers.ContainerMoonlightFurnace;
 import net.divinerpg.containers.ContainerOceanfireFurnace;
-import net.divinerpg.containers.ContainerVatticus;
 import net.divinerpg.containers.ContainerWhitefireFurnace;
-import net.divinerpg.containers.ContainerZelus;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.DivineUtil;
 import net.minecraft.entity.IMerchant;
@@ -50,19 +46,19 @@ public class ArcanaGuiHandler implements IGuiHandler {
         
         // Entity GUI's
         if (id == GuiRef.MERIK) {
-            return new ContainerMerik(player.inventory, (IMerchant)DivineUtil.getEntityByID(var1, world), world);
+            return new ContainerDivineMerchant(player.inventory, (IMerchant)DivineUtil.getEntityByID(var1, world), world);
         }
         else if (id == GuiRef.VATTICUS) {
-            return new ContainerVatticus(player.inventory, (IMerchant)DivineUtil.getEntityByID(var1, world), world);
+            return new ContainerDivineMerchant(player.inventory, (IMerchant)DivineUtil.getEntityByID(var1, world), world);
         }
         else if (id == GuiRef.LEORNA) {
-            return new ContainerLeorna(player.inventory, (IMerchant)DivineUtil.getEntityByID(var1, world), world);
+            return new ContainerDivineMerchant(player.inventory, (IMerchant)DivineUtil.getEntityByID(var1, world), world);
         }
         else if (id == GuiRef.ZELUS) {
-            return new ContainerZelus(player.inventory, (IMerchant)DivineUtil.getEntityByID(var1, world), world);
+            return new ContainerDivineMerchant(player.inventory, (IMerchant)DivineUtil.getEntityByID(var1, world), world);
         }
         else if (id == GuiRef.DATTICON) {
-            return new ContainerDatticon(player.inventory, (IMerchant)DivineUtil.getEntityByID(var1, world), world);
+            return new ContainerDivineMerchant(player.inventory, (IMerchant)DivineUtil.getEntityByID(var1, world), world);
         }
         
         // Block GUI's
@@ -114,19 +110,19 @@ public class ArcanaGuiHandler implements IGuiHandler {
     public Object getClientGuiElement(int id, EntityPlayer player, World world,
             int var1, int var2, int var3) {
         if (id == GuiRef.MERIK) {
-            return new GuiCaptainMerik((ContainerMerik)getServerGuiElement(id, player, world, var1, var2, var3));
+            return new GuiCaptainMerik((ContainerDivineMerchant)getServerGuiElement(id, player, world, var1, var2, var3));
         }
         else if (id == GuiRef.VATTICUS) {
-            return new GuiVatticus((ContainerVatticus) this.getServerGuiElement(id, player, world, var1, var2, var3));
+            return new GuiVatticus((ContainerDivineMerchant) this.getServerGuiElement(id, player, world, var1, var2, var3));
         }
         else if (id == GuiRef.LEORNA) {
-            return new GuiLeorna((ContainerLeorna)this.getServerGuiElement(id, player, world, var1, var2, var3));
+            return new GuiLeorna((ContainerDivineMerchant)this.getServerGuiElement(id, player, world, var1, var2, var3));
         }
         else if (id == GuiRef.ZELUS) {
-            return new GuiZelus((ContainerZelus) this.getServerGuiElement(id, player, world, var1, var2, var3));
+            return new GuiZelus((ContainerDivineMerchant) this.getServerGuiElement(id, player, world, var1, var2, var3));
         }
         else if (id == GuiRef.DATTICON) {
-            return new GuiDatticon((ContainerDatticon) this.getServerGuiElement(id, player, world, var1, var2, var3));
+            return new GuiDatticon((ContainerDivineMerchant) this.getServerGuiElement(id, player, world, var1, var2, var3));
         }
         else if (id == GuiRef.CONDENSER) {
             return new GuiCondenser((ContainerCondenser) this.getServerGuiElement(id, player, world, var1, var2, var3));

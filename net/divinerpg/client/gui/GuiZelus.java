@@ -3,20 +3,18 @@ package net.divinerpg.client.gui;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 
-import net.divinerpg.containers.ContainerZelus;
+import net.divinerpg.containers.ContainerDivineMerchant;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiButtonMerchant;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.entity.IMerchant;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.packet.Packet250CustomPayload;
 import net.minecraft.util.StatCollector;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
-import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
@@ -32,7 +30,7 @@ public class GuiZelus extends GuiContainer
     private GuiButtonMerchant previousRecipeButtonIndex;
     private int currentRecipeIndex = 0;
 
-    public GuiZelus(ContainerZelus container)
+    public GuiZelus(ContainerDivineMerchant container)
     {
         super(container);
         this.theIMerchant = container.getMerchant();
@@ -97,7 +95,7 @@ public class GuiZelus extends GuiContainer
 
         if (var2)
         {
-            ((ContainerZelus)this.inventorySlots).setCurrentRecipeIndex(this.currentRecipeIndex);
+            ((ContainerDivineMerchant)this.inventorySlots).setCurrentRecipeIndex(this.currentRecipeIndex);
             ByteArrayOutputStream var3 = new ByteArrayOutputStream();
             DataOutputStream var4 = new DataOutputStream(var3);
 

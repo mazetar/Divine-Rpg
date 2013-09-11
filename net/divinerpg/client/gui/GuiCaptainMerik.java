@@ -3,7 +3,7 @@ package net.divinerpg.client.gui;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 
-import net.divinerpg.containers.ContainerMerik;
+import net.divinerpg.containers.ContainerDivineMerchant;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiButtonMerchant;
@@ -30,7 +30,7 @@ public class GuiCaptainMerik extends GuiContainer
     private GuiButtonMerchant previousRecipeButtonIndex;
     private int currentRecipeIndex = 0;
 
-    public GuiCaptainMerik(ContainerMerik container)
+    public GuiCaptainMerik(ContainerDivineMerchant container)
     {
         super(container);
         this.theIMerchant = container.getMerchant();
@@ -95,7 +95,7 @@ public class GuiCaptainMerik extends GuiContainer
 
         if (var2)
         {
-            ((ContainerMerik)this.inventorySlots).setCurrentRecipeIndex(this.currentRecipeIndex);
+            ((ContainerDivineMerchant)this.inventorySlots).setCurrentRecipeIndex(this.currentRecipeIndex);
             ByteArrayOutputStream var3 = new ByteArrayOutputStream();
             DataOutputStream var4 = new DataOutputStream(var3);
 

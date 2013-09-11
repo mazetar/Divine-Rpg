@@ -3,7 +3,6 @@ package net.divinerpg.utils.handlers.gui;
 import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
 import net.divinerpg.client.gui.GuiCaptainMerik;
 import net.divinerpg.client.gui.GuiTwilightFurnace;
-import net.divinerpg.containers.ContainerMerik;
 import net.divinerpg.containers.ContainerTwilightFurnace;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.DivineUtil;

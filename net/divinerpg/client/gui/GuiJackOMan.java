@@ -3,6 +3,7 @@ package net.divinerpg.client.gui;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 
+import net.divinerpg.containers.ContainerDivineMerchant;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiButtonMerchant;
@@ -32,7 +33,7 @@ public class GuiJackOMan extends GuiContainer
     private GuiButtonMerchant previousRecipeButtonIndex;
     private int currentRecipeIndex = 0;
 
-    public GuiJackOMan(ContainerMerchant container)
+    public GuiJackOMan(ContainerDivineMerchant container)
     {
         super(container);
         this.theIMerchant = container.getMerchant();

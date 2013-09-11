@@ -20,31 +20,36 @@ public class ContainerDivineMerchant extends Container
     private InventoryMerchant merchantInventory;
     private final World theWorld;
 
-    public ContainerDivineMerchant(InventoryPlayer var1, IMerchant var2, World var3, int par4)
+    public ContainerDivineMerchant(InventoryPlayer playerInventory, IMerchant merchant, World world)
     {
-        this.theMerchant = var2;
-        this.theWorld = var3;
-        this.merchantInventory = new DivineInventory(var1.player, var2, par4);
+        this(playerInventory, merchant, world, 3);
+    }
+    
+    public ContainerDivineMerchant(InventoryPlayer playerInventory, IMerchant merchant, World world, int inventorySize)
+    {
+        this.theMerchant = merchant;
+        this.theWorld = world;
+        this.merchantInventory = new DivineInventory(playerInventory.player, merchant, inventorySize);
         this.addSlotToContainer(new Slot(this.merchantInventory, 0, 36, 53));
         this.addSlotToContainer(new Slot(this.merchantInventory, 1, 62, 53));
-        this.addSlotToContainer(new SlotMerchantResult(var1.player, var2, this.merchantInventory, 2, 120, 53));
+        this.addSlotToContainer(new SlotMerchantResult(playerInventory.player, merchant, this.merchantInventory, 2, 120, 53));
         int var4;
 
         for (var4 = 0; var4 < 3; ++var4)
         {
             for (int var5 = 0; var5 < 9; ++var5)
             {
-                this.addSlotToContainer(new Slot(var1, var5 + var4 * 9 + 9, 8 + var5 * 18, 84 + var4 * 18));
+                this.addSlotToContainer(new Slot(playerInventory, var5 + var4 * 9 + 9, 8 + var5 * 18, 84 + var4 * 18));
             }
         }
 
         for (var4 = 0; var4 < 9; ++var4)
         {
-            this.addSlotToContainer(new Slot(var1, var4, 8 + var4 * 18, 142));
+            this.addSlotToContainer(new Slot(playerInventory, var4, 8 + var4 * 18, 142));
         }
     }
     
-    public IMerchant getMerchang() {
+    public IMerchant getMerchant() {
         return theMerchant;
     }
 
@@ -92,7 +97,8 @@ public class ContainerDivineMerchant extends Container
         return this.theMerchant.getCustomer() == var1;
     }
 
-    public ItemStack func_82846_b(EntityPlayer var1, int var2)
+    
+    public ItemStack transferStackInSlot(EntityPlayer var1, int var2)
     {
         ItemStack var3 = null;
         Slot var4 = (Slot)this.inventorySlots.get(var2);

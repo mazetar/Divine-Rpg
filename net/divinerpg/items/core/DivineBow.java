@@ -2,6 +2,7 @@ package net.divinerpg.items.core;
 
 import java.util.List;
 
+import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.enchantment.Enchantment;
@@ -55,7 +56,7 @@ public class DivineBow extends ItemBow {
     @Override
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.itemIcon = par1IconRegister.registerIcon(this.func_111208_A() + "_0");
+        this.itemIcon = par1IconRegister.registerIcon(Reference.MAIN_MOD_ID + ":" + this.func_111208_A() + "_0");
         this.iconArray = new Icon[3];
 
         this.iconArray[0] = par1IconRegister.registerIcon(this.func_111208_A() + "_1");

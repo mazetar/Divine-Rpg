@@ -4,11 +4,11 @@ import net.divinerpg.entities.vethea.projectile.EntityAmthirmisDisk;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class ItemAmthirmisDisk extends ItemVetheanDisk
+public class ItemAmthirmisDisk extends ItemDivineDisk
 {
 
-	public ItemAmthirmisDisk(int par1, int par2) {
-		super(par1, par2);
+	public ItemAmthirmisDisk(int id, int dmg) {
+		super(id, dmg);
 	}
     
     public void shoot(World par2, EntityPlayer par3)

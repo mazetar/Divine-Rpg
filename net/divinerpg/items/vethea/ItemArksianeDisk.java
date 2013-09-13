@@ -4,7 +4,7 @@ import net.divinerpg.entities.vethea.projectile.EntityArksianeDisk;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class ItemArksianeDisk extends ItemVetheanDisk
+public class ItemArksianeDisk extends ItemDivineDisk
 {
 
 	public ItemArksianeDisk(int par1, int par2) {

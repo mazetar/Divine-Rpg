@@ -4,7 +4,7 @@ import net.divinerpg.entities.vethea.projectile.EntityQuadroticDisk;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class ItemQuadroticDisk extends ItemVetheanDisk
+public class ItemQuadroticDisk extends ItemDivineDisk
 {
 
 	public ItemQuadroticDisk(int par1, int par2) {

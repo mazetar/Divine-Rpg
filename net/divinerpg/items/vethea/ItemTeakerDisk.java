@@ -4,7 +4,7 @@ import net.divinerpg.entities.vethea.projectile.EntityTeakerDisk;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class ItemTeakerDisk extends ItemVetheanDisk
+public class ItemTeakerDisk extends ItemDivineDisk
 {
 	public ItemTeakerDisk(int par1, int par2) 
 	{

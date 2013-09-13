@@ -9,15 +9,15 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemVetheanDisk extends ItemDivine
+public class ItemDivineDisk extends ItemDivine
 {
     protected int damage;
 
-	public ItemVetheanDisk(int par1, int par2)
+	public ItemDivineDisk(int id, int dmg)
     {
-        super(par1);
+        super(id);
         this.maxStackSize = 1;
-        this.damage = par2;
+        this.damage = dmg;
     }
 
     @Override

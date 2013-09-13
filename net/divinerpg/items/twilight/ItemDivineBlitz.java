@@ -5,6 +5,7 @@ import java.util.List;
 import net.divinerpg.entities.twilight.projectile.EntityBlitzAugite;
 import net.divinerpg.entities.twilight.projectile.EntityBlitz;
 import net.divinerpg.items.ItemDivine;
+import net.divinerpg.lib.Sound;
 import net.divinerpg.utils.helpers.item.TwilightItemHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -43,7 +44,7 @@ public class ItemDivineBlitz extends ItemDivine
         }
         else
         {
-            var2.playSoundAtEntity(player, "xolovon.blitz", 1.0F, 1.0F);
+            var2.playSoundAtEntity(player, Sound.Blitz, 1.0F, 1.0F);
             if (player.inventory.consumeInventoryItem(ammo.itemID)) {
                 var2.spawnEntityInWorld(new EntityBlitz(var2, player, weaponDamage));
                 var1.damageItem(1, player);

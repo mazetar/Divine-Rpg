@@ -4,7 +4,7 @@ import net.divinerpg.entities.vethea.projectile.EntityHeliosisDisk;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class ItemHeliosisDisk extends ItemVetheanDisk
+public class ItemHeliosisDisk extends ItemDivineDisk
 {
 
 	public ItemHeliosisDisk(int par1, int par2) {

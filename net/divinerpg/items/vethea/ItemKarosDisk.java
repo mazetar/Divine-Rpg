@@ -4,7 +4,7 @@ import net.divinerpg.entities.vethea.projectile.EntityKarosDisk;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class ItemKarosDisk extends ItemVetheanDisk
+public class ItemKarosDisk extends ItemDivineDisk
 {
 
 	public ItemKarosDisk(int par1, int par2) {

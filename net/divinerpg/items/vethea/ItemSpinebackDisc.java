@@ -3,7 +3,7 @@ package net.divinerpg.items.vethea;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class ItemSpinebackDisc extends ItemVetheanDisk
+public class ItemSpinebackDisc extends ItemDivineDisk
 {
 
 	public ItemSpinebackDisc(int par1, int par2) {

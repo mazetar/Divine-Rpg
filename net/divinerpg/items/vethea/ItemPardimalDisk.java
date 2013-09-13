@@ -4,7 +4,7 @@ import net.divinerpg.entities.vethea.projectile.EntityPardimalDisk;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 
-public class ItemPardimalDisk extends ItemVetheanDisk
+public class ItemPardimalDisk extends ItemDivineDisk
 {
 
 	public ItemPardimalDisk(int par1, int par2) {

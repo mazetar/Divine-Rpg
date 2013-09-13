@@ -70,7 +70,7 @@ import net.divinerpg.entities.twilight.mobs.EntityVerek;
 import net.divinerpg.entities.twilight.projectile.EntityBlitzAugite;
 import net.divinerpg.entities.twilight.projectile.EntityBlitzAzurite;
 import net.divinerpg.entities.twilight.projectile.EntityBlitzDravite;
-import net.divinerpg.entities.twilight.projectile.EntityBlitzHalite;
+import net.divinerpg.entities.twilight.projectile.EntityBlitz;
 import net.divinerpg.entities.twilight.projectile.EntityBlitzMythril;
 import net.divinerpg.entities.twilight.projectile.EntityBlitzUvite;
 import net.divinerpg.entities.twilight.projectile.EntityCoriShot;
@@ -113,7 +113,7 @@ public class TwilightRenderHelper
         RenderingRegistry.registerEntityRenderingHandler(EntityBlitzUvite.class, new RenderBasicProjectile(EntityResourceLocs.BLITZ_UVITE));
         RenderingRegistry.registerEntityRenderingHandler(EntityBlitzMythril.class, new RenderBasicProjectile(EntityResourceLocs.BLITZ_MYTHRIL));
         RenderingRegistry.registerEntityRenderingHandler(EntityBlitzAugite.class, new RenderBasicProjectile(EntityResourceLocs.BLITZ_AUGITE));
-        RenderingRegistry.registerEntityRenderingHandler(EntityBlitzHalite.class, new RenderBasicProjectile(EntityResourceLocs.BLITZ_HALITE));
+        RenderingRegistry.registerEntityRenderingHandler(EntityBlitz.class, new RenderBasicProjectile(EntityResourceLocs.BLITZ_HALITE));
 
         RenderingRegistry.registerEntityRenderingHandler(EntityPhaserDravite.class, new RenderBasicProjectile(EntityResourceLocs.PHASER_DRAVITE));
         RenderingRegistry.registerEntityRenderingHandler(EntityPhaserAugite.class, new RenderBasicProjectile(EntityResourceLocs.PHASER_AUGITE));

@@ -3,7 +3,8 @@ package net.divinerpg.utils.helpers.item;
 import net.divinerpg.items.ItemDivine;
 import net.divinerpg.items.core.DivineBow;
 import net.divinerpg.items.overworld.ItemTwilightClock;
-import net.divinerpg.items.twilight.ItemBlizDravite;
+import net.divinerpg.items.twilight.ItemDivineBlitz;
+import net.divinerpg.items.twilight.ItemDivineSlicer;
 import net.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.item.Item;
@@ -152,13 +153,13 @@ public class TwilightItemHelper
 		DraviteDust = new ItemDivine(x.DraviteDustID).func_111206_d("DraviteDust").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("DraviteDust");
 		DraviteBlade = new ItemDivine(x.DraviteBladeID).func_111206_d("DraviteBlade").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("DraviteBlade");
 		DravitePhaser = new ItemDivine(x.DravitePhaserID).func_111206_d("DravitePhaser").setCreativeTab(DivineTabs.tabRanged).setUnlocalizedName("DravitePhaser");
-		DraviteBlitz = new ItemBlizDravite(x.DraviteBlitzID).func_111206_d("DraviteBlitz").setCreativeTab(DivineTabs.tabRanged).setUnlocalizedName("DraviteBlitz");
+		DraviteBlitz = new ItemDivineBlitz(x.DraviteBlitzID, 14, DraviteDust).func_111206_d("DraviteBlitz").setCreativeTab(DivineTabs.tabRanged).setUnlocalizedName("DraviteBlitz");
 		DraviteBow = new ItemDivine(x.DraviteBowID).func_111206_d("DraviteBow").setCreativeTab(DivineTabs.tabRanged).setUnlocalizedName("DraviteBow");
 		DraviteHelmet = new ItemDivine(x.DraviteHelmetID).func_111206_d("DraviteHelmet").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("DraviteHelmet");
 		DraviteBoots = new ItemDivine(x.DraviteBootsID).func_111206_d("DraviteBoots").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("DraviteBoots");
 		Dravitelegs = new ItemDivine(x.DravitelegsID).func_111206_d("Dravitelegs").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("Dravitelegs");
 		DraviteChest = new ItemDivine(x.DraviteChestID).func_111206_d("DraviteChest").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("DraviteChest");
-		DraviteSlicer = new ItemDivine(x.DraviteSlicerID).func_111206_d("DraviteSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("DraviteSlicer");
+		DraviteSlicer = new ItemDivineSlicer(x.DraviteSlicerID, 12).func_111206_d("DraviteSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("DraviteSlicer");
 		DraviteSoul = new ItemDivine(x.DraviteSoulID).func_111206_d("DraviteSoul").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("DraviteSoul");
 		DraviteSparkles = new ItemDivine(x.draviteSparklesID).func_111206_d("DraviteSparkles").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("DraviteSparkles");
 		DraviteShards = new ItemDivine(x.DraviteShardsID).func_111206_d("DraviteShards").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("DraviteShards");
@@ -169,13 +170,13 @@ public class TwilightItemHelper
 		AzuriteDust = new ItemDivine(x.AzuriteDustID).func_111206_d("AzuriteDust").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("AzuriteDust");
 		AzuriteBlade = new ItemDivine(x.AzuriteBladeID).func_111206_d("AzuriteBlade").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("AzuriteBlade");
 		AzuritePhaser = new ItemDivine(x.AzuritePhaserID).func_111206_d("AzuritePhaser").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AzuritePhaser");
-		AzuriteBlitz = new ItemDivine(x.AzuriteBlitzID).func_111206_d("AzuriteBlitz").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AzuriteBlitz");
+		AzuriteBlitz = new ItemDivineBlitz(x.AzuriteBlitzID, 19, AzuriteDust).func_111206_d("AzuriteBlitz").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AzuriteBlitz");
 		AzuriteBow = new ItemDivine(x.AzuriteBowID).func_111206_d("AzuriteBow").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AzuriteBow");
 		AzuriteHelmet = new ItemDivine(x.AzuriteHelmetID).func_111206_d("AzuriteHelmet").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("AzuriteHelmet");
 		AzuriteBoots = new ItemDivine(x.AzuriteBootsID).func_111206_d("AzuriteBoots").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("AzuriteBoots");
 		Azuritelegs = new ItemDivine(x.AzuritelegsID).func_111206_d("Azuritelegs").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("Azuritelegs");
 		AzuriteChest = new ItemDivine(x.AzuriteChestID).func_111206_d("AzuriteChest").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("AzuriteChest");
-		AzuriteSlicer = new ItemDivine(x.AzuriteSlicerID).func_111206_d("AzuriteSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AzuriteSlicer");
+		AzuriteSlicer = new ItemDivineSlicer(x.AzuriteSlicerID, 18).func_111206_d("AzuriteSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AzuriteSlicer");
 		AzuriteSoul = new ItemDivine(x.AzuriteSoulID).func_111206_d("AzuriteSoul").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("AzuriteSoul");
 		AzuriteArrow = new ItemDivine(x.AzuriteArrowID).func_111206_d("AzuriteArrow").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("AzuriteArrow");
 
@@ -185,13 +186,13 @@ public class TwilightItemHelper
 		UviteDust = new ItemDivine(x.UviteDustID).func_111206_d("UviteDust").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("UviteDust");
 		UviteBlade = new ItemDivine(x.UviteBladeID).func_111206_d("UviteBlade").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("UviteBlade");
 		UvitePhaser = new ItemDivine(x.UvitePhaserID).func_111206_d("UvitePhaser").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("UvitePhaser");
-		UviteBlitz = new ItemDivine(x.UviteBlitzID).func_111206_d("UviteBlitz").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("UviteBlitz");
+		UviteBlitz = new ItemDivineBlitz(x.UviteBlitzID, 22, UviteDust).func_111206_d("UviteBlitz").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("UviteBlitz");
 		UviteBow = new ItemDivine(x.UviteBowID).func_111206_d("UviteBow").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("UviteBow");
 		UviteHelmet = new ItemDivine(x.UviteHelmetID).func_111206_d("UviteHelmet").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("UviteHelmet");
 		UviteBoots = new ItemDivine(x.UviteBootsID).func_111206_d("UviteBoots").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("UviteBoots");
 		Uvitelegs = new ItemDivine(x.UvitelegsID).func_111206_d("Uvitelegs").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("Uvitelegs");
 		UviteChest = new ItemDivine(x.UviteChestID).func_111206_d("UviteChest").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("UviteChest");
-		UviteSlicer = new ItemDivine(x.UviteSlicerID).func_111206_d("UviteSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("UviteSlicer");
+		UviteSlicer = new ItemDivineSlicer(x.UviteSlicerID, 24).func_111206_d("UviteSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("UviteSlicer");
 		UviteSoul = new ItemDivine(x.UviteSoulID).func_111206_d("UviteSoul").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("UviteSoul");
 
 		MythrilGem = new ItemDivine(x.MythrilGemID).func_111206_d("MythrilGem").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("MythrilGem");
@@ -200,13 +201,13 @@ public class TwilightItemHelper
 		MythrilDust = new ItemDivine(x.MythrilDustID).func_111206_d("MythrilDust").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("MythrilDust");
 		MythrilBlade = new ItemDivine(x.MythrilBladeID).func_111206_d("MythrilBlade").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("MythrilBlade");
 		MythrilPhaser = new ItemDivine(x.MythrilPhaserID).func_111206_d("MythrilPhaser").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("MythrilPhaser");
-		MythrilBlitz = new ItemDivine(x.MythrilBlitzID).func_111206_d("MythrilBlitz").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("MythrilBlitz");
+		MythrilBlitz = new ItemDivineBlitz(x.MythrilBlitzID, 27, MythrilDust).func_111206_d("MythrilBlitz").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("MythrilBlitz");
 		MythrilBow = new ItemDivine(x.MythrilBowID).func_111206_d("MythrilBow").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("MythrilBow");
 		MythrilHelmet = new ItemDivine(x.MythrilHelmetID).func_111206_d("MythrilHelmet").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("MythrilHelmet");
 		MythrilBoots = new ItemDivine(x.MythrilBootsID).func_111206_d("MythrilBoots").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("MythrilBoots");
 		Mythrillegs = new ItemDivine(x.MythrillegsID).func_111206_d("Mythrillegs").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("Mythrillegs");
 		MythrilChest = new ItemDivine(x.MythrilChestID).func_111206_d("MythrilChest").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("MythrilChest");
-		MythrilSlicer = new ItemDivine(x.MythrilSlicerID).func_111206_d("MythrilSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("MythrilSlicer");
+		MythrilSlicer = new ItemDivineSlicer(x.MythrilSlicerID, 26).func_111206_d("MythrilSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("MythrilSlicer");
 		MythrilSoul = new ItemDivine(x.MythrilSoulID).func_111206_d("MythrilSoul").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("MythrilSoul");
 
 		AugiteGem = new ItemDivine(x.AugiteGemID).func_111206_d("AugiteGem").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("AugiteGem");
@@ -215,15 +216,16 @@ public class TwilightItemHelper
 		AugiteDust = new ItemDivine(x.AugiteDustID).func_111206_d("AugiteDust").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("AugiteDust");
 		AugiteBlade = new ItemDivine(x.AugiteBladeID).func_111206_d("AugiteBlade").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("AugiteBlade");
 		AugitePhaser = new ItemDivine(x.AugitePhaserID).func_111206_d("AugitePhaser").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AugitePhaser");
-		AugiteBlitz = new ItemDivine(x.AugiteBlitzID).func_111206_d("AugiteBlitz").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AugiteBlitz");
+		AugiteBlitz = new ItemDivineBlitz(x.AugiteBlitzID, 31, AugiteDust).func_111206_d("AugiteBlitz").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AugiteBlitz");
 		AugiteBow = new DivineBow(x.AugiteBowID, 20, 5, true).func_111206_d("AugiteBow").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AugiteBow");
 		AugiteHelmet = new ItemDivine(x.AugiteHelmetID).func_111206_d("AugiteHelmet").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("AugiteHelmet");
 		AugiteBoots = new ItemDivine(x.AugiteBootsID).func_111206_d("AugiteBoots").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("AugiteBoots");
 		Augitelegs = new ItemDivine(x.AugitelegsID).func_111206_d("Augitelegs").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("Augitelegs");
 		AugiteChest = new ItemDivine(x.AugiteChestID).func_111206_d("AugiteChest").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("AugiteChest");
-		AugiteSlicer = new ItemDivine(x.AugiteSlicerID).func_111206_d("AugiteSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AugiteSlicer");
+		AugiteSlicer = new ItemDivineSlicer(x.AugiteSlicerID, 38).func_111206_d("AugiteSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("AugiteSlicer");
 		AugiteSoul = new ItemDivine(x.AugiteSoulID).func_111206_d("AugiteSoul").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("AugiteSoul");
-
+		
+		
 		FuryArrow = new ItemDivine(x.FuryArrowID).func_111206_d("FuryArrow").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("FuryArrow");
 		TwilightClock = new ItemTwilightClock(x.TwilightClockID).setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("TwilightClock").func_111206_d("TwilightClock");
 		blueSeeds = new ItemDivine(x.blueSeedsID).func_111206_d("BlueSeeds").setCreativeTab(DivineTabs.tabHerb).setUnlocalizedName("blueSeeds");
@@ -237,12 +239,12 @@ public class TwilightItemHelper
 		HaliteBlade = new ItemDivine(x.HaliteBladeID).func_111206_d("HaliteBlade").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("HaliteBlade");
 		HalitePhaser = new ItemDivine(x.HalitePhaserID).func_111206_d("HalitePhaser").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("HalitePhaser");
 		HaliteBow = new DivineBow(x.HaliteBowID, 5, 1, true).func_111206_d("HaliteBow").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("HaliteBow");
-		HaliteSlicer = new ItemDivine(x.HaliteSlicerID).func_111206_d("HaliteSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("HaliteSlicer");
+		HaliteSlicer = new ItemDivineSlicer(x.HaliteSlicerID, 40).func_111206_d("HaliteSlicer").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("HaliteSlicer");
 		HaliteHelmet = new ItemDivine(x.HaliteHelmetID).func_111206_d("HaliteHelmet").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("HaliteHelmet");
 		HaliteBoots = new ItemDivine(x.HaliteBootsID).func_111206_d("HaliteBoots").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("HaliteBoots");
 		Halitelegs = new ItemDivine(x.HalitelegsID).func_111206_d("Halitelegs").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("Halitelegs");
 		HaliteChest = new ItemDivine(x.HaliteChestID).func_111206_d("HaliteChest").setCreativeTab(DivineTabs.tabArmor).setUnlocalizedName("HaliteChest");
-		HaliteBlitz = new ItemDivine(x.HaliteBlitzID).func_111206_d("HaliteBlitz").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("HaliteBlitz");
+		HaliteBlitz = new ItemDivineBlitz(x.HaliteBlitzID, 33, AugiteDust).func_111206_d("HaliteBlitz").setCreativeTab(DivineTabs. tabRanged).setUnlocalizedName("HaliteBlitz");
 		
 		addNames();
 	}

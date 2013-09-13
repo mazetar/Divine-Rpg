@@ -12,22 +12,27 @@ import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class EntityBlitzHalite extends EntityThrowable
+public class EntityBlitz extends EntityThrowable
 {
-    public EntityBlitzHalite(World var1)
+    int damage = 5;
+    
+    public EntityBlitz(World world)
     {
-        super(var1);
+        super(world);
     }
 
-    public EntityBlitzHalite(World var1, EntityLivingBase var2)
+    public EntityBlitz(World world, EntityLivingBase entity, int dmg )
     {
-        super(var1, var2);
+        super(world, entity);
+        damage = dmg;
+        
     }
 
-    public EntityBlitzHalite(World var1, double var2, double var4, double var6)
+    public EntityBlitz(World world, double x, double y, double z)
     {
-        super(var1, var2, var4, var6);
+        super(world, x, y, z);
     }
+    
     @SideOnly(Side.CLIENT)
     @Override
     public void onUpdate()
@@ -48,14 +53,8 @@ public class EntityBlitzHalite extends EntityThrowable
     {
         if (var1.entityHit != null)
         {
-            byte var2 = 33;
 
-            if (var1.entityHit instanceof EntityBlaze)
-            {
-                var2 = 33;
-            }
-
-            var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), var2);
+            var1.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), damage);
         }
 
         if (!this.worldObj.isRemote)

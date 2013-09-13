@@ -321,14 +321,14 @@ public class OverworldItemHelper
 	}
 	public static void initWeaponsAndTools() {
 	    
-		massivence = new ItemMassivence(cfg.massivenceID).func_111206_d("Massivence");
-		palavence = new ItemPalavence(cfg.passivenceID).func_111206_d("Passivence");
+		massivence = new ItemHealingSword(cfg.massivenceID, EnumHelper.addToolMaterial("massivence", 0, 540, 0, 0, 16), 1).func_111206_d("Massivence");
+		palavence = new ItemHealingSword(cfg.passivenceID,EnumHelper.addToolMaterial("palavence", 0, 125, 0, 1, 16), 1).func_111206_d("Passivence");
 		
 		enderSword = new DivineSword(cfg.enderSwordID, EnumHelper.addToolMaterial("endersword", 0, -1, 0, 23, E), true).func_111206_d("Endersword").setUnlocalizedName("enderSword").setCreativeTab(DivineTabs.tabSword);
 
 		bedrockMaul = new DivineSword(cfg.bedrockMaulID, EnumHelper.addToolMaterial("bedrockmaul", 1, -1, 1.5F, 19, E), true).func_111206_d("BedrockMaul").setUnlocalizedName("bedrock").setCreativeTab(DivineTabs.tabSword);	
-		sandSlash = new ItemSandSlash(cfg.sandSlashID, EnumHelper.addToolMaterial("sandslash", 0, 100, 0, 32, E)).func_111206_d("SandSlash");
-		frostSword = new ItemFrostSword(cfg.frostSwordID, EnumHelper.addToolMaterial("frostsword", 0, 5000, 0, 10, E)).func_111206_d("FrostSword");
+		sandSlash = new DivineSword(cfg.sandSlashID, EnumHelper.addToolMaterial("sandslash", 0, 100, 0, 32, E)).func_111206_d("SandSlash");
+		frostSword = new ItemFrostSword(cfg.frostSwordID, EnumHelper.addToolMaterial("frostsword", 0, 5000, 0, 10, E), 2).func_111206_d("FrostSword");
 		slimeSword = new DivineSword(cfg.slimeSwordID, EnumHelper.addToolMaterial("slimesword", 0, 5000, 0, 11, E)).func_111206_d("SlimeSword");
 		arlemiteStabber = new DivineSword(cfg.arlemiteStabberID, EnumHelper.addToolMaterial("arlemitestabber", 0, 5000, 0, 6, E)).func_111206_d("ArlemiteStabber");
 		rupeeRapier = new DivineSword(cfg.rupeeSwordID, EnumHelper.addToolMaterial("rupeesword", 0, 4000, 0, 9, E)).func_111206_d("RupeeRapier");
@@ -373,7 +373,7 @@ public class OverworldItemHelper
 		serenadeOfDeath = new ItemSerenadeDeath(cfg.seranadeDeathID).func_111206_d("SerenadeOfDeath");
 		serenadeHealth = new ItemSerenadeHealth(cfg.serenadeHealthID).func_111206_d("SerenadeHealth");
 		
-		namkormira = new ItemMassivence(cfg.namkormiraID).func_111206_d("Namkormira");
+		namkormira = new ItemHealingSword(cfg.namkormiraID,  EnumHelper.addToolMaterial("namkormira", 0, 570, 0, 0, 16), 1).func_111206_d("Namkormira");
 		
 
         LanguageRegistry.addName(serenadeOfLife, "Serenade of Life");

@@ -19,10 +19,12 @@ import net.divinerpg.items.iceika.ItemSnowStormBow;
 import net.divinerpg.items.iceika.ItemSnowflakeShuriken;
 import net.divinerpg.items.iceika.ItemSoundOfCarols;
 import net.divinerpg.items.overworld.ItemBlueBow;
-import net.divinerpg.items.overworld.ItemMassivence;
+import net.divinerpg.items.overworld.ItemFrostSword;
+import net.divinerpg.items.overworld.ItemHealingSword;
 import net.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.EnumHelper;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class IceikaItemHelper 
@@ -62,12 +64,12 @@ public class IceikaItemHelper
         icicleBane = new ItemIceicleBane(x.IcicleBaneID).func_111206_d("IcicleBane").setUnlocalizedName("icicleBane").setCreativeTab(DivineTabs.tabSword);
         soundOfCarols = new ItemSoundOfCarols(x.SoundOfCarolsID).func_111206_d("SoundOfCarols").setUnlocalizedName("soundofCarols").setCreativeTab(DivineTabs.tabRanged);
         icineSword = new ItemIceineSword(x.IcineSwordID).func_111206_d("IcineSword").setUnlocalizedName("icineSword").setCreativeTab(DivineTabs.tabSword);
-        frossivence = new ItemMassivence(x.FrossivenceID, 540).func_111206_d("Frossivence").setUnlocalizedName("frossivence").setCreativeTab(DivineTabs.tabSword);
+        frossivence = new ItemHealingSword(x.FrossivenceID, EnumHelper.addToolMaterial("frossivence", 0, 540, 0, 0, 16), 2).func_111206_d("Frossivence").setUnlocalizedName("frossivence").setCreativeTab(DivineTabs.tabSword);
         enderice = new ItemEnderice(x.EndericeID).func_111206_d("Enderice").setUnlocalizedName("enderice").setCreativeTab(DivineTabs.tabSword);
         snowSlash = new ItemSnowSlash(x.SnowslashID).func_111206_d("SnowSlash").setUnlocalizedName("snowSlash").setCreativeTab(DivineTabs.tabSword);
         serenadeOfIce = new ItemSerenadeOfIce(x.SerenadeOfIceID).func_111206_d("SerenadeOfIce").setUnlocalizedName("serenadeofIce").setCreativeTab(DivineTabs.tabRanged);
         glacierSword = new ItemGlacierSword(x.GlacierSwordID).func_111206_d("GlacierSword").setUnlocalizedName("glacierSword").setCreativeTab(DivineTabs.tabSword);
-        frostKingSword = new ItemFrostkingSword(x.FrostkingSwordID).func_111206_d("FrostKingSword").setUnlocalizedName("frostKingSword").setCreativeTab(DivineTabs.tabSword);
+        frostKingSword = new ItemFrostSword(x.FrostkingSwordID, EnumHelper.addToolMaterial("frostKingSword", 0, 6000, 0, 10, 22), 4).func_111206_d("FrostKingSword").setUnlocalizedName("frostKingSword").setCreativeTab(DivineTabs.tabSword);
         frozenMaul = new ItemFrozenMaul(x.FrozenMaulID).func_111206_d("FrozenMaul").setUnlocalizedName("frozenMaul").setCreativeTab(DivineTabs.tabSword);
         
         frostClawCannon = new ItemFrostClawCannon(x.FrostclawCannonID).func_111206_d("FrostClawCannon").setUnlocalizedName("frostClawCannon").setCreativeTab(DivineTabs.tabRanged);

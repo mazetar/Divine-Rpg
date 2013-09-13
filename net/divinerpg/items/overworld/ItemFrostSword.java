@@ -16,16 +16,17 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemFrostSword extends DivineSword
 {
-
-	public ItemFrostSword(int par1, EnumToolMaterial par2EnumToolMaterial) {
-		super(par1, par2EnumToolMaterial);
-		this.setMaxDamage(5000);
+    int frostDuration;
+	public ItemFrostSword(int par1, EnumToolMaterial material, int slowDuration) {
+		super(par1, material);
+		this.setMaxDamage(material.getMaxUses());
+		frostDuration = slowDuration;
 	}
 	
 	@Override
 	public boolean hitEntity(ItemStack item,
 	        EntityLivingBase entity, EntityLivingBase e) {
-	    entity.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 40, 1));
+	    entity.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, frostDuration * 40, 1));
         item.damageItem(1, e);
         return true;
 	}
@@ -34,7 +35,7 @@ public class ItemFrostSword extends DivineSword
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
         super.addInformation(par1ItemStack, par2EntityPlayer, par3List, par4);
-        par3List.add("On Hit: Slows for 2 seconds");
+        par3List.add("On Hit: Slows for " + frostDuration + " seconds");
     }
 
 }

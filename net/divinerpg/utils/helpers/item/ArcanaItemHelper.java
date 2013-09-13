@@ -15,7 +15,6 @@ import net.divinerpg.items.arcana.ItemGrenade;
 import net.divinerpg.items.arcana.ItemGrenadeLauncher;
 import net.divinerpg.items.arcana.ItemKey;
 import net.divinerpg.items.arcana.ItemLamona;
-import net.divinerpg.items.arcana.ItemLiviciaSword;
 import net.divinerpg.items.arcana.ItemMeriksMissile;
 import net.divinerpg.items.arcana.ItemOrbOfLight;
 import net.divinerpg.items.arcana.ItemOreDoor;
@@ -30,8 +29,9 @@ import net.divinerpg.items.arcana.ItemStormSword;
 import net.divinerpg.items.arcana.ItemTarBucket;
 import net.divinerpg.items.arcana.ItemWizardBook;
 import net.divinerpg.items.arcana.ItemWraithbane;
-import net.divinerpg.items.core.ItemDivineRPGFood;
 import net.divinerpg.items.core.DivineSeeds;
+import net.divinerpg.items.core.DivineSword;
+import net.divinerpg.items.core.ItemDivineRPGFood;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
@@ -148,7 +148,7 @@ public class ArcanaItemHelper
         stormSword = new ItemStormSword(cfg.stormSwordID, arcanaSword).func_111206_d("StormSword").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("stormSword");
         shadowSword = new ItemShadowSword(cfg.shadowSwordID, arcanaSword).func_111206_d("ShadowSword").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("shadowSword");
         arcaniumSaber = new ItemArcaniumSaber(cfg.arcaniumSaberID, arcanaSword).func_111206_d("ArcaniumSaber").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("arcaniumSaber");
-        liviciaSword = new ItemLiviciaSword(cfg.liviciaSwordID, arcanaSword).func_111206_d("LiviciaSword").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("liviciaSword");
+        liviciaSword = new DivineSword(cfg.liviciaSwordID, EnumHelper.addToolMaterial("Livicia",-1, 10000, 1, 45, 22)).func_111206_d("LiviciaSword").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("liviciaSword");
         
         staffOfStarlight = new ItemStarfall(cfg.staffOfStarlightID).func_111206_d("StaffOfStarlight").setCreativeTab(DivineTabs.tabRanged).setUnlocalizedName("staffOfStarlight");
         wraithbane = new ItemWraithbane(cfg.wraithbaneID).func_111206_d("Wraithbane").setCreativeTab(DivineTabs.tabSword).setUnlocalizedName("wraithbane");

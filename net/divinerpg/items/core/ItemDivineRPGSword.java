@@ -85,10 +85,10 @@ public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
 	   this.itemIcon = par1IconRegister.registerIcon(Reference.MAIN_MOD_ID + ":" + this.func_111208_A());
 	}
 	
-	@Override
-	public Item setUnlocalizedName(String name) {
+	
+	public ItemDivineRPGSword setTextureName(String name){
 	    func_111206_d(name);
-	    return super.setUnlocalizedName(name);
+	    return this;
 	}
 	
 }

@@ -6,7 +6,7 @@ BossLetsPlays, Mazetar & Zodsmar
 
 Created by XolovA and released October 2012.
 
-The release thread featured the following credits text: [Read 10.09.13 (or 09-09-13)] 
+The release thread featured the following credits text: [Read 10.09.13] 
 XolovA - Founder, Art Director, Developer
 The_Slayer - Lead Developer
 Mazetar- Developer

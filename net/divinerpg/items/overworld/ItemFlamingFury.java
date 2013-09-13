@@ -1,12 +1,12 @@
 package net.divinerpg.items.overworld;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 
-public class ItemFlamingFury extends ItemDivineRPGSword
+public class ItemFlamingFury extends DivineSword
 {
     public int weaponDamage;
 

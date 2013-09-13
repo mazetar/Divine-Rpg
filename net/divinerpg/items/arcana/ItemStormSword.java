@@ -1,6 +1,6 @@
 package net.divinerpg.items.arcana;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.divinerpg.utils.helpers.ArcanaHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.EntityLightningBolt;
@@ -9,7 +9,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemStormSword extends ItemDivineRPGSword
+public class ItemStormSword extends DivineSword
 {
 	public ItemStormSword(int par1, EnumToolMaterial par2)
 	{

@@ -3,7 +3,7 @@ package net.divinerpg.items.overworld;
 import java.util.List;
 
 import net.divinerpg.entities.overworld.projectile.EntityAnchor;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.entity.Entity;
@@ -13,7 +13,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-public class ItemBaseAnchor extends ItemDivineRPG {
+public class ItemBaseAnchor extends ItemDivine {
 	private int dmg;
 
 	public ItemBaseAnchor(int id, int damage) {

@@ -1,7 +1,7 @@
 package net.divinerpg.items.arcana;
 
 import net.divinerpg.entities.arcana.mobs.EntitySeimer;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,7 +10,7 @@ import net.minecraft.util.Facing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class ItemSeimerSpawner extends ItemDivineRPG
+public class ItemSeimerSpawner extends ItemDivine
 {
     private World worldObj;
 

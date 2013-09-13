@@ -1,6 +1,6 @@
 package net.divinerpg.items.arcana;
 
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemStaffOfEnrichment extends ItemDivineRPG
+public class ItemStaffOfEnrichment extends ItemDivine
 {
 
 	public ItemStaffOfEnrichment(int par1)

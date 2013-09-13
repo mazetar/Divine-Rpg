@@ -13,7 +13,6 @@ public class ItemSerenadeOfIce extends ItemDivineRPGRanged {
 
 	public ItemSerenadeOfIce(int id) {
 		super(id, 100, 0);
-		setIconIndex(3, 8, 14);
 	}
 
 	@Override

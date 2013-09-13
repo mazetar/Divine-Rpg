@@ -3,7 +3,7 @@ package net.divinerpg.items.arcana;
 import java.util.List;
 import java.util.Random;
 
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.ArcanaHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemEnderScepter extends ItemDivineRPG
+public class ItemEnderScepter extends ItemDivine
 {
 	private Random rand;
 	public ItemEnderScepter(int par1) {

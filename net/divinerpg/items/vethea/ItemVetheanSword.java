@@ -2,7 +2,7 @@ package net.divinerpg.items.vethea;
 
 import java.util.List;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.divinerpg.lib.Reference;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,7 +13,7 @@ import net.minecraft.item.ItemSword;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemVetheanSword extends ItemDivineRPGSword
+public class ItemVetheanSword extends DivineSword
 {
     public ItemVetheanSword(int var1, EnumToolMaterial var2)
     {

@@ -3,7 +3,7 @@ package net.divinerpg.items.arcana;
 import java.util.List;
 
 import net.divinerpg.entities.arcana.projectile.EntitySparkler;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.ArcanaHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemCaptiansSparkeler extends ItemDivineRPG
+public class ItemCaptiansSparkeler extends ItemDivine
 {
     private int weaponDamage;
 

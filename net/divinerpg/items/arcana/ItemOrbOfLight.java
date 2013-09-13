@@ -1,6 +1,6 @@
 package net.divinerpg.items.arcana;
 
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
@@ -8,7 +8,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemOrbOfLight extends ItemDivineRPG
+public class ItemOrbOfLight extends ItemDivine
 {
 
 	public ItemOrbOfLight(int par1) {

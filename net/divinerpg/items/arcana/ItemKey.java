@@ -1,16 +1,11 @@
 package net.divinerpg.items.arcana;
 
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 
-public class ItemKey extends ItemDivineRPG
+public class ItemKey extends ItemDivine
 {
-    public ItemKey(int par1, int par2)
+    public ItemKey(int id)
     {
-        super(par1, par2);
-    }
-
-    public int getSheet()
-    {
-        return 4;
+        super(id);
     }
 }

@@ -1,18 +1,18 @@
 package net.divinerpg.items.arcana;
 
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.ArcanaHelper;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemArcanaPotion extends ItemDivineRPG
+public class ItemArcanaPotion extends ItemDivine
 {
 
-	public ItemArcanaPotion(int par1, int par2)
+	public ItemArcanaPotion(int id)
 	{
-		super(par1, par2);
+		super(id);
 	}
 
     /**
@@ -35,8 +35,4 @@ public class ItemArcanaPotion extends ItemDivineRPG
     	
 		return var1;
     }
-	
-	public int getSheet(int meta, int pass) {
-		return 4;
-	}
 }

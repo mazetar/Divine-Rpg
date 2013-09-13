@@ -1,6 +1,6 @@
 package net.divinerpg.utils.helpers.item;
 
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.items.core.DivineBow;
 import net.divinerpg.items.core.ItemDivineRPGFood;
 import net.divinerpg.items.iceika.ItemEggNog;
@@ -58,7 +58,7 @@ public class IceikaItemHelper
     
     public static void init()
     {
-    	snowFlake = new ItemDivineRPG(x.SnowflakeID).func_111206_d("SnowFlake").func_111206_d("TEXTURE_NAME_HERE").setUnlocalizedName("snowFlake").setCreativeTab(DivineTabs.tabItems);
+    	snowFlake = new ItemDivine(x.SnowflakeID).func_111206_d("SnowFlake").func_111206_d("TEXTURE_NAME_HERE").setUnlocalizedName("snowFlake").setCreativeTab(DivineTabs.tabItems);
         icicleBane = new ItemIceicleBane(x.IcicleBaneID).func_111206_d("IcicleBane").setUnlocalizedName("icicleBane").setCreativeTab(DivineTabs.tabSword);
         soundOfCarols = new ItemSoundOfCarols(x.SoundOfCarolsID).func_111206_d("SoundOfCarols").setUnlocalizedName("soundofCarols").setCreativeTab(DivineTabs.tabRanged);
         icineSword = new ItemIceineSword(x.IcineSwordID).func_111206_d("IcineSword").setUnlocalizedName("icineSword").setCreativeTab(DivineTabs.tabSword);

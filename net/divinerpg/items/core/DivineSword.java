@@ -17,35 +17,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.World;
 
-public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
+public class DivineSword extends ItemSword implements IItemDivineRPG {
 
 	boolean unbreakable;
 	float dmg;
 	
-	public ItemDivineRPGSword(int par1, EnumToolMaterial par2EnumToolMaterial) {
-		this(par1, par2EnumToolMaterial, false);
+	public DivineSword(int id, EnumToolMaterial toolMaterial) {
+		this(id, toolMaterial, false);
 	}
 	
-	public ItemDivineRPGSword(int par1, EnumToolMaterial par2EnumToolMaterial, boolean unbreakable) {
-		super(par1 - 256, par2EnumToolMaterial);
+	public DivineSword(int id, EnumToolMaterial toolMaterial, boolean unbreakable) {
+		super(id, toolMaterial);
 		this.unbreakable = unbreakable;
-		dmg = par2EnumToolMaterial.getDamageVsEntity();
-	}
-	
-	public ItemDivineRPGSword(int par1, int img, EnumToolMaterial par2EnumToolMaterial, boolean unbreakable) {
-		super(par1 - 256, par2EnumToolMaterial);
-		this.unbreakable = unbreakable;
-		dmg = par2EnumToolMaterial.getDamageVsEntity();
-		this.index = img;
-	}
-	
-	int index;
-	int sheet;
-	
-	public ItemDivineRPGSword setIconIndex(int sheet, int index) {
-		this.sheet = sheet;
-		this.index = index;
-		return this;
+		dmg = toolMaterial.getDamageVsEntity();
 	}
 	
 	public float getDmg() {
@@ -59,7 +43,7 @@ public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
         	par1ItemStack.damageItem(1, par3EntityLiving);
         return true;
     }
-	
+    
 	@Override
     public boolean onBlockDestroyed(ItemStack par1ItemStack, World par2World, int par3, int par4, int par5, int par6, EntityLivingBase par7EntityLiving) {
         if (!unbreakable && (double)Block.blocksList[par3].getBlockHardness(par2World, par4, par5, par6) != 0.0D)
@@ -86,7 +70,7 @@ public class ItemDivineRPGSword extends ItemSword implements IItemDivineRPG {
 	}
 	
 	
-	public ItemDivineRPGSword setTextureName(String name){
+	public DivineSword setTextureName(String name){
 	    func_111206_d(name);
 	    return this;
 	}

@@ -1,6 +1,6 @@
 package net.divinerpg.items.overworld;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -12,7 +12,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class ItemPoisonSaber extends ItemDivineRPGSword
+public class ItemPoisonSaber extends DivineSword
 {
     private int weaponDamage;
     private final EnumToolMaterial field_40439_b;

@@ -11,7 +11,6 @@ public class ItemSnowflakeShuriken extends ItemDivineRPGRangedConsumable {
 
 	public ItemSnowflakeShuriken(int id) {
 		super(id, 7);
-		setIconIndex(3, 5, 14);
 	}
 
 	@Override

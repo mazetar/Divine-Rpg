@@ -1,36 +1,11 @@
 package net.divinerpg.utils.helpers.item;
 
 
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
+import net.divinerpg.items.core.DivineBurningSword;
 import net.divinerpg.items.core.ItemDivineRPGPickaxe;
-import net.divinerpg.items.core.ItemDivineRPGSword;
-import net.divinerpg.items.overworld.ItemBaseAnchor;
-import net.divinerpg.items.overworld.ItemBasicArmor;
-import net.divinerpg.items.overworld.ItemBlueBow;
-import net.divinerpg.items.overworld.ItemBowCannon;
-import net.divinerpg.items.overworld.ItemCrabCannon;
-import net.divinerpg.items.overworld.ItemFrostCannon;
-import net.divinerpg.items.overworld.ItemFrostSword;
-import net.divinerpg.items.overworld.ItemInfernoBow;
-import net.divinerpg.items.overworld.ItemInfernoSword;
-import net.divinerpg.items.overworld.ItemMaelstrom;
-import net.divinerpg.items.overworld.ItemMassivence;
-import net.divinerpg.items.overworld.ItemMoltenSword;
-import net.divinerpg.items.overworld.ItemPalavence;
-import net.divinerpg.items.overworld.ItemPoisonSaber;
-import net.divinerpg.items.overworld.ItemRupeeSword;
-import net.divinerpg.items.overworld.ItemSandSlash;
-import net.divinerpg.items.overworld.ItemScythe;
-import net.divinerpg.items.overworld.ItemSerenadeDeath;
-import net.divinerpg.items.overworld.ItemSerenadeGrowth;
-import net.divinerpg.items.overworld.ItemSerenadeHealth;
-import net.divinerpg.items.overworld.ItemSerenadeStriker;
-import net.divinerpg.items.overworld.ItemShadowBow;
-import net.divinerpg.items.overworld.ItemShuriken;
-import net.divinerpg.items.overworld.ItemSlimeSword;
-import net.divinerpg.items.overworld.ItemSoundMusic;
-import net.divinerpg.items.overworld.ItemTwilightClock;
-import net.divinerpg.items.overworld.ItemVailStorm;
+import net.divinerpg.items.core.DivineSword;
+import net.divinerpg.items.overworld.*;
 import net.divinerpg.utils.helpers.config.OverworldConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.block.Block;
@@ -296,51 +271,51 @@ public class OverworldItemHelper
 	    twilightClock = new ItemTwilightClock(cfg.twilightClockID).func_111206_d("TwilightClock").setCreativeTab(CreativeTabs.tabMisc);
 	    
 		initWeaponsAndTools();
-		rupeeIngot = new ItemDivineRPG(cfg.rupeeID).func_111206_d("RupeeIngot");
-        tomato = new ItemDivineRPG(cfg.tomatoID).func_111206_d("Tomato");
-        tomatoSeeds = new ItemDivineRPG(cfg.tomatoSeedsID).func_111206_d("TomatoSeeds");
+		rupeeIngot = new ItemDivine(cfg.rupeeID).func_111206_d("RupeeIngot");
+        tomato = new ItemDivine(cfg.tomatoID).func_111206_d("Tomato");
+        tomatoSeeds = new ItemDivine(cfg.tomatoSeedsID).func_111206_d("TomatoSeeds");
 
-        purpleFire = new ItemDivineRPG(cfg.purpleFireID).func_111206_d("PurpleFire");
-        healingStone = new ItemDivineRPG(cfg.healingStoneID).func_111206_d("HealingStone");
-        sharkFin = new ItemDivineRPG(cfg.healingStoneID).func_111206_d("SharkFin");
-        whaleFin = new ItemDivineRPG(cfg.healingStoneID).func_111206_d("WhaleFin");
-        purpleGlowBoneTree = new ItemDivineRPG(cfg.healingStoneID).func_111206_d("PurpleGlowBoneTree");
-        pinkGlowBoneTree = new ItemDivineRPG(cfg.healingStoneID).func_111206_d("PinkGlowBoneTree");
+        purpleFire = new ItemDivine(cfg.purpleFireID).func_111206_d("PurpleFire");
+        healingStone = new ItemDivine(cfg.healingStoneID).func_111206_d("HealingStone");
+        sharkFin = new ItemDivine(cfg.healingStoneID).func_111206_d("SharkFin");
+        whaleFin = new ItemDivine(cfg.healingStoneID).func_111206_d("WhaleFin");
+        purpleGlowBoneTree = new ItemDivine(cfg.healingStoneID).func_111206_d("PurpleGlowBoneTree");
+        pinkGlowBoneTree = new ItemDivine(cfg.healingStoneID).func_111206_d("PinkGlowBoneTree");
 
-        arlemiteIngot = new ItemDivineRPG(cfg.healingStoneID).func_111206_d("ArlemiteIngot");
-        realmiteIngot = new ItemDivineRPG(cfg.healingStoneID).func_111206_d("RealmiteIngot");
-        netheriteBar = new ItemDivineRPG(cfg.healingStoneID).func_111206_d("NetheriteBar");
-        hellStoneIngot = new ItemDivineRPG(cfg.healingStoneID).func_111206_d("HellStoneIngot");
+        arlemiteIngot = new ItemDivine(cfg.healingStoneID).func_111206_d("ArlemiteIngot");
+        realmiteIngot = new ItemDivine(cfg.healingStoneID).func_111206_d("RealmiteIngot");
+        netheriteBar = new ItemDivine(cfg.healingStoneID).func_111206_d("NetheriteBar");
+        hellStoneIngot = new ItemDivine(cfg.healingStoneID).func_111206_d("HellStoneIngot");
 
-        jungleShard = new ItemDivineRPG(cfg.greenShardID).func_111206_d("JungleShard");
-        divineShard = new ItemDivineRPG(cfg.yellowShardID).func_111206_d("DivineShard");
-        iceShard = new ItemDivineRPG(cfg.blueShardID).func_111206_d("IceShard");
-        enderShard = new ItemDivineRPG(cfg.purpleShardID).func_111206_d("EnderShard");
-        moltenShard = new ItemDivineRPG(cfg.redShardID).func_111206_d("MoltenShard");
-        corruptedShard = new ItemDivineRPG(cfg.corruptedShardsID).func_111206_d("CorruptedShard");
+        jungleShard = new ItemDivine(cfg.greenShardID).func_111206_d("JungleShard");
+        divineShard = new ItemDivine(cfg.yellowShardID).func_111206_d("DivineShard");
+        iceShard = new ItemDivine(cfg.blueShardID).func_111206_d("IceShard");
+        enderShard = new ItemDivine(cfg.purpleShardID).func_111206_d("EnderShard");
+        moltenShard = new ItemDivine(cfg.redShardID).func_111206_d("MoltenShard");
+        corruptedShard = new ItemDivine(cfg.corruptedShardsID).func_111206_d("CorruptedShard");
 
-        jungleStone = new ItemDivineRPG(cfg.jungleStoneID).func_111206_d("JungleStone");
-        divineStone = new ItemDivineRPG(cfg.divineStoneID).func_111206_d("DivineStone");
-        iceStone = new ItemDivineRPG(cfg.iceStoneID).func_111206_d("IceStone");
-        enderStone = new ItemDivineRPG(cfg.enderStoneID).func_111206_d("EnderStone");
-        moltenStone = new ItemDivineRPG(cfg.moltenStoneID).func_111206_d("MoltenStone");
-        corruptedStone = new ItemDivineRPG(cfg.corruptedStoneID).func_111206_d("CorruptedStone");
-        blueFireStone = new ItemDivineRPG(cfg.blueFireStoneID).func_111206_d("BlueFireStone");
+        jungleStone = new ItemDivine(cfg.jungleStoneID).func_111206_d("JungleStone");
+        divineStone = new ItemDivine(cfg.divineStoneID).func_111206_d("DivineStone");
+        iceStone = new ItemDivine(cfg.iceStoneID).func_111206_d("IceStone");
+        enderStone = new ItemDivine(cfg.enderStoneID).func_111206_d("EnderStone");
+        moltenStone = new ItemDivine(cfg.moltenStoneID).func_111206_d("MoltenStone");
+        corruptedStone = new ItemDivine(cfg.corruptedStoneID).func_111206_d("CorruptedStone");
+        blueFireStone = new ItemDivine(cfg.blueFireStoneID).func_111206_d("BlueFireStone");
 
-        divineHelm = new ItemDivineRPG(cfg.divineHeadID).func_111206_d("DivineHelm");
-        divineBody = new ItemDivineRPG(cfg.divineBodyID).func_111206_d("DivineBody");
-        divineLegs = new ItemDivineRPG(cfg.divineLegsID).func_111206_d("DivineLegs");
-        divineBoots = new ItemDivineRPG(cfg.divineBootsID).func_111206_d("DivineBoots");
+        divineHelm = new ItemDivine(cfg.divineHeadID).func_111206_d("DivineHelm");
+        divineBody = new ItemDivine(cfg.divineBodyID).func_111206_d("DivineBody");
+        divineLegs = new ItemDivine(cfg.divineLegsID).func_111206_d("DivineLegs");
+        divineBoots = new ItemDivine(cfg.divineBootsID).func_111206_d("DivineBoots");
 
-        jackOManBoots = new ItemDivineRPG(cfg.jackOManBootsID).func_111206_d("JackOManBoots");
-        jackOManLegs = new ItemDivineRPG(cfg.jackOManLegsID).func_111206_d("JackOManLegs");
-        jackOManBody = new ItemDivineRPG(cfg.jackOManBodyID).func_111206_d("JackOManBody");
-        jackOManHead = new ItemDivineRPG(cfg.jackOManHeadID).func_111206_d("JackOManHead");
+        jackOManBoots = new ItemDivine(cfg.jackOManBootsID).func_111206_d("JackOManBoots");
+        jackOManLegs = new ItemDivine(cfg.jackOManLegsID).func_111206_d("JackOManLegs");
+        jackOManBody = new ItemDivine(cfg.jackOManBodyID).func_111206_d("JackOManBody");
+        jackOManHead = new ItemDivine(cfg.jackOManHeadID).func_111206_d("JackOManHead");
 
-        grimReaperHead = new ItemDivineRPG(cfg.grimReaperHeadID).func_111206_d("GrimReaperHead");
-        grimReaperBody = new ItemDivineRPG(cfg.grimReaperBodyID).func_111206_d("GrimReaperBody");
-        grimReaperLegs = new ItemDivineRPG(cfg.grimReaperLegsID).func_111206_d("GrimReaperLegs");
-        grimReaperBoots = new ItemDivineRPG(cfg.grimReaperBootsID).func_111206_d("GrimReaperBoots");
+        grimReaperHead = new ItemDivine(cfg.grimReaperHeadID).func_111206_d("GrimReaperHead");
+        grimReaperBody = new ItemDivine(cfg.grimReaperBodyID).func_111206_d("GrimReaperBody");
+        grimReaperLegs = new ItemDivine(cfg.grimReaperLegsID).func_111206_d("GrimReaperLegs");
+        grimReaperBoots = new ItemDivine(cfg.grimReaperBootsID).func_111206_d("GrimReaperBoots");
 		//addNames();
 		initArmors();
 	}
@@ -349,30 +324,30 @@ public class OverworldItemHelper
 		massivence = new ItemMassivence(cfg.massivenceID).func_111206_d("Massivence");
 		palavence = new ItemPalavence(cfg.passivenceID).func_111206_d("Passivence");
 		
-		enderSword = new ItemDivineRPGSword(cfg.enderSwordID, EnumHelper.addToolMaterial("endersword", 0, -1, 0, 23, E), true).func_111206_d("Endersword").setUnlocalizedName("enderSword").setCreativeTab(DivineTabs.tabSword);
+		enderSword = new DivineSword(cfg.enderSwordID, EnumHelper.addToolMaterial("endersword", 0, -1, 0, 23, E), true).func_111206_d("Endersword").setUnlocalizedName("enderSword").setCreativeTab(DivineTabs.tabSword);
 
-		bedrockMaul = new ItemDivineRPGSword(cfg.bedrockMaulID, 15, EnumHelper.addToolMaterial("bedrockmaul", 1, -1, 1.5F, 19, E), true).func_111206_d("BedrockMaul").setUnlocalizedName("bedrock").setCreativeTab(DivineTabs.tabSword);	
+		bedrockMaul = new DivineSword(cfg.bedrockMaulID, EnumHelper.addToolMaterial("bedrockmaul", 1, -1, 1.5F, 19, E), true).func_111206_d("BedrockMaul").setUnlocalizedName("bedrock").setCreativeTab(DivineTabs.tabSword);	
 		sandSlash = new ItemSandSlash(cfg.sandSlashID, EnumHelper.addToolMaterial("sandslash", 0, 100, 0, 32, E)).func_111206_d("SandSlash");
 		frostSword = new ItemFrostSword(cfg.frostSwordID, EnumHelper.addToolMaterial("frostsword", 0, 5000, 0, 10, E)).func_111206_d("FrostSword");
-		slimeSword = new ItemSlimeSword(cfg.slimeSwordID, EnumHelper.addToolMaterial("slimesword", 0, 1000, 0, 11, E)).func_111206_d("SlimeSword");
-		arlemiteStabber = new ItemDivineRPGSword(cfg.arlemiteStabberID, EnumHelper.addToolMaterial("arlemitestabber", 0, 5000, 0, 6, E)).func_111206_d("ArlemiteStabber");
-		rupeeRapier = new ItemRupeeSword(cfg.rupeeSwordID, EnumHelper.addToolMaterial("rupeesword", 0, 4000, 0, 9, E)).func_111206_d("RupeeRapier");
-		realmiteSword = new ItemDivineRPGSword(cfg.realmiteSwordID, EnumHelper.addToolMaterial("realmitesword", 0, -1, 0, 6, E), true).func_111206_d("RealmiteSword");
+		slimeSword = new DivineSword(cfg.slimeSwordID, EnumHelper.addToolMaterial("slimesword", 0, 5000, 0, 11, E)).func_111206_d("SlimeSword");
+		arlemiteStabber = new DivineSword(cfg.arlemiteStabberID, EnumHelper.addToolMaterial("arlemitestabber", 0, 5000, 0, 6, E)).func_111206_d("ArlemiteStabber");
+		rupeeRapier = new DivineSword(cfg.rupeeSwordID, EnumHelper.addToolMaterial("rupeesword", 0, 4000, 0, 9, E)).func_111206_d("RupeeRapier");
+		realmiteSword = new DivineSword(cfg.realmiteSwordID, EnumHelper.addToolMaterial("realmitesword", 0, -1, 0, 6, E), true).func_111206_d("RealmiteSword");
 		poisonSaber = new ItemPoisonSaber(cfg.poisonSaberID, EnumHelper.addToolMaterial("poisonsaber", 0, 10000, 0, 16, E)).func_111206_d("PoisonSaber");
-		infernoSword = new ItemInfernoSword(cfg.infernoSwordID, EnumHelper.addToolMaterial("infernosword", 0, -1, 0, 9, E)).func_111206_d("InfernoSword");
-		bedrockSword = new ItemDivineRPGSword(cfg.bedrockSwordID, EnumHelper.addToolMaterial("bedrocksword", 0, 14000, 0, 13, E)).func_111206_d("BedrockSword");
+		infernoSword = new DivineBurningSword(cfg.infernoSwordID, EnumHelper.addToolMaterial("infernosword", 0, -1, 0, 9, E), 12).func_111206_d("InfernoSword");
+		bedrockSword = new DivineSword(cfg.bedrockSwordID, EnumHelper.addToolMaterial("bedrocksword", 0, 14000, 0, 13, E)).func_111206_d("BedrockSword");
 		
-		aquaticTrident = new ItemDivineRPGSword(cfg.aquaticTridentID, EnumHelper.addToolMaterial("aquatictrident", 0, 7000, 0, 15, E)).func_111206_d("AquaticTrident");
-		oceanKnife = new ItemDivineRPGSword(cfg.oceanKnifeID, EnumHelper.addToolMaterial("aquaticknife", 0, 2000, 0, 14, E)).func_111206_d("OceanKnife");
-		aquaton = new ItemDivineRPGSword(cfg.aquatonID, EnumHelper.addToolMaterial("aquaton", 0, 10000, 0, 18, E)).func_111206_d("Aquaton");
-		sharkSword = new ItemDivineRPGSword(cfg.sharkSwordID, EnumHelper.addToolMaterial("sharksword", 0, 2000, 0, 11, E)).func_111206_d("SharkSword");
-		crabclawMaul = new ItemDivineRPGSword(cfg.crabClawMaulID, EnumHelper.addToolMaterial("crabclawmaul", 0, 8000, 0, 6, E), true).func_111206_d("CrabclawMaul").setUnlocalizedName("crabclawmaul").setCreativeTab(DivineTabs.tabSword);	
+		aquaticTrident = new DivineSword(cfg.aquaticTridentID, EnumHelper.addToolMaterial("aquatictrident", 0, 7000, 0, 15, E)).func_111206_d("AquaticTrident");
+		oceanKnife = new DivineSword(cfg.oceanKnifeID, EnumHelper.addToolMaterial("aquaticknife", 0, 2000, 0, 14, E)).func_111206_d("OceanKnife");
+		aquaton = new DivineSword(cfg.aquatonID, EnumHelper.addToolMaterial("aquaton", 0, 10000, 0, 18, E)).func_111206_d("Aquaton");
+		sharkSword = new DivineSword(cfg.sharkSwordID, EnumHelper.addToolMaterial("sharksword", 0, 2000, 0, 11, E)).func_111206_d("SharkSword");
+		crabclawMaul = new DivineSword(cfg.crabClawMaulID, EnumHelper.addToolMaterial("crabclawmaul", 0, 8000, 0, 6, E), true).func_111206_d("CrabclawMaul").setUnlocalizedName("crabclawmaul").setCreativeTab(DivineTabs.tabSword);	
 		
-		deathBringer = new ItemDivineRPGSword(cfg.deathBringerID, EnumHelper.addToolMaterial("deathbringer", 0, 6000, 0, 13, E)).func_111206_d("DeathBringer");
-		corruptedMaul = new ItemDivineRPGSword(cfg.corruptedMaulID, EnumHelper.addToolMaterial("corruptedmaul", 0, 6000, 0, 18, E)).func_111206_d("CorruptedMaul");
+		deathBringer = new DivineSword(cfg.deathBringerID, EnumHelper.addToolMaterial("deathbringer", 0, 6000, 0, 13, E)).func_111206_d("DeathBringer");
+		corruptedMaul = new DivineSword(cfg.corruptedMaulID, EnumHelper.addToolMaterial("corruptedmaul", 0, 6000, 0, 18, E)).func_111206_d("CorruptedMaul");
 		
-		divineSword = new ItemDivineRPGSword(cfg.divineswordID, EnumHelper.addToolMaterial("divinesword", 0, -1, 0, 29, E), true).func_111206_d("DivineSword");
-		moltenSword = new ItemMoltenSword(cfg.moltenSwordID, EnumHelper.addToolMaterial("moltensword", 0, 5000, 0, 10, E)).func_111206_d("MoltenSword");
+		divineSword = new DivineSword(cfg.divineswordID, EnumHelper.addToolMaterial("divinesword", 0, -1, 0, 29, E), true).func_111206_d("DivineSword");
+		moltenSword = new DivineBurningSword(cfg.moltenSwordID, EnumHelper.addToolMaterial("moltensword", 0, 5000, 0, 10, E), 2).func_111206_d("MoltenSword");
 		
 		infernoBow = new ItemInfernoBow(cfg.infernobowID).func_111206_d("infernoBow");
 		shadowBow = new ItemShadowBow(cfg.shadowBowID).func_111206_d("shadowBow");
@@ -390,8 +365,8 @@ public class OverworldItemHelper
 		bowheadCannon = new ItemBowCannon(cfg.bowheadCannonID, 16, 1, Block.cactus.blockID, 3, "xolovon.maelstrom", "xolovon.maelstrom").func_111206_d("BowheadCannon");//.setIconIndex(28).setItemName("bowheadcannon").setCreativeTab(tabRanged);
 		soundOfMusic = new ItemSoundMusic(cfg.soundOfMusicID).func_111206_d("SoundOfMusic");
 		maelstrom = new ItemMaelstrom(cfg.mailStromID, 5, 1, 2, "xolovon.maelstrom", "xolovon.maelstrom").func_111206_d("Maelstrom");
-		ghastCannon = new ItemDivineRPG(cfg.ghastCannonID).func_111206_d("GhastCannon");
-		corruptCannon = new ItemDivineRPG(cfg.corruptCannonID).func_111206_d("CorruptCannon");
+		ghastCannon = new ItemDivine(cfg.ghastCannonID).func_111206_d("GhastCannon");
+		corruptCannon = new ItemDivine(cfg.corruptCannonID).func_111206_d("CorruptCannon");
 
 		serenadeStriker = new ItemSerenadeStriker(cfg.serenadeStrikerID).func_111206_d("SerenadeStriker");
 		serenadeOfLife = new ItemSerenadeGrowth(cfg.growthSerenadeID).func_111206_d("SerenadeOfLife").setUnlocalizedName("serenadeLife").setCreativeTab(DivineTabs.tabHerb);

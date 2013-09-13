@@ -3,7 +3,7 @@ package net.divinerpg.items.arcana;
 import java.util.List;
 
 import net.divinerpg.entities.arcana.projectile.EntityStarfall;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.ArcanaHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemStarfall  extends ItemDivineRPG
+public class ItemStarfall  extends ItemDivine
 {
     public ItemStarfall(int par1)
     {

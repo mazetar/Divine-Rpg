@@ -13,7 +13,6 @@ public class ItemFrostClawCannon extends ItemDivineRPGRanged {
 	public ItemFrostClawCannon(int par1) {
 		super(par1, 10000, 21);
 		setAmmoID(Block.cactus.blockID);
-		setIconIndex(3, 14, 14);
     }
 
 	@Override

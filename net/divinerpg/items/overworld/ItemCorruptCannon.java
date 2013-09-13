@@ -3,7 +3,7 @@ package net.divinerpg.items.overworld;
 import java.util.List;
 
 import net.divinerpg.entities.overworld.projectile.EntityCorruptShot;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemCorruptCannon extends ItemDivineRPG
+public class ItemCorruptCannon extends ItemDivine
 {
     private int damage;
     private int firetick;

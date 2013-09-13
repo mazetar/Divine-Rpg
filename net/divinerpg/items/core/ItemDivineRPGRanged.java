@@ -2,14 +2,14 @@ package net.divinerpg.items.core;
 
 import java.util.List;
 
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public abstract class ItemDivineRPGRanged extends ItemDivineRPG {
+public abstract class ItemDivineRPGRanged extends ItemDivine {
 
 	boolean unbreakable;
 	boolean displayDamageMeter = true;

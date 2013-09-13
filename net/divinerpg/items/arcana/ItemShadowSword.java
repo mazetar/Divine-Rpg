@@ -2,7 +2,7 @@ package net.divinerpg.items.arcana;
 
 import java.util.List;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.divinerpg.utils.helpers.ArcanaHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemShadowSword extends ItemDivineRPGSword
+public class ItemShadowSword extends DivineSword
 {
     private int weaponDamage;
 

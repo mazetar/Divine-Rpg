@@ -1,10 +1,10 @@
 package net.divinerpg.items.overworld;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumToolMaterial;
 
-public class ItemCorruptedMaul extends ItemDivineRPGSword
+public class ItemCorruptedMaul extends DivineSword
 {
     private int weaponDamage;
 

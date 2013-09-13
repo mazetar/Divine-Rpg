@@ -2,9 +2,10 @@ package net.divinerpg.items.overworld;
 
 import java.util.List;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
@@ -13,7 +14,7 @@ import net.minecraft.potion.PotionEffect;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemFrostSword extends ItemDivineRPGSword
+public class ItemFrostSword extends DivineSword
 {
 
 	public ItemFrostSword(int par1, EnumToolMaterial par2EnumToolMaterial) {
@@ -21,22 +22,14 @@ public class ItemFrostSword extends ItemDivineRPGSword
 		this.setMaxDamage(5000);
 	}
 	
-	/**
-     * Current implementations of this method in child classes do not use the entry argument beside ev. They just raise
-     * the damage on the stack.
-     */
-    public boolean hitEntity(ItemStack var1, EntityLiving var2, EntityLiving var3)
-    {
-    	var2.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 40, 1));
-    	var1.damageItem(1, var3);
+	@Override
+	public boolean hitEntity(ItemStack item,
+	        EntityLivingBase entity, EntityLivingBase e) {
+	    entity.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 40, 1));
+        item.damageItem(1, e);
         return true;
-    }
-	
-	public int getDamageVsEntity (Entity par1)
-	{
-		return 10;
 	}
-
+	
     @SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {

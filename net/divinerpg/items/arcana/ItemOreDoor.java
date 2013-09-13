@@ -1,6 +1,6 @@
 package net.divinerpg.items.arcana;
 
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -10,16 +10,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class ItemOreDoor extends ItemDivineRPG
+public class ItemOreDoor extends ItemDivine
 {
     private Material doorMaterial;
+    private Block doorBlock;
 
-    public ItemOreDoor(int par1, Material par2Material)
+    public ItemOreDoor(int par1, Material par2Material, Block doorBlock)
     {
         super(par1);
         this.doorMaterial = par2Material;
         this.maxStackSize = 1;
         this.setCreativeTab(CreativeTabs.tabRedstone);
+        this.doorBlock = doorBlock;
     }
 
     /**
@@ -39,7 +41,7 @@ public class ItemOreDoor extends ItemDivineRPG
 
             if (this.doorMaterial == Material.wood)
             {
-                var11 = ArcanaBlockHelper.oreDoor1;
+                var11 = doorBlock;
             }
             else
             {
@@ -109,7 +111,7 @@ public class ItemOreDoor extends ItemDivineRPG
 
         par0World.scheduledUpdatesAreImmediate = true;
         par0World.setBlock(par1, par2, par3, par5Block.blockID, par4, 3);
-        par0World.setBlock(par1, par2 + 1, par3, par5Block.blockID, 8 | (var12 ? 1 : 0) ,3);
+        par0World.setBlock(par1, par2 + 1, par3, par5Block.blockID, 8 | (var12 ? 1 : 0), 3);
         par0World.scheduledUpdatesAreImmediate = false;
         par0World.notifyBlocksOfNeighborChange(par1, par2, par3, par5Block.blockID);
         par0World.notifyBlocksOfNeighborChange(par1, par2 + 1, par3, par5Block.blockID);

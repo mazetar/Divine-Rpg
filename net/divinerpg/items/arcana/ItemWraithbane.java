@@ -3,7 +3,7 @@ package net.divinerpg.items.arcana;
 import java.util.List;
 
 import net.divinerpg.entities.arcana.mobs.EntityWraith;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.ArcanaHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemWraithbane extends ItemDivineRPG
+public class ItemWraithbane extends ItemDivine
 {
 	private World worldObj;
 

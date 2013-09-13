@@ -3,7 +3,7 @@ package net.divinerpg.items.arcana;
 import java.util.List;
 
 import net.divinerpg.entities.arcana.projectile.EntityFirefly;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.ArcanaHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemFirefly extends ItemDivineRPG
+public class ItemFirefly extends ItemDivine
 {
     public ItemFirefly(int par1)
     {

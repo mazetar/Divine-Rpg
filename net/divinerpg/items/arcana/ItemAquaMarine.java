@@ -1,12 +1,12 @@
 package net.divinerpg.items.arcana;
 
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemAquaMarine extends ItemDivineRPG
+public class ItemAquaMarine extends ItemDivine
 {
 
 	public ItemAquaMarine(int par1)

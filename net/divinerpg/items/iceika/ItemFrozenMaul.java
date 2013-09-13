@@ -2,7 +2,7 @@ package net.divinerpg.items.iceika;
 
 import java.util.List;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
@@ -11,7 +11,7 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.common.EnumHelper;
 
-public class ItemFrozenMaul extends ItemDivineRPGSword {
+public class ItemFrozenMaul extends DivineSword {
     
 	private static final EnumToolMaterial material =  EnumHelper.addToolMaterial("frozenMaul", 1, -1, 1.5F, 30, 16);
     

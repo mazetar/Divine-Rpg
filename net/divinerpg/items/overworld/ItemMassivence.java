@@ -1,12 +1,12 @@
 package net.divinerpg.items.overworld;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumHelper;
 
-public class ItemMassivence extends ItemDivineRPGSword {
+public class ItemMassivence extends DivineSword {
 
 	public ItemMassivence(int par1) {
 		this(par1, 125);

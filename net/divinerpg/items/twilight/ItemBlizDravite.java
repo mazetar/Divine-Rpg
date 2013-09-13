@@ -3,7 +3,7 @@ package net.divinerpg.items.twilight;
 import java.util.List;
 
 import net.divinerpg.entities.twilight.projectile.EntityBlitzDravite;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.item.TwilightItemHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBlizDravite extends ItemDivineRPG
+public class ItemBlizDravite extends ItemDivine
 {
     private int weaponDamage;
 

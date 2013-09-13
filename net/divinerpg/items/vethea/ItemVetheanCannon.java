@@ -3,7 +3,7 @@ package net.divinerpg.items.vethea;
 import java.util.List;
 
 import net.divinerpg.entities.vethea.projectile.EntityVetheanCannonShot;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.item.VetheaItemHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemVetheanCannon extends ItemDivineRPG
+public class ItemVetheanCannon extends ItemDivine
 {
     protected int damage;
 

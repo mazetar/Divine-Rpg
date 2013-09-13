@@ -11,7 +11,6 @@ public class ItemSoundOfCarols extends ItemDivineRPGRanged {
 
 	public ItemSoundOfCarols(int par1) {
 		super(par1, 4000, 16);
-		setIconIndex(3, 15, 9);
     }
 
 	@Override

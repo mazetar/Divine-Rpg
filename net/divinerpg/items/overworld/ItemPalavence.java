@@ -1,12 +1,12 @@
 package net.divinerpg.items.overworld;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumHelper;
 
-public class ItemPalavence extends ItemDivineRPGSword {
+public class ItemPalavence extends DivineSword {
 
 	public ItemPalavence(int par1) {
 		super(par1, EnumHelper.addToolMaterial("palavence_" + par1, 0, 125, 0, 1, 16));

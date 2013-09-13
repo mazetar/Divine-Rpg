@@ -1,6 +1,6 @@
-package net.divinerpg.items.overworld;
+package net.divinerpg.utils.unused;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -10,18 +10,19 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemCrystalSword extends ItemDivineRPGSword
+@Deprecated
+public class ItemRupeeSword extends DivineSword
 {
     private int weaponDamage;
     private final EnumToolMaterial field_40439_b;
 
-    public ItemCrystalSword(int var1, EnumToolMaterial var2)
+    public ItemRupeeSword(int var1, EnumToolMaterial var2)
     {
         super(var1, var2);
         this.field_40439_b = var2;
         this.maxStackSize = 1;
-        this.setMaxDamage(3000);
-        this.weaponDamage = 24;
+        this.setMaxDamage(4000);
+        this.weaponDamage = 9;
     }
 
     /**

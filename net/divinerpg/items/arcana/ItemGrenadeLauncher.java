@@ -3,7 +3,7 @@ package net.divinerpg.items.arcana;
 import java.util.List;
 
 import net.divinerpg.entities.arcana.projectile.EntityGrenade;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemGrenadeLauncher extends ItemDivineRPG
+public class ItemGrenadeLauncher extends ItemDivine
 {
 	private int damage;
 	private int firetick;

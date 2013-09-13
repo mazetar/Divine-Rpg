@@ -12,13 +12,13 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemDivineRPGAxe extends ItemAxe{
+public class DivineAxe extends ItemAxe{
 	
 
 	private float weaponDamage;
     private final EnumToolMaterial toolMaterial;
 
-    public ItemDivineRPGAxe(int id, EnumToolMaterial toolMaterial)
+    public DivineAxe(int id, EnumToolMaterial toolMaterial)
     {
         super(id - 256, toolMaterial);
         this.toolMaterial = toolMaterial;

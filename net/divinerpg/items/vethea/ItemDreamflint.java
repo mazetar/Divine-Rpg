@@ -4,13 +4,13 @@ import net.divinerpg.entities.vethea.mobs.EntityKaros;
 import net.divinerpg.entities.vethea.mobs.EntityQuadro;
 import net.divinerpg.entities.vethea.mobs.EntityRaglok;
 import net.divinerpg.entities.vethea.mobs.EntityWreck;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.block.VetheaBlockHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemDreamflint extends ItemDivineRPG
+public class ItemDreamflint extends ItemDivine
 {
 
 	public ItemDreamflint(int par1)

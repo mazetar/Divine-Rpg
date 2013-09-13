@@ -1,20 +1,19 @@
 package net.divinerpg.items.arcana;
 
 import net.divinerpg.entities.arcana.projectile.EntityLamona;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemLamona extends ItemDivineRPG
+public class ItemLamona extends ItemDivine
 {
     public ItemLamona(int par1)
     {
         super(par1);
         this.maxStackSize = 16;
         this.setCreativeTab(CreativeTabs.tabMisc);
-        this.setIconIndex(4, 6, 7);
     }
 
     /**

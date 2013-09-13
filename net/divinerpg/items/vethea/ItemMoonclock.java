@@ -1,13 +1,13 @@
 package net.divinerpg.items.vethea;
 
 import net.divinerpg.entities.vethea.mobs.EntityLadyLuna;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.block.VetheaBlockHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemMoonclock extends ItemDivineRPG
+public class ItemMoonclock extends ItemDivine
 {
 
 	public ItemMoonclock(int par1)

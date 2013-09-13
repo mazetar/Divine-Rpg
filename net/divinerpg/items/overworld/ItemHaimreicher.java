@@ -1,6 +1,6 @@
 package net.divinerpg.items.overworld;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,7 +9,7 @@ import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemHaimreicher extends ItemDivineRPGSword
+public class ItemHaimreicher extends DivineSword
 {
     private int weaponDamage;
     private final EnumToolMaterial field_40439_b;

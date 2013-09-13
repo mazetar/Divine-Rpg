@@ -1,10 +1,10 @@
 package net.divinerpg.items.arcana;
 
-import net.divinerpg.items.core.ItemDivineRPGSword;
+import net.divinerpg.items.core.DivineSword;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumToolMaterial;
 
-public class ItemLiviciaSword extends ItemDivineRPGSword
+public class ItemLiviciaSword extends DivineSword
 {
     public int weaponDamage;
 

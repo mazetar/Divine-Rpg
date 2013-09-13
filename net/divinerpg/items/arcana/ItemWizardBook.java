@@ -2,13 +2,13 @@ package net.divinerpg.items.arcana;
 
 import net.divinerpg.entities.arcana.mobs.EntityDramix;
 import net.divinerpg.entities.arcana.mobs.EntityParasecta;
-import net.divinerpg.items.ItemDivineRPG;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemWizardBook extends ItemDivineRPG
+public class ItemWizardBook extends ItemDivine
 {
 
 	public ItemWizardBook(int par1)

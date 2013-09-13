@@ -11,7 +11,7 @@ public class ItemDivineRPGShovel extends ItemSpade
 {
 	
 	public ItemDivineRPGShovel(int id, EnumToolMaterial enumz) {
-		super(id - 256, enumz);
+		super(id, enumz);
 	}
 	
 	

@@ -15,8 +15,8 @@ public class DivineBurningSword extends DivineSword
 
     int burnDurtaion;
     int fireDmg;
-	public DivineBurningSword(int par1, EnumToolMaterial par2EnumToolMaterial, int burnTime) {
-		super(par1, par2EnumToolMaterial);
+	public DivineBurningSword(int id, EnumToolMaterial par2EnumToolMaterial, int burnTime) {
+		super(id, par2EnumToolMaterial);
 		burnDurtaion = burnTime;
 	}
 	

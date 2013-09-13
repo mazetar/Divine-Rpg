@@ -168,10 +168,10 @@ public class ArcanaItemHelper
         wizardBook = new ItemWizardBook(cfg.wizardBookID).func_111206_d("WizardBook").setUnlocalizedName("WizardBook");
         
         int kormaRender = RenderingRegistry.addNewArmourRendererPrefix("korma");
-        kormaHelmet = new ItemArmorKorma(cfg.kormaHeadID, kormaRender, 0).func_111206_d("kormaHelmet").setUnlocalizedName("kormaHelmet").setCreativeTab(DivineTabs.tabArmor);
-        kormaBody = new ItemArmorKorma(cfg.kormaBodyID, kormaRender, 1).func_111206_d("KormaBody").setUnlocalizedName("kormaBody").setCreativeTab(DivineTabs.tabArmor);
-        kormaLegs = new ItemArmorKorma(cfg.kormaLegsID, kormaRender, 2).func_111206_d("KormaLegs").setUnlocalizedName("kormaLegs").setCreativeTab(DivineTabs.tabArmor);
-        kormaBoots = new ItemArmorKorma(cfg.kormaBootsID, kormaRender, 3).func_111206_d("KormaBoots").setUnlocalizedName("kormaBoots").setCreativeTab(DivineTabs.tabArmor);
+        kormaHelmet = new ItemArmorKorma(cfg.kormaHeadID, "korma", kormaRender, 0).func_111206_d("kormaHelmet").setUnlocalizedName("kormaHelmet").setCreativeTab(DivineTabs.tabArmor);
+        kormaBody = new ItemArmorKorma(cfg.kormaBodyID, "korma", kormaRender, 1).func_111206_d("KormaBody").setUnlocalizedName("kormaBody").setCreativeTab(DivineTabs.tabArmor);
+        kormaLegs = new ItemArmorKorma(cfg.kormaLegsID, "korma", kormaRender, 2).func_111206_d("KormaLegs").setUnlocalizedName("kormaLegs").setCreativeTab(DivineTabs.tabArmor);
+        kormaBoots = new ItemArmorKorma(cfg.kormaBootsID, "korma", kormaRender, 3).func_111206_d("KormaBoots").setUnlocalizedName("kormaBoots").setCreativeTab(DivineTabs.tabArmor);
         
         int vemosRender = RenderingRegistry.addNewArmourRendererPrefix("vemos");
         vemosHelmet = new ItemArmorVemos(cfg.vemosHeadID, vemosRender, 0).func_111206_d("vemosHelmet").setUnlocalizedName("vemosHelmet").setCreativeTab(DivineTabs.tabArmor);

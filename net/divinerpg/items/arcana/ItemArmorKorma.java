@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.divinerpg.items.core.ItemDivineRPGArmor;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemStack;
@@ -17,16 +18,18 @@ public class ItemArmorKorma extends ItemDivineRPGArmor implements ISpecialArmor
 {
 	private static EnumArmorMaterial enumz = EnumHelper.addArmorMaterial("korma", Integer.MAX_VALUE, new int[]{0,0,0,0}, 20);
 	
-    public ItemArmorKorma(int id, double damageReduction, int armorType)
+    public ItemArmorKorma(int id, String armorSetName, double damageReduction, int armorType)
     {
-        super(id, armorType, "korma", damageReduction, Integer.MAX_VALUE, true);
+        super(id, armorType, armorSetName, damageReduction, Integer.MAX_VALUE, true);
     }
-
-    public ArmorProperties getProperties(EntityLiving var1, ItemStack var2, DamageSource var3, double var4, int var6)
+    
+    @Override
+    public ArmorProperties getProperties(EntityLivingBase var1, ItemStack var2, DamageSource var3, double var4, int var6)
     {
         return new ArmorProperties(0, 0.1125D, 50000);
     }
 
+    @Override
     public int getArmorDisplay(EntityPlayer var1, ItemStack var2, int var3)
     {
         return 20;

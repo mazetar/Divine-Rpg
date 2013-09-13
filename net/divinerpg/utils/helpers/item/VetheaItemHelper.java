@@ -357,12 +357,12 @@ public class VetheaItemHelper
 	public static void AddArmors()
 	{
         int degradedRender = RenderingRegistry.addNewArmourRendererPrefix("degraded");
-        degradedHelmetMelee = new ItemVetheanArmor(x.degradedHelmetMeleeID, degradedRender, "DHM", 0, 15, "Melee", "").setIconIndex(4, 185).setUnlocalizedName("degradedHelmetMelee").setCreativeTab(DivineTabs.tabArmor);
-        degradedHelmetRanged = new ItemVetheanArmor(x.degradedHelmetRangedID, degradedRender, "DMR", 0, 15, "Ranged", "").setIconIndex(4, 190).setUnlocalizedName("degradedHelmetRanged").setCreativeTab(DivineTabs.tabArmor);
-        degradedHelmetArcana = new ItemVetheanArmor(x.degradedHelmetArcanaID, degradedRender, "DHA", 0, 15, "Arcana", "").setIconIndex(4, 248).setUnlocalizedName("degradedHelmetArcana").setCreativeTab(DivineTabs.tabArmor);
-        degradedChest = new ItemVetheanArmor(x.degradedChestID, degradedRender, "DC", 1, 15, "", "").setIconIndex(4, 186).setUnlocalizedName("degradedChest").setCreativeTab(DivineTabs.tabArmor);
-        degradedLegs = new ItemVetheanArmor(x.degradedLegsID, degradedRender, "DL", 2, 15, "", "").setIconIndex(4, 187).setUnlocalizedName("degradedLegs").setCreativeTab(DivineTabs.tabArmor);
-        degradedBoots = new ItemVetheanArmor(x.degradedBootsID, degradedRender, "DB", 3, 15, "", "").setIconIndex(4, 188).setUnlocalizedName("degradedBoots").setCreativeTab(DivineTabs.tabArmor);
+        degradedHelmetMelee = new ItemVetheanArmor(x.degradedHelmetMeleeID, degradedRender, "DHM", 0, 15, "Melee", "").setUnlocalizedName("degradedHelmetMelee").setCreativeTab(DivineTabs.tabArmor);
+        degradedHelmetRanged = new ItemVetheanArmor(x.degradedHelmetRangedID, degradedRender, "DMR", 0, 15, "Ranged", "").setUnlocalizedName("degradedHelmetRanged").setCreativeTab(DivineTabs.tabArmor);
+        degradedHelmetArcana = new ItemVetheanArmor(x.degradedHelmetArcanaID, degradedRender, "DHA", 0, 15, "Arcana", "").setUnlocalizedName("degradedHelmetArcana").setCreativeTab(DivineTabs.tabArmor);
+        degradedChest = new ItemVetheanArmor(x.degradedChestID, degradedRender, "DC", 1, 15, "", "").setUnlocalizedName("degradedChest").setCreativeTab(DivineTabs.tabArmor);
+        degradedLegs = new ItemVetheanArmor(x.degradedLegsID, degradedRender, "DL", 2, 15, "", "").setUnlocalizedName("degradedLegs").setCreativeTab(DivineTabs.tabArmor);
+        degradedBoots = new ItemVetheanArmor(x.degradedBootsID, degradedRender, "DB", 3, 15, "", "").setUnlocalizedName("degradedBoots").setCreativeTab(DivineTabs.tabArmor);
 
         int finishedRender = RenderingRegistry.addNewArmourRendererPrefix("finished");
         finishedHelmetMelee = new ItemVetheanArmor(x.finishedHelmetMeleeID, finishedRender, "", 0, 30, "Melee", "").setUnlocalizedName("finishedHelmetMelee").setCreativeTab(DivineTabs.tabArmor);

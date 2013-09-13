@@ -10,7 +10,6 @@ public class ItemSantaArmor extends ItemDivineRPGArmor {
 
 	public ItemSantaArmor(int id, int armorType) {
 		super(id, armorType, "santa", 0D, -1, true);
-		setIconIndex(3, 8 + armorType, 12);
 	}
 	
 	@Override

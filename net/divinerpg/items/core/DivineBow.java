@@ -42,7 +42,7 @@ public class DivineBow extends ItemBow {
 	}
 	
 	public DivineBow(int id, int maxDamage, int damage, int maxUseDuraction, boolean unbreakable) {
-		super(id - 256);
+		super(id);
 		setMaxDamage(maxDamage);
 		this.damage = damage;
 		this.maxUseDuraction = maxUseDuraction;

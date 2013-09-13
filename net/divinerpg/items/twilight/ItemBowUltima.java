@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Random;
 
 import net.divinerpg.entities.twilight.projectile.EntityFuryArrow;
+import net.divinerpg.items.core.DivineBow;
 import net.divinerpg.utils.helpers.item.TwilightItemHelper;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -12,6 +14,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.src.ModLoader;
+import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowNockEvent;
@@ -21,10 +24,12 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemBowUltima extends ItemBow
 {
     private int lastDamage = -1;
-
-    public ItemBowUltima(int var1)
+    @SideOnly(Side.CLIENT)
+    private Icon[] iconArray;
+    
+    public ItemBowUltima(int id)
     {
-        super(var1);
+        super(id);
         this.setMaxDamage(-1);
         this.setCreativeTab(CreativeTabs.tabCombat);
     }
@@ -51,6 +56,18 @@ public class ItemBowUltima extends ItemBow
             return var1;
         }
     }
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerIcons(IconRegister par1IconRegister)
+    {
+        this.itemIcon = par1IconRegister.registerIcon(this.func_111208_A() + "_0");
+        this.iconArray = new Icon[3];
+
+        this.iconArray[0] = par1IconRegister.registerIcon(this.func_111208_A() + "_1");
+        this.iconArray[1] = par1IconRegister.registerIcon(this.func_111208_A() + "_2");
+        this.iconArray[2] = par1IconRegister.registerIcon(this.func_111208_A() + "_3");
+        
+    }   
 
     /**
      * called when the player releases the use item button. Args: itemstack, world, entityplayer, itemInUseCount

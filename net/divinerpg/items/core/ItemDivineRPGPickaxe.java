@@ -11,6 +11,6 @@ public class ItemDivineRPGPickaxe extends ItemPickaxe
 	}
 	
 	public ItemDivineRPGPickaxe(int id, int sprite, EnumToolMaterial enumz) {
-		super(id - 256, enumz);
+		super(id, enumz);
 	}
 }

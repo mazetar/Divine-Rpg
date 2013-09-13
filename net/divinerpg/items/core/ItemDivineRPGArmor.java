@@ -34,20 +34,10 @@ public class ItemDivineRPGArmor extends ItemArmor implements ISpecialArmor {
 	}
 	
 	public ItemDivineRPGArmor(int id, int armorType, String armorName, double damageReduction, int durability, boolean unbreakable) {
-		super(id - 256, DUMMY_MATERIAL, armorType, armorType);
+		super(id, DUMMY_MATERIAL, armorType, armorType);
 		this.armorName = armorName;
 		this.unbrekable = unbreakable;
 		this.armorType = armorType;
-	}
-	
-	public ItemDivineRPGArmor setIconIndex(int sheet, int index) {
-		this.sheet = sheet;
-		this.index = index;
-		return this;
-	}
-
-	public ItemDivineRPGArmor setIconIndex(int sheet, int x, int y) {
-		return setIconIndex(sheet, (x + y * 16));
 	}
 	
 	@Override

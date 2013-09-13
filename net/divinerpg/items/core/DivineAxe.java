@@ -20,7 +20,7 @@ public class DivineAxe extends ItemAxe{
 
     public DivineAxe(int id, EnumToolMaterial toolMaterial)
     {
-        super(id - 256, toolMaterial);
+        super(id, toolMaterial);
         this.toolMaterial = toolMaterial;
         this.maxStackSize = 1;
         this.setMaxDamage(toolMaterial.getMaxUses());

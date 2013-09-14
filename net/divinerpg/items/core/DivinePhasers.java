@@ -1,9 +1,10 @@
-package net.divinerpg.items.overworld;
+package net.divinerpg.items.core;
 
 import java.util.List;
 
 import net.divinerpg.entities.overworld.projectile.EntityStromBall;
 import net.divinerpg.entities.overworld.projectile.EntityTwilightPhaser;
+import net.divinerpg.lib.Sound;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -12,7 +13,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemPhasersTwilight extends Item
+public class DivinePhasers extends Item
 {
     private float damage;
     private int firetick;
@@ -20,14 +21,14 @@ public class ItemPhasersTwilight extends Item
     private String firesound;
     private String reloadsound;
 
-    public ItemPhasersTwilight(int var1, int var2, int var3, int var4, String var5, String var6)
+    public DivinePhasers(int id, int dmg, int fireDelay, String fireSound, String reloadSound)
     {
-        super(var1);
-        this.damage = var2;
-        this.firemax = var4;
+        super(id);
+        this.damage = dmg;
+        this.firemax = fireDelay;
         this.firetick = this.firemax;
-        this.firesound = var5;
-        this.reloadsound = var6;
+        this.firesound = fireSound;
+        this.reloadsound = reloadSound;
         this.setMaxStackSize(1);
         this.setMaxDamage(3000);
         this.setCreativeTab(CreativeTabs.tabCombat);
@@ -43,7 +44,7 @@ public class ItemPhasersTwilight extends Item
             if (this.firetick == this.firemax && this.firemax != 0)
             {
                 var2.spawnEntityInWorld(new EntityTwilightPhaser(var2, var3));
-                var2.playSoundAtEntity(var3, "xolovon.maelstrom", 1.0F, 1.0F);
+                var2.playSoundAtEntity(var3, this.reloadsound, 1.0F, 1.0F);
                 var1.damageItem(1, var3);
                 this.firetick = 0;
             }
@@ -88,7 +89,7 @@ public class ItemPhasersTwilight extends Item
      */
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
-        par3List.add("51 Ranged Damage");
+        par3List.add(this.damage + " Ranged Damage");
         par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
     }
 }

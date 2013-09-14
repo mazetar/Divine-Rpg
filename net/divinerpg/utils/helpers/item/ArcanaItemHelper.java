@@ -4,8 +4,6 @@ import net.divinerpg.items.ItemDivine;
 import net.divinerpg.items.arcana.ItemAquaMarine;
 import net.divinerpg.items.arcana.ItemArcanaPotion;
 import net.divinerpg.items.arcana.ItemArcaniumSaber;
-import net.divinerpg.items.arcana.ItemArmorKorma;
-import net.divinerpg.items.arcana.ItemArmorVemos;
 import net.divinerpg.items.arcana.ItemCaptiansSparkeler;
 import net.divinerpg.items.arcana.ItemEnderScepter;
 import net.divinerpg.items.arcana.ItemFirefly;
@@ -29,6 +27,7 @@ import net.divinerpg.items.arcana.ItemStormSword;
 import net.divinerpg.items.arcana.ItemTarBucket;
 import net.divinerpg.items.arcana.ItemWizardBook;
 import net.divinerpg.items.arcana.ItemWraithbane;
+import net.divinerpg.items.core.DivineArmorSet;
 import net.divinerpg.items.core.DivineSeeds;
 import net.divinerpg.items.core.DivineSword;
 import net.divinerpg.items.core.ItemDivineRPGFood;
@@ -36,6 +35,7 @@ import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.EnumHelper;
@@ -168,16 +168,19 @@ public class ArcanaItemHelper
         wizardBook = new ItemWizardBook(cfg.wizardBookID).func_111206_d("WizardBook").setUnlocalizedName("WizardBook");
         
         int kormaRender = RenderingRegistry.addNewArmourRendererPrefix("korma");
-        kormaHelmet = new ItemArmorKorma(cfg.kormaHeadID, "korma", kormaRender, 0).func_111206_d("kormaHelmet").setUnlocalizedName("kormaHelmet").setCreativeTab(DivineTabs.tabArmor);
-        kormaBody = new ItemArmorKorma(cfg.kormaBodyID, "korma", kormaRender, 1).func_111206_d("KormaBody").setUnlocalizedName("kormaBody").setCreativeTab(DivineTabs.tabArmor);
-        kormaLegs = new ItemArmorKorma(cfg.kormaLegsID, "korma", kormaRender, 2).func_111206_d("KormaLegs").setUnlocalizedName("kormaLegs").setCreativeTab(DivineTabs.tabArmor);
-        kormaBoots = new ItemArmorKorma(cfg.kormaBootsID, "korma", kormaRender, 3).func_111206_d("KormaBoots").setUnlocalizedName("kormaBoots").setCreativeTab(DivineTabs.tabArmor);
         
+        EnumArmorMaterial kormaMaterial = EnumHelper.addArmorMaterial("korma", -1, new int[]{3, 9, 7, 3}, 1); //TODO: Fill in the correct info from spreadsheet. --MAZ.
+        kormaHelmet = new DivineArmorSet(cfg.kormaHeadID, kormaMaterial, kormaRender, 0, false, null);
+        kormaBody = new DivineArmorSet(cfg.kormaBodyID, kormaMaterial, kormaRender, 1, false, null);
+        kormaLegs = new DivineArmorSet(cfg.kormaLegsID, kormaMaterial, kormaRender, 2, false, null);
+        kormaBoots = new DivineArmorSet(cfg.kormaBootsID, kormaMaterial, kormaRender, 3, false, null);
+ 
         int vemosRender = RenderingRegistry.addNewArmourRendererPrefix("vemos");
-        vemosHelmet = new ItemArmorVemos(cfg.vemosHeadID, vemosRender, 0).func_111206_d("vemosHelmet").setUnlocalizedName("vemosHelmet").setCreativeTab(DivineTabs.tabArmor);
-        vemosBody = new ItemArmorVemos(cfg.vemosBodyID, vemosRender, 1).func_111206_d("VemosBody").setUnlocalizedName("vemosBody").setCreativeTab(DivineTabs.tabArmor);
-        vemosLegs = new ItemArmorVemos(cfg.vemosLegsID, vemosRender, 2).func_111206_d("VemosLegs").setUnlocalizedName("vemosLegs").setCreativeTab(DivineTabs.tabArmor);
-        vemosBoots = new ItemArmorVemos(cfg.vemosBootsID, vemosRender, 3).func_111206_d("VemosBoots").setUnlocalizedName("vemosBoots").setCreativeTab(DivineTabs.tabArmor);
+        EnumArmorMaterial vemosMaterial = EnumHelper.addArmorMaterial("vemos", -1, new int[]{3, 9, 7, 3}, 1); //TODO: Fill in the correct info from spreadsheet. --MAZ.
+        vemosHelmet = new DivineArmorSet(cfg.vemosHeadID, vemosMaterial, vemosRender, 0, false, null);
+        vemosBody = new DivineArmorSet(cfg.vemosBodyID, vemosMaterial, vemosRender, 1, false, null);
+        vemosLegs = new DivineArmorSet(cfg.vemosLegsID, vemosMaterial, vemosRender, 2, false, null);
+        vemosBoots = new DivineArmorSet(cfg.vemosBootsID, vemosMaterial, vemosRender, 3, false, null);
         
         //tarBucket = new ItemTarBucket(x.tarBucketID, OverworldBlockHelper.tarStill.blockID).setUnlocalizedName("tarBucket").setCreativeTab(CreativeTabHelper.tabItems);
         addNames();

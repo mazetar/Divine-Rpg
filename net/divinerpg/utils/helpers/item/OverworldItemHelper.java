@@ -2,18 +2,37 @@ package net.divinerpg.utils.helpers.item;
 
 
 import net.divinerpg.items.ItemDivine;
+import net.divinerpg.items.core.DivineArmorSet;
 import net.divinerpg.items.core.DivineBurningSword;
-import net.divinerpg.items.core.ItemDivineRPGPickaxe;
 import net.divinerpg.items.core.DivineSword;
-import net.divinerpg.items.overworld.*;
+import net.divinerpg.items.overworld.ItemBaseAnchor;
+import net.divinerpg.items.overworld.ItemBowCannon;
+import net.divinerpg.items.overworld.ItemCrabCannon;
+import net.divinerpg.items.overworld.ItemFrostCannon;
+import net.divinerpg.items.overworld.ItemFrostSword;
+import net.divinerpg.items.overworld.ItemHealingSword;
+import net.divinerpg.items.overworld.ItemInfernoBow;
+import net.divinerpg.items.overworld.ItemMaelstrom;
+import net.divinerpg.items.overworld.ItemPoisonSaber;
+import net.divinerpg.items.overworld.ItemScythe;
+import net.divinerpg.items.overworld.ItemSerenadeDeath;
+import net.divinerpg.items.overworld.ItemSerenadeGrowth;
+import net.divinerpg.items.overworld.ItemSerenadeHealth;
+import net.divinerpg.items.overworld.ItemSerenadeStriker;
+import net.divinerpg.items.overworld.ItemShadowBow;
+import net.divinerpg.items.overworld.ItemShuriken;
+import net.divinerpg.items.overworld.ItemSoundMusic;
+import net.divinerpg.items.overworld.ItemTwilightClock;
+import net.divinerpg.items.overworld.ItemVailStorm;
 import net.divinerpg.utils.helpers.config.OverworldConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemNameTag;
 import net.minecraftforge.common.EnumHelper;
+import net.minecraftforge.common.ISpecialArmor.ArmorProperties;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class OverworldItemHelper 
@@ -384,7 +403,7 @@ public class OverworldItemHelper
 		final int LEGS = 2;
 		final int BOOTS = 3;
 		// Armour materials
-		EnumArmorMaterial angelic = EnumHelper.addArmorMaterial("Angelic", 200, new int[] {3, 4, 3, 2}, E);
+		EnumArmorMaterial angelic = EnumHelper.addArmorMaterial("angelic", 200, new int[] {3, 4, 3, 2}, E);
 		EnumArmorMaterial realmite = EnumHelper.addArmorMaterial("realmite", 200, new int[] {3, 4, 3, 2}, E);
 		String[] angelicDesc = {"12.5% Damage reduction", "Unbreakable", "Full Set: Allows flight", "Full Set: No fall damage"};
 		String[] realmiteDesc = {"8.25% Damage reduction", "Unbreakable"};
@@ -395,11 +414,15 @@ public class OverworldItemHelper
 		String[] aquaticDesc = {"13.75% Damage reduction", "Unbreakable", "Full Set: Breathe underwater", "Full Set: Swim faster"};
 		String[] shadowDesc = {"15% Damage reduction", "Unbreakable", "Full Set: Move faster"};
 		
+		
+		
 		// Angelic
-		angelicBody = new ItemBasicArmor(cfg.angelicBodyID, angelic, 4, BODY).setDamageReduction(0.125D).setDescriptors(angelicDesc).setUnlocalizedName("angelicbody").setCreativeTab(DivineTabs.tabArmor);
-		angelicHelmet = new ItemBasicArmor(cfg.angelicHeadID, angelic, 3, HEAD).setDamageReduction(0.125D).setDescriptors(angelicDesc).setUnlocalizedName("angelichelm").setCreativeTab(DivineTabs.tabArmor);
-		angelicLegs = new ItemBasicArmor(cfg.angelicLegsID, angelic, 3, LEGS).setDamageReduction(0.125D).setDescriptors(angelicDesc).setUnlocalizedName("angelicLegs").setCreativeTab(DivineTabs.tabArmor);
-		angelicBoots = new ItemBasicArmor(cfg.angelicBootsID, angelic, 2, BOOTS).setDamageReduction(0.125D).setDescriptors(angelicDesc).setUnlocalizedName("angelicboots").setCreativeTab(DivineTabs.tabArmor);
+		 int angelicRender = RenderingRegistry.addNewArmourRendererPrefix("angelic");
+		 ArmorProperties properties = new ArmorProperties(0, 0, 0); // TODO: Fill out later from excel sheet.
+		angelicBody = new DivineArmorSet(cfg.angelicBodyID, angelic, angelicRender, BODY, false, properties).setUnlocalizedName("angelicbody").setCreativeTab(DivineTabs.tabArmor);
+		angelicHelmet = new DivineArmorSet(cfg.angelicHeadID, angelic, angelicRender, HEAD, false, properties).setUnlocalizedName("angelichelm").setCreativeTab(DivineTabs.tabArmor);
+		angelicLegs = new DivineArmorSet(cfg.angelicLegsID, angelic, angelicRender, LEGS, false, properties).setUnlocalizedName("angelicLegs").setCreativeTab(DivineTabs.tabArmor);
+		angelicBoots = new DivineArmorSet(cfg.angelicBootsID, angelic, angelicRender, BOOTS, false, properties).setUnlocalizedName("angelicboots").setCreativeTab(DivineTabs.tabArmor);
 		// Normal Realmite
 		//realmiteHelmet = new ItemBasicArmor(, var2, var3, var4)
 		

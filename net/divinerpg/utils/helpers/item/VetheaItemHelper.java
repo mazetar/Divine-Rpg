@@ -356,6 +356,7 @@ public class VetheaItemHelper
 	
 	public static void AddArmors()
 	{
+	    
         int degradedRender = RenderingRegistry.addNewArmourRendererPrefix("degraded");
         degradedHelmetMelee = new ItemVetheanArmor(x.degradedHelmetMeleeID, degradedRender, "DHM", 0, 15, "Melee", "").setUnlocalizedName("degradedHelmetMelee").setCreativeTab(DivineTabs.tabArmor);
         degradedHelmetRanged = new ItemVetheanArmor(x.degradedHelmetRangedID, degradedRender, "DMR", 0, 15, "Ranged", "").setUnlocalizedName("degradedHelmetRanged").setCreativeTab(DivineTabs.tabArmor);

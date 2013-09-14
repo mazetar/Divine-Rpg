@@ -1,18 +1,17 @@
 package net.divinerpg.utils.helpers.item;
 
 import net.divinerpg.items.ItemDivine;
+import net.divinerpg.items.core.DivineArmorSet;
 import net.divinerpg.items.core.DivineBow;
 import net.divinerpg.items.core.ItemDivineRPGFood;
 import net.divinerpg.items.iceika.ItemEggNog;
 import net.divinerpg.items.iceika.ItemEnderice;
 import net.divinerpg.items.iceika.ItemFractiteCannon;
 import net.divinerpg.items.iceika.ItemFrostClawCannon;
-import net.divinerpg.items.iceika.ItemFrostkingSword;
 import net.divinerpg.items.iceika.ItemFrozenMaul;
 import net.divinerpg.items.iceika.ItemGlacierSword;
 import net.divinerpg.items.iceika.ItemIceicleBane;
 import net.divinerpg.items.iceika.ItemIceineSword;
-import net.divinerpg.items.iceika.ItemSantaArmor;
 import net.divinerpg.items.iceika.ItemSerenadeOfIce;
 import net.divinerpg.items.iceika.ItemSnowSlash;
 import net.divinerpg.items.iceika.ItemSnowStormBow;
@@ -23,8 +22,10 @@ import net.divinerpg.items.overworld.ItemFrostSword;
 import net.divinerpg.items.overworld.ItemHealingSword;
 import net.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
+import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.EnumHelper;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class IceikaItemHelper 
@@ -56,39 +57,42 @@ public class IceikaItemHelper
     public static Item santaLegs;
     public static Item santaBoots;
     public static Item bluefireBow;    
-    public static IceikaConfigHelper x;
+    public static IceikaConfigHelper cfg;
     
     public static void init()
     {
-    	snowFlake = new ItemDivine(x.SnowflakeID).func_111206_d("SnowFlake").func_111206_d("TEXTURE_NAME_HERE").setUnlocalizedName("snowFlake").setCreativeTab(DivineTabs.tabItems);
-        icicleBane = new ItemIceicleBane(x.IcicleBaneID).func_111206_d("IcicleBane").setUnlocalizedName("icicleBane").setCreativeTab(DivineTabs.tabSword);
-        soundOfCarols = new ItemSoundOfCarols(x.SoundOfCarolsID).func_111206_d("SoundOfCarols").setUnlocalizedName("soundofCarols").setCreativeTab(DivineTabs.tabRanged);
-        icineSword = new ItemIceineSword(x.IcineSwordID).func_111206_d("IcineSword").setUnlocalizedName("icineSword").setCreativeTab(DivineTabs.tabSword);
-        frossivence = new ItemHealingSword(x.FrossivenceID, EnumHelper.addToolMaterial("frossivence", 0, 540, 0, 0, 16), 2).func_111206_d("Frossivence").setUnlocalizedName("frossivence").setCreativeTab(DivineTabs.tabSword);
-        enderice = new ItemEnderice(x.EndericeID).func_111206_d("Enderice").setUnlocalizedName("enderice").setCreativeTab(DivineTabs.tabSword);
-        snowSlash = new ItemSnowSlash(x.SnowslashID).func_111206_d("SnowSlash").setUnlocalizedName("snowSlash").setCreativeTab(DivineTabs.tabSword);
-        serenadeOfIce = new ItemSerenadeOfIce(x.SerenadeOfIceID).func_111206_d("SerenadeOfIce").setUnlocalizedName("serenadeofIce").setCreativeTab(DivineTabs.tabRanged);
-        glacierSword = new ItemGlacierSword(x.GlacierSwordID).func_111206_d("GlacierSword").setUnlocalizedName("glacierSword").setCreativeTab(DivineTabs.tabSword);
-        frostKingSword = new ItemFrostSword(x.FrostkingSwordID, EnumHelper.addToolMaterial("frostKingSword", 0, 6000, 0, 10, 22), 4).func_111206_d("FrostKingSword").setUnlocalizedName("frostKingSword").setCreativeTab(DivineTabs.tabSword);
-        frozenMaul = new ItemFrozenMaul(x.FrozenMaulID).func_111206_d("FrozenMaul").setUnlocalizedName("frozenMaul").setCreativeTab(DivineTabs.tabSword);
+    	snowFlake = new ItemDivine(cfg.SnowflakeID).func_111206_d("SnowFlake").func_111206_d("TEXTURE_NAME_HERE").setUnlocalizedName("snowFlake").setCreativeTab(DivineTabs.tabItems);
+        icicleBane = new ItemIceicleBane(cfg.IcicleBaneID).func_111206_d("IcicleBane").setUnlocalizedName("icicleBane").setCreativeTab(DivineTabs.tabSword);
+        soundOfCarols = new ItemSoundOfCarols(cfg.SoundOfCarolsID).func_111206_d("SoundOfCarols").setUnlocalizedName("soundofCarols").setCreativeTab(DivineTabs.tabRanged);
+        icineSword = new ItemIceineSword(cfg.IcineSwordID).func_111206_d("IcineSword").setUnlocalizedName("icineSword").setCreativeTab(DivineTabs.tabSword);
+        frossivence = new ItemHealingSword(cfg.FrossivenceID, EnumHelper.addToolMaterial("frossivence", 0, 540, 0, 0, 16), 2).func_111206_d("Frossivence").setUnlocalizedName("frossivence").setCreativeTab(DivineTabs.tabSword);
+        enderice = new ItemEnderice(cfg.EndericeID).func_111206_d("Enderice").setUnlocalizedName("enderice").setCreativeTab(DivineTabs.tabSword);
+        snowSlash = new ItemSnowSlash(cfg.SnowslashID).func_111206_d("SnowSlash").setUnlocalizedName("snowSlash").setCreativeTab(DivineTabs.tabSword);
+        serenadeOfIce = new ItemSerenadeOfIce(cfg.SerenadeOfIceID).func_111206_d("SerenadeOfIce").setUnlocalizedName("serenadeofIce").setCreativeTab(DivineTabs.tabRanged);
+        glacierSword = new ItemGlacierSword(cfg.GlacierSwordID).func_111206_d("GlacierSword").setUnlocalizedName("glacierSword").setCreativeTab(DivineTabs.tabSword);
+        frostKingSword = new ItemFrostSword(cfg.FrostkingSwordID, EnumHelper.addToolMaterial("frostKingSword", 0, 6000, 0, 10, 22), 4).func_111206_d("FrostKingSword").setUnlocalizedName("frostKingSword").setCreativeTab(DivineTabs.tabSword);
+        frozenMaul = new ItemFrozenMaul(cfg.FrozenMaulID).func_111206_d("FrozenMaul").setUnlocalizedName("frozenMaul").setCreativeTab(DivineTabs.tabSword);
         
-        frostClawCannon = new ItemFrostClawCannon(x.FrostclawCannonID).func_111206_d("FrostClawCannon").setUnlocalizedName("frostClawCannon").setCreativeTab(DivineTabs.tabRanged);
+        frostClawCannon = new ItemFrostClawCannon(cfg.FrostclawCannonID).func_111206_d("FrostClawCannon").setUnlocalizedName("frostClawCannon").setCreativeTab(DivineTabs.tabRanged);
         fractiteCannon = new ItemFractiteCannon(IceikaConfigHelper.fractiteCannonID).func_111206_d("FractiteCannon").setUnlocalizedName("fractiteCannon").setCreativeTab(DivineTabs.tabRanged);
-        snowFlakeShuriken = new ItemSnowflakeShuriken(x.SnowflakeShurikenID).func_111206_d("SnowFlakeShuriken").setUnlocalizedName("snowFlakeShuriken").setCreativeTab(DivineTabs.tabRanged);
-        icicleBow = new DivineBow(x.IcicleBowID, 10000, 2, 24000, false).func_111206_d("IcicleBow").setUnlocalizedName("icicleBow").setCreativeTab(DivineTabs.tabRanged);
-        snowStormBow = new ItemSnowStormBow(x.SnowstormBowID).func_111206_d("SnowStormBow").setUnlocalizedName("frostStormBow").setCreativeTab(DivineTabs.tabRanged);
-        pepperMints = new ItemDivineRPGFood(x.PeppermintsID, 1, 0.3F, false).func_111206_d("PepperMints").setUnlocalizedName("pepperMints").setCreativeTab(DivineTabs.tabHerb);
-        eggNog = new ItemEggNog(x.EggNogID).func_111206_d("EggNog").setUnlocalizedName("eggNog").setCreativeTab(DivineTabs.tabHerb);
-        chocolateLog = new ItemDivineRPGFood(x.ChocolateLogID, 4, 1.0F, false).func_111206_d("ChocolateLog").setUnlocalizedName("chocolateLog").setCreativeTab(DivineTabs.tabHerb);
-        snowCones = new ItemDivineRPGFood(x.SnowconesID, 2, 0.3F, false).func_111206_d("SnowCones").setUnlocalizedName("snowCones").setCreativeTab(DivineTabs.tabHerb);
-        fruitCake = new ItemDivineRPGFood(x.FruitCakeID, 16, 2.0F, false).func_111206_d("FruitCake").setUnlocalizedName("fruitCake").setCreativeTab(DivineTabs.tabHerb);
+        snowFlakeShuriken = new ItemSnowflakeShuriken(cfg.SnowflakeShurikenID).func_111206_d("SnowFlakeShuriken").setUnlocalizedName("snowFlakeShuriken").setCreativeTab(DivineTabs.tabRanged);
+        icicleBow = new DivineBow(cfg.IcicleBowID, 10000, 2, 24000, false).func_111206_d("IcicleBow").setUnlocalizedName("icicleBow").setCreativeTab(DivineTabs.tabRanged);
+        snowStormBow = new ItemSnowStormBow(cfg.SnowstormBowID).func_111206_d("SnowStormBow").setUnlocalizedName("frostStormBow").setCreativeTab(DivineTabs.tabRanged);
+        pepperMints = new ItemDivineRPGFood(cfg.PeppermintsID, 1, 0.3F, false).func_111206_d("PepperMints").setUnlocalizedName("pepperMints").setCreativeTab(DivineTabs.tabHerb);
+        eggNog = new ItemEggNog(cfg.EggNogID).func_111206_d("EggNog").setUnlocalizedName("eggNog").setCreativeTab(DivineTabs.tabHerb);
+        chocolateLog = new ItemDivineRPGFood(cfg.ChocolateLogID, 4, 1.0F, false).func_111206_d("ChocolateLog").setUnlocalizedName("chocolateLog").setCreativeTab(DivineTabs.tabHerb);
+        snowCones = new ItemDivineRPGFood(cfg.SnowconesID, 2, 0.3F, false).func_111206_d("SnowCones").setUnlocalizedName("snowCones").setCreativeTab(DivineTabs.tabHerb);
+        fruitCake = new ItemDivineRPGFood(cfg.FruitCakeID, 16, 2.0F, false).func_111206_d("FruitCake").setUnlocalizedName("fruitCake").setCreativeTab(DivineTabs.tabHerb);
         
-        bluefireBow = new ItemBlueBow(x.BlueFireBowID).func_111206_d("BluefireBow");
+        bluefireBow = new ItemBlueBow(cfg.BlueFireBowID).func_111206_d("BluefireBow");
         
-        santaHelmet = new ItemSantaArmor(x.SantaHeadID, 0).func_111206_d("SantaHelmet").setUnlocalizedName("santaHelmet").setCreativeTab(DivineTabs.tabArmor);
-        santaBody = new ItemSantaArmor(x.SantaBodyID, 1).func_111206_d("SantaBody").setUnlocalizedName("santaChest").setCreativeTab(DivineTabs.tabArmor);
-        santaLegs = new ItemSantaArmor(x.SantaLegsID, 2).func_111206_d("SantaLegs").setUnlocalizedName("santaLegs").setCreativeTab(DivineTabs.tabArmor);
-        santaBoots = new ItemSantaArmor(x.SantaBootsID, 3).func_111206_d("SantaBoots").setUnlocalizedName("santaBoots").setCreativeTab(DivineTabs.tabArmor);
+        int santaArmorRender = RenderingRegistry.addNewArmourRendererPrefix("santa");
+        EnumArmorMaterial santaMaterial = EnumHelper.addArmorMaterial("santa", -1, new int[]{0, 0, 0, 0}, 0);
+        santaHelmet = new DivineArmorSet(cfg.SantaHeadID, santaMaterial, santaArmorRender, 0, false, null);
+        santaBody = new DivineArmorSet(cfg.SantaBodyID, santaMaterial, santaArmorRender, 1, false, null);
+        santaLegs = new DivineArmorSet(cfg.SantaLegsID, santaMaterial, santaArmorRender, 2, false, null);
+        santaBoots = new DivineArmorSet(cfg.SantaBootsID, santaMaterial, santaArmorRender, 3, false, null);
+
     
         LanguageRegistry.addName(snowFlake, "Snowflake");
         LanguageRegistry.addName(icicleBane, "Icicle Bane");

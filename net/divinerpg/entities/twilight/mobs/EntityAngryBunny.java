@@ -38,6 +38,9 @@ public class EntityAngryBunny extends EntityTameable
         this.tasks.addTask(9, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
         this.targetTasks.addTask(4, new EntityAITargetNonTamed(this, EntityPlayer.class, 200, false));
+        if ( this.func_110148_a(SharedMonsterAttributes.field_111264_e) == null) {
+          this.func_110140_aT().func_111150_b(SharedMonsterAttributes.field_111264_e).func_111128_a(10); // Attack dmg
+        }
     }
 
     public EntityAngryBunny(World var1, boolean tamed, String ownerName)
@@ -57,7 +60,7 @@ public class EntityAngryBunny extends EntityTameable
         super.func_110147_ax();
         
         this.func_110148_a(SharedMonsterAttributes.field_111267_a).func_111128_a(this.isTamed() ? 60 : 280);
-        this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(this.isTamed() ? 10 : 35);
+ //       this.func_110148_a(SharedMonsterAttributes.field_111264_e).func_111128_a(10 /*this.isTamed() ? 10 : 35*/);
         this.func_110148_a(SharedMonsterAttributes.field_111265_b).func_111128_a(16.0F);
         this.func_110148_a(SharedMonsterAttributes.field_111263_d).func_111128_a(0.3F);
     }

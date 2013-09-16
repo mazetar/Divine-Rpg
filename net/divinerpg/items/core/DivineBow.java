@@ -56,12 +56,13 @@ public class DivineBow extends ItemBow {
     @Override
     public void registerIcons(IconRegister par1IconRegister)
     {
-        this.itemIcon = par1IconRegister.registerIcon(Reference.MAIN_MOD_ID + ":" + this.func_111208_A() + "_0");
+        String prefix = Reference.MAIN_MOD_ID + ":" + this.func_111208_A();
+        this.itemIcon = par1IconRegister.registerIcon(prefix + "_0");
         this.iconArray = new Icon[3];
 
-        this.iconArray[0] = par1IconRegister.registerIcon(this.func_111208_A() + "_1");
-        this.iconArray[1] = par1IconRegister.registerIcon(this.func_111208_A() + "_2");
-        this.iconArray[2] = par1IconRegister.registerIcon(this.func_111208_A() + "_3");
+        this.iconArray[0] = par1IconRegister.registerIcon(prefix + "_1");
+        this.iconArray[1] = par1IconRegister.registerIcon(prefix + "_2");
+        this.iconArray[2] = par1IconRegister.registerIcon(prefix + "_3");
         
     }    
     

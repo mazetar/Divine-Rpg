@@ -1,5 +1,6 @@
 package net.divinerpg;
 
+import net.divinerpg.core.PacketHandler;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.proxies.CoreProxy;
@@ -13,7 +14,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 
 @Mod(modid = Reference.MAIN_MOD_ID, version = Reference.MOD_VERSION, name = Reference.MAIN_MOD_NAME)
-@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+@NetworkMod(clientSideRequired = true, serverSideRequired = true, channels = Reference.MAIN_MOD_CHANNEL,packetHandler = PacketHandler.class)
 public class DivineRPG
 {	
 	@Instance(Reference.MAIN_MOD_ID)

@@ -6,6 +6,8 @@ public class Reference
 	
     public static final String MAIN_MOD_ID = "drpg";
     public static final String MAIN_MOD_NAME = "Divine RPG";
+    public static final String MAIN_MOD_CHANNEL = "drpg";
+    
     
 	public static final String TWILIGHT_MOD_ID = "drpg-twilight";
 	public static final String TWLIGHT_MOD_NAME = "DivineRPG Twilight";

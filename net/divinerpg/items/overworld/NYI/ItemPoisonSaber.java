@@ -1,5 +1,6 @@
-package net.divinerpg.items.overworld;
+package net.divinerpg.items.overworld.NYI;
 
+import net.divinerpg.items.core.DivineSword;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -7,20 +8,24 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class ItemCrabClawMaul extends ItemSword
+public class ItemPoisonSaber extends DivineSword
 {
     private int weaponDamage;
     private final EnumToolMaterial field_40439_b;
 
-    public ItemCrabClawMaul(int var1, EnumToolMaterial var2)
+    
+    //TODO: Create baseclass for Swords with effects?
+    // Let DivineSword handle it by taking in a potion effect (or effect array) in a constructor and if it's null then don't set a potion effect?
+    public ItemPoisonSaber(int var1, EnumToolMaterial var2)
     {
         super(var1, var2);
         this.field_40439_b = var2;
         this.maxStackSize = 1;
-        this.setMaxDamage(2000);
+        this.setMaxDamage(10000);
         this.weaponDamage = 16;
     }
 
@@ -39,6 +44,7 @@ public class ItemCrabClawMaul extends ItemSword
      */
     public boolean hitEntity(ItemStack var1, EntityLiving var2, EntityLiving var3)
     {
+        var2.addPotionEffect(new PotionEffect(Potion.poison.id, 300, 0));
         var1.damageItem(1, var3);
         return true;
     }

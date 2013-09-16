@@ -43,16 +43,6 @@ public class ItemBaseAnchor extends ItemDivine {
             return var1;
         }
     }
-	
-    public int getDamageVsEntity(Entity var1) {
-        return this.dmg;
-    }
-    
-	
-	@Override
-	public Icon getIconFromDamageForRenderPass(int par1, int par2) {
-		return getIconFromDamage(par1);
-	}
 
 	
     @Override

@@ -126,6 +126,6 @@ public class ItemInfernoBow extends DivineBow
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
     {
         par3List.add("2 Ranged Fire Damage");
-        //par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
+        par3List.add(this.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
     }
 }

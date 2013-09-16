@@ -1,10 +1,11 @@
-package net.divinerpg.items.overworld;
+package net.divinerpg.items.overworld.NYI;
 
 import net.divinerpg.entities.bosses.EntityAyeracoBlue;
 import net.divinerpg.entities.bosses.EntityAyeracoGreen;
 import net.divinerpg.entities.bosses.EntityAyeracoPurple;
 import net.divinerpg.entities.bosses.EntityAyeracoRed;
 import net.divinerpg.entities.bosses.EntityAyeracoYellow;
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,14 +15,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Facing;
 import net.minecraft.world.World;
 
-public class ItemAyeracoSpawner extends Item
+public class ItemAyeracoSpawner extends ItemDivine
 {
     private World worldObj;
 	private int spawnTick;
 
-    public ItemAyeracoSpawner(int var1)
+    public ItemAyeracoSpawner(int id)
     {
-        super(var1);
+        super(id);
         this.maxStackSize = 1;
         this.spawnTick = 600;
     }
@@ -100,48 +101,43 @@ public class ItemAyeracoSpawner extends Item
         }
     }
 	
-    public boolean spawnCreature(World par1, EntityPlayer par2, double par3, double par4, double par5)
+    public boolean spawnCreature(World world, EntityPlayer player, double x, double y, double z)
     {
-    	EntityAyeracoBlue var1 = new EntityAyeracoBlue(par1);
-    	EntityAyeracoGreen var2 = new EntityAyeracoGreen(par1);
-    	EntityAyeracoRed var3 = new EntityAyeracoRed(par1);
-    	EntityAyeracoYellow var4 = new EntityAyeracoYellow(par1);
-    	EntityAyeracoPurple var5 = new EntityAyeracoPurple(par1);
+    	EntityAyeracoBlue blue = new EntityAyeracoBlue(world);
+    	EntityAyeracoGreen green = new EntityAyeracoGreen(world);
+    	EntityAyeracoRed red = new EntityAyeracoRed(world);
+    	EntityAyeracoYellow yellow = new EntityAyeracoYellow(world);
+    	EntityAyeracoPurple purple = new EntityAyeracoPurple(world);
 
-    	var1.setLocationAndAngles(par3 + 15, par4 + 4, par5, par1.rand.nextFloat() * 360.0F, 0.0F);
-    	var2.setLocationAndAngles(par3 + 8, par4 + 4, par5 + 8, par1.rand.nextFloat() * 360.0F, 0.0F);
-    	var3.setLocationAndAngles(par3 + 5, par4 + 4, par5 - 12, par1.rand.nextFloat() * 360.0F, 0.0F);
-    	var4.setLocationAndAngles(par3 - 5, par4 + 4, par5 - 12, par1.rand.nextFloat() * 360.0F, 0.0F);
-    	var5.setLocationAndAngles(par3 - 8, par4 + 4, par5 + 8, par1.rand.nextFloat() * 360.0F, 0.0F);
+    	blue.setLocationAndAngles(x + 15, y + 4, z, world.rand.nextFloat() * 360.0F, 0.0F);
+    	green.setLocationAndAngles(x + 8, y + 4, z + 8, world.rand.nextFloat() * 360.0F, 0.0F);
+    	red.setLocationAndAngles(x + 5, y + 4, z - 12, world.rand.nextFloat() * 360.0F, 0.0F);
+    	yellow.setLocationAndAngles(x - 5, y + 4, z - 12, world.rand.nextFloat() * 360.0F, 0.0F);
+    	purple.setLocationAndAngles(x - 8, y + 4, z + 8, world.rand.nextFloat() * 360.0F, 0.0F);
     	
-    	par1.setBlock((int)(par3 + 15), (int)(par4),(int)(par5), OverworldBlockHelper.ayeracoBeamBlue.blockID);
-    	par1.setBlock((int)(par3 + 8), (int)(par4),(int)(par5 + 8), OverworldBlockHelper.ayeracoBeamGreen.blockID);
-    	par1.setBlock((int)(par3 + 5), (int)(par4),(int)(par5 - 12), OverworldBlockHelper.ayeracoBeamRed.blockID);
-    	par1.setBlock((int)(par3 - 5), (int)(par4),(int)(par5 - 12), OverworldBlockHelper.ayeracoBeamYellow.blockID);
-    	par1.setBlock((int)(par3 - 8), (int)(par4),(int)(par5 + 8), OverworldBlockHelper.ayeracoBeamPurple.blockID);
+    	world.setBlock((int)(x + 15), (int)(y),(int)(z), OverworldBlockHelper.ayeracoBeamBlue.blockID);
+    	world.setBlock((int)(x + 8), (int)(y),(int)(z + 8), OverworldBlockHelper.ayeracoBeamGreen.blockID);
+    	world.setBlock((int)(x + 5), (int)(y),(int)(z - 12), OverworldBlockHelper.ayeracoBeamRed.blockID);
+    	world.setBlock((int)(x - 5), (int)(y),(int)(z - 12), OverworldBlockHelper.ayeracoBeamYellow.blockID);
+    	world.setBlock((int)(x - 8), (int)(y),(int)(z + 8), OverworldBlockHelper.ayeracoBeamPurple.blockID);
     	
-    	var1.initOthers(var2, var3, var4, var5);
-    	var2.initOthers(var1, var3, var4, var5);
-    	var3.initOthers(var1, var2, var4, var5);
-    	var4.initOthers(var1, var2, var3, var5);
-    	var5.initOthers(var1, var2, var3, var4);
+    	blue.initOthers(green, red, yellow, purple);
+    	green.initOthers(blue, red, yellow, purple);
+    	red.initOthers(blue, green, yellow, purple);
+    	yellow.initOthers(blue, green, red, purple);
+    	purple.initOthers(blue, green, red, yellow);
     	
-    	var1.setBeamLocation((int)(par3 + 15), (int)(par4),(int)(par5));
-    	var2.setBeamLocation((int)(par3 + 8), (int)(par4),(int)(par5 + 8));
-    	var3.setBeamLocation((int)(par3 + 5), (int)(par4),(int)(par5 - 12));
-    	var4.setBeamLocation((int)(par3 - 5), (int)(par4),(int)(par5 - 12));
-    	var5.setBeamLocation((int)(par3 - 8), (int)(par4),(int)(par5 + 8));
+    	blue.setBeamLocation((int)(x + 15), (int)(y),(int)(z));
+    	green.setBeamLocation((int)(x + 8), (int)(y),(int)(z + 8));
+    	red.setBeamLocation((int)(x + 5), (int)(y),(int)(z - 12));
+    	yellow.setBeamLocation((int)(x - 5), (int)(y),(int)(z - 12));
+    	purple.setBeamLocation((int)(x - 8), (int)(y),(int)(z + 8));
 
-    	par1.spawnEntityInWorld(var1);
-    	par1.spawnEntityInWorld(var2);
-    	par1.spawnEntityInWorld(var3);
-    	par1.spawnEntityInWorld(var4);
-    	par1.spawnEntityInWorld(var5);
+    	world.spawnEntityInWorld(blue);
+    	world.spawnEntityInWorld(green);
+    	world.spawnEntityInWorld(red);
+    	world.spawnEntityInWorld(yellow);
+    	world.spawnEntityInWorld(purple);
         return true;
-    }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon.png";
     }
 }

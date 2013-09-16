@@ -1,4 +1,4 @@
-package net.divinerpg.items.overworld;
+package net.divinerpg.items.overworld.NYI;
 
 import java.util.List;
 
@@ -18,6 +18,10 @@ public class ItemMaelstrom extends Item
     private String firesound;
     private String reloadsound;
 
+    // Seems like a ItemBowCannon with EntityStromBall for the projectile?
+    // Create a new constructor in ItemBowCannon which allows us to specify a different projectile? 
+    //TODO: Clean up Maelstrom item --MAZ.
+    
     public ItemMaelstrom(int var1, int var2, int var3, int var4, String var5, String var6)
     {
         super(var1);

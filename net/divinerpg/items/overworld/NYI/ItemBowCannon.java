@@ -1,8 +1,8 @@
-package net.divinerpg.items.overworld;
+package net.divinerpg.items.overworld.NYI;
 
 import java.util.List;
 
-import net.divinerpg.entities.overworld.projectile.EntityCrabCannon;
+import net.divinerpg.entities.overworld.projectile.EntityBowCannon;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -11,9 +11,9 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemCrabCannon extends Item
+public class ItemBowCannon extends Item
 {
-    private float damage;
+    private int damage;
     private int reloadtick;
     private int reloadmax;
     private int clipid;
@@ -23,7 +23,7 @@ public class ItemCrabCannon extends Item
     private String reloadsound;
     private int sheet;
     private int index;
-    public ItemCrabCannon(int var1, int var2, int var3, int var4, int var5, String var6, String var7)
+    public ItemBowCannon(int var1, int var2, int var3, int var4, int var5, String fireSound, String reloadSound)
     {
         super(var1);
         this.damage = var2;
@@ -32,11 +32,12 @@ public class ItemCrabCannon extends Item
         this.reloadmax = 5;
         this.reloadtick = 0;
         this.clipid = var4;
-        this.firesound = var6;
-        this.reloadsound = var7;
+        this.firesound = fireSound;
+        this.reloadsound = reloadSound;
         this.setMaxStackSize(1);
         this.setMaxDamage(1000);
     }
+
     /**
      * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
      */
@@ -46,8 +47,8 @@ public class ItemCrabCannon extends Item
         {
             if (this.firetick == this.firemax && this.firemax != 0)
             {
-                var2.spawnEntityInWorld(new EntityCrabCannon(var2, var3));
-                var2.playSoundAtEntity(var3, "xolovon.GhastCannon", 1.0F, 1.0F);
+                var2.spawnEntityInWorld(new EntityBowCannon(var2, var3));
+                var2.playSoundAtEntity(var3, this.firesound, 1.0F, 1.0F);
                 var3.inventory.consumeInventoryItem(Block.cactus.blockID);
                 var1.damageItem(1, var3);
                 this.firetick = 0;
@@ -59,7 +60,7 @@ public class ItemCrabCannon extends Item
 
             if (this.firemax == 0 && var3.inventory.hasItem(this.clipid))
             {
-                var2.spawnEntityInWorld(new EntityCrabCannon(var2, var3));
+                var2.spawnEntityInWorld(new EntityBowCannon(var2, var3));
                 var2.playSoundAtEntity(var3, this.firesound, 1.0F, 1.0F);
                 var1.damageItem(1, var3);
             }
@@ -88,7 +89,7 @@ public class ItemCrabCannon extends Item
     {
         this.firetick = this.firemax;
     }
-
+    
     @SideOnly(Side.CLIENT)
 
     /**
@@ -98,6 +99,7 @@ public class ItemCrabCannon extends Item
     {
         return true;
     }
+
     @Override
     @SideOnly(Side.CLIENT)
 

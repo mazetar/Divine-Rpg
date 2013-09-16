@@ -1,4 +1,4 @@
-package net.divinerpg.items.overworld;
+package net.divinerpg.items.overworld.NYI;
 
 import java.util.List;
 

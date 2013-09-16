@@ -93,7 +93,6 @@ public class TwilightItemHelper
 	public static Item AugiteSoul;
 
 	public static Item FuryArrow;
-	public static Item TwilightClock;
 	public static Item TwilightBow;
 	public static Item blueSeeds;
 	public static Item magicMeat;
@@ -229,7 +228,6 @@ public class TwilightItemHelper
 		
 		
 		FuryArrow = new ItemDivine(x.FuryArrowID).func_111206_d("FuryArrow").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("FuryArrow");
-		TwilightClock = new ItemTwilightClock(x.TwilightClockID).setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("TwilightClock").func_111206_d("TwilightClock");
 		blueSeeds = new ItemDivine(x.blueSeedsID).func_111206_d("BlueSeeds").setCreativeTab(DivineTabs.tabHerb).setUnlocalizedName("blueSeeds");
 		magicMeat = new ItemDivine(x.magicMeatID).func_111206_d("MagicMeat").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("magicMeat");
 		empoweredMeat = new ItemDivine(x.empoweredMeatID).func_111206_d("EmpoweredMeat").setCreativeTab(DivineTabs.tabItems).setUnlocalizedName("empoweredMeat");
@@ -331,7 +329,6 @@ public class TwilightItemHelper
 
 		LanguageRegistry.addName(FuryArrow, "Fury Arrow");
 		LanguageRegistry.addName(AzuriteArrow, "Azurite Arrow");
-		LanguageRegistry.addName(TwilightClock, "Twilight Clock");
 		LanguageRegistry.addName(blueSeeds, "Blue Seeds");
 		LanguageRegistry.addName(magicMeat, "Magic Meat");
 		LanguageRegistry.addName(empoweredMeat, "Empowered Meat");

@@ -1,4 +1,4 @@
-package net.divinerpg.items.overworld;
+package net.divinerpg.items.overworld.NYI;
 
 import net.divinerpg.items.core.DivineSword;
 import net.minecraft.entity.Entity;
@@ -8,12 +8,12 @@ import net.minecraft.item.ItemStack;
 
 public class ItemFlamingFury extends DivineSword
 {
-    public int weaponDamage;
+    public float weaponDamage;
 
     public ItemFlamingFury(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1, par2EnumToolMaterial);
-        this.weaponDamage = 32;
+        this.weaponDamage = par2EnumToolMaterial.getDamageVsEntity();
         this.setMaxDamage(6000);
     }
 
@@ -26,10 +26,5 @@ public class ItemFlamingFury extends DivineSword
     	par2EntityLiving.setFire(30);
         par1ItemStack.damageItem(1, par3EntityLiving);
         return true;
-    }
-
-    public int getDamageVsEntity(Entity var1)
-    {
-        return weaponDamage;
     }
 }

@@ -59,12 +59,6 @@ public class ItemScythe extends Item
     {
         return true;
     }
-
-    public String getTextureFile()
-    {
-        return "/Xolovon3.png";
-    }
-
     @Override
     @SideOnly(Side.CLIENT)
 
@@ -76,6 +70,6 @@ public class ItemScythe extends Item
         par3List.add("4 Ranged Damage");
         par3List.add("Confusion");
         par3List.add("Infinite Uses");
-        //par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
+        par3List.add(this.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
     }
 }

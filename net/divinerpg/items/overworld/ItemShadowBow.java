@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import net.divinerpg.items.core.DivineBow;
+import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -155,5 +156,12 @@ public class ItemShadowBow extends DivineBow
         par3List.add("2 Ranged Damage");
         par3List.add("2 Times Faster");
         par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
+    }
+    
+    
+    @Override
+    public int getItemID() {
+    
+    	return OverworldItemHelper.shadowBow.itemID;
     }
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
+import net.divinerpg.utils.helpers.item.IceikaItemHelper;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -15,6 +16,7 @@ import net.minecraft.util.Icon;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.ArrowLooseEvent;
+import net.minecraftforge.event.entity.player.ArrowNockEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -166,5 +168,38 @@ public class DivineBow extends ItemBow {
         if(speed < 1)
         	par3List.add((1 / speed) + " Times Slower");
         par3List.add(!unbreakable ? (par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses Remaining") : "Unlimited Uses");
+    }
+	
+    /**
+     * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
+     */
+    public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3)
+    {
+        ArrowNockEvent var4 = new ArrowNockEvent(var3, var1);
+        MinecraftForge.EVENT_BUS.post(var4);
+
+        if (var4.isCanceled())
+        {
+            return var4.result;
+        }
+        else
+        {
+            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(getItemID()))
+            {
+                var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
+            }
+
+            return var1;
+        }
+    }
+    
+    
+    /**
+     * Place holder method for item ID (for onItemRightClick)
+     * Made a method so that in case this.itemID and the config IDs are not the same (as the classes were using the config ids)
+     * @return by default, this.itemID;
+     */
+    public int getItemID(){
+    	return this.itemID;
     }
 }

@@ -2,7 +2,12 @@ package net.divinerpg.items.core;
 
 import java.util.List;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import net.divinerpg.items.ItemDivine;
+import net.divinerpg.lib.Reference;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -85,6 +90,12 @@ public abstract class ItemDivineRPGRanged extends ItemDivine {
         	par3List.add(!unbreakable ? (par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses Remaining") : "Unlimited Uses");
         if(ammoID != -1 )
         	par3List.add("Ammo: " + Item.itemsList[ammoID].getItemDisplayName(new ItemStack(Item.itemsList[ammoID])));
+    }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister par1IconRegister) {
+       this.itemIcon = par1IconRegister.registerIcon(Reference.MAIN_MOD_ID + ":" + this.func_111208_A());
     }
 	
 }

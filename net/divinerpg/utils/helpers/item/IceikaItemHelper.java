@@ -4,8 +4,8 @@ import net.divinerpg.items.ItemDivine;
 import net.divinerpg.items.core.DivineArmorSet;
 import net.divinerpg.items.core.DivineBow;
 import net.divinerpg.items.core.DivineSword;
+import net.divinerpg.items.core.ItemDivineRPGBucket;
 import net.divinerpg.items.core.ItemDivineRPGFood;
-import net.divinerpg.items.iceika.ItemEnderice;
 import net.divinerpg.items.iceika.ItemFractiteCannon;
 import net.divinerpg.items.iceika.ItemFrostClawCannon;
 import net.divinerpg.items.iceika.ItemFrozenMaul;
@@ -64,7 +64,7 @@ public class IceikaItemHelper
         soundOfCarols = new ItemSoundOfCarols(cfg.SoundOfCarolsID).func_111206_d("SoundOfCarols").setUnlocalizedName("soundofCarols").setCreativeTab(DivineTabs.tabRanged);
         icineSword = new DivineSword(cfg.IcineSwordID, EnumHelper.addToolMaterial("icineSword", 1, -1, 1.5F, 34, 16), true).func_111206_d("IcineSword").setUnlocalizedName("icineSword").setCreativeTab(DivineTabs.tabSword);
         frossivence = new ItemHealingSword(cfg.FrossivenceID, EnumHelper.addToolMaterial("frossivence", 0, 540, 0, 0, 16), 2).func_111206_d("Frossivence").setUnlocalizedName("frossivence").setCreativeTab(DivineTabs.tabSword);
-        enderice = new ItemEnderice(cfg.EndericeID).func_111206_d("Enderice").setUnlocalizedName("enderice").setCreativeTab(DivineTabs.tabSword);
+        enderice = new DivineSword(cfg.EndericeID, EnumHelper.addToolMaterial("enderice", 1, -1, 1.5F, 28, 16), true).func_111206_d("Enderice").setUnlocalizedName("enderice").setCreativeTab(DivineTabs.tabSword);
         snowSlash = new DivineSword(cfg.SnowslashID, EnumHelper.addToolMaterial("snowSlash", 1, 150, 1.5F, 35, 10), true).func_111206_d("SnowSlash").setUnlocalizedName("snowSlash").setCreativeTab(DivineTabs.tabSword);
         serenadeOfIce = new ItemSerenadeOfIce(cfg.SerenadeOfIceID).func_111206_d("SerenadeOfIce").setUnlocalizedName("serenadeofIce").setCreativeTab(DivineTabs.tabRanged);
         glacierSword = new ItemGlacierSword(cfg.GlacierSwordID).func_111206_d("GlacierSword").setUnlocalizedName("glacierSword").setCreativeTab(DivineTabs.tabSword);
@@ -77,7 +77,7 @@ public class IceikaItemHelper
         icicleBow = new DivineBow(cfg.IcicleBowID, 10000, 2, 24000, false).func_111206_d("IcicleBow").setUnlocalizedName("icicleBow").setCreativeTab(DivineTabs.tabRanged);
         snowStormBow = new ItemSnowStormBow(cfg.SnowstormBowID).func_111206_d("SnowStormBow").setUnlocalizedName("frostStormBow").setCreativeTab(DivineTabs.tabRanged);
         pepperMints = new ItemDivineRPGFood(cfg.PeppermintsID, 1, 0.3F, false).func_111206_d("PepperMints").setUnlocalizedName("pepperMints").setCreativeTab(DivineTabs.tabHerb);
-/*TODO: DrpgFood? */ eggNog = new ItemBucketMilk(cfg.EggNogID).func_111206_d("EggNog").setUnlocalizedName("eggNog").setCreativeTab(DivineTabs.tabHerb);
+/*TODO: DrpgFood? */ eggNog = new ItemDivineRPGBucket(cfg.EggNogID, 1).func_111206_d("EggNog").setUnlocalizedName("eggNog").setCreativeTab(DivineTabs.tabHerb);
         chocolateLog = new ItemDivineRPGFood(cfg.ChocolateLogID, 4, 1.0F, false).func_111206_d("ChocolateLog").setUnlocalizedName("chocolateLog").setCreativeTab(DivineTabs.tabHerb);
         snowCones = new ItemDivineRPGFood(cfg.SnowconesID, 2, 0.3F, false).func_111206_d("SnowCones").setUnlocalizedName("snowCones").setCreativeTab(DivineTabs.tabHerb);
         fruitCake = new ItemDivineRPGFood(cfg.FruitCakeID, 16, 2.0F, false).func_111206_d("FruitCake").setUnlocalizedName("fruitCake").setCreativeTab(DivineTabs.tabHerb);

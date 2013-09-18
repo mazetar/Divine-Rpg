@@ -1,5 +1,6 @@
 package net.divinerpg.items.overworld.NYI;
 
+import net.divinerpg.items.ItemDivine;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.BlockDirectional;
@@ -7,7 +8,6 @@ import net.minecraft.block.BlockMushroom;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.BlockStem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
@@ -16,7 +16,7 @@ import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 
 
-public class ItemSerenadeGrowth extends Item
+public class ItemSerenadeGrowth extends ItemDivine
 {
     public ItemSerenadeGrowth(int var1)
     {

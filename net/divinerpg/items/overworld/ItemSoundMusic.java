@@ -3,6 +3,7 @@ package net.divinerpg.items.overworld;
 import java.util.List;
 
 import net.divinerpg.entities.overworld.projectile.EntityMusicBall;
+import net.divinerpg.items.ItemDivine;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -10,7 +11,7 @@ import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemSoundMusic extends Item
+public class ItemSoundMusic extends ItemDivine
 {
     public ItemSoundMusic(int var1)
     {

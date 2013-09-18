@@ -11,7 +11,6 @@ import net.divinerpg.items.arcana.ItemFyracryxSpawner;
 import net.divinerpg.items.arcana.ItemGolemOfRejuvSpawner;
 import net.divinerpg.items.arcana.ItemGrenade;
 import net.divinerpg.items.arcana.ItemGrenadeLauncher;
-import net.divinerpg.items.arcana.ItemKey;
 import net.divinerpg.items.arcana.ItemLamona;
 import net.divinerpg.items.arcana.ItemMeriksMissile;
 import net.divinerpg.items.arcana.ItemOrbOfLight;
@@ -116,10 +115,10 @@ public class ArcanaItemHelper
 		oreDoorItem2 = new ItemOreDoor(cfg.oreDoor2ItemID, Material.wood, ArcanaBlockHelper.oreDoor2).func_111206_d("OreDoor2").setUnlocalizedName("doorWood2").setCreativeTab(DivineTabs.tabItems);
 		oreDoorItem3 = new ItemOreDoor(cfg.oreDoor3ItemID, Material.wood, ArcanaBlockHelper.oreDoor3).func_111206_d("OreDoor3").setUnlocalizedName("doorWood3").setCreativeTab(DivineTabs.tabItems);
 		oreDoorItem4 = new ItemOreDoor(cfg.oreDoor4ItemID, Material.wood, ArcanaBlockHelper.oreDoor4).func_111206_d("OreDoor4").setUnlocalizedName("doorWood4").setCreativeTab(DivineTabs.tabItems);
-		key1 = new ItemKey(cfg.key1ID).func_111206_d("Key1").setUnlocalizedName("key1").setCreativeTab(DivineTabs.tabItems);
-	    key2 = new ItemKey(cfg.key2ID).func_111206_d("Key2").setUnlocalizedName("key2").setCreativeTab(DivineTabs.tabItems);
-	    key3 = new ItemKey(cfg.key3ID).func_111206_d("Key3").setUnlocalizedName("key3").setCreativeTab(DivineTabs.tabItems);
-	    key4 = new ItemKey(cfg.key4ID).func_111206_d("Key4").setUnlocalizedName("key4").setCreativeTab(DivineTabs.tabItems);
+		key1 = new ItemDivine(cfg.key1ID).func_111206_d("Key1").setUnlocalizedName("key1").setCreativeTab(DivineTabs.tabItems);
+	    key2 = new ItemDivine(cfg.key2ID).func_111206_d("Key2").setUnlocalizedName("key2").setCreativeTab(DivineTabs.tabItems);
+	    key3 = new ItemDivine(cfg.key3ID).func_111206_d("Key3").setUnlocalizedName("key3").setCreativeTab(DivineTabs.tabItems);
+	    key4 = new ItemDivine(cfg.key4ID).func_111206_d("Key4").setUnlocalizedName("key4").setCreativeTab(DivineTabs.tabItems);
 	    
 	    fireStockItem = new ItemDivine(cfg.fireStockItemID).func_111206_d("FireStockItem").setUnlocalizedName("fireStockItem").setCreativeTab(DivineTabs.tabHerb);
         fireStockSeeds = new DivineSeeds(cfg.fireStockSeedsID, ArcanaBlockHelper.fireStock.blockID, ArcanaBlockHelper.arcaniteGrass.blockID).func_111206_d("FireStockSeeds").setUnlocalizedName("fireStockSeeds").setCreativeTab(DivineTabs.tabHerb);

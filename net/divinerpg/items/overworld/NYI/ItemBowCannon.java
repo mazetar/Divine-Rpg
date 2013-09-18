@@ -3,15 +3,15 @@ package net.divinerpg.items.overworld.NYI;
 import java.util.List;
 
 import net.divinerpg.entities.overworld.projectile.EntityBowCannon;
+import net.divinerpg.items.ItemDivine;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBowCannon extends Item
+public class ItemBowCannon extends ItemDivine
 {
     private int damage;
     private int reloadtick;

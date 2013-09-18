@@ -3,14 +3,14 @@ package net.divinerpg.items.overworld;
 import java.util.List;
 
 import net.divinerpg.entities.overworld.projectile.EntityVailStorm;
+import net.divinerpg.items.ItemDivine;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemVailStorm extends Item
+public class ItemVailStorm extends ItemDivine
 {
     public ItemVailStorm(int var1)
     {

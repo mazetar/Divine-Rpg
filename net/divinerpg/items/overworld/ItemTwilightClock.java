@@ -2,15 +2,15 @@ package net.divinerpg.items.overworld;
 
 import java.util.Random;
 
+import net.divinerpg.items.ItemDivine;
 import net.divinerpg.utils.helpers.block.IceikaBlockHelper;
 import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemTwilightClock extends Item
+public class ItemTwilightClock extends ItemDivine
 {
     protected Random rand = new Random();
     public double lastX;

@@ -20,6 +20,8 @@ public class TileEntityCondenser extends TileEntity implements IInventory
     private ItemStack[] brewingItemStacks = new ItemStack[3];
     private int brewTime;
 
+    
+    
     /**
      * an integer with each bit specifying whether that slot of the stand contains a potion
      */

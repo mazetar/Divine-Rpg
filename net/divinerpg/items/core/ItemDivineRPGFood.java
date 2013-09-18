@@ -2,6 +2,11 @@ package net.divinerpg.items.core;
 
 import java.util.List;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
+import net.divinerpg.lib.Reference;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
@@ -26,5 +31,11 @@ public class ItemDivineRPGFood extends ItemFood {
 		if(speed < 1)
 			par3List.add((1 / speed) + " Times Slower");
 	}
+	
+	   @Override
+	    @SideOnly(Side.CLIENT)
+	    public void registerIcons(IconRegister par1IconRegister) {
+	       this.itemIcon = par1IconRegister.registerIcon(Reference.MAIN_MOD_ID + ":" + this.func_111208_A());
+	    }
 
 }

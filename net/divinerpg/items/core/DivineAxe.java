@@ -3,8 +3,10 @@ package net.divinerpg.items.core;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.divinerpg.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemAxe;
@@ -50,6 +52,11 @@ public class DivineAxe extends ItemAxe{
         par3List.add(par1ItemStack.getMaxDamage() - par1ItemStack.getItemDamage() + " Uses");
     }
     
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister par1IconRegister) {
+          this.itemIcon = par1IconRegister.registerIcon(Reference.MAIN_MOD_ID + ":" + this.func_111208_A());
+    }
 
     
 }

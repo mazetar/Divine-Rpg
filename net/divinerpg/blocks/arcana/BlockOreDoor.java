@@ -1,92 +1,25 @@
 package net.divinerpg.blocks.arcana;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockOreDoor extends BlockDoor
 {
-    public BlockOreDoor(int par1)
+    Item key;
+    public BlockOreDoor(int id, Item key)
     {
-        super(par1, Material.wood);
+        super(id, Material.wood);
+        this.key = key;
     }
-
-    @SideOnly(Side.CLIENT)
-
-    /**
-     * Retrieves the block texture to use based on the display side. Args: iBlockAccess, x, y, z, side
-    @Override
-    public int getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
-    {
-        if (par5 != 0 && par5 != 1)
-        {
-            int var6 = this.getFullMetadata(par1IBlockAccess, par2, par3, par4);
-            int var7 = this.blockIndexInTexture;
-
-            if ((var6 & 8) != 0)
-            {
-                var7 -= 1;
-            }
-
-            int var8 = var6 & 3;
-            boolean var9 = (var6 & 4) != 0;
-
-            if (var9)
-            {
-                if (var8 == 0 && par5 == 2)
-                {
-                    var7 = -var7;
-                }
-                else if (var8 == 1 && par5 == 5)
-                {
-                    var7 = -var7;
-                }
-                else if (var8 == 2 && par5 == 3)
-                {
-                    var7 = -var7;
-                }
-                else if (var8 == 3 && par5 == 4)
-                {
-                    var7 = -var7;
-                }
-            }
-            else
-            {
-                if (var8 == 0 && par5 == 5)
-                {
-                    var7 = -var7;
-                }
-                else if (var8 == 1 && par5 == 3)
-                {
-                    var7 = -var7;
-                }
-                else if (var8 == 2 && par5 == 4)
-                {
-                    var7 = -var7;
-                }
-                else if (var8 == 3 && par5 == 2)
-                {
-                    var7 = -var7;
-                }
-
-                if ((var6 & 16) != 0)
-                {
-                    var7 = -var7;
-                }
-            }
-
-            return var7;
-        }
-        else
-        {
-            return this.blockIndexInTexture;
-        }
-    }*/
 
     /**
      * Called upon block activation (right click on the block.)
@@ -109,7 +42,7 @@ public class BlockOreDoor extends BlockDoor
             }
             else
             {
-                if (itemstack.itemID == ArcanaItemHelper.key2.itemID)
+                if (itemstack.itemID == key.itemID)
                 {
                     if (!par5EntityPlayer.capabilities.isCreativeMode && --itemstack.stackSize <= 0)
                     {
@@ -145,18 +78,18 @@ public class BlockOreDoor extends BlockDoor
     }
 
     /**
-     * A function to open a door.
+     * A function to open a door. - Don't open on power.
      */
 
     @Override
     public void onPoweredBlockChange(World par1World, int par2, int par3, int par4, boolean par5)
     {
-        int var6 = this.getFullMetadata(par1World, par2, par3, par4);
-        boolean var7 = (var6 & 4) != 0;
-
-        if (var7 != par5)
-        {
-            ;
-        }
+        return;
+    }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister par1IconRegister) {
+        this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E());
     }
 }

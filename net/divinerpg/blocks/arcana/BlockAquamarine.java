@@ -3,6 +3,7 @@ package net.divinerpg.blocks.arcana;
 import java.util.ArrayList;
 import java.util.Random;
 
+import net.divinerpg.blocks.BlockDivineFlower;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.block.BlockFlower;
@@ -16,14 +17,14 @@ import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockAquamarine extends BlockFlower
+public class BlockAquamarine extends BlockDivineFlower
 {
     @SideOnly(Side.CLIENT)
     private Icon[] texture;
     
     public BlockAquamarine(int par1)
     {
-        super(par1, Material.plants);
+        super(par1);
         this.setTickRandomly(true);
         float var3 = 0.5F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 0.25F, 0.5F + var3);

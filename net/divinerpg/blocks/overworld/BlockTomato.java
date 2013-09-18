@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import net.divinerpg.blocks.BlockDivineFlower;
+import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,9 +14,9 @@ import net.minecraft.world.World;
 
 public class BlockTomato extends BlockDivineFlower
 {
-    public BlockTomato(int var1, int var2)
+    public BlockTomato(int var1)
     {
-        super(var1, var2);
+        super(var1);
         this.setTickRandomly(true);
         float var3 = 0.5F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 0.25F, 0.5F + var3);

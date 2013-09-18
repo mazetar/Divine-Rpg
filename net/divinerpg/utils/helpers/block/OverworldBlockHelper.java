@@ -13,6 +13,8 @@ import net.minecraft.block.material.MaterialLiquid;
 
 public class OverworldBlockHelper 
 {
+    public static Block tomato;
+    
 	public static Block blueFire;
 	public static Block divineRock;
 	
@@ -201,6 +203,9 @@ public class OverworldBlockHelper
 
 	public static void init()
 	{
+
+        tomato = new BlockTomato(cfg.tomatoID).func_111022_d("Tomato");
+        
 		blueFire = new BlockBlueFire(cfg.blueFireID, 0).setUnlocalizedName("BlueFire");
 		divineRock = new BlockDivine(cfg.divineRockID, Material.rock).func_111022_d("DivineRock").setResistance(30).setHardness(3).setUnlocalizedName("DivineRock");
 		

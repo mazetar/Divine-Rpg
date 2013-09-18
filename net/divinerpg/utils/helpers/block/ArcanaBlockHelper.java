@@ -169,7 +169,7 @@ public class ArcanaBlockHelper
 		pinFly2 = new BlockPinfly(ArcanaConfigHelper.pinFly2ID, 47).setUnlocalizedName("PinFly2");
 		hitchak = new BlockHitchak(ArcanaConfigHelper.hitchakID).setUnlocalizedName("Hitchak");
 		eucalyptusRoot = new BlockEucalyptusRoot(ArcanaConfigHelper.eucalyptusRootID).setUnlocalizedName("EucalyptusRoot");
-		veilo = new BlockVeilo(ArcanaConfigHelper.veiloID, 0).setUnlocalizedName("Veilo");
+		veilo = new BlockVeilo(ArcanaConfigHelper.veiloID).setUnlocalizedName("Veilo");
 		lamona = new BlockLamona(ArcanaConfigHelper.lamonaID).setUnlocalizedName("Lamona");
 		aquamarine = new BlockAquamarine(ArcanaConfigHelper.aquamarineID).setUnlocalizedName("Aquamarine");
 		marsine = new BlockMarsine(ArcanaConfigHelper.marsineID).setUnlocalizedName("marsine");

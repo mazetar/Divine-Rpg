@@ -15,9 +15,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockVeilo extends BlockDivineFlower
 {
-    public BlockVeilo(int par1, int par2)
+    public BlockVeilo(int par1)
     {
-        super(par1, par2);
+        super(par1);
         this.setTickRandomly(true);
         float var3 = 0.5F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 0.25F, 0.5F + var3);

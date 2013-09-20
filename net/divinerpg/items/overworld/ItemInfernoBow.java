@@ -23,27 +23,10 @@ public class ItemInfernoBow extends DivineBow
         this.maxStackSize = 1;
     }
 
-    /**
-     * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
-     */
-    public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3)
-    {
-        ArrowNockEvent var4 = new ArrowNockEvent(var3, var1);
-        MinecraftForge.EVENT_BUS.post(var4);
-
-        if (var4.isCanceled())
-        {
-            return var4.result;
-        }
-        else
-        {
-            if (var3.capabilities.isCreativeMode || var3.inventory.hasItem(OverworldItemHelper.infernoBow.itemID))
-            {
-                var3.setItemInUse(var1, this.getMaxItemUseDuration(var1));
-            }
-
-            return var1;
-        }
+    @Override
+    public int getItemID() {
+    
+    	return OverworldItemHelper.infernoBow.itemID;
     }
 
     /**

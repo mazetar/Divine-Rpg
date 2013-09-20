@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.divinerpg.entities.overworld.projectile.EntityExplosiveArrow;
 import net.divinerpg.items.core.DivineBow;
+import net.divinerpg.utils.helpers.item.IceikaItemHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.ItemStack;
@@ -24,6 +25,11 @@ public class ItemSnowStormBow extends DivineBow {
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
     	super.addInformation(par1ItemStack, par2EntityPlayer, par3List, par4);
     	par3List.add("Shoots Explosive Arrows");
+    }
+    
+    @Override
+    public int getItemID() {
+    	return IceikaItemHelper.snowStormBow.itemID;
     }
 
 }

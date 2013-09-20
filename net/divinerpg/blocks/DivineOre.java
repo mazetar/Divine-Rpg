@@ -1,31 +1,31 @@
-package net.divinerpg.blocks.twilight;
+package net.divinerpg.blocks;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivine;
-import net.divinerpg.utils.helpers.block.TwilightBlockHelper;
+import net.divinerpg.utils.helpers.item.TwilightItemHelper;
 import net.minecraft.block.material.Material;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class BlockTwilightOre extends BlockDivine
+public class DivineOre extends BlockDivine
 {
-	public BlockTwilightOre(int var1)
+    int dropped;
+	public DivineOre(int var1, int dropped)
     {
         super(var1, Material.rock);
+        this.dropped = dropped;
     }
 	
-    public boolean isGenMineableReplaceable(World var1, int var2, int var3, int var4)
-    {
-        return this.blockID == TwilightBlockHelper.TwilightStone.blockID;
-    }
-
     /**
      * Returns the ID of the items to drop on destruction.
      */
     public int idDropped(int var1, Random var2, int var3)
     {
-    	return TwilightBlockHelper.DraviteOre.blockID;
-        //return this.blockID == TwilightBlockHelper.serenityOre.blockID ? TwilightBlockHelper.serenityFragments.itemID : (this.blockID == TwilightBlockHelper.azuriteOre.blockID ? TwilightBlockHelper.azuriteFragments.itemID : (this.blockID == TwilightBlockHelper.energyOre.blockID ? TwilightBlockHelper.energyFragments.itemID : (this.blockID == TwilightBlockHelper.mythilOre.blockID ? TwilightBlockHelper.mythrilFragments.itemID : (this.blockID == TwilightBlockHelper.denseOre.blockID ? TwilightBlockHelper.denseFragments.itemID : this.blockID))));
+        return this.dropped;
     }
     
     /**
@@ -58,23 +58,23 @@ public class BlockTwilightOre extends BlockDivine
         }
     }
     
-    /*public boolean removeBlockByPlayer(World world, EntityPlayer player, int x, int y, int z) TODO
+    public boolean removeBlockByPlayer(World world, EntityPlayer player, int x, int y, int z) 
     {
     	if (player.inventory.armorInventory[0] != null
     			&& player.inventory.armorInventory[1] != null
     			&& player.inventory.armorInventory[2] != null
     			&& player.inventory.armorInventory[3] != null)
     	{
-    		if (player.inventory.armorInventory[0].itemID == DivineRPG.serenityBoots.itemID
-    				&& player.inventory.armorInventory[1].itemID == DivineRPG.serenityLegs.itemID
-    				&& player.inventory.armorInventory[2].itemID == DivineRPG.serenityBody.itemID
-    				&& player.inventory.armorInventory[3].itemID == DivineRPG.serenityHead.itemID
+    		if (player.inventory.armorInventory[0].itemID == TwilightItemHelper.DraviteBoots.itemID
+    				&& player.inventory.armorInventory[1].itemID == TwilightItemHelper.Dravitelegs.itemID
+    				&& player.inventory.armorInventory[2].itemID == TwilightItemHelper.DraviteChest.itemID
+    				&& player.inventory.armorInventory[3].itemID == TwilightItemHelper.DraviteHelmet.itemID
     				&& !player.worldObj.isRemote
     				&& EnchantmentHelper.getEnchantmentLevel(Enchantment.silkTouch.effectId, player.inventory.getCurrentItem()) == 0)
     		{
     			this.dropBlockAsItem_do(world, x, y, z, new ItemStack(this.idDropped(0, player.getRNG(), 0), 3, 0));
     		}
     	}
-        return world.setBlockWithNotify(x, y, z, 0);
-    }*/
+    	return world.setBlock(x, y, z, 0, 0, 3);
+    }
 }

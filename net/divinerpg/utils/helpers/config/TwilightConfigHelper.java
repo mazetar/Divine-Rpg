@@ -7,7 +7,9 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class TwilightConfigHelper 
 {
-	public static int TwilightStoneID;
+
+    public static int TwilightStoneID;
+    public static int TwilightFlowerID;
 
 	public static int DraviteGrassID;
 	public static int DraviteDirtID;
@@ -63,7 +65,8 @@ public class TwilightConfigHelper
 		
 		TwilightStoneID = config.getTerrainBlock("WorldGen Blocks", "TwilightStone", 191, "").getInt();
 		divineRockID = config.getBlock("DivineRock", ++id).getInt();
-
+		TwilightFlowerID = config.getBlock("TwilightFlower", ++id).getInt();
+		
 		DraviteGrassID = config.getTerrainBlock("WorldGen Blocks", "Dravite Grass", 192, "").getInt();
 		DraviteDirtID = config.getTerrainBlock("WorldGen Blocks", "Dravite Dirt", 193, "").getInt();
 		DraviteLogsID = config.getBlock("Dravite Logs", ++id).getInt();

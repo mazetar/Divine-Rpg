@@ -1,10 +1,10 @@
 package net.divinerpg.utils.helpers.block;
 
+import net.divinerpg.blocks.DivineGrass;
 import net.divinerpg.blocks.vethea.BlockAcid;
 import net.divinerpg.blocks.vethea.BlockBacterialAcid;
 import net.divinerpg.blocks.vethea.BlockBarredDoor;
 import net.divinerpg.blocks.vethea.BlockDreamLamp;
-import net.divinerpg.blocks.vethea.BlockDreamgrass;
 import net.divinerpg.blocks.vethea.BlockDreamwood;
 import net.divinerpg.blocks.vethea.BlockDreamwoodLeaves;
 import net.divinerpg.blocks.vethea.BlockHelioticBeam;
@@ -119,7 +119,7 @@ public class VetheaBlockHelper
     	vetheaPortal = new BlockPortalVethea(VetheaConfigHelper.vetheaPortalID, "Vethea").func_111022_d("VetheaPortal").setUnlocalizedName("Vethea Portal").setCreativeTab(DivineTabs.tabBlocks);
     	dreamstone = new BlockVethea(VetheaConfigHelper.dreamstoneID, 9, Material.rock).func_111022_d("DreamStone").setUnlocalizedName("dreamstone").setHardness(1F).setResistance(1F).setCreativeTab(DivineTabs.tabBlocks);
         dreamdirt = new BlockVethea(VetheaConfigHelper.dreamdirtID, 11, Material.ground).func_111022_d("DreamGrass_Bottom").setUnlocalizedName("dreamdirt").setHardness(1F).setResistance(1F).setCreativeTab(DivineTabs.tabBlocks);
-        dreamgrass = new BlockDreamgrass(VetheaConfigHelper.dreamgrassID).func_111022_d("DreamGrass").setUnlocalizedName("dreamgrass").setHardness(1F).setResistance(1F).setCreativeTab(DivineTabs.tabBlocks);
+        dreamgrass = new DivineGrass(VetheaConfigHelper.dreamgrassID, dreamdirt).func_111022_d("DreamGrass").setUnlocalizedName("dreamgrass").setHardness(1F).setResistance(1F).setCreativeTab(DivineTabs.tabBlocks);
         dreamwood = new BlockDreamwood(VetheaConfigHelper.dreamwoodID).func_111022_d("DreamWood").setUnlocalizedName("dreamwood").setHardness(1F).setResistance(1F).setCreativeTab(DivineTabs.tabBlocks);
         dreamwoodLeaves = new BlockDreamwoodLeaves(VetheaConfigHelper.dreamwoodLeavesID).func_111022_d("DreamwoodLeaves").setUnlocalizedName("dreamwoodLeaves").setHardness(1F).setCreativeTab(DivineTabs.tabBlocks);
         dreambricks = new BlockVethea(VetheaConfigHelper.dreambricksID, 25, Material.rock).func_111022_d("DreamBricks1").setUnlocalizedName("dreambricks").setHardness(1F).setResistance(1F).setCreativeTab(DivineTabs.tabBlocks);

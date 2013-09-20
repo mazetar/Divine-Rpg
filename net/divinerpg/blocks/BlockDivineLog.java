@@ -12,7 +12,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 /**
  * Logs from the mod should extend this class.
  */
-public abstract class BlockDivineLog extends BlockDivine {
+public class BlockDivineLog extends BlockDivine {
 	
     Icon insideIcon;
     

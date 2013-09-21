@@ -8,7 +8,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 public class ArcanaConfigHelper 
 {
-	public static int ancientBricksID;
+    public static int ancientBricksID;
 	public static int degradedBricksID;
 	public static int ancientStoneID;
 	public static int soulStoneID;
@@ -83,6 +83,9 @@ public class ArcanaConfigHelper
     public static int arcanaSpawner4ID;
     public static int arcanaSpawner5ID;
     
+    public static int condenserID;
+    public static int hotSpikesID;
+    
     public static void initConfig(FMLPreInitializationEvent event)
 	{
 		File file = new File(event.getModConfigurationDirectory(), "DivineRPGArcana.cfg");
@@ -150,6 +153,9 @@ public class ArcanaConfigHelper
         arcanaSpawner3ID = config.getBlock("arcanaSpawner3", ++id).getInt();
         arcanaSpawner4ID = config.getBlock("arcanaSpawner4", ++id).getInt();
         arcanaSpawner5ID = config.getBlock("arcanaSpawner5", ++id).getInt();
+        
+        condenserID = config.getBlock("Condenser", ++id).getInt();
+        hotSpikesID = config.getBlock("HotSpikes", ++id).getInt();
         
         OverworldConfigHelper.BLOCKID_NEXT = id;
         

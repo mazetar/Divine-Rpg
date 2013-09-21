@@ -1,6 +1,6 @@
 package net.divinerpg.blocks.arcana.tileentities;
 
-import net.divinerpg.blocks.arcana.BlockMoonlightFurnace;
+import net.divinerpg.blocks.arcana.furnace.BlockMoonlightFurnace;
 import net.divinerpg.blocks.overworld.tileentities.TileDivineFurnace;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;

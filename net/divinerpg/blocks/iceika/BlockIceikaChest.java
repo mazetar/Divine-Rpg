@@ -3,7 +3,7 @@ package net.divinerpg.blocks.iceika;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineContainer;
+import net.divinerpg.blocks.core.BlockDivineContainer;
 import net.divinerpg.blocks.iceika.tileentities.TileEntityIceikaChest;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.item.IceikaItemHelper;

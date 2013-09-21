@@ -1,7 +1,9 @@
 package net.divinerpg.blocks.arcana;
 
+import net.divinerpg.lib.Reference;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -32,5 +34,11 @@ public class BlockStainedGlass extends BlockGlass
     public int getRenderBlockPass()
     {
         return 1;
+    }
+    
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void registerIcons(IconRegister par1IconRegister) {
+        this.blockIcon = par1IconRegister.registerIcon(Reference.PATH_TEXTURES + func_111023_E()); 
     }
 }

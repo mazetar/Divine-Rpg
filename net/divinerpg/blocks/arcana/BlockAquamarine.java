@@ -3,7 +3,7 @@ package net.divinerpg.blocks.arcana;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineFlower;
+import net.divinerpg.blocks.core.BlockDivineFlower;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.block.BlockFlower;
@@ -27,11 +27,6 @@ public class BlockAquamarine extends BlockDivineFlower
         super(par1);
         this.setTickRandomly(true);
         float var3 = 0.5F;
-        this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 0.25F, 0.5F + var3);
-        this.setCreativeTab((CreativeTabs)null);
-        this.setHardness(0.0F);
-        this.setStepSound(soundGrassFootstep);
-        this.disableStats();
     }
 
     /**
@@ -126,14 +121,6 @@ public class BlockAquamarine extends BlockDivineFlower
         }
 
         return var5;
-    }
-
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
-    {
-        return this.texture[par2];
     }
 
     /**

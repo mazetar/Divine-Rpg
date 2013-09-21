@@ -1,6 +1,6 @@
 package net.divinerpg.blocks.arcana.tileentities;
 
-import net.divinerpg.blocks.arcana.BlockWhitefireFurnace;
+import net.divinerpg.blocks.arcana.furnace.BlockWhitefireFurnace;
 import net.divinerpg.blocks.overworld.tileentities.TileDivineFurnace;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.entity.player.EntityPlayer;

@@ -1,6 +1,6 @@
 package net.divinerpg.blocks.iceika;
 
-import net.divinerpg.blocks.BlockDivineLog;
+import net.divinerpg.blocks.core.BlockDivineLog;
 import net.divinerpg.lib.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;

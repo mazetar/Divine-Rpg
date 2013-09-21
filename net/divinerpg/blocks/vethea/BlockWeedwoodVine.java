@@ -3,7 +3,7 @@ package net.divinerpg.blocks.vethea;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.blocks.core.BlockDivine;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityLivingBase;

@@ -1,12 +1,12 @@
 package net.divinerpg.utils.helpers.block;
 
-import net.divinerpg.blocks.BlockDivine;
-import net.divinerpg.blocks.BlockDivineFlower;
-import net.divinerpg.blocks.BlockDivineLeaves;
-import net.divinerpg.blocks.BlockDivineLog;
-import net.divinerpg.blocks.BlockDivinePortal;
-import net.divinerpg.blocks.DivineGrass;
-import net.divinerpg.blocks.DivineOre;
+import net.divinerpg.blocks.core.BlockDivine;
+import net.divinerpg.blocks.core.BlockDivineFlower;
+import net.divinerpg.blocks.core.BlockDivineLeaves;
+import net.divinerpg.blocks.core.BlockDivineLog;
+import net.divinerpg.blocks.core.BlockDivinePortal;
+import net.divinerpg.blocks.core.DivineGrass;
+import net.divinerpg.blocks.core.DivineOre;
 import net.divinerpg.blocks.twilight.BlockTwilightStone;
 import net.divinerpg.entities.particle.EntityAugitePortalFX;
 import net.divinerpg.entities.particle.EntityAzuritePortalFX;

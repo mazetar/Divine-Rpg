@@ -1,6 +1,6 @@
 package net.divinerpg.blocks.overworld;
 
-import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.blocks.core.BlockDivine;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.Icon;
 

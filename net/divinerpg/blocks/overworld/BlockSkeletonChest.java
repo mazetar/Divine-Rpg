@@ -2,7 +2,7 @@ package net.divinerpg.blocks.overworld;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineContainer;
+import net.divinerpg.blocks.core.BlockDivineContainer;
 import net.divinerpg.blocks.overworld.tileentities.TileEntitySkeletonChest;
 import net.divinerpg.utils.helpers.block.IPersonalBlock;
 import net.minecraft.block.Block;

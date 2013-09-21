@@ -1,6 +1,6 @@
 package net.divinerpg.blocks.vethea;
 
-import net.divinerpg.blocks.BlockDivineLeaves;
+import net.divinerpg.blocks.core.BlockDivineLeaves;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 

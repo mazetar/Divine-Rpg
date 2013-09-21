@@ -3,7 +3,7 @@ package net.divinerpg.blocks.twilight;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineLeaves;
+import net.divinerpg.blocks.core.BlockDivineLeaves;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;

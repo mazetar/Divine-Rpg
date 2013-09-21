@@ -2,7 +2,7 @@ package net.divinerpg.blocks.overworld;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineFence;
+import net.divinerpg.blocks.core.BlockDivineFence;
 import net.divinerpg.utils.helpers.block.OverworldBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

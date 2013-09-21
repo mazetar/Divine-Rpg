@@ -1,35 +1,37 @@
 package net.divinerpg.utils.helpers.block;
 
-import net.divinerpg.blocks.BlockDivineSpawner;
 import net.divinerpg.blocks.arcana.BlockAquamarine;
 import net.divinerpg.blocks.arcana.BlockArcaniteGrass;
 import net.divinerpg.blocks.arcana.BlockArcaniteRails;
-import net.divinerpg.blocks.arcana.BlockArcaniteTubes;
-import net.divinerpg.blocks.arcana.BlockDemonFurnace;
-import net.divinerpg.blocks.arcana.BlockDramixAltar;
+import net.divinerpg.blocks.arcana.BlockCondenser;
 import net.divinerpg.blocks.arcana.BlockDungeonBlock;
 import net.divinerpg.blocks.arcana.BlockEucalyptusRoot;
 import net.divinerpg.blocks.arcana.BlockExtractor;
-import net.divinerpg.blocks.arcana.BlockFireStock;
-import net.divinerpg.blocks.arcana.BlockGreenlightFurnace;
 import net.divinerpg.blocks.arcana.BlockHeatTraps;
-import net.divinerpg.blocks.arcana.BlockHitchak;
-import net.divinerpg.blocks.arcana.BlockLamona;
-import net.divinerpg.blocks.arcana.BlockMarsine;
-import net.divinerpg.blocks.arcana.BlockMoltenFurnace;
-import net.divinerpg.blocks.arcana.BlockMoonlightFurnace;
-import net.divinerpg.blocks.arcana.BlockOceanfireFurnace;
+import net.divinerpg.blocks.arcana.BlockHotSpike;
 import net.divinerpg.blocks.arcana.BlockOfLight;
 import net.divinerpg.blocks.arcana.BlockOreDoor;
-import net.divinerpg.blocks.arcana.BlockParasectaAltar;
-import net.divinerpg.blocks.arcana.BlockPinfly;
 import net.divinerpg.blocks.arcana.BlockPortalArcana;
 import net.divinerpg.blocks.arcana.BlockPortalArcanaFrame;
 import net.divinerpg.blocks.arcana.BlockStainedGlass;
 import net.divinerpg.blocks.arcana.BlockStarBridge;
 import net.divinerpg.blocks.arcana.BlockStarBridgeOn;
-import net.divinerpg.blocks.arcana.BlockVeilo;
-import net.divinerpg.blocks.arcana.BlockWhitefireFurnace;
+import net.divinerpg.blocks.arcana.furnace.BlockDemonFurnace;
+import net.divinerpg.blocks.arcana.furnace.BlockGreenlightFurnace;
+import net.divinerpg.blocks.arcana.furnace.BlockMoltenFurnace;
+import net.divinerpg.blocks.arcana.furnace.BlockMoonlightFurnace;
+import net.divinerpg.blocks.arcana.furnace.BlockOceanfireFurnace;
+import net.divinerpg.blocks.arcana.furnace.BlockWhitefireFurnace;
+import net.divinerpg.blocks.arcana.modeled.BlockDramixAltar;
+import net.divinerpg.blocks.arcana.modeled.BlockParasectaAltar;
+import net.divinerpg.blocks.arcana.plants.BlockFireStock;
+import net.divinerpg.blocks.arcana.plants.BlockHitchak;
+import net.divinerpg.blocks.arcana.plants.BlockLamona;
+import net.divinerpg.blocks.arcana.plants.BlockMarsine;
+import net.divinerpg.blocks.arcana.plants.BlockPinfly;
+import net.divinerpg.blocks.arcana.plants.BlockVeilo;
+import net.divinerpg.blocks.core.DivineSpawner;
+import net.divinerpg.blocks.core.DivineLadder;
 import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
@@ -117,6 +119,7 @@ public class ArcanaBlockHelper
 	public static Block blockOfLight;
 	
 	public static Block condenser;
+	public static Block hotSpikes;
 	
 	public static Block DramixStatue;
 	public static Block ParasectaStatue;
@@ -143,7 +146,7 @@ public class ArcanaBlockHelper
 		
 		heatTraps = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsID, 110).setUnlocalizedName("HeatTrap").func_111022_d("HeatTrapOff");
 		heatTrapsOn = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsOnID, 109).setUnlocalizedName("HeatTrapsOn").func_111022_d("HeatTrapOn");
-		blockOfLight = new BlockOfLight(ArcanaConfigHelper.blockOfLightID).setUnlocalizedName("BlockOfLight");
+		blockOfLight = new BlockOfLight(ArcanaConfigHelper.blockOfLightID).setUnlocalizedName("BlockOfLight").func_111022_d("BlockOfLight");
 		
 		arcaniumOre = new BlockDungeonBlock(ArcanaConfigHelper.arcaniumOreID).setUnlocalizedName("ArcaniumOre").func_111022_d("ArcaniumOre");
 		oreDoor1 = new BlockOreDoor(ArcanaConfigHelper.oreDoor1ID, ArcanaItemHelper.key1).setUnlocalizedName("oreDoor1").func_111022_d("OreDoor1");
@@ -154,7 +157,7 @@ public class ArcanaBlockHelper
 		arcaniteRails = new BlockArcaniteRails(ArcanaConfigHelper.arcaniteRailsID).setUnlocalizedName("ArcaniumRails").func_111022_d("ArcaniumRails");
 		starBridge = new BlockStarBridge(ArcanaConfigHelper.starBridgeID, 0, false).setUnlocalizedName("StarBridge");
 		starBridgeOn = new BlockStarBridgeOn(ArcanaConfigHelper.starBridgeOnID, 0, true).setUnlocalizedName("StarBridgeOn");
-		arcaniteTubes = new BlockArcaniteTubes(ArcanaConfigHelper.arcaniteTubesID).setUnlocalizedName("ArcaniteTubes").func_111022_d("ArcaniteTubes");
+		arcaniteTubes = new DivineLadder(ArcanaConfigHelper.arcaniteTubesID).setUnlocalizedName("ArcaniteTubes").func_111022_d("ArcaniteTubes");
 		
 		moltenFurnace = new BlockMoltenFurnace(ArcanaConfigHelper.moltenFurnaceID, false).setUnlocalizedName("MoltenFurnace");
 		greenlightFurnace = new BlockGreenlightFurnace(ArcanaConfigHelper.greenlightFurnaceID, false).setUnlocalizedName("GreenlightFurnace");
@@ -185,14 +188,15 @@ public class ArcanaBlockHelper
 		stainedGlass6 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass6ID).setUnlocalizedName("StainedGlass6");
 		stainedGlass7 = new BlockStainedGlass(ArcanaConfigHelper.stainedGlass7ID).setUnlocalizedName("StainedGlass7");
 		
-		spawnerRoamer = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawnerID, "Roamer").setUnlocalizedName("ArcanaSpawner").func_111022_d("ArcanaSpawner");
-		spawnerDeathcryx = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawner1ID, "Deathcryx").setUnlocalizedName("ArcanaSpawner1").func_111022_d("ArcanaSpawner");;
-		spawnerDeathhound = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawner2ID, "Deathound").setUnlocalizedName("ArcanaSpawner2").func_111022_d("ArcanaSpawner");;
-		spawnerRazorback = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawner3ID, "Razorback").setUnlocalizedName("ArcanaSpawner3").func_111022_d("ArcanaSpawner");;
-		spawnerLivingstatue = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawner4ID, "Living Statue").setUnlocalizedName("ArcanaSpawner4").func_111022_d("ArcanaSpawner");;
-		spawnerDungeonPrisoner = new BlockDivineSpawner(ArcanaConfigHelper.arcanaSpawner5ID, "Dungeon Prisoner").setUnlocalizedName("ArcanaSpawner5").func_111022_d("ArcanaSpawner");;
+		spawnerRoamer = new DivineSpawner(ArcanaConfigHelper.arcanaSpawnerID, "Roamer").setUnlocalizedName("ArcanaSpawner").func_111022_d("ArcanaSpawner");
+		spawnerDeathcryx = new DivineSpawner(ArcanaConfigHelper.arcanaSpawner1ID, "Deathcryx").setUnlocalizedName("ArcanaSpawner1").func_111022_d("ArcanaSpawner");;
+		spawnerDeathhound = new DivineSpawner(ArcanaConfigHelper.arcanaSpawner2ID, "Deathound").setUnlocalizedName("ArcanaSpawner2").func_111022_d("ArcanaSpawner");;
+		spawnerRazorback = new DivineSpawner(ArcanaConfigHelper.arcanaSpawner3ID, "Razorback").setUnlocalizedName("ArcanaSpawner3").func_111022_d("ArcanaSpawner");;
+		spawnerLivingstatue = new DivineSpawner(ArcanaConfigHelper.arcanaSpawner4ID, "Living Statue").setUnlocalizedName("ArcanaSpawner4").func_111022_d("ArcanaSpawner");;
+		spawnerDungeonPrisoner = new DivineSpawner(ArcanaConfigHelper.arcanaSpawner5ID, "Dungeon Prisoner").setUnlocalizedName("ArcanaSpawner5").func_111022_d("ArcanaSpawner");;
 	
-		//condenser = new BlockCondenser(0, 0, null);
+		condenser = new BlockCondenser(ArcanaConfigHelper.condenserID);
+		hotSpikes = new BlockHotSpike(ArcanaConfigHelper.hotSpikesID);
 		
 		InitGameRegistryBlocks();
 		addNames();
@@ -261,6 +265,8 @@ public class ArcanaBlockHelper
         GameRegistry.registerBlock(spawnerRazorback, "ArcanaSpawner3");
         GameRegistry.registerBlock(spawnerLivingstatue, "ArcanaSpawner4");
         GameRegistry.registerBlock(spawnerDungeonPrisoner, "ArcanaSpawner5");
+        GameRegistry.registerBlock(condenser, "Condenser");
+        GameRegistry.registerBlock(hotSpikes, "Hot Spikes");
 	}
 	
 	public static void addNames()
@@ -326,5 +332,7 @@ public class ArcanaBlockHelper
         LanguageRegistry.addName(spawnerRazorback, "Dungeon Spawner");
         LanguageRegistry.addName(spawnerLivingstatue, "Dungeon Spawner");
         LanguageRegistry.addName(spawnerDungeonPrisoner, "Dungeon Spawner");
+        LanguageRegistry.addName(condenser, "Condenser");
+        LanguageRegistry.addName(hotSpikes, "Hot Spikes");
 	}
 }

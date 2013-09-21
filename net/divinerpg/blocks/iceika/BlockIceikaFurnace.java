@@ -4,7 +4,7 @@ import java.util.Random;
 
 import net.divinerpg.DivineRPGIceika;
 import net.divinerpg.DivineRPGTwilight;
-import net.divinerpg.blocks.BlockDivineContainer;
+import net.divinerpg.blocks.core.BlockDivineContainer;
 import net.divinerpg.blocks.iceika.tileentities.TileEntityCoalStoneFurnace;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.block.IceikaBlockHelper;

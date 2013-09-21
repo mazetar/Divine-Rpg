@@ -3,7 +3,7 @@ package net.divinerpg.blocks.arcana;
 import java.util.List;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivinePortal;
+import net.divinerpg.blocks.core.BlockDivinePortal;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;

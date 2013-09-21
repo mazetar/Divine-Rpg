@@ -2,7 +2,7 @@ package net.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.DivineGrass;
+import net.divinerpg.blocks.core.DivineGrass;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.block.OverworldBlockHelper;

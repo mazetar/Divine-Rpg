@@ -2,7 +2,7 @@ package net.divinerpg.blocks.arcana;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.blocks.core.BlockDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.AxisAlignedBB;
@@ -13,12 +13,12 @@ public class BlockStarBridge extends BlockDivine
     /** Whether this lamp block is the powered version. */
     private final boolean powered;
 
-    public BlockStarBridge(int par1, int par3, boolean par2)
+    public BlockStarBridge(int par1, int par3, boolean powered)
     {
         super(par1, par3, Material.glass);
-        this.powered = par2;
+        this.powered = powered;
 
-        if (par2)
+        if (powered)
         {
             this.setLightValue(1.0F);
         }

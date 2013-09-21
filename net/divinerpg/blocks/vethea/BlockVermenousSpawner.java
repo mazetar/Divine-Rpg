@@ -1,8 +1,8 @@
 package net.divinerpg.blocks.vethea;
 
-import net.divinerpg.blocks.BlockDivineSpawner;
+import net.divinerpg.blocks.core.DivineSpawner;
 
-public class BlockVermenousSpawner extends BlockDivineSpawner
+public class BlockVermenousSpawner extends DivineSpawner
 {
     public BlockVermenousSpawner(int par1)
     {

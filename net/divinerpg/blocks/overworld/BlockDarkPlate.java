@@ -3,7 +3,7 @@ package net.divinerpg.blocks.overworld;
 import java.util.Iterator;
 import java.util.List;
 
-import net.divinerpg.blocks.BlockDivinePressurePlate;
+import net.divinerpg.blocks.core.BlockDivinePressurePlate;
 import net.minecraft.block.EnumMobType;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;

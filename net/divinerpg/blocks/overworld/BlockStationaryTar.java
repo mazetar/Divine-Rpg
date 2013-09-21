@@ -3,7 +3,7 @@ package net.divinerpg.blocks.overworld;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineFluid;
+import net.divinerpg.blocks.core.BlockDivineFluid;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemStack;

@@ -195,6 +195,7 @@ public class OverworldConfigHelper
       public static int paneBlackID;
       
       public static int lavaBrickID;
+      public static int tomatoID;
 
 	
   public static int stainedGlassID;
@@ -292,6 +293,7 @@ public class OverworldConfigHelper
 		purpleGlowBoneTreeID = config.getBlock("purpleGlowBoneTreeID", ++id).getInt();
 		pinkGlowBoneTreeID = config.getBlock("pinkGlowBoneTreeID", ++id).getInt(); // 568.
 		
+		tomatoID = config.getBlock("Tomato Block", ++id).getInt();
 		/** MISSING BLOCKS */
 		
 		darkPlateID = config.getBlock("darkPlateID", ++id).getInt(); 
@@ -439,7 +441,6 @@ public class OverworldConfigHelper
 	
 	public static int bluefirebowID;
 	public static int rupeeID;
-	public static int tomatoID;
 	public static int tomatoSeedsID;
 	public static int purpleFireID;
 	public static int jackOManBootsID;
@@ -545,7 +546,6 @@ public class OverworldConfigHelper
 	
 		bluefirebowID = config.getItem("bluefirebow", nextItemID++).getInt();
 		rupeeID = config.getItem("rupee", nextItemID++).getInt();
-		tomatoID = config.getItem("tomato", nextItemID++).getInt();
 		tomatoSeedsID = config.getItem("tomatoSeeds", nextItemID++).getInt();
 		purpleFireID = config.getItem("purpleFire", nextItemID++).getInt();
 		jackOManBootsID = config.getItem("jackOManBoots", nextItemID++).getInt();

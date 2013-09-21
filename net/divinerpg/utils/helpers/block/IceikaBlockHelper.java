@@ -1,10 +1,10 @@
 package net.divinerpg.utils.helpers.block;
 
-import net.divinerpg.blocks.BlockColoredGlass;
-import net.divinerpg.blocks.BlockDivine;
-import net.divinerpg.blocks.BlockDivinePortal;
-import net.divinerpg.blocks.BlockDivineSpawner;
-import net.divinerpg.blocks.DivineGrass;
+import net.divinerpg.blocks.core.DivineGlass;
+import net.divinerpg.blocks.core.BlockDivine;
+import net.divinerpg.blocks.core.BlockDivinePortal;
+import net.divinerpg.blocks.core.DivineSpawner;
+import net.divinerpg.blocks.core.DivineGrass;
 import net.divinerpg.blocks.iceika.BlockGiftBox;
 import net.divinerpg.blocks.iceika.BlockIceikaChest;
 import net.divinerpg.blocks.iceika.BlockIceikaDoor;
@@ -79,11 +79,11 @@ public class IceikaBlockHelper {
 		workshopCarpet = new BlockDivine(cfg.WorkshopCarpetID, 0, Material.cloth).func_111022_d("WorkshopCarpet").setUnlocalizedName("WorkshopCarpet").setCreativeTab(DivineTabs.tabBlocks);
 		workshopBookcase = new BlockDivine(cfg.WorkshopBookcaseID, 0, Material.wood).func_111022_d("WorkshopBookcase").setHardness(2.0F).setResistance(5.0F).setUnlocalizedName("WorkshopBookcase").setCreativeTab(DivineTabs.tabBlocks);
 		workshopLamp = new BlockDivine(cfg.WorkshopLampID, 0, Material.rock).func_111022_d("WorkshopLamp").setLightValue(1.0F).setUnlocalizedName("WorkshopLamp").setCreativeTab(DivineTabs.tabBlocks);
-		frostedGlass = new BlockColoredGlass(cfg.FrostedGlassID, false).func_111022_d("FrostedGlass").setUnlocalizedName("FrostedGlass").setCreativeTab(DivineTabs.tabBlocks);
+		frostedGlass = new DivineGlass(cfg.FrostedGlassID).func_111022_d("FrostedGlass").setUnlocalizedName("FrostedGlass").setCreativeTab(DivineTabs.tabBlocks);
 		steelDoor = new BlockIceikaDoor(cfg.SteelDoorID, Material.iron).func_111022_d("IceDoor").setHardness(2.0F).setResistance(5.0F).setBlockUnbreakable().setUnlocalizedName("SteelDoor").setCreativeTab(DivineTabs.tabBlocks);
 		frostedChest = new BlockIceikaChest(cfg.FrostedChestID).func_111022_d("FrostedChest").setHardness(2.0F).setResistance(5.0F).setUnlocalizedName("FrostedChest").setCreativeTab(DivineTabs.tabBlocks);
-		glacideSpawner = new BlockDivineSpawner(cfg.GlacideSpawnerID, "Glacide").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
-		rolumSpawner = new BlockDivineSpawner(cfg.RolumSpawnerID, "Rollum").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
+		glacideSpawner = new DivineSpawner(cfg.GlacideSpawnerID, "Glacide").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
+		rolumSpawner = new DivineSpawner(cfg.RolumSpawnerID, "Rollum").func_111022_d("FrozenDungeonSpawner").setUnlocalizedName("FrozenDungeonSpawner");
 		
 		iceikaPortal = ((BlockDivinePortal) new BlockDivinePortal(IceikaConfigHelper.IceikaPortalID).func_111022_d("IceikaPortal").setUnlocalizedName("IceikaPortal").setCreativeTab(DivineTabs.tabBlocks))
                 .setPortalVariables(Block.blockSnow, glacideSpawner/* aka. nothing */, DimensionRegistry.IceikaID, "", new EntityDravitePortalFX(null, 1, 2, 3, 4, 5, 6));

@@ -1,6 +1,6 @@
 package net.divinerpg.utils.helpers.block;
 
-import net.divinerpg.blocks.DivineGrass;
+import net.divinerpg.blocks.core.DivineGrass;
 import net.divinerpg.blocks.vethea.BlockAcid;
 import net.divinerpg.blocks.vethea.BlockBacterialAcid;
 import net.divinerpg.blocks.vethea.BlockBarredDoor;

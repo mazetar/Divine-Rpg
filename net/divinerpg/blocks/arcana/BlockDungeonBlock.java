@@ -1,6 +1,6 @@
 package net.divinerpg.blocks.arcana;
 
-import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.blocks.core.BlockDivine;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.block.material.Material;
 

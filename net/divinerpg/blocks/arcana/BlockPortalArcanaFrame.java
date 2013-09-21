@@ -3,7 +3,7 @@ package net.divinerpg.blocks.arcana;
 import java.util.List;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.blocks.core.BlockDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

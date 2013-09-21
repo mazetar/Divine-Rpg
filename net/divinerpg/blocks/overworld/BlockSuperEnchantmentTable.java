@@ -4,7 +4,7 @@ import java.util.Random;
 
 import net.divinerpg.DivineRPG;
 import net.divinerpg.DivineRPGTwilight;
-import net.divinerpg.blocks.BlockDivineContainer;
+import net.divinerpg.blocks.core.BlockDivineContainer;
 import net.divinerpg.blocks.overworld.tileentities.TileEntitySuperEnchantmentTable;
 import net.divinerpg.lib.GuiRef;
 import net.minecraft.block.material.Material;

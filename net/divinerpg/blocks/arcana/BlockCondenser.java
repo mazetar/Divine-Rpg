@@ -1,11 +1,15 @@
 package net.divinerpg.blocks.arcana;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.divinerpg.DivineRPG;
 import net.divinerpg.DivineRPGArcana;
-import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityCondenser;
+import net.divinerpg.blocks.core.BlockDivineContainer;
 import net.divinerpg.lib.GuiRef;
+import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Icon;
@@ -16,18 +20,11 @@ public class BlockCondenser extends BlockDivineContainer
 
 	private Icon[] texture;
 
-	public BlockCondenser(int par1, int par2,Material par2Material)
+	public BlockCondenser(int id)
 	{
-		super(par1, par2, par2Material);
+		super(id, Material.anvil);
+		this.setCreativeTab(DivineTabs.tabUtility);
 	}
-	
-    /**
-     * Returns the block texture based on the side being looked at.  Args: side
-     */
-    public Icon getBlockTextureFromSideAndMetadata(int par1, int par2)
-    {
-        return par1 == 1 ? this.texture[1] : (par1 == 0 ? this.texture[1] : (par1 == 3 ? this.texture[2] : this.texture[0]));
-    }
 
 	@Override
 	public TileEntity createNewTileEntity(World var1)

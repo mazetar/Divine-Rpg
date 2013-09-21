@@ -2,7 +2,7 @@ package net.divinerpg.blocks.iceika;
 
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineContainer;
+import net.divinerpg.blocks.core.BlockDivineContainer;
 import net.divinerpg.blocks.core.tileentities.TileSingularChest;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;

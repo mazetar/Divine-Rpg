@@ -4,7 +4,7 @@ import java.util.Random;
 
 import net.divinerpg.DivineRPGTwilight;
 import net.divinerpg.DivineRPGVethea;
-import net.divinerpg.blocks.BlockDivineContainer;
+import net.divinerpg.blocks.core.BlockDivineContainer;
 import net.divinerpg.blocks.vethea.tileentities.TileEntityDreamLamp;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.block.VetheaBlockHelper;

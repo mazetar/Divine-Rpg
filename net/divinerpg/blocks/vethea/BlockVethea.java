@@ -1,6 +1,6 @@
 package net.divinerpg.blocks.vethea;
 
-import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.blocks.core.BlockDivine;
 import net.minecraft.block.material.Material;
 
 public class BlockVethea extends BlockDivine

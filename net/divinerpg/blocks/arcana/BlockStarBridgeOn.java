@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 
-import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.blocks.core.BlockDivine;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

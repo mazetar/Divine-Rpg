@@ -1,7 +1,8 @@
 package net.divinerpg.utils.helpers.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.divinerpg.blocks.BlockDivine;
+import net.divinerpg.blocks.core.BlockDivine;
+import net.divinerpg.blocks.core.DivineGlass;
 import net.divinerpg.blocks.overworld.*;
 import net.divinerpg.blocks.twilight.BlockGlowBone;
 import net.divinerpg.utils.helpers.config.OverworldConfigHelper;
@@ -224,7 +225,7 @@ public class OverworldBlockHelper
 		ayeracoBeamYellow = new BlockAyeracoBeamYellow(cfg.ayeracoBeamYellowID).setUnlocalizedName("AyeracoBeamYellow");
 
 		colouredBricks = new BlockColoredBricks(cfg.colouredBricksID, 0, Material.rock).setUnlocalizedName("ColouredBricks");
-		colouredGlass = new BlockColoredGlass(cfg.colouredGlassID, Material.glass, 0).setUnlocalizedName("ColouredGlass");
+		colouredGlass = new DivineGlass(cfg.colouredGlassID).setUnlocalizedName("ColouredGlass");
 		colouredPanes = new BlockColoredPane(cfg.colouredPanesID, "", "", Material.glass, false).setUnlocalizedName("ColouredPanes");
 		dyeBlocks = new BlockDyes(cfg.dyeBlocksID, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3).setResistance(30).setUnlocalizedName("DyeBlocks");
 		miniBricks = new BlockMiniBricks(cfg.miniBricksID, Material.rock).setStepSound(Block.soundStoneFootstep).setHardness(3).setResistance(30).setUnlocalizedName("MiniBricks");
@@ -407,6 +408,7 @@ public class OverworldBlockHelper
 	    stainedGlass7 = new BlockDivine(cfg.stainedGlass7ID).func_111022_d("StainedGlass7");
 		
 		registerBlocks();
+		addNames();
 	}
 
 	public static void addNames()
@@ -416,6 +418,7 @@ public class OverworldBlockHelper
 	
 	public static void registerBlocks() {
 	    GameRegistry.registerBlock(blueFire, "blueFire");
+	    GameRegistry.registerBlock(tomato, "Tomato");
 	    GameRegistry.registerBlock(divineRock, "divineRock");
 	    
 	    GameRegistry.registerBlock(acceleraunch, "acceleraunch");

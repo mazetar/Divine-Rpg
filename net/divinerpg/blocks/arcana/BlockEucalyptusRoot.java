@@ -3,6 +3,7 @@ package net.divinerpg.blocks.arcana;
 import java.util.ArrayList;
 import java.util.Random;
 
+import net.divinerpg.blocks.core.BlockDivineFlower;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.block.BlockFlower;
@@ -13,11 +14,11 @@ import net.minecraftforge.common.ForgeDirection;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockEucalyptusRoot extends BlockFlower
+public class BlockEucalyptusRoot extends BlockDivineFlower
 {
-    public BlockEucalyptusRoot(int par1)
+    public BlockEucalyptusRoot(int id)
     {
-        super(par1);
+        super(id);
         this.setTickRandomly(true);
         float var3 = 0.5F;
         this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 0.25F, 0.5F + var3);
@@ -33,7 +34,7 @@ public class BlockEucalyptusRoot extends BlockFlower
      */
     protected boolean canThisPlantGrowOnThisBlockID(int par1)
     {
-        return par1 == ArcanaBlockHelper.arcaniteDirt.blockID;
+        return par1 == ArcanaBlockHelper.arcaniteDirt.blockID || par1 == ArcanaBlockHelper.arcaniteGrass.blockID;
     }
 
     /**

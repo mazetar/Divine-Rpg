@@ -3,7 +3,7 @@ package net.divinerpg.blocks.overworld;
 import java.util.ArrayList;
 import java.util.Random;
 
-import net.divinerpg.blocks.BlockDivineFlower;
+import net.divinerpg.blocks.core.BlockDivineFlower;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.divinerpg.utils.helpers.item.OverworldItemHelper;
 import net.minecraft.block.Block;

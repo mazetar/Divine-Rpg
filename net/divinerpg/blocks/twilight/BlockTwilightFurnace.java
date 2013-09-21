@@ -3,7 +3,7 @@ package net.divinerpg.blocks.twilight;
 import java.util.Random;
 
 import net.divinerpg.DivineRPGTwilight;
-import net.divinerpg.blocks.BlockDivineContainer;
+import net.divinerpg.blocks.core.BlockDivineContainer;
 import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
 import net.divinerpg.lib.GuiRef;
 import net.minecraft.block.Block;

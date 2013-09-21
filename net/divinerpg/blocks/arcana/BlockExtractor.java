@@ -7,8 +7,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 import net.divinerpg.DivineRPGArcana;
 import net.divinerpg.DivineRPGTwilight;
-import net.divinerpg.blocks.BlockDivineContainer;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
+import net.divinerpg.blocks.core.BlockDivineContainer;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.minecraft.block.material.Material;

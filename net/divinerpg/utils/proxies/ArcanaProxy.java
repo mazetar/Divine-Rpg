@@ -3,14 +3,11 @@ package net.divinerpg.utils.proxies;
 import net.divinerpg.DivineRPGArcana;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityCondenser;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityDemonFurnace;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityDramixAltar;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityGreenlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityOceanfireFurnace;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityParasectaAltar;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityPheonixAltar;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
 import net.divinerpg.utils.handlers.gui.ArcanaGuiHandler;
 import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
@@ -45,10 +42,6 @@ public class ArcanaProxy {
     void registerTileEntities() {
         GameRegistry.registerTileEntity(TileEntityCondenser.class, "Condenser");
         GameRegistry.registerTileEntity(TileEntityExtractor.class, "Extractor");
-        
-        GameRegistry.registerTileEntity(TileEntityParasectaAltar.class, "Parasecta Altar");
-        GameRegistry.registerTileEntity(TileEntityPheonixAltar.class, "Pheonix Altar");
-        GameRegistry.registerTileEntity(TileEntityDramixAltar.class, "Dramix Altar");
         
         GameRegistry.registerTileEntity(TileEntityWhitefireFurnace.class, "Whitefire Furnace TE");
         GameRegistry.registerTileEntity(TileEntityOceanfireFurnace.class, "OceanfireFurnace TE");

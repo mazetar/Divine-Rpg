@@ -13,12 +13,12 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class BlockDivineStatue extends Block {
+public class DivineStatue extends Block {
 
     public DivineModel model;
     public ResourceLocation texture;
     
-    public BlockDivineStatue(int ID, ResourceLocation texture, DivineModel model) {
+    public DivineStatue(int ID, ResourceLocation texture, DivineModel model) {
         super(ID, Material.air);
         this.texture = texture;
         this.model = model;
@@ -31,7 +31,7 @@ public class BlockDivineStatue extends Block {
      * This is needed in order to avoid having to cast from block to BlockDivineStatue.
      * @author Mazetar
      */
-    public BlockDivineStatue setUnlocalizedName(String name) {
+    public DivineStatue setUnlocalizedName(String name) {
          super.setUnlocalizedName(name);
          return this;
     }

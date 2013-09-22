@@ -6,11 +6,11 @@
 
 package net.divinerpg.client.models.arcana.tileentities;
 
-import net.divinerpg.blocks.arcana.tileentities.TileEntityDramixAltar;
 import net.divinerpg.client.models.DivineModel;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.client.ForgeHooksClient;
 
 import org.lwjgl.opengl.GL11;
@@ -129,7 +129,7 @@ public class ModelDramixAltar extends ModelBase implements DivineModel
         S4.render(f5);
     }
 
-    public void render(TileEntityDramixAltar calcinator, double x, double y, double z)
+    public void render(TileEntity calcinator, double x, double y, double z)
     {
         GL11.glPushMatrix();
         GL11.glDisable(GL11.GL_LIGHTING);

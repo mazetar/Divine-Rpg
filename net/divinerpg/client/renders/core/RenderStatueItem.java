@@ -1,6 +1,6 @@
 package net.divinerpg.client.renders.core;
 
-import net.divinerpg.blocks.core.BlockDivineStatue;
+import net.divinerpg.blocks.core.DivineStatue;
 import net.divinerpg.client.models.DivineModel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
@@ -16,7 +16,7 @@ public class RenderStatueItem implements IItemRenderer {
     DivineModel model;
     ResourceLocation texture;
     
-    public RenderStatueItem(BlockDivineStatue statueBlock) {
+    public RenderStatueItem(DivineStatue statueBlock) {
         this.model = statueBlock.model;
         this.texture = statueBlock.texture;
     }

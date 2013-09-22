@@ -5,7 +5,7 @@ import net.divinerpg.blocks.core.BlockDivineFlower;
 import net.divinerpg.blocks.core.BlockDivineLeaves;
 import net.divinerpg.blocks.core.BlockDivineLog;
 import net.divinerpg.blocks.core.BlockDivinePortal;
-import net.divinerpg.blocks.core.BlockDivineStatue;
+import net.divinerpg.blocks.core.DivineStatue;
 import net.divinerpg.blocks.core.DivineGrass;
 import net.divinerpg.blocks.core.DivineOre;
 import net.divinerpg.blocks.twilight.BlockTwilightStone;
@@ -81,11 +81,11 @@ public class TwilightBlockHelper
 	public static Block pinkGlowBoneTreeBase;
 	public static Block purpleGlowBoneTreeBase;
 	
-	public static BlockDivineStatue DensosStatue;
-	public static BlockDivineStatue ReyvorStatue;
-	public static BlockDivineStatue SFStatue;
-	public static BlockDivineStatue TDStatue;
-	public static BlockDivineStatue VamacheronStatue;
+	public static DivineStatue DensosStatue;
+	public static DivineStatue ReyvorStatue;
+	public static DivineStatue SFStatue;
+	public static DivineStatue TDStatue;
+	public static DivineStatue VamacheronStatue;
 	
 	public static Block TwilightFlower;
 	public static Block DraviteLamp;
@@ -145,11 +145,11 @@ public class TwilightBlockHelper
 		                new EntityAugitePortalFX(null, 1, 2, 3, 4, 5, 6));
 		
 		// Statues
-		DensosStatue = new BlockDivineStatue(TwilightConfigHelper.densosStatueID, EntityResourceLocs.DENSOS, new ModelDensosStatue());
-		ReyvorStatue = new BlockDivineStatue(TwilightConfigHelper.reyvorStatueID, EntityResourceLocs.REYVOR, new ModelReyvorStatue()); 
-		SFStatue = new BlockDivineStatue(TwilightConfigHelper.sfStatueID, EntityResourceLocs.SOUL_FIEND, new ModelSFStatue());//TODO: Is this correct texture? just guessing here --Maz
-		TDStatue = new BlockDivineStatue(TwilightConfigHelper.tdStatueID, EntityResourceLocs.TWILIGHT_DEMON, new ModelTDStatue()); //TODO: Is this correct texture? just guessing here --Maz
-		VamacheronStatue = new BlockDivineStatue(TwilightConfigHelper.vamacheronStatueID, EntityResourceLocs.VAMACHERON, new ModelVamacheronStatue());
+		DensosStatue = new DivineStatue(TwilightConfigHelper.densosStatueID, EntityResourceLocs.DENSOS, new ModelDensosStatue());
+		ReyvorStatue = new DivineStatue(TwilightConfigHelper.reyvorStatueID, EntityResourceLocs.REYVOR, new ModelReyvorStatue()); 
+		SFStatue = new DivineStatue(TwilightConfigHelper.sfStatueID, EntityResourceLocs.SOUL_FIEND, new ModelSFStatue());//TODO: Is this correct texture? just guessing here --Maz
+		TDStatue = new DivineStatue(TwilightConfigHelper.tdStatueID, EntityResourceLocs.TWILIGHT_DEMON, new ModelTDStatue()); //TODO: Is this correct texture? just guessing here --Maz
+		VamacheronStatue = new DivineStatue(TwilightConfigHelper.vamacheronStatueID, EntityResourceLocs.VAMACHERON, new ModelVamacheronStatue());
 		
 		
 		InitGameRegistryBlocks();

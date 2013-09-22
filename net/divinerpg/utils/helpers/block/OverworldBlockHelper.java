@@ -3,7 +3,7 @@ package net.divinerpg.utils.helpers.block;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.divinerpg.blocks.core.BlockDivine;
-import net.divinerpg.blocks.core.BlockDivineStatue;
+import net.divinerpg.blocks.core.DivineStatue;
 import net.divinerpg.blocks.core.DivineGlass;
 import net.divinerpg.blocks.overworld.*;
 import net.divinerpg.blocks.twilight.BlockGlowBone;
@@ -29,10 +29,10 @@ public class OverworldBlockHelper
 	public static Block acceleraunch;
 	public static Block acceleron;
 	
-	public static BlockDivineStatue aeStatue;
-	public static BlockDivineStatue ayeracoStatue;
-	public static BlockDivineStatue kosStatue;
-	public static BlockDivineStatue watcherStatue;
+	public static DivineStatue aeStatue;
+	public static DivineStatue ayeracoStatue;
+	public static DivineStatue kosStatue;
+	public static DivineStatue watcherStatue;
 	
 	public static Block ayeracoBeamBlue;
 	public static Block ayeracoBeamGreen;
@@ -220,10 +220,10 @@ public class OverworldBlockHelper
 		acceleraunch = new BlockAcceleraunch(cfg.acceleraunchID).setUnlocalizedName("Acceleraunch");
 		acceleron = new BlockAccelleron(cfg.acceleronID).setUnlocalizedName("Acceleron");
 		
-		aeStatue =  new BlockDivineStatue(cfg.aeStatueID, EntityResourceLocs.ANCIENT_ENTITY, new ModelAEStatue()).setUnlocalizedName("aeStatue");
-		ayeracoStatue = new BlockDivineStatue(cfg.ayeracoStatueID, EntityResourceLocs.AYERACO_GREEN, new ModelAyeracoStatue()).setUnlocalizedName("AyeracoStatue");
-		kosStatue = new BlockDivineStatue(cfg.kosStatueID, EntityResourceLocs.KING_OF_SCHORCHERS, new ModelKOSStatue()).setUnlocalizedName("kosStatue");
-		watcherStatue =  new BlockDivineStatue(cfg.watcherStatueID, EntityResourceLocs.WATCHER, new ModelWatcherStatue()).setUnlocalizedName("WatcherStatue");
+		aeStatue =  new DivineStatue(cfg.aeStatueID, EntityResourceLocs.ANCIENT_ENTITY, new ModelAEStatue()).setUnlocalizedName("aeStatue");
+		ayeracoStatue = new DivineStatue(cfg.ayeracoStatueID, EntityResourceLocs.AYERACO_GREEN, new ModelAyeracoStatue()).setUnlocalizedName("AyeracoStatue");
+		kosStatue = new DivineStatue(cfg.kosStatueID, EntityResourceLocs.KING_OF_SCHORCHERS, new ModelKOSStatue()).setUnlocalizedName("kosStatue");
+		watcherStatue =  new DivineStatue(cfg.watcherStatueID, EntityResourceLocs.WATCHER, new ModelWatcherStatue()).setUnlocalizedName("WatcherStatue");
 		
 		ayeracoBeamBlue = new BlockAyeracoBeamBlue(cfg.ayeracoBeamBlueID).setUnlocalizedName("AyeracoBeamBlue");
 		ayeracoBeamGreen = new BlockAyeracoBeamGreen(cfg.ayeracoBeamGreenID).setUnlocalizedName("AyeracoBeamGreen");

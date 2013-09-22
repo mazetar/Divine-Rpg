@@ -22,21 +22,25 @@ import net.divinerpg.blocks.arcana.furnace.BlockMoltenFurnace;
 import net.divinerpg.blocks.arcana.furnace.BlockMoonlightFurnace;
 import net.divinerpg.blocks.arcana.furnace.BlockOceanfireFurnace;
 import net.divinerpg.blocks.arcana.furnace.BlockWhitefireFurnace;
-import net.divinerpg.blocks.arcana.modeled.BlockDramixAltar;
-import net.divinerpg.blocks.arcana.modeled.BlockParasectaAltar;
 import net.divinerpg.blocks.arcana.plants.BlockFireStock;
 import net.divinerpg.blocks.arcana.plants.BlockHitchak;
 import net.divinerpg.blocks.arcana.plants.BlockLamona;
 import net.divinerpg.blocks.arcana.plants.BlockMarsine;
 import net.divinerpg.blocks.arcana.plants.BlockPinfly;
 import net.divinerpg.blocks.arcana.plants.BlockVeilo;
-import net.divinerpg.blocks.core.DivineSpawner;
+import net.divinerpg.blocks.core.DivineAltar;
 import net.divinerpg.blocks.core.DivineLadder;
+import net.divinerpg.blocks.core.DivineSpawner;
+import net.divinerpg.client.models.arcana.mobs.ModelParasecta;
+import net.divinerpg.client.models.arcana.tileentities.ModelDramixAltar;
+import net.divinerpg.lib.EntityResourceLocs;
+import net.divinerpg.lib.ResourceLocs;
 import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.divinerpg.utils.helpers.item.ArcanaItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.util.ResourceLocation;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -141,8 +145,8 @@ public class ArcanaBlockHelper
 		arcaniumPower = new BlockDungeonBlock(ArcanaConfigHelper.arcaniumPowerID).setUnlocalizedName("ArcaniumPower").func_111022_d("ArcaniumPower");
 		extractor = new BlockExtractor(ArcanaConfigHelper.extractorID).setUnlocalizedName("Extractor").func_111022_d("Extractor").setCreativeTab(DivineTabs.tabBlocks);
 		
-		dramixAltar = new BlockDramixAltar(ArcanaConfigHelper.dramixAltarID).setUnlocalizedName("DramixAltar").func_111022_d("DramixAltar");
-		parasectaAltar = new BlockParasectaAltar(ArcanaConfigHelper.parasectaAltarID).setUnlocalizedName("ParasectaAltar").func_111022_d("ParasectaAltar");
+		dramixAltar = new DivineAltar(ArcanaConfigHelper.dramixAltarID, ResourceLocs.BLOCK_DRAMIX_ALTAR, new ModelDramixAltar(1F)).setUnlocalizedName("DramixAltar").func_111022_d("DramixAltar");
+		parasectaAltar = new DivineAltar(ArcanaConfigHelper.parasectaAltarID, ResourceLocs.BLOCK_PARASECTA_ALTAR, new ModelParasecta()).setUnlocalizedName("ParasectaAltar").func_111022_d("ParasectaAltar");
 		
 		heatTraps = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsID, 110).setUnlocalizedName("HeatTrap").func_111022_d("HeatTrapOff");
 		heatTrapsOn = new BlockHeatTraps(ArcanaConfigHelper.heatTrapsOnID, 109).setUnlocalizedName("HeatTrapsOn").func_111022_d("HeatTrapOn");

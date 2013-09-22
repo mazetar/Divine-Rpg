@@ -1,6 +1,7 @@
 package net.divinerpg.utils.proxies;
 
 import net.divinerpg.DivineRPG;
+import net.divinerpg.blocks.core.tileentities.TileDivineAltar;
 import net.divinerpg.blocks.core.tileentities.TileDivineStatue;
 import net.divinerpg.blocks.core.tileentities.TileEntitySerenityChest;
 import net.divinerpg.blocks.core.tileentities.TileSingularChest;
@@ -89,6 +90,7 @@ public class CoreProxy {
         GameRegistry.registerTileEntity(TileEntitySuperEnchantmentTable.class, "SuperEnchantmentTable");
         GameRegistry.registerTileEntity(TileEntityTwilightFurance.class, "Twilight Furnace");
         
+        GameRegistry.registerTileEntity(TileDivineAltar.class, "Altar Altar");
 	    GameRegistry.registerTileEntity(TileDivineStatue.class, "Divine Statues");
 	    
 	    

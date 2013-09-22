@@ -1,9 +1,7 @@
 package net.divinerpg.utils.helpers.render;
 
 import net.divinerpg.blocks.arcana.tileentities.TileEntityDemonFurnace;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityDramixAltar;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityPheonixAltar;
 import net.divinerpg.client.models.arcana.mobs.ModelDeathHound;
 import net.divinerpg.client.models.arcana.mobs.ModelDeathcryx;
 import net.divinerpg.client.models.arcana.mobs.ModelDramix;
@@ -109,10 +107,8 @@ public class ArcanaRenderHelper
 	}
 	
 	public static void registerTileEntityRenderers () {
-	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDramixAltar.class, new RenderDivineBlock (new ModelDramixAltar(1F), ResourceLocs.BLOCK_DRAMIX_ALTAR));
 	    
 	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDemonFurnace.class, new RenderDivineBlock (new ModelDemonFurnace(1F), ResourceLocs.BLOCK_DEMON_FURNACE));
-	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityPheonixAltar.class, new RenderDivineBlock (new ModelPhoenixAltar(1F), ResourceLocs.BLOCK_PHOENIX_ALTAR));
 	    ClientRegistry.bindTileEntitySpecialRenderer(TileEntityExtractor.class, new RenderDivineBlock (new ModelExtractor(1F), ResourceLocs.BLOCK_EXTRACTOR));
 	    
         

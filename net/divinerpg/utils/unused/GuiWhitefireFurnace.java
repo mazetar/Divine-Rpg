@@ -1,6 +1,6 @@
 package net.divinerpg.utils.unused;
 
-import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityArcanaFurnace;
 import net.divinerpg.containers.ContainerDivineFurnace;
 import net.divinerpg.lib.ResourceGuiLoc;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -15,7 +15,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 @Deprecated
 public class GuiWhitefireFurnace extends GuiContainer
 {
-    private TileEntityWhitefireFurnace furnaceInventory;
+    private TileEntityArcanaFurnace furnaceInventory;
 
     public GuiWhitefireFurnace(ContainerDivineFurnace container)
     {

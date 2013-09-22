@@ -1,8 +1,9 @@
 package net.divinerpg.blocks.arcana.tileentities;
 
-import net.divinerpg.blocks.arcana.furnace.BlockWhitefireFurnace;
+import net.divinerpg.blocks.arcana.furnace.NYI_BlockArcanaFurnace;
 import net.divinerpg.blocks.overworld.tileentities.TileDivineFurnace;
 import net.divinerpg.lib.ResourceGuiLoc;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -14,7 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityWhitefireFurnace extends TileDivineFurnace implements IInventory
+public class TileEntityArcanaFurnace extends TileDivineFurnace implements IInventory
 {
     /**
      * The ItemStacks that hold the items currently being used in the furnace
@@ -32,6 +33,31 @@ public class TileEntityWhitefireFurnace extends TileDivineFurnace implements IIn
     /** The number of ticks that the current item has been cooking for */
     public int furnaceCookTime = 0;
 
+    private String inventoryName;
+    private int maxItemBurnTime;
+    private ResourceLocation guiTexture;
+    
+    private boolean initialized;
+
+    private void intialize() {
+        Block block = Block.blocksList[this.worldObj.getBlockId(this.xCoord, this.yCoord, this.zCoord)];
+        if (block instanceof NYI_BlockArcanaFurnace)
+        {
+            NYI_BlockArcanaFurnace furnaceBlock = (NYI_BlockArcanaFurnace)block;
+            this.inventoryName = furnaceBlock.inventoryName;
+            this.maxItemBurnTime = furnaceBlock.maxItemBurnTime;
+            this.guiTexture = furnaceBlock.guiTexture;
+            initialized = true;
+        }
+        else
+        {
+            System.out.println("DRPG: ERROR - Block is NOT furnace block when intializing furnace TE. This is a BUG!");
+            System.out.println("BlockID: " + this.worldObj.getBlockId(this.xCoord, this.yCoord, this.zCoord));
+        }   
+        
+        
+    }
+    
     /**
      * Returns the number of slots in the inventory.
      */
@@ -118,7 +144,7 @@ public class TileEntityWhitefireFurnace extends TileDivineFurnace implements IIn
      */
     public String getInvName()
     {
-        return "container.whitefireFurnace";
+        return inventoryName;
     }
 
     /**
@@ -187,7 +213,7 @@ public class TileEntityWhitefireFurnace extends TileDivineFurnace implements IIn
      */
     public int getCookProgressScaled(int par1)
     {
-        return this.furnaceCookTime * par1 / 160;
+        return this.furnaceCookTime * par1 / maxItemBurnTime;
     }
 
     @SideOnly(Side.CLIENT)
@@ -200,7 +226,7 @@ public class TileEntityWhitefireFurnace extends TileDivineFurnace implements IIn
     {
         if (this.currentItemBurnTime == 0)
         {
-            this.currentItemBurnTime = 160;
+            this.currentItemBurnTime = maxItemBurnTime;
         }
 
         return this.furnaceBurnTime * par1 / this.currentItemBurnTime;
@@ -254,7 +280,7 @@ public class TileEntityWhitefireFurnace extends TileDivineFurnace implements IIn
             {
                 ++this.furnaceCookTime;
 
-                if (this.furnaceCookTime == 160)
+                if (this.furnaceCookTime == maxItemBurnTime)
                 {
                     this.furnaceCookTime = 0;
                     this.smeltItem();
@@ -269,7 +295,7 @@ public class TileEntityWhitefireFurnace extends TileDivineFurnace implements IIn
             if (var1 != this.furnaceBurnTime > 0)
             {
                 var2 = true;
-                BlockWhitefireFurnace.updateFurnaceBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+                NYI_BlockArcanaFurnace.updateFurnaceBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
             }
         }
 
@@ -345,7 +371,7 @@ public class TileEntityWhitefireFurnace extends TileDivineFurnace implements IIn
      */
     public static int getItemBurnTime(ItemStack par0ItemStack)
     {
-        return 161;
+        return 161;  //TODO: This must be changed in order to merge all furnaces.
     }
 
     /**
@@ -362,28 +388,6 @@ public class TileEntityWhitefireFurnace extends TileDivineFurnace implements IIn
 
     @Override
     public ResourceLocation getGuiTexture() {
-        return ResourceGuiLoc.GUI_FURNACE;
+        return guiTexture;
     }
-
-//    @Override
-//    public int getStartInventorySide(ForgeDirection side)
-//    {
-//        if (side == ForgeDirection.DOWN)
-//        {
-//            return 1;
-//        }
-//
-//        if (side == ForgeDirection.UP)
-//        {
-//            return 0;
-//        }
-//
-//        return 2;
-//    }
-//
-//    @Override
-//    public int getSizeInventorySide(ForgeDirection side)
-//    {
-//        return 1;
-//    }
 }

@@ -4,7 +4,7 @@ import java.util.Random;
 
 import net.divinerpg.DivineRPG;
 import net.divinerpg.DivineRPGArcana;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityArcanaFurnace;
 import net.divinerpg.blocks.core.BlockDivineContainer;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
@@ -18,12 +18,17 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.MathHelper;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockWhitefireFurnace extends BlockDivineContainer
+public class NYI_BlockArcanaFurnace extends BlockDivineContainer
 {
+    public String inventoryName;
+    public int maxItemBurnTime;
+    public ResourceLocation guiTexture;
+    
     /**
      * Is the random generator used by furnace to drop the inventory contents in random directions.
      */
@@ -38,7 +43,7 @@ public class BlockWhitefireFurnace extends BlockDivineContainer
      */
     private static boolean keepFurnaceInventory = false;
 
-    public BlockWhitefireFurnace(int par1, int par3, boolean par2)
+    public NYI_BlockArcanaFurnace(int par1, int par3, boolean par2)
     {
         super(par1, par3, Material.rock);
         this.isActive = par2;
@@ -141,7 +146,7 @@ public class BlockWhitefireFurnace extends BlockDivineContainer
         }
         else
         {
-            TileEntityFurnace var10 = (TileEntityWhitefireFurnace)par1World.getBlockTileEntity(par2, par3, par4);
+            TileEntityFurnace var10 = (TileEntityArcanaFurnace)par1World.getBlockTileEntity(par2, par3, par4);
 
             if (var10 != null)
             {
@@ -185,7 +190,7 @@ public class BlockWhitefireFurnace extends BlockDivineContainer
      */
     public TileEntity createNewTileEntity(World par1World)
     {
-        return new TileEntityWhitefireFurnace();
+        return new TileEntityArcanaFurnace();
     }
 
     /**
@@ -223,7 +228,7 @@ public class BlockWhitefireFurnace extends BlockDivineContainer
     {
         if (!keepFurnaceInventory)
         {
-            TileEntityFurnace var7 = (TileEntityWhitefireFurnace)par1World.getBlockTileEntity(par2, par3, par4);
+            TileEntityFurnace var7 = (TileEntityArcanaFurnace)par1World.getBlockTileEntity(par2, par3, par4);
 
             if (var7 != null)
             {

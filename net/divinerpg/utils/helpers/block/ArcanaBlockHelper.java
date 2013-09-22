@@ -21,7 +21,7 @@ import net.divinerpg.blocks.arcana.furnace.BlockGreenlightFurnace;
 import net.divinerpg.blocks.arcana.furnace.BlockMoltenFurnace;
 import net.divinerpg.blocks.arcana.furnace.BlockMoonlightFurnace;
 import net.divinerpg.blocks.arcana.furnace.BlockOceanfireFurnace;
-import net.divinerpg.blocks.arcana.furnace.BlockWhitefireFurnace;
+import net.divinerpg.blocks.arcana.furnace.NYI_BlockArcanaFurnace;
 import net.divinerpg.blocks.arcana.plants.BlockFireStock;
 import net.divinerpg.blocks.arcana.plants.BlockHitchak;
 import net.divinerpg.blocks.arcana.plants.BlockLamona;
@@ -167,7 +167,7 @@ public class ArcanaBlockHelper
 		greenlightFurnace = new BlockGreenlightFurnace(ArcanaConfigHelper.greenlightFurnaceID, false).setUnlocalizedName("GreenlightFurnace");
 		oceanfireFurnace = new BlockOceanfireFurnace(ArcanaConfigHelper.oceanfireFurnaceID, false).setUnlocalizedName("OceanfireFurnace");
 		moonlightFurnace = new BlockMoonlightFurnace(ArcanaConfigHelper.moonlightFurnaceID, false).setUnlocalizedName("MoonlightFurnace");
-		whitefireFurnace = new BlockWhitefireFurnace(ArcanaConfigHelper.whitefireFurnaceID, 0, false).setUnlocalizedName("WhitefireFurnace");
+		whitefireFurnace = new NYI_BlockArcanaFurnace(ArcanaConfigHelper.whitefireFurnaceID, 0, false).setUnlocalizedName("WhitefireFurnace");
 		demonFurnace = new BlockDemonFurnace(ArcanaConfigHelper.demonFurnaceID).setUnlocalizedName("DemonFurnace");
 		
 		fireStock = new BlockFireStock(ArcanaConfigHelper.fireStockID, 44).setUnlocalizedName("FireStock");

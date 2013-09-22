@@ -7,7 +7,7 @@ import net.divinerpg.blocks.arcana.tileentities.TileEntityGreenlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityOceanfireFurnace;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityArcanaFurnace;
 import net.divinerpg.client.gui.GuiCaptainMerik;
 import net.divinerpg.client.gui.GuiCondenser;
 import net.divinerpg.client.gui.GuiDatticon;
@@ -80,8 +80,8 @@ public class ArcanaGuiHandler implements IGuiHandler {
         }
         else if (id == GuiRef.WHITEFIRE_FURNACE) {
             TileEntity te = world.getBlockTileEntity(var1, var2, var3);
-            if (te instanceof TileEntityWhitefireFurnace)
-                return new ContainerDivineFurnace(player.inventory, (TileEntityWhitefireFurnace)te);
+            if (te instanceof TileEntityArcanaFurnace)
+                return new ContainerDivineFurnace(player.inventory, (TileEntityArcanaFurnace)te);
         }
         else if (id == GuiRef.OCEANFIRE_FURNACE) {
             TileEntity te = world.getBlockTileEntity(var1, var2, var3);

@@ -8,7 +8,7 @@ import net.divinerpg.blocks.arcana.tileentities.TileEntityGreenlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityOceanfireFurnace;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
+import net.divinerpg.blocks.arcana.tileentities.TileEntityArcanaFurnace;
 import net.divinerpg.utils.handlers.gui.ArcanaGuiHandler;
 import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
 import net.divinerpg.utils.helpers.entity.ArcanaEntityHelper;
@@ -43,7 +43,7 @@ public class ArcanaProxy {
         GameRegistry.registerTileEntity(TileEntityCondenser.class, "Condenser");
         GameRegistry.registerTileEntity(TileEntityExtractor.class, "Extractor");
         
-        GameRegistry.registerTileEntity(TileEntityWhitefireFurnace.class, "Whitefire Furnace TE");
+        GameRegistry.registerTileEntity(TileEntityArcanaFurnace.class, "Whitefire Furnace TE");
         GameRegistry.registerTileEntity(TileEntityOceanfireFurnace.class, "OceanfireFurnace TE");
         GameRegistry.registerTileEntity(TileEntityGreenlightFurnace.class, "GreenlightFurnace TE");
         GameRegistry.registerTileEntity(TileEntityMoltenFurnace.class, "Molten Furnace TE");

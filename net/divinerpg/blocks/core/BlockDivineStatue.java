@@ -26,6 +26,16 @@ public class BlockDivineStatue extends Block {
         
     }
     
+    /***
+     * Not an override as it changes the method signature.
+     * This is needed in order to avoid having to cast from block to BlockDivineStatue.
+     * @author Mazetar
+     */
+    public BlockDivineStatue setUnlocalizedName(String name) {
+         super.setUnlocalizedName(name);
+         return this;
+    }
+    
     @Override
     public boolean hasTileEntity(int metadata) {
         return true;

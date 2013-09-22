@@ -1,10 +1,17 @@
 package net.divinerpg.utils.helpers.block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.divinerpg.blocks.core.BlockDivine;
+import net.divinerpg.blocks.core.BlockDivineStatue;
 import net.divinerpg.blocks.core.DivineGlass;
 import net.divinerpg.blocks.overworld.*;
 import net.divinerpg.blocks.twilight.BlockGlowBone;
+import net.divinerpg.client.models.overworld.tileentities.ModelAEStatue;
+import net.divinerpg.client.models.overworld.tileentities.ModelAyeracoStatue;
+import net.divinerpg.client.models.overworld.tileentities.ModelKOSStatue;
+import net.divinerpg.client.models.overworld.tileentities.ModelWatcherStatue;
+import net.divinerpg.lib.EntityResourceLocs;
 import net.divinerpg.utils.helpers.config.OverworldConfigHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.EnumMobType;
@@ -22,10 +29,10 @@ public class OverworldBlockHelper
 	public static Block acceleraunch;
 	public static Block acceleron;
 	
-	public static Block aeStatue;
-	public static Block ayeracoStatue;
-	public static Block kosStatue;
-	public static Block watcherStatue;
+	public static BlockDivineStatue aeStatue;
+	public static BlockDivineStatue ayeracoStatue;
+	public static BlockDivineStatue kosStatue;
+	public static BlockDivineStatue watcherStatue;
 	
 	public static Block ayeracoBeamBlue;
 	public static Block ayeracoBeamGreen;
@@ -213,10 +220,10 @@ public class OverworldBlockHelper
 		acceleraunch = new BlockAcceleraunch(cfg.acceleraunchID).setUnlocalizedName("Acceleraunch");
 		acceleron = new BlockAccelleron(cfg.acceleronID).setUnlocalizedName("Acceleron");
 		
-		aeStatue = new BlockAEStatue(cfg.aeStatueID).setUnlocalizedName("aeStatue");
-		ayeracoStatue = new BlockAyeracoStatue(cfg.ayeracoStatueID).setUnlocalizedName("AyeracoStatue");
-		kosStatue = new BlockKOSStatue(cfg.kosStatueID).setUnlocalizedName("kosStatue");
-		watcherStatue = new BlockWatcherStatue(cfg.watcherStatueID).setUnlocalizedName("WatcherStatue");
+		aeStatue =  new BlockDivineStatue(cfg.aeStatueID, EntityResourceLocs.ANCIENT_ENTITY, new ModelAEStatue()).setUnlocalizedName("aeStatue");
+		ayeracoStatue = new BlockDivineStatue(cfg.ayeracoStatueID, EntityResourceLocs.AYERACO_GREEN, new ModelAyeracoStatue()).setUnlocalizedName("AyeracoStatue");
+		kosStatue = new BlockDivineStatue(cfg.kosStatueID, EntityResourceLocs.KING_OF_SCHORCHERS, new ModelKOSStatue()).setUnlocalizedName("kosStatue");
+		watcherStatue =  new BlockDivineStatue(cfg.watcherStatueID, EntityResourceLocs.WATCHER, new ModelWatcherStatue()).setUnlocalizedName("WatcherStatue");
 		
 		ayeracoBeamBlue = new BlockAyeracoBeamBlue(cfg.ayeracoBeamBlueID).setUnlocalizedName("AyeracoBeamBlue");
 		ayeracoBeamGreen = new BlockAyeracoBeamGreen(cfg.ayeracoBeamGreenID).setUnlocalizedName("AyeracoBeamGreen");
@@ -410,11 +417,6 @@ public class OverworldBlockHelper
 		registerBlocks();
 		addNames();
 	}
-
-	public static void addNames()
-	{
-		
-	}
 	
 	public static void registerBlocks() {
 	    GameRegistry.registerBlock(blueFire, "blueFire");
@@ -604,4 +606,197 @@ public class OverworldBlockHelper
 	    GameRegistry.registerBlock(stainedGlass6, "stainedGlass6");
 	    GameRegistry.registerBlock(stainedGlass7, "stainedGlass7");
 	}
+	
+	public static void addNames()
+    {
+        LanguageRegistry.addName(aeStatue, "AE Statue");
+        LanguageRegistry.addName(ayeracoStatue, "Ayeraco Statue");
+        LanguageRegistry.addName(kosStatue, "KoS Statue");
+        LanguageRegistry.addName(watcherStatue, "Watcher Statue");
+        
+        // Added by search and replace from reg code above. NOT the proper names! TODO: Change names --Maz
+        LanguageRegistry.addName(blueFire, "blueFire");
+        LanguageRegistry.addName(tomato, "Tomato");
+        LanguageRegistry.addName(divineRock, "divineRock");
+        
+        LanguageRegistry.addName(acceleraunch, "acceleraunch");
+        LanguageRegistry.addName(acceleron, "acceleron");
+        
+        LanguageRegistry.addName(ayeracoBeamBlue, "ayeracoBeamBlue");
+        LanguageRegistry.addName(ayeracoBeamGreen, "ayeracoBeamGreen");
+        LanguageRegistry.addName(ayeracoBeamPurple, "ayeracoBeamPurple");
+        LanguageRegistry.addName(ayeracoBeamRed, "ayeracoBeamRed");
+        LanguageRegistry.addName(ayeracoBeamYellow, "ayeracoBeamYellow");
+
+        LanguageRegistry.addName(colouredBricks, "colouredBricks");
+        LanguageRegistry.addName(colouredGlass, "colouredGlass");
+        LanguageRegistry.addName(colouredPanes, "colouredPanes");
+        LanguageRegistry.addName(colouredTorch, "colouredTorch");
+        LanguageRegistry.addName(dyeBlocks, "dyeBlocks");
+        LanguageRegistry.addName(miniBricks, "miniBricks");
+        LanguageRegistry.addName(steel, "steel");
+        LanguageRegistry.addName(mobPumpkins, "mobPumpkins");
+        
+        LanguageRegistry.addName(darkBridge, "darkBridge");
+        LanguageRegistry.addName(lightBridge, "lightBridge");
+        LanguageRegistry.addName(glowingStairs, "glowingStairs");
+        LanguageRegistry.addName(lightFenceBlue, "lightFenceBlue");
+        LanguageRegistry.addName(lightFenceRed, "lightFenceRed");
+        LanguageRegistry.addName(lightFenceBlueOn, "lightFenceBlueOn");
+        LanguageRegistry.addName(lightFenceRedOn, "lightFenceRedOn");
+        LanguageRegistry.addName(skeletonChest, "skeletonChest");
+
+        LanguageRegistry.addName(elevantium, "elevantium");
+        LanguageRegistry.addName(darkPressurePlate, "darkPressurePlate");
+        
+        LanguageRegistry.addName(tarStill, "tarStill");
+        LanguageRegistry.addName(tarFlowing, "tarFlowing");
+
+        LanguageRegistry.addName(bloodGemOre, "bloodGemOre");
+        LanguageRegistry.addName(netheriteOre, "netheriteOre");
+        LanguageRegistry.addName(spikeBlock, "spikeBlock");
+        LanguageRegistry.addName(hotSpikes, "hotSpikes");
+        
+        LanguageRegistry.addName(lightstone, "lightstone");
+        LanguageRegistry.addName(rainbowWool, "rainbowWool");
+
+        LanguageRegistry.addName(rupeeOre, "rupeeOre");
+        LanguageRegistry.addName(arlemiteOre, "arlemiteOre");
+        LanguageRegistry.addName(realmiteOre, "realmiteOre");
+
+        LanguageRegistry.addName(lapisLamp, "lapisLamp");
+        LanguageRegistry.addName(slimeLight, "slimeLight");
+        LanguageRegistry.addName(slimeLightOn, "slimeLightOn");
+        LanguageRegistry.addName(redstoneOreLamp, "redstoneOreLamp");
+        LanguageRegistry.addName(goldLamp, "goldLamp");
+        LanguageRegistry.addName(diamondLamp, "diamondLamp");
+        LanguageRegistry.addName(realmiteLamp, "realmiteLamp");
+        LanguageRegistry.addName(netheriteLamp, "netheriteLamp");
+        LanguageRegistry.addName(arlemiteLamp, "arlemiteLamp");
+        LanguageRegistry.addName(rupeeLamp, "rupeeLamp");
+        LanguageRegistry.addName(iceStoneLamp, "iceStoneLamp");
+        LanguageRegistry.addName(moltenStoneLamp, "moltenStoneLamp");
+        LanguageRegistry.addName(jungleStoneLamp, "jungleStoneLamp");
+        LanguageRegistry.addName(enderStoneLamp, "enderStoneLamp");
+        LanguageRegistry.addName(bluefireLamp, "bluefireLamp");
+        LanguageRegistry.addName(divineStoneLamp, "divineStoneLamp");
+        LanguageRegistry.addName(milkyLamp, "milkyLamp");
+        LanguageRegistry.addName(blazicLamp, "blazicLamp");
+        LanguageRegistry.addName(aquaLamp, "aquaLamp");
+        LanguageRegistry.addName(lavaLamp, "lavaLamp");
+        LanguageRegistry.addName(enderLamp, "enderLamp");
+        LanguageRegistry.addName(krakenLamp, "krakenLamp");
+        LanguageRegistry.addName(drakenLamp, "drakenLamp");
+        LanguageRegistry.addName(purpleGlowBoneTree, "purpleGlowBoneTree");
+        LanguageRegistry.addName(pinkGlowBoneTree, "pinkGlowBoneTree");
+        
+        
+        LanguageRegistry.addName(realmiteBlock, "realmiteBlock");
+        LanguageRegistry.addName(milkStone, "milkStone");
+        LanguageRegistry.addName(darkStone, "darkStone");
+        LanguageRegistry.addName(obsidianBlock, "obsidianBlock");
+        LanguageRegistry.addName(bedrock, "bedrock");
+        LanguageRegistry.addName(milkStoneBrick, "milkStoneBrick");
+        LanguageRegistry.addName(darkBrick, "darkBrick");
+        LanguageRegistry.addName(ironBrick, "ironBrick");
+        LanguageRegistry.addName(goldBrick, "goldBrick");
+        LanguageRegistry.addName(realmiteBrick, "realmiteBrick");
+        LanguageRegistry.addName(netheriteBrick, "netheriteBrick");
+        LanguageRegistry.addName(lapisBrick, "lapisBrick");
+        LanguageRegistry.addName(redstoneBrick, "redstoneBrick");
+        LanguageRegistry.addName(checker, "checker");
+        LanguageRegistry.addName(eucalyptusPlanks, "eucalyptusPlanks");
+        LanguageRegistry.addName(eucalyptus, "eucalyptus");
+        
+        LanguageRegistry.addName(spikes, "spikes");
+        LanguageRegistry.addName(spiderPumpkin, "spiderPumpkin");
+        LanguageRegistry.addName(enderPumpkin, "enderPumpkin");
+        LanguageRegistry.addName(creeperPumpkin, "creeperPumpkin");
+        LanguageRegistry.addName(skeletonPumpkin, "skeletonPumpkin");
+        LanguageRegistry.addName(blazePumpkin, "blazePumpkin");
+        LanguageRegistry.addName(lavaBrick, "lavaBrick");
+        LanguageRegistry.addName(darkStairs, "darkStairs");
+        LanguageRegistry.addName(arlemiteStairs, "arlemiteStairs");
+        LanguageRegistry.addName(ironStairs, "ironStairs");
+        LanguageRegistry.addName(goldStairs, "goldStairs");
+        LanguageRegistry.addName(sandStairs, "sandStairs");
+        LanguageRegistry.addName(redstoneStairs, "redstoneStairs");
+        LanguageRegistry.addName(milkstoneStairs, "milkstoneStairs");
+        LanguageRegistry.addName(milkstoneBricksStairs, "milkstoneBricksStairs");
+        LanguageRegistry.addName(lapisStairs, "lapisStairs");
+        LanguageRegistry.addName(arlemiteBrick, "arlemiteBrick");
+        LanguageRegistry.addName(darkPlate, "darkPlate");
+        LanguageRegistry.addName(milkstoneBrickStairs, "milkstoneBrickStairs");
+        LanguageRegistry.addName(redWood, "redWood");
+        LanguageRegistry.addName(purpleWood, "purpleWood");
+        LanguageRegistry.addName(greenWood, "greenWood");
+        LanguageRegistry.addName(yellowWood, "yellowWood");
+        LanguageRegistry.addName(blueWood, "blueWood");
+        LanguageRegistry.addName(whiteWood, "whiteWood");
+        LanguageRegistry.addName(stoneFence, "stoneFence");
+        LanguageRegistry.addName(woodFence, "woodFence");
+        LanguageRegistry.addName(lightStone, "lightStone");
+        LanguageRegistry.addName(purplestone, "purplestone");
+        LanguageRegistry.addName(netheriteBlock, "netheriteBlock");
+        LanguageRegistry.addName(arlemiteBlock, "arlemiteBlock");
+        LanguageRegistry.addName(rupeeBlock, "rupeeBlock");
+        LanguageRegistry.addName(diamondBrick, "diamondBrick");
+        LanguageRegistry.addName(enderBrick, "enderBrick");
+
+        LanguageRegistry.addName(deadBridge, "deadBridge");
+        LanguageRegistry.addName(skullTorch, "skullTorch");
+        LanguageRegistry.addName(hotSpike, "hotSpike");
+        LanguageRegistry.addName(corruptedAlter, "corruptedAlter");
+        
+        LanguageRegistry.addName(zombiePumpkin, "zombiePumpkin");
+        LanguageRegistry.addName(iceManPumpkin, "iceManPumpkin");
+        LanguageRegistry.addName(cyclopsPumpkin, "cyclopsPumpkin");
+        LanguageRegistry.addName(frostPumpkin, "frostPumpkin");
+        LanguageRegistry.addName(ghastPumpkin, "ghastPumpkin");
+        LanguageRegistry.addName(jungleSpiderPumpkin, "jungleSpiderPumpkin");
+        LanguageRegistry.addName(enderWatcherPumpkin, "enderWatcherPumpkin");
+        LanguageRegistry.addName(hellSpiderPumpkin, "hellSpiderPumpkin");
+        LanguageRegistry.addName(glassWhite, "glassWhite");
+        LanguageRegistry.addName(glassOrange, "glassOrange");
+        LanguageRegistry.addName(glassLightPurple, "glassLightPurple");
+        LanguageRegistry.addName(glassLightBlue, "glassLightBlue");
+        LanguageRegistry.addName(glassYellow, "glassYellow");
+        LanguageRegistry.addName(glassLimeGreen, "glassLimeGreen");
+        LanguageRegistry.addName(glassPink, "glassPink");
+        LanguageRegistry.addName(glassGray, "glassGray");
+        LanguageRegistry.addName(glassLightGray, "glassLightGray");
+        LanguageRegistry.addName(glassTeal, "glassTeal");
+        LanguageRegistry.addName(glassBlue, "glassBlue");
+        LanguageRegistry.addName(glassPurple, "glassPurple");
+        LanguageRegistry.addName(glassDirtyGreen, "glassDirtyGreen");
+        LanguageRegistry.addName(glassBrown, "glassBrown");
+        LanguageRegistry.addName(glassRed, "glassRed");
+        LanguageRegistry.addName(glassBlack, "glassBlack");
+        LanguageRegistry.addName(paneBlack, "paneBlack");
+        LanguageRegistry.addName(paneRed, "paneRed");
+        LanguageRegistry.addName(paneDirtyGreen, "paneDirtyGreen");
+        LanguageRegistry.addName(paneBrown, "paneBrown");
+        LanguageRegistry.addName(paneBlue, "paneBlue");
+        LanguageRegistry.addName(panePurple, "panePurple");
+        LanguageRegistry.addName(paneTeal, "paneTeal");
+        LanguageRegistry.addName(paneLightGray, "paneLightGray");
+        LanguageRegistry.addName(paneGray, "paneGray");
+        LanguageRegistry.addName(panePink, "panePink");
+        LanguageRegistry.addName(paneYellow, "paneYellow");
+        LanguageRegistry.addName(paneLimeGreen, "paneLimeGreen");
+        LanguageRegistry.addName(paneLightBlue, "paneLightBlue");
+        LanguageRegistry.addName(paneLightPurple, "paneLightPurple");
+        LanguageRegistry.addName(paneWhite, "paneWhite");
+        LanguageRegistry.addName(paneOrange, "paneOrange");
+        
+        LanguageRegistry.addName(stainedGlass, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass1, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass2, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass3, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass4, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass5, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass6, "Stained Glass");
+        LanguageRegistry.addName(stainedGlass7, "Stained Glass");
+        
+    }
 }

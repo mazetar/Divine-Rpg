@@ -1,23 +1,20 @@
 package net.divinerpg.utils.proxies;
 
 import net.divinerpg.DivineRPGArcana;
-import net.divinerpg.utils.handlers.gui.ArcanaGuiHandler;
-import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
-import net.divinerpg.utils.helpers.entity.ArcanaEntityHelper;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityCondenser;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityDemonFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityDramixAltar;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityDramixStatue;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityGreenlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityOceanfireFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityParasectaAltar;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityParasectaStatue;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityPheonixAltar;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityReyvorStatue;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityWhitefireFurnace;
+import net.divinerpg.utils.handlers.gui.ArcanaGuiHandler;
+import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
+import net.divinerpg.utils.helpers.entity.ArcanaEntityHelper;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -52,10 +49,6 @@ public class ArcanaProxy {
         GameRegistry.registerTileEntity(TileEntityParasectaAltar.class, "Parasecta Altar");
         GameRegistry.registerTileEntity(TileEntityPheonixAltar.class, "Pheonix Altar");
         GameRegistry.registerTileEntity(TileEntityDramixAltar.class, "Dramix Altar");
-        
-        GameRegistry.registerTileEntity(TileEntityReyvorStatue.class, "Revyor Statue");
-        GameRegistry.registerTileEntity(TileEntityParasectaStatue.class, "Parasecta Statue");
-        GameRegistry.registerTileEntity(TileEntityDramixStatue.class, "Dramix Statue");
         
         GameRegistry.registerTileEntity(TileEntityWhitefireFurnace.class, "Whitefire Furnace TE");
         GameRegistry.registerTileEntity(TileEntityOceanfireFurnace.class, "OceanfireFurnace TE");

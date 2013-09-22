@@ -4,7 +4,12 @@ import net.divinerpg.DivineRPG;
 import net.divinerpg.blocks.core.tileentities.TileDivineStatue;
 import net.divinerpg.blocks.core.tileentities.TileEntitySerenityChest;
 import net.divinerpg.blocks.core.tileentities.TileSingularChest;
-import net.divinerpg.blocks.overworld.tileentities.*;
+import net.divinerpg.blocks.overworld.tileentities.TileEntityAyeracoBeamBlue;
+import net.divinerpg.blocks.overworld.tileentities.TileEntityAyeracoBeamGreen;
+import net.divinerpg.blocks.overworld.tileentities.TileEntityAyeracoBeamPurple;
+import net.divinerpg.blocks.overworld.tileentities.TileEntityAyeracoBeamRed;
+import net.divinerpg.blocks.overworld.tileentities.TileEntityAyeracoBeamYellow;
+import net.divinerpg.blocks.overworld.tileentities.TileEntitySuperEnchantmentTable;
 import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
 import net.divinerpg.utils.debug.EntityNameRenderer;
 import net.divinerpg.utils.handlers.ArmorEffectHandler;
@@ -76,17 +81,13 @@ public class CoreProxy {
 	public void registerTileEntities() {
 		GameRegistry.registerTileEntity(TileEntitySerenityChest.class, "Serenity Chest");
         GameRegistry.registerTileEntity(TileSingularChest.class, "Singular Chest");
-        GameRegistry.registerTileEntity(TileEntityAEStatue.class, "AE Statue");
         GameRegistry.registerTileEntity(TileEntityAyeracoBeamBlue.class, "AyeracoBeamBlue");
         GameRegistry.registerTileEntity(TileEntityAyeracoBeamGreen.class, "AyeracoBeamGreen");
         GameRegistry.registerTileEntity(TileEntityAyeracoBeamPurple.class, "AyeracoBeamPurple");
         GameRegistry.registerTileEntity(TileEntityAyeracoBeamRed.class, "AyeracoBeamRed");
         GameRegistry.registerTileEntity(TileEntityAyeracoBeamYellow.class, "AyeracoBeamYellow");
-        GameRegistry.registerTileEntity(TileEntityAyeracoStatue.class, "Ayeraco Statue");
-        GameRegistry.registerTileEntity(TileEntityKOSStatue.class, "KOSS Statue");
         GameRegistry.registerTileEntity(TileEntitySuperEnchantmentTable.class, "SuperEnchantmentTable");
         GameRegistry.registerTileEntity(TileEntityTwilightFurance.class, "Twilight Furnace");
-        GameRegistry.registerTileEntity(TileEntityWatcherStatue.class, "Watcher Statue");
         
 	    GameRegistry.registerTileEntity(TileDivineStatue.class, "Divine Statues");
 	    

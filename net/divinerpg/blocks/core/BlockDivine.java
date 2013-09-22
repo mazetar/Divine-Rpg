@@ -20,7 +20,7 @@ public class BlockDivine extends Block implements IBlockDivineRPG {
 	
 	public BlockDivine(int id, Material mat)
 	{
-		this(id, 0, mat);
+		super(id, mat);
 	}
 	
    public BlockDivine(int id)
@@ -37,6 +37,11 @@ public class BlockDivine extends Block implements IBlockDivineRPG {
 	public BlockDivine setTextureName(String name) {
         func_111022_d(name);
         return this;
+	}
+	
+	@Override
+	public String getUnlocalizedName() {
+	    return func_111023_E();
 	}
 	
 }

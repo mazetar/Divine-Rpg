@@ -1,9 +1,10 @@
 package net.divinerpg.client.models.twilight.tileentities;
 
+import net.divinerpg.client.models.DivineModel;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 
-public class ModelDensosStatue extends ModelBase
+public class ModelDensosStatue extends ModelBase implements DivineModel
 {
   //fields
     ModelRenderer head;

@@ -1,9 +1,10 @@
 package net.divinerpg.client.models.overworld.tileentities;
 
+import net.divinerpg.client.models.DivineModel;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 
-public class ModelAyeracoStatue extends ModelBase
+public class ModelAyeracoStatue extends ModelBase implements DivineModel
 {
   //fields
     ModelRenderer BodyLower;

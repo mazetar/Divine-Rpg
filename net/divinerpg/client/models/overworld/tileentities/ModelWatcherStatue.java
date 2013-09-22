@@ -1,9 +1,10 @@
 package net.divinerpg.client.models.overworld.tileentities;
 
+import net.divinerpg.client.models.DivineModel;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 
-public class ModelWatcherStatue extends ModelBase
+public class ModelWatcherStatue extends ModelBase implements DivineModel
 {
   //fields
     ModelRenderer Head;

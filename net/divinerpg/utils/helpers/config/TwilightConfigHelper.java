@@ -53,6 +53,12 @@ public class TwilightConfigHelper
 	public static int AugitePortalID;
 	
 	public static int divineRockID;
+    
+    public static int densosStatueID;
+    public static int reyvorStatueID;
+    public static int sfStatueID;
+    public static int tdStatueID;
+    public static int vamacheronStatueID;
 	
 	public static void initConfig(FMLPreInitializationEvent event)
 	{
@@ -107,7 +113,14 @@ public class TwilightConfigHelper
 		AugiteOreID = config.getBlock("Augite Ore", ++id).getInt();
 		AugiteBlockID = config.getBlock("Augite Block", ++id).getInt();
 		AugitePortalID = config.getBlock("Augite Portal", ++id).getInt();
-		
+
+        // Statues
+        densosStatueID = config.getBlock("Densos Statue", id++).getInt(); 
+        reyvorStatueID = config.getBlock("Reyvor Statue", id++).getInt();
+        sfStatueID = config.getBlock("SF Statue", id++).getInt();
+        tdStatueID = config.getBlock("TD Statue", id++).getInt();
+        vamacheronStatueID = config.getBlock("Vamacheron Statue", id++).getInt();
+        
 		OverworldConfigHelper.BLOCKID_NEXT = id;
 		
 		initConfigItems(event, config);
@@ -319,6 +332,7 @@ public class TwilightConfigHelper
 		purpleSeedsID = config.getItem("purpleSeeds", id++).getInt();
 		pinkSeedsID = config.getItem("pinkSeeds", id++).getInt();		
 		fireThrowerID = config.getItem("fireThrower", id++).getInt();
+		
 		
 		OverworldConfigHelper.nextItemID = id;
 	}

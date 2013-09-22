@@ -29,7 +29,7 @@ public class ResourceLocs {
     public static final ResourceLocation BLOCK_DRAMIX_STATUE = EntityResourceLocs.DRAMIX;
     public static final ResourceLocation BLOCK_DEMON_FURNACE = new ResourceLocation(Reference.MAIN_MOD_ID + ":" + "textures/blocks/DemonFurnace.png");
     public static final ResourceLocation BLOCK_PHOENIX_ALTAR = new ResourceLocation(Reference.MAIN_MOD_ID + ":" + "textures/blocks/PhoenixAltar.png");
-
+    
 
 
 

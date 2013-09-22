@@ -41,11 +41,6 @@ public class TwilightProxy
 	}
 	
 	   public void registerTileEntities() {
-	        GameRegistry.registerTileEntity(TileEntityDensosStatue.class, "Densos Statue");
-	        GameRegistry.registerTileEntity(TileEntityReyvorStatue.class, "Reyvor Statue");
-            GameRegistry.registerTileEntity(TileEntitySFStatue.class, "SF Statue");
-            GameRegistry.registerTileEntity(TileEntityTDStatue.class, "TD Statue");
-            GameRegistry.registerTileEntity(TileEntityVamacheronStatue.class, "Vamacheron Statue");
 	       
 	   }
 }

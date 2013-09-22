@@ -5,14 +5,21 @@ import net.divinerpg.blocks.core.BlockDivineFlower;
 import net.divinerpg.blocks.core.BlockDivineLeaves;
 import net.divinerpg.blocks.core.BlockDivineLog;
 import net.divinerpg.blocks.core.BlockDivinePortal;
+import net.divinerpg.blocks.core.BlockDivineStatue;
 import net.divinerpg.blocks.core.DivineGrass;
 import net.divinerpg.blocks.core.DivineOre;
 import net.divinerpg.blocks.twilight.BlockTwilightStone;
+import net.divinerpg.client.models.twilight.tileentities.ModelDensosStatue;
+import net.divinerpg.client.models.twilight.tileentities.ModelReyvorStatue;
+import net.divinerpg.client.models.twilight.tileentities.ModelSFStatue;
+import net.divinerpg.client.models.twilight.tileentities.ModelTDStatue;
+import net.divinerpg.client.models.twilight.tileentities.ModelVamacheronStatue;
 import net.divinerpg.entities.particle.EntityAugitePortalFX;
 import net.divinerpg.entities.particle.EntityAzuritePortalFX;
 import net.divinerpg.entities.particle.EntityDravitePortalFX;
 import net.divinerpg.entities.particle.EntityMythrilPortalFX;
 import net.divinerpg.entities.particle.EntityRedPortalFX;
+import net.divinerpg.lib.EntityResourceLocs;
 import net.divinerpg.utils.helpers.DimensionRegistry;
 import net.divinerpg.utils.helpers.config.TwilightConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
@@ -74,11 +81,11 @@ public class TwilightBlockHelper
 	public static Block pinkGlowBoneTreeBase;
 	public static Block purpleGlowBoneTreeBase;
 	
-	public static Block DensosStatue;
-	public static Block ReyvorStatue;
-	public static Block SFStatue;
-	public static Block TDStatue;
-	public static Block VamacheronStatue;
+	public static BlockDivineStatue DensosStatue;
+	public static BlockDivineStatue ReyvorStatue;
+	public static BlockDivineStatue SFStatue;
+	public static BlockDivineStatue TDStatue;
+	public static BlockDivineStatue VamacheronStatue;
 	
 	public static Block TwilightFlower;
 	public static Block DraviteLamp;
@@ -137,6 +144,14 @@ public class TwilightBlockHelper
 		        .setPortalVariables(MythrilBlock, blueFire, DimensionRegistry.AugiteID, "xolovon.AugitePortal",
 		                new EntityAugitePortalFX(null, 1, 2, 3, 4, 5, 6));
 		
+		// Statues
+		DensosStatue = new BlockDivineStatue(TwilightConfigHelper.densosStatueID, EntityResourceLocs.DENSOS, new ModelDensosStatue());
+		ReyvorStatue = new BlockDivineStatue(TwilightConfigHelper.reyvorStatueID, EntityResourceLocs.REYVOR, new ModelReyvorStatue()); 
+		SFStatue = new BlockDivineStatue(TwilightConfigHelper.sfStatueID, EntityResourceLocs.SOUL_FIEND, new ModelSFStatue());//TODO: Is this correct texture? just guessing here --Maz
+		TDStatue = new BlockDivineStatue(TwilightConfigHelper.tdStatueID, EntityResourceLocs.TWILIGHT_DEMON, new ModelTDStatue()); //TODO: Is this correct texture? just guessing here --Maz
+		VamacheronStatue = new BlockDivineStatue(TwilightConfigHelper.vamacheronStatueID, EntityResourceLocs.VAMACHERON, new ModelVamacheronStatue());
+		
+		
 		InitGameRegistryBlocks();
 	}
 	
@@ -185,6 +200,13 @@ public class TwilightBlockHelper
 		GameRegistry.registerBlock(AugiteOre, "AugiteOre");
 		GameRegistry.registerBlock(AugiteBlock, "AugiteBlock");
 		GameRegistry.registerBlock(AugitePortal, "AugitePortal");
+		
+		// Statues
+		GameRegistry.registerBlock(DensosStatue, "Densos Statue");
+		GameRegistry.registerBlock(ReyvorStatue, "Reyvor Statue");
+		GameRegistry.registerBlock(SFStatue, "SFStatue");
+        GameRegistry.registerBlock(TDStatue, "TDStatue");
+        GameRegistry.registerBlock(VamacheronStatue, "VamacheronStatue");
 		
 		initNames();
 	}
@@ -241,8 +263,12 @@ public class TwilightBlockHelper
 		//LanguageRegistry.addName(pinkGlowBoneTreeBase, "pinkGlowBoneTreeBase");
 		//LanguageRegistry.addName(purpleGlowBoneTreeBase, "purpleGlowBoneTreeBase");
 		
-		//LanguageRegistry.addName(DensosStatue, "DensosStatue");
-		//LanguageRegistry.addName(ReyvorStatue, "ReyvorStatue");
+		LanguageRegistry.addName(DensosStatue, "Densos Statue");
+		LanguageRegistry.addName(ReyvorStatue, "Reyvor Statue");
+		LanguageRegistry.addName(SFStatue, "SF Statue");
+        LanguageRegistry.addName(TDStatue, "TD Statue"); //TODO: Names not showing correctly in-game
+        LanguageRegistry.addName(VamacheronStatue, "Small Statue");
+        
 		//LanguageRegistry.addName(SFStatue, "SFStatue");
 		//LanguageRegistry.addName(TDStatue, "TDStatue");
 		//LanguageRegistry.addName(VamacheronStatue, "VamacheronStatue");

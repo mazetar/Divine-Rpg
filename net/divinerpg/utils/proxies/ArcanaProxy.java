@@ -38,9 +38,7 @@ public class ArcanaProxy {
         NetworkRegistry.instance().registerGuiHandler(DivineRPGArcana.instance, new ArcanaGuiHandler());
     }
     public void post(FMLPostInitializationEvent event) {
-
         registerRenderThings();
-        
     }
     
     public void registerRenderThings() {

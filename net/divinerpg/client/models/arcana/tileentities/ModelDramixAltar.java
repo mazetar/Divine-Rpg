@@ -7,6 +7,7 @@
 package net.divinerpg.client.models.arcana.tileentities;
 
 import net.divinerpg.blocks.arcana.tileentities.TileEntityDramixAltar;
+import net.divinerpg.client.models.DivineModel;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -15,7 +16,7 @@ import net.minecraftforge.client.ForgeHooksClient;
 import org.lwjgl.opengl.GL11;
 
 
-public class ModelDramixAltar extends ModelBase
+public class ModelDramixAltar extends ModelBase implements DivineModel
 {
     //fields
     ModelRenderer Base;

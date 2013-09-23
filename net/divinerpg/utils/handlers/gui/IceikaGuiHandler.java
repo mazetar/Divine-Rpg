@@ -8,7 +8,6 @@ import net.divinerpg.containers.ContainerDivineFurnace;
 import net.divinerpg.containers.ContainerDivineMerchant;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.DivineUtil;
-import net.divinerpg.utils.unused.GuiStoneFurnace;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;

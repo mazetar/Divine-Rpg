@@ -1,6 +1,5 @@
 package net.divinerpg.utils.helpers.block;
 
-import net.divinerpg.blocks.arcana.BlockAquamarine;
 import net.divinerpg.blocks.arcana.BlockArcaniteGrass;
 import net.divinerpg.blocks.arcana.BlockArcaniteRails;
 import net.divinerpg.blocks.arcana.BlockCondenser;
@@ -22,6 +21,7 @@ import net.divinerpg.blocks.arcana.furnace.BlockMoltenFurnace;
 import net.divinerpg.blocks.arcana.furnace.BlockMoonlightFurnace;
 import net.divinerpg.blocks.arcana.furnace.BlockOceanfireFurnace;
 import net.divinerpg.blocks.arcana.furnace.NYI_BlockArcanaFurnace;
+import net.divinerpg.blocks.arcana.plants.BlockAquamarine;
 import net.divinerpg.blocks.arcana.plants.BlockFireStock;
 import net.divinerpg.blocks.arcana.plants.BlockHitchak;
 import net.divinerpg.blocks.arcana.plants.BlockLamona;
@@ -172,8 +172,8 @@ public class ArcanaBlockHelper
 		
 		fireStock = new BlockFireStock(ArcanaConfigHelper.fireStockID, 44).setUnlocalizedName("FireStock");
 		fireStock2 = new BlockFireStock(ArcanaConfigHelper.fireStock2ID, 45).setUnlocalizedName("FireStock2");
-		pinFly = new BlockPinfly(ArcanaConfigHelper.pinFlyID, 46).setUnlocalizedName("PinFly");
-		pinFly2 = new BlockPinfly(ArcanaConfigHelper.pinFly2ID, 47).setUnlocalizedName("PinFly2");
+		pinFly = new BlockPinfly(ArcanaConfigHelper.pinFlyID).setUnlocalizedName("PinFly");
+		pinFly2 = new BlockPinfly(ArcanaConfigHelper.pinFly2ID).setUnlocalizedName("PinFly2");
 		hitchak = new BlockHitchak(ArcanaConfigHelper.hitchakID).setUnlocalizedName("Hitchak");
 		eucalyptusRoot = new BlockEucalyptusRoot(ArcanaConfigHelper.eucalyptusRootID).setUnlocalizedName("EucalyptusRoot");
 		veilo = new BlockVeilo(ArcanaConfigHelper.veiloID).setUnlocalizedName("Veilo");

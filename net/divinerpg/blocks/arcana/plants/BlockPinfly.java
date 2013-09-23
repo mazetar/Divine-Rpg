@@ -15,11 +15,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockPinfly extends BlockDivine implements IPlantable
 {
-	public BlockPinfly(int par1, int par2)
+	public BlockPinfly(int ID)
 	{
-		super(par1, par2, Material.plants);
-		float var3 = 0.375F;
-		this.setBlockBounds(0.5F - var3, 0.0F, 0.5F - var3, 0.5F + var3, 1.0F, 0.5F + var3);
+		super(ID, Material.plants);
+		float size = 0.375F;
+		this.setBlockBounds(0.5F - size, 0.0F, 0.5F - size, 0.5F + size, 1.0F, 0.5F + size);
 		this.setTickRandomly(true);
 	}
 

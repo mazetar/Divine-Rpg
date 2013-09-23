@@ -1,5 +1,6 @@
 package net.divinerpg.utils.helpers.block;
 
+import net.divinerpg.blocks.core.BlockDivinePortal;
 import net.divinerpg.blocks.core.DivineGrass;
 import net.divinerpg.blocks.vethea.BlockAcid;
 import net.divinerpg.blocks.vethea.BlockBacterialAcid;
@@ -28,7 +29,6 @@ import net.divinerpg.blocks.vethea.tileentities.TileEntityDreamLamp;
 import net.divinerpg.blocks.vethea.tileentities.TileEntityInfusionTable;
 import net.divinerpg.utils.helpers.config.VetheaConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
-import net.divinerpg.utils.unused.BlockPortalVethea;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -116,7 +116,7 @@ public class VetheaBlockHelper
 	
     public static void initBlocks()
 	{
-    	vetheaPortal = new BlockPortalVethea(VetheaConfigHelper.vetheaPortalID, "Vethea").func_111022_d("VetheaPortal").setUnlocalizedName("Vethea Portal").setCreativeTab(DivineTabs.tabBlocks);
+    	vetheaPortal = new BlockDivinePortal(VetheaConfigHelper.vetheaPortalID).func_111022_d("VetheaPortal").setUnlocalizedName("Vethea Portal").setCreativeTab(DivineTabs.tabBlocks);
     	dreamstone = new BlockVethea(VetheaConfigHelper.dreamstoneID, 9, Material.rock).func_111022_d("DreamStone").setUnlocalizedName("dreamstone").setHardness(1F).setResistance(1F).setCreativeTab(DivineTabs.tabBlocks);
         dreamdirt = new BlockVethea(VetheaConfigHelper.dreamdirtID, 11, Material.ground).func_111022_d("DreamGrass_Bottom").setUnlocalizedName("dreamdirt").setHardness(1F).setResistance(1F).setCreativeTab(DivineTabs.tabBlocks);
         dreamgrass = new DivineGrass(VetheaConfigHelper.dreamgrassID, dreamdirt).func_111022_d("DreamGrass").setUnlocalizedName("dreamgrass").setHardness(1F).setResistance(1F).setCreativeTab(DivineTabs.tabBlocks);

@@ -1,4 +1,4 @@
-package net.divinerpg.blocks.arcana;
+package net.divinerpg.blocks.arcana.plants;
 
 import java.util.ArrayList;
 import java.util.Random;

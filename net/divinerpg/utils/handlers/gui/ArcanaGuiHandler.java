@@ -1,5 +1,6 @@
 package net.divinerpg.utils.handlers.gui;
 
+import net.divinerpg.blocks.arcana.tileentities.TileEntityArcanaFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityCondenser;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityDemonFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityExtractor;
@@ -7,7 +8,6 @@ import net.divinerpg.blocks.arcana.tileentities.TileEntityGreenlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoltenFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityMoonlightFurnace;
 import net.divinerpg.blocks.arcana.tileentities.TileEntityOceanfireFurnace;
-import net.divinerpg.blocks.arcana.tileentities.TileEntityArcanaFurnace;
 import net.divinerpg.client.gui.GuiCaptainMerik;
 import net.divinerpg.client.gui.GuiCondenser;
 import net.divinerpg.client.gui.GuiDatticon;
@@ -22,12 +22,6 @@ import net.divinerpg.containers.ContainerDivineMerchant;
 import net.divinerpg.containers.ContainerExtractor;
 import net.divinerpg.lib.GuiRef;
 import net.divinerpg.utils.DivineUtil;
-import net.divinerpg.utils.unused.GuiDemonFurnace;
-import net.divinerpg.utils.unused.GuiGreenlightFurnace;
-import net.divinerpg.utils.unused.GuiMoltenFurnace;
-import net.divinerpg.utils.unused.GuiMoonlightFurnace;
-import net.divinerpg.utils.unused.GuiOceanfireFurnace;
-import net.divinerpg.utils.unused.GuiWhitefireFurnace;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;

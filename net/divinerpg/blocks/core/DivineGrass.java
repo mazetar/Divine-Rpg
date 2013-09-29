@@ -16,12 +16,12 @@ public class DivineGrass extends BlockDivine {
 
     public Icon topIcon;
     public Icon bottomIcon;
-    private Block dirtBlock;
+    private int dirtBlockID;
     
-    public DivineGrass(int id, Block dirtBlock) {
+    public DivineGrass(int id, int dirtBlock) {
         super(id, Material.grass);
         this.setTickRandomly(true);
-        this.dirtBlock = dirtBlock;
+        this.dirtBlockID = dirtBlock;
     }
     
     public void updateTick(World var1, int var2, int var3, int var4, Random var5)
@@ -30,7 +30,7 @@ public class DivineGrass extends BlockDivine {
         {
             if (var1.getBlockLightValue(var2, var3 + 1, var4) < 4 && Block.lightOpacity[var1.getBlockId(var2, var3 + 1, var4)] > 2)
             {
-                var1.setBlock(var2, var3, var4, this.dirtBlock.blockID);
+                var1.setBlock(var2, var3, var4, this.dirtBlockID);
             }
             else if (var1.getBlockLightValue(var2, var3 + 1, var4) >= 9)
             {
@@ -41,7 +41,7 @@ public class DivineGrass extends BlockDivine {
                     int var9 = var4 + var5.nextInt(3) - 1;
                     int var10 = var1.getBlockId(var7, var8 + 1, var9);
 
-                    if (var1.getBlockId(var7, var8, var9) == this.dirtBlock.blockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
+                    if (var1.getBlockId(var7, var8, var9) == dirtBlockID && var1.getBlockLightValue(var7, var8 + 1, var9) >= 4 && Block.lightOpacity[var10] <= 2)
                     {
                         var1.setBlock(var7, var8, var9, this.blockID);
                     }
@@ -53,7 +53,7 @@ public class DivineGrass extends BlockDivine {
     @Override
     public int idDropped(int var1, Random var2, int var3)
     {
-        return this.dirtBlock.blockID;
+        return this.dirtBlockID;
     }
     
     

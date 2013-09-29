@@ -6,6 +6,7 @@ import net.divinerpg.blocks.core.DivineGrass;
 import net.divinerpg.lib.Reference;
 import net.divinerpg.utils.helpers.block.ArcanaBlockHelper;
 import net.divinerpg.utils.helpers.block.OverworldBlockHelper;
+import net.divinerpg.utils.helpers.config.ArcanaConfigHelper;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.util.Icon;
@@ -22,7 +23,7 @@ public class BlockArcaniteGrass extends DivineGrass
     
     public BlockArcaniteGrass(int par1)
     {
-        super(par1, ArcanaBlockHelper.arcaniteDirt);
+        super(par1, ArcanaConfigHelper.arcaniteDirtID);
     }
 
     public int idDropped(int par1, Random par2Random, int par3)

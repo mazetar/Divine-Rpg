@@ -1,18 +1,21 @@
-package net.divinerpg.worldgen.augite;
+package net.divinerpg.worldgen.uvite;
 
 import net.divinerpg.utils.helpers.DimensionRegistry;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
 
-public class WorldProviderDense extends WorldProvider
+public class WorldProviderUvite extends WorldProvider
 {
     /**
      * creates a new world chunk manager for WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.serenityBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.uviteBiome, 0.5F, 0.5F);
     }
 
     /**
@@ -35,6 +38,7 @@ public class WorldProviderDense extends WorldProvider
     public float getCloudHeight()
     {
         return 128.0F;
+        
     }
 
     @Override
@@ -43,7 +47,7 @@ public class WorldProviderDense extends WorldProvider
      */
     public IChunkProvider createChunkGenerator()
     {
-        return new ChunkProviderDense(this.worldObj, this.worldObj.getSeed());
+        return new ChunkProviderUvite(this.worldObj, this.worldObj.getSeed(), true);
     }
 
     /**
@@ -85,7 +89,7 @@ public class WorldProviderDense extends WorldProvider
 
     public String getSaveFolder()
     {
-        return "Augite";
+        return "Uvite";
     }
 
     public String getWelcomeMessage()
@@ -100,7 +104,7 @@ public class WorldProviderDense extends WorldProvider
 
     public double getMovementFactor()
     {
-        return 20.0D;
+        return 2.0D;
     }
 
     /**
@@ -108,6 +112,6 @@ public class WorldProviderDense extends WorldProvider
      */
     public String getDimensionName()
     {
-        return "Augite";
+        return "Uvite";
     }
 }

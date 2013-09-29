@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 
 public class EntityEnergyArcher extends EntityDivineMob implements IRangedAttackMob
 {
-    private static final ItemStack defaultHeldItem = new ItemStack(TwilightItemHelper.TwilightBow, 1);
+    private static final ItemStack defaultHeldItem = new ItemStack(TwilightItemHelper.DraviteBow, 1);
 
     public EntityEnergyArcher(World var1)
     {

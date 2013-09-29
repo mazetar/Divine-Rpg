@@ -5,14 +5,14 @@ import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
 
-public class WorldProviderTwilight extends WorldProvider
+public class WorldProviderDravite extends WorldProvider
 {
     /**
      * creates a new world chunk manager for WorldProvider
      */
     public void registerWorldChunkManager()
     {
-        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.serenityBiome, 0.5F, 0.5F);
+        this.worldChunkMgr = new WorldChunkManagerHell(DimensionRegistry.draviteBiome, 0.5F, 0.5F);
     }
 
     /**
@@ -29,7 +29,7 @@ public class WorldProviderTwilight extends WorldProvider
      */
     public IChunkProvider createChunkGenerator()
     {
-        return new ChunkProviderTwilight(this.worldObj, this.worldObj.getSeed(), true);
+        return new ChunkProviderDravite(this.worldObj, this.worldObj.getSeed(), true);
     }
 
     /**

@@ -5,18 +5,18 @@ import java.io.File;
 import net.divinerpg.DivineRPGVethea;
 import net.divinerpg.worldgen.arcana.BiomeGenArcana;
 import net.divinerpg.worldgen.arcana.WorldProviderArcana;
-import net.divinerpg.worldgen.augite.BiomeGenDense;
-import net.divinerpg.worldgen.augite.WorldProviderDense;
+import net.divinerpg.worldgen.augite.BiomeGenAugite;
+import net.divinerpg.worldgen.augite.WorldProviderAugite;
 import net.divinerpg.worldgen.azurite.BiomeGenAzurite;
 import net.divinerpg.worldgen.azurite.WorldProviderAzurite;
 import net.divinerpg.worldgen.dravite.BiomeGenSerenity;
-import net.divinerpg.worldgen.dravite.WorldProviderTwilight;
 import net.divinerpg.worldgen.iceika.BiomeGenIceikaMountians;
 import net.divinerpg.worldgen.iceika.WorldProviderIceika;
 import net.divinerpg.worldgen.mythril.BiomeGenMythil;
 import net.divinerpg.worldgen.mythril.WorldProviderMythil;
+import net.divinerpg.worldgen.twilight.WorldProviderTwilight;
 import net.divinerpg.worldgen.uvite.BiomeGenEnergy;
-import net.divinerpg.worldgen.uvite.WorldProviderEnergy;
+import net.divinerpg.worldgen.uvite.WorldProviderUvite;
 import net.divinerpg.worldgen.vethea.BiomeGenArksiane;
 import net.divinerpg.worldgen.vethea.BiomeGenHeliosis;
 import net.divinerpg.worldgen.vethea.WorldProviderVethea;
@@ -28,12 +28,12 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class DimensionRegistry 
 {
-	public static BiomeGenBase energyBiome;
+	public static BiomeGenBase uviteBiome;
 	public static BiomeGenBase azuriteBiome;
 	public static BiomeGenBase arcanaBiome;
-	public static BiomeGenBase serenityBiome;
+	public static BiomeGenBase draviteBiome;
 	public static BiomeGenBase IceikaMountains;
-	public static BiomeGenBase denseBiome;
+	public static BiomeGenBase augiteBiome;
 	public static BiomeGenBase mythilBiome;
 	public static BiomeGenBase arksianeBiome;
 	public static BiomeGenBase heliosisBiome;
@@ -71,11 +71,11 @@ public class DimensionRegistry
 	{
         GameRegistry.registerWorldGenerator(new WorldGenDivineMinable());
 
-        serenityBiome = new BiomeGenSerenity(draviteBiomeID);
-        energyBiome = new BiomeGenEnergy(uviteBiomeID);
+        draviteBiome = new BiomeGenSerenity(draviteBiomeID);
+        uviteBiome = new BiomeGenEnergy(uviteBiomeID);
         azuriteBiome = new BiomeGenAzurite(azuriteBiomeID);
         mythilBiome = new BiomeGenMythil(mythrilBiomeID);
-        denseBiome = new BiomeGenDense(augiteBiomeID);
+        augiteBiome = new BiomeGenAugite(augiteBiomeID);
         
         arcanaBiome = new BiomeGenArcana(arcanaBiomeID);
         IceikaMountains = new BiomeGenIceikaMountians(iceikaBiomeID);
@@ -86,14 +86,15 @@ public class DimensionRegistry
         }
         
         DimensionManager.registerProviderType(DraviteID, WorldProviderTwilight.class, KeepLoadedDravite);
+        //DimensionManager.registerProviderType(DraviteID, WorldProviderDravite.class, KeepLoadedDravite);
         DimensionManager.registerDimension(DraviteID, DraviteID);
         DimensionManager.registerProviderType(AzuriteID, WorldProviderAzurite.class, KeepLoadedAzurite);
         DimensionManager.registerDimension(AzuriteID, AzuriteID);
-        DimensionManager.registerProviderType(UviteID, WorldProviderEnergy.class, KeepLoadedUvite);
+        DimensionManager.registerProviderType(UviteID, WorldProviderUvite.class, KeepLoadedUvite);
         DimensionManager.registerDimension(UviteID, UviteID);
         DimensionManager.registerProviderType(MythrilID, WorldProviderMythil.class, KeepLoadedMythril);
         DimensionManager.registerDimension(MythrilID, MythrilID);
-        DimensionManager.registerProviderType(AugiteID, WorldProviderDense.class, KeepLoadedAugite);
+        DimensionManager.registerProviderType(AugiteID, WorldProviderAugite.class, KeepLoadedAugite);
         DimensionManager.registerDimension(AugiteID, AugiteID);
         
         

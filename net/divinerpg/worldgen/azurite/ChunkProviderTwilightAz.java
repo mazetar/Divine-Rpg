@@ -19,7 +19,7 @@ import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.WorldGenLakes;
 
-public class ChunkProviderAzurite implements IChunkProvider
+public class ChunkProviderTwilightAz implements IChunkProvider
 {
     private Random rand;
     private NoiseGeneratorOctaves noiseGen1;
@@ -43,7 +43,7 @@ public class ChunkProviderAzurite implements IChunkProvider
     int[][] field_914_i = new int[32][32];
     private double[] generatedTemperatures;
 
-    public ChunkProviderAzurite(World var1, long var2, boolean var4)
+    public ChunkProviderTwilightAz(World var1, long var2, boolean var4)
     {
         this.worldObj = var1;
         this.rand = new Random(var2 + 1);
@@ -57,29 +57,31 @@ public class ChunkProviderAzurite implements IChunkProvider
         this.mobSpawnerNoise = new NoiseGeneratorOctaves(this.rand, 8);
     }
 
-    public void generateTerrain(int var1, int var2, byte[] var3, BiomeGenBase[] var4, double[] var5)
+    public void generateTerrain(int par1, int par2, byte[] blockData, BiomeGenBase[] var4, double[] var5)
     {
-        byte var6 = 2;
-        int var7 = var6 + 1;
-        byte var8 = 33;
-        int var9 = var6 + 1;
-        this.noiseArray = this.initializeNoiseField(this.noiseArray, var1 * var6, 0, var2 * var6, var7, var8, var9);
+        byte b0 = 2;
+        int b1 = b0 + 1;
+        byte b2 = 33;
+        int k = b0 + 1;
+        this.biomesForGeneration = this.worldObj.getWorldChunkManager().getBiomesForGeneration(this.biomesForGeneration, par1 * 4 - 2, par2 * 4 - 2, k + 5, b0 + 6);
+        
+        this.noiseArray = this.initializeNoiseField(this.noiseArray, par1 * b0, 0, par2 * b0, b1, b2, k);
 
-        for (int var10 = 0; var10 < var6; ++var10)
+        for (int var10 = 0; var10 < b0; ++var10)
         {
-            for (int var11 = 0; var11 < var6; ++var11)
+            for (int var11 = 0; var11 < b0; ++var11)
             {
                 for (int var12 = 0; var12 < 32; ++var12)
                 {
                     double var13 = 0.25D;
-                    double var15 = this.noiseArray[((var10 + 0) * var9 + var11 + 0) * var8 + var12 + 0];
-                    double var17 = this.noiseArray[((var10 + 0) * var9 + var11 + 1) * var8 + var12 + 0];
-                    double var19 = this.noiseArray[((var10 + 1) * var9 + var11 + 0) * var8 + var12 + 0];
-                    double var21 = this.noiseArray[((var10 + 1) * var9 + var11 + 1) * var8 + var12 + 0];
-                    double var23 = (this.noiseArray[((var10 + 0) * var9 + var11 + 0) * var8 + var12 + 1] - var15) * var13;
-                    double var25 = (this.noiseArray[((var10 + 0) * var9 + var11 + 1) * var8 + var12 + 1] - var17) * var13;
-                    double var27 = (this.noiseArray[((var10 + 1) * var9 + var11 + 0) * var8 + var12 + 1] - var19) * var13;
-                    double var29 = (this.noiseArray[((var10 + 1) * var9 + var11 + 1) * var8 + var12 + 1] - var21) * var13;
+                    double var15 = this.noiseArray[((var10 + 0) * k + var11 + 0) * b2 + var12 + 0];
+                    double var17 = this.noiseArray[((var10 + 0) * k + var11 + 1) * b2 + var12 + 0];
+                    double var19 = this.noiseArray[((var10 + 1) * k + var11 + 0) * b2 + var12 + 0];
+                    double var21 = this.noiseArray[((var10 + 1) * k + var11 + 1) * b2 + var12 + 0];
+                    double var23 = (this.noiseArray[((var10 + 0) * k + var11 + 0) * b2 + var12 + 1] - var15) * var13;
+                    double var25 = (this.noiseArray[((var10 + 0) * k + var11 + 1) * b2 + var12 + 1] - var17) * var13;
+                    double var27 = (this.noiseArray[((var10 + 1) * k + var11 + 0) * b2 + var12 + 1] - var19) * var13;
+                    double var29 = (this.noiseArray[((var10 + 1) * k + var11 + 1) * b2 + var12 + 1] - var21) * var13;
 
                     for (int var31 = 0; var31 < 4; ++var31)
                     {
@@ -91,7 +93,7 @@ public class ChunkProviderAzurite implements IChunkProvider
 
                         for (int var42 = 0; var42 < 8; ++var42)
                         {
-                            int var43 = var42 + var10 * 8 << 11 | 0 + var11 * 8 << 7 | var12 * 4 + var31;
+                            int position = var42 + var10 * 8 << 11 | 0 + var11 * 8 << 7 | var12 * 4 + var31;
                             short var44 = 128;
                             double var45 = 0.125D;
                             double var47 = var34;
@@ -103,11 +105,11 @@ public class ChunkProviderAzurite implements IChunkProvider
 
                                 if (var47 > 0.0D)
                                 {
-                                    var52 = Block.stone.blockID;
+                                    var52 = (byte)TwilightBlockHelper.TwilightStone.blockID;
                                 }
 
-                                var3[var43] = (byte)var52;
-                                var43 += var44;
+                                blockData[position] = (byte)var52;
+                                position += var44;
                                 var47 += var49;
                             }
 
@@ -135,12 +137,12 @@ public class ChunkProviderAzurite implements IChunkProvider
         {
             for (int var9 = 0; var9 < 16; ++var9)
             {
-                BiomeGenBase var10 = var4[var9 + var8 * 16];
-                float var11 = var10.getFloatTemperature();
+                BiomeGenBase biomeGenBase = var4[var9 + var8 * 16];
+                float var11 = biomeGenBase.getFloatTemperature();
                 int var12 = (int)(this.stoneNoise[var8 + var9 * 16] / 3.0D + 3.0D + this.rand.nextDouble() * 0.25D);
                 int var13 = -1;
-                byte var14 = var10.topBlock;
-                byte var15 = (byte)TwilightBlockHelper.AzuriteGrass.blockID;
+                byte topBlock = biomeGenBase.topBlock;
+                byte fillerBlock = biomeGenBase.topBlock;
 
                 for (int var16 = 127; var16 >= 0; --var16)
                 {
@@ -158,39 +160,39 @@ public class ChunkProviderAzurite implements IChunkProvider
                         {
                             var13 = -1;
                         }
-                        else if (var18 == Block.stone.blockID)
+                        else if (var18 == (byte)TwilightBlockHelper.TwilightStone.blockID)
                         {
                             if (var13 == -1)
                             {
                                 if (var12 <= 0)
                                 {
-                                    var14 = (byte)TwilightBlockHelper.AzuriteGrass.blockID;
-                                    var15 = (byte)TwilightBlockHelper.AzuriteGrass.blockID;
+                                    topBlock = biomeGenBase.topBlock;
+                                    fillerBlock = biomeGenBase.topBlock;
                                 }
                                 else if (var16 >= var5 - 4 && var16 <= var5 + 1)
                                 {
-                                    var14 = (byte)TwilightBlockHelper.AzuriteGrass.blockID;
-                                    var15 = (byte)TwilightBlockHelper.TwilightStone.blockID;
+                                    topBlock = biomeGenBase.topBlock;
+                                    fillerBlock = biomeGenBase.topBlock;
                                 }
 
                                 if (var16 >= var5 - 1)
                                 {
-                                    var3[var17] = var14;
+                                    var3[var17] = topBlock;
                                 }
                                 else
                                 {
-                                    var3[var17] = var15;
+                                    var3[var17] = fillerBlock;
                                 }
                             }
                             else if (var13 > 0)
                             {
                                 --var13;
-                                var3[var17] = var15;
+                                var3[var17] = fillerBlock;
 
-                                if (var13 == 0 && var15 == TwilightBlockHelper.AzuriteGrass.blockID)
+                                if (var13 == 0 && fillerBlock == biomeGenBase.fillerBlock)
                                 {
-                                    var13 = (byte)TwilightBlockHelper.AzuriteGrass.blockID;
-                                    var15 = (byte)TwilightBlockHelper.AzuriteGrass.blockID;
+                                    var13 = biomeGenBase.topBlock;
+                                    fillerBlock = biomeGenBase.topBlock;
                                 }
                             }
                         }
@@ -198,12 +200,12 @@ public class ChunkProviderAzurite implements IChunkProvider
                         if (var13 > 0)
                         {
                             --var13;
-                            var3[var17] = var15;
+                            var3[var17] = fillerBlock;
 
-                            if (var13 == 0 && var15 == TwilightBlockHelper.TwilightStone.blockID)
+                            if (var13 == 0 && fillerBlock == TwilightBlockHelper.TwilightStone.blockID)
                             {
-                                var13 = (byte)TwilightBlockHelper.AzuriteGrass.blockID;
-                                var15 = (byte)TwilightBlockHelper.TwilightStone.blockID;
+                                var13 = biomeGenBase.topBlock;;
+                                fillerBlock = (byte)TwilightBlockHelper.TwilightStone.blockID;
                             }
                         }
                     }
@@ -227,12 +229,12 @@ public class ChunkProviderAzurite implements IChunkProvider
     public Chunk provideChunk(int var1, int var2)
     {
         this.rand.setSeed((long)var1 * 341873128712L + (long)var2 * 132897987541L);
-        byte[] var3 = new byte[32768];
+        byte[] data = new byte[32768];
         this.biomesForGeneration = this.worldObj.getWorldChunkManager().loadBlockGeneratorData(this.biomesForGeneration, var1 * 16, var2 * 16, 16, 16);
-        this.generateTerrain(var1, var2, var3, this.biomesForGeneration, this.generatedTemperatures);
-        this.replaceBlocksForBiome(var1, var2, var3, this.biomesForGeneration);
-        this.caveGenerator.generate(this, this.worldObj, var1, var2, var3);
-        Chunk var4 = new Chunk(this.worldObj, var3, var1, var2);
+        this.generateTerrain(var1, var2, data, this.biomesForGeneration, this.generatedTemperatures);
+        this.replaceBlocksForBiome(var1, var2, data, this.biomesForGeneration);
+        this.caveGenerator.generate(this, this.worldObj, var1, var2, data);
+        Chunk var4 = new Chunk(this.worldObj, data, var1, var2);
         byte[] var5 = var4.getBiomeArray();
 
         for (int var6 = 0; var6 < var5.length; ++var6)

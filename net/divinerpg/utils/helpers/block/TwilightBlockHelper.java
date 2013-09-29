@@ -98,7 +98,7 @@ public class TwilightBlockHelper
 		divineRock = new BlockDivine(TwilightConfigHelper.divineRockID, Material.rock).setTextureName("DivineRock").setUnlocalizedName("DivineRock").setCreativeTab(CreativeTabs.tabTools);//.setCreativeTab(CreativeTabHelper.tabBlocks);
 		TwilightFlower = ((BlockDivineFlower) new BlockDivineFlower(TwilightConfigHelper.TwilightFlowerID).func_111022_d("TwilightFlower").setTickRandomly(true)).setBlockBoundsWithBlock(0.5F - 0.2F, 0.0F, 0.5F - 0.2F, 0.5F + 0.2F, 0.2F * 3.0F, 0.5F + 0.2F);
 		
-		DraviteGrass = new DivineGrass(TwilightConfigHelper.DraviteGrassID, DraviteDirt).setTextureName("DraviteGrass").setUnlocalizedName("DraviteGrass");
+		DraviteGrass = new DivineGrass(TwilightConfigHelper.DraviteGrassID, TwilightConfigHelper.DraviteDirtID).setTextureName("DraviteGrass").setUnlocalizedName("DraviteGrass");
 		DraviteDirt = new BlockDivine(TwilightConfigHelper.DraviteDirtID, Material.ground).setTextureName("DraviteGrass_Bottom").setTickRandomly(true).setUnlocalizedName("DraviteDirt").setCreativeTab(DivineTabs.tabBlocks);
 		DraviteLogs = new BlockDivineLog(TwilightConfigHelper.DraviteLogsID).setTextureName("DraviteLog").setUnlocalizedName("DraviteLogs").setCreativeTab(DivineTabs.tabBlocks);
 		DraviteLeaves = new BlockDivineLeaves(TwilightConfigHelper.DraviteLeavesID).setTextureName("DraviteLeaves").setUnlocalizedName("DraviteLeaves");
@@ -107,7 +107,7 @@ public class TwilightBlockHelper
         DravitePortal = ((BlockDivinePortal) new BlockDivinePortal(TwilightConfigHelper.DravitePortalID).setTextureName("DravitePortal").setUnlocalizedName("DravitePortal").setCreativeTab(DivineTabs.tabBlocks))
                 .setPortalVariables(divineRock, blueFire, DimensionRegistry.DraviteID, "", new EntityDravitePortalFX(null, 1, 2, 3, 4, 5, 6));
 		
-		AzuriteGrass = new DivineGrass(TwilightConfigHelper.AzuriteGrassID, AzuriteDirt).setTextureName("AzuriteGrass").setUnlocalizedName("AzuriteGrass");
+		AzuriteGrass = new DivineGrass(TwilightConfigHelper.AzuriteGrassID, TwilightConfigHelper.AzuriteDirtID).setTextureName("AzuriteGrass").setUnlocalizedName("AzuriteGrass");
 		AzuriteDirt = new BlockDivine(TwilightConfigHelper.AzuriteDirtID, Material.ground).setTextureName("AzuriteGrass_Bottom").setTickRandomly(true).setUnlocalizedName("AzuriteDirt");
 		AzuriteLogs = new BlockDivineLog(TwilightConfigHelper.AzuriteLogsID).setTextureName("AzuriteLog").setUnlocalizedName("AzuriteLogs").setCreativeTab(DivineTabs.tabBlocks);
 		AzuriteLeaves = new BlockDivineLeaves(TwilightConfigHelper.AzuriteLeavesID).setTextureName("AzuriteLeaves").setUnlocalizedName("AzuriteLeaves");
@@ -116,7 +116,7 @@ public class TwilightBlockHelper
         AzuritePortal = ((BlockDivinePortal) new BlockDivinePortal(TwilightConfigHelper.AzuritePortalID).func_111022_d("AzuritePortal").setUnlocalizedName("AzuritePortal").setCreativeTab(DivineTabs.tabBlocks))
 		        .setPortalVariables(DraviteBlock, blueFire, DimensionRegistry.AzuriteID, "", new EntityAzuritePortalFX(null, 1, 2, 3, 4, 5, 6));
 		
-		UviteGrass = new DivineGrass(TwilightConfigHelper.UviteGrassID, UviteDirt).setTextureName("UviteGrass").setUnlocalizedName("UviteGrass");
+		UviteGrass = new DivineGrass(TwilightConfigHelper.UviteGrassID, TwilightConfigHelper.UviteDirtID).setTextureName("UviteGrass").setUnlocalizedName("UviteGrass");
 		UviteDirt = new BlockDivine(TwilightConfigHelper.UviteDirtID, Material.ground).setTextureName("UviteGrass_Bottom").setTickRandomly(true).setUnlocalizedName("UviteDirt").setCreativeTab(DivineTabs.tabBlocks);
 		UviteLogs = new BlockDivineLog(TwilightConfigHelper.UviteLogsID).setTextureName("UviteLog").setUnlocalizedName("UviteLogs").setCreativeTab(DivineTabs.tabBlocks);
 		UviteLeaves = new BlockDivineLeaves(TwilightConfigHelper.UviteLeavesID).setTextureName("UviteLeaves").setUnlocalizedName("UviteLeaves");
@@ -125,7 +125,7 @@ public class TwilightBlockHelper
         UvitePortal = ((BlockDivinePortal) new BlockDivinePortal(TwilightConfigHelper.UvitePortalID).func_111022_d("UvitePortal").setUnlocalizedName("UvitePortal").setCreativeTab(DivineTabs.tabBlocks))
 		        .setPortalVariables(AzuriteBlock, blueFire, DimensionRegistry.UviteID, "", new EntityRedPortalFX(null, 1, 2, 3, 4, 5, 6));
 		
-		MythrilGrass = new DivineGrass(TwilightConfigHelper.MythrilGrassID, MythrilDirt).func_111022_d("MythrilGrass").setUnlocalizedName("MythrilGrass");
+		MythrilGrass = new DivineGrass(TwilightConfigHelper.MythrilGrassID, TwilightConfigHelper.MythrilDirtID).func_111022_d("MythrilGrass").setUnlocalizedName("MythrilGrass");
 		MythrilDirt = new BlockDivine(TwilightConfigHelper.MythrilDirtID, Material.ground).func_111022_d("MythrilGrass_Bottom").setTickRandomly(true).setUnlocalizedName("MythrilDirt").setCreativeTab(DivineTabs.tabBlocks);
 		MythrilLogs = new BlockDivineLog(TwilightConfigHelper.MythrilLogsID).func_111022_d("MythrilLog").setUnlocalizedName("MythrilLog").setCreativeTab(DivineTabs.tabBlocks);
 		MythrilLeaves = new BlockDivineLeaves(TwilightConfigHelper.MythrilLeavesID).func_111022_d("MythrilLeaves").setUnlocalizedName("MythrilLeaves");
@@ -134,7 +134,7 @@ public class TwilightBlockHelper
         MythrilPortal = ((BlockDivinePortal) new BlockDivinePortal(TwilightConfigHelper.MythrilPortalID).func_111022_d("MythrilPortal").setUnlocalizedName("MythrilPortal").setCreativeTab(DivineTabs.tabBlocks))
 		        .setPortalVariables(UviteBlock, blueFire, DimensionRegistry.MythrilID, "", new EntityMythrilPortalFX(null, 1, 2, 3, 4, 5, 6));
 		
-		AugiteGrass = new DivineGrass(TwilightConfigHelper.AugiteGrassID, AugiteDirt).func_111022_d("AugiteGrass").setUnlocalizedName("AugiteGrass");
+		AugiteGrass = new DivineGrass(TwilightConfigHelper.AugiteGrassID, TwilightConfigHelper.AugiteDirtID).func_111022_d("AugiteGrass").setUnlocalizedName("AugiteGrass");
 		AugiteDirt = new BlockDivine(TwilightConfigHelper.AugiteDirtID, Material.ground).setTickRandomly(true).func_111022_d("AugiteGrass_Bottom").setUnlocalizedName("AugiteDirt").setCreativeTab(DivineTabs.tabBlocks);
 		AugiteLogs = new BlockDivineLog(TwilightConfigHelper.AugiteLogsID).func_111022_d("AugiteLog").setUnlocalizedName("AugiteLog").setCreativeTab(DivineTabs.tabBlocks);
 		AugiteLeaves = new BlockDivineLeaves(TwilightConfigHelper.AugiteLeavesID).func_111022_d("AugiteLeaves").setUnlocalizedName("AugiteLeaves");

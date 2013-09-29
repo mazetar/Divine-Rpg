@@ -66,7 +66,7 @@ public class IceikaBlockHelper {
 	private static void initBlocks() {
 		frostedStone = new BlockDivine(cfg.FrostedStoneID, 0, Material.rock).func_111022_d("FrostedStone").setHardness(1.5F).setResistance(10F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("FrostedStone").setCreativeTab(DivineTabs.tabBlocks);
 		frostedDirt = new BlockDivine(cfg.FrostedDirtID, 0, Material.grass).func_111022_d("IceGrass_Bottom").setHardness(0.6F).setStepSound(Block.soundGravelFootstep).setUnlocalizedName("FrostedDirt").setCreativeTab(DivineTabs.tabBlocks);
-		frostedGrass = new DivineGrass(cfg.FrostedGrassID, frostedDirt).func_111022_d("IceGrass").setHardness(0.6F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("FrostedGrass").setCreativeTab(DivineTabs.tabBlocks);
+		frostedGrass = new DivineGrass(cfg.FrostedGrassID, cfg.FrostedDirtID).func_111022_d("IceGrass").setHardness(0.6F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("FrostedGrass").setCreativeTab(DivineTabs.tabBlocks);
 		frostedWood = new BlockIceikaLog(cfg.FrostedWoodID).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("FrostedWood").setCreativeTab(DivineTabs.tabBlocks);
 		frostedLeaves = new BlockDivine(cfg.FrostedLeavesID, 0, Material.leaves).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("FrostedLeaves").setCreativeTab(DivineTabs.tabBlocks);
 		icyStone = new BlockDivine(cfg.IcyStoneID, 0, Material.rock).func_111022_d("IcyStone").setStepSound(Block.soundStoneFootstep).setHardness(1.5F).setResistance(10.0F).setUnlocalizedName("IcyStone").setBlockUnbreakable().setCreativeTab(DivineTabs.tabBlocks);

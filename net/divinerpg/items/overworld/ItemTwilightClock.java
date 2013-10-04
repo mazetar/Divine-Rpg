@@ -41,23 +41,27 @@ public class ItemTwilightClock extends ItemDivine
             }
             else if (var11 == TwilightBlockHelper.DraviteBlock.blockID && world.isAirBlock(x, y + 1, z))
             {
-                TwilightBlockHelper.AzuritePortal.tryToCreatePortal(world, x, y+1, z);
-                return true;
+                portalClosed(player);
+               // TwilightBlockHelper.AzuritePortal.tryToCreatePortal(world, x, y+1, z);
+              //  return true;
             }
             else if (var11 == TwilightBlockHelper.AzuriteBlock.blockID && world.isAirBlock(x, y + 1, z))
             {
-                TwilightBlockHelper.UvitePortal.tryToCreatePortal(world, x, y+1, z);
-                return true;
+                portalClosed(player);
+               // TwilightBlockHelper.UvitePortal.tryToCreatePortal(world, x, y+1, z);
+               // return true;
             }
             else if (var11 == TwilightBlockHelper.UviteBlock.blockID && world.isAirBlock(x, y + 1, z))
-            {
-                TwilightBlockHelper.MythrilPortal.tryToCreatePortal(world, x, y+1, z);
-                return true;
+            { 
+                portalClosed(player);
+                //TwilightBlockHelper.MythrilPortal.tryToCreatePortal(world, x, y+1, z);
+               // return true;
             }
             else if (var11 == TwilightBlockHelper.MythrilBlock.blockID && world.isAirBlock(x, y + 1, z))
             {
-                TwilightBlockHelper.AugitePortal.tryToCreatePortal(world, x, y+1, z);
-                return true;
+                portalClosed(player);
+               // TwilightBlockHelper.AugitePortal.tryToCreatePortal(world, x, y+1, z);
+               // return true;
             }
             else if (var11 == Block.blockSnow.blockID && world.isAirBlock(x, y + 1, z))
             {
@@ -74,5 +78,12 @@ public class ItemTwilightClock extends ItemDivine
         {
             return false;
         }
+        return false;
+    }
+    
+    private static boolean portalClosed(EntityPlayer p) {
+        p.addChatMessage("The twilight storm blocks the twilight clock from opening such a portal");
+        
+        return false;
     }
 }

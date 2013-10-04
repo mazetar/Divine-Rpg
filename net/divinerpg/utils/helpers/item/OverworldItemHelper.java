@@ -2,7 +2,7 @@ package net.divinerpg.utils.helpers.item;
 
 
 import net.divinerpg.items.ItemDivine;
-import net.divinerpg.items.core.DivineArmorSet;
+import net.divinerpg.items.core.DivineArmor;
 import net.divinerpg.items.core.DivineBurningSword;
 import net.divinerpg.items.core.DivineSword;
 import net.divinerpg.items.overworld.ItemBaseAnchor;
@@ -22,6 +22,7 @@ import net.divinerpg.items.overworld.NYI.ItemSerenadeDeath;
 import net.divinerpg.items.overworld.NYI.ItemSerenadeGrowth;
 import net.divinerpg.items.overworld.NYI.ItemSerenadeHealth;
 import net.divinerpg.items.overworld.NYI.ItemSerenadeStriker;
+import net.divinerpg.lib.DivineMaterials;
 import net.divinerpg.utils.helpers.config.OverworldConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.block.Block;
@@ -319,20 +320,7 @@ public class OverworldItemHelper
         corruptedStone = new ItemDivine(cfg.corruptedStoneID).func_111206_d("CorruptedStone");
         blueFireStone = new ItemDivine(cfg.blueFireStoneID).func_111206_d("BlueFireStone");
 
-        divineHelm = new ItemDivine(cfg.divineHeadID).func_111206_d("DivineHelm");
-        divineBody = new ItemDivine(cfg.divineBodyID).func_111206_d("DivineBody");
-        divineLegs = new ItemDivine(cfg.divineLegsID).func_111206_d("DivineLegs");
-        divineBoots = new ItemDivine(cfg.divineBootsID).func_111206_d("DivineBoots");
-
-        jackOManBoots = new ItemDivine(cfg.jackOManBootsID).func_111206_d("JackOManBoots");
-        jackOManLegs = new ItemDivine(cfg.jackOManLegsID).func_111206_d("JackOManLegs");
-        jackOManBody = new ItemDivine(cfg.jackOManBodyID).func_111206_d("JackOManBody");
-        jackOManHead = new ItemDivine(cfg.jackOManHeadID).func_111206_d("JackOManHead");
-
-        grimReaperHead = new ItemDivine(cfg.grimReaperHeadID).func_111206_d("GrimReaperHead");
-        grimReaperBody = new ItemDivine(cfg.grimReaperBodyID).func_111206_d("GrimReaperBody");
-        grimReaperLegs = new ItemDivine(cfg.grimReaperLegsID).func_111206_d("GrimReaperLegs");
-        grimReaperBoots = new ItemDivine(cfg.grimReaperBootsID).func_111206_d("GrimReaperBoots");
+   
 		//addNames();
 		initArmors();
 	}
@@ -412,15 +400,32 @@ public class OverworldItemHelper
 		String[] aquaticDesc = {"13.75% Damage reduction", "Unbreakable", "Full Set: Breathe underwater", "Full Set: Swim faster"};
 		String[] shadowDesc = {"15% Damage reduction", "Unbreakable", "Full Set: Move faster"};
 		
-		
+	     int divineRender = RenderingRegistry.addNewArmourRendererPrefix("divine");
+	        divineHelm = new DivineArmor(cfg.divineHeadID, DivineMaterials.DIVINE_ARMOR, divineRender, 0, false, null).func_111206_d("DivineHelm");
+	        divineBody = new DivineArmor(cfg.divineBodyID, DivineMaterials.DIVINE_ARMOR, divineRender, 1, false, null).func_111206_d("DivineBody");
+	        divineLegs = new DivineArmor(cfg.divineLegsID, DivineMaterials.DIVINE_ARMOR, divineRender, 2, false, null).func_111206_d("DivineLegs");
+	        divineBoots = new DivineArmor(cfg.divineBootsID, DivineMaterials.DIVINE_ARMOR, divineRender, 3, false, null).func_111206_d("DivineBoots");
+	        
+	        int jackRender = RenderingRegistry.addNewArmourRendererPrefix("jack");
+	        jackOManBoots = new DivineArmor(cfg.jackOManBootsID, DivineMaterials.JACK_O_MAN, jackRender, 0, false, null).func_111206_d("JackOManBoots");
+	        jackOManLegs = new DivineArmor(cfg.jackOManLegsID, DivineMaterials.JACK_O_MAN, jackRender, 1, false, null).func_111206_d("JackOManLegs");
+	        jackOManBody = new DivineArmor(cfg.jackOManBodyID, DivineMaterials.JACK_O_MAN, jackRender, 2, false, null).func_111206_d("JackOManBody");
+	        jackOManHead = new DivineArmor(cfg.jackOManHeadID, DivineMaterials.JACK_O_MAN, jackRender, 3, false, null).func_111206_d("JackOManHead");
+	        
+	        int grimRender = RenderingRegistry.addNewArmourRendererPrefix("wither_reaper");
+	        grimReaperHead = new DivineArmor(cfg.grimReaperHeadID, DivineMaterials.WITHER_REAPER, grimRender, 0, false, null).func_111206_d("GrimReaperHead");
+	        grimReaperBody = new DivineArmor(cfg.grimReaperBodyID, DivineMaterials.WITHER_REAPER, grimRender, 1, false, null).func_111206_d("GrimReaperBody");
+	        grimReaperLegs = new DivineArmor(cfg.grimReaperLegsID, DivineMaterials.WITHER_REAPER, grimRender, 2, false, null).func_111206_d("GrimReaperLegs");
+	        grimReaperBoots = new DivineArmor(cfg.grimReaperBootsID, DivineMaterials.WITHER_REAPER, grimRender, 3, false, null).func_111206_d("GrimReaperBoots");
+
 		
 		// Angelic
 		 int angelicRender = RenderingRegistry.addNewArmourRendererPrefix("angelic");
 		 ArmorProperties properties = new ArmorProperties(0, 0, 0); // TODO: Fill out later from excel sheet.
-		angelicBody = new DivineArmorSet(cfg.angelicBodyID, angelic, angelicRender, BODY, false, properties).setUnlocalizedName("angelicbody").setCreativeTab(DivineTabs.tabArmor);
-		angelicHelmet = new DivineArmorSet(cfg.angelicHeadID, angelic, angelicRender, HEAD, false, properties).setUnlocalizedName("angelichelm").setCreativeTab(DivineTabs.tabArmor);
-		angelicLegs = new DivineArmorSet(cfg.angelicLegsID, angelic, angelicRender, LEGS, false, properties).setUnlocalizedName("angelicLegs").setCreativeTab(DivineTabs.tabArmor);
-		angelicBoots = new DivineArmorSet(cfg.angelicBootsID, angelic, angelicRender, BOOTS, false, properties).setUnlocalizedName("angelicboots").setCreativeTab(DivineTabs.tabArmor);
+		angelicBody = new DivineArmor(cfg.angelicBodyID, angelic, angelicRender, BODY, false, properties).setUnlocalizedName("angelicbody").setCreativeTab(DivineTabs.tabArmor);
+		angelicHelmet = new DivineArmor(cfg.angelicHeadID, angelic, angelicRender, HEAD, false, properties).setUnlocalizedName("angelichelm").setCreativeTab(DivineTabs.tabArmor);
+		angelicLegs = new DivineArmor(cfg.angelicLegsID, angelic, angelicRender, LEGS, false, properties).setUnlocalizedName("angelicLegs").setCreativeTab(DivineTabs.tabArmor);
+		angelicBoots = new DivineArmor(cfg.angelicBootsID, angelic, angelicRender, BOOTS, false, properties).setUnlocalizedName("angelicboots").setCreativeTab(DivineTabs.tabArmor);
 		// Normal Realmite
 		//realmiteHelmet = new ItemBasicArmor(, var2, var3, var4)
 		

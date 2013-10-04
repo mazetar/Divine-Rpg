@@ -19,7 +19,7 @@ import net.minecraft.world.gen.MapGenCaves;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.feature.WorldGenLakes;
 
-public class ChunkProviderTwilightAz implements IChunkProvider
+public class ChunkProviderAzurite implements IChunkProvider
 {
     private Random rand;
     private NoiseGeneratorOctaves noiseGen1;
@@ -43,7 +43,7 @@ public class ChunkProviderTwilightAz implements IChunkProvider
     int[][] field_914_i = new int[32][32];
     private double[] generatedTemperatures;
 
-    public ChunkProviderTwilightAz(World var1, long var2, boolean var4)
+    public ChunkProviderAzurite(World var1, long var2, boolean var4)
     {
         this.worldObj = var1;
         this.rand = new Random(var2 + 1);

@@ -12,6 +12,7 @@ import net.divinerpg.blocks.overworld.tileentities.TileEntityAyeracoBeamRed;
 import net.divinerpg.blocks.overworld.tileentities.TileEntityAyeracoBeamYellow;
 import net.divinerpg.blocks.overworld.tileentities.TileEntitySuperEnchantmentTable;
 import net.divinerpg.blocks.twilight.tileentities.TileEntityTwilightFurance;
+import net.divinerpg.lib.DivineMaterials;
 import net.divinerpg.utils.debug.EntityNameRenderer;
 import net.divinerpg.utils.handlers.ArmorEffectHandler;
 import net.divinerpg.utils.handlers.ServerTickHandler;
@@ -42,6 +43,8 @@ public class CoreProxy {
 
         DivineTabs.init();
         registerTileEntities();
+        
+        DivineMaterials.initMaterials();
         
     }
 	

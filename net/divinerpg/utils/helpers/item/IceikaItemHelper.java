@@ -1,7 +1,7 @@
 package net.divinerpg.utils.helpers.item;
 
 import net.divinerpg.items.ItemDivine;
-import net.divinerpg.items.core.DivineArmorSet;
+import net.divinerpg.items.core.DivineArmor;
 import net.divinerpg.items.core.DivineBow;
 import net.divinerpg.items.core.DivineSword;
 import net.divinerpg.items.core.ItemDivineRPGBucket;
@@ -17,6 +17,7 @@ import net.divinerpg.items.iceika.ItemSoundOfCarols;
 import net.divinerpg.items.overworld.ItemBlueBow;
 import net.divinerpg.items.overworld.ItemHealingSword;
 import net.divinerpg.items.overworld.NYI.ItemFrostSword;
+import net.divinerpg.lib.DivineMaterials;
 import net.divinerpg.utils.helpers.config.IceikaConfigHelper;
 import net.divinerpg.utils.helpers.gui.DivineTabs;
 import net.minecraft.item.EnumArmorMaterial;
@@ -85,11 +86,11 @@ public class IceikaItemHelper
         bluefireBow = new ItemBlueBow(cfg.BlueFireBowID).func_111206_d("BluefireBow");
         
         int santaArmorRender = RenderingRegistry.addNewArmourRendererPrefix("santa");
-        EnumArmorMaterial santaMaterial = EnumHelper.addArmorMaterial("santa", -1, new int[]{0, 0, 0, 0}, 0);
-        santaHelmet = new DivineArmorSet(cfg.SantaHeadID, santaMaterial, santaArmorRender, 0, false, null);
-        santaBody = new DivineArmorSet(cfg.SantaBodyID, santaMaterial, santaArmorRender, 1, false, null);
-        santaLegs = new DivineArmorSet(cfg.SantaLegsID, santaMaterial, santaArmorRender, 2, false, null);
-        santaBoots = new DivineArmorSet(cfg.SantaBootsID, santaMaterial, santaArmorRender, 3, false, null);
+        EnumArmorMaterial santaMaterial = DivineMaterials.SANTA_COSTUME;
+        santaHelmet = new DivineArmor(cfg.SantaHeadID, santaMaterial, santaArmorRender, 0, false, null);
+        santaBody = new DivineArmor(cfg.SantaBodyID, santaMaterial, santaArmorRender, 1, false, null);
+        santaLegs = new DivineArmor(cfg.SantaLegsID, santaMaterial, santaArmorRender, 2, false, null);
+        santaBoots = new DivineArmor(cfg.SantaBootsID, santaMaterial, santaArmorRender, 3, false, null);
 
     
         LanguageRegistry.addName(snowFlake, "Snowflake");

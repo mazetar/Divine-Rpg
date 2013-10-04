@@ -12,24 +12,17 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.ISpecialArmor;
 
-public class DivineArmorSet extends ItemArmor implements ISpecialArmor {
+public class DivineArmor extends ItemArmor implements ISpecialArmor {
 
-    
-//    public static Item[] InitializeArmorSet(Item[] items, String setName, int ID, EnumArmorMaterial armorMaterial,
-//            int renderIndex, boolean isGlowing, ArmorProperties properties) {
-//        for (int i = 0; i < items.length; i++) {
-//            items[i] = new DivineArmorSet(setName, ID, armorMaterial, renderIndex, i, isGlowing, properties);
-//        }
-//        return items;
-//    }
     
     boolean isGlowing;
     ArmorProperties armorProperties;
     String name;
     
-    public DivineArmorSet(int ID, EnumArmorMaterial armorMaterial,
+    public DivineArmor(int ID, EnumArmorMaterial armorMaterial,
             int renderIndex, int armorType, boolean isGlowing, ArmorProperties properties) {
         super(ID, armorMaterial, renderIndex, armorType);
         this.isGlowing = isGlowing;

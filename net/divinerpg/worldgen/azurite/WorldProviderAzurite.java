@@ -43,7 +43,7 @@ public class WorldProviderAzurite extends WorldProvider
      */
     public IChunkProvider createChunkGenerator()
     {
-        return new ChunkProviderTwilightAz(this.worldObj, this.worldObj.getSeed(), true);
+        return new ChunkProviderAzurite(this.worldObj, this.worldObj.getSeed(), true);
     }
 
     /**

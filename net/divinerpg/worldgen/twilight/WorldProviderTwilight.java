@@ -1,6 +1,6 @@
 package net.divinerpg.worldgen.twilight;
 
-import net.divinerpg.worldgen.azurite.ChunkProviderTwilightAz;
+import net.divinerpg.worldgen.azurite.ChunkProviderAzurite;
 import net.divinerpg.worldgen.dravite.ChunkProviderDravite;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.world.WorldProvider;
@@ -35,7 +35,7 @@ public class WorldProviderTwilight extends WorldProvider {
     /** What chunk provider to use **/
     public IChunkProvider createChunkGenerator()
     {
-        return new ChunkProviderTwilightAz(worldObj, worldObj.getSeed(), true);
+        return new ChunkProviderAzurite(worldObj, worldObj.getSeed(), true);
     }
 
     @Override

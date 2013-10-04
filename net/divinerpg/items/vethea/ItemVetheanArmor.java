@@ -2,7 +2,7 @@ package net.divinerpg.items.vethea;
 
 import java.util.List;
 
-import net.divinerpg.items.core.DivineArmorSet;
+import net.divinerpg.items.core.DivineArmor;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -11,7 +11,7 @@ import net.minecraftforge.common.ISpecialArmor;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemVetheanArmor extends DivineArmorSet implements ISpecialArmor
+public class ItemVetheanArmor extends DivineArmor implements ISpecialArmor
 {
     private int type;
     private int reductionAmount;

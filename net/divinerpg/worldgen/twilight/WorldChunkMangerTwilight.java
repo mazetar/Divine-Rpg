@@ -40,6 +40,8 @@ public class WorldChunkMangerTwilight extends WorldChunkManager {
         this.myGenBiomes = agenlayer[0];
         this.myBiomeIndexLayer = agenlayer[1];
     }
+    
+    
 
     public WorldChunkMangerTwilight(World world) {
         this(world.getSeed(), world.provider.terrainType);
